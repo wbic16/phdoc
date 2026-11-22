@@ -1,6 +1,6 @@
 # teixml-to-mutable — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 91). Project root: /home/wbic16/phdoc-sweep/proj/teixml-to-mutable. Scanned at commit 57706661107e72bc322e02a66bc0972b3d409a54. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/teixml-to-mutable/. Scanned at commit 57706661107e72bc322e02a66bc0972b3d409a54. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -31,12 +31,15 @@ Total packages in the lock file, this one included: 60.
 
 ## Authors
 
-The git log holds 7 commits. The authors, by commit count:
+The git log holds 7 commits.
 
-- Will Bickford <wbic16@gmail.com> — 4 commits (57.1%)
-- Emise <emise@mirrorborn.us> — 1 commit (14.3%)
-- Emise <emise@mirrorborn> — 1 commit (14.3%)
-- Theia <theia@mirrorborn.us> — 1 commit (14.3%)
+The author of record is **Will Bickford** — 7 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Will Bickford (his own identities) — 4 commits
+- Emise — 2 commits
+- Theia — 1 commit
 
 ---
 
@@ -92,7 +95,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 - Origin: /home/wbic16/github-archive/mirrors/teixml-to-mutable.git
 - Branch: exo
 - Head commit: 57706661107e72bc322e02a66bc0972b3d409a54
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
@@ -1816,3 +1819,9 @@ Signature: `pub fn build_cavern_image(files: &[(&str, &[u8])]) -> (Vec<u8>, VfsI
 What it does: Build the `cavern.phext` image holding `files` (name, bytes) in the given order at the documents-stratum root, in the VFS binary format. Returns the image bytes and its accounting.
 
 (Where these words came from: doc comment.)
+
+---
+
+## Provenance
+
+This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/teixml-to-mutable/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
