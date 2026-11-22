@@ -1,0 +1,351 @@
+# emise-tools — reference as of commit 336bffde6ccc
+
+Commit 336bffde6ccc0208ed90455b6b4b4e285bc26708. 17 commits folded. Every fact here was folded from the chain's per-commit deltas.
+
+## Dependencies
+
+No dependencies recorded at this point.
+
+## Authors
+
+- Emise <emise@localhost> — 16 commits
+- Will Bickford <wbic16@gmail.com> — 1 commits
+
+## Complexity
+
+- JavaScript: 0 files, 0 lines total, 0 blank, 0 comment, 0 code
+- Markdown: 24 files, 2312 lines total, 0 blank, 0 comment, 2312 code
+- Python: 41 files, 9778 lines total, 0 blank, 0 comment, 9778 code
+- Shell: 6 files, 199 lines total, 0 blank, 0 comment, 199 code
+
+Declared RFCs at this point: none declared.
+
+## Public methods and commands
+
+- function `call` (connectors/discord/discord_api.py) — Function call takes method, path, body=None and gives back nothing; it does its work on what it is given.
+- function `redirect_request` (connectors/discord/discord_api.py) — Function redirect_request takes self, *args and gives back nothing; it does its work on what it is given.
+- function `actionable` (connectors/discord/discord_watch.py) — Function actionable takes msg, channel_name and gives back nothing; it does its work on what it is given.
+- function `load_state` (connectors/discord/discord_watch.py) — Function load_state takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
+- function `log` (connectors/discord/discord_watch.py) — Function log takes msg and gives back nothing; it does its work on what it is given.
+- function `main` (connectors/discord/discord_watch.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `save_state` (connectors/discord/discord_watch.py) — Function save_state takes state and gives back nothing; it does its work on what it is given.
+- function `spool` (connectors/discord/discord_watch.py) — Function spool takes event and gives back nothing; it does its work on what it is given.
+- function `call` (connectors/github/github_api.py) — Function call takes method, path, body=None and gives back nothing; it does its work on what it is given.
+- function `redirect_request` (connectors/github/github_api.py) — Function redirect_request takes self, *args and gives back nothing; it does its work on what it is given.
+- function `must` (connectors/github/push_file.py) — Function must takes status, out, step and gives back nothing; it does its work on what it is given.
+- function `must` (connectors/github/push_tree.py) — Function must takes status, out, step and gives back nothing; it does its work on what it is given.
+- function `__init__` (custom-skills/upgoer-five-phext/address_word.py) — Function __init__ takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it 
+- function `cmd_address` (custom-skills/upgoer-five-phext/address_word.py) — Function cmd_address takes atlas, words and gives back nothing; it does its work on what it is given.
+- function `cmd_decode` (custom-skills/upgoer-five-phext/address_word.py) — Function cmd_decode takes atlas, address and gives back nothing; it does its work on what it is given.
+- function `cmd_validate` (custom-skills/upgoer-five-phext/address_word.py) — Function cmd_validate takes atlas, path, k and gives back nothing; it does its work on what it is given.
+- function `coord_of_vec` (custom-skills/upgoer-five-phext/address_word.py) — Function coord_of_vec takes self, vec and gives back nothing; it does its work on what it is given.
+- function `embed` (custom-skills/upgoer-five-phext/address_word.py) — Function embed takes word, glove and gives back nothing; it does its work on what it is given.
+- function `embed_words` (custom-skills/upgoer-five-phext/address_word.py) — Embed a list of words, using and updating the query cache.
+- function `fmt` (custom-skills/upgoer-five-phext/address_word.py) — Function fmt takes c and gives back nothing; it does its work on what it is given.
+- function `is_allowed` (custom-skills/upgoer-five-phext/address_word.py) — Function is_allowed takes word, allowed and gives back nothing; it does its work on what it is given.
+- function `load_cache` (custom-skills/upgoer-five-phext/address_word.py) — Function load_cache takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
+- function `main` (custom-skills/upgoer-five-phext/address_word.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `nearest_ug5` (custom-skills/upgoer-five-phext/address_word.py) — Function nearest_ug5 takes self, coord, k=5, exclude=None and gives back nothing; it does its work on what it is given.
+- function `normalize` (custom-skills/upgoer-five-phext/address_word.py) — Function normalize takes word and gives back nothing; it does its work on what it is given.
+- function `scan_glove` (custom-skills/upgoer-five-phext/address_word.py) — Function scan_glove takes wanted and gives back nothing; it does its work on what it is given.
+- function `split_parts` (custom-skills/upgoer-five-phext/address_word.py) — Function split_parts takes w and gives back nothing; it does its work on what it is given.
+- function `stems` (custom-skills/upgoer-five-phext/address_word.py) — Function stems takes word and gives back nothing; it does its work on what it is given.
+- function `wanted_tokens` (custom-skills/upgoer-five-phext/address_word.py) — Function wanted_tokens takes words and gives back nothing; it does its work on what it is given.
+- function `coord_of` (custom-skills/upgoer-five-phext/build_atlas.py) — Function coord_of takes vec and gives back nothing; it does its work on what it is given.
+- function `embed` (custom-skills/upgoer-five-phext/build_atlas.py) — GloVe vector with the contraction fallback chain, else None.
+- function `fmt` (custom-skills/upgoer-five-phext/build_atlas.py) — Function fmt takes coord and gives back nothing; it does its work on what it is given.
+- function `main` (custom-skills/upgoer-five-phext/build_atlas.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `split_parts` (custom-skills/upgoer-five-phext/build_atlas.py) — Function split_parts takes w and gives back nothing; it does its work on what it is given.
+- function `wanted_tokens` (custom-skills/upgoer-five-phext/build_atlas.py) — Function wanted_tokens takes words and gives back nothing; it does its work on what it is given.
+- function `write_phext` (custom-skills/upgoer-five-phext/build_atlas.py) — Write {coord_tuple: text} as a phext file, dead-reckoning style.
+- function `main` (custom-skills/upgoer-five-phext/build_editor.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `is_allowed` (custom-skills/upgoer-five/scripts/check_ug5.py) — Function is_allowed takes word, allowed, strict and gives back nothing; it does its work on what it is given.
+- function `load_words` (custom-skills/upgoer-five/scripts/check_ug5.py) — Function load_words takes path and gives back nothing; it does its work on what it is given.
+- function `main` (custom-skills/upgoer-five/scripts/check_ug5.py) — Function main takes argv=None and gives back nothing; it does its work on what it is given.
+- function `normalize` (custom-skills/upgoer-five/scripts/check_ug5.py) — Lowercase a word and drop apostrophes and other non-letters.
+- function `stems` (custom-skills/upgoer-five/scripts/check_ug5.py) — Yield shorter forms of a word made by common English endings.
+- function `main` (dashboard/collect_status.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `sentinel` (dashboard/collect_status.py) — Function sentinel takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it 
+- function `sq_status` (dashboard/collect_status.py) — Function sq_status takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it
+- function `get` (discord-presence/pass.py) — Function get takes path and gives back nothing; it does its work on what it is given.
+- function `git` (github-publish/publish_branch.py) — Function git takes repo_dir, *args and gives back nothing; it does its work on what it is given.
+- function `main` (github-publish/publish_branch.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `must` (github-publish/publish_branch.py) — Function must takes status, out, step and gives back nothing; it does its work on what it is given.
+- function `git` (github-publish/publish_incremental.py) — Function git takes repo_dir, *args and gives back nothing; it does its work on what it is given.
+- function `main` (github-publish/publish_incremental.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `must` (github-publish/publish_incremental.py) — Function must takes status, out, step and gives back nothing; it does its work on what it is given.
+- function `C` (neuralese/build_neuralese.py) — Function C takes ch, s=1, sc=1 and gives back nothing; it does its work on what it is given.
+- function `emit` (neuralese/build_neuralese.py) — Function emit takes targets and gives back nothing; it does its work on what it is given.
+- function `encode_phext` (neuralese/demo/run_demo.py) — Function encode_phext takes units, path and gives back nothing; it does its work on what it is given.
+- function `hops` (neuralese/demo/run_demo.py) — Function hops takes uid, n and gives back nothing; it does its work on what it is given.
+- function `main` (neuralese/demo/run_demo.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `phext_receive` (neuralese/demo/run_demo.py) — Function phext_receive takes path and gives back nothing; it does its work on what it is given.
+- function `rec` (neuralese/demo/run_demo.py) — Function rec takes chan, q, ok, cost and gives back nothing; it does its work on what it is given.
+- function `vec` (neuralese/demo/run_demo.py) — Function vec takes g and gives back nothing; it does its work on what it is given.
+- function `decode` (neuralese/neuralese_codec.py) — Function decode takes phext_text, path='/tmp/_neuralese_demo.phext' and gives back nothing; it does its work on what it 
+- function `encode` (neuralese/neuralese_codec.py) — units: list of dicts with frame=(c,v,b), gist, links=[coord strings].
+- function `fmt_coord` (neuralese/neuralese_codec.py) — Function fmt_coord takes c and gives back nothing; it does its work on what it is given.
+- function `vec_digest` (neuralese/neuralese_codec.py) — Function vec_digest takes gist: str and gives back str:.
+- function `__init__` (phext-mailbox/phext_mailbox.py) — Function __init__ takes self, args and gives back nothing; it does its work on what it is given.
+- function `compact` (phext-mailbox/phext_mailbox.py) — Function compact takes cfg, dry and gives back nothing; it does its work on what it is given.
+- function `fmt` (phext-mailbox/phext_mailbox.py) — Function fmt takes c and gives back nothing; it does its work on what it is given.
+- function `index_lines` (phext-mailbox/phext_mailbox.py) — Function index_lines takes cfg, scrolls and gives back nothing; it does its work on what it is given.
+- function `init` (phext-mailbox/phext_mailbox.py) — Function init takes cfg and gives back nothing; it does its work on what it is given.
+- function `load` (phext-mailbox/phext_mailbox.py) — Function load takes cfg and gives back nothing; it does its work on what it is given.
+- function `locked` (phext-mailbox/phext_mailbox.py) — Hold the mailbox lock.
+- function `main` (phext-mailbox/phext_mailbox.py) — Function main takes argv=None and gives back nothing; it does its work on what it is given.
+- function `save` (phext-mailbox/phext_mailbox.py) — Function save takes cfg, scrolls and gives back nothing; it does its work on what it is given.
+- function `unfmt` (phext-mailbox/phext_mailbox.py) — Function unfmt takes s and gives back nothing; it does its work on what it is given.
+- function `decode_all` (phext/audio-s2t/build_audio_phext.py) — Function decode_all takes fresh=False and gives back nothing; it does its work on what it is given.
+- function `emit` (phext/audio-s2t/build_audio_phext.py) — Function emit takes targets and gives back nothing; it does its work on what it is given.
+- function `f0_window` (phext/audio-s2t/build_audio_phext.py) — Crude autocorrelation pitch tracker: median F0 (Hz) over voiced frames
+- function `features` (phext/audio-s2t/build_audio_phext.py) — Function features takes seg and gives back nothing; it does its work on what it is given.
+- function `fmt` (phext/audio-s2t/build_audio_phext.py) — Function fmt takes coord and gives back nothing; it does its work on what it is given.
+- function `load_wav` (phext/audio-s2t/build_audio_phext.py) — Function load_wav takes uid and gives back nothing; it does its work on what it is given.
+- function `main` (phext/audio-s2t/build_audio_phext.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `norm_words` (phext/audio-s2t/build_audio_phext.py) — Function norm_words takes text and gives back nothing; it does its work on what it is given.
+- function `segment_utterance` (phext/audio-s2t/build_audio_phext.py) — Split one utterance's words at measured silences.
+- function `silence_runs` (phext/audio-s2t/build_audio_phext.py) — Measured silences (start_s, end_s) with an adaptive per-file threshold:
+- function `wer` (phext/audio-s2t/build_audio_phext.py) — Function wer takes ref, hyp and gives back nothing; it does its work on what it is given.
+- function `decode` (phext/audio-s2t/decode.py) — Function decode takes flac_path and gives back nothing; it does its work on what it is given.
+- function `main` (phext/audio-s2t/decode.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `load` (phext/audio-s2t/probe_silence.py) — Function load takes path and gives back nothing; it does its work on what it is given.
+- function `c` (phext/build_exocortex.py) — Function c takes s and gives back nothing; it does its work on what it is given.
+- function `implode` (phext/build_exocortex.py) — Function implode takes scrolls and gives back nothing; it does its work on what it is given.
+- function `fmt` (phext/parse_phext.py) — Function fmt takes coord and gives back nothing; it does its work on what it is given.
+- function `parse` (phext/parse_phext.py) — Function parse takes path and gives back nothing; it does its work on what it is given.
+- function `title_of` (phext/parse_phext.py) — Function title_of takes text and gives back nothing; it does its work on what it is given.
+- function `fmt` (site-map/insert_scroll.py) — Function fmt takes c and gives back nothing; it does its work on what it is given.
+- function `key_of` (site-map/insert_scroll.py) — Function key_of takes c and gives back nothing; it does its work on what it is given.
+- function `main` (site-map/insert_scroll.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `parse_slots` (site-map/insert_scroll.py) — Return [(coord_tuple, text_start, text_end, terminator_byte_or_None)].
+- function `parse_target` (site-map/insert_scroll.py) — Function parse_target takes s and gives back nothing; it does its work on what it is given.
+- function `C` (wavefront-film/build_wavefront.py) — Function C takes s and gives back nothing; it does its work on what it is given.
+- function `dist` (wavefront-film/build_wavefront.py) — Function dist takes a, b and gives back nothing; it does its work on what it is given.
+- function `entry` (wavefront-film/build_wavefront.py) — Function entry takes name, vals, kind, moment, evidence, justifs, strength, extra="", key=None, and gives back nothing; 
+- function `entry_body` (wavefront-film/build_wavefront.py) — Function entry_body takes e and gives back nothing; it does its work on what it is given.
+- function `horizon_from_span` (wavefront-film/build_wavefront.py) — Function horizon_from_span takes key and gives back nothing; it does its work on what it is given.
+- function `recip_from_share` (wavefront-film/build_wavefront.py) — Function recip_from_share takes s and gives back nothing; it does its work on what it is given.
+- function `region` (wavefront-film/build_wavefront.py) — The gated reading: desirability is gated on alignment axes, never averaged.
+- function `share` (wavefront-film/build_wavefront.py) — Function share takes key and gives back nothing; it does its work on what it is given.
+- function `span_days` (wavefront-film/build_wavefront.py) — Function span_days takes key and gives back nothing; it does its work on what it is given.
+- function `rec` (wavefront-film/mine_contacts.py) — Function rec takes key and gives back nothing; it does its work on what it is given.
+- function `gate` (wavefront-film/viz/extract_data.py) — Function gate takes vals and gives back nothing; it does its work on what it is given.
+- function `jitter` (wavefront-film/viz/extract_data.py) — Function jitter takes name, amp and gives back nothing; it does its work on what it is given.
+- function `load_js` (wavefront-film/viz2/extract2.py) — Function load_js takes path and gives back nothing; it does its work on what it is given.
+- function `shell_offset` (wavefront-film/viz2/extract2.py) — Function shell_offset takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what
+- function `camera` (wavefront-film/viz2/render2.py) — Function camera takes f and gives back nothing; it does its work on what it is given.
+- function `center_text` (wavefront-film/viz2/render2.py) — Function center_text takes dr, cx, y, text, font, fill and gives back nothing; it does its work on what it is given.
+- function `frame_of` (wavefront-film/viz2/render2.py) — Function frame_of takes ts and gives back film frame (linear over main segment).
+- function `hsv2rgb` (wavefront-film/viz2/render2.py) — Function hsv2rgb takes h, s, v and gives back nothing; it does its work on what it is given.
+- function `kernel` (wavefront-film/viz2/render2.py) — Function kernel takes n, sigma and gives back nothing; it does its work on what it is given.
+- function `node_color` (wavefront-film/viz2/render2.py) — Function node_color takes n and gives back nothing; it does its work on what it is given.
+- function `project` (wavefront-film/viz2/render2.py) — Function project takes pts, cam and gives back nothing; it does its work on what it is given.
+- function `render` (wavefront-film/viz2/render2.py) — Function render takes f and gives back nothing; it does its work on what it is given.
+- function `smooth` (wavefront-film/viz2/render2.py) — Function smooth takes a, b, x and gives back nothing; it does its work on what it is given.
+- function `stamp` (wavefront-film/viz2/render2.py) — Function stamp takes buf, sx, sy, kern, color, gain and gives back nothing; it does its work on what it is given.
+- function `bezier_arc` (wavefront-film/viz3/render3.py) — Quadratic bezier from p0 to p1 (world space), bowed off the chord.
+- function `box_edges` (wavefront-film/viz3/render3.py) — Function box_edges takes c, sz and gives back nothing; it does its work on what it is given.
+- function `camera` (wavefront-film/viz3/render3.py) — Returns (pos, right, up, fwd).
+- function `catmull_rom` (wavefront-film/viz3/render3.py) — Function catmull_rom takes p0, p1, p2, p3, t and gives back nothing; it does its work on what it is given.
+- function `center_text` (wavefront-film/viz3/render3.py) — Function center_text takes dr, cx, y, text, font, fill and gives back nothing; it does its work on what it is given.
+- function `frame_of` (wavefront-film/viz3/render3.py) — Function frame_of takes ts and gives back nothing; it does its work on what it is given.
+- function `get_cam` (wavefront-film/viz3/render3.py) — Function get_cam takes f, cen and gives back nothing; it does its work on what it is given.
+- function `hsv2rgb` (wavefront-film/viz3/render3.py) — Function hsv2rgb takes h, s, v and gives back nothing; it does its work on what it is given.
+- function `kernel` (wavefront-film/viz3/render3.py) — Function kernel takes n, sigma and gives back nothing; it does its work on what it is given.
+- function `node_color` (wavefront-film/viz3/render3.py) — Function node_color takes n and gives back nothing; it does its work on what it is given.
+- function `project` (wavefront-film/viz3/render3.py) — Function project takes pts, cam and gives back nothing; it does its work on what it is given.
+- function `render` (wavefront-film/viz3/render3.py) — Function render takes f and gives back nothing; it does its work on what it is given.
+- function `rot_only` (wavefront-film/viz3/render3.py) — Function rot_only takes pts, f and gives back nothing; it does its work on what it is given.
+- function `smooth` (wavefront-film/viz3/render3.py) — Function smooth takes a, b, x and gives back nothing; it does its work on what it is given.
+- function `spline_pos_at` (wavefront-film/viz3/render3.py) — Will's base-space position on the spline at film frame f.
+- function `stamp` (wavefront-film/viz3/render3.py) — Function stamp takes buf, sx, sy, kern, color, gain and gives back nothing; it does its work on what it is given.
+- function `theta` (wavefront-film/viz3/render3.py) — Function theta takes f and gives back nothing; it does its work on what it is given.
+- function `to_world` (wavefront-film/viz3/render3.py) — base -> warped (Overton) -> rotated about CORE (galaxy).
+- function `ts_frame` (wavefront-film/viz3/render3.py) — Function ts_frame takes y, m, d=1 and gives back nothing; it does its work on what it is given.
+- function `warp` (wavefront-film/viz3/render3.py) — Pull points toward the drifted window: displacement = drift * falloff(dist to window).
+- function `window_center` (wavefront-film/viz3/render3.py) — Function window_center takes f and gives back nothing; it does its work on what it is given.
+- function `roll` (wavefront-film/viz4/extract_tone.py) — Function roll takes a, w and gives back nothing; it does its work on what it is given.
+- function `ym` (wavefront-film/viz4/extract_tone.py) — Function ym takes ts and gives back nothing; it does its work on what it is given.
+- function `bezier_arc` (wavefront-film/viz4/render4.py) — Function bezier_arc takes p0, p1, cam, u_max=1.0, n=10 and gives back nothing; it does its work on what it is given.
+- function `camera` (wavefront-film/viz4/render4.py) — Function camera takes f and gives back nothing; it does its work on what it is given.
+- function `catmull_rom` (wavefront-film/viz4/render4.py) — Function catmull_rom takes p0, p1, p2, p3, t and gives back nothing; it does its work on what it is given.
+- function `center_text` (wavefront-film/viz4/render4.py) — Function center_text takes dr, cx, y, text, font, fill and gives back nothing; it does its work on what it is given.
+- function `drift_at` (wavefront-film/viz4/render4.py) — Function drift_at takes hop and gives back nothing; it does its work on what it is given.
+- function `frame_of_hop` (wavefront-film/viz4/render4.py) — Function frame_of_hop takes h and gives back nothing; it does its work on what it is given.
+- function `gold_rgb` (wavefront-film/viz4/render4.py) — Function gold_rgb takes h, bright=1.0 and gives back nothing; it does its work on what it is given.
+- function `hop_float` (wavefront-film/viz4/render4.py) — Function hop_float takes f and gives back nothing; it does its work on what it is given.
+- function `hop_of_ts` (wavefront-film/viz4/render4.py) — Function hop_of_ts takes ts and gives back nothing; it does its work on what it is given.
+- function `kernel` (wavefront-film/viz4/render4.py) — Function kernel takes n, sigma and gives back nothing; it does its work on what it is given.
+- function `node_color` (wavefront-film/viz4/render4.py) — Function node_color takes n and gives back nothing; it does its work on what it is given.
+- function `noise_field` (wavefront-film/viz4/render4.py) — Function noise_field takes sw, sh and gives back nothing; it does its work on what it is given.
+- function `project` (wavefront-film/viz4/render4.py) — Function project takes pts, cam and gives back nothing; it does its work on what it is given.
+- function `render` (wavefront-film/viz4/render4.py) — Function render takes f and gives back nothing; it does its work on what it is given.
+- function `smooth` (wavefront-film/viz4/render4.py) — Function smooth takes a, b, x and gives back nothing; it does its work on what it is given.
+- function `spline_pos_at_hop` (wavefront-film/viz4/render4.py) — Function spline_pos_at_hop takes h and gives back nothing; it does its work on what it is given.
+- function `stamp` (wavefront-film/viz4/render4.py) — Function stamp takes buf, sx, sy, kern, color, gain and gives back nothing; it does its work on what it is given.
+- function `theta` (wavefront-film/viz4/render4.py) — Function theta takes f and gives back nothing; it does its work on what it is given.
+- function `to_world` (wavefront-film/viz4/render4.py) — Function to_world takes pts, f, hop and gives back nothing; it does its work on what it is given.
+- function `tone_norm` (wavefront-film/viz4/render4.py) — Function tone_norm takes h and gives back nothing; it does its work on what it is given.
+- function `bezier_arc` (wavefront-film/viz4/render4_overton.py) — Function bezier_arc takes p0, p1, cam, u_max=1.0, n=10 and gives back nothing; it does its work on what it is given.
+- function `box_edges` (wavefront-film/viz4/render4_overton.py) — Function box_edges takes c, sz and gives back nothing; it does its work on what it is given.
+- function `build_annual` (wavefront-film/viz4/render4_overton.py) — Function build_annual takes stab_ts_arr and gives back nothing; it does its work on what it is given.
+- function `camera` (wavefront-film/viz4/render4_overton.py) — Function camera takes f and gives back nothing; it does its work on what it is given.
+- function `catmull_rom` (wavefront-film/viz4/render4_overton.py) — Function catmull_rom takes p0, p1, p2, p3, t and gives back nothing; it does its work on what it is given.
+- function `center_text` (wavefront-film/viz4/render4_overton.py) — Function center_text takes dr, cx, y, text, font, fill and gives back nothing; it does its work on what it is given.
+- function `drift_at` (wavefront-film/viz4/render4_overton.py) — Window center at a hop: c(y-1) gliding to c(y) over the first EASE_HOPS hops of year y.
+- function `flat_world` (wavefront-film/viz4/render4_overton.py) — Rotation + breathing about CORE only (goalposts/ring ride the galaxy, not the warp).
+- function `frame_of_hop` (wavefront-film/viz4/render4_overton.py) — Function frame_of_hop takes h and gives back nothing; it does its work on what it is given.
+- function `gold_rgb` (wavefront-film/viz4/render4_overton.py) — Function gold_rgb takes h, bright=1.0 and gives back nothing; it does its work on what it is given.
+- function `hop_float` (wavefront-film/viz4/render4_overton.py) — Function hop_float takes f and gives back nothing; it does its work on what it is given.
+- function `hop_of_ts` (wavefront-film/viz4/render4_overton.py) — Function hop_of_ts takes ts and gives back nothing; it does its work on what it is given.
+- function `kernel` (wavefront-film/viz4/render4_overton.py) — Function kernel takes n, sigma and gives back nothing; it does its work on what it is given.
+- function `node_color` (wavefront-film/viz4/render4_overton.py) — Function node_color takes n and gives back nothing; it does its work on what it is given.
+- function `noise_field` (wavefront-film/viz4/render4_overton.py) — Function noise_field takes sw, sh and gives back nothing; it does its work on what it is given.
+- function `project` (wavefront-film/viz4/render4_overton.py) — Function project takes pts, cam and gives back nothing; it does its work on what it is given.
+- function `render` (wavefront-film/viz4/render4_overton.py) — Function render takes f and gives back nothing; it does its work on what it is given.
+- function `smooth` (wavefront-film/viz4/render4_overton.py) — Function smooth takes a, b, x and gives back nothing; it does its work on what it is given.
+- function `spline_pos_at_hop` (wavefront-film/viz4/render4_overton.py) — Function spline_pos_at_hop takes h and gives back nothing; it does its work on what it is given.
+- function `stamp` (wavefront-film/viz4/render4_overton.py) — Function stamp takes buf, sx, sy, kern, color, gain and gives back nothing; it does its work on what it is given.
+- function `theta` (wavefront-film/viz4/render4_overton.py) — Function theta takes f and gives back nothing; it does its work on what it is given.
+- function `to_world` (wavefront-film/viz4/render4_overton.py) — Function to_world takes pts, f, hop and gives back nothing; it does its work on what it is given.
+- function `tone_norm` (wavefront-film/viz4/render4_overton.py) — Function tone_norm takes h and gives back nothing; it does its work on what it is given.
+- function `bezier_arc` (wavefront-film/viz5/render5.py) — Function bezier_arc takes p0, p1, cam, u_max=1.0, n=10 and gives back nothing; it does its work on what it is given.
+- function `camera` (wavefront-film/viz5/render5.py) — Function camera takes f and gives back nothing; it does its work on what it is given.
+- function `catmull_rom` (wavefront-film/viz5/render5.py) — Function catmull_rom takes p0, p1, p2, p3, t and gives back nothing; it does its work on what it is given.
+- function `center_text` (wavefront-film/viz5/render5.py) — Function center_text takes dr, cx, y, text, font, fill and gives back nothing; it does its work on what it is given.
+- function `deep_frac` (wavefront-film/viz5/render5.py) — Function deep_frac takes hf and gives back nothing; it does its work on what it is given.
+- function `drift_at` (wavefront-film/viz5/render5.py) — Function drift_at takes hop and gives back nothing; it does its work on what it is given.
+- function `frame_of_hop` (wavefront-film/viz5/render5.py) — Function frame_of_hop takes h and gives back nothing; it does its work on what it is given.
+- function `gold_rgb` (wavefront-film/viz5/render5.py) — Function gold_rgb takes h, bright=1.0 and gives back nothing; it does its work on what it is given.
+- function `hop_float` (wavefront-film/viz5/render5.py) — Function hop_float takes f and gives back nothing; it does its work on what it is given.
+- function `hop_of_ts` (wavefront-film/viz5/render5.py) — Function hop_of_ts takes ts and gives back nothing; it does its work on what it is given.
+- function `kernel` (wavefront-film/viz5/render5.py) — Function kernel takes n, sigma and gives back nothing; it does its work on what it is given.
+- function `node_color` (wavefront-film/viz5/render5.py) — Function node_color takes n and gives back nothing; it does its work on what it is given.
+- function `node_hop` (wavefront-film/viz5/render5.py) — Hop used for node orbits: follows hop_float, then keeps advancing at
+- function `node_pos_all` (wavefront-film/viz5/render5.py) — All node positions at (float) hop hf: anchor + epicycle offset.
+- function `noise_field` (wavefront-film/viz5/render5.py) — Function noise_field takes sw, sh and gives back nothing; it does its work on what it is given.
+- function `project` (wavefront-film/viz5/render5.py) — Function project takes pts, cam and gives back nothing; it does its work on what it is given.
+- function `render` (wavefront-film/viz5/render5.py) — Function render takes f and gives back nothing; it does its work on what it is given.
+- function `smooth` (wavefront-film/viz5/render5.py) — Function smooth takes a, b, x and gives back nothing; it does its work on what it is given.
+- function `spline_pos_at_hop` (wavefront-film/viz5/render5.py) — Function spline_pos_at_hop takes h and gives back nothing; it does its work on what it is given.
+- function `stamp` (wavefront-film/viz5/render5.py) — Function stamp takes buf, sx, sy, kern, color, gain and gives back nothing; it does its work on what it is given.
+- function `theta` (wavefront-film/viz5/render5.py) — Function theta takes f and gives back nothing; it does its work on what it is given.
+- function `to_world` (wavefront-film/viz5/render5.py) — Function to_world takes pts, f, hop and gives back nothing; it does its work on what it is given.
+- function `tone_norm` (wavefront-film/viz5/render5.py) — Function tone_norm takes h and gives back nothing; it does its work on what it is given.
+- function `bezier_arc` (wavefront-film/viz6/render6.py) — Function bezier_arc takes p0, p1, cam, u_max=1.0, n=10 and gives back nothing; it does its work on what it is given.
+- function `camera` (wavefront-film/viz6/render6.py) — Function camera takes f and gives back nothing; it does its work on what it is given.
+- function `card_active` (wavefront-film/viz6/render6.py) — Function card_active takes f and gives back nothing; it does its work on what it is given.
+- function `catmull_rom` (wavefront-film/viz6/render6.py) — Function catmull_rom takes p0, p1, p2, p3, t and gives back nothing; it does its work on what it is given.
+- function `center_text` (wavefront-film/viz6/render6.py) — Function center_text takes dr, cx, y, text, font, fill and gives back nothing; it does its work on what it is given.
+- function `comet_state` (wavefront-film/viz6/render6.py) — Per comet: (tail->head base-space points, fade) at frame f.
+- function `draw_spaced` (wavefront-film/viz6/render6.py) — Function draw_spaced takes dr, cx, y, text, font, fill, tracking=6 and gives back nothing; it does its work on what it i
+- function `draw_spaced_left` (wavefront-film/viz6/render6.py) — Function draw_spaced_left takes dr, x, y, text, font, fill, tracking=4 and gives back nothing; it does its work on what 
+- function `drift_at` (wavefront-film/viz6/render6.py) — Function drift_at takes hop and gives back nothing; it does its work on what it is given.
+- function `frame_of_hop` (wavefront-film/viz6/render6.py) — Function frame_of_hop takes h and gives back nothing; it does its work on what it is given.
+- function `gold_rgb` (wavefront-film/viz6/render6.py) — Function gold_rgb takes h, bright=1.0 and gives back nothing; it does its work on what it is given.
+- function `hop_float` (wavefront-film/viz6/render6.py) — Function hop_float takes f and gives back nothing; it does its work on what it is given.
+- function `kernel` (wavefront-film/viz6/render6.py) — Function kernel takes n, sigma and gives back nothing; it does its work on what it is given.
+- function `node_color` (wavefront-film/viz6/render6.py) — Function node_color takes n and gives back nothing; it does its work on what it is given.
+- function `node_hop` (wavefront-film/viz6/render6.py) — Function node_hop takes f and gives back nothing; it does its work on what it is given.
+- function `node_pos_all` (wavefront-film/viz6/render6.py) — Function node_pos_all takes hf and gives back nothing; it does its work on what it is given.
+- function `noise_field` (wavefront-film/viz6/render6.py) — Function noise_field takes sw, sh and gives back nothing; it does its work on what it is given.
+- function `path_at` (wavefront-film/viz6/render6.py) — Function path_at takes s and gives back nothing; it does its work on what it is given.
+- function `project` (wavefront-film/viz6/render6.py) — Function project takes pts, cam and gives back nothing; it does its work on what it is given.
+- function `render` (wavefront-film/viz6/render6.py) — Function render takes f and gives back nothing; it does its work on what it is given.
+- function `sanitize` (wavefront-film/viz6/render6.py) — Function sanitize takes text and gives back nothing; it does its work on what it is given.
+- function `smooth` (wavefront-film/viz6/render6.py) — Function smooth takes a, b, x and gives back nothing; it does its work on what it is given.
+- function `spaced_width` (wavefront-film/viz6/render6.py) — Function spaced_width takes text, font, tracking and gives back nothing; it does its work on what it is given.
+- function `spline_pos_at_hop` (wavefront-film/viz6/render6.py) — Function spline_pos_at_hop takes h and gives back nothing; it does its work on what it is given.
+- function `stamp` (wavefront-film/viz6/render6.py) — Function stamp takes buf, sx, sy, kern, color, gain and gives back nothing; it does its work on what it is given.
+- function `theta` (wavefront-film/viz6/render6.py) — Function theta takes f and gives back nothing; it does its work on what it is given.
+- function `to_world` (wavefront-film/viz6/render6.py) — Function to_world takes pts, f, hop and gives back nothing; it does its work on what it is given.
+- function `tone_norm` (wavefront-film/viz6/render6.py) — Function tone_norm takes h and gives back nothing; it does its work on what it is given.
+- function `wrap` (wavefront-film/viz6/render6.py) — Function wrap takes text, font, maxw, maxlines and gives back nothing; it does its work on what it is given.
+- function `bezier_arc` (wavefront-film/viz7/render7.py) — Function bezier_arc takes p0, p1, cam, u_max=1.0, n=18 and gives back nothing; it does its work on what it is given.
+- function `camera` (wavefront-film/viz7/render7.py) — Function camera takes f and gives back nothing; it does its work on what it is given.
+- function `catmull_rom` (wavefront-film/viz7/render7.py) — Function catmull_rom takes p0, p1, p2, p3, t, tension=0.0 and gives back nothing; it does its work on what it is given.
+- function `center_text` (wavefront-film/viz7/render7.py) — Function center_text takes dr, cx, y, text, font, fill and gives back nothing; it does its work on what it is given.
+- function `comet_state` (wavefront-film/viz7/render7.py) — Per comet: (tail->head base-space points, fade) at frame f.
+- function `draw_spaced` (wavefront-film/viz7/render7.py) — Function draw_spaced takes dr, cx, y, text, font, fill, tracking=6 and gives back nothing; it does its work on what it i
+- function `draw_spaced_left` (wavefront-film/viz7/render7.py) — Function draw_spaced_left takes dr, x, y, text, font, fill, tracking=4 and gives back nothing; it does its work on what 
+- function `draw_strip` (wavefront-film/viz7/render7.py) — Function draw_strip takes dr, f and gives back nothing; it does its work on what it is given.
+- function `drift_at` (wavefront-film/viz7/render7.py) — Function drift_at takes hop and gives back nothing; it does its work on what it is given.
+- function `frame_of_hop` (wavefront-film/viz7/render7.py) — Function frame_of_hop takes h and gives back nothing; it does its work on what it is given.
+- function `gold_rgb` (wavefront-film/viz7/render7.py) — Function gold_rgb takes h, bright=1.0 and gives back nothing; it does its work on what it is given.
+- function `hop_float` (wavefront-film/viz7/render7.py) — Function hop_float takes f and gives back nothing; it does its work on what it is given.
+- function `kernel` (wavefront-film/viz7/render7.py) — Function kernel takes n, sigma and gives back nothing; it does its work on what it is given.
+- function `node_color` (wavefront-film/viz7/render7.py) — Function node_color takes n and gives back nothing; it does its work on what it is given.
+- function `node_hop` (wavefront-film/viz7/render7.py) — Function node_hop takes f and gives back nothing; it does its work on what it is given.
+- function `node_pos_all` (wavefront-film/viz7/render7.py) — Function node_pos_all takes hf and gives back nothing; it does its work on what it is given.
+- function `noise_field` (wavefront-film/viz7/render7.py) — Function noise_field takes sw, sh and gives back nothing; it does its work on what it is given.
+- function `path_at` (wavefront-film/viz7/render7.py) — Function path_at takes s and gives back nothing; it does its work on what it is given.
+- function `project` (wavefront-film/viz7/render7.py) — Function project takes pts, cam and gives back nothing; it does its work on what it is given.
+- function `render` (wavefront-film/viz7/render7.py) — Function render takes f and gives back nothing; it does its work on what it is given.
+- function `sanitize` (wavefront-film/viz7/render7.py) — Function sanitize takes text and gives back nothing; it does its work on what it is given.
+- function `smooth` (wavefront-film/viz7/render7.py) — Function smooth takes a, b, x and gives back nothing; it does its work on what it is given.
+- function `spaced_width` (wavefront-film/viz7/render7.py) — Function spaced_width takes text, font, tracking and gives back nothing; it does its work on what it is given.
+- function `spline_pos_at_hop` (wavefront-film/viz7/render7.py) — Function spline_pos_at_hop takes h and gives back nothing; it does its work on what it is given.
+- function `stamp` (wavefront-film/viz7/render7.py) — Function stamp takes buf, sx, sy, kern, color, gain and gives back nothing; it does its work on what it is given.
+- function `strip_alpha` (wavefront-film/viz7/render7.py) — Function strip_alpha takes f and gives back nothing; it does its work on what it is given.
+- function `strip_offset` (wavefront-film/viz7/render7.py) — Function strip_offset takes f and gives back nothing; it does its work on what it is given.
+- function `theta` (wavefront-film/viz7/render7.py) — Function theta takes f and gives back nothing; it does its work on what it is given.
+- function `to_world` (wavefront-film/viz7/render7.py) — Function to_world takes pts, f, hop and gives back nothing; it does its work on what it is given.
+- function `tone_norm` (wavefront-film/viz7/render7.py) — Function tone_norm takes h and gives back nothing; it does its work on what it is given.
+- function `wrap` (wavefront-film/viz7/render7.py) — Function wrap takes text, font, maxw, maxlines and gives back nothing; it does its work on what it is given.
+- function `norm` (wavefront-film/viz8/extract_features.py) — Function norm takes a and gives back nothing; it does its work on what it is given.
+- function `pct` (wavefront-film/viz8/extract_features.py) — Function pct takes a, ps= and gives back nothing; it does its work on what it is given.
+- function `roll` (wavefront-film/viz8/extract_features.py) — Function roll takes x, w and gives back nothing; it does its work on what it is given.
+- function `smooth2` (wavefront-film/viz8/extract_features.py) — Function smooth2 takes a, w1=201, w2=51 and gives back nothing; it does its work on what it is given.
+- function `tokens_of` (wavefront-film/viz8/extract_features.py) — Function tokens_of takes text and gives back nothing; it does its work on what it is given.
+- function `bezier_arc` (wavefront-film/viz8/render8.py) — Function bezier_arc takes p0, p1, cam, u_max=1.0, n=18 and gives back nothing; it does its work on what it is given.
+- function `bezier_arc8` (wavefront-film/viz8/render8.py) — v8 arc: bow and lateral wobble driven by the landing tweet's own
+- function `camera` (wavefront-film/viz8/render8.py) — Function camera takes f and gives back nothing; it does its work on what it is given.
+- function `catmull_rom` (wavefront-film/viz8/render8.py) — Function catmull_rom takes p0, p1, p2, p3, t, tension=0.0 and gives back nothing; it does its work on what it is given.
+- function `center_text` (wavefront-film/viz8/render8.py) — Function center_text takes dr, cx, y, text, font, fill and gives back nothing; it does its work on what it is given.
+- function `comet_state` (wavefront-film/viz8/render8.py) — Per comet: (tail->head base-space points, fade) at frame f.
+- function `draw_spaced` (wavefront-film/viz8/render8.py) — Function draw_spaced takes dr, cx, y, text, font, fill, tracking=6 and gives back nothing; it does its work on what it i
+- function `draw_spaced_left` (wavefront-film/viz8/render8.py) — Function draw_spaced_left takes dr, x, y, text, font, fill, tracking=4 and gives back nothing; it does its work on what 
+- function `draw_strip` (wavefront-film/viz8/render8.py) — Function draw_strip takes dr, f and gives back nothing; it does its work on what it is given.
+- function `drift_at` (wavefront-film/viz8/render8.py) — Function drift_at takes hop and gives back nothing; it does its work on what it is given.
+- function `frame_of_hop` (wavefront-film/viz8/render8.py) — Function frame_of_hop takes h and gives back nothing; it does its work on what it is given.
+- function `gold_rgb` (wavefront-film/viz8/render8.py) — Function gold_rgb takes h, bright=1.0 and gives back nothing; it does its work on what it is given.
+- function `hop_float` (wavefront-film/viz8/render8.py) — Function hop_float takes f and gives back nothing; it does its work on what it is given.
+- function `kernel` (wavefront-film/viz8/render8.py) — Function kernel takes n, sigma and gives back nothing; it does its work on what it is given.
+- function `node_color` (wavefront-film/viz8/render8.py) — Function node_color takes n and gives back nothing; it does its work on what it is given.
+- function `node_hop` (wavefront-film/viz8/render8.py) — Function node_hop takes f and gives back nothing; it does its work on what it is given.
+- function `node_pos_all` (wavefront-film/viz8/render8.py) — Function node_pos_all takes hf and gives back nothing; it does its work on what it is given.
+- function `noise_field` (wavefront-film/viz8/render8.py) — Function noise_field takes sw, sh and gives back nothing; it does its work on what it is given.
+- function `path_at` (wavefront-film/viz8/render8.py) — Function path_at takes s and gives back nothing; it does its work on what it is given.
+- function `project` (wavefront-film/viz8/render8.py) — Function project takes pts, cam and gives back nothing; it does its work on what it is given.
+- function `render` (wavefront-film/viz8/render8.py) — Function render takes f and gives back nothing; it does its work on what it is given.
+- function `sanitize` (wavefront-film/viz8/render8.py) — Function sanitize takes text and gives back nothing; it does its work on what it is given.
+- function `sig_at` (wavefront-film/viz8/render8.py) — Function sig_at takes arr, h and gives back nothing; it does its work on what it is given.
+- function `smooth` (wavefront-film/viz8/render8.py) — Function smooth takes a, b, x and gives back nothing; it does its work on what it is given.
+- function `spaced_width` (wavefront-film/viz8/render8.py) — Function spaced_width takes text, font, tracking and gives back nothing; it does its work on what it is given.
+- function `spline_pos_at_hop` (wavefront-film/viz8/render8.py) — Function spline_pos_at_hop takes h and gives back nothing; it does its work on what it is given.
+- function `stamp` (wavefront-film/viz8/render8.py) — Function stamp takes buf, sx, sy, kern, color, gain and gives back nothing; it does its work on what it is given.
+- function `strip_alpha` (wavefront-film/viz8/render8.py) — Function strip_alpha takes f and gives back nothing; it does its work on what it is given.
+- function `strip_offset` (wavefront-film/viz8/render8.py) — Function strip_offset takes f and gives back nothing; it does its work on what it is given.
+- function `theta` (wavefront-film/viz8/render8.py) — Function theta takes f and gives back nothing; it does its work on what it is given.
+- function `to_world` (wavefront-film/viz8/render8.py) — Function to_world takes pts, f, hop and gives back nothing; it does its work on what it is given.
+- function `tone_norm` (wavefront-film/viz8/render8.py) — Function tone_norm takes h and gives back nothing; it does its work on what it is given.
+- function `wrap` (wavefront-film/viz8/render8.py) — Function wrap takes text, font, maxw, maxlines and gives back nothing; it does its work on what it is given.
+- function `C` (wavefront-kit/build_your_wavefront.py) — Function C takes s and gives back nothing; it does its work on what it is given.
+- function `assemble` (wavefront-kit/build_your_wavefront.py) — Function assemble takes scrolls and gives back nothing; it does its work on what it is given.
+- function `detected_vals` (wavefront-kit/build_your_wavefront.py) — Function detected_vals takes c and gives back nothing; it does its work on what it is given.
+- function `dist` (wavefront-kit/build_your_wavefront.py) — Function dist takes a, b and gives back nothing; it does its work on what it is given.
+- function `entry_body` (wavefront-kit/build_your_wavefront.py) — Function entry_body takes e and gives back nothing; it does its work on what it is given.
+- function `fmt` (wavefront-kit/build_your_wavefront.py) — Function fmt takes coord and gives back nothing; it does its work on what it is given.
+- function `load_lens` (wavefront-kit/build_your_wavefront.py) — Merge an owner's lens file over the default lens, field by field.
+- function `main` (wavefront-kit/build_your_wavefront.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `parse_phext` (wavefront-kit/build_your_wavefront.py) — Function parse_phext takes data and gives back nothing; it does its work on what it is given.
+- function `recip_from_share` (wavefront-kit/build_your_wavefront.py) — Function recip_from_share takes s and gives back nothing; it does its work on what it is given.
+- function `region` (wavefront-kit/build_your_wavefront.py) — Function region takes vals and gives back nothing; it does its work on what it is given.
+- function `detect_handle` (wavefront-kit/mine_your_archive.py) — Best-effort owner handle from data/account.js (username field only).
+- function `find_tweet_files` (wavefront-kit/mine_your_archive.py) — Resolve the archive argument to an ordered list of tweet files.
+- function `load_export_file` (wavefront-kit/mine_your_archive.py) — Parse a .js export file (strip the window.YTD.* wrapper) or plain JSON.
+- function `main` (wavefront-kit/mine_your_archive.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `parse_date` (wavefront-kit/mine_your_archive.py) — Function parse_date takes raw and gives back nothing; it does its work on what it is given.
+- function `part_number` (wavefront-kit/mine_your_archive.py) — Function part_number takes name and gives back nothing; it does its work on what it is given.
+- function `rec` (wavefront-kit/mine_your_archive.py) — Function rec takes key and gives back nothing; it does its work on what it is given.
