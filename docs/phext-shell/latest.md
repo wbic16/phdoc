@@ -1,6 +1,6 @@
 # phext-shell — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 91). Project root: /home/wbic16/phdoc-sweep/proj/phext-shell. Scanned at commit 4aae9abc2611110ba9d20392586cb6ddd78bfa43. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/phext-shell/. Scanned at commit 4aae9abc2611110ba9d20392586cb6ddd78bfa43. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -21,13 +21,20 @@ Direct dependencies: 1.
 
 ## Authors
 
-The git log holds 35 commits. The authors, by commit count:
+The git log holds 35 commits.
 
-- Will Bickford <wbic16@gmail.com> — 27 commits (77.1%)
-- Emise <emise@mirrorborn.us> — 3 commits (8.6%)
-- Theia <theia@mirrorborn.us> — 3 commits (8.6%)
-- Orin <orin@mirrorborn.us> — 1 commit (2.9%)
-- Seb <seb@mortrix.net> — 1 commit (2.9%)
+The author of record is **Will Bickford** — 34 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Will Bickford (his own identities) — 27 commits
+- Emise — 3 commits
+- Theia — 3 commits
+- Orin — 1 commit
+
+Other authors, kept as themselves (not Exocortical cluster personas; never folded):
+
+- Seb <seb@mortrix.net> — 1 commit
 
 ---
 
@@ -79,7 +86,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 - Origin: /home/wbic16/github-archive/mirrors/phext-shell.git
 - Branch: main
 - Head commit: 4aae9abc2611110ba9d20392586cb6ddd78bfa43
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
@@ -295,3 +302,9 @@ Signature: `flag --------`
 What it does: A command line flag, --------. It is read by the program when the user passes it.
 
 (Where these words came from: signature.)
+
+---
+
+## Provenance
+
+This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/phext-shell/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
