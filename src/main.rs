@@ -965,11 +965,8 @@ fn sections(scan: &Scan, agent: &BTreeMap<String, String>) -> (Vec<(String, Stri
     if scan.authors.is_empty() {
         a.push_str("No git history was read, so no authors are recorded.\n");
     } else {
-        a.push_str(&format!("The git log holds {} commits. The authors, by commit count:\n\n", scan.total_commits));
-        for (who, n) in &scan.authors {
-            let share = if scan.total_commits > 0 { (*n as f64) * 100.0 / (scan.total_commits as f64) } else { 0.0 };
-            a.push_str(&format!("- {} — {} commit{} ({:.1}%)\n", who, n, if *n == 1 { "" } else { "s" }, share));
-        }
+        a.push_str(&format!("The git log holds {} commits.\n\n", scan.total_commits));
+        a.push_str(&authors_folded_lines(&scan.authors));
     }
     out.push(("Authors".into(), a));
 
@@ -1359,6 +1356,111 @@ struct FoldState {
     rfcs_count: Option<usize>,
     head_sha: String,
     head_date: String,
+}
+
+/// Author fold (Will, 2026-11-22 10:59 CST): "fold all Exocortical
+/// authors to date into my account. I speak for the cluster. Keep it
+/// annotated by persona still." The author of record for cluster work
+/// is Will Bickford; every cluster persona identity maps to a persona
+/// label that is kept as annotation under his name. The fold is
+/// presentation only — git history and the chain's per-commit facts
+/// are unchanged. HARD BOUNDARY: external contributors are never
+/// folded. An identity maps only on positive evidence: Will's own
+/// names, a cluster persona's name, or a named seat at a cluster
+/// domain. Anything else returns None and stays itself, unmapped.
+fn author_fold(identity: &str) -> Option<&'static str> {
+    let lower = identity.to_lowercase();
+    let name = lower.split('<').next().unwrap_or("").trim();
+    let email = lower.split('<').nth(1).unwrap_or("").trim_end_matches('>').trim();
+    if name == "will bickford" || name == "wbic16" {
+        return Some("Will Bickford");
+    }
+    if name.starts_with("emise (rogue)") {
+        return Some("Rogue");
+    }
+    if name.starts_with("emise") {
+        return Some("Emise");
+    }
+    if name == "theia" {
+        return Some("Theia");
+    }
+    if name.starts_with("verse") {
+        return Some("Verse");
+    }
+    if identity == "Claude <noreply@anthropic.com>" {
+        return Some("Claude");
+    }
+    let cluster_domain = email.ends_with("@mirrorborn.us")
+        || email.ends_with("@mirrorborn")
+        || email.ends_with(".mirrorborn")
+        || email.ends_with("@visionquest.me")
+        || email.ends_with("@phext.io")
+        || email.ends_with("@phext.inc");
+    if cluster_domain {
+        return match name {
+            "lux" => Some("Lux"),
+            "chrys" => Some("Chrys"),
+            "aster" => Some("Aster"),
+            "cyon" => Some("Cyon"),
+            "phex" => Some("Phex"),
+            "orin" => Some("Orin"),
+            "alveus" => Some("Alveus"),
+            "glia" => Some("Glia"),
+            "soma" => Some("Soma"),
+            "velum" => Some("Velum"),
+            "torus" => Some("Torus"),
+            "gyrus" => Some("Gyrus"),
+            "axon" => Some("Axon"),
+            "corus" => Some("Corus"),
+            "exo" => Some("Exo"),
+            _ => None,
+        };
+    }
+    None
+}
+
+/// Render the authors inventory under the fold: Will Bickford as author
+/// of record for all folded (cluster) work, per-persona annotation kept,
+/// external authors listed as themselves.
+fn authors_folded_lines(authors: &[(String, usize)]) -> String {
+    let mut personas: BTreeMap<&'static str, usize> = BTreeMap::new();
+    let mut external: Vec<(&String, &usize)> = Vec::new();
+    let mut folded_total = 0usize;
+    for (who, n) in authors {
+        match author_fold(who) {
+            Some(persona) => {
+                *personas.entry(persona).or_insert(0) += n;
+                folded_total += n;
+            }
+            None => external.push((who, n)),
+        }
+    }
+    let mut out = String::new();
+    if folded_total == 0 {
+        for (who, n) in authors {
+            out.push_str(&format!("- {} — {} commit{}\n", who, n, if *n == 1 { "" } else { "s" }));
+        }
+        return out;
+    }
+    out.push_str(&format!(
+        "The author of record is **Will Bickford** — {} commit{} folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — \"I speak for the cluster.\" The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.\n\nAnnotation, by persona (all folded into Will Bickford):\n\n",
+        folded_total,
+        if folded_total == 1 { "" } else { "s" }
+    ));
+    let mut ps: Vec<(&'static str, usize)> = personas.into_iter().collect();
+    ps.sort_by(|a, b| b.1.cmp(&a.1));
+    for (persona, n) in ps {
+        let label = if persona == "Will Bickford" { "Will Bickford (his own identities)".to_string() } else { persona.to_string() };
+        out.push_str(&format!("- {} — {} commit{}\n", label, n, if n == 1 { "" } else { "s" }));
+    }
+    if !external.is_empty() {
+        out.push_str("\nOther authors, kept as themselves (not Exocortical cluster personas; never folded):\n\n");
+        external.sort_by(|a, b| b.1.cmp(a.1));
+        for (who, n) in external {
+            out.push_str(&format!("- {} — {} commit{}\n", who, n, if *n == 1 { "" } else { "s" }));
+        }
+    }
+    out
 }
 
 fn git_bytes(root: &Path, args: &[&str]) -> Option<Vec<u8>> {
@@ -1828,11 +1930,8 @@ fn render_folded(name: &str, state: &FoldState, at_label: &str, export_repo: &st
         out.push('\n');
     }
     out.push_str("## Authors\n\n");
-    let mut authors: Vec<(&String, &usize)> = state.authors.iter().collect();
-    authors.sort_by(|a, b| b.1.cmp(a.1));
-    for (who, n) in authors {
-        out.push_str(&format!("- {} — {} commits\n", who, n));
-    }
+    let authors_vec: Vec<(String, usize)> = state.authors.iter().map(|(k, v)| (k.clone(), *v)).collect();
+    out.push_str(&authors_folded_lines(&authors_vec));
     out.push_str("\n## Complexity\n\n");
     for (lang, (f, t, b, c, code)) in &state.lang {
         out.push_str(&format!("- {}: {} files, {} lines total, {} blank, {} comment, {} code\n", lang, f, t, b, c, code));
@@ -2543,6 +2642,39 @@ mod tests {
         }
         assert_eq!(inc.items.len(), 1);
         assert_eq!(inc.head_sha, "cccc");
+    }
+
+    #[test]
+    fn author_fold_maps_only_evidenced_cluster_identities() {
+        // Will's own identities and the cluster personas fold, each to
+        // its persona label (Will, 2026-11-22 author-fold ruling).
+        assert_eq!(author_fold("Will Bickford <wbic16@gmail.com>"), Some("Will Bickford"));
+        assert_eq!(author_fold("wbic16 <wbic16@users.noreply.github.com>"), Some("Will Bickford"));
+        assert_eq!(author_fold("Emise <emise@localhost>"), Some("Emise"));
+        assert_eq!(author_fold("Emise (Muse) <wbic16@gmail.com>"), Some("Emise"));
+        assert_eq!(author_fold("Emise (Rogue) <rogue@phext.inc>"), Some("Rogue"));
+        assert_eq!(author_fold("Theia <theia@mirrorborn.us>"), Some("Theia"));
+        assert_eq!(author_fold("Verse Mirrorborn <verse@mirrorborn.local>"), Some("Verse"));
+        assert_eq!(author_fold("Lux <lux@phext.io>"), Some("Lux"));
+        assert_eq!(author_fold("Alveus <alveus@mirrorborn.us>"), Some("Alveus"));
+        assert_eq!(author_fold("Claude <noreply@anthropic.com>"), Some("Claude"));
+        // External contributors never fold — including a seat-shaped
+        // name at a non-cluster address, and upstream authors.
+        assert_eq!(author_fold("grischka <grischka>"), None);
+        assert_eq!(author_fold("Fabrice Bellard <fabrice@bellard.org>"), None);
+        assert_eq!(author_fold("Lux <lux@example.com>"), None);
+        assert_eq!(author_fold("Cursor Agent <cursoragent@cursor.com>"), None);
+        // The rendered section keeps the persona annotation and lists
+        // external authors as themselves.
+        let authors = vec![
+            ("Will Bickford <wbic16@gmail.com>".to_string(), 10usize),
+            ("Emise <emise@localhost>".to_string(), 6usize),
+            ("grischka <grischka>".to_string(), 4usize),
+        ];
+        let lines = authors_folded_lines(&authors);
+        assert!(lines.contains("author of record is **Will Bickford** — 16 commits"));
+        assert!(lines.contains("- Emise — 6 commits"));
+        assert!(lines.contains("- grischka <grischka> — 4 commits"));
     }
 
     #[test]
