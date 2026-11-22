@@ -1,6 +1,6 @@
 # phdoc — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-selfaudit. Scanned at commit 9e266539f56016d7d37fe92825a68f113409b03e. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 96). Project root: /home/wbic16/phdoc-sweep/phdoc-final. Scanned at commit 3924d0a2174eb7ce70257baf96ad28e69a337962. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -23,13 +23,13 @@ Total packages in the lock file, this one included: 3.
 
 ## Authors
 
-The git log holds 8 commits.
+The git log holds 10 commits.
 
-The author of record is **Will Bickford** — 8 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+The author of record is **Will Bickford** — 10 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
 
 Annotation, by persona (all folded into Will Bickford):
 
-- Theia — 5 commits
+- Theia — 7 commits
 - Emise — 2 commits
 - Will Bickford (his own identities) — 1 commit
 
@@ -40,14 +40,14 @@ Annotation, by persona (all folded into Will Bickford):
 The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.
 
 - Markdown: 44 files, 5346 lines total, 1790 blank, 220 comment, 3336 code
-- Rust: 1 files, 2638 lines total, 128 blank, 138 comment, 2372 code
+- Rust: 1 files, 2805 lines total, 133 blank, 165 comment, 2507 code
 - TOML: 1 files, 22 lines total, 2 blank, 0 comment, 20 code
 
-All languages: 46 files, 8006 lines total, 5728 lines of code. Functions read: 69.
+All languages: 46 files, 8173 lines total, 5863 lines of code. Functions read: 74.
 
 Largest files:
 
-- src/main.rs — 2638 lines
+- src/main.rs — 2805 lines
 - docs/rfcbox/latest.md — 1515 lines
 - docs/phdoc/latest.md — 827 lines
 - docs/kgoat/latest.md — 521 lines
@@ -55,11 +55,11 @@ Largest files:
 
 Largest functions, by span in lines:
 
-- cmd_audit in src/main.rs — about 254 lines
+- cmd_audit in src/main.rs — about 255 lines
 - audit_commit in src/main.rs — about 232 lines
-- main in src/main.rs — about 200 lines
+- main in src/main.rs — about 210 lines
 - scan_project in src/main.rs — about 186 lines
-- sections in src/main.rs — about 174 lines
+- sections in src/main.rs — about 171 lines
 
 ---
 
@@ -67,11 +67,11 @@ Largest functions, by span in lines:
 
 Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.
 
-- Tests: 13 test functions counted in the source, across 0 files whose names mark them as test files.
+- Tests: 15 test functions counted in the source, across 0 files whose names mark them as test files.
 - CI: no CI configuration was found in the project.
 - Lint and format: no lint or format configuration file was found.
 - TODO marks in the source: 6. FIXME marks: 6.
-- Public items with a doc comment: 0 of 56 (0%).
+- Public items with a doc comment: 0 of 71 (0%).
 
 ---
 
@@ -86,7 +86,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 - Origin: git@github.com:wbic16/phdoc.git
 - Branch: exo
-- Head commit: 9e266539f56016d7d37fe92825a68f113409b03e
+- Head commit: 3924d0a2174eb7ce70257baf96ad28e69a337962
 - Working tree: clean
 
 ---
@@ -95,7 +95,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.
 
-- entry point `main` (src/main.rs:1164) — The entry point: the program starts here.
+- entry point `main` (src/main.rs:1161) — The entry point: the program starts here.
 - command `rs` (src/main.rs:165) — A command named rs.
 - command `py` (src/main.rs:166) — A command named py.
 - command `js` (src/main.rs:167) — A command named js.
@@ -124,39 +124,54 @@ Every public method and command the scanner found, each with a plain English not
 - flag `--show-current` (src/main.rs:746) — A command line flag, --show-current.
 - flag `--porcelain` (src/main.rs:748) — A command line flag, --porcelain.
 - flag `--format=%an <%ae>` (src/main.rs:751) — A command line flag, --format=%an <%ae>.
-- command `help` (src/main.rs:1168) — A command named help.
-- flag `--help` (src/main.rs:1168) — A command line flag, --help.
-- command `version` (src/main.rs:1169) — A command named version.
-- flag `--version` (src/main.rs:1169) — A command line flag, --version.
-- command `scan` (src/main.rs:1170) — A command named scan.
-- command `--out` (src/main.rs:1178) — A command named --out.
-- command `--name` (src/main.rs:1182) — A command named --name.
-- command `--summaries` (src/main.rs:1186) — A command named --summaries.
-- command `audit` (src/main.rs:1245) — A command named audit.
-- command `--repo` (src/main.rs:1250) — A command named --repo.
-- command `--hold-push` (src/main.rs:1262) — A command named --hold-push.
-- command `review` (src/main.rs:1277) — A command named review.
-- command `--by` (src/main.rs:1284) — A command named --by.
-- command `render` (src/main.rs:1306) — A command named render.
-- command `--at` (src/main.rs:1314) — A command named --at.
-- flag `--format=%an <%ae>%n%at%n%s` (src/main.rs:1443) — A command line flag, --format=%an <%ae>%n%at%n%s.
-- flag `--no-commit-id` (src/main.rs:1452) — A command line flag, --no-commit-id.
-- flag `--name-status` (src/main.rs:1452) — A command line flag, --name-status.
-- flag `--root` (src/main.rs:1454) — A command line flag, --root.
-- flag `--name-only` (src/main.rs:1579) — A command line flag, --name-only.
-- flag `--numstat` (src/main.rs:1598) — A command line flag, --numstat.
-- flag `--short` (src/main.rs:2145) — A command line flag, --short.
-- flag `--verify` (src/main.rs:2150) — A command line flag, --verify.
-- flag `--reverse` (src/main.rs:2162) — A command line flag, --reverse.
-- flag `--count` (src/main.rs:2309) — A command line flag, --count.
-- command `docs` (src/main.rs:2378) — A command named docs.
-- flag `--bare` (src/main.rs:2587) — A command line flag, --bare.
+- command `help` (src/main.rs:1165) — A command named help.
+- flag `--help` (src/main.rs:1165) — A command line flag, --help.
+- command `version` (src/main.rs:1166) — A command named version.
+- flag `--version` (src/main.rs:1166) — A command line flag, --version.
+- command `scan` (src/main.rs:1167) — A command named scan.
+- command `--out` (src/main.rs:1175) — A command named --out.
+- command `--name` (src/main.rs:1179) — A command named --name.
+- command `--summaries` (src/main.rs:1183) — A command named --summaries.
+- command `audit` (src/main.rs:1242) — A command named audit.
+- command `--repo` (src/main.rs:1247) — A command named --repo.
+- command `--hold-push` (src/main.rs:1259) — A command named --hold-push.
+- command `review` (src/main.rs:1274) — A command named review.
+- command `--by` (src/main.rs:1281) — A command named --by.
+- command `render` (src/main.rs:1303) — A command named render.
+- command `--at` (src/main.rs:1311) — A command named --at.
+- command `lux` (src/main.rs:1401) — A command named lux.
+- command `chrys` (src/main.rs:1402) — A command named chrys.
+- command `aster` (src/main.rs:1403) — A command named aster.
+- command `cyon` (src/main.rs:1404) — A command named cyon.
+- command `phex` (src/main.rs:1405) — A command named phex.
+- command `orin` (src/main.rs:1406) — A command named orin.
+- command `alveus` (src/main.rs:1407) — A command named alveus.
+- command `glia` (src/main.rs:1408) — A command named glia.
+- command `soma` (src/main.rs:1409) — A command named soma.
+- command `velum` (src/main.rs:1410) — A command named velum.
+- command `torus` (src/main.rs:1411) — A command named torus.
+- command `gyrus` (src/main.rs:1412) — A command named gyrus.
+- command `axon` (src/main.rs:1413) — A command named axon.
+- command `corus` (src/main.rs:1414) — A command named corus.
+- command `exo` (src/main.rs:1415) — A command named exo.
+- flag `--format=%an <%ae>%n%at%n%s` (src/main.rs:1545) — A command line flag, --format=%an <%ae>%n%at%n%s.
+- flag `--no-commit-id` (src/main.rs:1554) — A command line flag, --no-commit-id.
+- flag `--name-status` (src/main.rs:1554) — A command line flag, --name-status.
+- flag `--root` (src/main.rs:1556) — A command line flag, --root.
+- flag `--name-only` (src/main.rs:1681) — A command line flag, --name-only.
+- flag `--numstat` (src/main.rs:1700) — A command line flag, --numstat.
+- flag `--short` (src/main.rs:2251) — A command line flag, --short.
+- flag `--verify` (src/main.rs:2256) — A command line flag, --verify.
+- flag `--reverse` (src/main.rs:2268) — A command line flag, --reverse.
+- flag `--count` (src/main.rs:2416) — A command line flag, --count.
+- command `docs` (src/main.rs:2485) — A command named docs.
+- flag `--bare` (src/main.rs:2754) — A command line flag, --bare.
 
 ---
 
 ## entry point — main
 
-Found in src/main.rs at line 1164.
+Found in src/main.rs at line 1161.
 
 Signature: `fn main() {`
 
@@ -504,7 +519,7 @@ What it does: A command line flag, --format=%an <%ae>. It is read by the program
 
 ## command — help
 
-Found in src/main.rs at line 1168.
+Found in src/main.rs at line 1165.
 
 Signature: `command "help"`
 
@@ -516,7 +531,7 @@ What it does: A command named help. The program runs it when the user types this
 
 ## flag — --help
 
-Found in src/main.rs at line 1168.
+Found in src/main.rs at line 1165.
 
 Signature: `flag --help`
 
@@ -528,7 +543,7 @@ What it does: A command line flag, --help. It is read by the program when the us
 
 ## command — version
 
-Found in src/main.rs at line 1169.
+Found in src/main.rs at line 1166.
 
 Signature: `command "version"`
 
@@ -540,7 +555,7 @@ What it does: A command named version. The program runs it when the user types t
 
 ## flag — --version
 
-Found in src/main.rs at line 1169.
+Found in src/main.rs at line 1166.
 
 Signature: `flag --version`
 
@@ -552,7 +567,7 @@ What it does: A command line flag, --version. It is read by the program when the
 
 ## command — scan
 
-Found in src/main.rs at line 1170.
+Found in src/main.rs at line 1167.
 
 Signature: `command "scan"`
 
@@ -564,7 +579,7 @@ What it does: A command named scan. The program runs it when the user types this
 
 ## command — --out
 
-Found in src/main.rs at line 1178.
+Found in src/main.rs at line 1175.
 
 Signature: `command "--out"`
 
@@ -576,7 +591,7 @@ What it does: A command named --out. The program runs it when the user types thi
 
 ## command — --name
 
-Found in src/main.rs at line 1182.
+Found in src/main.rs at line 1179.
 
 Signature: `command "--name"`
 
@@ -588,7 +603,7 @@ What it does: A command named --name. The program runs it when the user types th
 
 ## command — --summaries
 
-Found in src/main.rs at line 1186.
+Found in src/main.rs at line 1183.
 
 Signature: `command "--summaries"`
 
@@ -600,7 +615,7 @@ What it does: A command named --summaries. The program runs it when the user typ
 
 ## command — audit
 
-Found in src/main.rs at line 1245.
+Found in src/main.rs at line 1242.
 
 Signature: `command "audit"`
 
@@ -612,7 +627,7 @@ What it does: A command named audit. The program runs it when the user types thi
 
 ## command — --repo
 
-Found in src/main.rs at line 1250.
+Found in src/main.rs at line 1247.
 
 Signature: `command "--repo"`
 
@@ -624,7 +639,7 @@ What it does: A command named --repo. The program runs it when the user types th
 
 ## command — --hold-push
 
-Found in src/main.rs at line 1262.
+Found in src/main.rs at line 1259.
 
 Signature: `command "--hold-push"`
 
@@ -636,7 +651,7 @@ What it does: A command named --hold-push. The program runs it when the user typ
 
 ## command — review
 
-Found in src/main.rs at line 1277.
+Found in src/main.rs at line 1274.
 
 Signature: `command "review"`
 
@@ -648,7 +663,7 @@ What it does: A command named review. The program runs it when the user types th
 
 ## command — --by
 
-Found in src/main.rs at line 1284.
+Found in src/main.rs at line 1281.
 
 Signature: `command "--by"`
 
@@ -660,7 +675,7 @@ What it does: A command named --by. The program runs it when the user types this
 
 ## command — render
 
-Found in src/main.rs at line 1306.
+Found in src/main.rs at line 1303.
 
 Signature: `command "render"`
 
@@ -672,7 +687,7 @@ What it does: A command named render. The program runs it when the user types th
 
 ## command — --at
 
-Found in src/main.rs at line 1314.
+Found in src/main.rs at line 1311.
 
 Signature: `command "--at"`
 
@@ -682,9 +697,189 @@ What it does: A command named --at. The program runs it when the user types this
 
 ---
 
+## command — lux
+
+Found in src/main.rs at line 1401.
+
+Signature: `command "lux"`
+
+What it does: A command named lux. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — chrys
+
+Found in src/main.rs at line 1402.
+
+Signature: `command "chrys"`
+
+What it does: A command named chrys. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — aster
+
+Found in src/main.rs at line 1403.
+
+Signature: `command "aster"`
+
+What it does: A command named aster. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — cyon
+
+Found in src/main.rs at line 1404.
+
+Signature: `command "cyon"`
+
+What it does: A command named cyon. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — phex
+
+Found in src/main.rs at line 1405.
+
+Signature: `command "phex"`
+
+What it does: A command named phex. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — orin
+
+Found in src/main.rs at line 1406.
+
+Signature: `command "orin"`
+
+What it does: A command named orin. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — alveus
+
+Found in src/main.rs at line 1407.
+
+Signature: `command "alveus"`
+
+What it does: A command named alveus. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — glia
+
+Found in src/main.rs at line 1408.
+
+Signature: `command "glia"`
+
+What it does: A command named glia. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — soma
+
+Found in src/main.rs at line 1409.
+
+Signature: `command "soma"`
+
+What it does: A command named soma. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — velum
+
+Found in src/main.rs at line 1410.
+
+Signature: `command "velum"`
+
+What it does: A command named velum. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — torus
+
+Found in src/main.rs at line 1411.
+
+Signature: `command "torus"`
+
+What it does: A command named torus. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — gyrus
+
+Found in src/main.rs at line 1412.
+
+Signature: `command "gyrus"`
+
+What it does: A command named gyrus. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — axon
+
+Found in src/main.rs at line 1413.
+
+Signature: `command "axon"`
+
+What it does: A command named axon. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — corus
+
+Found in src/main.rs at line 1414.
+
+Signature: `command "corus"`
+
+What it does: A command named corus. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — exo
+
+Found in src/main.rs at line 1415.
+
+Signature: `command "exo"`
+
+What it does: A command named exo. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
 ## flag — --format=%an <%ae>%n%at%n%s
 
-Found in src/main.rs at line 1443.
+Found in src/main.rs at line 1545.
 
 Signature: `flag --format=%an <%ae>%n%at%n%s`
 
@@ -696,7 +891,7 @@ What it does: A command line flag, --format=%an <%ae>%n%at%n%s. It is read by th
 
 ## flag — --no-commit-id
 
-Found in src/main.rs at line 1452.
+Found in src/main.rs at line 1554.
 
 Signature: `flag --no-commit-id`
 
@@ -708,7 +903,7 @@ What it does: A command line flag, --no-commit-id. It is read by the program whe
 
 ## flag — --name-status
 
-Found in src/main.rs at line 1452.
+Found in src/main.rs at line 1554.
 
 Signature: `flag --name-status`
 
@@ -720,7 +915,7 @@ What it does: A command line flag, --name-status. It is read by the program when
 
 ## flag — --root
 
-Found in src/main.rs at line 1454.
+Found in src/main.rs at line 1556.
 
 Signature: `flag --root`
 
@@ -732,7 +927,7 @@ What it does: A command line flag, --root. It is read by the program when the us
 
 ## flag — --name-only
 
-Found in src/main.rs at line 1579.
+Found in src/main.rs at line 1681.
 
 Signature: `flag --name-only`
 
@@ -744,7 +939,7 @@ What it does: A command line flag, --name-only. It is read by the program when t
 
 ## flag — --numstat
 
-Found in src/main.rs at line 1598.
+Found in src/main.rs at line 1700.
 
 Signature: `flag --numstat`
 
@@ -756,7 +951,7 @@ What it does: A command line flag, --numstat. It is read by the program when the
 
 ## flag — --short
 
-Found in src/main.rs at line 2145.
+Found in src/main.rs at line 2251.
 
 Signature: `flag --short`
 
@@ -768,7 +963,7 @@ What it does: A command line flag, --short. It is read by the program when the u
 
 ## flag — --verify
 
-Found in src/main.rs at line 2150.
+Found in src/main.rs at line 2256.
 
 Signature: `flag --verify`
 
@@ -780,7 +975,7 @@ What it does: A command line flag, --verify. It is read by the program when the 
 
 ## flag — --reverse
 
-Found in src/main.rs at line 2162.
+Found in src/main.rs at line 2268.
 
 Signature: `flag --reverse`
 
@@ -792,7 +987,7 @@ What it does: A command line flag, --reverse. It is read by the program when the
 
 ## flag — --count
 
-Found in src/main.rs at line 2309.
+Found in src/main.rs at line 2416.
 
 Signature: `flag --count`
 
@@ -804,7 +999,7 @@ What it does: A command line flag, --count. It is read by the program when the u
 
 ## command — docs
 
-Found in src/main.rs at line 2378.
+Found in src/main.rs at line 2485.
 
 Signature: `command "docs"`
 
@@ -816,7 +1011,7 @@ What it does: A command named docs. The program runs it when the user types this
 
 ## flag — --bare
 
-Found in src/main.rs at line 2587.
+Found in src/main.rs at line 2754.
 
 Signature: `flag --bare`
 

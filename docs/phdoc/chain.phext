@@ -170,3 +170,48 @@ stat Markdown files 44 total 5346 blank 1790 comment 0 code 3556
 stat Rust files 1 total 2638 blank 128 comment 138 code 2372
 stat TOML files 1 total 22 blank 2 comment 0 code 20
 author~ Emise <emise@localhost> commits 2
+Commit 4b567abb7267 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 94).
+
+Subject: Fix history rendering: fold incrementally (fold_step) instead of fold_chain per page
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5983.
+
+commit 4b567abb72672738f57357f3bb51ef38b28c1d94
+parent 9e266539f56016d7d37fe92825a68f113409b03e
+author Theia <theia@mirrorborn.us>
+date 1795366450 2026-11-22
+stat Markdown files 44 total 5346 blank 1790 comment 0 code 3556
+stat Rust files 1 total 2673 blank 128 comment 138 code 2407
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 6
+Commit 3924d0a2174e by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: Author fold: Will Bickford is author of record for Exocortical work
+
+Public items: 15 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 6083.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 3924d0a2174eb7ce70257baf96ad28e69a337962
+parent 4b567abb72672738f57357f3bb51ef38b28c1d94
+author Theia <theia@mirrorborn.us>
+date 1795366899 2026-11-22
+item+ command src/main.rs :: alveus :: command "alveus" :: A command named alveus. The program runs it when the user types this word on the command line. :: signature
+item+ command src/main.rs :: aster :: command "aster" :: A command named aster. The program runs it when the user types this word on the command line. :: signature
+item+ command src/main.rs :: axon :: command "axon" :: A command named axon. The program runs it when the user types this word on the command line. :: signature
+item+ command src/main.rs :: chrys :: command "chrys" :: A command named chrys. The program runs it when the user types this word on the command line. :: signature
+item+ command src/main.rs :: corus :: command "corus" :: A command named corus. The program runs it when the user types this word on the command line. :: signature
+item+ command src/main.rs :: cyon :: command "cyon" :: A command named cyon. The program runs it when the user types this word on the command line. :: signature
+item+ command src/main.rs :: exo :: command "exo" :: A command named exo. The program runs it when the user types this word on the command line. :: signature
+item+ command src/main.rs :: glia :: command "glia" :: A command named glia. The program runs it when the user types this word on the command line. :: signature
+item+ command src/main.rs :: gyrus :: command "gyrus" :: A command named gyrus. The program runs it when the user types this word on the command line. :: signature
+item+ command src/main.rs :: lux :: command "lux" :: A command named lux. The program runs it when the user types this word on the command line. :: signature
+item+ command src/main.rs :: orin :: command "orin" :: A command named orin. The program runs it when the user types this word on the command line. :: signature
+item+ command src/main.rs :: phex :: command "phex" :: A command named phex. The program runs it when the user types this word on the command line. :: signature
+item+ command src/main.rs :: soma :: command "soma" :: A command named soma. The program runs it when the user types this word on the command line. :: signature
+item+ command src/main.rs :: torus :: command "torus" :: A command named torus. The program runs it when the user types this word on the command line. :: signature
+item+ command src/main.rs :: velum :: command "velum" :: A command named velum. The program runs it when the user types this word on the command line. :: signature
+stat Markdown files 44 total 5346 blank 1790 comment 0 code 3556
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 7
