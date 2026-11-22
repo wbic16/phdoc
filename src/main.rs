@@ -1674,11 +1674,18 @@ fn audit_commit(root: &Path, sha: &str, parent: Option<&str>, checkpoint: bool, 
 fn fold_chain(chain: &str, upto: usize) -> FoldState {
     let mut state = FoldState::default();
     for u in 1..=upto {
-        let coord = phext::to_coordinate(&format!("{}.1.1/1.1.1/1.1.1", u));
-        let scroll = phext::fetch(chain, coord);
-        apply_delta(&scroll, &mut state);
+        fold_step(chain, u, &mut state);
     }
     state
+}
+
+/// Fold ONE universe into a running state. The history renderer folds
+/// incrementally with this; folding every page from scratch cost
+/// O(commits^2) chain fetches and a 3,888-commit history (phcc) never
+/// finished rendering (sweep finding, 2026-11-22).
+fn fold_step(chain: &str, u: usize, state: &mut FoldState) {
+    let scroll = phext::fetch(chain, chain_coord(u));
+    apply_delta(&scroll, state);
 }
 
 fn apply_delta(scroll: &str, state: &mut FoldState) {
@@ -2222,8 +2229,9 @@ fn cmd_audit(a: AuditArgs) -> i32 {
         return 1;
     }
     let all = chain_commits(&chain);
+    let mut st = FoldState::default();
     for (i, sha) in all.iter().enumerate() {
-        let st = fold_chain(&chain, i + 1);
+        fold_step(&chain, i + 1, &mut st);
         let page = render_folded(&name, &st, &format!("commit {}", &sha[..sha.len().min(12)]), &export_repo_cfg, &doc_site_cfg);
         let _ = fs::write(hist_dir.join(format!("{}.md", &sha[..sha.len().min(12)])), page);
     }
@@ -2508,6 +2516,33 @@ mod tests {
         assert_eq!(st2.authors["A <a@x>"], 2);
         assert_eq!(st2.total_commits, 2);
         assert_eq!(chain_commits(&chain), vec!["aaaa".to_string(), "bbbb".to_string()]);
+    }
+
+    #[test]
+    fn incremental_fold_matches_fold_chain() {
+        // Regression (2026-11-22 sweep): the history renderer folded every
+        // page from scratch — O(commits^2) fetches; phcc's 3,888-commit
+        // history stalled. The incremental fold must equal fold_chain at
+        // every prefix.
+        let mut chain = String::new();
+        let d1 = "Commit abc by A <a@x> on 2026-11-22 (EE 1).\n\ncommit aaaa\ndate 1795327200 2026-11-22\nitem+ function src/lib.rs :: hello :: pub fn hello() :: Says hello. :: doc comment\nauthor+ A <a@x>\nstat Rust files 1 total 10 blank 1 comment 1 code 8\n";
+        chain = phext::insert(chain, chain_coord(1), d1);
+        let d2 = "Commit def by A <a@x> on 2026-11-22 (EE 2).\n\ncommit bbbb\ndate 1795327620 2026-11-22\nitem- function src/lib.rs :: hello\nauthor~ A <a@x> commits 2\nstat Rust files 1 total 4 blank 0 comment 0 code 4\n";
+        chain = phext::insert(chain, chain_coord(2), d2);
+        let d3 = "Commit ghi by B <b@x> on 2026-11-22 (EE 3).\n\ncommit cccc\ndate 1795328040 2026-11-22\nitem+ function src/lib.rs :: world :: pub fn world() :: Says world. :: doc comment\nauthor+ B <b@x>\nstat Rust files 2 total 9 blank 1 comment 0 code 8\n";
+        chain = phext::insert(chain, chain_coord(3), d3);
+        let mut inc = FoldState::default();
+        for u in 1..=3 {
+            fold_step(&chain, u, &mut inc);
+            let full = fold_chain(&chain, u);
+            assert_eq!(inc.items.len(), full.items.len(), "prefix {}", u);
+            assert_eq!(inc.total_commits, full.total_commits, "prefix {}", u);
+            assert_eq!(inc.head_sha, full.head_sha, "prefix {}", u);
+            assert_eq!(inc.authors, full.authors, "prefix {}", u);
+            assert_eq!(inc.lang, full.lang, "prefix {}", u);
+        }
+        assert_eq!(inc.items.len(), 1);
+        assert_eq!(inc.head_sha, "cccc");
     }
 
     #[test]
