@@ -1,6 +1,6 @@
 # agi — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 91). Project root: /home/wbic16/phdoc-sweep/proj/agi. Scanned at commit 34bd7f588c0136cba0c1653be67c76c0eea89ebf. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/agi/. Scanned at commit 34bd7f588c0136cba0c1653be67c76c0eea89ebf. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -14,15 +14,18 @@ No dependency manifest was found (no Cargo.toml, package.json, requirements.txt,
 
 ## Authors
 
-The git log holds 66 commits. The authors, by commit count:
+The git log holds 66 commits.
 
-- Emise <emise@localhost> — 54 commits (81.8%)
-- Lux <lux@phext.io> — 3 commits (4.5%)
-- Will Bickford <wbic16@gmail.com> — 3 commits (4.5%)
-- Phex <phex@phext.io> — 2 commits (3.0%)
-- Verse <verse@visionquest.me> — 2 commits (3.0%)
-- Chrys <chrys@mirrorborn.us> — 1 commit (1.5%)
-- wbic16 <wbic16@users.noreply.github.com> — 1 commit (1.5%)
+The author of record is **Will Bickford** — 66 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Emise — 54 commits
+- Will Bickford (his own identities) — 4 commits
+- Lux — 3 commits
+- Phex — 2 commits
+- Verse — 2 commits
+- Chrys — 1 commit
 
 ---
 
@@ -77,7 +80,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 - Origin: /home/wbic16/github-archive/mirrors/agi.git
 - Branch: exo
 - Head commit: 34bd7f588c0136cba0c1653be67c76c0eea89ebf
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
@@ -163,3 +166,9 @@ Signature: `def main():`
 What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
+
+---
+
+## Provenance
+
+This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/agi/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
