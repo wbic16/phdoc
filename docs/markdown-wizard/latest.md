@@ -1,6 +1,6 @@
 # markdown-wizard — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 104). Project root: /source/markdown-wizard. Scanned at commit 0e9f81123654e8cce883200e1505263d426e8fc1. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 106). Project root: /source/markdown-wizard. Scanned at commit 0e9f81123654e8cce883200e1505263d426e8fc1. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -103,7 +103,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 - Origin: git@github.com:wbic16/markdown-wizard.git
 - Branch: (detached or unnamed)
 - Head commit: 0e9f81123654e8cce883200e1505263d426e8fc1
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
