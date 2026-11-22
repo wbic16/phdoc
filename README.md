@@ -62,9 +62,21 @@ Each scan reads, from the project's own records:
 A note's words come from, in order: the code's own doc comment; a
 sentence made mechanically from the item's signature; a summary
 supplied by the user's agent (see below). The note always says which
-of these it is. The fixed prose phdoc writes is plain English in
-Will's Singular word-stock; names of code items are identifiers, not
-prose.
+of these it is. The fixed prose phdoc writes is plain, simple
+English in the spirit of Singular; names of code items are
+identifiers, not prose.
+
+**Singular ruling (Will, 2026-11-22 10:06 CST):** "spirit of
+singular is fine, always approve my new words, make a note to add
+them to singular as you observe them." phdoc's documentation
+English follows the **spirit of Singular** — plain, simple
+English — **not** a strict checker gate. Observed in passing: the
+fixed template prose already passes the Singular checker except
+for Will's own coinage "phdoc" itself; that is recorded here as a
+note, not a gate. Will's new words are always approved for
+Singular, and Emise keeps a running note of them as she observes
+them (`~/workspace/phext/singular-new-words.md`) for addition to
+the Singular list.
 
 Where neither a doc comment nor the signature yields a summary, phdoc
 does not invent one. The item is marked **awaiting a summary** in the
