@@ -1,0 +1,27 @@
+Commit d2d9a5f2d86b by Will Bickford <wbic16@gmail.com> on 2026-11-16 (EE 0).
+
+Subject: Initial commit
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 0.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit d2d9a5f2d86b1befd3f7a9a2b0ef3ed14b062d8c
+parent none
+author Will Bickford <wbic16@gmail.com>
+date 1794813014 2026-11-16
+author+ Will Bickford <wbic16@gmail.com>
+Commit 11b094bb6eee by Emise <emise@localhost> on 2026-11-16 (EE 0).
+
+Subject: Publish live tluf.org site source: index.html + submit.html (byte-identical to live docroot) + README
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 14.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 11b094bb6eeeca52471401c6dbed09a126f1abfb
+parent d2d9a5f2d86b1befd3f7a9a2b0ef3ed14b062d8c
+author Emise <emise@localhost>
+date 1794813478 2026-11-16
+stat Markdown files 1 total 17 blank 3 comment 0 code 14
+author+ Emise <emise@localhost>
