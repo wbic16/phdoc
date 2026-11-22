@@ -11,6 +11,26 @@ phdoc is a separate tool from rfcbox. rfcbox holds the RFC corpus;
 phdoc documents projects, and reads a project's `rfcs.json` (the
 rfcbox declaration) as one of its inventory inputs.
 
+## Why phdoc exists
+
+A project counts as shipped only when two things are both true: it
+has a QC signoff, and its behavior is documented on docs.phext.io.
+That is Will's shipped rule (2026-11-22) — both halves, not either.
+
+Documentation written by hand drifts. The code changes and the words
+stay behind, until the record quietly stops being true. phdoc exists
+so the documentation cannot drift: it derives the documentation from
+the project's own records — its manifests, its git history, its
+`rfcs.json` — at every commit, so the words and the code are the
+same age by construction.
+
+It is also built into the way work ships. Deploys run phdoc
+automatically, and under the unified publish discipline a deploy
+does not proceed until the documentation update is verified live —
+documented locally and serving. phdoc is the machinery that makes
+the documentation half of the shipped rule mechanical, instead of
+something someone has to remember.
+
 ## Commands
 
 - `phdoc scan <project-dir> --out <output-dir> [--name <name>] [--summaries <file>]`
