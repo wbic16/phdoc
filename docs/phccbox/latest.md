@@ -1,6 +1,6 @@
 # phccbox — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 92). Project root: /home/wbic16/phdoc-sweep/proj/phccbox. Scanned at commit 0f1189dfda9c6526130393f405b6733bc84c8b51. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/phccbox/. Scanned at commit 0f1189dfda9c6526130393f405b6733bc84c8b51. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -14,10 +14,14 @@ No dependency manifest was found (no Cargo.toml, package.json, requirements.txt,
 
 ## Authors
 
-The git log holds 3 commits. The authors, by commit count:
+The git log holds 3 commits.
 
-- Will Bickford <wbic16@gmail.com> — 2 commits (66.7%)
-- Theia <theia@mirrorborn.us> — 1 commit (33.3%)
+The author of record is **Will Bickford** — 3 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Will Bickford (his own identities) — 2 commits
+- Theia — 1 commit
 
 ---
 
@@ -75,7 +79,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 - Origin: /home/wbic16/github-archive/mirrors/phccbox.git
 - Branch: exo
 - Head commit: 0f1189dfda9c6526130393f405b6733bc84c8b51
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
@@ -369,3 +373,9 @@ Signature: `def put(name, cls, src):`
 What it does: Function put takes name, cls, src and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
+
+---
+
+## Provenance
+
+This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/phccbox/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
