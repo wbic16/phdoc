@@ -1,0 +1,419 @@
+Commit e071ce36dedc by Will Bickford <wbic16@gmail.com> on 2024-08-12 (EE 0).
+
+Subject: Documenting my I/O intentions for phext shell
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 27.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit e071ce36dedcf1badf754573c95272a0f9728728
+parent none
+author Will Bickford <wbic16@gmail.com>
+date 1723433878 2024-08-12
+stat Markdown files 1 total 34 blank 7 comment 0 code 27
+author+ Will Bickford <wbic16@gmail.com>
+Commit 3b3848e4924c by Will Bickford <wbic16@gmail.com> on 2024-08-13 (EE 0).
+
+Subject: Project setup
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 36.
+
+commit 3b3848e4924c194978d34bcbca750f820abe457d
+parent e071ce36dedcf1badf754573c95272a0f9728728
+author Will Bickford <wbic16@gmail.com>
+date 1723519298 2024-08-13
+stat Markdown files 1 total 34 blank 7 comment 0 code 27
+stat TOML files 1 total 10 blank 1 comment 0 code 9
+author~ Will Bickford <wbic16@gmail.com> commits 2
+Commit 85cd48880452 by Will Bickford <wbic16@gmail.com> on 2024-08-14 (EE 0).
+
+Subject: Basic shell with exit and cs commands
+
+Public items: 1 added, 0 removed, 0 changed. Dependencies: hello-phext added at 0.2.5; libphext added at 0.1.1. Code lines after this commit: 73.
+
+commit 85cd4888045267e319ae53fdcf37e48f255175d9
+parent 3b3848e4924c194978d34bcbca750f820abe457d
+author Will Bickford <wbic16@gmail.com>
+date 1723673739 2024-08-14
+dep+ Cargo.toml :: hello-phext :: 0.2.5
+dep+ Cargo.toml :: libphext :: 0.1.1
+item+ entry-point src/main.rs :: main :: fn main() { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: inferred :: api
+stat Markdown files 1 total 34 blank 7 comment 0 code 27
+stat Rust files 1 total 54 blank 11 comment 8 code 35
+stat TOML files 1 total 12 blank 1 comment 0 code 11
+author~ Will Bickford <wbic16@gmail.com> commits 3
+Commit 124a74a0b946 by Will Bickford <wbic16@gmail.com> on 2024-08-15 (EE 0).
+
+Subject: v0.1.2 - added vex, quit, and vim-style exit
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies: libphext 0.1.1 -> 0.1.2; hello-phext removed. Code lines after this commit: 93.
+
+commit 124a74a0b9468f5fb90ce01742a46632dc0a2830
+parent 85cd4888045267e319ae53fdcf37e48f255175d9
+author Will Bickford <wbic16@gmail.com>
+date 1723698947 2024-08-15
+dep~ Cargo.toml :: libphext :: 0.1.1 -> 0.1.2
+dep- Cargo.toml :: hello-phext
+stat Markdown files 1 total 34 blank 7 comment 0 code 27
+stat Rust files 1 total 79 blank 12 comment 11 code 56
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 4
+Commit 252dc15428bf by Will Bickford <wbic16@gmail.com> on 2024-08-16 (EE 0).
+
+Subject: Added a help menu
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 222.
+
+commit 252dc15428bf9292f1083bf5c8d62fea0a538435
+parent 124a74a0b9468f5fb90ce01742a46632dc0a2830
+author Will Bickford <wbic16@gmail.com>
+date 1723776895 2024-08-16
+stat Markdown files 1 total 34 blank 7 comment 0 code 27
+stat Rust files 1 total 221 blank 24 comment 12 code 185
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 5
+Commit 96c4e5167793 by Will Bickford <wbic16@gmail.com> on 2024-08-16 (EE 0).
+
+Subject: Packaging v0.1.3
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 222.
+
+commit 96c4e51677935cb5466b4d627d69a37f3b8b5dc4
+parent 252dc15428bf9292f1083bf5c8d62fea0a538435
+author Will Bickford <wbic16@gmail.com>
+date 1723776915 2024-08-16
+stat Markdown files 1 total 34 blank 7 comment 0 code 27
+stat Rust files 1 total 221 blank 24 comment 12 code 185
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 6
+Commit 754cf8a90afe by Will Bickford <wbic16@gmail.com> on 2024-08-17 (EE 0).
+
+Subject: Improved the README a bit
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 219.
+
+commit 754cf8a90afe87702cf7ca7c760bfae8638e0b52
+parent 96c4e51677935cb5466b4d627d69a37f3b8b5dc4
+author Will Bickford <wbic16@gmail.com>
+date 1723859244 2024-08-17
+stat Markdown files 1 total 33 blank 9 comment 0 code 24
+stat Rust files 1 total 221 blank 24 comment 12 code 185
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 7
+Commit 0f328028dc58 by Will Bickford <wbic16@gmail.com> on 2024-08-17 (EE 0).
+
+Subject: Added several new commands and normalized to two-character command names
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 281.
+
+commit 0f328028dc5857af28bc92fa8d41332eee21cc53
+parent 754cf8a90afe87702cf7ca7c760bfae8638e0b52
+author Will Bickford <wbic16@gmail.com>
+date 1723863503 2024-08-17
+stat Markdown files 1 total 39 blank 9 comment 0 code 30
+stat Rust files 1 total 291 blank 32 comment 18 code 241
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 8
+Commit 5efc1b698a51 by Will Bickford <wbic16@gmail.com> on 2024-08-17 (EE 0).
+
+Subject: Fixed regressions with af and os commands
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 283.
+
+commit 5efc1b698a51510d7c20f4146865bd325d05c6a0
+parent 0f328028dc5857af28bc92fa8d41332eee21cc53
+author Will Bickford <wbic16@gmail.com>
+date 1723864005 2024-08-17
+stat Markdown files 1 total 39 blank 9 comment 0 code 30
+stat Rust files 1 total 293 blank 32 comment 18 code 243
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 9
+Commit d8a30b8b196e by Will Bickford <wbic16@gmail.com> on 2024-08-17 (EE 0).
+
+Subject: v0.1.6 - Hierarchical History
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 296.
+
+commit d8a30b8b196eba942ec21dfc271e06cca0d65364
+parent 5efc1b698a51510d7c20f4146865bd325d05c6a0
+author Will Bickford <wbic16@gmail.com>
+date 1723866041 2024-08-17
+stat Markdown files 1 total 43 blank 10 comment 0 code 33
+stat Rust files 1 total 305 blank 34 comment 18 code 253
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 10
+Commit f89e7dd399ed by Will Bickford <wbic16@gmail.com> on 2024-08-17 (EE 0).
+
+Subject: v0.1.7 - added Book and Series short formats
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 300.
+
+commit f89e7dd399ed37fc230c68addb85cb7dff04b14b
+parent d8a30b8b196eba942ec21dfc271e06cca0d65364
+author Will Bickford <wbic16@gmail.com>
+date 1723928788 2024-08-17
+stat Markdown files 1 total 43 blank 10 comment 0 code 33
+stat Rust files 1 total 309 blank 34 comment 18 code 257
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 11
+Commit 2616695b924b by Will Bickford <wbic16@gmail.com> on 2024-08-19 (EE 0).
+
+Subject: v0.1.8 - Run external processes and collect output to the current scroll
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 320.
+
+commit 2616695b924b2b3cf106d0a16ac766340c601969
+parent f89e7dd399ed37fc230c68addb85cb7dff04b14b
+author Will Bickford <wbic16@gmail.com>
+date 1724039061 2024-08-19
+stat Markdown files 1 total 43 blank 10 comment 0 code 33
+stat Rust files 1 total 330 blank 35 comment 18 code 277
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 12
+Commit be1941a3cae9 by Will Bickford <wbic16@gmail.com> on 2024-08-19 (EE 0).
+
+Subject: Ignore sample.phext
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 320.
+
+commit be1941a3cae9faf66a475943f3308bde3c52113c
+parent 2616695b924b2b3cf106d0a16ac766340c601969
+author Will Bickford <wbic16@gmail.com>
+date 1724109616 2024-08-19
+stat Markdown files 1 total 43 blank 10 comment 0 code 33
+stat Rust files 1 total 330 blank 35 comment 18 code 277
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 13
+Commit 75c0e0fe8a42 by Will Bickford <wbic16@gmail.com> on 2024-08-20 (EE 0).
+
+Subject: Support coordinate echo with 'cs'
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 324.
+
+commit 75c0e0fe8a426ee5be089ff6bde9a0d632369313
+parent be1941a3cae9faf66a475943f3308bde3c52113c
+author Will Bickford <wbic16@gmail.com>
+date 1724124782 2024-08-20
+stat Markdown files 1 total 43 blank 10 comment 0 code 33
+stat Rust files 1 total 334 blank 35 comment 18 code 281
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 14
+Commit 7680cad04404 by Will Bickford <wbic16@gmail.com> on 2024-08-20 (EE 0).
+
+Subject: v0.1.9 - added the hp (hash phext) command
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies: libphext 0.1.2 -> 0.1.3. Code lines after this commit: 334.
+
+commit 7680cad0440434cdbe26faf6cda37735bc4199ae
+parent 75c0e0fe8a426ee5be089ff6bde9a0d632369313
+author Will Bickford <wbic16@gmail.com>
+date 1724129212 2024-08-20
+dep~ Cargo.toml :: libphext :: 0.1.2 -> 0.1.3
+stat Markdown files 1 total 43 blank 10 comment 0 code 33
+stat Rust files 1 total 346 blank 36 comment 19 code 291
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 15
+Commit 714c7d700b01 by Will Bickford <wbic16@gmail.com> on 2024-08-20 (EE 0).
+
+Subject: Example checksums
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 334.
+
+commit 714c7d700b01145f09c37f2d9da8307b4b90dce1
+parent 7680cad0440434cdbe26faf6cda37735bc4199ae
+author Will Bickford <wbic16@gmail.com>
+date 1724129283 2024-08-20
+stat Markdown files 1 total 43 blank 10 comment 0 code 33
+stat Rust files 1 total 346 blank 36 comment 19 code 291
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 16
+Commit dfdf79602f92 by Will Bickford <wbic16@gmail.com> on 2024-08-23 (EE 0).
+
+Subject: v0.1.10 - added pi: phext index support
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies: libphext 0.1.3 -> 0.1.5. Code lines after this commit: 343.
+
+commit dfdf79602f92828609e3a46e5233aafd651d9846
+parent 714c7d700b01145f09c37f2d9da8307b4b90dce1
+author Will Bickford <wbic16@gmail.com>
+date 1724384997 2024-08-23
+dep~ Cargo.toml :: libphext :: 0.1.3 -> 0.1.5
+stat Markdown files 1 total 44 blank 10 comment 0 code 34
+stat Rust files 1 total 355 blank 36 comment 20 code 299
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 17
+Commit 6f26f3d31182 by Will Bickford <wbic16@gmail.com> on 2024-08-23 (EE 0).
+
+Subject: testing a bit
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 343.
+
+commit 6f26f3d311821966319d865297d6fbbfae85cbc6
+parent dfdf79602f92828609e3a46e5233aafd651d9846
+author Will Bickford <wbic16@gmail.com>
+date 1724385291 2024-08-23
+stat Markdown files 1 total 44 blank 10 comment 0 code 34
+stat Rust files 1 total 355 blank 36 comment 20 code 299
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 18
+Commit a2d547bc74de by Will Bickford <wbic16@gmail.com> on 2024-08-26 (EE 0).
+
+Subject: v0.1.11 - pulled in libphext v0.1.7
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies: libphext 0.1.5 -> 0.1.7. Code lines after this commit: 365.
+
+commit a2d547bc74deb9f2c8e1284d98bfe391388705de
+parent 6f26f3d311821966319d865297d6fbbfae85cbc6
+author Will Bickford <wbic16@gmail.com>
+date 1724645524 2024-08-26
+dep~ Cargo.toml :: libphext :: 0.1.5 -> 0.1.7
+stat Markdown files 1 total 59 blank 12 comment 0 code 47
+stat Rust files 1 total 367 blank 37 comment 22 code 308
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 19
+Commit 624b9035216c by Will Bickford <wbic16@gmail.com> on 2024-08-26 (EE 0).
+
+Subject: A couple of minor bug fixes
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 368.
+
+commit 624b9035216ca109ff8844933bc4ce8608ce82cf
+parent a2d547bc74deb9f2c8e1284d98bfe391388705de
+author Will Bickford <wbic16@gmail.com>
+date 1724713229 2024-08-26
+stat Markdown files 1 total 59 blank 12 comment 0 code 47
+stat Rust files 1 total 370 blank 37 comment 22 code 311
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 20
+Commit a7280fc1519f by Will Bickford <wbic16@gmail.com> on 2024-09-11 (EE 0).
+
+Subject: Added some nix configs
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 368.
+
+commit a7280fc1519fafc2865cfed70ef109ed38e48781
+parent 624b9035216ca109ff8844933bc4ce8608ce82cf
+author Will Bickford <wbic16@gmail.com>
+date 1726026760 2024-09-11
+stat Markdown files 1 total 59 blank 12 comment 0 code 47
+stat Rust files 1 total 370 blank 37 comment 22 code 311
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 21
+Commit f1084ed1b4a5 by Will Bickford <wbic16@gmail.com> on 2024-10-20 (EE 0).
+
+Subject: Merge pull request #1 from MortrixDev/error-handling
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 376.
+
+commit f1084ed1b4a5d8c274a832c75487cfd4bf7b9b9f
+parent a7280fc1519fafc2865cfed70ef109ed38e48781
+author Will Bickford <wbic16@gmail.com>
+date 1729463972 2024-10-20
+stat Markdown files 1 total 59 blank 12 comment 0 code 47
+stat Rust files 1 total 383 blank 41 comment 23 code 319
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 22
+Commit 141264da2f96 by Will Bickford <wbic16@gmail.com> on 2024-10-20 (EE 0).
+
+Subject: Packaging v0.1.12
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 376.
+
+commit 141264da2f96a388c7b31cb48c84bbac86af8868
+parent f1084ed1b4a5d8c274a832c75487cfd4bf7b9b9f
+author Will Bickford <wbic16@gmail.com>
+date 1729464120 2024-10-20
+stat Markdown files 1 total 59 blank 12 comment 0 code 47
+stat Rust files 1 total 383 blank 41 comment 23 code 319
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 23
+Commit ebfbe9893011 by Will Bickford <wbic16@gmail.com> on 2024-12-27 (EE 0).
+
+Subject: Bumped libphext to v0.1.9
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies: libphext 0.1.7 -> 0.1.9. Code lines after this commit: 376.
+
+commit ebfbe98930115e564bede84cbc698509db64efeb
+parent 141264da2f96a388c7b31cb48c84bbac86af8868
+author Will Bickford <wbic16@gmail.com>
+date 1735280743 2024-12-27
+dep~ Cargo.toml :: libphext :: 0.1.7 -> 0.1.9
+stat Markdown files 1 total 59 blank 12 comment 0 code 47
+stat Rust files 1 total 383 blank 41 comment 23 code 319
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 24
+Commit 5404fac0b399 by Orin <orin@mirrorborn.us> on 2026-03-23 (EE 0).
+
+Subject: refactor: rename .md/.phext files to lowercase (mirrorborn naming convention)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 376.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 5404fac0b399a991aef8d2e9814866c541bb0edd
+parent ebfbe98930115e564bede84cbc698509db64efeb
+author Orin <orin@mirrorborn.us>
+date 1774230677 2026-03-23
+stat Markdown files 1 total 59 blank 12 comment 0 code 47
+stat Rust files 1 total 383 blank 41 comment 23 code 319
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author+ Orin <orin@mirrorborn.us>
+Commit 2654a114635f by Will Bickford <wbic16@gmail.com> on 2026-11-13 (EE 0).
+
+Subject: Merge pull request #4 from wbic16/emise/v06-upgrade
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies: libphext 0.1.9 -> 0.6.0. Code lines after this commit: 376.
+
+commit 2654a114635ff94f2c747b79c2ddbd03bd7e7c51
+parent 5404fac0b399a991aef8d2e9814866c541bb0edd
+author Will Bickford <wbic16@gmail.com>
+date 1794603954 2026-11-13
+dep~ Cargo.toml :: libphext :: 0.1.9 -> 0.6.0
+stat Markdown files 1 total 59 blank 12 comment 0 code 47
+stat Rust files 1 total 383 blank 41 comment 23 code 319
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 25
+Commit b211b969e025 by Will Bickford <wbic16@gmail.com> on 2026-11-13 (EE 0).
+
+Subject: Merge pull request #5 from wbic16/emise/version-0.6
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 376.
+
+commit b211b969e025fe68c3b20b842f3ec89c2e3960d9
+parent 2654a114635ff94f2c747b79c2ddbd03bd7e7c51
+author Will Bickford <wbic16@gmail.com>
+date 1794610206 2026-11-13
+stat Markdown files 1 total 59 blank 12 comment 0 code 47
+stat Rust files 1 total 383 blank 41 comment 23 code 319
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 26
+Commit 0adb19c6387f by Will Bickford <wbic16@gmail.com> on 2026-11-14 (EE 0).
+
+Subject: Merge pull request #6 from wbic16/emise/shell-corpus-scale
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 376.
+
+commit 0adb19c6387f8ce348de709d7ac838acfb39a093
+parent b211b969e025fe68c3b20b842f3ec89c2e3960d9
+author Will Bickford <wbic16@gmail.com>
+date 1794650985 2026-11-14
+stat Markdown files 1 total 59 blank 12 comment 0 code 47
+stat Rust files 1 total 388 blank 41 comment 28 code 319
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 27
+Commit 4aae9abc2611 by Theia <theia@mirrorborn.us> on 2026-11-14 (EE 0).
+
+Subject: 0.6.1: version bump for the REPL EOF fix release
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 376.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 4aae9abc2611110ba9d20392586cb6ddd78bfa43
+parent 0adb19c6387f8ce348de709d7ac838acfb39a093
+author Theia <theia@mirrorborn.us>
+date 1794673285 2026-11-14
+stat Markdown files 1 total 59 blank 12 comment 0 code 47
+stat Rust files 1 total 388 blank 41 comment 28 code 319
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author+ Theia <theia@mirrorborn.us>
