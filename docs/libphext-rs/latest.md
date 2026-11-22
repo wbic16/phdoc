@@ -1,6 +1,6 @@
 # libphext-rs — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 91). Project root: /home/wbic16/phdoc-sweep/proj/libphext-rs. Scanned at commit 84c10399cccc8e5f34b2aadcade96907b5b1a655. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/libphext-rs/. Scanned at commit 84c10399cccc8e5f34b2aadcade96907b5b1a655. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -33,16 +33,16 @@ Direct dependencies: 0.
 
 ## Authors
 
-The git log holds 83 commits. The authors, by commit count:
+The git log holds 83 commits.
 
-- Will Bickford <wbic16@gmail.com> — 51 commits (61.4%)
-- Emise <emise@localhost> — 16 commits (19.3%)
-- Theia <theia@mirrorborn.us> — 9 commits (10.8%)
-- Emise <emise@mirrorborn.us> — 2 commits (2.4%)
-- Emise <emise@phext.io> — 2 commits (2.4%)
-- Orin <orin@mirrorborn.us> — 1 commit (1.2%)
-- wbic16 <wbic16@gmail.com> — 1 commit (1.2%)
-- wbic16 <wbic16@users.noreply.github.com> — 1 commit (1.2%)
+The author of record is **Will Bickford** — 83 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Will Bickford (his own identities) — 53 commits
+- Emise — 20 commits
+- Theia — 9 commits
+- Orin — 1 commit
 
 ---
 
@@ -99,7 +99,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 - Origin: /home/wbic16/github-archive/mirrors/libphext-rs.git
 - Branch: exo
 - Head commit: 84c10399cccc8e5f34b2aadcade96907b5b1a655
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
@@ -2161,3 +2161,9 @@ Signature: `pub fn unseal_string(data: &[u8]) -> io::Result<String> {`
 What it does: ---------------------------------------------------------------------------------------------------------- @fn unseal_string  unseals directly to text. Fails with InvalidData when the unsealed bytes are not valid UTF-8; to unseal foreign content that may carry non-UTF-8 scrolls, `unseal` to bytes and pass them through `binary::ingest`, which applies the base64-verbatim ingestion rule instead of failing. ----------------------------------------------------------------------------------------------------------
 
 (Where these words came from: doc comment.)
+
+---
+
+## Provenance
+
+This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/libphext-rs/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
