@@ -1,6 +1,6 @@
 # phext-lanes — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/phext-lanes/. Scanned at commit c7aaa1b63455cafe94dc75f762274a72d54a784e. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 104). Project root: /home/wbic16/phext-lanes. Scanned at commit c7aaa1b63455cafe94dc75f762274a72d54a784e. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -38,19 +38,12 @@ Total packages in the lock file, this one included: 135.
 
 ## Authors
 
-The git log holds 29 commits.
+The git log holds 29 commits. The authors, by commit count:
 
-The author of record is **Will Bickford** — 14 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
-
-Annotation, by persona (all folded into Will Bickford):
-
-- Will Bickford (his own identities) — 13 commits
-- Verse — 1 commit
-
-Other authors, kept as themselves (not Exocortical cluster personas; never folded):
-
-- Cursor Agent <cursoragent@cursor.com> — 14 commits
-- Cursor <noreply@cursor.com> — 1 commit
+- Cursor Agent <cursoragent@cursor.com> — 14 commits (48.3%)
+- Will Bickford <wbic16@gmail.com> — 13 commits (44.8%)
+- Cursor <noreply@cursor.com> — 1 commit (3.4%)
+- Verse <verse@visionquest.me> — 1 commit (3.4%)
 
 ---
 
@@ -104,10 +97,10 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 ## Upstream git repo
 
-- Origin: /home/wbic16/github-archive/mirrors/phext-lanes.git
+- Origin: https://github.com/wbic16/phext-lanes.git
 - Branch: exo
 - Head commit: c7aaa1b63455cafe94dc75f762274a72d54a784e
-- Working tree: 1 changed paths
+- Working tree: clean
 
 ---
 
@@ -3625,9 +3618,3 @@ Signature: `pub fn world_from(doc: &str) -> World {`
 What it does: Function world_from takes doc: &str and gives back World.
 
 (Where these words came from: signature.)
-
----
-
-## Provenance
-
-This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/phext-lanes/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
