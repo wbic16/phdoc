@@ -1,6 +1,6 @@
 # bickfordllamaranch — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/bickfordllamaranch/. Scanned at commit 04a5e1a7cad5f19cd5346511a2d67b43d4205ecb. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 105). Project root: /source/bickfordllamaranch. Scanned at commit 7fd5334b18c55a014c5d0e6d1ca615106aaca91b. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -14,19 +14,12 @@ No dependency manifest was found (no Cargo.toml, package.json, requirements.txt,
 
 ## Authors
 
-The git log holds 23 commits.
+The git log holds 20 commits. The authors, by commit count:
 
-The author of record is **Will Bickford** — 22 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
-
-Annotation, by persona (all folded into Will Bickford):
-
-- Emise — 20 commits
-- Verse — 1 commit
-- Will Bickford (his own identities) — 1 commit
-
-Other authors, kept as themselves (not Exocortical cluster personas; never folded):
-
-- Cursor Agent <cursoragent@cursor.com> — 1 commit
+- Emise <emise@localhost> — 17 commits (85.0%)
+- Cursor Agent <cursoragent@cursor.com> — 1 commit (5.0%)
+- Verse <verse@visionquest.me> — 1 commit (5.0%)
+- Will Bickford <wbic16@gmail.com> — 1 commit (5.0%)
 
 ---
 
@@ -34,19 +27,19 @@ Other authors, kept as themselves (not Exocortical cluster personas; never folde
 
 The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.
 
-- JavaScript: 4 files, 668 lines total, 23 blank, 66 comment, 579 code
-- Markdown: 14 files, 2971 lines total, 409 blank, 11 comment, 2551 code
-- Python: 3 files, 552 lines total, 69 blank, 13 comment, 470 code
-- Shell: 5 files, 1620 lines total, 95 blank, 286 comment, 1239 code
+- JavaScript: 3 files, 539 lines total, 16 blank, 48 comment, 475 code
+- Markdown: 12 files, 2586 lines total, 357 blank, 8 comment, 2221 code
+- Python: 2 files, 375 lines total, 43 blank, 8 comment, 324 code
+- Shell: 5 files, 1513 lines total, 93 blank, 248 comment, 1172 code
 
-All languages: 26 files, 5811 lines total, 4839 lines of code. Functions read: 47.
+All languages: 22 files, 5013 lines total, 4192 lines of code. Functions read: 40.
 
 Largest files:
 
-- VERIFY.md — 843 lines
-- deploy/root-deploy.sh — 807 lines
-- site/admin/app.js — 572 lines
+- deploy/root-deploy.sh — 700 lines
+- VERIFY.md — 650 lines
 - deploy.sh — 551 lines
+- site/admin/app.js — 514 lines
 - research/sq-api.md — 355 lines
 
 Largest functions, by span in lines:
@@ -67,7 +60,7 @@ Each signal is named and shown with its evidence. A signal is a fact the scanner
 - CI: no CI configuration was found in the project.
 - Lint and format: no lint or format configuration file was found.
 - TODO marks in the source: 0. FIXME marks: 0.
-- Public items with a doc comment: 4 of 43 (9%).
+- Public items with a doc comment: 2 of 36 (6%).
 
 ---
 
@@ -80,10 +73,10 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 ## Upstream git repo
 
-- Origin: /home/wbic16/github-archive/mirrors/bickfordllamaranch.git
+- Origin: git@github.com:wbic16/bickfordllamaranch.git
 - Branch: exo
-- Head commit: 04a5e1a7cad5f19cd5346511a2d67b43d4205ecb
-- Working tree: 1 changed paths
+- Head commit: 7fd5334b18c55a014c5d0e6d1ca615106aaca91b
+- Working tree: clean
 
 ---
 
@@ -91,13 +84,6 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.
 
-- function `fmt` (deploy/gen-public.py:44) — Function fmt takes coord and gives back nothing; it does its work on what it is given.
-- function `parse_phext` (deploy/gen-public.py:48) — Return {coordinate_string: scroll_text} for every scroll slot.
-- function `get` (deploy/gen-public.py:71) — Function get takes scrolls, coord and gives back nothing; it does its work on what it is given.
-- function `photo_url` (deploy/gen-public.py:75) — F9 is a text reference: an absolute URL is used as-is; a stored
-- function `build` (deploy/gen-public.py:91) — Function build takes scrolls and gives back nothing; it does its work on what it is given.
-- function `field` (deploy/gen-public.py:100) — Function field takes a, f and gives back nothing; it does its work on what it is given.
-- function `main` (deploy/gen-public.py:143) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
 - function `detect_ext` (deploy/ranch-upload.py:48) — Return the extension for a known image type, or None.
 - function `parse_multipart` (deploy/ranch-upload.py:63) — Minimal strict multipart/form-data parser.
 - function `log_message` (deploy/ranch-upload.py:105) — Function log_message takes self, fmt, *args and gives back nothing; it does its work on what it is given.
@@ -134,90 +120,6 @@ Every public method and command the scanner found, each with a plain English not
 - function `ids` (reminders/remind.py:53) — Function ids takes pattern and gives back nothing; it does its work on what it is given.
 - function `parse` (reminders/remind.py:64) — Function parse takes s and gives back nothing; it does its work on what it is given.
 - function `main` (reminders/remind.py:70) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
-
----
-
-## function — fmt
-
-Found in deploy/gen-public.py at line 44.
-
-Signature: `def fmt(coord):`
-
-What it does: Function fmt takes coord and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — parse_phext
-
-Found in deploy/gen-public.py at line 48.
-
-Signature: `def parse_phext(path):`
-
-What it does: Return {coordinate_string: scroll_text} for every scroll slot.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — get
-
-Found in deploy/gen-public.py at line 71.
-
-Signature: `def get(scrolls, coord):`
-
-What it does: Function get takes scrolls, coord and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — photo_url
-
-Found in deploy/gen-public.py at line 75.
-
-Signature: `def photo_url(raw):`
-
-What it does: F9 is a text reference: an absolute URL is used as-is; a stored
-
-(Where these words came from: doc comment.)
-
----
-
-## function — build
-
-Found in deploy/gen-public.py at line 91.
-
-Signature: `def build(scrolls):`
-
-What it does: Function build takes scrolls and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — field
-
-Found in deploy/gen-public.py at line 100.
-
-Signature: `def field(a, f):`
-
-What it does: Function field takes a, f and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — main
-
-Found in deploy/gen-public.py at line 143.
-
-Signature: `def main():`
-
-What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
 
 ---
 
@@ -650,9 +552,3 @@ Signature: `def main():`
 What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
-
----
-
-## Provenance
-
-This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/bickfordllamaranch/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
