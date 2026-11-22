@@ -1,6 +1,6 @@
 # phextron — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 94). Project root: /home/wbic16/phdoc-sweep/proj/phextron. Scanned at commit 2c3be7e6552a7bfad635001bffd8b3657a2d3358. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/phextron/. Scanned at commit 2c3be7e6552a7bfad635001bffd8b3657a2d3358. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -61,14 +61,15 @@ Total packages in the lock file, this one included: 75.
 
 ## Authors
 
-The git log holds 16 commits. The authors, by commit count:
+The git log holds 16 commits.
 
-- Theia <theia@mirrorborn.us> — 9 commits (56.2%)
-- Emise <emise@mirrorborn.us> — 2 commits (12.5%)
-- Will Bickford <wbic16@gmail.com> — 2 commits (12.5%)
-- Emise <emise@mirrorborn> — 1 commit (6.2%)
-- Emise <emise@phext.io> — 1 commit (6.2%)
-- Emise <emise@phextron> — 1 commit (6.2%)
+The author of record is **Will Bickford** — 16 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Theia — 9 commits
+- Emise — 5 commits
+- Will Bickford (his own identities) — 2 commits
 
 ---
 
@@ -127,7 +128,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 - Origin: /home/wbic16/github-archive/mirrors/phextron.git
 - Branch: exo
 - Head commit: 2c3be7e6552a7bfad635001bffd8b3657a2d3358
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
