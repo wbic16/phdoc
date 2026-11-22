@@ -1,0 +1,312 @@
+Commit e3b1f5ec2ee7 by Will Bickford <wbic16@gmail.com> on 2026-11-21 (EE 0).
+
+Subject: Initial commit
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 0.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit e3b1f5ec2ee79997d798b74bc1a0f076c74c5715
+parent none
+author Will Bickford <wbic16@gmail.com>
+date 1795278020 2026-11-21
+author+ Will Bickford <wbic16@gmail.com>
+Commit 6fe345766468 by Emise <emise@phextron> on 2026-11-22 (EE 0).
+
+Subject: G-L1 + G-L2: lineage HTTP client (ureq/rustls) and Windows Credential Manager FFI binding
+
+Public items: 29 added, 0 removed, 0 changed. Dependencies: serde added at 1; serde_json added at 1; ureq added at 2. Code lines after this commit: 748.
+
+commit 6fe3457664687f45f76a98b7a8e1296f9048e7e7
+parent e3b1f5ec2ee79997d798b74bc1a0f076c74c5715
+author Emise <emise@phextron>
+date 1795306039 2026-11-22
+dep+ crates/gl1-http/Cargo.toml :: serde :: 1
+dep+ crates/gl1-http/Cargo.toml :: serde_json :: 1
+dep+ crates/gl1-http/Cargo.toml :: ureq :: 2
+item+ struct crates/gl1-http/src/lib.rs :: ExchangeResult :: pub struct ExchangeResult { :: The `{session, csrf}` pair returned by the desktop exchange. :: doc comment
+item+ struct crates/gl1-http/src/lib.rs :: LatticeClient :: pub struct LatticeClient { :: Typed client for one lattice base URL. :: doc comment
+item+ function crates/gl1-http/src/lib.rs :: LatticeClient::new :: pub fn new(base_url: impl Into<String>) -> Self { :: Function LatticeClient::new takes base_url: impl Into<String> and gives back Self. :: signature
+item+ function crates/gl1-http/src/lib.rs :: cookie_header :: pub fn cookie_header(session: Option<&str>) -> Option<String> { :: Value of the `Cookie` header presenting the session, if any. :: doc comment
+item+ function crates/gl1-http/src/lib.rs :: csrf_value :: pub fn csrf_value(&self) -> Option<&str> { :: Function csrf_value takes no inputs beyond the value it is called on, and gives back Option<&str>. :: signature
+item+ function crates/gl1-http/src/lib.rs :: exchange :: pub fn exchange( &mut self, assertion: &str, state: &str, ) -> Result<(u16, ExchangeResult), Box<dyn std::error::Error>> { :: POST /api/auth/desktop/exchange with the assertion/state headers. On success stores the returned session + CSRF on this client. :: doc comment
+item+ function crates/gl1-http/src/lib.rs :: get :: pub fn get(&self, path: &str) -> Result<(u16, String), ureq::Error> { :: Generic GET. Returns `(status, body)`. HTTP error statuses are returned, not raised, so callers see lattice's status directly. :: doc comment
+item+ function crates/gl1-http/src/lib.rs :: join_url :: pub fn join_url(base: &str, path: &str) -> String { :: Join a base URL and a path with exactly one separating slash. :: doc comment
+item+ function crates/gl1-http/src/lib.rs :: post :: pub fn post(&self, path: &str, body: &str) -> Result<(u16, String), ureq::Error> { :: Generic POST with a string body. Sends the CSRF token. :: doc comment
+item+ function crates/gl1-http/src/lib.rs :: session :: pub fn session(&self) -> Result<(u16, String), ureq::Error> { :: GET /api/session. Returns `(status, body)`. :: doc comment
+item+ function crates/gl1-http/src/lib.rs :: session_value :: pub fn session_value(&self) -> Option<&str> { :: Function session_value takes no inputs beyond the value it is called on, and gives back Option<&str>. :: signature
+item+ function crates/gl1-http/src/lib.rs :: set_csrf :: pub fn set_csrf(&mut self, csrf: Option<String>) { :: Function set_csrf takes &mut self, csrf: Option<String> and gives back nothing; it does its work on what it is given. :: signature
+item+ function crates/gl1-http/src/lib.rs :: set_session :: pub fn set_session(&mut self, session: Option<String>) { :: Function set_session takes &mut self, session: Option<String> and gives back nothing; it does its work on what it is given. :: signature
+item+ function crates/gl1-http/src/lib.rs :: url :: pub fn url(&self, path: &str) -> String { :: Function url takes &self, path: &str and gives back String. :: signature
+item+ function crates/gl1-http/src/lib.rs :: with_credentials :: pub fn with_credentials( base_url: impl Into<String>, session: Option<String>, csrf: Option<String>, ) -> Self { :: Function with_credentials takes base_url: impl Into<String>, session: Option<String>, csrf: Option<String>, and gives back Self. :: signature
+item+ entry-point crates/gl2-credman/src/bin/credman-roundtrip.rs :: main :: fn main() { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: signature
+item+ const crates/gl2-credman/src/lib.rs :: CRED_PERSIST_LOCAL_MACHINE :: pub const CRED_PERSIST_LOCAL_MACHINE: u32 = 2; :: A fixed value named CRED_PERSIST_LOCAL_MACHINE, set to 2. :: signature
+item+ const crates/gl2-credman/src/lib.rs :: CRED_TYPE_GENERIC :: pub const CRED_TYPE_GENERIC: u32 = 1; :: A fixed value named CRED_TYPE_GENERIC, set to 1. :: signature
+item+ struct crates/gl2-credman/src/lib.rs :: CredentialW :: pub struct CredentialW { :: A data shape named CredentialW. Its fields are: pub flags: u32; pub cred_type: u32; pub target_name: *mut u16; pub comment: *mut u16; pub last_written: u64, // FILETIME; pub credential_blob_size: u32; pub credential_blob: *mut u8; pub persist: u32; pub attribute_count: u32; pub attributes: *mut core::ffi::c_void; pub target_alias: *mut u16; pub user_name: *mut u16. :: signature
+item+ const crates/gl2-credman/src/lib.rs :: ERROR_NOT_FOUND :: pub const ERROR_NOT_FOUND: u32 = 1168; :: A fixed value named ERROR_NOT_FOUND, set to 1168. :: signature
+item+ enum crates/gl2-credman/src/lib.rs :: Error :: pub enum Error { :: A named choice named Error. It is one of: BlobTooLarge; InvalidTarget; Unsupported; Os. :: signature
+item+ function crates/gl2-credman/src/lib.rs :: Error::validate_target :: pub fn validate_target(target: &str) -> Result<()> { :: Function Error::validate_target takes target: &str and gives back Result<()>. :: signature
+item+ const crates/gl2-credman/src/lib.rs :: MAX_BLOB_BYTES :: pub const MAX_BLOB_BYTES: usize = 2560; // CRED_MAX_CREDENTIAL_BLOB_SIZE (5 * 512) :: Generic-credential blob limit enforced by Windows Credential Manager. :: doc comment
+item+ type crates/gl2-credman/src/lib.rs :: Result :: pub type Result<T> = std::result::Result<T, Error>; :: A type name, Result, that stands for another type. :: signature
+item+ function crates/gl2-credman/src/lib.rs :: delete :: pub fn delete(target: &str) -> Result<()> { win::delete(target) } :: Function delete takes target: &str and gives back Result<()>. :: signature
+item+ function crates/gl2-credman/src/lib.rs :: open_url :: pub fn open_url(url: &str) -> Result<()> { win::open_url(url) } :: Function open_url takes url: &str and gives back Result<()>. :: signature
+item+ function crates/gl2-credman/src/lib.rs :: read :: pub fn read(target: &str) -> Result<Option<Vec<u8>>> { win::read(target) } :: Function read takes target: &str and gives back Result<Option<Vec<u8>>>. :: signature
+item+ function crates/gl2-credman/src/lib.rs :: store :: pub fn store(target: &str, blob: &[u8]) -> Result<()> { win::store(target, blob) } :: Function store takes target: &str, blob: &[u8] and gives back Result<()>. :: signature
+item+ function crates/gl2-credman/src/lib.rs :: validate_blob :: pub fn validate_blob(blob: &[u8]) -> Result<()> { :: Function validate_blob takes blob: &[u8] and gives back Result<()>. :: signature
+stat Markdown files 3 total 188 blank 0 comment 0 code 188
+stat Rust files 5 total 538 blank 0 comment 0 code 538
+stat TOML files 3 total 22 blank 0 comment 0 code 22
+author+ Emise <emise@phextron>
+Commit 3a6a911bc6ab by Emise <emise@mirrorborn> on 2026-11-22 (EE 0).
+
+Subject: Phextron stage 1: dashboard framework + live ranch-nodes panel (crates/phextron-dash)
+
+Public items: 14 added, 0 removed, 0 changed. Dependencies: libphext added at 0.6.4; serde_json added at 1. Code lines after this commit: 1469.
+
+commit 3a6a911bc6ab769eeb1c94c9a772a3bc64a99d61
+parent 6fe3457664687f45f76a98b7a8e1296f9048e7e7
+author Emise <emise@mirrorborn>
+date 1795306620 2026-11-22
+dep+ crates/phextron-dash/Cargo.toml :: libphext :: 0.6.4
+dep+ crates/phextron-dash/Cargo.toml :: serde_json :: 1
+item+ entry-point crates/phextron-dash/src/main.rs :: main :: fn main() { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: signature
+item+ struct crates/phextron-dash/src/nodes.rs :: NodesPanel :: pub struct NodesPanel; :: A data shape named NodesPanel. The scanner did not read its fields. :: signature
+item+ trait crates/phextron-dash/src/panels.rs :: Panel :: pub trait Panel: Send + Sync { :: A trait named Panel: a set of methods that a type can promise to give. :: signature
+item+ struct crates/phextron-dash/src/panels.rs :: PanelData :: pub struct PanelData { :: A data shape named PanelData. Its fields are: pub id: &'static str; pub title: &'static str; pub state: PanelState; pub source: SourceInfo; pub body: Value. :: signature
+item+ function crates/phextron-dash/src/panels.rs :: PanelData::to_json :: pub fn to_json(&self) -> Value { :: Function PanelData::to_json takes no inputs beyond the value it is called on, and gives back Value. :: signature
+item+ enum crates/phextron-dash/src/panels.rs :: PanelState :: pub enum PanelState { :: A named choice named PanelState. It is one of: Live; Recon; Degraded. :: signature
+item+ function crates/phextron-dash/src/panels.rs :: PanelState::as_str :: pub fn as_str(&self) -> &'static str { :: Function PanelState::as_str takes no inputs beyond the value it is called on, and gives back &'static str. :: signature
+item+ struct crates/phextron-dash/src/panels.rs :: SourceInfo :: pub struct SourceInfo { :: Where a panel's data comes from, stated on the panel itself. `freshness` is a human line computed by the reader at request time (e.g. "pull file updated 42s ago"), never a copied timestamp alone. :: doc comment
+item+ function crates/phextron-dash/src/panels.rs :: registry :: pub fn registry() -> Vec<Box<dyn Panel>> { :: The five domains of Will's 2026-11-21 directive, in shell order. :: doc comment
+item+ struct crates/phextron-dash/src/pending.rs :: PendingPanel :: pub struct PendingPanel { :: A data shape named PendingPanel. The scanner did not read its fields. :: signature
+item+ function crates/phextron-dash/src/pending.rs :: PendingPanel::jenkins :: pub fn jenkins() -> Self { :: Function PendingPanel::jenkins takes no inputs beyond the value it is called on, and gives back Self. :: signature
+item+ function crates/phextron-dash/src/pending.rs :: cloud :: pub fn cloud() -> Self { :: Function cloud takes no inputs beyond the value it is called on, and gives back Self. :: signature
+item+ function crates/phextron-dash/src/pending.rs :: phexts :: pub fn phexts() -> Self { :: Function phexts takes no inputs beyond the value it is called on, and gives back Self. :: signature
+item+ function crates/phextron-dash/src/pending.rs :: video :: pub fn video() -> Self { :: Function video takes no inputs beyond the value it is called on, and gives back Self. :: signature
+stat Markdown files 5 total 374 blank 0 comment 0 code 374
+stat Rust files 9 total 1059 blank 0 comment 0 code 1059
+stat TOML files 4 total 36 blank 0 comment 0 code 36
+author+ Emise <emise@mirrorborn>
+Commit 01c95b32ad30 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 0).
+
+Subject: Phextron stage 2: Jenkins panel — live controller REST API reader (crates/phextron-dash)
+
+Public items: 2 added, 2 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2142.
+
+commit 01c95b32ad308e4dc1fbb1933139833929c4659d
+parent 3a6a911bc6ab769eeb1c94c9a772a3bc64a99d61
+author Theia <theia@mirrorborn.us>
+date 1795308487 2026-11-22
+item+ struct crates/phextron-dash/src/jenkins.rs :: JenkinsPanel :: pub struct JenkinsPanel; :: A data shape named JenkinsPanel. The scanner did not read its fields. :: signature
+item+ function crates/phextron-dash/src/pending.rs :: PendingPanel::video :: pub fn video() -> Self { :: Function PendingPanel::video takes no inputs beyond the value it is called on, and gives back Self. :: signature
+item- function crates/phextron-dash/src/pending.rs :: PendingPanel::jenkins
+item- function crates/phextron-dash/src/pending.rs :: video
+stat Markdown files 5 total 427 blank 0 comment 0 code 427
+stat Rust files 10 total 1679 blank 0 comment 0 code 1679
+stat TOML files 4 total 36 blank 0 comment 0 code 36
+author+ Theia <theia@mirrorborn.us>
+Commit b763081dc2e8 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 0).
+
+Subject: Phextron stage 2: Jenkins panel verification screenshots (live + degraded, light + dark)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2142.
+
+commit b763081dc2e8e87167e2501bd656abe2f702be94
+parent 01c95b32ad308e4dc1fbb1933139833929c4659d
+author Theia <theia@mirrorborn.us>
+date 1795308524 2026-11-22
+stat Markdown files 5 total 427 blank 0 comment 0 code 427
+stat Rust files 10 total 1679 blank 0 comment 0 code 1679
+stat TOML files 4 total 36 blank 0 comment 0 code 36
+author~ Theia <theia@mirrorborn.us> commits 2
+Commit b71b09584e91 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 0).
+
+Subject: Phextron stage 3: All Phexts panel — libphext census over both corpora (crates/phextron-dash)
+
+Public items: 1 added, 1 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2747.
+
+commit b71b09584e91fd48d913cc954d79fb661e2e3a11
+parent b763081dc2e8e87167e2501bd656abe2f702be94
+author Theia <theia@mirrorborn.us>
+date 1795310601 2026-11-22
+item- function crates/phextron-dash/src/pending.rs :: phexts
+item+ struct crates/phextron-dash/src/phexts.rs :: PhextsPanel :: pub struct PhextsPanel; :: A data shape named PhextsPanel. The scanner did not read its fields. :: signature
+stat Markdown files 5 total 487 blank 0 comment 0 code 487
+stat Rust files 11 total 2224 blank 0 comment 0 code 2224
+stat TOML files 4 total 36 blank 0 comment 0 code 36
+author~ Theia <theia@mirrorborn.us> commits 3
+Commit c51b9dbb0f44 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 0).
+
+Subject: Phextron stage 3: All Phexts verification screenshots (node + awsbox, light + dark)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2747.
+
+commit c51b9dbb0f4482bf6601a6c7c5bd1f3480cb897a
+parent b71b09584e91fd48d913cc954d79fb661e2e3a11
+author Theia <theia@mirrorborn.us>
+date 1795310601 2026-11-22
+stat Markdown files 5 total 487 blank 0 comment 0 code 487
+stat Rust files 11 total 2224 blank 0 comment 0 code 2224
+stat TOML files 4 total 36 blank 0 comment 0 code 36
+author~ Theia <theia@mirrorborn.us> commits 4
+Commit a8aa170f2598 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 0).
+
+Subject: Phextron stage 4: Video Pipelines panel — pipelines.phext register reader + ranch-batchq (crates/phextron-dash)
+
+Public items: 2 added, 2 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3472.
+
+commit a8aa170f25983abfc957b397ce20da6191f6e693
+parent c51b9dbb0f4482bf6601a6c7c5bd1f3480cb897a
+author Theia <theia@mirrorborn.us>
+date 1795311532 2026-11-22
+item+ function crates/phextron-dash/src/pending.rs :: PendingPanel::cloud :: pub fn cloud() -> Self { :: Function PendingPanel::cloud takes no inputs beyond the value it is called on, and gives back Self. :: signature
+item- function crates/phextron-dash/src/pending.rs :: PendingPanel::video
+item- function crates/phextron-dash/src/pending.rs :: cloud
+item+ struct crates/phextron-dash/src/video.rs :: VideoPanel :: pub struct VideoPanel; :: A data shape named VideoPanel. The scanner did not read its fields. :: signature
+stat Markdown files 5 total 515 blank 0 comment 0 code 515
+stat Rust files 12 total 2921 blank 0 comment 0 code 2921
+stat TOML files 4 total 36 blank 0 comment 0 code 36
+author~ Theia <theia@mirrorborn.us> commits 5
+Commit 85179f5fdbab by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 0).
+
+Subject: Phextron stage 4: Video Pipelines verification screenshots (live + degraded, light + dark)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3472.
+
+commit 85179f5fdbab75cad84ddc610e84b83628af3901
+parent a8aa170f25983abfc957b397ce20da6191f6e693
+author Theia <theia@mirrorborn.us>
+date 1795311532 2026-11-22
+stat Markdown files 5 total 515 blank 0 comment 0 code 515
+stat Rust files 12 total 2921 blank 0 comment 0 code 2921
+stat TOML files 4 total 36 blank 0 comment 0 code 36
+author~ Theia <theia@mirrorborn.us> commits 6
+Commit 487ca8df281e by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 0).
+
+Subject: RECON: append STASH section - estate-wide data census (task 25.7.9/8.7.10/7.7.10)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3532.
+
+commit 487ca8df281edfea627cb1c4f3bc7896fb5c3249
+parent 85179f5fdbab75cad84ddc610e84b83628af3901
+author Theia <theia@mirrorborn.us>
+date 1795312175 2026-11-22
+stat Markdown files 5 total 575 blank 0 comment 0 code 575
+stat Rust files 12 total 2921 blank 0 comment 0 code 2921
+stat TOML files 4 total 36 blank 0 comment 0 code 36
+author~ Theia <theia@mirrorborn.us> commits 7
+Commit 0d565bbb5a4d by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 0).
+
+Subject: Phextron Data panel — stash.phext census register reader (task 25.7.9/8.7.10/7.7.10)
+
+Public items: 1 added, 0 removed, 1 changed. Dependencies did not change. Code lines after this commit: 4397.
+
+commit 0d565bbb5a4d95ad584f383fff1f29d6599d8b25
+parent 487ca8df281edfea627cb1c4f3bc7896fb5c3249
+author Theia <theia@mirrorborn.us>
+date 1795314192 2026-11-22
+item+ struct crates/phextron-dash/src/data.rs :: DataPanel :: pub struct DataPanel; :: A data shape named DataPanel. The scanner did not read its fields. :: signature
+item~ function crates/phextron-dash/src/panels.rs :: registry :: pub fn registry() -> Vec<Box<dyn Panel>> { :: The five domains of Will's 2026-11-21 directive, in shell order, plus the Data panel (stash task 25.7.9/8.7.10/7.7.10): Phextron's visibility into everywhere Will has stashed data, read from the stash.phext census register. :: doc comment
+stat Markdown files 5 total 602 blank 0 comment 0 code 602
+stat Rust files 13 total 3759 blank 0 comment 0 code 3759
+stat TOML files 4 total 36 blank 0 comment 0 code 36
+author~ Theia <theia@mirrorborn.us> commits 8
+Commit 4dfcee26e43a by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 0).
+
+Subject: Phextron Data panel verification screenshots (live + degraded, light + dark)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4397.
+
+commit 4dfcee26e43aced532df4b22a9d5e201c856fbaa
+parent 0d565bbb5a4d95ad584f383fff1f29d6599d8b25
+author Theia <theia@mirrorborn.us>
+date 1795314205 2026-11-22
+stat Markdown files 5 total 602 blank 0 comment 0 code 602
+stat Rust files 13 total 3759 blank 0 comment 0 code 3759
+stat TOML files 4 total 36 blank 0 comment 0 code 36
+author~ Theia <theia@mirrorborn.us> commits 9
+Commit b267522039a1 by Emise <emise@mirrorborn.us> on 2026-11-22 (EE 0).
+
+Subject: RECON: relocate the panels' VM-resident samplers to aletheia-core (task 28.8.11/12.8.16/6.7.9)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4505.
+
+commit b267522039a17b2f24b467a932dba0a283366d4b
+parent 4dfcee26e43aced532df4b22a9d5e201c856fbaa
+author Emise <emise@mirrorborn.us>
+date 1795315310 2026-11-22
+stat Markdown files 5 total 710 blank 0 comment 0 code 710
+stat Rust files 13 total 3759 blank 0 comment 0 code 3759
+stat TOML files 4 total 36 blank 0 comment 0 code 36
+author+ Emise <emise@mirrorborn.us>
+Commit d02dc477b0bd by Emise <emise@mirrorborn.us> on 2026-11-22 (EE 0).
+
+Subject: Phextron web UI stage 1 — WASM target, shell, ranch-nodes panel (task 33.12.9/13.10.15/11.10.12)
+
+Public items: 13 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5707.
+
+commit d02dc477b0bd35804b04bb24b45bd7892cf43035
+parent b267522039a17b2f24b467a932dba0a283366d4b
+author Emise <emise@mirrorborn.us>
+date 1795325478 2026-11-22
+item+ enum crates/phextron-web/src/json.rs :: Json :: pub enum Json { :: A parsed JSON value. Objects keep insertion order (the console's renderers iterate fixed key lists, so order is cosmetic, but fidelity costs nothing). Numbers keep their raw lexeme for storage; display renders them the way the desktop shell's JS does — through the numeric value, JS-style (`8.0` shows as `8`) — and arithmetic parses on demand. :: doc comment
+item+ function crates/phextron-web/src/json.rs :: Json::get :: pub fn get(&self, key: &str) -> Option<&Json> { :: Function Json::get takes &self, key: &str and gives back Option<&Json>. :: signature
+item+ function crates/phextron-web/src/json.rs :: as_arr :: pub fn as_arr(&self) -> Option<&[Json]> { :: Function as_arr takes no inputs beyond the value it is called on, and gives back Option<&[Json]>. :: signature
+item+ function crates/phextron-web/src/json.rs :: as_bool :: pub fn as_bool(&self) -> Option<bool> { :: Function as_bool takes no inputs beyond the value it is called on, and gives back Option<bool>. :: signature
+item+ function crates/phextron-web/src/json.rs :: as_f64 :: pub fn as_f64(&self) -> Option<f64> { :: Function as_f64 takes no inputs beyond the value it is called on, and gives back Option<f64>. :: signature
+item+ function crates/phextron-web/src/json.rs :: as_str :: pub fn as_str(&self) -> Option<&str> { :: Function as_str takes no inputs beyond the value it is called on, and gives back Option<&str>. :: signature
+item+ function crates/phextron-web/src/json.rs :: display :: pub fn display(&self) -> String { :: Display form, mirroring what the desktop shell's JS produces when it stringifies a JSON value into HTML: strings as themselves, booleans as `true`/`false`, null as empty (callers substitute the em dash where the JS does). Numbers go through their f64 value, because the JS shell stringifies the parsed number, not the wire lexeme: the server emits `8.0`, JSON.parse makes it `8`, and the shell shows `8` — so the WASM renderer shows `8` too. (Rust's `{}` for f64 is the same shortest-round-trip form JS uses at panel magnitudes.) :: doc comment
+item+ function crates/phextron-web/src/json.rs :: is_null :: pub fn is_null(&self) -> bool { :: Function is_null takes no inputs beyond the value it is called on, and gives back bool. :: signature
+item+ function crates/phextron-web/src/json.rs :: missing_or_null :: pub fn missing_or_null(&self, key: &str) -> bool { :: True when the key is absent or explicitly null — the renderers treat both as "no value" (the JS shell's `v === null || v === undefined`). :: doc comment
+item+ function crates/phextron-web/src/json.rs :: parse :: pub fn parse(input: &str) -> Result<Json, String> { :: Parse a complete JSON document; trailing non-whitespace is an error. :: doc comment
+item+ function crates/phextron-web/src/lib.rs :: render_panel_json :: pub fn render_panel_json(input: &str) -> String { :: Render one panel JSON document (the exact bytes `/api/panels/<id>` serves) to HTML. Parse failures render an error card — the web UI names its failures on its face, like every other Phextron surface. :: doc comment
+item+ function crates/phextron-web/src/render.rs :: esc :: pub fn esc(s: &str) -> String { :: The shell's `esc()`: HTML-escape a display string. :: doc comment
+item+ function crates/phextron-web/src/render.rs :: render_panel :: pub fn render_panel(d: &Json) -> String { :: Render one panel's JSON (the exact document `/api/panels/<id>` serves) to the HTML the shell places in its panel element. :: doc comment
+stat JavaScript files 2 total 182 blank 0 comment 0 code 182
+stat Markdown files 6 total 810 blank 0 comment 0 code 810
+stat Python files 1 total 89 blank 0 comment 0 code 89
+stat Rust files 17 total 4553 blank 0 comment 0 code 4553
+stat Shell files 1 total 19 blank 0 comment 0 code 19
+stat TOML files 5 total 54 blank 0 comment 0 code 54
+author~ Emise <emise@mirrorborn.us> commits 2
+Commit 5b15a830eb2c by Will Bickford <wbic16@gmail.com> on 2026-11-22 (EE 0).
+
+Subject: phextron-dash: Substrates panel — dispatched-work + budget-check coverage (W4 plan §1.10)
+
+Public items: 4 added, 0 removed, 1 changed. Dependencies did not change. Code lines after this commit: 7056.
+
+commit 5b15a830eb2ca2f47d9f6765b2037de4773f6b28
+parent d02dc477b0bd35804b04bb24b45bd7892cf43035
+author Will Bickford <wbic16@gmail.com>
+date 1795325755 2026-11-22
+item~ function crates/phextron-dash/src/panels.rs :: registry :: pub fn registry() -> Vec<Box<dyn Panel>> { :: The five domains of Will's 2026-11-21 directive, in shell order, plus the Data panel (stash task 25.7.9/8.7.10/7.7.10): Phextron's visibility into everywhere Will has stashed data, read from the stash.phext census register — and the Substrates panel (W4 plan §1.10, task 31.8.11/9.7.13/8.7.10): per-substrate dispatched-work and budget-check coverage against the reset-window clock. :: doc comment
+item+ struct crates/phextron-dash/src/substrates.rs :: SubstratesPanel :: pub struct SubstratesPanel; :: A data shape named SubstratesPanel. The scanner did not read its fields. :: signature
+item+ function crates/phextron-dash/tools/mark-substrate-check.py :: append_scroll :: def append_scroll(path: Path, scroll: str) -> int: :: Append one scroll; returns its 1-based scroll index (so the :: doc comment
+item+ function crates/phextron-dash/tools/mark-substrate-check.py :: init_register :: def init_register(path: Path) -> None: :: Function init_register takes path: Path and gives back None:. :: signature
+item+ function crates/phextron-dash/tools/mark-substrate-check.py :: main :: def main() -> int: :: Function main takes no inputs beyond the value it is called on, and gives back int:. :: signature
+stat JavaScript files 2 total 182 blank 0 comment 0 code 182
+stat Markdown files 6 total 877 blank 0 comment 0 code 877
+stat Python files 2 total 240 blank 0 comment 0 code 240
+stat Rust files 18 total 5684 blank 0 comment 0 code 5684
+stat Shell files 1 total 19 blank 0 comment 0 code 19
+stat TOML files 5 total 54 blank 0 comment 0 code 54
+author~ Will Bickford <wbic16@gmail.com> commits 2
+Commit 2c3be7e6552a by Emise <emise@phext.io> on 2026-11-22 (EE 0).
+
+Subject: TECH-DEBT.md: the tech debt register (Will ruling 2026-11-21 - allowed this one time for velocity, recorded at the time it is taken on, fixed later); seeded with TD-001, the VM-resident state samplers
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5787.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 2c3be7e6552a7bfad635001bffd8b3657a2d3358
+parent 5b15a830eb2ca2f47d9f6765b2037de4773f6b28
+author Emise <emise@phext.io>
+date 1795326519 2026-11-22
+stat JavaScript files 2 total 182 blank 12 comment 34 code 136
+stat Markdown files 7 total 915 blank 107 comment 0 code 808
+stat Python files 2 total 240 blank 37 comment 6 code 197
+stat Rust files 18 total 5684 blank 373 comment 716 code 4595
+stat Shell files 1 total 19 blank 0 comment 11 code 8
+stat TOML files 5 total 54 blank 7 comment 4 code 43
+author+ Emise <emise@phext.io>
