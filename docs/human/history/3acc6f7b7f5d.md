@@ -1,0 +1,24 @@
+# human — reference as of commit 3acc6f7b7f5d
+
+Commit 3acc6f7b7f5dc7d524fe9d284ae7cdf44fa91e81. 233 commits folded. Every fact here was folded from the chain's per-commit deltas.
+
+## Dependencies
+
+No dependencies recorded at this point.
+
+## Authors
+
+- Will Bickford <wbic16@gmail.com> — 233 commits
+
+## Complexity
+
+- Markdown: 2 files, 384 lines total, 98 blank, 0 comment, 286 code
+- Python: 1 files, 38 lines total, 7 blank, 6 comment, 25 code
+- Rust: 1 files, 4 lines total, 0 blank, 0 comment, 4 code
+- TOML: 1 files, 6 lines total, 0 blank, 0 comment, 6 code
+
+Declared RFCs at this point: none declared.
+
+## Public methods and commands
+
+- entry point `main` (src/main.rs) — The entry point: the program starts here.
