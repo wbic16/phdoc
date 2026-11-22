@@ -127,8 +127,9 @@ A single scan is a snapshot. `phdoc audit` keeps the record over time:
 ## .phdoc.json — the project's own ledger
 
 The target project carries `.phdoc.json` (Will's naming; cf.
-`rfcs.json`). It holds the doc chain's location, and the per-commit
-ledger: for each commit, its **audit** stamp (when, by which phdoc
+`rfcs.json`). It holds the doc chain's location, the project's target
+configuration (which export repo and which doc site — see
+Configuration, below), and the per-commit ledger: for each commit, its **audit** stamp (when, by which phdoc
 version, or audit-failed with the reason) and its **review** state
 (reviewed or not; when; by whom — a human or an agent identity, as
 recorded by `phdoc review`). phdoc fills the audit side automatically;
@@ -140,7 +141,8 @@ review state anywhere else.
 ## Export — the phdoc repo is the collection point
 
 Running `phdoc audit` with `--repo <phdoc-repo-dir>` **exports the
-run's changes to the phdoc repo** (wbic16/phdoc) as part of the run:
+run's changes to the export repo** (the repo named in the project's
+configuration; wbic16/phdoc is the default) as part of the run:
 the new chain universes and the updated render-ready output, under
 `docs/<project>/` — `chain.phext`, `latest.md`, and one history page
 per audited commit. The run's lifecycle is: scan → audit → render →
@@ -160,6 +162,39 @@ local repo-ready tree and the run reports **export held — repo not
 created** (Will creates repos himself). A held export is a reported
 state, never a silent drop and never a failed run. `--hold-push`
 commits the export locally and holds only the push.
+
+## Configuration — which repo and doc site phdoc targets
+
+Two settings name phdoc's targets, and both live in the target
+project's own `.phdoc.json` — the project carries its configuration,
+not the tool:
+
+- **`"export-repo"`** — the repo doc changes are exported to: an
+  owner/name pair (`wbic16/phdoc`), a full git URL, or a local path
+  (a bare repo works). Default: `wbic16/phdoc`.
+- **`"doc-site"`** — the base URL of the doc site the documentation
+  is rendered for. It is named in every rendered page's provenance
+  block, beside the export repo. Default: `https://docs.phext.io`.
+
+When a field is absent, the default applies and behavior is exactly
+as before — our own projects run on the defaults. When a project
+names its targets, configuration alone is enough: pass `--repo` with
+a checkout of the export repo as today, or leave `--repo` off and
+phdoc keeps a managed clone of the configured repo (under the out
+dir) and exports there. The push goes to the checkout's own branch
+and is verified against the remote head, as before.
+
+An example `.phdoc.json` head for a project with its own docs home:
+
+```json
+{
+  "project": "fixture",
+  "export-repo": "/srv/git/docs.git",
+  "doc-site": "https://docs.example.test",
+  "commits": {
+  }
+}
+```
 
 ## docs.phext.io — the rendering contract
 
@@ -185,6 +220,30 @@ this crate, make sure we test it on rfcbox"). The kgoat run is the
 small-target proof; the rfcbox run is the gate. The same discipline
 applies to the rfcbox crate itself when it is built: it is tested on
 rfcbox before any publish.
+
+### Crates.io readiness
+
+The crate is **crates-ready, not crates-published** (Will,
+2026-11-22: "phdoc should be made crates ready"). The Cargo metadata
+is complete: description, MIT license, repository
+(github.com/wbic16/phdoc), homepage and documentation
+(docs.phext.io), authors, keywords, categories, readme, and a stated
+rust-version (1.56 — the floor the code's edition and APIs imply;
+the readiness build itself ran on the ranch toolchain). The
+exported `docs/` tree is excluded from the package; the packaged
+file list is the crate and nothing else.
+
+Name check (2026-11-22): no crate named `phdoc` exists on
+crates.io — the registry's own API answers 404 for the name. (A
+same-named package exists on PyPI; that is a different registry and
+a different tool.)
+
+Readiness stops at a clean `cargo package` and
+`cargo publish --dry-run`, run on a ranch node. **House gate: no
+crates.io publish without the exact version tagged and the tagged
+tree merged to exo.** Creating the tag and running the publish are
+Will's steps, taken when he calls them — readiness does not take
+them.
 
 ## Build and dependencies
 

@@ -1158,7 +1158,7 @@ fn load_summaries(path: &Path) -> BTreeMap<String, String> {
 // ---------------------------------------------------------------------------
 
 fn usage() -> String {
-    "phdoc — a project scanner for shipped artifacts.\n\nCommands:\n  phdoc scan <project-dir> --out <output-dir> [--name <name>] [--summaries <file>]\n      Scan a project once and write docs.md and docs.phext into the output dir.\n      With --summaries, a file of `name :: summary` lines from the user's\n      agent is carried into the documentation.\n  phdoc audit <project-dir> [--repo <phdoc-repo-dir>] [--out <dir>] [--name <name>] [--hold-push]\n      Audit every unaudited commit, root to head: append one universe per\n      commit to the project's multiversal phext chain, render the latest\n      and historical references, update the project's .phdoc.json ledger,\n      report the unreviewed backlog, and export the changes to the phdoc\n      repo (commit and push) unless --hold-push is given.\n  phdoc review <project-dir> <commit> --by <name>\n      Mark a commit reviewed in the project's .phdoc.json.\n  phdoc render <project-dir> --at <commit|latest> [--repo <phdoc-repo-dir>] [--out <dir>]\n      Render the reference as of a commit by folding the chain.\n  phdoc help\n      Show this text.\n  phdoc version\n      Show the version.\n".to_string()
+    "phdoc — a project scanner for shipped artifacts.\n\nCommands:\n  phdoc scan <project-dir> --out <output-dir> [--name <name>] [--summaries <file>]\n      Scan a project once and write docs.md and docs.phext into the output dir.\n      With --summaries, a file of `name :: summary` lines from the user's\n      agent is carried into the documentation.\n  phdoc audit <project-dir> [--repo <phdoc-repo-dir>] [--out <dir>] [--name <name>] [--hold-push]\n      Audit every unaudited commit, root to head: append one universe per\n      commit to the project's multiversal phext chain, render the latest\n      and historical references, update the project's .phdoc.json ledger,\n      report the unreviewed backlog, and export the changes to the export\n      repo (commit and push) unless --hold-push is given. The export repo\n      and the doc site are the project's own configuration, held in its\n      .phdoc.json as \"export-repo\" and \"doc-site\" (defaults: wbic16/phdoc\n      and https://docs.phext.io); when an export repo is configured and no\n      --repo is given, phdoc keeps a managed clone of that repo to export to.\n  phdoc review <project-dir> <commit> --by <name>\n      Mark a commit reviewed in the project's .phdoc.json.\n  phdoc render <project-dir> --at <commit|latest> [--repo <phdoc-repo-dir>] [--out <dir>]\n      Render the reference as of a commit by folding the chain.\n  phdoc help\n      Show this text.\n  phdoc version\n      Show the version.\n".to_string()
 }
 
 fn main() {
@@ -1209,7 +1209,9 @@ fn main() {
             }
             let agent = summaries.as_ref().map(|p| load_summaries(p)).unwrap_or_default();
             let scan = scan_project(&root, &name);
-            let (sections, awaiting) = sections(&scan, &agent);
+            let (mut sections, awaiting) = sections(&scan, &agent);
+            let cfg = load_ledger(&root);
+            sections.push(provenance_section(&scan.name, eff_export_repo(&cfg), eff_doc_site(&cfg)));
             let out = PathBuf::from(&out_dir);
             if let Err(e) = fs::create_dir_all(&out) {
                 eprintln!("phdoc scan: cannot create {}: {}", out_dir, e);
@@ -1781,11 +1783,32 @@ fn parts_ok(fields: &[&str]) -> bool {
     fields.len() == 2
 }
 
-/// Render the folded reference (what docs.phext.io shows per universe).
-fn render_folded(name: &str, state: &FoldState, at_label: &str) -> String {
+/// The provenance section for the snapshot renders (docs.md / docs.phext /
+/// latest.md): it names the export repo and the doc site this documentation
+/// was produced for, from the project's configuration in its .phdoc.json.
+fn provenance_section(name: &str, export_repo: &str, doc_site: &str) -> (String, String) {
+    (
+        "Provenance".into(),
+        format!(
+            "## Provenance\n\nThis documentation is produced for the export repo {} (its chain of record lives at docs/{}/chain.phext) and for the doc site {}. Both targets are the project's own configuration, held in its .phdoc.json as \"export-repo\" and \"doc-site\"; when a project does not name them, the defaults are {} and {}.\n",
+            export_repo, name, doc_site, DEFAULT_EXPORT_REPO, DEFAULT_DOC_SITE
+        ),
+    )
+}
+
+/// Render the folded reference (what the doc site shows per universe).
+/// The provenance block names the targets the documentation was produced
+/// for: the export repo that keeps the chain, and the doc site it is
+/// rendered for — both from the project's own configuration.
+fn render_folded(name: &str, state: &FoldState, at_label: &str, export_repo: &str, doc_site: &str) -> String {
     let mut out = String::new();
     out.push_str(&format!("# {} — reference as of {}\n\n", name, at_label));
     out.push_str(&format!("Commit {}. {} commit{} folded. Every fact here was folded from the chain's per-commit deltas.\n\n", state.head_sha, state.total_commits, if state.total_commits == 1 { "" } else { "s" }));
+    out.push_str("## Provenance\n\n");
+    out.push_str(&format!(
+        "This reference is folded from the project's documentation chain, kept in the export repo {} at docs/{}/chain.phext, and rendered for the doc site {}. Both targets are named in the project's own .phdoc.json; the defaults are {} and {}.\n\n",
+        export_repo, name, doc_site, DEFAULT_EXPORT_REPO, DEFAULT_DOC_SITE
+    ));
     out.push_str("## Dependencies\n\n");
     if state.deps.is_empty() {
         out.push_str("No dependencies recorded at this point.\n\n");
@@ -1836,11 +1859,40 @@ struct LedgerEntry {
     reviewed: Option<String>, // stamp text
 }
 
+/// The default export repo: where doc changes are exported when the
+/// project's .phdoc.json does not name one (Will's own setup).
+const DEFAULT_EXPORT_REPO: &str = "wbic16/phdoc";
+/// The default doc site: the base URL the documentation is rendered for
+/// when the project's .phdoc.json does not name one.
+const DEFAULT_DOC_SITE: &str = "https://docs.phext.io";
+
 struct Ledger {
     chain_location: String,
     project: String,
+    export_repo: String, // "" = not configured; the default applies
+    doc_site: String,    // "" = not configured; the default applies
+    export_repo_set: bool, // the field was present (non-empty) in .phdoc.json
+    doc_site_set: bool,
     entries: BTreeMap<String, LedgerEntry>,
     order: Vec<String>,
+}
+
+/// The export repo in effect: the project's configured value, or the default.
+fn eff_export_repo(l: &Ledger) -> &str {
+    if l.export_repo.is_empty() {
+        DEFAULT_EXPORT_REPO
+    } else {
+        &l.export_repo
+    }
+}
+
+/// The doc site in effect: the project's configured value, or the default.
+fn eff_doc_site(l: &Ledger) -> &str {
+    if l.doc_site.is_empty() {
+        DEFAULT_DOC_SITE
+    } else {
+        &l.doc_site
+    }
 }
 
 fn ledger_path(root: &Path) -> PathBuf {
@@ -1852,6 +1904,10 @@ fn load_ledger(root: &Path) -> Ledger {
     let mut ledger = Ledger {
         chain_location: String::new(),
         project: String::new(),
+        export_repo: String::new(),
+        doc_site: String::new(),
+        export_repo_set: false,
+        doc_site_set: false,
         entries: BTreeMap::new(),
         order: Vec::new(),
     };
@@ -1867,6 +1923,20 @@ fn load_ledger(root: &Path) -> Ledger {
         }
         if let Some(rest) = t.strip_prefix("\"project\":") {
             ledger.project = rest.trim().trim_matches(|c| c == '"' || c == ',').to_string();
+        }
+        if let Some(rest) = t.strip_prefix("\"export-repo\":") {
+            let v = rest.trim().trim_matches(|c| c == '"' || c == ',').to_string();
+            if !v.is_empty() {
+                ledger.export_repo = v;
+                ledger.export_repo_set = true;
+            }
+        }
+        if let Some(rest) = t.strip_prefix("\"doc-site\":") {
+            let v = rest.trim().trim_matches(|c| c == '"' || c == ',').to_string();
+            if !v.is_empty() {
+                ledger.doc_site = v;
+                ledger.doc_site_set = true;
+            }
         }
         // entry start: "<40 hex>": {
         let key = t.trim_end_matches(": {").trim_matches('"');
@@ -1914,6 +1984,12 @@ fn save_ledger(root: &Path, ledger: &Ledger) {
     out.push_str("{\n");
     out.push_str(&format!("  \"project\": \"{}\",\n", json_escape(&ledger.project)));
     out.push_str(&format!("  \"chain\": \"{}\",\n", json_escape(&ledger.chain_location)));
+    if !ledger.export_repo.is_empty() {
+        out.push_str(&format!("  \"export-repo\": \"{}\",\n", json_escape(&ledger.export_repo)));
+    }
+    if !ledger.doc_site.is_empty() {
+        out.push_str(&format!("  \"doc-site\": \"{}\",\n", json_escape(&ledger.doc_site)));
+    }
     out.push_str("  \"commits\": {\n");
     let n = ledger.order.len();
     for (i, sha) in ledger.order.iter().enumerate() {
@@ -1975,6 +2051,40 @@ fn chain_commits(chain: &str) -> Vec<String> {
     out
 }
 
+/// The clone source for an export-repo setting: a local path, a full URL,
+/// or an owner/name pair (read as a GitHub repo over SSH).
+fn clone_source(spec: &str) -> String {
+    if spec.starts_with('/') || spec.starts_with('.') || spec.starts_with('~') || spec.contains("://") || spec.starts_with("git@") {
+        spec.to_string()
+    } else if spec.matches('/').count() == 1 {
+        format!("git@github.com:{}.git", spec)
+    } else {
+        spec.to_string()
+    }
+}
+
+/// Ensure phdoc has a working clone of the configured export repo at dir:
+/// clone it if absent, and give the clone a commit identity if it has none
+/// (an export commit must have an author). Returns the dir on success.
+fn ensure_managed_clone(spec: &str, dir: &Path) -> Result<PathBuf, String> {
+    if dir.join(".git").exists() {
+        return Ok(dir.to_path_buf());
+    }
+    if let Some(parent) = dir.parent() {
+        let _ = fs::create_dir_all(parent);
+    }
+    let src = clone_source(spec);
+    let o = Command::new("git").args(["clone", &src]).arg(dir).output().map_err(|e| e.to_string())?;
+    if !o.status.success() {
+        return Err(format!("git clone {} failed: {}", src, String::from_utf8_lossy(&o.stderr).trim()));
+    }
+    if git_str(dir, &["config", "user.email"]).is_empty() {
+        let _ = git_str(dir, &["config", "user.name", "phdoc"]);
+        let _ = git_str(dir, &["config", "user.email", "phdoc@localhost"]);
+    }
+    Ok(dir.to_path_buf())
+}
+
 struct AuditArgs {
     project: String,
     repo: Option<PathBuf>,
@@ -1992,15 +2102,39 @@ fn cmd_audit(a: AuditArgs) -> i32 {
     let scan = scan_project(&root, &a.name);
     let name = scan.name.clone();
 
-    // where the chain lives: the phdoc repo if given, else the out dir
-    let export_dir: Option<PathBuf> = a.repo.clone();
+    // the project's own ledger carries its target configuration: which repo
+    // doc changes export to, and which doc site the documentation is for
+    let mut ledger = load_ledger(&root);
+    let export_repo_cfg = eff_export_repo(&ledger).to_string();
+    let doc_site_cfg = eff_doc_site(&ledger).to_string();
+
+    // where the chain lives: the --repo checkout if given; else, when the
+    // project configures an export repo, a managed clone of that repo;
+    // else the plain out dir and the export is held
     let local_dir: PathBuf = a.out.clone().unwrap_or_else(|| PathBuf::from(format!("phdoc-out/{}", name)));
+    let export_dir: Option<PathBuf> = match &a.repo {
+        Some(r) => Some(r.clone()),
+        None if ledger.export_repo_set => {
+            let dir = local_dir.join("export-checkout");
+            match ensure_managed_clone(&export_repo_cfg, &dir) {
+                Ok(d) => Some(d),
+                Err(e) => {
+                    eprintln!("phdoc audit: the project configures export repo {} but phdoc could not clone it: {}. Nothing was exported.", export_repo_cfg, e);
+                    return 1;
+                }
+            }
+        }
+        None => None,
+    };
     let chain_home = export_dir.clone().unwrap_or_else(|| local_dir.clone());
     let proj_dir = chain_home.join("docs").join(&name);
     let chain_path = proj_dir.join("chain.phext");
     let mut chain = if chain_path.exists() { read(&chain_path) } else { String::new() };
 
-    // repo hygiene before writing: fetch + rebase onto fresh remote HEAD
+    // repo hygiene before writing: fetch + rebase onto the fresh remote head
+    // of the checkout's own branch (exo for wbic16/phdoc; a configured repo
+    // may name another). A remote with no commits yet has nothing to rebase.
+    let mut export_branch = "exo".to_string();
     if let Some(repo) = &export_dir {
         let dirty = git_str(repo, &["status", "--porcelain"]);
         if !dirty.is_empty() {
@@ -2008,11 +2142,18 @@ fn cmd_audit(a: AuditArgs) -> i32 {
             return 1;
         }
         let _ = git_str(repo, &["fetch", "origin"]);
-        let rb = Command::new("git").arg("-C").arg(repo).args(["rebase", "origin/exo"]).output();
-        if let Ok(o) = rb {
-            if !o.status.success() {
-                eprintln!("phdoc audit: rebase onto origin/exo failed in {}; export aborted.", repo.display());
-                return 1;
+        let b = git_str(repo, &["symbolic-ref", "--short", "HEAD"]);
+        if !b.is_empty() {
+            export_branch = b;
+        }
+        let remote_ref = format!("origin/{}", export_branch);
+        if !git_str(repo, &["rev-parse", "--verify", &remote_ref]).is_empty() {
+            let rb = Command::new("git").arg("-C").arg(repo).args(["rebase", &remote_ref]).output();
+            if let Ok(o) = rb {
+                if !o.status.success() {
+                    eprintln!("phdoc audit: rebase onto {} failed in {}; export aborted.", remote_ref, repo.display());
+                    return 1;
+                }
             }
         }
     }
@@ -2021,10 +2162,9 @@ fn cmd_audit(a: AuditArgs) -> i32 {
     let history = git_str(&root, &["rev-list", "--reverse", "HEAD"]);
     let commits: Vec<String> = history.lines().map(|s| s.to_string()).collect();
     let already = chain_commits(&chain);
-    let mut ledger = load_ledger(&root);
     ledger.project = name.clone();
     ledger.chain_location = if export_dir.is_some() {
-        format!("wbic16/phdoc:docs/{}/chain.phext", name)
+        format!("{}:docs/{}/chain.phext", export_repo_cfg, name)
     } else {
         chain_path.to_string_lossy().to_string()
     };
@@ -2073,7 +2213,8 @@ fn cmd_audit(a: AuditArgs) -> i32 {
     }
 
     // render: latest (full working-tree scan) + one history page per universe
-    let (sections, awaiting) = sections(&scan, &BTreeMap::new());
+    let (mut sections, awaiting) = sections(&scan, &BTreeMap::new());
+    sections.push(provenance_section(&name, &export_repo_cfg, &doc_site_cfg));
     let latest_md = render_markdown(&sections);
     let hist_dir = proj_dir.join("history");
     if let Err(e) = fs::create_dir_all(&hist_dir) {
@@ -2083,7 +2224,7 @@ fn cmd_audit(a: AuditArgs) -> i32 {
     let all = chain_commits(&chain);
     for (i, sha) in all.iter().enumerate() {
         let st = fold_chain(&chain, i + 1);
-        let page = render_folded(&name, &st, &format!("commit {}", &sha[..sha.len().min(12)]));
+        let page = render_folded(&name, &st, &format!("commit {}", &sha[..sha.len().min(12)]), &export_repo_cfg, &doc_site_cfg);
         let _ = fs::write(hist_dir.join(format!("{}.md", &sha[..sha.len().min(12)])), page);
     }
     let _ = fs::write(proj_dir.join("latest.md"), &latest_md);
@@ -2140,7 +2281,7 @@ fn cmd_audit(a: AuditArgs) -> i32 {
     // export: commit + push the phdoc repo, or report the held state
     match &export_dir {
         None => {
-            println!("phdoc audit: export held — no phdoc repo was given, so the chain and renders stay in {}. Nothing was dropped; pass --repo <phdoc-repo-dir> to export.", proj_dir.display());
+            println!("phdoc audit: export held — no phdoc repo was given, so the chain and renders stay in {}. Nothing was dropped; pass --repo <phdoc-repo-dir>, or name an \"export-repo\" in the project's .phdoc.json, to export.", proj_dir.display());
         }
         Some(repo) => {
             let status = git_str(repo, &["status", "--porcelain"]);
@@ -2161,20 +2302,26 @@ fn cmd_audit(a: AuditArgs) -> i32 {
                     Err(e) => eprintln!("phdoc audit: export commit failed: {}", e),
                 }
             }
-            // push any unpushed commits (this run's or an earlier held run's)
-            let ahead = git_str(repo, &["rev-list", "--count", "origin/exo..HEAD"]);
+            // push any unpushed commits (this run's or an earlier held run's);
+            // a remote with no commits on the branch yet counts every commit
+            let remote_ref = format!("origin/{}", export_branch);
+            let ahead = if git_str(repo, &["rev-parse", "--verify", &remote_ref]).is_empty() {
+                git_str(repo, &["rev-list", "--count", "HEAD"])
+            } else {
+                git_str(repo, &["rev-list", "--count", &format!("{}..HEAD", remote_ref)])
+            };
             if ahead != "0" && !ahead.is_empty() {
                 if a.hold_push {
                     println!("phdoc audit: export committed locally ({} commit(s) ahead); push held by --hold-push.", ahead);
                 } else {
-                    let p = Command::new("git").arg("-C").arg(repo).args(["push", "origin", "exo"]).output();
+                    let p = Command::new("git").arg("-C").arg(repo).args(["push", "origin", &export_branch]).output();
                     match p {
                         Ok(o) if o.status.success() => {
-                            let remote = git_str(repo, &["ls-remote", "origin", "exo"]);
+                            let remote = git_str(repo, &["ls-remote", "origin", &export_branch]);
                             let remote_sha = remote.split_whitespace().next().unwrap_or("");
                             let local_sha = git_str(repo, &["rev-parse", "HEAD"]);
                             if remote_sha == local_sha {
-                                println!("phdoc audit: exported to wbic16/phdoc@exo and verified — remote head {} matches the local head.", &local_sha[..local_sha.len().min(12)]);
+                                println!("phdoc audit: exported to {}@{} and verified — remote head {} matches the local head.", export_repo_cfg, export_branch, &local_sha[..local_sha.len().min(12)]);
                             } else {
                                 eprintln!("phdoc audit: push reported success but the remote head does not match the local head; treat the export as unverified.");
                                 return 1;
@@ -2249,7 +2396,7 @@ fn cmd_render(project: &str, at: &str, repo: &Option<PathBuf>, out: &Option<Path
         }
     };
     let state = fold_chain(&chain, upto);
-    let page = render_folded(&name, &state, &format!("commit {}", &commits[upto - 1][..commits[upto - 1].len().min(12)]));
+    let page = render_folded(&name, &state, &format!("commit {}", &commits[upto - 1][..commits[upto - 1].len().min(12)]), eff_export_repo(&ledger), eff_doc_site(&ledger));
     match out {
         Some(p) => {
             let _ = fs::write(p, &page);
@@ -2371,6 +2518,10 @@ mod tests {
         let mut ledger = Ledger {
             chain_location: "wbic16/phdoc:docs/x/chain.phext".into(),
             project: "x".into(),
+            export_repo: "/tmp/example-docs.git".into(),
+            doc_site: "https://docs.example.test".into(),
+            export_repo_set: true,
+            doc_site_set: true,
             entries: BTreeMap::new(),
             order: vec![sha.clone()],
         };
@@ -2378,9 +2529,99 @@ mod tests {
         save_ledger(&dir, &ledger);
         let back = load_ledger(&dir);
         assert_eq!(back.project, "x");
+        assert_eq!(back.export_repo, "/tmp/example-docs.git");
+        assert_eq!(back.doc_site, "https://docs.example.test");
+        assert!(back.export_repo_set && back.doc_site_set);
+        assert_eq!(eff_export_repo(&back), "/tmp/example-docs.git");
+        assert_eq!(eff_doc_site(&back), "https://docs.example.test");
         assert_eq!(back.entries[&sha].audited.as_deref(), Some("2026-11-22 EE 77 by phdoc 0.1.0"));
         assert!(back.entries[&sha].reviewed.is_none());
         let _ = fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn config_defaults_when_fields_absent() {
+        // no .phdoc.json at all: the defaults apply and nothing is "set"
+        let dir = std::env::temp_dir().join("phdoc-config-absent-test");
+        let _ = fs::create_dir_all(&dir);
+        let _ = fs::remove_file(ledger_path(&dir));
+        let l = load_ledger(&dir);
+        assert!(!l.export_repo_set && !l.doc_site_set);
+        assert_eq!(eff_export_repo(&l), "wbic16/phdoc");
+        assert_eq!(eff_doc_site(&l), "https://docs.phext.io");
+        // a ledger file without the two fields reads the same way
+        fs::write(ledger_path(&dir), "{\n  \"project\": \"y\",\n  \"chain\": \"somewhere\",\n  \"commits\": {\n  }\n}\n").expect("write ledger");
+        let l2 = load_ledger(&dir);
+        assert!(!l2.export_repo_set && !l2.doc_site_set);
+        assert_eq!(eff_export_repo(&l2), DEFAULT_EXPORT_REPO);
+        let _ = fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn audit_exports_to_configured_bare_repo() {
+        // A project that names its own export repo (a local bare repo) and
+        // its own doc site in .phdoc.json is documented end to end from
+        // configuration alone: no --repo, no code changes. The export must
+        // land in the bare repo, and the rendered pages must name the
+        // configured targets in their provenance.
+        let base = std::env::temp_dir().join(format!("phdoc-config-export-test-{}", std::process::id()));
+        let _ = fs::remove_dir_all(&base);
+        let proj = base.join("proj");
+        let bare = base.join("bare.git");
+        let out = base.join("out");
+        fs::create_dir_all(proj.join("src")).expect("fixture dirs");
+        let git = |dir: &Path, args: &[&str]| {
+            let o = Command::new("git")
+                .arg("-C")
+                .arg(dir)
+                .args(args)
+                .env("GIT_AUTHOR_NAME", "Test")
+                .env("GIT_AUTHOR_EMAIL", "test@localhost")
+                .env("GIT_COMMITTER_NAME", "Test")
+                .env("GIT_COMMITTER_EMAIL", "test@localhost")
+                .output()
+                .expect("git runs");
+            assert!(o.status.success(), "git {:?} failed: {}", args, String::from_utf8_lossy(&o.stderr));
+        };
+        git(&base, &["init", "proj"]);
+        git(&base, &["init", "--bare", "bare.git"]);
+        fs::write(proj.join("Cargo.toml"), "[package]\nname = \"fixture\"\nversion = \"0.1.0\"\nlicense = \"MIT\"\n\n[dependencies]\n").expect("write manifest");
+        fs::write(proj.join("src/lib.rs"), "/// Says hello.\npub fn hello() -> &'static str { \"hello\" }\n").expect("write source");
+        git(&proj, &["add", "."]);
+        git(&proj, &["commit", "-m", "first"]);
+        fs::write(proj.join("src/lib.rs"), "/// Says hello.\npub fn hello() -> &'static str { \"hello\" }\n\n/// Says bye.\npub fn bye() -> &'static str { \"bye\" }\n").expect("write source 2");
+        git(&proj, &["add", "."]);
+        git(&proj, &["commit", "-m", "second"]);
+        // the project's own target configuration
+        let bare_str = bare.to_string_lossy().to_string();
+        fs::write(
+            ledger_path(&proj),
+            format!(
+                "{{\n  \"project\": \"fixture\",\n  \"export-repo\": \"{}\",\n  \"doc-site\": \"https://docs.example.test\",\n  \"commits\": {{\n  }}\n}}\n",
+                bare_str
+            ),
+        )
+        .expect("write .phdoc.json");
+
+        let rc = cmd_audit(AuditArgs { project: proj.to_string_lossy().to_string(), repo: None, out: Some(out.clone()), name: "fixture".into(), hold_push: false });
+        assert_eq!(rc, 0);
+
+        // the export landed in the configured bare repo
+        let branch = git_str(&bare, &["symbolic-ref", "--short", "HEAD"]);
+        assert!(!branch.is_empty());
+        let tree = git_str(&bare, &["ls-tree", "-r", "--name-only", &branch]);
+        assert!(tree.contains("docs/fixture/chain.phext"), "chain in bare repo tree: {}", tree);
+        assert!(tree.contains("docs/fixture/latest.md"), "latest in bare repo tree: {}", tree);
+        let hist = tree.lines().find(|l| l.contains("docs/fixture/history/")).expect("a history page").to_string();
+        let page = String::from_utf8(git_bytes(&bare, &["show", &format!("{}:{}", branch, hist)]).expect("show page")).expect("page is utf8");
+        assert!(page.contains("https://docs.example.test"), "provenance names the configured doc site");
+        assert!(page.contains(&bare_str), "provenance names the configured export repo");
+        // the project's ledger kept its configuration and names the chain's home
+        let led = read(&ledger_path(&proj));
+        assert!(led.contains(&bare_str), "ledger keeps the export-repo setting");
+        assert!(led.contains("https://docs.example.test"), "ledger keeps the doc-site setting");
+        assert!(led.contains(&format!("\"chain\": \"{}:docs/fixture/chain.phext\"", bare_str)), "chain location names the configured repo: {}", led);
+        let _ = fs::remove_dir_all(&base);
     }
 
     #[test]

@@ -2,8 +2,17 @@
 name = "phdoc"
 version = "0.1.0"
 edition = "2021"
+rust-version = "1.56"
 license = "MIT"
-description = "phdoc — a project scanner for shipped artifacts. It inventories a project's dependencies, authors, complexity, code quality, declared RFCs, and upstream git repo, and writes documentation that humans and agents can both consume."
+description = "Project scanner for shipped artifacts: inventories dependencies, authors, complexity, code quality, declared RFCs, and the upstream repo, and keeps plain-English documentation in a multiversal phext chain, one universe per audited commit."
+authors = ["William Bickford <wbic16@gmail.com>"]
+repository = "https://github.com/wbic16/phdoc"
+homepage = "https://docs.phext.io"
+documentation = "https://docs.phext.io"
+readme = "README.md"
+keywords = ["documentation", "phext", "git", "audit", "inventory"]
+categories = ["command-line-utilities", "development-tools"]
+exclude = ["docs/*"]
 
 [dependencies]
 libphext = "0.6.6"
