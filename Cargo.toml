@@ -1,0 +1,13 @@
+[package]
+name = "phdoc"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "phdoc — a project scanner for shipped artifacts. It inventories a project's dependencies, authors, complexity, code quality, declared RFCs, and upstream git repo, and writes documentation that humans and agents can both consume."
+
+[dependencies]
+libphext = "0.6.6"
+
+[[bin]]
+name = "phdoc"
+path = "src/main.rs"
