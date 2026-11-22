@@ -1,6 +1,6 @@
 # mutable-os — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/mutable-os/. Scanned at commit 48cac17ae14c2d9132d0b110162677a669dbad3e. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 104). Project root: /source/mutable-os. Scanned at commit 48cac17ae14c2d9132d0b110162677a669dbad3e. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -100,20 +100,13 @@ Direct dependencies: 76.
 
 ## Authors
 
-The git log holds 448 commits.
+The git log holds 448 commits. The authors, by commit count:
 
-The author of record is **Will Bickford** — 27 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
-
-Annotation, by persona (all folded into Will Bickford):
-
-- Emise — 24 commits
-- Will Bickford (his own identities) — 2 commits
-- Theia — 1 commit
-
-Other authors, kept as themselves (not Exocortical cluster personas; never folded):
-
-- Iian <iian.d.neill@gmail.com> — 420 commits
-- Iian Neill <iian.d.neill@gmail.com> — 1 commit
+- Iian <iian.d.neill@gmail.com> — 420 commits (93.8%)
+- Emise <emise@localhost> — 24 commits (5.4%)
+- Will Bickford <wbic16@gmail.com> — 2 commits (0.4%)
+- Iian Neill <iian.d.neill@gmail.com> — 1 commit (0.2%)
+- Theia <theia@mirrorborn.us> — 1 commit (0.2%)
 
 ---
 
@@ -121,21 +114,21 @@ Other authors, kept as themselves (not Exocortical cluster personas; never folde
 
 The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.
 
-- JavaScript: 124 files, 67988 lines total, 1164 blank, 2452 comment, 64372 code
+- JavaScript: 624 files, 143352 lines total, 2750 blank, 7212 comment, 133390 code
 - Markdown: 430 files, 83421 lines total, 21525 blank, 151 comment, 61745 code
 - Python: 4 files, 224 lines total, 9 blank, 0 comment, 215 code
 - Shell: 2 files, 661 lines total, 55 blank, 80 comment, 526 code
-- TypeScript: 1104 files, 108430 lines total, 3232 blank, 4887 comment, 100311 code
+- TypeScript: 1436 files, 120175 lines total, 3232 blank, 5755 comment, 111188 code
 
-All languages: 1664 files, 260724 lines total, 227169 lines of code. Functions read: 29.
+All languages: 2496 files, 347833 lines total, 307064 lines of code. Functions read: 29.
 
 Largest files:
 
 - src/library/original/components/outliner-text-block.js — 10205 lines
 - docs/development/INPUT_HANDLER_SOURCE_LEDGER.md — 9442 lines
+- dist/server/application-services/host.js — 6491 lines
 - src/library/original/modules/speedy/editor-new-2.js — 4655 lines
 - src/library/original/speedy.js — 4655 lines
-- src/library/original/modules/speedy/editor-new.js — 3347 lines
 
 Largest functions, by span in lines:
 
@@ -151,10 +144,10 @@ Largest functions, by span in lines:
 
 Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.
 
-- Tests: 0 test functions counted in the source, across 28 files whose names mark them as test files.
+- Tests: 0 test functions counted in the source, across 32 files whose names mark them as test files.
 - CI: no CI configuration was found in the project.
 - Lint and format: no lint or format configuration file was found.
-- TODO marks in the source: 28. FIXME marks: 0.
+- TODO marks in the source: 33. FIXME marks: 0.
 - Public items with a doc comment: 0 of 29 (0%).
 
 ---
@@ -168,10 +161,10 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 ## Upstream git repo
 
-- Origin: /home/wbic16/github-archive/mirrors/mutable-os.git
+- Origin: https://github.com/wbic16/mutable-os.git
 - Branch: main
 - Head commit: 48cac17ae14c2d9132d0b110162677a669dbad3e
-- Working tree: 1 changed paths
+- Working tree: clean
 
 ---
 
@@ -556,9 +549,3 @@ Signature: `def stats(xs):`
 What it does: Function stats takes xs and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
-
----
-
-## Provenance
-
-This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/mutable-os/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
