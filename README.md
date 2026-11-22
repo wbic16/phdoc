@@ -241,29 +241,32 @@ small-target proof; the rfcbox run is the gate. The same discipline
 applies to the rfcbox crate itself when it is built: it is tested on
 rfcbox before any publish.
 
-### Crates.io readiness
+### Crates.io publication
 
-The crate is **crates-ready, not crates-published** (Will,
-2026-11-22: "phdoc should be made crates ready"). The Cargo metadata
-is complete: description, MIT license, repository
-(github.com/wbic16/phdoc), homepage and documentation
+The crate is **published**: `phdoc` **0.1.0** is live on crates.io
+(2026-11-22, EE 97), published under Will's sequenced authorization
+once the 36-project baseline was complete. It was published from
+tree `f72d21f097fa72044ba0c342973efee284aebfe8` on `exo`, with the
+annotated tag `v0.1.0` pointing at that exact tree — the house gate
+(exact version tagged, tagged tree merged to exo) is satisfied for
+this release.
+
+The Cargo metadata is complete: description, MIT license,
+repository (github.com/wbic16/phdoc), homepage and documentation
 (docs.phext.io), authors, keywords, categories, readme, and a stated
 rust-version (1.56 — the floor the code's edition and APIs imply;
-the readiness build itself ran on the ranch toolchain). The
-exported `docs/` tree is excluded from the package; the packaged
-file list is the crate and nothing else.
+the release build itself ran on the ranch toolchain). The exported
+`docs/` tree is excluded from the package; the packaged file list
+is the crate and nothing else.
 
-Name check (2026-11-22): no crate named `phdoc` exists on
-crates.io — the registry's own API answers 404 for the name. (A
-same-named package exists on PyPI; that is a different registry and
-a different tool.)
-
-Readiness stops at a clean `cargo package` and
-`cargo publish --dry-run`, run on a ranch node. **House gate: no
-crates.io publish without the exact version tagged and the tagged
-tree merged to exo.** Creating the tag and running the publish are
-Will's steps, taken when he calls them — readiness does not take
-them.
+Release verification, from a clean checkout of the tagged tree:
+`cargo test` 14/14 green; `cargo publish --dry-run` clean
+(9 files, 136.4 KiB, 35.4 KiB compressed); after upload, the
+registry itself answers for the release — `cargo search phdoc`
+and `cargo info phdoc` both show 0.1.0. Before publication the
+name was checked free (the registry API answered 404 for `phdoc`;
+a same-named package on PyPI is a different registry and a
+different tool).
 
 ## Build and dependencies
 
