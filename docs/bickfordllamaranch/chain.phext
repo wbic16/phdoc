@@ -1,0 +1,386 @@
+Commit 4c55cef12a1d by Will Bickford <wbic16@gmail.com> on 2024-01-17 (EE 0).
+
+Subject: baseline site skeleton
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 0.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 4c55cef12a1dd06d7591843d1b14349b0d4163a2
+parent none
+author Will Bickford <wbic16@gmail.com>
+date 1705466236 2024-01-17
+author+ Will Bickford <wbic16@gmail.com>
+Commit 1e420ec00dc7 by Cursor Agent <cursoragent@cursor.com> on 2026-10-23 (EE 0).
+
+Subject: Add phase 1 site and exo nginx deploy.
+
+Public items: 24 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 593.
+
+commit 1e420ec00dc7cea24c0ddb806e4a4ad3b8f985eb
+parent 4c55cef12a1dd06d7591843d1b14349b0d4163a2
+author Cursor Agent <cursoragent@cursor.com>
+date 1792723576 2026-10-23
+item+ function deploy.sh :: assert_staging_cert_config :: assert_staging_cert_config() :: Function assert_staging_cert_config takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: assert_staging_cert_presented :: assert_staging_cert_presented() :: Function assert_staging_cert_presented takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: assert_staging_noindex_config :: assert_staging_noindex_config() :: Function assert_staging_noindex_config takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: build_certbot_cmd :: build_certbot_cmd() :: Function build_certbot_cmd takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: cleanup :: cleanup() :: Function cleanup takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: dns_points_here :: dns_points_here() :: Function dns_points_here takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: git_with_auth :: git_with_auth() :: Function git_with_auth takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: have_cert :: have_cert() :: Function have_cert takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: install_site_file :: install_site_file() :: Function install_site_file takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: main :: main() :: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: nginx_config :: nginx_config() :: Function nginx_config takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: noindex_line :: noindex_line() :: Function noindex_line takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: obtain_cert_if_needed :: obtain_cert_if_needed() :: Function obtain_cert_if_needed takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: parse_args :: parse_args() :: Function parse_args takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: reload_nginx :: reload_nginx() :: Function reload_nginx takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: restore_foreign :: restore_foreign() :: Function restore_foreign takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: rollback :: rollback() :: Function rollback takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: set_names :: set_names() :: Function set_names takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: ssl_snippets :: ssl_snippets() :: Function ssl_snippets takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: staging_cert_matches_host :: staging_cert_matches_host() :: Function staging_cert_matches_host takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: strip_staging_from_other_vhosts :: strip_staging_from_other_vhosts() :: Function strip_staging_from_other_vhosts takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: sync_source :: sync_source() :: Function sync_source takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: usage :: usage() :: Function usage takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy.sh :: verify_http :: verify_http() :: Function verify_http takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+stat Markdown files 1 total 42 blank 0 comment 0 code 42
+stat Shell files 1 total 551 blank 0 comment 0 code 551
+author+ Cursor Agent <cursoragent@cursor.com>
+Commit dee7747403f5 by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Integrate Bickford Llama Ranch admin (admin.bickfordllamaranch.com)
+
+Public items: 6 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3023.
+
+commit dee7747403f55d692b05ef5dfd6ca22fdaac779e
+parent 1e420ec00dc7cea24c0ddb806e4a4ad3b8f985eb
+author Emise <emise@localhost>
+date 1793500758 2026-11-01
+item+ function reminders/remind.py :: fetch :: def fetch(path): :: Function fetch takes path and gives back nothing; it does its work on what it is given. :: signature
+item+ function reminders/remind.py :: get :: def get(coord): :: Function get takes coord and gives back nothing; it does its work on what it is given. :: signature
+item+ function reminders/remind.py :: ids :: def ids(pattern): :: Function ids takes pattern and gives back nothing; it does its work on what it is given. :: signature
+item+ function reminders/remind.py :: load :: def load(): :: Function load takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function reminders/remind.py :: main :: def main(): :: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function reminders/remind.py :: parse :: def parse(s): :: Function parse takes s and gives back nothing; it does its work on what it is given. :: signature
+stat JavaScript files 2 total 218 blank 0 comment 0 code 218
+stat Markdown files 12 total 1583 blank 0 comment 0 code 1583
+stat Python files 1 total 131 blank 0 comment 0 code 131
+stat Shell files 5 total 1091 blank 0 comment 0 code 1091
+author+ Emise <emise@localhost>
+Commit 4e33bc578df3 by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Integration report: verification + emise-tools cleanup results
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3041.
+
+commit 4e33bc578df331217dccd38338831404536b0199
+parent dee7747403f55d692b05ef5dfd6ca22fdaac779e
+author Emise <emise@localhost>
+date 1793500802 2026-11-01
+stat JavaScript files 2 total 218 blank 0 comment 0 code 218
+stat Markdown files 12 total 1601 blank 0 comment 0 code 1601
+stat Python files 1 total 131 blank 0 comment 0 code 131
+stat Shell files 5 total 1091 blank 0 comment 0 code 1091
+author~ Emise <emise@localhost> commits 2
+Commit 69c8ca48437a by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Topology: apex /admin 404s (nginx rule in both apex blocks + --exclude 'admin/' in root deploy.sh rsync); our deploy scripts no longer write site/public over the apex homepage; docs + report S6
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3114.
+
+commit 69c8ca48437a7d7686a12c77de505c3ac2acb9a1
+parent 4e33bc578df331217dccd38338831404536b0199
+author Emise <emise@localhost>
+date 1793501121 2026-11-01
+stat JavaScript files 2 total 218 blank 0 comment 0 code 218
+stat Markdown files 12 total 1670 blank 0 comment 0 code 1670
+stat Python files 1 total 131 blank 0 comment 0 code 131
+stat Shell files 5 total 1095 blank 0 comment 0 code 1095
+author~ Emise <emise@localhost> commits 3
+Commit 2c07196943f2 by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Fix htpasswd permissions: chgrp www-data + chmod 640 on every run
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3140.
+
+commit 2c07196943f2a70a6bad923b9517313d6258bd9b
+parent 69c8ca48437a7d7686a12c77de505c3ac2acb9a1
+author Emise <emise@localhost>
+date 1793502210 2026-11-01
+stat JavaScript files 2 total 218 blank 0 comment 0 code 218
+stat Markdown files 12 total 1685 blank 0 comment 0 code 1685
+stat Python files 1 total 131 blank 0 comment 0 code 131
+stat Shell files 5 total 1106 blank 0 comment 0 code 1106
+author~ Emise <emise@localhost> commits 4
+Commit 64d2347826f7 by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Fix reminder cron: run as root, source sq.env + smtp.env
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3161.
+
+commit 64d2347826f70671203cb483b2651f20e587f394
+parent 2c07196943f2a70a6bad923b9517313d6258bd9b
+author Emise <emise@localhost>
+date 1793502351 2026-11-01
+stat JavaScript files 2 total 218 blank 0 comment 0 code 218
+stat Markdown files 12 total 1703 blank 0 comment 0 code 1703
+stat Python files 1 total 131 blank 0 comment 0 code 131
+stat Shell files 5 total 1109 blank 0 comment 0 code 1109
+author~ Emise <emise@localhost> commits 5
+Commit daad08b974e5 by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Fix SQ proxy: proxy_http_version 1.1 in both vhosts (SQ 0.6.0 rejects HTTP/1.0 with 403)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3180.
+
+commit daad08b974e56dddb69b871149618f240cc9e5df
+parent 64d2347826f70671203cb483b2651f20e587f394
+author Emise <emise@localhost>
+date 1793502602 2026-11-01
+stat JavaScript files 2 total 218 blank 0 comment 0 code 218
+stat Markdown files 12 total 1722 blank 0 comment 0 code 1722
+stat Python files 1 total 131 blank 0 comment 0 code 131
+stat Shell files 5 total 1109 blank 0 comment 0 code 1109
+author~ Emise <emise@localhost> commits 6
+Commit cd8290867732 by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Seed: replace EXAMPLE animals with the real 20-animal herd roster
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3256.
+
+commit cd829086773252d9a6832a0638ba495286265ebd
+parent daad08b974e56dddb69b871149618f240cc9e5df
+author Emise <emise@localhost>
+date 1793503200 2026-11-01
+stat JavaScript files 2 total 218 blank 0 comment 0 code 218
+stat Markdown files 12 total 1730 blank 0 comment 0 code 1730
+stat Python files 1 total 131 blank 0 comment 0 code 131
+stat Shell files 5 total 1177 blank 0 comment 0 code 1177
+author~ Emise <emise@localhost> commits 7
+Commit c22e3f543f1b by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Footer: set branding line to 'Bickford Llama Ranch · Conformation. Temperament. Substance.'
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3256.
+
+commit c22e3f543f1b488bfb44af0f83f984ff88026916
+parent cd829086773252d9a6832a0638ba495286265ebd
+author Emise <emise@localhost>
+date 1793503320 2026-11-01
+stat JavaScript files 2 total 218 blank 0 comment 0 code 218
+stat Markdown files 12 total 1730 blank 0 comment 0 code 1730
+stat Python files 1 total 131 blank 0 comment 0 code 131
+stat Shell files 5 total 1177 blank 0 comment 0 code 1177
+author~ Emise <emise@localhost> commits 8
+Commit ace62d851441 by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Admin UI: herd as table with bred/testing/vaccination summaries, quiet status, larger edit fields, 88% width
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3329.
+
+commit ace62d85144173ca3933d7e411a5a023b5caf766
+parent c22e3f543f1b488bfb44af0f83f984ff88026916
+author Emise <emise@localhost>
+date 1793504020 2026-11-01
+stat JavaScript files 2 total 280 blank 0 comment 0 code 280
+stat Markdown files 12 total 1741 blank 0 comment 0 code 1741
+stat Python files 1 total 131 blank 0 comment 0 code 131
+stat Shell files 5 total 1177 blank 0 comment 0 code 1177
+author~ Emise <emise@localhost> commits 9
+Commit 5eb6a7a0df8d by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Google Auth via oauth2-proxy, two-mode installer; retire Basic Auth
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3833.
+
+commit 5eb6a7a0df8da9b5c81fb08b5d6c88d0f37ceea7
+parent ace62d85144173ca3933d7e411a5a023b5caf766
+author Emise <emise@localhost>
+date 1793506255 2026-11-01
+stat JavaScript files 2 total 280 blank 0 comment 0 code 280
+stat Markdown files 12 total 1991 blank 0 comment 0 code 1991
+stat Python files 1 total 131 blank 0 comment 0 code 131
+stat Shell files 5 total 1431 blank 0 comment 0 code 1431
+author~ Emise <emise@localhost> commits 10
+Commit dba25034c47c by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Admin: mobile reflow, profile fields F9-F13, footer version stamp
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4035.
+
+commit dba25034c47c2193271f392e73f379c28974e9da
+parent 5eb6a7a0df8da9b5c81fb08b5d6c88d0f37ceea7
+author Emise <emise@localhost>
+date 1793507700 2026-11-01
+stat JavaScript files 3 total 398 blank 0 comment 0 code 398
+stat Markdown files 12 total 2064 blank 0 comment 0 code 2064
+stat Python files 1 total 137 blank 0 comment 0 code 137
+stat Shell files 5 total 1436 blank 0 comment 0 code 1436
+author~ Emise <emise@localhost> commits 11
+Commit ec2eb71e1259 by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Admin: registration # (F14) + microchip # (F15) profile fields; v1.2.1
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4084.
+
+commit ec2eb71e12590fb593548327be37b4cc113047ab
+parent dba25034c47c2193271f392e73f379c28974e9da
+author Emise <emise@localhost>
+date 1793507283 2026-11-01
+stat JavaScript files 3 total 405 blank 0 comment 0 code 405
+stat Markdown files 12 total 2105 blank 0 comment 0 code 2105
+stat Python files 1 total 137 blank 0 comment 0 code 137
+stat Shell files 5 total 1437 blank 0 comment 0 code 1437
+author~ Emise <emise@localhost> commits 12
+Commit 02e3c9fb80e7 by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Admin v1.2.2: 'Libby and Will Bickford' branding, favicon, status on/off switch, no-cutoff CSS pass, herd search + sort
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4306.
+
+commit 02e3c9fb80e72a262bbdbcca96c95fbf8f83b386
+parent ec2eb71e12590fb593548327be37b4cc113047ab
+author Emise <emise@localhost>
+date 1793508882 2026-11-01
+stat JavaScript files 3 total 481 blank 0 comment 0 code 481
+stat Markdown files 12 total 2251 blank 0 comment 0 code 2251
+stat Python files 1 total 137 blank 0 comment 0 code 137
+stat Shell files 5 total 1437 blank 0 comment 0 code 1437
+author~ Emise <emise@localhost> commits 13
+Commit db28d91e0761 by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Photo upload service (server side): ranch-upload.py on 127.0.0.1:18766, nginx /api/upload, root-deploy B3
+
+Public items: 6 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4687.
+
+commit db28d91e07610d931f2da9341b31c76e96bd2417
+parent 02e3c9fb80e72a262bbdbcca96c95fbf8f83b386
+author Emise <emise@localhost>
+date 1793508921 2026-11-01
+item+ function deploy/ranch-upload.py :: detect_ext :: def detect_ext(data): :: Return the extension for a known image type, or None. :: doc comment
+item+ function deploy/ranch-upload.py :: do_GET :: def do_GET(self): :: Function do_GET takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/ranch-upload.py :: do_POST :: def do_POST(self): :: Function do_POST takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/ranch-upload.py :: log_message :: def log_message(self, fmt, *args): :: Function log_message takes self, fmt, *args and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/ranch-upload.py :: main :: def main(): :: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/ranch-upload.py :: parse_multipart :: def parse_multipart(body, boundary): :: Minimal strict multipart/form-data parser. :: doc comment
+stat JavaScript files 3 total 481 blank 0 comment 0 code 481
+stat Markdown files 12 total 2343 blank 0 comment 0 code 2343
+stat Python files 2 total 375 blank 0 comment 0 code 375
+stat Shell files 5 total 1488 blank 0 comment 0 code 1488
+author~ Emise <emise@localhost> commits 14
+Commit 6a88878963ad by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Admin v1.2.3: direct photo upload (client) — on-device downscale to 1600px JPEG, POST /api/upload, returned path saved into F9 through the per-field save path
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4840.
+
+commit 6a88878963ad048681474cb1d56cb176c742ec1a
+parent db28d91e07610d931f2da9341b31c76e96bd2417
+author Emise <emise@localhost>
+date 1793509586 2026-11-01
+stat JavaScript files 3 total 539 blank 0 comment 0 code 539
+stat Markdown files 12 total 2438 blank 0 comment 0 code 2438
+stat Python files 2 total 375 blank 0 comment 0 code 375
+stat Shell files 5 total 1488 blank 0 comment 0 code 1488
+author~ Emise <emise@localhost> commits 15
+Commit deeed421d345 by Verse <verse@visionquest.me> on 2026-11-01 (EE 0).
+
+Subject: Allow +x
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4840.
+
+commit deeed421d345c7c6abab00287931cae83498772b
+parent 6a88878963ad048681474cb1d56cb176c742ec1a
+author Verse <verse@visionquest.me>
+date 1793509983 2026-11-01
+stat JavaScript files 3 total 539 blank 0 comment 0 code 539
+stat Markdown files 12 total 2438 blank 0 comment 0 code 2438
+stat Python files 2 total 375 blank 0 comment 0 code 375
+stat Shell files 5 total 1488 blank 0 comment 0 code 1488
+author+ Verse <verse@visionquest.me>
+Commit 9d0724d410c6 by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Admin v1.2.4: Log out button (oauth2 sign_out) in the header
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4840.
+
+commit 9d0724d410c67202244942bda63a55d390231ff3
+parent deeed421d345c7c6abab00287931cae83498772b
+author Emise <emise@localhost>
+date 1793510520 2026-11-01
+stat JavaScript files 3 total 539 blank 0 comment 0 code 539
+stat Markdown files 12 total 2438 blank 0 comment 0 code 2438
+stat Python files 2 total 375 blank 0 comment 0 code 375
+stat Shell files 5 total 1488 blank 0 comment 0 code 1488
+author~ Emise <emise@localhost> commits 16
+Commit 7fd5334b18c5 by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Admin v1.2.5: logout returns to the branded login page
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5013.
+
+commit 7fd5334b18c55a014c5d0e6d1ca615106aaca91b
+parent 9d0724d410c67202244942bda63a55d390231ff3
+author Emise <emise@localhost>
+date 1793511600 2026-11-01
+stat JavaScript files 3 total 539 blank 0 comment 0 code 539
+stat Markdown files 12 total 2586 blank 0 comment 0 code 2586
+stat Python files 2 total 375 blank 0 comment 0 code 375
+stat Shell files 5 total 1513 blank 0 comment 0 code 1513
+author~ Emise <emise@localhost> commits 17
+Commit 7cf1b167a0c3 by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Admin v1.3.0: herd UI restructure (Libby's feedback) — Active/Archived tabs, name+sex list, per-animal profile pages
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5188.
+
+commit 7cf1b167a0c3b64d2371d1dcee6035c79cafb62e
+parent 7fd5334b18c55a014c5d0e6d1ca615106aaca91b
+author Emise <emise@localhost>
+date 1793513400 2026-11-01
+stat JavaScript files 3 total 597 blank 0 comment 0 code 597
+stat Markdown files 12 total 2703 blank 0 comment 0 code 2703
+stat Python files 2 total 375 blank 0 comment 0 code 375
+stat Shell files 5 total 1513 blank 0 comment 0 code 1513
+author~ Emise <emise@localhost> commits 18
+Commit cf9440348e5e by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Windows app v1.0.0: BickfordLlamaRanch for Windows — WPF/.NET 8 client of the ranch admin for Libby (same live API and data; WebView2 Google sign-in, Active/Archived tabs, per-animal profiles, photo upload)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5269.
+
+commit cf9440348e5ea1fc7ec3e70254b788cdb89a2654
+parent 7cf1b167a0c3b64d2371d1dcee6035c79cafb62e
+author Emise <emise@localhost>
+date 1793514098 2026-11-01
+stat JavaScript files 3 total 597 blank 0 comment 0 code 597
+stat Markdown files 13 total 2784 blank 0 comment 0 code 2784
+stat Python files 2 total 375 blank 0 comment 0 code 375
+stat Shell files 5 total 1513 blank 0 comment 0 code 1513
+author~ Emise <emise@localhost> commits 19
+Commit 04a5e1a7cad5 by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Public herd homepage + DNS migration prep
+
+Public items: 7 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4858.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 04a5e1a7cad5f19cd5346511a2d67b43d4205ecb
+parent cf9440348e5ea1fc7ec3e70254b788cdb89a2654
+author Emise <emise@localhost>
+date 1793564679 2026-11-01
+item+ function deploy/gen-public.py :: build :: def build(scrolls): :: Function build takes scrolls and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/gen-public.py :: field :: def field(a, f): :: Function field takes a, f and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/gen-public.py :: fmt :: def fmt(coord): :: Function fmt takes coord and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/gen-public.py :: get :: def get(scrolls, coord): :: Function get takes scrolls, coord and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/gen-public.py :: main :: def main(): :: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/gen-public.py :: parse_phext :: def parse_phext(path): :: Return {coordinate_string: scroll_text} for every scroll slot. :: doc comment
+item+ function deploy/gen-public.py :: photo_url :: def photo_url(raw): :: F9 is a text reference: an absolute URL is used as-is; a stored :: doc comment
+stat JavaScript files 4 total 668 blank 23 comment 66 code 579
+stat Markdown files 14 total 2971 blank 409 comment 0 code 2562
+stat Python files 3 total 552 blank 69 comment 12 code 471
+stat Shell files 5 total 1620 blank 95 comment 279 code 1246
+author~ Emise <emise@localhost> commits 20
