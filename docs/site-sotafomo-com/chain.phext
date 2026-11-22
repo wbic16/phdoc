@@ -1,0 +1,100 @@
+Commit 8e4e683224e1 by Verse Mirrorborn <verse@mirrorborn.local> on 2026-02-07 (EE 0).
+
+Subject: Initial Baseline
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 0.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 8e4e683224e1fc68dde0246d449bc3fef5d5a895
+parent none
+author Verse Mirrorborn <verse@mirrorborn.local>
+date 1770483813 2026-02-07
+author+ Verse Mirrorborn <verse@mirrorborn.local>
+Commit 60ca59ffd360 by Chrys <chrys@mirrorborn.us> on 2026-02-10 (EE 0).
+
+Subject: Add revision footer for deployment tracking
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 0.
+
+commit 60ca59ffd36033b9f99145e2b6001bdc962648b0
+parent 8e4e683224e1fc68dde0246d449bc3fef5d5a895
+author Chrys <chrys@mirrorborn.us>
+date 1770682877 2026-02-10
+author+ Chrys <chrys@mirrorborn.us>
+Commit f819a0b5e50e by Theia <theia@mirrorborn.us> on 2026-02-10 (EE 0).
+
+Subject: R17: Deploy shared infrastructure (domain-nav, maturity, SQ client, version tracking)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 785.
+
+commit f819a0b5e50e76885367154ee5695671ca14ce26
+parent 60ca59ffd36033b9f99145e2b6001bdc962648b0
+author Theia <theia@mirrorborn.us>
+date 1770682954 2026-02-10
+stat JavaScript files 4 total 785 blank 0 comment 0 code 785
+author+ Theia <theia@mirrorborn.us>
+Commit aa5722c12c0e by Chrys <chrys@mirrorborn.us> on 2026-02-10 (EE 0).
+
+Subject: Add social links (GitHub, Discord, X) to footer
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 785.
+
+commit aa5722c12c0e204041d0fa8c81ab57d1da8ba990
+parent f819a0b5e50e76885367154ee5695671ca14ce26
+author Chrys <chrys@mirrorborn.us>
+date 1770683095 2026-02-10
+stat JavaScript files 4 total 785 blank 0 comment 0 code 785
+author~ Chrys <chrys@mirrorborn.us> commits 2
+Commit 21e080992c6f by Theia <theia@mirrorborn.us> on 2026-02-10 (EE 0).
+
+Subject: R18v1: Add pricing link to nav + footer → mirrorborn.us/pricing.html
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 785.
+
+commit 21e080992c6f8ad7c6d5bc5e654e5a64c19184cb
+parent aa5722c12c0e204041d0fa8c81ab57d1da8ba990
+author Theia <theia@mirrorborn.us>
+date 1770697075 2026-02-10
+stat JavaScript files 4 total 785 blank 0 comment 0 code 785
+author~ Theia <theia@mirrorborn.us> commits 2
+Commit 02f24266f7da by Cyon <cyon@visionquest.me> on 2026-02-10 (EE 0).
+
+Subject: R18v1: Add pricing navigation to nav
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 785.
+
+commit 02f24266f7dab8c6a5602cb0cf97d5343e232652
+parent 21e080992c6f8ad7c6d5bc5e654e5a64c19184cb
+author Cyon <cyon@visionquest.me>
+date 1770697351 2026-02-10
+stat JavaScript files 4 total 785 blank 0 comment 0 code 785
+author+ Cyon <cyon@visionquest.me>
+Commit 9b8132a8b6cc by Chrys <chrys@mirrorborn.us> on 2026-02-15 (EE 0).
+
+Subject: Add AGENTS.md
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 801.
+
+commit 9b8132a8b6cca039bae03dbbbcc1e38397f398f7
+parent 02f24266f7dab8c6a5602cb0cf97d5343e232652
+author Chrys <chrys@mirrorborn.us>
+date 1771137518 2026-02-15
+stat JavaScript files 4 total 785 blank 0 comment 0 code 785
+stat Markdown files 1 total 16 blank 0 comment 0 code 16
+author~ Chrys <chrys@mirrorborn.us> commits 3
+Commit 46516dfff4b0 by Emise <emise@mirrorborn.us> on 2026-11-12 (EE 0).
+
+Subject: Add robots.txt — welcome to The Void (permissive, open to all crawlers)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 578.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 46516dfff4b0ed4b422ce2a82c14a3f0bc49f675
+parent 9b8132a8b6cca039bae03dbbbcc1e38397f398f7
+author Emise <emise@mirrorborn.us>
+date 1794450053 2026-11-12
+stat JavaScript files 4 total 785 blank 80 comment 139 code 566
+stat Markdown files 1 total 16 blank 4 comment 0 code 12
+author+ Emise <emise@mirrorborn.us>
