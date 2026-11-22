@@ -1,0 +1,124 @@
+# SQ — reference as of commit 7b94bafa0bd3
+
+Commit 7b94bafa0bd30b5dcf65e3ec1dcbb4dfee522d6f. 166 commits folded. Every fact here was folded from the chain's per-commit deltas.
+
+## Dependencies
+
+### Cargo.toml
+
+- libphext — 0.3.3
+- raw_sync — 0.1.5
+- shared_memory — 0.12.4
+- percent-encoding — 2.3.1
+- serde — 1.0
+- serde_json — 1.0
+
+## Authors
+
+- Will Bickford <wbic16@gmail.com> — 129 commits
+- Chrys <chrys@mirrorborn.us> — 8 commits
+- Theia <theia@mirrorborn.us> — 8 commits
+- Lux <lux@phext.io> — 7 commits
+- Orin <orin@mirrorborn.us> — 6 commits
+- Cyon <cyon@visionquest.me> — 4 commits
+- Phex <phex@phext.io> — 2 commits
+- Claude <noreply@anthropic.com> — 1 commits
+- Emise <wbic16@gmail.com> — 1 commits
+
+## Complexity
+
+- Markdown: 11 files, 1133 lines total, 245 blank, 0 comment, 888 code
+- Python: 1 files, 123 lines total, 26 blank, 1 comment, 96 code
+- Rust: 10 files, 4863 lines total, 331 blank, 409 comment, 4123 code
+- Shell: 9 files, 332 lines total, 44 blank, 38 comment, 250 code
+- TOML: 4 files, 3096 lines total, 513 blank, 9 comment, 2574 code
+- TypeScript: 2 files, 930 lines total, 98 blank, 88 comment, 744 code
+
+Declared RFCs at this point: none declared.
+
+## Public methods and commands
+
+- function `do_OPTIONS` (gateway/sq-gateway.py) — Function do_OPTIONS takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
+- function `extract_token` (gateway/sq-gateway.py) — Function extract_token takes headers and gives back nothing; it does its work on what it is given.
+- function `load_config` (gateway/sq-gateway.py) — Function load_config takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
+- function `log_message` (gateway/sq-gateway.py) — Function log_message takes self, fmt, *args and gives back nothing; it does its work on what it is given.
+- function `proxy_to` (gateway/sq-gateway.py) — Function proxy_to takes self, port and gives back nothing; it does its work on what it is given.
+- function `reload_config` (gateway/sq-gateway.py) — Function reload_config takes signum=None, frame=None and gives back nothing; it does its work on what it is given.
+- function `respond` (gateway/sq-gateway.py) — Function respond takes self, code, body, content_type="application/json" and gives back nothing; it does its work on wha
+- function `respond_json` (gateway/sq-gateway.py) — Function respond_json takes self, code, obj and gives back nothing; it does its work on what it is given.
+- function `route` (gateway/sq-gateway.py) — Function route takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is 
+- function `send_cors` (gateway/sq-gateway.py) — Function send_cors takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it
+- function `cmd_add` (gateway/tenant-manager.sh) — Function cmd_add takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it i
+- function `cmd_list` (gateway/tenant-manager.sh) — Function cmd_list takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it 
+- function `cmd_remove` (gateway/tenant-manager.sh) — Function cmd_remove takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
+- function `next_port` (gateway/tenant-manager.sh) — Function next_port takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it
+- struct `ApiConfig` (src/api.rs) — A data shape named ApiConfig.
+- function `load_api_config` (src/api.rs) — Function load_api_config takes path: &str and gives back Result<ApiConfig, Box<dyn std::error::Error>>.
+- function `run_api` (src/api.rs) — Function run_api takes config_path: &str, listen_port: u16 and gives back Result<(), Box<dyn std::error::Error>>.
+- struct `PromptCache` (src/cache.rs) — SHA256-keyed prompt cache with LRU eviction and TTL expiry
+- function `PromptCache::new` (src/cache.rs) — Function PromptCache::new takes max_entries: usize, ttl_secs: u64 and gives back Self.
+- function `check_static` (src/cache.rs) — Check static patterns (greetings, status, ping)
+- function `get` (src/cache.rs) — Look up a cached response
+- function `hit_rate` (src/cache.rs) — Function hit_rate takes no inputs beyond the value it is called on, and gives back f64.
+- function `set` (src/cache.rs) — Store a prompt-response pair
+- function `stats` (src/cache.rs) — Function stats takes no inputs beyond the value it is called on, and gives back (u64, u64, usize).
+- struct `ServerConfig` (src/config.rs) — A data shape named ServerConfig.
+- struct `TenantConfig` (src/config.rs) — A data shape named TenantConfig.
+- function `load_config` (src/config.rs) — Load multi-tenant configuration from JSON file Automatically creates tenant data directories if they don't exist
+- command `--cache` (src/main.rs) — A command named --cache.
+- flag `--config` (src/main.rs) — A command line flag, --config.
+- command `--data-dir` (src/main.rs) — A command named --data-dir.
+- command `--key` (src/main.rs) — A command named --key.
+- command `--mesh-config` (src/main.rs) — A command named --mesh-config.
+- enum `HashAlgorithm` (src/main.rs) — A named choice named HashAlgorithm.
+- struct `HttpRequest` (src/main.rs) — A data shape named HttpRequest.
+- const `MAX_BODY_SIZE` (src/main.rs) — A fixed value named MAX_BODY_SIZE, set to 64 * 1024 * 1024; // 64 MB per request body.
+- entry point `main` (src/main.rs) — The entry point: the program starts here.
+- function `read_http_request` (src/main.rs) — Function read_http_request takes stream: &mut TcpStream and gives back std::io::Result<HttpRequest>.
+- struct `InboundConfig` (src/mesh.rs) — Inbound server configuration
+- struct `MeshConfig` (src/mesh.rs) — Complete mesh configuration
+- struct `MeshSettings` (src/mesh.rs) — Mesh synchronization settings
+- struct `NodeConfig` (src/mesh.rs) — Node identity configuration
+- struct `OutboundConfig` (src/mesh.rs) — Outbound connections configuration
+- struct `PeerConfig` (src/mesh.rs) — Outbound peer connection details
+- function `generate_default_config` (src/mesh.rs) — Generate default mesh config for a node  # Arguments * `id` - Node identifier (e.g., "halycon-vector") * `name` - Node n
+- function `load_mesh_config` (src/mesh.rs) — Load mesh configuration from file  # Arguments * `path` - Path to mesh.json configuration file  # Returns * `Ok(MeshConf
+- function `print_config_summary` (src/mesh.rs) — Print mesh configuration summary to stdout
+- function `save_mesh_config` (src/mesh.rs) — Save mesh configuration to file  # Arguments * `config` - Mesh configuration to save * `path` - Path to write mesh.json 
+- struct `RouterConfig` (src/router.rs) — A data shape named RouterConfig.
+- struct `TenantConfig` (src/router.rs) — A data shape named TenantConfig.
+- function `load_router_config` (src/router.rs) — Function load_router_config takes path: &str and gives back Result<RouterConfig, Box<dyn std::error::Error>>.
+- function `run_router` (src/router.rs) — Function run_router takes config_path: &str, listen_port: u16 and gives back Result<(), Box<dyn std::error::Error>>.
+- struct `CacheEntry` (src/seed.rs) — A data shape named CacheEntry.
+- struct `FetchEntry` (src/seed.rs) — A data shape named FetchEntry.
+- struct `FetchRequest` (src/seed.rs) — A data shape named FetchRequest.
+- struct `ScrollCache` (src/seed.rs) — Scrolls a client has already streamed in, keyed by coordinate string.
+- function `ScrollCache::empty` (src/seed.rs) — Function ScrollCache::empty takes no inputs beyond the value it is called on, and gives back ScrollCache.
+- function `build_seed` (src/seed.rs) — Function build_seed takes phext_map: &HashMap<phext::Coordinate, String> and gives back String.
+- function `fetch_cached` (src/seed.rs) — Function fetch_cached takes base: &str, phext_name: &str, key: &Option<String>, coordinate: &str, cache: &mut ScrollCach
+- function `fetch_seed` (src/seed.rs) — Downloads the seed envelope for a phext and parses it into coordinate -> hash
+- function `get` (src/seed.rs) — Function get takes &self, coordinate: &str and gives back Option<&CacheEntry>.
+- function `http_get` (src/seed.rs) — Function http_get takes base: &str, path: &str, key: &Option<String> and gives back Result<String, String>.
+- function `load` (src/seed.rs) — Loads a cache file; a missing or unreadable file is simply an empty cache
+- function `parse_fetch_get` (src/seed.rs) — GET form: c=<coord> (strict), h=<hash> (may be empty/absent), has=<0|1|true|false>
+- function `parse_fetch_post` (src/seed.rs) — POST form: body is a JSON array of {"coordinate", "hash", "has_content"}
+- function `parse_seed` (src/seed.rs) — Function parse_seed takes seed_json: &str and gives back Result<HashMap<String, String>, String>.
+- function `put` (src/seed.rs) — Function put takes &mut self, coordinate: &str, hash: String, scroll: String and gives back nothing; it does its work on
+- function `run_fetch` (src/seed.rs) — Runs a parsed fetch request against a loaded phext map
+- function `save` (src/seed.rs) — Function save takes &self, path: &str and gives back Result<(), String>.
+- function `scroll_hash` (src/seed.rs) — Function scroll_hash takes content: &str and gives back String.
+- struct `QuerySpec` (src/sq.rs) — A data shape named QuerySpec.
+- function `args_required` (src/sq.rs) — Function args_required takes command:&str and gives back usize.
+- function `implode_ref` (src/sq.rs) — Function implode_ref takes map: &HashMap<phext::Coordinate, String> and gives back String.
+- function `parse_coordinate_strict` (src/sq.rs) — Strict coordinate parser: exactly 9 positive integers as a.b.c/d.e.f/g.h.i
+- function `parse_query` (src/sq.rs) — Function parse_query takes from: Option<&String>, to: Option<&String>, set: Option<&String>, limit: Option<&String> and 
+- function `process` (src/sq.rs) — Function process takes connection_id: u64, source: String, scroll: &mut String, command: String, phext_map: &mut HashMap
+- function `run_query` (src/sq.rs) — Runs a query against a loaded phext map and returns a JSON array of {coordinate, scroll}
+- struct `FeedbackLoop` (src/triage.rs) — Feedback loop — tracks local model quality
+- function `FeedbackLoop::new` (src/triage.rs) — Function FeedbackLoop::new takes max_window: usize and gives back Self.
+- struct `RouteDecision` (src/triage.rs) — Result of evaluating a prompt
+- enum `Tier` (src/triage.rs) — Which tier handles this prompt
+- function `evaluate` (src/triage.rs) — Score a prompt and decide routing tier
+- function `failure_rate` (src/triage.rs) — Function failure_rate takes no inputs beyond the value it is called on, and gives back f64.
+- function `record` (src/triage.rs) — Function record takes &mut self, success: bool and gives back nothing; it does its work on what it is given.
+- function `should_escalate` (src/triage.rs) — Returns true if failure rate exceeds threshold (should escalate)
