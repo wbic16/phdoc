@@ -1,0 +1,104 @@
+# register — reference as of commit 1d40affa24cd
+
+Commit 1d40affa24cd0b18785a4c7b754e1dbc05fa6f49. 7 commits folded. Every fact here was folded from the chain's per-commit deltas.
+
+## Dependencies
+
+No dependencies recorded at this point.
+
+## Authors
+
+- Theia <theia@mirrorborn.us> — 3 commits
+- Will Bickford <wbic16@gmail.com> — 3 commits
+- Emise <emise@localhost> — 1 commits
+
+## Complexity
+
+- Markdown: 2 files, 51 lines total, 2 blank, 0 comment, 49 code
+- Python: 12 files, 2128 lines total, 0 blank, 0 comment, 2128 code
+- Shell: 3 files, 97 lines total, 0 blank, 0 comment, 97 code
+
+Declared RFCs at this point: none declared.
+
+## Public methods and commands
+
+- function `avgf` (build_accounting_phext.py) — Function avgf takes k and gives back nothing; it does its work on what it is given.
+- function `btot` (build_accounting_phext.py) — Function btot takes k, aa=aa and gives back nothing; it does its work on what it is given.
+- function `build` (build_accounting_phext.py) — Function build takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is 
+- function `day_lines` (build_accounting_phext.py) — Function day_lines takes ds and gives back nothing; it does its work on what it is given.
+- function `gpt_day` (build_accounting_phext.py) — Function gpt_day takes d and gives back nothing; it does its work on what it is given.
+- function `lag_line` (build_accounting_phext.py) — Function lag_line takes atoms and gives back nothing; it does its work on what it is given.
+- function `net` (build_accounting_phext.py) — Function net takes a, d and gives back nothing; it does its work on what it is given.
+- function `rhu` (build_accounting_phext.py) — Function rhu takes x and gives back nothing; it does its work on what it is given.
+- function `t_all` (build_accounting_phext.py) — Function t_all takes k and gives back nothing; it does its work on what it is given.
+- function `tot` (build_accounting_phext.py) — Function tot takes k and gives back nothing; it does its work on what it is given.
+- function `week_lines` (build_accounting_phext.py) — Function week_lines takes w, sunday, dss and gives back nothing; it does its work on what it is given.
+- function `week_of` (build_accounting_phext.py) — Function week_of takes d and gives back nothing; it does its work on what it is given.
+- function `build` (build_artifacts_phext.py) — Function build takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is 
+- function `implode` (build_artifacts_phext.py) — scrolls: dict coord-string -> text.
+- function `load_manifest` (build_artifacts_phext.py) — Function load_manifest takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wha
+- function `main` (build_artifacts_phext.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `parse_coord` (build_artifacts_phext.py) — Function parse_coord takes s and gives back nothing; it does its work on what it is given.
+- function `read_source` (build_artifacts_phext.py) — Function read_source takes a and gives back nothing; it does its work on what it is given.
+- function `render_artifact` (build_artifacts_phext.py) — Function render_artifact takes a, raw and gives back nothing; it does its work on what it is given.
+- function `render_home` (build_artifacts_phext.py) — Function render_home takes artifacts and gives back nothing; it does its work on what it is given.
+- function `build` (build_barnacles_phext.py) — Function build takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is 
+- function `entry_coord` (build_barnacles_phext.py) — Entry n (1-indexed) -> 2.1.1/1.1.1/S.T.B (hundred/ten/unit).
+- function `implode` (build_barnacles_phext.py) — Function implode takes scrolls and gives back nothing; it does its work on what it is given.
+- function `main` (build_barnacles_phext.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `parse_coord` (build_barnacles_phext.py) — Function parse_coord takes s and gives back nothing; it does its work on what it is given.
+- function `render_entry` (build_barnacles_phext.py) — Function render_entry takes e, data and gives back nothing; it does its work on what it is given.
+- function `render_home` (build_barnacles_phext.py) — Function render_home takes data and gives back nothing; it does its work on what it is given.
+- function `build` (build_contests_phext.py) — Function build takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is 
+- function `entry_coord` (build_contests_phext.py) — Function entry_coord takes k and gives back nothing; it does its work on what it is given.
+- function `implode` (build_contests_phext.py) — scrolls: dict coord-string -> text.
+- function `main` (build_contests_phext.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `parse_coord` (build_contests_phext.py) — Function parse_coord takes s and gives back nothing; it does its work on what it is given.
+- function `render_contest` (build_contests_phext.py) — Function render_contest takes k, c and gives back nothing; it does its work on what it is given.
+- function `render_home` (build_contests_phext.py) — Function render_home takes contests and gives back nothing; it does its work on what it is given.
+- function `render_out_of_scope` (build_contests_phext.py) — Function render_out_of_scope takes k, o and gives back nothing; it does its work on what it is given.
+- function `B` (build_costs_phext.py) — Function B takes x and gives back nothing; it does its work on what it is given.
+- function `build` (build_costs_phext.py) — Function build takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is 
+- function `build` (build_doomer_phext.py) — Function build takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is 
+- function `implode` (build_doomer_phext.py) — Function implode takes scrolls and gives back nothing; it does its work on what it is given.
+- function `main` (build_doomer_phext.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `parse_coord` (build_doomer_phext.py) — Function parse_coord takes s and gives back nothing; it does its work on what it is given.
+- function `render_entry` (build_doomer_phext.py) — Function render_entry takes e and gives back nothing; it does its work on what it is given.
+- function `render_home` (build_doomer_phext.py) — Function render_home takes data and gives back nothing; it does its work on what it is given.
+- function `build` (build_jobs_phext.py) — Function build takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is 
+- function `implode` (build_jobs_phext.py) — scrolls: dict coord-string -> text.
+- function `main` (build_jobs_phext.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `parse_coord` (build_jobs_phext.py) — Function parse_coord takes s and gives back nothing; it does its work on what it is given.
+- function `render_home` (build_jobs_phext.py) — Function render_home takes jobs and gives back nothing; it does its work on what it is given.
+- function `render_job` (build_jobs_phext.py) — Function render_job takes j and gives back nothing; it does its work on what it is given.
+- function `build` (build_lessons_phext.py) — Build the phext blob from lessons-source.phext.
+- function `c` (build_lessons_phext.py) — Function c takes s and gives back nothing; it does its work on what it is given.
+- function `check` (build_lessons_phext.py) — Rebuild to a temp file and compare SHA-256 with the committed
+- function `committed_index` (build_lessons_phext.py) — Parse the per-lesson index out of the committed lessons.phext Home scroll.
+- function `fmt` (build_lessons_phext.py) — Function fmt takes coord and gives back nothing; it does its work on what it is given.
+- function `implode` (build_lessons_phext.py) — scrolls: dict coord-string -> bytes.
+- function `lesson_meta` (build_lessons_phext.py) — (short statement, date given, mark) from one lesson scroll.
+- function `main` (build_lessons_phext.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `parse_bytes` (build_lessons_phext.py) — Dead-reckoning parse of raw phext bytes -> {coord_str: raw_bytes} for
+- function `sha256_file` (build_lessons_phext.py) — Function sha256_file takes path and gives back nothing; it does its work on what it is given.
+- function `build` (build_mastery_phext.py) — Function build takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is 
+- function `entry_coord` (build_mastery_phext.py) — Function entry_coord takes k and gives back nothing; it does its work on what it is given.
+- function `implode` (build_mastery_phext.py) — scrolls: dict coord-string -> text.
+- function `main` (build_mastery_phext.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `parse_coord` (build_mastery_phext.py) — Function parse_coord takes s and gives back nothing; it does its work on what it is given.
+- function `render_entry` (build_mastery_phext.py) — Function render_entry takes k, e and gives back nothing; it does its work on what it is given.
+- function `render_home` (build_mastery_phext.py) — Function render_home takes entries and gives back nothing; it does its work on what it is given.
+- function `build` (build_trainer_phext.py) — Function build takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is 
+- function `implode` (build_trainer_phext.py) — Function implode takes scrolls and gives back nothing; it does its work on what it is given.
+- function `load_manifest` (build_trainer_phext.py) — Function load_manifest takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wha
+- function `main` (build_trainer_phext.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `parse_coord` (build_trainer_phext.py) — Function parse_coord takes s and gives back nothing; it does its work on what it is given.
+- function `read_source` (build_trainer_phext.py) — Function read_source takes e and gives back nothing; it does its work on what it is given.
+- function `render_entry` (build_trainer_phext.py) — Function render_entry takes e, raw and gives back nothing; it does its work on what it is given.
+- function `render_home` (build_trainer_phext.py) — Function render_home takes entries and gives back nothing; it does its work on what it is given.
+- function `clean_md` (register-ui/generate_register_page.py) — Strip light markdown: links -> text, backticks/bold markers out.
+- function `fallback_action` (register-ui/generate_register_page.py) — Action text from the register prose when the mirror has none.
+- function `linkify` (register-ui/generate_register_page.py) — Wrap bare URLs in anchors (input is already HTML-escaped).
+- function `main` (register-ui/generate_register_page.py) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `parse_register` (register-ui/generate_register_page.py) — Parse numbered items out of the register markdown.
+- function `repl` (register-ui/generate_register_page.py) — Function repl takes m and gives back nothing; it does its work on what it is given.
