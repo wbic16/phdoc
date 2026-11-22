@@ -1,6 +1,6 @@
 # mutable-os — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 104). Project root: /source/mutable-os. Scanned at commit 48cac17ae14c2d9132d0b110162677a669dbad3e. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 107). Project root: /source/mutable-os. Scanned at commit 48cac17ae14c2d9132d0b110162677a669dbad3e. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -164,7 +164,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 - Origin: https://github.com/wbic16/mutable-os.git
 - Branch: main
 - Head commit: 48cac17ae14c2d9132d0b110162677a669dbad3e
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
