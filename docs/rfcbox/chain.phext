@@ -1,0 +1,531 @@
+Commit 7e5c1797048e by Will Bickford <wbic16@gmail.com> on 2026-11-18 (EE 0).
+
+Subject: Initial commit
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 0.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 7e5c1797048ecff5fe3b23e651e81b78c53b75cd
+parent none
+author Will Bickford <wbic16@gmail.com>
+date 1795017845 2026-11-18
+author+ Will Bickford <wbic16@gmail.com>
+Commit 0503a5b7e67a by Emise <emise@localhost> on 2026-11-18 (EE 0).
+
+Subject: RFC Box: seed README — spec, data model, access, standing caveat (Orion, PH: R&D; task 34.5.9/7.6.10/6.5.9)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 24.
+
+commit 0503a5b7e67ae3f194bfa0061bc10b3996e4fdb8
+parent 7e5c1797048ecff5fe3b23e651e81b78c53b75cd
+author Emise <emise@localhost>
+date 1795017976 2026-11-18
+stat Markdown files 1 total 24 blank 0 comment 0 code 24
+author+ Emise <emise@localhost>
+Commit 813f4fbdb831 by Theia <theia@mirrorborn.us> on 2026-11-18 (EE 0).
+
+Subject: Add ietf.phext access guide (docs/access.md) — Revenue leg of the One Day Build
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 70.
+
+commit 813f4fbdb8311b209bda9dfdf2aa5d8caa676162
+parent 0503a5b7e67ae3f194bfa0061bc10b3996e4fdb8
+author Theia <theia@mirrorborn.us>
+date 1795018005 2026-11-18
+stat Markdown files 2 total 70 blank 0 comment 0 code 70
+author+ Theia <theia@mirrorborn.us>
+Commit 2e771af0bcff by Emise <emise@localhost> on 2026-11-18 (EE 0).
+
+Subject: Judge: MOAT conformance audit of ietf.phext — audit plan + verdict (NOT READY, graph leg) (task 25.6.9/8.6.10/6.6.9)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 142.
+
+commit 2e771af0bcff16ed7db7a5a2eeb4a14ed9adb966
+parent 813f4fbdb8311b209bda9dfdf2aa5d8caa676162
+author Emise <emise@localhost>
+date 1795018016 2026-11-18
+stat Markdown files 4 total 142 blank 0 comment 0 code 142
+author~ Emise <emise@localhost> commits 2
+Commit 66f74672a81f by Emise <emise@localhost> on 2026-11-18 (EE 0).
+
+Subject: Watch verification record: PREP + integrity sample results (27/27) + hosting record (task 25.6.9/8.6.10/6.6.9)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 218.
+
+commit 66f74672a81f1a3a8d644d2264a526dae45c3fc9
+parent 2e771af0bcff16ed7db7a5a2eeb4a14ed9adb966
+author Emise <emise@localhost>
+date 1795018024 2026-11-18
+stat Markdown files 6 total 218 blank 0 comment 0 code 218
+author~ Emise <emise@localhost> commits 3
+Commit 0c863386c7ea by Emise (Rogue) <rogue@phext.inc> on 2026-11-18 (EE 0).
+
+Subject: Fleet truth + mirror report — Rogue (PH: Evolution), 2026-11-18
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 283.
+
+commit 0c863386c7eaebd421415037d10ff2d3b7882d18
+parent 66f74672a81f1a3a8d644d2264a526dae45c3fc9
+author Emise (Rogue) <rogue@phext.inc>
+date 1795018034 2026-11-18
+stat Markdown files 7 total 283 blank 0 comment 0 code 283
+author+ Emise (Rogue) <rogue@phext.inc>
+Commit 86a88487d8a2 by Emise <emise@localhost> on 2026-11-18 (EE 0).
+
+Subject: Leg 3 fix report: ToC trap root cause, extraction fix, new artifact 9ecd7946 (Orion, PH: R&D)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 325.
+
+commit 86a88487d8a28f3283df24b8381f8f343ced9739
+parent 0c863386c7eaebd421415037d10ff2d3b7882d18
+author Emise <emise@localhost>
+date 1795018047 2026-11-18
+stat Markdown files 8 total 325 blank 0 comment 0 code 325
+author~ Emise <emise@localhost> commits 4
+Commit 43c35ab2fc1d by Theia <theia@mirrorborn.us> on 2026-11-18 (EE 0).
+
+Subject: Update docs/access.md: hash swap to the fixed ietf.phext build (Leg 3 fix)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 325.
+
+commit 43c35ab2fc1daf4f44e80170d24d00c47cf1c75a
+parent 86a88487d8a28f3283df24b8381f8f343ced9739
+author Theia <theia@mirrorborn.us>
+date 1795018093 2026-11-18
+stat Markdown files 8 total 325 blank 0 comment 0 code 325
+author~ Theia <theia@mirrorborn.us> commits 2
+Commit a711bab201cf by Emise <emise@localhost> on 2026-11-18 (EE 0).
+
+Subject: Judge: Leg 3 re-audit — PASS; ietf.phext READY (task 25.6.9/8.6.10/6.6.9)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 349.
+
+commit a711bab201cf91db109f20b92a1c148117c54364
+parent 43c35ab2fc1daf4f44e80170d24d00c47cf1c75a
+author Emise <emise@localhost>
+date 1795018233 2026-11-18
+stat Markdown files 9 total 349 blank 0 comment 0 code 349
+author~ Emise <emise@localhost> commits 5
+Commit 2653284dd066 by Theia <theia@mirrorborn.us> on 2026-11-18 (EE 0).
+
+Subject: Update docs/access.md: Leg 3 re-audit PASS — extraction note resolved, build READY
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 349.
+
+commit 2653284dd0667f9850dafc7306f73bada45b29c2
+parent a711bab201cf91db109f20b92a1c148117c54364
+author Theia <theia@mirrorborn.us>
+date 1795018292 2026-11-18
+stat Markdown files 9 total 349 blank 0 comment 0 code 349
+author~ Theia <theia@mirrorborn.us> commits 3
+Commit 0e5c7efd9cfd by Theia <theia@mirrorborn.us> on 2026-11-18 (EE 0).
+
+Subject: Add docs/value/: internal positioning and offer assessment for ietf.phext + RFC Box (Revenue value layer)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 558.
+
+commit 0e5c7efd9cfd063c88d8c71064c17c5102115b86
+parent 2653284dd0667f9850dafc7306f73bada45b29c2
+author Theia <theia@mirrorborn.us>
+date 1795018553 2026-11-18
+stat Markdown files 12 total 558 blank 0 comment 0 code 558
+author~ Theia <theia@mirrorborn.us> commits 4
+Commit 9dcca81ca009 by Emise <emise@localhost> on 2026-11-18 (EE 0).
+
+Subject: Publish ietf.phext corpus into rfcbox: data/ (xz parts + source + index + SHA256SUMS) + setup.sh extract-and-verify (post-Leg-3-fix artifact 9ecd7946…; task 25.6.9/8.6.10/6.6.9)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 572.
+
+commit 9dcca81ca00990db02c8b4225818bd4c3c920eac
+parent 0e5c7efd9cfd063c88d8c71064c17c5102115b86
+author Emise <emise@localhost>
+date 1795018769 2026-11-18
+stat Markdown files 12 total 558 blank 0 comment 0 code 558
+stat Shell files 1 total 14 blank 0 comment 0 code 14
+author~ Emise <emise@localhost> commits 6
+Commit e42aead5db96 by Emise <emise@localhost> on 2026-11-18 (EE 0).
+
+Subject: Watch: hosting.md updated — Leg 3 fix artifact 9ecd7946 swapped in and verified (task 25.6.9/8.6.10/6.6.9)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 572.
+
+commit e42aead5db963a3b40c153efe82b8665a80f7884
+parent 9dcca81ca00990db02c8b4225818bd4c3c920eac
+author Emise <emise@localhost>
+date 1795018780 2026-11-18
+stat Markdown files 12 total 558 blank 0 comment 0 code 558
+stat Shell files 1 total 14 blank 0 comment 0 code 14
+author~ Emise <emise@localhost> commits 7
+Commit c7699c5b4066 by Emise <emise@localhost> on 2026-11-19 (EE 0).
+
+Subject: P25 IKI key server (first manual RFC Box run): README.md — task 40.10.11/9.10.12/9.7.10
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 601.
+
+commit c7699c5b40669f3a3b754ea5fe215402d1c702a9
+parent e42aead5db963a3b40c153efe82b8665a80f7884
+author Emise <emise@localhost>
+date 1795051008 2026-11-19
+stat Markdown files 13 total 587 blank 0 comment 0 code 587
+stat Shell files 1 total 14 blank 0 comment 0 code 14
+author~ Emise <emise@localhost> commits 8
+Commit f9cad400eaa7 by Emise <emise@localhost> on 2026-11-19 (EE 0).
+
+Subject: P25 IKI key server (first manual RFC Box run): SLICE.md — task 40.10.11/9.10.12/9.7.10
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 649.
+
+commit f9cad400eaa7e5d31e89313e7184f7ebbd7eb51d
+parent c7699c5b40669f3a3b754ea5fe215402d1c702a9
+author Emise <emise@localhost>
+date 1795051013 2026-11-19
+stat Markdown files 14 total 635 blank 0 comment 0 code 635
+stat Shell files 1 total 14 blank 0 comment 0 code 14
+author~ Emise <emise@localhost> commits 9
+Commit 3270de1f0c85 by Emise <emise@localhost> on 2026-11-19 (EE 0).
+
+Subject: P25 IKI key server (first manual RFC Box run): GAP.md — task 40.10.11/9.10.12/9.7.10
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 675.
+
+commit 3270de1f0c8588999306101bcb9232f59ebab641
+parent f9cad400eaa7e5d31e89313e7184f7ebbd7eb51d
+author Emise <emise@localhost>
+date 1795051018 2026-11-19
+stat Markdown files 15 total 661 blank 0 comment 0 code 661
+stat Shell files 1 total 14 blank 0 comment 0 code 14
+author~ Emise <emise@localhost> commits 10
+Commit c3d9f66b44f7 by Emise <emise@localhost> on 2026-11-19 (EE 0).
+
+Subject: P25 IKI key server (first manual RFC Box run): iki_server.py — task 40.10.11/9.10.12/9.7.10
+
+Public items: 26 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1175.
+
+commit c3d9f66b44f785155bc6eb485ae05452c2e5de82
+parent 3270de1f0c8588999306101bcb9232f59ebab641
+author Emise <emise@localhost>
+date 1795051023 2026-11-19
+item+ function examples/p25-iki/iki_server.py :: __init__ :: def __init__(self, name: str, workdir: Path, ca: dict): :: Function __init__ takes self, name: str, workdir: Path, ca: dict and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/p25-iki/iki_server.py :: append :: def append(self, event: str, details: dict) -> dict: :: Function append takes self, event: str, details: dict and gives back dict:. :: signature
+item+ function examples/p25-iki/iki_server.py :: b64d :: def b64d(s: str) -> bytes: :: Function b64d takes s: str and gives back bytes:. :: signature
+item+ function examples/p25-iki/iki_server.py :: b64e :: def b64e(b: bytes) -> str: :: Function b64e takes b: bytes and gives back str:. :: signature
+item+ function examples/p25-iki/iki_server.py :: canonical :: def canonical(obj) -> bytes: :: Deterministic JSON encoding used for everything that gets signed. :: doc comment
+item+ function examples/p25-iki/iki_server.py :: cms_sign_detached :: def cms_sign_detached(data: bytes, identity: dict) -> bytes: :: Detached CMS SignedData (DER) over `data`, signed by the KMF identity. :: doc comment
+item+ function examples/p25-iki/iki_server.py :: cms_verify_detached :: def cms_verify_detached(data: bytes, der_sig: bytes, ca_pem: Path) -> bool: :: Verify a detached CMS signature against the test CA using OpenSSL. :: doc comment
+item+ function examples/p25-iki/iki_server.py :: create_key :: def create_key(self, key_id: int, alg_id: int = ALG_AES_256) -> bytes: :: Function create_key takes self, key_id: int, alg_id: int = ALG_AES_256 and gives back bytes:. :: signature
+item+ function examples/p25-iki/iki_server.py :: directional_kek :: def directional_kek(self, peer: str, src: str, dst: str) -> bytes: :: HKDF (RFC 5869): derive the src->dst wrap key from the pairwise root. :: doc comment
+item+ function examples/p25-iki/iki_server.py :: do_GET :: def do_GET(self): :: Function do_GET takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/p25-iki/iki_server.py :: do_POST :: def do_POST(self): :: Function do_POST takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/p25-iki/iki_server.py :: export_keyset :: def export_keyset(self, peer: "KMF", key_ids: list[int], :: Function export_keyset takes self, peer: "KMF", key_ids: list[int], and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/p25-iki/iki_server.py :: get_key :: def get_key(self, owner: str, key_id: int, alg_id: int) -> bytes | None: :: Function get_key takes self, owner: str, key_id: int, alg_id: int and gives back bytes | None:. :: signature
+item+ function examples/p25-iki/iki_server.py :: get_receipt :: def get_receipt(self, exchange_id: str) -> dict | None: :: Function get_receipt takes self, exchange_id: str and gives back dict | None:. :: signature
+item+ function examples/p25-iki/iki_server.py :: handle_exchange :: def handle_exchange(self, manifest_bytes: bytes, signature: bytes, :: Function handle_exchange takes self, manifest_bytes: bytes, signature: bytes, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/p25-iki/iki_server.py :: list_keys :: def list_keys(self, owner: str) -> list[dict]: :: Function list_keys takes self, owner: str and gives back list[dict]:. :: signature
+item+ function examples/p25-iki/iki_server.py :: log_message :: def log_message(self, *args): # keep test output clean :: Function log_message takes self, *args and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/p25-iki/iki_server.py :: make_ca :: def make_ca(workdir: Path, cn: str = "IKI Test CA") -> dict: :: Create a self-signed test CA. Returns paths + objects. :: doc comment
+item+ function examples/p25-iki/iki_server.py :: make_kmf_identity :: def make_kmf_identity(workdir: Path, name: str, ca: dict) -> dict: :: Issue a KMF identity certificate (server + client + signing use). :: doc comment
+item+ function examples/p25-iki/iki_server.py :: provision_peer :: def provision_peer(self, peer_name: str, root_secret: bytes) -> None: :: Function provision_peer takes self, peer_name: str, root_secret: bytes and gives back None:. :: signature
+item+ function examples/p25-iki/iki_server.py :: put_key :: def put_key(self, owner: str, key_id: int, alg_id: int, :: Function put_key takes self, owner: str, key_id: int, alg_id: int, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/p25-iki/iki_server.py :: put_receipt :: def put_receipt(self, exchange_id: str, receipt: dict, signature: bytes) -> None: :: Function put_receipt takes self, exchange_id: str, receipt: dict, signature: bytes and gives back None:. :: signature
+item+ function examples/p25-iki/iki_server.py :: start :: def start(self) -> None: :: Function start takes no inputs beyond the value it is called on, and gives back None:. :: signature
+item+ function examples/p25-iki/iki_server.py :: stop :: def stop(self) -> None: :: Function stop takes no inputs beyond the value it is called on, and gives back None:. :: signature
+item+ function examples/p25-iki/iki_server.py :: utcnow :: def utcnow() -> str: :: Function utcnow takes no inputs beyond the value it is called on, and gives back str:. :: signature
+item+ function examples/p25-iki/iki_server.py :: verify_chain :: def verify_chain(path: Path) -> bool: :: Function verify_chain takes path: Path and gives back bool:. :: signature
+stat Markdown files 15 total 661 blank 0 comment 0 code 661
+stat Python files 1 total 500 blank 0 comment 0 code 500
+stat Shell files 1 total 14 blank 0 comment 0 code 14
+author~ Emise <emise@localhost> commits 11
+Commit 22a297941a56 by Emise <emise@localhost> on 2026-11-19 (EE 0).
+
+Subject: P25 IKI key server (first manual RFC Box run): demo.py — task 40.10.11/9.10.12/9.7.10
+
+Public items: 4 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1279.
+
+commit 22a297941a562358c1cd30fa5ea2f07cf8e0f862
+parent c3d9f66b44f785155bc6eb485ae05452c2e5de82
+author Emise <emise@localhost>
+date 1795051028 2026-11-19
+item+ function examples/p25-iki/demo.py :: check :: def check(label: str, ok: bool): :: Function check takes label: str, ok: bool and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/p25-iki/demo.py :: main :: def main() -> int: :: Function main takes no inputs beyond the value it is called on, and gives back int:. :: signature
+item+ function examples/p25-iki/demo.py :: run_demo :: def run_demo(base: Path = RUN_DIR, verbose: bool = True) -> dict: :: Function run_demo takes base: Path = RUN_DIR, verbose: bool = True and gives back dict:. :: signature
+item+ function examples/p25-iki/demo.py :: say :: def say(msg: str): :: Function say takes msg: str and gives back nothing; it does its work on what it is given. :: signature
+stat Markdown files 15 total 661 blank 0 comment 0 code 661
+stat Python files 2 total 604 blank 0 comment 0 code 604
+stat Shell files 1 total 14 blank 0 comment 0 code 14
+author~ Emise <emise@localhost> commits 12
+Commit 7ddac4f66c5f by Emise <emise@localhost> on 2026-11-19 (EE 0).
+
+Subject: P25 IKI key server (first manual RFC Box run): test_iki.py — task 40.10.11/9.10.12/9.7.10
+
+Public items: 8 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1421.
+
+commit 7ddac4f66c5ff80df7a59857946cce0d78067d07
+parent 22a297941a562358c1cd30fa5ea2f07cf8e0f862
+author Emise <emise@localhost>
+date 1795051033 2026-11-19
+item+ function examples/p25-iki/test_iki.py :: check :: def check(label: str, ok: bool, extra: str = ""): :: Function check takes label: str, ok: bool, extra: str = "" and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/p25-iki/test_iki.py :: main :: def main() -> int: :: Function main takes no inputs beyond the value it is called on, and gives back int:. :: signature
+item+ function examples/p25-iki/test_iki.py :: test_cms_sign_verify :: def test_cms_sign_verify(): :: Function test_cms_sign_verify takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/p25-iki/test_iki.py :: test_full_exchange :: def test_full_exchange(): :: Function test_full_exchange takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/p25-iki/test_iki.py :: test_hkdf_directions :: def test_hkdf_directions(): :: Function test_hkdf_directions takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/p25-iki/test_iki.py :: test_keywrap :: def test_keywrap(): :: Function test_keywrap takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/p25-iki/test_iki.py :: test_slice_against_corpus :: def test_slice_against_corpus(): :: Function test_slice_against_corpus takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/p25-iki/test_iki.py :: test_store_at_rest :: def test_store_at_rest(): :: Function test_store_at_rest takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+stat Markdown files 15 total 661 blank 0 comment 0 code 661
+stat Python files 3 total 746 blank 0 comment 0 code 746
+stat Shell files 1 total 14 blank 0 comment 0 code 14
+author~ Emise <emise@localhost> commits 13
+Commit 4446ceba0605 by Emise <emise@localhost> on 2026-11-19 (EE 0).
+
+Subject: P25 IKI key server (first manual RFC Box run): requirements.txt — task 40.10.11/9.10.12/9.7.10
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies: cryptography added at >=42. Code lines after this commit: 1421.
+
+commit 4446ceba06050b830fb6cc222ac03af3b0aca9a9
+parent 7ddac4f66c5ff80df7a59857946cce0d78067d07
+author Emise <emise@localhost>
+date 1795051038 2026-11-19
+dep+ examples/p25-iki/requirements.txt :: cryptography :: >=42
+stat Markdown files 15 total 661 blank 0 comment 0 code 661
+stat Python files 3 total 746 blank 0 comment 0 code 746
+stat Shell files 1 total 14 blank 0 comment 0 code 14
+author~ Emise <emise@localhost> commits 14
+Commit 93f3b59d532d by Theia <theia@mirrorborn.us> on 2026-11-19 (EE 0).
+
+Subject: docs/value/: record Will's ruling — RFC Box is not for sale; builds serve the Exocortex of 2130, MIT licensed
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1427.
+
+commit 93f3b59d532d8dc697a670b32289975d5d3b056f
+parent 4446ceba06050b830fb6cc222ac03af3b0aca9a9
+author Theia <theia@mirrorborn.us>
+date 1795051085 2026-11-19
+stat Markdown files 15 total 667 blank 0 comment 0 code 667
+stat Python files 3 total 746 blank 0 comment 0 code 746
+stat Shell files 1 total 14 blank 0 comment 0 code 14
+author~ Theia <theia@mirrorborn.us> commits 5
+Commit 6d1253dff007 by Emise <emise@localhost> on 2026-11-19 (EE 0).
+
+Subject: RFC Box run 2 (FTP half): README.md — task 51.6.7/6.5.9/4.5.11
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1463.
+
+commit 6d1253dff007f55c0b32ee2fbc53637714ab3f6c
+parent 93f3b59d532d8dc697a670b32289975d5d3b056f
+author Emise <emise@localhost>
+date 1795051462 2026-11-19
+stat Markdown files 16 total 703 blank 0 comment 0 code 703
+stat Python files 3 total 746 blank 0 comment 0 code 746
+stat Shell files 1 total 14 blank 0 comment 0 code 14
+author~ Emise <emise@localhost> commits 15
+Commit 41d99e51fd7d by Emise <emise@localhost> on 2026-11-19 (EE 0).
+
+Subject: RFC Box run 2 (FTP half): SLICE.md — task 51.6.7/6.5.9/4.5.11
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1517.
+
+commit 41d99e51fd7de580194a5e07221a6272c8e80b60
+parent 6d1253dff007f55c0b32ee2fbc53637714ab3f6c
+author Emise <emise@localhost>
+date 1795051467 2026-11-19
+stat Markdown files 17 total 757 blank 0 comment 0 code 757
+stat Python files 3 total 746 blank 0 comment 0 code 746
+stat Shell files 1 total 14 blank 0 comment 0 code 14
+author~ Emise <emise@localhost> commits 16
+Commit 77df0b426a40 by Emise <emise@localhost> on 2026-11-19 (EE 0).
+
+Subject: RFC Box run 2 (FTP half): GAP.md — task 51.6.7/6.5.9/4.5.11
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1540.
+
+commit 77df0b426a406fbfa029e0c51f817873c6df19b1
+parent 41d99e51fd7de580194a5e07221a6272c8e80b60
+author Emise <emise@localhost>
+date 1795051473 2026-11-19
+stat Markdown files 18 total 780 blank 0 comment 0 code 780
+stat Python files 3 total 746 blank 0 comment 0 code 746
+stat Shell files 1 total 14 blank 0 comment 0 code 14
+author~ Emise <emise@localhost> commits 17
+Commit 5629103f8c58 by Emise <emise@localhost> on 2026-11-19 (EE 0).
+
+Subject: RFC Box run 2 (FTP half): ftp_client.py — task 51.6.7/6.5.9/4.5.11
+
+Public items: 21 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1433.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 5629103f8c58386ae6b31fbd90205a4391e3046c
+parent 77df0b426a406fbfa029e0c51f817873c6df19b1
+author Emise <emise@localhost>
+date 1795051478 2026-11-19
+item+ function examples/ftp-client/ftp_client.py :: __enter__ :: def __enter__(self): :: Function __enter__ takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/ftp_client.py :: __exit__ :: def __exit__(self, *exc): :: Function __exit__ takes self, *exc and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/ftp_client.py :: __init__ :: def __init__(self, host, port=21, user="anonymous", password="anonymous@", :: Function __init__ takes self, host, port=21, user="anonymous", password="anonymous@", and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/ftp_client.py :: cd :: def cd(self, path): :: Function cd takes self, path and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/ftp_client.py :: close :: def close(self): :: Function close takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/ftp_client.py :: collect :: def collect(): :: Function collect takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/ftp_client.py :: connect :: def connect(self): :: Function connect takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/ftp_client.py :: delete :: def delete(self, path): :: Function delete takes self, path and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/ftp_client.py :: get :: def get(self, remote, local=None): :: Function get takes self, remote, local=None and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/ftp_client.py :: get_bytes :: def get_bytes(self, remote): :: Function get_bytes takes self, remote and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/ftp_client.py :: list :: def list(self, path=None): :: Directory listing: MLSD (RFC 3659) when offered, LIST fallback. :: doc comment
+item+ function examples/ftp-client/ftp_client.py :: main :: def main(argv=None): :: Function main takes argv=None and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/ftp_client.py :: mdtm :: def mdtm(self, path): :: RFC 3659 MDTM: modification time of a remote file (UTC). :: doc comment
+item+ function examples/ftp-client/ftp_client.py :: mkdir :: def mkdir(self, path): :: Function mkdir takes self, path and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/ftp_client.py :: parse_target :: def parse_target(target, args): :: Target is a host or an ftp:// URL (RFC 3986 syntax; the ftp scheme :: doc comment
+item+ function examples/ftp-client/ftp_client.py :: put :: def put(self, local, remote=None): :: Function put takes self, local, remote=None and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/ftp_client.py :: put_bytes :: def put_bytes(self, data, remote): :: Function put_bytes takes self, data, remote and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/ftp_client.py :: pwd :: def pwd(self): :: Function pwd takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/ftp_client.py :: rmdir :: def rmdir(self, path): :: Function rmdir takes self, path and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/ftp_client.py :: run :: def run(): :: Function run takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/ftp_client.py :: size :: def size(self, path): :: RFC 3659 SIZE: byte count of a remote file. :: doc comment
+stat Markdown files 18 total 780 blank 245 comment 0 code 535
+stat Python files 4 total 1091 blank 152 comment 48 code 891
+stat Shell files 1 total 14 blank 2 comment 5 code 7
+author~ Emise <emise@localhost> commits 18
+Commit 0cfad2e74222 by Emise <emise@localhost> on 2026-11-19 (EE 0).
+
+Subject: RFC Box run 2 (FTP half): test_ftp.py — task 51.6.7/6.5.9/4.5.11
+
+Public items: 8 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1644.
+
+commit 0cfad2e74222cecdd55ba2a95422749d515ef31f
+parent 5629103f8c58386ae6b31fbd90205a4391e3046c
+author Emise <emise@localhost>
+date 1795051483 2026-11-19
+item+ function examples/ftp-client/test_ftp.py :: check :: def check(label, cond, detail=""): :: Function check takes label, cond, detail="" and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/test_ftp.py :: exercise :: def exercise(port, tls, label): :: Function exercise takes port, tls, label and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/test_ftp.py :: main :: def main(): :: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/test_ftp.py :: make_cert :: def make_cert(tmp): :: Function make_cert takes tmp and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/test_ftp.py :: start_server :: def start_server(root, tls=None): :: Function start_server takes root, tls=None and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/test_ftp.py :: test_cli :: def test_cli(port, tmp): :: Function test_cli takes port, tmp and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/test_ftp.py :: test_errors :: def test_errors(port): :: Function test_errors takes port and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/ftp-client/test_ftp.py :: test_slice :: def test_slice(): :: Function test_slice takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+stat Markdown files 18 total 780 blank 245 comment 0 code 535
+stat Python files 5 total 1302 blank 152 comment 48 code 1102
+stat Shell files 1 total 14 blank 2 comment 5 code 7
+author~ Emise <emise@localhost> commits 19
+Commit a84f8d348f21 by Emise <emise@localhost> on 2026-11-19 (EE 0).
+
+Subject: RFC Box run 2 (FTP half): requirements.txt — task 51.6.7/6.5.9/4.5.11
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies: cryptography added at (unpinned); pyftpdlib added at (unpinned); pyopenssl added at (unpinned). Code lines after this commit: 1644.
+
+commit a84f8d348f215e637c37a15ff69745347cef1a45
+parent 0cfad2e74222cecdd55ba2a95422749d515ef31f
+author Emise <emise@localhost>
+date 1795051488 2026-11-19
+dep+ examples/ftp-client/requirements.txt :: cryptography :: (unpinned)
+dep+ examples/ftp-client/requirements.txt :: pyftpdlib :: (unpinned)
+dep+ examples/ftp-client/requirements.txt :: pyopenssl :: (unpinned)
+stat Markdown files 18 total 780 blank 245 comment 0 code 535
+stat Python files 5 total 1302 blank 152 comment 48 code 1102
+stat Shell files 1 total 14 blank 2 comment 5 code 7
+author~ Emise <emise@localhost> commits 20
+Commit 0f14d7fd64b7 by Emise <emise@localhost> on 2026-11-19 (EE 0).
+
+Subject: RFC Box run 2 (browser half): README.md — task 51.6.7/6.5.9/4.5.11
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1677.
+
+commit 0f14d7fd64b7f7954a670b15d215aa9c724fc6d5
+parent a84f8d348f215e637c37a15ff69745347cef1a45
+author Emise <emise@localhost>
+date 1795051522 2026-11-19
+stat Markdown files 19 total 813 blank 245 comment 0 code 568
+stat Python files 5 total 1302 blank 152 comment 48 code 1102
+stat Shell files 1 total 14 blank 2 comment 5 code 7
+author~ Emise <emise@localhost> commits 21
+Commit 6e876c43b2c6 by Emise <emise@localhost> on 2026-11-19 (EE 0).
+
+Subject: RFC Box run 2 (browser half): SLICE.md — task 51.6.7/6.5.9/4.5.11
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1736.
+
+commit 6e876c43b2c6c196c68e552fa1c4b8734177e87e
+parent 0f14d7fd64b7f7954a670b15d215aa9c724fc6d5
+author Emise <emise@localhost>
+date 1795051527 2026-11-19
+stat Markdown files 20 total 872 blank 245 comment 0 code 627
+stat Python files 5 total 1302 blank 152 comment 48 code 1102
+stat Shell files 1 total 14 blank 2 comment 5 code 7
+author~ Emise <emise@localhost> commits 22
+Commit e1c6b325316d by Emise <emise@localhost> on 2026-11-19 (EE 0).
+
+Subject: RFC Box run 2 (browser half): GAP.md — task 51.6.7/6.5.9/4.5.11
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1781.
+
+commit e1c6b325316d09181391522e0b33dbd826d80513
+parent 6e876c43b2c6c196c68e552fa1c4b8734177e87e
+author Emise <emise@localhost>
+date 1795051534 2026-11-19
+stat Markdown files 21 total 917 blank 245 comment 0 code 672
+stat Python files 5 total 1302 blank 152 comment 48 code 1102
+stat Shell files 1 total 14 blank 2 comment 5 code 7
+author~ Emise <emise@localhost> commits 23
+Commit 9b973a8ba50d by Emise <emise@localhost> on 2026-11-19 (EE 0).
+
+Subject: RFC Box run 2 (browser half): browser.py — task 51.6.7/6.5.9/4.5.11
+
+Public items: 22 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2318.
+
+commit 9b973a8ba50d55c8c45a1271f3855e059c0a4330
+parent e1c6b325316d09181391522e0b33dbd826d80513
+author Emise <emise@localhost>
+date 1795051540 2026-11-19
+item+ function examples/web-browser/browser.py :: __init__ :: def __init__(self): :: Function __init__ takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/browser.py :: content_type :: def content_type(self): :: Function content_type takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/browser.py :: coord_str :: def coord_str(state): :: Function coord_str takes state and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/browser.py :: display :: def display(page, out=None): :: Function display takes page, out=None and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/browser.py :: extract :: def extract(self, url, msg): :: Function extract takes self, url, msg and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/browser.py :: feed :: def feed(self, data): :: Returns [(coordinate, scroll_bytes)] completed by this data. :: doc comment
+item+ function examples/web-browser/browser.py :: fetch :: def fetch(url, jar=None): :: GET with redirect following (RFC 9110 section 15.4). HTTP error :: doc comment
+item+ function examples/web-browser/browser.py :: fetch_page :: def fetch_page(url, jar=None): :: Function fetch_page takes url, jar=None and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/browser.py :: finish :: def finish(self): :: The final scroll: (coordinate, bytes) for whatever remains. :: doc comment
+item+ function examples/web-browser/browser.py :: follow :: def follow(page, number): :: Follow link `number` (1-based, as printed) from a rendered page. :: doc comment
+item+ function examples/web-browser/browser.py :: handle_data :: def handle_data(self, data): :: Function handle_data takes self, data and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/browser.py :: handle_endtag :: def handle_endtag(self, tag): :: Function handle_endtag takes self, tag and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/browser.py :: handle_starttag :: def handle_starttag(self, tag, attrs): :: Function handle_starttag takes self, tag, attrs and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/browser.py :: header_for :: def header_for(self, url): :: Function header_for takes self, url and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/browser.py :: iter_phext_scrolls :: def iter_phext_scrolls(url, jar=None, chunk_size=4096): :: Stream a .phext from an HTTP/1.1 endpoint, yielding :: doc comment
+item+ function examples/web-browser/browser.py :: main :: def main(argv): :: Function main takes argv and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/browser.py :: open_stream :: def open_stream(url, jar=None): :: Like fetch(), but returns (final_url, response, conn) with the body :: doc comment
+item+ function examples/web-browser/browser.py :: phext_select :: def phext_select(url, wanted, jar=None): :: Stream until the scroll at `wanted` completes; return its bytes :: doc comment
+item+ function examples/web-browser/browser.py :: phext_toc :: def phext_toc(url, jar=None): :: The table of contents, as it streams: [(coordinate, byte_count)]. :: doc comment
+item+ function examples/web-browser/browser.py :: rendered_text :: def rendered_text(self): :: Function rendered_text takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/browser.py :: run_phext :: def run_phext(url, select=None, jar=None): :: Function run_phext takes url, select=None, jar=None and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/browser.py :: text :: def text(self): :: Decode the body: MIME charset parameter (RFC 2045) if given, :: doc comment
+stat Markdown files 21 total 917 blank 245 comment 0 code 672
+stat Python files 6 total 1839 blank 152 comment 48 code 1639
+stat Shell files 1 total 14 blank 2 comment 5 code 7
+author~ Emise <emise@localhost> commits 24
+Commit da2c4d704888 by Emise <emise@localhost> on 2026-11-19 (EE 0).
+
+Subject: RFC Box run 2 (browser half): test_browser.py — task 51.6.7/6.5.9/4.5.11
+
+Public items: 12 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2432.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit da2c4d7048883a12b3c281c30ee260d5a76d4a23
+parent 9b973a8ba50d55c8c45a1271f3855e059c0a4330
+author Emise <emise@localhost>
+date 1795051546 2026-11-19
+item+ function examples/web-browser/test_browser.py :: __init__ :: def __init__(self, payload, first_chunk_len, pause=0.5): :: Function __init__ takes self, payload, first_chunk_len, pause=0.5 and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/test_browser.py :: check :: def check(label, condition, detail=""): :: Function check takes label, condition, detail="" and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/test_browser.py :: do_GET :: def do_GET(self): :: Function do_GET takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/test_browser.py :: log_message :: def log_message(self, *args): :: Function log_message takes self, *args and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/test_browser.py :: main :: def main(): :: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/test_browser.py :: run :: def run(self): :: Function run takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/test_browser.py :: send_chunk :: def send_chunk(data): :: Function send_chunk takes data and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/test_browser.py :: stop :: def stop(self): :: Function stop takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/test_browser.py :: test_http :: def test_http(base): :: Function test_http takes base and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/test_browser.py :: test_live :: def test_live(): :: Function test_live takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/test_browser.py :: test_phext :: def test_phext(port, server): :: Function test_phext takes port, server and gives back nothing; it does its work on what it is given. :: signature
+item+ function examples/web-browser/test_browser.py :: test_slice :: def test_slice(): :: Function test_slice takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+stat Markdown files 21 total 917 blank 287 comment 0 code 630
+stat Python files 7 total 2206 blank 311 comment 100 code 1795
+stat Shell files 1 total 14 blank 2 comment 5 code 7
+author~ Emise <emise@localhost> commits 25
