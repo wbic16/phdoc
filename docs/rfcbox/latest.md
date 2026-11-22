@@ -1,6 +1,6 @@
 # rfcbox — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/rfcbox. Scanned at commit da2c4d7048883a12b3c281c30ee260d5a76d4a23. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/rfcbox/. Scanned at commit da2c4d7048883a12b3c281c30ee260d5a76d4a23. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -27,12 +27,16 @@ Direct dependencies: 1.
 
 ## Authors
 
-The git log holds 32 commits. The authors, by commit count:
+The git log holds 32 commits.
 
-- Emise <emise@localhost> — 25 commits (78.1%)
-- Theia <theia@mirrorborn.us> — 5 commits (15.6%)
-- Emise (Rogue) <rogue@phext.inc> — 1 commit (3.1%)
-- Will Bickford <wbic16@gmail.com> — 1 commit (3.1%)
+The author of record is **Will Bickford** — 32 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Emise — 25 commits
+- Theia — 5 commits
+- Rogue — 1 commit
+- Will Bickford (his own identities) — 1 commit
 
 ---
 
@@ -88,7 +92,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 - Origin: /home/wbic16/github-archive/mirrors/rfcbox.git
 - Branch: exo
 - Head commit: da2c4d7048883a12b3c281c30ee260d5a76d4a23
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
