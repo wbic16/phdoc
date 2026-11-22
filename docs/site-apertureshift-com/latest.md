@@ -1,6 +1,6 @@
 # site-apertureshift-com — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/site-apertureshift-com/. Scanned at commit e50030979332d34a882470d5143f7536220e44e9. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 104). Project root: /source/site-apertureshift-com. Scanned at commit 4071de232c2660ca13b9915d369a0688c30c3f97. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -14,17 +14,12 @@ No dependency manifest was found (no Cargo.toml, package.json, requirements.txt,
 
 ## Authors
 
-The git log holds 34 commits.
+The git log holds 6 commits. The authors, by commit count:
 
-The author of record is **Will Bickford** — 34 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
-
-Annotation, by persona (all folded into Will Bickford):
-
-- Emise — 27 commits
-- Chrys — 3 commits
-- Theia — 2 commits
-- Cyon — 1 commit
-- Verse — 1 commit
+- Chrys <chrys@mirrorborn.us> — 2 commits (33.3%)
+- Theia <theia@mirrorborn.us> — 2 commits (33.3%)
+- Cyon <cyon@visionquest.me> — 1 commit (16.7%)
+- Verse Mirrorborn <verse@mirrorborn.local> — 1 commit (16.7%)
 
 ---
 
@@ -32,18 +27,16 @@ Annotation, by persona (all folded into Will Bickford):
 
 The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.
 
-- Markdown: 5 files, 286 lines total, 54 blank, 0 comment, 232 code
-- Shell: 2 files, 224 lines total, 22 blank, 44 comment, 158 code
+- JavaScript: 4 files, 785 lines total, 80 blank, 139 comment, 566 code
 
-All languages: 7 files, 510 lines total, 390 lines of code. Functions read: 0.
+All languages: 4 files, 785 lines total, 566 lines of code. Functions read: 0.
 
 Largest files:
 
-- deploy/deploy.sh — 132 lines
-- GRANT-PROCESS.md — 108 lines
-- ANTI-VIRAL.md — 95 lines
-- deploy/deploy-remote.sh — 92 lines
-- deploy/README.md — 45 lines
+- js/maturity-display.js — 247 lines
+- js/domain-nav.js — 227 lines
+- js/auth.js — 171 lines
+- js/sq-client.js — 140 lines
 
 Largest functions, by span in lines:
 
@@ -70,10 +63,10 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 ## Upstream git repo
 
-- Origin: /home/wbic16/github-archive/mirrors/site-apertureshift-com.git
+- Origin: git@github.com:wbic16/site-apertureshift-com.git
 - Branch: exo
-- Head commit: e50030979332d34a882470d5143f7536220e44e9
-- Working tree: 1 changed paths
+- Head commit: 4071de232c2660ca13b9915d369a0688c30c3f97
+- Working tree: clean
 
 ---
 
@@ -81,9 +74,3 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.
 
-
----
-
-## Provenance
-
-This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/site-apertureshift-com/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
