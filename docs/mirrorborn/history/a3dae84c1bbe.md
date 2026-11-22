@@ -1,0 +1,71 @@
+# mirrorborn — reference as of commit a3dae84c1bbe
+
+Commit a3dae84c1bbe016b4bc0d08fd64c1db25b4111cd. 9 commits folded. Every fact here was folded from the chain's per-commit deltas.
+
+## Dependencies
+
+No dependencies recorded at this point.
+
+## Authors
+
+- Will Bickford <wbic16@gmail.com> — 9 commits
+
+## Complexity
+
+- Markdown: 16 files, 1017 lines total, 0 blank, 0 comment, 1017 code
+- Shell: 2 files, 1420 lines total, 138 blank, 34 comment, 1248 code
+
+Declared RFCs at this point: none declared.
+
+## Public methods and commands
+
+- function `append_holiday_taglines` (install.sh) — Function append_holiday_taglines takes no inputs beyond the value it is called on, and gives back nothing; it does its w
+- function `check_existing_openclaw` (install.sh) — Function check_existing_openclaw takes no inputs beyond the value it is called on, and gives back nothing; it does its w
+- function `check_git` (install.sh) — Function check_git takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it
+- function `check_node` (install.sh) — Function check_node takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
+- function `cleanup_legacy_submodules` (install.sh) — Function cleanup_legacy_submodules takes no inputs beyond the value it is called on, and gives back nothing; it does its
+- function `cleanup_npm_openclaw_paths` (install.sh) — Function cleanup_npm_openclaw_paths takes no inputs beyond the value it is called on, and gives back nothing; it does it
+- function `cleanup_openclaw_bin_conflict` (install.sh) — Function cleanup_openclaw_bin_conflict takes no inputs beyond the value it is called on, and gives back nothing; it does
+- function `cleanup_tmpfiles` (install.sh) — Function cleanup_tmpfiles takes no inputs beyond the value it is called on, and gives back nothing; it does its work on 
+- function `configure_verbose` (install.sh) — Function configure_verbose takes no inputs beyond the value it is called on, and gives back nothing; it does its work on
+- function `detect_downloader` (install.sh) — Function detect_downloader takes no inputs beyond the value it is called on, and gives back nothing; it does its work on
+- function `detect_openclaw_checkout` (install.sh) — Function detect_openclaw_checkout takes no inputs beyond the value it is called on, and gives back nothing; it does its 
+- function `download_file` (install.sh) — Function download_file takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wha
+- function `ensure_npm_global_bin_on_path` (install.sh) — Function ensure_npm_global_bin_on_path takes no inputs beyond the value it is called on, and gives back nothing; it does
+- function `ensure_openclaw_bin_link` (install.sh) — Function ensure_openclaw_bin_link takes no inputs beyond the value it is called on, and gives back nothing; it does its 
+- function `ensure_pnpm` (install.sh) — Function ensure_pnpm takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
+- function `ensure_user_local_bin_on_path` (install.sh) — Function ensure_user_local_bin_on_path takes no inputs beyond the value it is called on, and gives back nothing; it does
+- function `extract_openclaw_conflict_path` (install.sh) — Function extract_openclaw_conflict_path takes no inputs beyond the value it is called on, and gives back nothing; it doe
+- function `fix_npm_permissions` (install.sh) — Function fix_npm_permissions takes no inputs beyond the value it is called on, and gives back nothing; it does its work 
+- function `install_git` (install.sh) — Function install_git takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
+- function `install_homebrew` (install.sh) — Function install_homebrew takes no inputs beyond the value it is called on, and gives back nothing; it does its work on 
+- function `install_node` (install.sh) — Function install_node takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what
+- function `install_openclaw` (install.sh) — Function install_openclaw takes no inputs beyond the value it is called on, and gives back nothing; it does its work on 
+- function `install_openclaw_from_git` (install.sh) — Function install_openclaw_from_git takes no inputs beyond the value it is called on, and gives back nothing; it does its
+- function `install_openclaw_npm` (install.sh) — Function install_openclaw_npm takes no inputs beyond the value it is called on, and gives back nothing; it does its work
+- function `is_gateway_daemon_loaded` (install.sh) — Function is_gateway_daemon_loaded takes no inputs beyond the value it is called on, and gives back nothing; it does its 
+- function `is_promptable` (install.sh) — Function is_promptable takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wha
+- function `is_root` (install.sh) — Function is_root takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it i
+- function `main` (install.sh) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `map_legacy_env` (install.sh) — Function map_legacy_env takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wh
+- function `maybe_nodenv_rehash` (install.sh) — Function maybe_nodenv_rehash takes no inputs beyond the value it is called on, and gives back nothing; it does its work 
+- function `maybe_open_dashboard` (install.sh) — Function maybe_open_dashboard takes no inputs beyond the value it is called on, and gives back nothing; it does its work
+- function `maybe_sudo` (install.sh) — Function maybe_sudo takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
+- function `mktempfile` (install.sh) — Function mktempfile takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
+- function `npm_global_bin_dir` (install.sh) — Function npm_global_bin_dir takes no inputs beyond the value it is called on, and gives back nothing; it does its work o
+- function `parse_args` (install.sh) — Function parse_args takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
+- function `path_has_dir` (install.sh) — Function path_has_dir takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what
+- function `pick_tagline` (install.sh) — Function pick_tagline takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what
+- function `print_usage` (install.sh) — Function print_usage takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
+- function `prompt_choice` (install.sh) — Function prompt_choice takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wha
+- function `refresh_shell_command_cache` (install.sh) — Function refresh_shell_command_cache takes no inputs beyond the value it is called on, and gives back nothing; it does i
+- function `require_sudo` (install.sh) — Function require_sudo takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what
+- function `resolve_beta_version` (install.sh) — Function resolve_beta_version takes no inputs beyond the value it is called on, and gives back nothing; it does its work
+- function `resolve_openclaw_bin` (install.sh) — Function resolve_openclaw_bin takes no inputs beyond the value it is called on, and gives back nothing; it does its work
+- function `resolve_openclaw_version` (install.sh) — Function resolve_openclaw_version takes no inputs beyond the value it is called on, and gives back nothing; it does its 
+- function `resolve_workspace_dir` (install.sh) — Function resolve_workspace_dir takes no inputs beyond the value it is called on, and gives back nothing; it does its wor
+- function `run_bootstrap_onboarding_if_needed` (install.sh) — Function run_bootstrap_onboarding_if_needed takes no inputs beyond the value it is called on, and gives back nothing; it
+- function `run_doctor` (install.sh) — Function run_doctor takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
+- function `run_remote_bash` (install.sh) — Function run_remote_bash takes no inputs beyond the value it is called on, and gives back nothing; it does its work on w
+- function `warn_openclaw_not_found` (install.sh) — Function warn_openclaw_not_found takes no inputs beyond the value it is called on, and gives back nothing; it does its w
+- function `warn_shell_path_missing_dir` (install.sh) — Function warn_shell_path_missing_dir takes no inputs beyond the value it is called on, and gives back nothing; it does i
