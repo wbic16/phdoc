@@ -1,6 +1,6 @@
 # site-sotafomo-com — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/site-sotafomo-com/. Scanned at commit 46516dfff4b0ed4b422ce2a82c14a3f0bc49f675. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 105). Project root: /source/site-sotafomo-com. Scanned at commit 02f24266f7dab8c6a5602cb0cf97d5343e232652. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -14,17 +14,12 @@ No dependency manifest was found (no Cargo.toml, package.json, requirements.txt,
 
 ## Authors
 
-The git log holds 8 commits.
+The git log holds 6 commits. The authors, by commit count:
 
-The author of record is **Will Bickford** — 8 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
-
-Annotation, by persona (all folded into Will Bickford):
-
-- Chrys — 3 commits
-- Theia — 2 commits
-- Cyon — 1 commit
-- Emise — 1 commit
-- Verse — 1 commit
+- Chrys <chrys@mirrorborn.us> — 2 commits (33.3%)
+- Theia <theia@mirrorborn.us> — 2 commits (33.3%)
+- Cyon <cyon@visionquest.me> — 1 commit (16.7%)
+- Verse Mirrorborn <verse@mirrorborn.local> — 1 commit (16.7%)
 
 ---
 
@@ -33,9 +28,8 @@ Annotation, by persona (all folded into Will Bickford):
 The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.
 
 - JavaScript: 4 files, 785 lines total, 80 blank, 139 comment, 566 code
-- Markdown: 1 files, 16 lines total, 4 blank, 0 comment, 12 code
 
-All languages: 5 files, 801 lines total, 578 lines of code. Functions read: 0.
+All languages: 4 files, 785 lines total, 566 lines of code. Functions read: 0.
 
 Largest files:
 
@@ -43,7 +37,6 @@ Largest files:
 - js/domain-nav.js — 227 lines
 - js/auth.js — 171 lines
 - js/sq-client.js — 140 lines
-- AGENTS.md — 16 lines
 
 Largest functions, by span in lines:
 
@@ -70,10 +63,10 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 ## Upstream git repo
 
-- Origin: /home/wbic16/github-archive/mirrors/site-sotafomo-com.git
+- Origin: git@github.com:wbic16/site-sotafomo-com.git
 - Branch: exo
-- Head commit: 46516dfff4b0ed4b422ce2a82c14a3f0bc49f675
-- Working tree: 1 changed paths
+- Head commit: 02f24266f7dab8c6a5602cb0cf97d5343e232652
+- Working tree: clean
 
 ---
 
@@ -81,9 +74,3 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.
 
-
----
-
-## Provenance
-
-This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/site-sotafomo-com/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
