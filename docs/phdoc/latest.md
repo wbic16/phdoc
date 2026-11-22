@@ -1,6 +1,6 @@
 # phdoc — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 90). Project root: phdoc-selfaudit. Scanned at commit e2ebaec82536e380faa3a7093f356a8a9f26f231. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-selfaudit. Scanned at commit 9e266539f56016d7d37fe92825a68f113409b03e. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -23,11 +23,15 @@ Total packages in the lock file, this one included: 3.
 
 ## Authors
 
-The git log holds 6 commits. The authors, by commit count:
+The git log holds 8 commits.
 
-- Theia <theia@mirrorborn.us> — 4 commits (66.7%)
-- Emise <emise@localhost> — 1 commit (16.7%)
-- Will Bickford <wbic16@gmail.com> — 1 commit (16.7%)
+The author of record is **Will Bickford** — 8 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Theia — 5 commits
+- Emise — 2 commits
+- Will Bickford (his own identities) — 1 commit
 
 ---
 
@@ -35,19 +39,19 @@ The git log holds 6 commits. The authors, by commit count:
 
 The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.
 
-- Markdown: 37 files, 4061 lines total, 1332 blank, 156 comment, 2573 code
+- Markdown: 44 files, 5346 lines total, 1790 blank, 220 comment, 3336 code
 - Rust: 1 files, 2638 lines total, 128 blank, 138 comment, 2372 code
 - TOML: 1 files, 22 lines total, 2 blank, 0 comment, 20 code
 
-All languages: 39 files, 6721 lines total, 4965 lines of code. Functions read: 69.
+All languages: 46 files, 8006 lines total, 5728 lines of code. Functions read: 69.
 
 Largest files:
 
 - src/main.rs — 2638 lines
 - docs/rfcbox/latest.md — 1515 lines
+- docs/phdoc/latest.md — 827 lines
 - docs/kgoat/latest.md — 521 lines
-- README.md — 255 lines
-- docs/rfcbox/history/da2c4d704888.md — 134 lines
+- README.md — 275 lines
 
 Largest functions, by span in lines:
 
@@ -66,7 +70,7 @@ Each signal is named and shown with its evidence. A signal is a fact the scanner
 - Tests: 13 test functions counted in the source, across 0 files whose names mark them as test files.
 - CI: no CI configuration was found in the project.
 - Lint and format: no lint or format configuration file was found.
-- TODO marks in the source: 5. FIXME marks: 5.
+- TODO marks in the source: 6. FIXME marks: 6.
 - Public items with a doc comment: 0 of 56 (0%).
 
 ---
@@ -82,7 +86,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 - Origin: git@github.com:wbic16/phdoc.git
 - Branch: exo
-- Head commit: e2ebaec82536e380faa3a7093f356a8a9f26f231
+- Head commit: 9e266539f56016d7d37fe92825a68f113409b03e
 - Working tree: clean
 
 ---

@@ -140,3 +140,33 @@ stat Markdown files 37 total 4061 blank 1332 comment 0 code 2729
 stat Rust files 1 total 2638 blank 128 comment 138 code 2372
 stat TOML files 1 total 22 blank 2 comment 0 code 20
 author~ Theia <theia@mirrorborn.us> commits 4
+Commit 1baa212bda25 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 90).
+
+Subject: phdoc export: phdoc @ e2ebaec82536 — audited to EE 90 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 6386.
+
+commit 1baa212bda25f2b93b10091e2e3a2a4c20c1613c
+parent e2ebaec82536e380faa3a7093f356a8a9f26f231
+author Theia <theia@mirrorborn.us>
+date 1795364770 2026-11-22
+stat Markdown files 44 total 5326 blank 1332 comment 0 code 3994
+stat Rust files 1 total 2638 blank 128 comment 138 code 2372
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 5
+Commit 9e266539f560 by Emise <emise@localhost> on 2026-11-22 (EE 90).
+
+Subject: phdoc documents itself: .phdoc.json ledger in the repo root (6 commits audited, EE 90) + README 'Why phdoc exists' — the shipped rule, drift, and the deploy gate
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5948.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 9e266539f56016d7d37fe92825a68f113409b03e
+parent 1baa212bda25f2b93b10091e2e3a2a4c20c1613c
+author Emise <emise@localhost>
+date 1795364925 2026-11-22
+stat Markdown files 44 total 5346 blank 1790 comment 0 code 3556
+stat Rust files 1 total 2638 blank 128 comment 138 code 2372
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Emise <emise@localhost> commits 2

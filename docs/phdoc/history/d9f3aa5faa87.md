@@ -14,9 +14,13 @@ This reference is folded from the project's documentation chain, kept in the exp
 
 ## Authors
 
-- Theia <theia@mirrorborn.us> — 3 commits
-- Emise <emise@localhost> — 1 commits
-- Will Bickford <wbic16@gmail.com> — 1 commits
+The author of record is **Will Bickford** — 5 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Theia — 3 commits
+- Emise — 1 commit
+- Will Bickford (his own identities) — 1 commit
 
 ## Complexity
 
