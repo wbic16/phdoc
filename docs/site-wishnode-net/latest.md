@@ -1,6 +1,6 @@
 # site-wishnode-net — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 107). Project root: /source/site-wishnode-net. Scanned at commit 2ffd7eb8c72c9bc6161653e3f5db4929ec5a8c4f. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 136). Project root: /home/wbic16/phdoc-sweep/proj/site-wishnode-net. Scanned at commit 04fc512ec10d1a743f397ba68c3f767c03358332. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -14,12 +14,17 @@ No dependency manifest was found (no Cargo.toml, package.json, requirements.txt,
 
 ## Authors
 
-The git log holds 6 commits. The authors, by commit count:
+The git log holds 18 commits.
 
-- Chrys <chrys@mirrorborn.us> — 2 commits (33.3%)
-- Theia <theia@mirrorborn.us> — 2 commits (33.3%)
-- Cyon <cyon@visionquest.me> — 1 commit (16.7%)
-- Verse Mirrorborn <verse@mirrorborn.local> — 1 commit (16.7%)
+The author of record is **Will Bickford** — 18 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Theia — 11 commits
+- Chrys — 3 commits
+- Emise — 2 commits
+- Cyon — 1 commit
+- Verse — 1 commit
 
 ---
 
@@ -27,19 +32,28 @@ The git log holds 6 commits. The authors, by commit count:
 
 The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.
 
-- JavaScript: 4 files, 785 lines total, 80 blank, 139 comment, 566 code
+- JavaScript: 5 files, 796 lines total, 80 blank, 142 comment, 574 code
+- Markdown: 4 files, 569 lines total, 89 blank, 0 comment, 480 code
+- Python: 5 files, 1840 lines total, 150 blank, 88 comment, 1602 code
+- Shell: 3 files, 198 lines total, 19 blank, 46 comment, 133 code
 
-All languages: 4 files, 785 lines total, 566 lines of code. Functions read: 0.
+All languages: 17 files, 3403 lines total, 2789 lines of code. Functions read: 82.
 
 Largest files:
 
+- backend/wishnode_backend.py — 992 lines
+- scripts/render_site.py — 462 lines
+- ARCHITECTURE.md — 291 lines
 - js/maturity-display.js — 247 lines
 - js/domain-nav.js — 227 lines
-- js/auth.js — 171 lines
-- js/sq-client.js — 140 lines
 
 Largest functions, by span in lines:
 
+- render_statute in scripts/render_site.py — about 80 lines
+- one in backend/wishnode_backend.py — about 67 lines
+- env in backend/wishnode_backend.py — about 57 lines
+- chrome in scripts/render_site.py — about 56 lines
+- do_POST in backend/wishnode_backend.py — about 44 lines
 
 ---
 
@@ -51,6 +65,7 @@ Each signal is named and shown with its evidence. A signal is a fact the scanner
 - CI: no CI configuration was found in the project.
 - Lint and format: no lint or format configuration file was found.
 - TODO marks in the source: 0. FIXME marks: 0.
+- Public items with a doc comment: 10 of 82 (12%).
 
 ---
 
@@ -63,10 +78,10 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 ## Upstream git repo
 
-- Origin: git@github.com:wbic16/site-wishnode-net.git
+- Origin: /home/wbic16/github-archive/mirrors/site-wishnode-net.git
 - Branch: exo
-- Head commit: 2ffd7eb8c72c9bc6161653e3f5db4929ec5a8c4f
-- Working tree: 1 changed paths
+- Head commit: 04fc512ec10d1a743f397ba68c3f767c03358332
+- Working tree: clean
 
 ---
 
@@ -74,3 +89,1075 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.
 
+- function `env` (backend/wishnode_backend.py:44) — Function env takes name, default=None and gives back nothing; it does its work on what it is given.
+- function `now_rfc3339` (backend/wishnode_backend.py:101) — Function now_rfc3339 takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
+- function `sha256_hex` (backend/wishnode_backend.py:104) — Function sha256_hex takes text and gives back nothing; it does its work on what it is given.
+- function `coord` (backend/wishnode_backend.py:107) — Function coord takes ch, sec, base and gives back nothing; it does its work on what it is given.
+- function `b64url_encode` (backend/wishnode_backend.py:110) — Function b64url_encode takes raw: bytes and gives back str:.
+- function `b64url_decode` (backend/wishnode_backend.py:113) — Function b64url_decode takes text: str and gives back bytes:.
+- function `sign_token` (backend/wishnode_backend.py:117) — Function sign_token takes secret: str, claims: dict and gives back str:.
+- function `verify_signed_token` (backend/wishnode_backend.py:122) — Function verify_signed_token takes secret: str, token: str and gives back dict:.
+- function `citizen_id_for` (backend/wishnode_backend.py:136) — Function citizen_id_for takes identity: str and gives back str:.
+- function `new_tracking_code` (backend/wishnode_backend.py:142) — Function new_tracking_code takes no inputs beyond the value it is called on, and gives back str:.
+- function `sq_request` (backend/wishnode_backend.py:153) — Function sq_request takes key, method, endpoint, params=None, body=None and gives back nothing; it does its work on what
+- function `sq_select` (backend/wishnode_backend.py:166) — Function sq_select takes key, phext_name, coordinate and gives back nothing; it does its work on what it is given.
+- function `sq_update` (backend/wishnode_backend.py:172) — Function sq_update takes key, phext_name, coordinate, text and gives back nothing; it does its work on what it is given.
+- function `sq_query` (backend/wishnode_backend.py:178) — Function sq_query takes key, phext_name and gives back nothing; it does its work on what it is given.
+- function `citizen_lock` (backend/wishnode_backend.py:197) — Function citizen_lock takes citizen_id and gives back nothing; it does its work on what it is given.
+- function `citizen_path` (backend/wishnode_backend.py:201) — Function citizen_path takes citizen_id and gives back nothing; it does its work on what it is given.
+- function `citizen_read` (backend/wishnode_backend.py:204) — Function citizen_read takes citizen_id and gives back nothing; it does its work on what it is given.
+- function `citizen_fetch` (backend/wishnode_backend.py:211) — Function citizen_fetch takes buffer, coordinate and gives back nothing; it does its work on what it is given.
+- function `create_submission` (backend/wishnode_backend.py:221) — Provision the citizen phext if absent, append one submission chapter,
+- function `citizen_append_transition` (backend/wishnode_backend.py:261) — Function citizen_append_transition takes citizen_id, chapter, line and gives back nothing; it does its work on what it i
+- function `citizen_submissions` (backend/wishnode_backend.py:277) — Return a list of dicts describing each submission chapter.
+- function `claim_base_for` (backend/wishnode_backend.py:319) — Function claim_base_for takes code and gives back nothing; it does its work on what it is given.
+- function `find_claim` (backend/wishnode_backend.py:327) — Locate a claim by tracking code, applying the documented +20 probe
+- function `read_claim_at` (backend/wishnode_backend.py:343) — Function read_claim_at takes ch, sec, base and gives back nothing; it does its work on what it is given.
+- function `create_claim` (backend/wishnode_backend.py:365) — Function create_claim takes code, citizen_id, pointer, content_hash and gives back nothing; it does its work on what it 
+- function `bump_register_root` (backend/wishnode_backend.py:384) — Function bump_register_root takes no inputs beyond the value it is called on, and gives back nothing; it does its work o
+- function `append_transition` (backend/wishnode_backend.py:396) — Function append_transition takes code, to_state, role, note and gives back nothing; it does its work on what it is given
+- function `verify_assertion` (backend/wishnode_backend.py:425) — Verify an edit.phext.io assertion exactly as exo-sso does:
+- function `seal_session` (backend/wishnode_backend.py:462) — Function seal_session takes sub, handle and gives back nothing; it does its work on what it is given.
+- function `open_session` (backend/wishnode_backend.py:468) — Function open_session takes value and gives back nothing; it does its work on what it is given.
+- function `rate_ok` (backend/wishnode_backend.py:492) — Function rate_ok takes ip, endpoint and gives back nothing; it does its work on what it is given.
+- function `page_shell` (backend/wishnode_backend.py:508) — Function page_shell takes title, body, session=None and gives back nothing; it does its work on what it is given.
+- function `esc` (backend/wishnode_backend.py:544) — Function esc takes text and gives back nothing; it does its work on what it is given.
+- function `plain_state` (backend/wishnode_backend.py:547) — Function plain_state takes state and gives back nothing; it does its work on what it is given.
+- function `clean` (backend/wishnode_backend.py:556) — Function clean takes value, maxlen, multiline=False and gives back nothing; it does its work on what it is given.
+- function `handle_submission` (backend/wishnode_backend.py:561) — Shared engine for both workflows.
+- function `one` (backend/wishnode_backend.py:568) — Function one takes name and gives back nothing; it does its work on what it is given.
+- function `csrf_ok` (backend/wishnode_backend.py:635) — Function csrf_ok takes handler, form=None and gives back nothing; it does its work on what it is given.
+- function `current_session` (backend/wishnode_backend.py:658) — Function current_session takes handler and gives back nothing; it does its work on what it is given.
+- function `setup` (backend/wishnode_backend.py:669) — Function setup takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is 
+- function `log_message` (backend/wishnode_backend.py:673) — Function log_message takes self, fmt, *args and gives back nothing; it does its work on what it is given.
+- function `send_html` (backend/wishnode_backend.py:676) — Function send_html takes self, status, body, extra_headers=None and gives back nothing; it does its work on what it is g
+- function `send_json` (backend/wishnode_backend.py:694) — Function send_json takes self, status, obj and gives back nothing; it does its work on what it is given.
+- function `redirect` (backend/wishnode_backend.py:704) — Function redirect takes self, location, extra_headers=None and gives back nothing; it does its work on what it is given.
+- function `do_GET` (backend/wishnode_backend.py:713) — Function do_GET takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is
+- function `do_POST` (backend/wishnode_backend.py:742) — Function do_POST takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it i
+- function `csrf_token` (backend/wishnode_backend.py:786) — Function csrf_token takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
+- function `serve_css` (backend/wishnode_backend.py:800) — Function serve_css takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it
+- function `auth_login` (backend/wishnode_backend.py:812) — Function auth_login takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
+- function `auth_callback` (backend/wishnode_backend.py:821) — Function auth_callback takes self, qs and gives back nothing; it does its work on what it is given.
+- function `status_page` (backend/wishnode_backend.py:861) — Function status_page takes self, qs and gives back nothing; it does its work on what it is given.
+- function `my_page` (backend/wishnode_backend.py:905) — Function my_page takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it i
+- function `admin_claim` (backend/wishnode_backend.py:934) — Function admin_claim takes self, qs and gives back nothing; it does its work on what it is given.
+- function `admin_advance` (backend/wishnode_backend.py:945) — Function admin_advance takes self, raw_body and gives back nothing; it does its work on what it is given.
+- function `main` (backend/wishnode_backend.py:964) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `coord` (scripts/add_demo_leads.py:99) — Function coord takes c, s, b and gives back nothing; it does its work on what it is given.
+- function `load` (scripts/add_demo_leads.py:103) — Function load takes name and gives back nothing; it does its work on what it is given.
+- function `save` (scripts/add_demo_leads.py:108) — Function save takes name, buffer and gives back nothing; it does its work on what it is given.
+- function `check` (scripts/add_demo_leads.py:113) — Function check takes label, text, failures and gives back nothing; it does its work on what it is given.
+- function `main` (scripts/add_demo_leads.py:121) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `main` (scripts/add_home_ch8.py:42) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `syllables` (scripts/build_security_phext.py:126) — Function syllables takes word and gives back nothing; it does its work on what it is given.
+- function `readability` (scripts/build_security_phext.py:135) — Function readability takes text and gives back nothing; it does its work on what it is given.
+- function `split_blocks` (scripts/build_security_phext.py:144) — Function split_blocks takes md and gives back nothing; it does its work on what it is given.
+- function `main` (scripts/build_security_phext.py:147) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `sq_query` (scripts/render_site.py:35) — Function sq_query takes phext_name and gives back nothing; it does its work on what it is given.
+- function `esc` (scripts/render_site.py:52) — Function esc takes t and gives back nothing; it does its work on what it is given.
+- function `md_inline` (scripts/render_site.py:55) — Strip the markdown markers that read as noise in prose.
+- function `block` (scripts/render_site.py:61) — Render one scroll: code/table-ish blocks as <pre>, bullet lists
+- function `chapter_sections` (scripts/render_site.py:79) — Return list of (heading, [scroll texts]) for sections in a chapter.
+- function `render_chapter` (scripts/render_site.py:94) — Render a standard chapter: section 1 is heading + paragraphs;
+- function `scrub_offsite` (scripts/render_site.py:135) — Chapter 9 holds pre-rewrite page text as provenance, and that old
+- function `tech_details` (scripts/render_site.py:143) — Function tech_details takes scrolls and gives back nothing; it does its work on what it is given.
+- function `chrome` (scripts/render_site.py:158) — Function chrome takes home, title, body, hero=None, extra_head="" and gives back nothing; it does its work on what it is
+- function `render_app` (scripts/render_site.py:214) — Function render_app takes home, slug and gives back nothing; it does its work on what it is given.
+- function `render_home` (scripts/render_site.py:235) — Function render_home takes home and gives back nothing; it does its work on what it is given.
+- function `render_verification` (scripts/render_site.py:265) — Function render_verification takes home and gives back nothing; it does its work on what it is given.
+- function `render_security` (scripts/render_site.py:295) — Function render_security takes home and gives back nothing; it does its work on what it is given.
+- function `render_statute` (scripts/render_site.py:327) — Function render_statute takes home, statutes, chapter, slug and gives back nothing; it does its work on what it is given
+- function `render_how_it_works` (scripts/render_site.py:407) — Function render_how_it_works takes home and gives back nothing; it does its work on what it is given.
+- function `write` (scripts/render_site.py:426) — Function write takes relpath, content and gives back nothing; it does its work on what it is given.
+- function `main` (scripts/render_site.py:433) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+
+---
+
+## function — env
+
+Found in backend/wishnode_backend.py at line 44.
+
+Signature: `def env(name, default=None):`
+
+What it does: Function env takes name, default=None and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — now_rfc3339
+
+Found in backend/wishnode_backend.py at line 101.
+
+Signature: `def now_rfc3339():`
+
+What it does: Function now_rfc3339 takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — sha256_hex
+
+Found in backend/wishnode_backend.py at line 104.
+
+Signature: `def sha256_hex(text):`
+
+What it does: Function sha256_hex takes text and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — coord
+
+Found in backend/wishnode_backend.py at line 107.
+
+Signature: `def coord(ch, sec, base):`
+
+What it does: Function coord takes ch, sec, base and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — b64url_encode
+
+Found in backend/wishnode_backend.py at line 110.
+
+Signature: `def b64url_encode(raw: bytes) -> str:`
+
+What it does: Function b64url_encode takes raw: bytes and gives back str:.
+
+(Where these words came from: signature.)
+
+---
+
+## function — b64url_decode
+
+Found in backend/wishnode_backend.py at line 113.
+
+Signature: `def b64url_decode(text: str) -> bytes:`
+
+What it does: Function b64url_decode takes text: str and gives back bytes:.
+
+(Where these words came from: signature.)
+
+---
+
+## function — sign_token
+
+Found in backend/wishnode_backend.py at line 117.
+
+Signature: `def sign_token(secret: str, claims: dict) -> str:`
+
+What it does: Function sign_token takes secret: str, claims: dict and gives back str:.
+
+(Where these words came from: signature.)
+
+---
+
+## function — verify_signed_token
+
+Found in backend/wishnode_backend.py at line 122.
+
+Signature: `def verify_signed_token(secret: str, token: str) -> dict:`
+
+What it does: Function verify_signed_token takes secret: str, token: str and gives back dict:.
+
+(Where these words came from: signature.)
+
+---
+
+## function — citizen_id_for
+
+Found in backend/wishnode_backend.py at line 136.
+
+Signature: `def citizen_id_for(identity: str) -> str:`
+
+What it does: Function citizen_id_for takes identity: str and gives back str:.
+
+(Where these words came from: signature.)
+
+---
+
+## function — new_tracking_code
+
+Found in backend/wishnode_backend.py at line 142.
+
+Signature: `def new_tracking_code() -> str:`
+
+What it does: Function new_tracking_code takes no inputs beyond the value it is called on, and gives back str:.
+
+(Where these words came from: signature.)
+
+---
+
+## function — sq_request
+
+Found in backend/wishnode_backend.py at line 153.
+
+Signature: `def sq_request(key, method, endpoint, params=None, body=None):`
+
+What it does: Function sq_request takes key, method, endpoint, params=None, body=None and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — sq_select
+
+Found in backend/wishnode_backend.py at line 166.
+
+Signature: `def sq_select(key, phext_name, coordinate):`
+
+What it does: Function sq_select takes key, phext_name, coordinate and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — sq_update
+
+Found in backend/wishnode_backend.py at line 172.
+
+Signature: `def sq_update(key, phext_name, coordinate, text):`
+
+What it does: Function sq_update takes key, phext_name, coordinate, text and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — sq_query
+
+Found in backend/wishnode_backend.py at line 178.
+
+Signature: `def sq_query(key, phext_name):`
+
+What it does: Function sq_query takes key, phext_name and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — citizen_lock
+
+Found in backend/wishnode_backend.py at line 197.
+
+Signature: `def citizen_lock(citizen_id):`
+
+What it does: Function citizen_lock takes citizen_id and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — citizen_path
+
+Found in backend/wishnode_backend.py at line 201.
+
+Signature: `def citizen_path(citizen_id):`
+
+What it does: Function citizen_path takes citizen_id and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — citizen_read
+
+Found in backend/wishnode_backend.py at line 204.
+
+Signature: `def citizen_read(citizen_id):`
+
+What it does: Function citizen_read takes citizen_id and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — citizen_fetch
+
+Found in backend/wishnode_backend.py at line 211.
+
+Signature: `def citizen_fetch(buffer, coordinate):`
+
+What it does: Function citizen_fetch takes buffer, coordinate and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — create_submission
+
+Found in backend/wishnode_backend.py at line 221.
+
+Signature: `def create_submission(citizen_id, form_kind, code, fields):`
+
+What it does: Provision the citizen phext if absent, append one submission chapter,
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — citizen_append_transition
+
+Found in backend/wishnode_backend.py at line 261.
+
+Signature: `def citizen_append_transition(citizen_id, chapter, line):`
+
+What it does: Function citizen_append_transition takes citizen_id, chapter, line and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — citizen_submissions
+
+Found in backend/wishnode_backend.py at line 277.
+
+Signature: `def citizen_submissions(citizen_id):`
+
+What it does: Return a list of dicts describing each submission chapter.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — claim_base_for
+
+Found in backend/wishnode_backend.py at line 319.
+
+Signature: `def claim_base_for(code):`
+
+What it does: Function claim_base_for takes code and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — find_claim
+
+Found in backend/wishnode_backend.py at line 327.
+
+Signature: `def find_claim(code):`
+
+What it does: Locate a claim by tracking code, applying the documented +20 probe
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — read_claim_at
+
+Found in backend/wishnode_backend.py at line 343.
+
+Signature: `def read_claim_at(ch, sec, base):`
+
+What it does: Function read_claim_at takes ch, sec, base and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — create_claim
+
+Found in backend/wishnode_backend.py at line 365.
+
+Signature: `def create_claim(code, citizen_id, pointer, content_hash):`
+
+What it does: Function create_claim takes code, citizen_id, pointer, content_hash and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — bump_register_root
+
+Found in backend/wishnode_backend.py at line 384.
+
+Signature: `def bump_register_root():`
+
+What it does: Function bump_register_root takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — append_transition
+
+Found in backend/wishnode_backend.py at line 396.
+
+Signature: `def append_transition(code, to_state, role, note):`
+
+What it does: Function append_transition takes code, to_state, role, note and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — verify_assertion
+
+Found in backend/wishnode_backend.py at line 425.
+
+Signature: `def verify_assertion(token):`
+
+What it does: Verify an edit.phext.io assertion exactly as exo-sso does:
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — seal_session
+
+Found in backend/wishnode_backend.py at line 462.
+
+Signature: `def seal_session(sub, handle):`
+
+What it does: Function seal_session takes sub, handle and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — open_session
+
+Found in backend/wishnode_backend.py at line 468.
+
+Signature: `def open_session(value):`
+
+What it does: Function open_session takes value and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — rate_ok
+
+Found in backend/wishnode_backend.py at line 492.
+
+Signature: `def rate_ok(ip, endpoint):`
+
+What it does: Function rate_ok takes ip, endpoint and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — page_shell
+
+Found in backend/wishnode_backend.py at line 508.
+
+Signature: `def page_shell(title, body, session=None):`
+
+What it does: Function page_shell takes title, body, session=None and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — esc
+
+Found in backend/wishnode_backend.py at line 544.
+
+Signature: `def esc(text):`
+
+What it does: Function esc takes text and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — plain_state
+
+Found in backend/wishnode_backend.py at line 547.
+
+Signature: `def plain_state(state):`
+
+What it does: Function plain_state takes state and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — clean
+
+Found in backend/wishnode_backend.py at line 556.
+
+Signature: `def clean(value, maxlen, multiline=False):`
+
+What it does: Function clean takes value, maxlen, multiline=False and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — handle_submission
+
+Found in backend/wishnode_backend.py at line 561.
+
+Signature: `def handle_submission(handler, form_kind, raw):`
+
+What it does: Shared engine for both workflows. raw: dict of form lists.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — one
+
+Found in backend/wishnode_backend.py at line 568.
+
+Signature: `def one(name):`
+
+What it does: Function one takes name and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — csrf_ok
+
+Found in backend/wishnode_backend.py at line 635.
+
+Signature: `def csrf_ok(handler, form=None):`
+
+What it does: Function csrf_ok takes handler, form=None and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — current_session
+
+Found in backend/wishnode_backend.py at line 658.
+
+Signature: `def current_session(handler):`
+
+What it does: Function current_session takes handler and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — setup
+
+Found in backend/wishnode_backend.py at line 669.
+
+Signature: `def setup(self):`
+
+What it does: Function setup takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — log_message
+
+Found in backend/wishnode_backend.py at line 673.
+
+Signature: `def log_message(self, fmt, *args):`
+
+What it does: Function log_message takes self, fmt, *args and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — send_html
+
+Found in backend/wishnode_backend.py at line 676.
+
+Signature: `def send_html(self, status, body, extra_headers=None):`
+
+What it does: Function send_html takes self, status, body, extra_headers=None and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — send_json
+
+Found in backend/wishnode_backend.py at line 694.
+
+Signature: `def send_json(self, status, obj):`
+
+What it does: Function send_json takes self, status, obj and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — redirect
+
+Found in backend/wishnode_backend.py at line 704.
+
+Signature: `def redirect(self, location, extra_headers=None):`
+
+What it does: Function redirect takes self, location, extra_headers=None and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — do_GET
+
+Found in backend/wishnode_backend.py at line 713.
+
+Signature: `def do_GET(self):`
+
+What it does: Function do_GET takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — do_POST
+
+Found in backend/wishnode_backend.py at line 742.
+
+Signature: `def do_POST(self):`
+
+What it does: Function do_POST takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — csrf_token
+
+Found in backend/wishnode_backend.py at line 786.
+
+Signature: `def csrf_token(self):`
+
+What it does: Function csrf_token takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — serve_css
+
+Found in backend/wishnode_backend.py at line 800.
+
+Signature: `def serve_css(self):`
+
+What it does: Function serve_css takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — auth_login
+
+Found in backend/wishnode_backend.py at line 812.
+
+Signature: `def auth_login(self):`
+
+What it does: Function auth_login takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — auth_callback
+
+Found in backend/wishnode_backend.py at line 821.
+
+Signature: `def auth_callback(self, qs):`
+
+What it does: Function auth_callback takes self, qs and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — status_page
+
+Found in backend/wishnode_backend.py at line 861.
+
+Signature: `def status_page(self, qs):`
+
+What it does: Function status_page takes self, qs and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — my_page
+
+Found in backend/wishnode_backend.py at line 905.
+
+Signature: `def my_page(self):`
+
+What it does: Function my_page takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — admin_claim
+
+Found in backend/wishnode_backend.py at line 934.
+
+Signature: `def admin_claim(self, qs):`
+
+What it does: Function admin_claim takes self, qs and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — admin_advance
+
+Found in backend/wishnode_backend.py at line 945.
+
+Signature: `def admin_advance(self, raw_body):`
+
+What it does: Function admin_advance takes self, raw_body and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — main
+
+Found in backend/wishnode_backend.py at line 964.
+
+Signature: `def main():`
+
+What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — coord
+
+Found in scripts/add_demo_leads.py at line 99.
+
+Signature: `def coord(c, s, b):`
+
+What it does: Function coord takes c, s, b and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — load
+
+Found in scripts/add_demo_leads.py at line 103.
+
+Signature: `def load(name):`
+
+What it does: Function load takes name and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — save
+
+Found in scripts/add_demo_leads.py at line 108.
+
+Signature: `def save(name, buffer):`
+
+What it does: Function save takes name, buffer and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — check
+
+Found in scripts/add_demo_leads.py at line 113.
+
+Signature: `def check(label, text, failures):`
+
+What it does: Function check takes label, text, failures and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — main
+
+Found in scripts/add_demo_leads.py at line 121.
+
+Signature: `def main():`
+
+What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — main
+
+Found in scripts/add_home_ch8.py at line 42.
+
+Signature: `def main():`
+
+What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — syllables
+
+Found in scripts/build_security_phext.py at line 126.
+
+Signature: `def syllables(word):`
+
+What it does: Function syllables takes word and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — readability
+
+Found in scripts/build_security_phext.py at line 135.
+
+Signature: `def readability(text):`
+
+What it does: Function readability takes text and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — split_blocks
+
+Found in scripts/build_security_phext.py at line 144.
+
+Signature: `def split_blocks(md):`
+
+What it does: Function split_blocks takes md and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — main
+
+Found in scripts/build_security_phext.py at line 147.
+
+Signature: `def main():`
+
+What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — sq_query
+
+Found in scripts/render_site.py at line 35.
+
+Signature: `def sq_query(phext_name):`
+
+What it does: Function sq_query takes phext_name and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — esc
+
+Found in scripts/render_site.py at line 52.
+
+Signature: `def esc(t):`
+
+What it does: Function esc takes t and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — md_inline
+
+Found in scripts/render_site.py at line 55.
+
+Signature: `def md_inline(text):`
+
+What it does: Strip the markdown markers that read as noise in prose.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — block
+
+Found in scripts/render_site.py at line 61.
+
+Signature: `def block(text):`
+
+What it does: Render one scroll: code/table-ish blocks as <pre>, bullet lists
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — chapter_sections
+
+Found in scripts/render_site.py at line 79.
+
+Signature: `def chapter_sections(scrolls, chapter, skip_first_heading=False):`
+
+What it does: Return list of (heading, [scroll texts]) for sections in a chapter.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — render_chapter
+
+Found in scripts/render_site.py at line 94.
+
+Signature: `def render_chapter(scrolls, chapter, slug=None, plain_heading_h2=True):`
+
+What it does: Render a standard chapter: section 1 is heading + paragraphs;
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — scrub_offsite
+
+Found in scripts/render_site.py at line 135.
+
+Signature: `def scrub_offsite(text):`
+
+What it does: Chapter 9 holds pre-rewrite page text as provenance, and that old
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — tech_details
+
+Found in scripts/render_site.py at line 143.
+
+Signature: `def tech_details(scrolls):`
+
+What it does: Function tech_details takes scrolls and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — chrome
+
+Found in scripts/render_site.py at line 158.
+
+Signature: `def chrome(home, title, body, hero=None, extra_head=""):`
+
+What it does: Function chrome takes home, title, body, hero=None, extra_head="" and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — render_app
+
+Found in scripts/render_site.py at line 214.
+
+Signature: `def render_app(home, slug):`
+
+What it does: Function render_app takes home, slug and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — render_home
+
+Found in scripts/render_site.py at line 235.
+
+Signature: `def render_home(home):`
+
+What it does: Function render_home takes home and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — render_verification
+
+Found in scripts/render_site.py at line 265.
+
+Signature: `def render_verification(home):`
+
+What it does: Function render_verification takes home and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — render_security
+
+Found in scripts/render_site.py at line 295.
+
+Signature: `def render_security(home):`
+
+What it does: Function render_security takes home and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — render_statute
+
+Found in scripts/render_site.py at line 327.
+
+Signature: `def render_statute(home, statutes, chapter, slug):`
+
+What it does: Function render_statute takes home, statutes, chapter, slug and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — render_how_it_works
+
+Found in scripts/render_site.py at line 407.
+
+Signature: `def render_how_it_works(home):`
+
+What it does: Function render_how_it_works takes home and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — write
+
+Found in scripts/render_site.py at line 426.
+
+Signature: `def write(relpath, content):`
+
+What it does: Function write takes relpath, content and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — main
+
+Found in scripts/render_site.py at line 433.
+
+Signature: `def main():`
+
+What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## Provenance
+
+This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/site-wishnode-net/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
