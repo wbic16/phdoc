@@ -1,6 +1,6 @@
 # phext-lattice — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 103). Project root: /source/phext-lattice. Scanned at commit 2ba5710fee9fa4dd228d6dcc1beb927753448025. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 106). Project root: /source/phext-lattice. Scanned at commit 6ffc18b162bdcd531bdbaae72e2216f4871395e4. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -14,7 +14,7 @@ License stated in the manifest: MIT.
 
 Direct dependencies: 19.
 
-- libphext [dependencies] — 0.6.4
+- libphext [dependencies] — 0.6.6
 - holo-phext [dependencies] — (path or git)
 - teixml-to-mutable [dependencies] — 0.3.0
 - memmap2 [dependencies] — 0.9
@@ -41,18 +41,19 @@ Total packages in the lock file, this one included: 218.
 
 ## Authors
 
-The git log holds 277 commits. The authors, by commit count:
+The git log holds 285 commits. The authors, by commit count:
 
-- Will Bickford <wbic16@gmail.com> — 103 commits (37.2%)
-- Emise <emise@localhost> — 62 commits (22.4%)
-- Theia <theia@mirrorborn.us> — 49 commits (17.7%)
-- Cursor Agent <cursoragent@cursor.com> — 24 commits (8.7%)
-- Emise <emise@phext.io> — 21 commits (7.6%)
-- Emise <emise@mirrorborn.us> — 10 commits (3.6%)
+- Will Bickford <wbic16@gmail.com> — 107 commits (37.5%)
+- Emise <emise@localhost> — 63 commits (22.1%)
+- Theia <theia@mirrorborn.us> — 51 commits (17.9%)
+- Cursor Agent <cursoragent@cursor.com> — 24 commits (8.4%)
+- Emise <emise@phext.io> — 21 commits (7.4%)
+- Emise <emise@mirrorborn.us> — 10 commits (3.5%)
 - Lux <lux@phext.io> — 3 commits (1.1%)
 - Claude <noreply@anthropic.com> — 2 commits (0.7%)
 - Orin <orin@mirrorborn.us> — 2 commits (0.7%)
 - Lux <lux@mirrorborn.us> — 1 commit (0.4%)
+- Velum <velum@mirrorborn.us> — 1 commit (0.4%)
 
 ---
 
@@ -63,11 +64,11 @@ The measure is stated plainly, and no single score is made: lines are counted pe
 - JavaScript: 1 files, 370 lines total, 51 blank, 78 comment, 241 code
 - Markdown: 9 files, 1790 lines total, 355 blank, 6 comment, 1429 code
 - Python: 9 files, 1422 lines total, 188 blank, 34 comment, 1200 code
-- Rust: 36 files, 34268 lines total, 2511 blank, 3856 comment, 27901 code
+- Rust: 37 files, 35083 lines total, 2559 blank, 3963 comment, 28561 code
 - Shell: 5 files, 1017 lines total, 70 blank, 145 comment, 802 code
 - TOML: 1 files, 80 lines total, 11 blank, 13 comment, 56 code
 
-All languages: 61 files, 38947 lines total, 31629 lines of code. Functions read: 1378.
+All languages: 62 files, 39762 lines total, 32289 lines of code. Functions read: 1410.
 
 Largest files:
 
@@ -91,11 +92,11 @@ Largest functions, by span in lines:
 
 Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.
 
-- Tests: 318 test functions counted in the source, across 0 files whose names mark them as test files.
+- Tests: 332 test functions counted in the source, across 0 files whose names mark them as test files.
 - CI: no CI configuration was found in the project.
 - Lint and format: no lint or format configuration file was found.
 - TODO marks in the source: 1. FIXME marks: 0.
-- Public items with a doc comment: 294 of 567 (52%).
+- Public items with a doc comment: 303 of 577 (53%).
 
 ---
 
@@ -110,8 +111,8 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 - Origin: https://github.com/wbic16/phext-lattice.git
 - Branch: exo
-- Head commit: 2ba5710fee9fa4dd228d6dcc1beb927753448025
-- Working tree: clean
+- Head commit: 6ffc18b162bdcd531bdbaae72e2216f4871395e4
+- Working tree: 1 changed paths
 
 ---
 
@@ -360,22 +361,22 @@ Every public method and command the scanner found, each with a plain English not
 - function `get` (src/joins.rs:56) — The join an account already holds, if any.
 - function `record` (src/joins.rs:68) — Record a join, or return the one the account already holds — the first arrival is the join, and joining twice changes no
 - function `list` (src/joins.rs:86) — Every recorded join, oldest first.
-- re-export `coordinate_ext::{Dimension, CoordinateNav}` (src/lib.rs:52) — A re-export: coordinate_ext::{Dimension, CoordinateNav} is made reachable through this module, so other code can use it 
-- re-export `cursor::{ScrollCursor, Position, Selection}` (src/lib.rs:53) — A re-export: cursor::{ScrollCursor, Position, Selection} is made reachable through this module, so other code can use it
-- re-export `editor::{EditorMode, EditContext, EditKey, EditKeyCode, EditResult, CursorStyle}` (src/lib.rs:54) — A re-export: editor::{EditorMode, EditContext, EditKey, EditKeyCode, EditResult, CursorStyle} is made reachable through 
-- re-export `index::{LatticeIndex, ScrollSpan}` (src/lib.rs:55) — A re-export: index::{LatticeIndex, ScrollSpan} is made reachable through this module, so other code can use it from here
-- re-export `mmap::MappedLattice` (src/lib.rs:56) — A re-export: mmap::MappedLattice is made reachable through this module, so other code can use it from here.
-- re-export `modes::VimMode` (src/lib.rs:57) — A re-export: modes::VimMode is made reachable through this module, so other code can use it from here.
-- re-export `names::{NameIndex, fold}` (src/lib.rs:58) — A re-export: names::{NameIndex, fold} is made reachable through this module, so other code can use it from here.
-- re-export `navigator::Navigator` (src/lib.rs:59) — A re-export: navigator::Navigator is made reachable through this module, so other code can use it from here.
-- re-export `search::{search_lattice, search_lattice_parallel, search_lattice_auto, search_coordinates, SearchHit}` (src/lib.rs:60) — A re-export: search::{search_lattice, search_lattice_parallel, search_lattice_auto, search_coordinates, SearchHit} is ma
-- re-export `sidecar::{IndexedLattice, IndexSpec, OpenMode, SyncReport, sidecar_dir}` (src/lib.rs:61) — A re-export: sidecar::{IndexedLattice, IndexSpec, OpenMode, SyncReport, sidecar_dir} is made reachable through this modu
-- re-export `sentron::{Sentron, Neuron, Axon, AxisGroup, SENTRON_CAPACITY}` (src/lib.rs:62) — A re-export: sentron::{Sentron, Neuron, Axon, AxisGroup, SENTRON_CAPACITY} is made reachable through this module, so oth
-- re-export `stats::{ScrollStats, DimensionDensity, LatticeOverview, Neighborhood}` (src/lib.rs:63) — A re-export: stats::{ScrollStats, DimensionDensity, LatticeOverview, Neighborhood} is made reachable through this module
-- re-export `term_index::{TermIndex, TermHit, Bm25Params, tokenize}` (src/lib.rs:64) — A re-export: term_index::{TermIndex, TermHit, Bm25Params, tokenize} is made reachable through this module, so other code
-- re-export `undo::{UndoEngine, EditOp, UndoRecord}` (src/lib.rs:65) — A re-export: undo::{UndoEngine, EditOp, UndoRecord} is made reachable through this module, so other code can use it from
-- re-export `tts::{CoordPronunciation, byte_to_syllable, dim_to_syllables, to_ssml, generate_pronunciation_doc, special_coords}` (src/lib.rs:66) — A re-export: tts::{CoordPronunciation, byte_to_syllable, dim_to_syllables, to_ssml, generate_pronunciation_doc, special_
-- re-export `uml6d::{Phase, ArtifactAddr, UmlContext, trace_artifact, artifacts_in_phase}` (src/lib.rs:67) — A re-export: uml6d::{Phase, ArtifactAddr, UmlContext, trace_artifact, artifacts_in_phase} is made reachable through this
+- re-export `coordinate_ext::{Dimension, CoordinateNav}` (src/lib.rs:53) — A re-export: coordinate_ext::{Dimension, CoordinateNav} is made reachable through this module, so other code can use it 
+- re-export `cursor::{ScrollCursor, Position, Selection}` (src/lib.rs:54) — A re-export: cursor::{ScrollCursor, Position, Selection} is made reachable through this module, so other code can use it
+- re-export `editor::{EditorMode, EditContext, EditKey, EditKeyCode, EditResult, CursorStyle}` (src/lib.rs:55) — A re-export: editor::{EditorMode, EditContext, EditKey, EditKeyCode, EditResult, CursorStyle} is made reachable through 
+- re-export `index::{LatticeIndex, ScrollSpan}` (src/lib.rs:56) — A re-export: index::{LatticeIndex, ScrollSpan} is made reachable through this module, so other code can use it from here
+- re-export `mmap::MappedLattice` (src/lib.rs:57) — A re-export: mmap::MappedLattice is made reachable through this module, so other code can use it from here.
+- re-export `modes::VimMode` (src/lib.rs:58) — A re-export: modes::VimMode is made reachable through this module, so other code can use it from here.
+- re-export `names::{NameIndex, fold}` (src/lib.rs:59) — A re-export: names::{NameIndex, fold} is made reachable through this module, so other code can use it from here.
+- re-export `navigator::Navigator` (src/lib.rs:60) — A re-export: navigator::Navigator is made reachable through this module, so other code can use it from here.
+- re-export `search::{search_lattice, search_lattice_parallel, search_lattice_auto, search_coordinates, SearchHit}` (src/lib.rs:61) — A re-export: search::{search_lattice, search_lattice_parallel, search_lattice_auto, search_coordinates, SearchHit} is ma
+- re-export `sidecar::{IndexedLattice, IndexSpec, OpenMode, SyncReport, sidecar_dir}` (src/lib.rs:62) — A re-export: sidecar::{IndexedLattice, IndexSpec, OpenMode, SyncReport, sidecar_dir} is made reachable through this modu
+- re-export `sentron::{Sentron, Neuron, Axon, AxisGroup, SENTRON_CAPACITY}` (src/lib.rs:63) — A re-export: sentron::{Sentron, Neuron, Axon, AxisGroup, SENTRON_CAPACITY} is made reachable through this module, so oth
+- re-export `stats::{ScrollStats, DimensionDensity, LatticeOverview, Neighborhood}` (src/lib.rs:64) — A re-export: stats::{ScrollStats, DimensionDensity, LatticeOverview, Neighborhood} is made reachable through this module
+- re-export `term_index::{TermIndex, TermHit, Bm25Params, tokenize}` (src/lib.rs:65) — A re-export: term_index::{TermIndex, TermHit, Bm25Params, tokenize} is made reachable through this module, so other code
+- re-export `undo::{UndoEngine, EditOp, UndoRecord}` (src/lib.rs:66) — A re-export: undo::{UndoEngine, EditOp, UndoRecord} is made reachable through this module, so other code can use it from
+- re-export `tts::{CoordPronunciation, byte_to_syllable, dim_to_syllables, to_ssml, generate_pronunciation_doc, special_coords}` (src/lib.rs:67) — A re-export: tts::{CoordPronunciation, byte_to_syllable, dim_to_syllables, to_ssml, generate_pronunciation_doc, special_
+- re-export `uml6d::{Phase, ArtifactAddr, UmlContext, trace_artifact, artifacts_in_phase}` (src/lib.rs:68) — A re-export: uml6d::{Phase, ArtifactAddr, UmlContext, trace_artifact, artifacts_in_phase} is made reachable through this
 - function `media_payload_coord` (src/media.rs:32) — Where slot `slot`'s image payload (a binary scroll) lives: 9.9.9/9.9.9/1.1.n.
 - function `media_metadata_coord` (src/media.rs:38) — Where slot `slot`'s metadata scroll (JSON text) lives: 9.9.9/9.9.9/1.2.n.
 - function `media_slot_of` (src/media.rs:44) — The media slot a coordinate belongs to, if it is a media payload coordinate (9.9.9/9.9.9/1.1.n).
@@ -660,6 +661,16 @@ Every public method and command the scanner found, each with a plain English not
 - function `UmlContext::from_coordinate` (src/uml6d.rs:187) — Function UmlContext::from_coordinate takes c: &Coordinate and gives back Self.
 - function `trace_artifact` (src/uml6d.rs:202) — Trace an artifact across all SDLC phases.
 - function `artifacts_in_phase` (src/uml6d.rs:217) — Find all populated 5D addresses within a given phase.
+- struct `DNode` (src/uml6d_diagram.rs:54) — A node in a 6D UML diagram: one artifact, drawn in one phase lane.
+- struct `DEdge` (src/uml6d_diagram.rs:64) — A typed relation between two artifacts.
+- struct `Diagram` (src/uml6d_diagram.rs:73) — A 6D UML diagram: nodes + edges under one projection phase.
+- struct `ParseError` (src/uml6d_diagram.rs:85) — A data shape named ParseError.
+- function `parse_addr` (src/uml6d_diagram.rs:134) — Parse a 5D artifact address in display form: volume.book.chapter/section.scroll
+- function `parse_diagram` (src/uml6d_diagram.rs:224) — Parse the diagram notation.
+- function `to_notation` (src/uml6d_diagram.rs:384) — Emit the canonical notation for this diagram.
+- function `project` (src/uml6d_diagram.rs:427) — Project the diagram into another phase: node lanes are re-read in the new phase, but every artifact address is unchanged.
+- function `to_text` (src/uml6d_diagram.rs:446) — Plain-text rendering: lanes grouped in phase order, edges listed.
+- function `to_svg` (src/uml6d_diagram.rs:491) — SVG rendering.
 - enum `EditOp` (src/undo.rs:33) — An edit operation that can be undone/redone.
 - function `EditOp::apply` (src/undo.rs:54) — Apply this operation to text, returning the new text.
 - function `inverse` (src/undo.rs:85) — Compute the inverse operation (for undo).
@@ -3583,7 +3594,7 @@ What it does: Every recorded join, oldest first. Unreadable files are skipped.
 
 ## re-export — coordinate_ext::{Dimension, CoordinateNav}
 
-Found in src/lib.rs at line 52.
+Found in src/lib.rs at line 53.
 
 Signature: `pub use coordinate_ext::{Dimension, CoordinateNav};`
 
@@ -3595,7 +3606,7 @@ What it does: A re-export: coordinate_ext::{Dimension, CoordinateNav} is made re
 
 ## re-export — cursor::{ScrollCursor, Position, Selection}
 
-Found in src/lib.rs at line 53.
+Found in src/lib.rs at line 54.
 
 Signature: `pub use cursor::{ScrollCursor, Position, Selection};`
 
@@ -3607,7 +3618,7 @@ What it does: A re-export: cursor::{ScrollCursor, Position, Selection} is made r
 
 ## re-export — editor::{EditorMode, EditContext, EditKey, EditKeyCode, EditResult, CursorStyle}
 
-Found in src/lib.rs at line 54.
+Found in src/lib.rs at line 55.
 
 Signature: `pub use editor::{EditorMode, EditContext, EditKey, EditKeyCode, EditResult, CursorStyle};`
 
@@ -3619,7 +3630,7 @@ What it does: A re-export: editor::{EditorMode, EditContext, EditKey, EditKeyCod
 
 ## re-export — index::{LatticeIndex, ScrollSpan}
 
-Found in src/lib.rs at line 55.
+Found in src/lib.rs at line 56.
 
 Signature: `pub use index::{LatticeIndex, ScrollSpan};`
 
@@ -3631,7 +3642,7 @@ What it does: A re-export: index::{LatticeIndex, ScrollSpan} is made reachable t
 
 ## re-export — mmap::MappedLattice
 
-Found in src/lib.rs at line 56.
+Found in src/lib.rs at line 57.
 
 Signature: `pub use mmap::MappedLattice;`
 
@@ -3643,7 +3654,7 @@ What it does: A re-export: mmap::MappedLattice is made reachable through this mo
 
 ## re-export — modes::VimMode
 
-Found in src/lib.rs at line 57.
+Found in src/lib.rs at line 58.
 
 Signature: `pub use modes::VimMode;`
 
@@ -3655,7 +3666,7 @@ What it does: A re-export: modes::VimMode is made reachable through this module,
 
 ## re-export — names::{NameIndex, fold}
 
-Found in src/lib.rs at line 58.
+Found in src/lib.rs at line 59.
 
 Signature: `pub use names::{NameIndex, fold};`
 
@@ -3667,7 +3678,7 @@ What it does: A re-export: names::{NameIndex, fold} is made reachable through th
 
 ## re-export — navigator::Navigator
 
-Found in src/lib.rs at line 59.
+Found in src/lib.rs at line 60.
 
 Signature: `pub use navigator::Navigator;`
 
@@ -3679,7 +3690,7 @@ What it does: A re-export: navigator::Navigator is made reachable through this m
 
 ## re-export — search::{search_lattice, search_lattice_parallel, search_lattice_auto, search_coordinates, SearchHit}
 
-Found in src/lib.rs at line 60.
+Found in src/lib.rs at line 61.
 
 Signature: `pub use search::{search_lattice, search_lattice_parallel, search_lattice_auto, search_coordinates, SearchHit};`
 
@@ -3691,7 +3702,7 @@ What it does: A re-export: search::{search_lattice, search_lattice_parallel, sea
 
 ## re-export — sidecar::{IndexedLattice, IndexSpec, OpenMode, SyncReport, sidecar_dir}
 
-Found in src/lib.rs at line 61.
+Found in src/lib.rs at line 62.
 
 Signature: `pub use sidecar::{IndexedLattice, IndexSpec, OpenMode, SyncReport, sidecar_dir};`
 
@@ -3703,7 +3714,7 @@ What it does: A re-export: sidecar::{IndexedLattice, IndexSpec, OpenMode, SyncRe
 
 ## re-export — sentron::{Sentron, Neuron, Axon, AxisGroup, SENTRON_CAPACITY}
 
-Found in src/lib.rs at line 62.
+Found in src/lib.rs at line 63.
 
 Signature: `pub use sentron::{Sentron, Neuron, Axon, AxisGroup, SENTRON_CAPACITY};`
 
@@ -3715,7 +3726,7 @@ What it does: A re-export: sentron::{Sentron, Neuron, Axon, AxisGroup, SENTRON_C
 
 ## re-export — stats::{ScrollStats, DimensionDensity, LatticeOverview, Neighborhood}
 
-Found in src/lib.rs at line 63.
+Found in src/lib.rs at line 64.
 
 Signature: `pub use stats::{ScrollStats, DimensionDensity, LatticeOverview, Neighborhood};`
 
@@ -3727,7 +3738,7 @@ What it does: A re-export: stats::{ScrollStats, DimensionDensity, LatticeOvervie
 
 ## re-export — term_index::{TermIndex, TermHit, Bm25Params, tokenize}
 
-Found in src/lib.rs at line 64.
+Found in src/lib.rs at line 65.
 
 Signature: `pub use term_index::{TermIndex, TermHit, Bm25Params, tokenize};`
 
@@ -3739,7 +3750,7 @@ What it does: A re-export: term_index::{TermIndex, TermHit, Bm25Params, tokenize
 
 ## re-export — undo::{UndoEngine, EditOp, UndoRecord}
 
-Found in src/lib.rs at line 65.
+Found in src/lib.rs at line 66.
 
 Signature: `pub use undo::{UndoEngine, EditOp, UndoRecord};`
 
@@ -3751,7 +3762,7 @@ What it does: A re-export: undo::{UndoEngine, EditOp, UndoRecord} is made reacha
 
 ## re-export — tts::{CoordPronunciation, byte_to_syllable, dim_to_syllables, to_ssml, generate_pronunciation_doc, special_coords}
 
-Found in src/lib.rs at line 66.
+Found in src/lib.rs at line 67.
 
 Signature: `pub use tts::{CoordPronunciation, byte_to_syllable, dim_to_syllables, to_ssml, generate_pronunciation_doc, special_coords};`
 
@@ -3763,7 +3774,7 @@ What it does: A re-export: tts::{CoordPronunciation, byte_to_syllable, dim_to_sy
 
 ## re-export — uml6d::{Phase, ArtifactAddr, UmlContext, trace_artifact, artifacts_in_phase}
 
-Found in src/lib.rs at line 67.
+Found in src/lib.rs at line 68.
 
 Signature: `pub use uml6d::{Phase, ArtifactAddr, UmlContext, trace_artifact, artifacts_in_phase};`
 
@@ -7176,6 +7187,126 @@ Found in src/uml6d.rs at line 217.
 Signature: `pub fn artifacts_in_phase( phase: Phase, index: &LatticeIndex, coords: &[Coordinate], ) -> Vec<ArtifactAddr> {`
 
 What it does: Find all populated 5D addresses within a given phase.
+
+(Where these words came from: doc comment.)
+
+---
+
+## struct — DNode
+
+Found in src/uml6d_diagram.rs at line 54.
+
+Signature: `pub struct DNode {`
+
+What it does: A node in a 6D UML diagram: one artifact, drawn in one phase lane.
+
+(Where these words came from: doc comment.)
+
+---
+
+## struct — DEdge
+
+Found in src/uml6d_diagram.rs at line 64.
+
+Signature: `pub struct DEdge {`
+
+What it does: A typed relation between two artifacts.
+
+(Where these words came from: doc comment.)
+
+---
+
+## struct — Diagram
+
+Found in src/uml6d_diagram.rs at line 73.
+
+Signature: `pub struct Diagram {`
+
+What it does: A 6D UML diagram: nodes + edges under one projection phase.
+
+(Where these words came from: doc comment.)
+
+---
+
+## struct — ParseError
+
+Found in src/uml6d_diagram.rs at line 85.
+
+Signature: `pub struct ParseError {`
+
+What it does: A data shape named ParseError. Its fields are: pub line: usize; pub message: String.
+
+(Where these words came from: signature.)
+
+---
+
+## function — parse_addr
+
+Found in src/uml6d_diagram.rs at line 134.
+
+Signature: `pub fn parse_addr(s: &str) -> Result<ArtifactAddr, String> {`
+
+What it does: Parse a 5D artifact address in display form: volume.book.chapter/section.scroll
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — parse_diagram
+
+Found in src/uml6d_diagram.rs at line 224.
+
+Signature: `pub fn parse_diagram(text: &str) -> Result<Diagram, ParseError> {`
+
+What it does: Parse the diagram notation.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — to_notation
+
+Found in src/uml6d_diagram.rs at line 384.
+
+Signature: `pub fn to_notation(&self) -> String {`
+
+What it does: Emit the canonical notation for this diagram.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — project
+
+Found in src/uml6d_diagram.rs at line 427.
+
+Signature: `pub fn project(&self, phase: Phase) -> Diagram {`
+
+What it does: Project the diagram into another phase: node lanes are re-read in the new phase, but every artifact address is unchanged. This is the phase-invariance property made operational.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — to_text
+
+Found in src/uml6d_diagram.rs at line 446.
+
+Signature: `pub fn to_text(&self) -> String {`
+
+What it does: Plain-text rendering: lanes grouped in phase order, edges listed.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — to_svg
+
+Found in src/uml6d_diagram.rs at line 491.
+
+Signature: `pub fn to_svg(&self) -> String {`
+
+What it does: SVG rendering. Layout is deterministic: one vertical lane per phase present among the nodes (in Phase::all() order), nodes stacked in canonical address order, edges as curved paths under the boxes.
 
 (Where these words came from: doc comment.)
 

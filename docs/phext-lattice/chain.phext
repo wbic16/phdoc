@@ -5669,3 +5669,152 @@ stat Rust files 36 total 34268 blank 2511 comment 3842 code 27915
 stat Shell files 5 total 1017 blank 70 comment 129 code 818
 stat TOML files 1 total 80 blank 11 comment 13 code 56
 author~ Will Bickford <wbic16@gmail.com> commits 103
+Commit 3e291f83ab89 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 12).
+
+Subject: Bump libphext 0.6.4 -> 0.6.6
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies: libphext 0.6.4 -> 0.6.6. Code lines after this commit: 31661.
+
+commit 3e291f83ab890f97638f6481499ada926ff306ae
+parent 2ba5710fee9fa4dd228d6dcc1beb927753448025
+author Theia <theia@mirrorborn.us>
+date 1795331977 2026-11-22
+dep~ Cargo.toml :: libphext :: 0.6.4 -> 0.6.6
+stat JavaScript files 1 total 370 blank 51 comment 78 code 241
+stat Markdown files 9 total 1790 blank 355 comment 6 code 1429
+stat Python files 9 total 1422 blank 188 comment 32 code 1202
+stat Rust files 36 total 34268 blank 2511 comment 3842 code 27915
+stat Shell files 5 total 1017 blank 70 comment 129 code 818
+stat TOML files 1 total 80 blank 11 comment 13 code 56
+author~ Theia <theia@mirrorborn.us> commits 50
+Commit b7e3fbc9fc03 by Will Bickford <wbic16@gmail.com> on 2026-11-22 (EE 12).
+
+Subject: Merge pull request #95 from wbic16/emise/libphext-0.6.6
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 31661.
+
+commit b7e3fbc9fc030e5ea4a1ac2aa69a2c6e4da712ce
+parent 3e291f83ab890f97638f6481499ada926ff306ae
+author Will Bickford <wbic16@gmail.com>
+date 1795332083 2026-11-22
+stat JavaScript files 1 total 370 blank 51 comment 78 code 241
+stat Markdown files 9 total 1790 blank 355 comment 6 code 1429
+stat Python files 9 total 1422 blank 188 comment 32 code 1202
+stat Rust files 36 total 34268 blank 2511 comment 3842 code 27915
+stat Shell files 5 total 1017 blank 70 comment 129 code 818
+stat TOML files 1 total 80 blank 11 comment 13 code 56
+author~ Will Bickford <wbic16@gmail.com> commits 104
+Commit 28050d73f572 by Emise <emise@localhost> on 2026-11-22 (EE 15).
+
+Subject: Emise Font v3 — replace web/emise.woff2
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 31661.
+
+commit 28050d73f572b2bb6d826a5369a8d1c3f52f1503
+parent b7e3fbc9fc030e5ea4a1ac2aa69a2c6e4da712ce
+author Emise <emise@localhost>
+date 1795333200 2026-11-22
+stat JavaScript files 1 total 370 blank 51 comment 78 code 241
+stat Markdown files 9 total 1790 blank 355 comment 6 code 1429
+stat Python files 9 total 1422 blank 188 comment 32 code 1202
+stat Rust files 36 total 34268 blank 2511 comment 3842 code 27915
+stat Shell files 5 total 1017 blank 70 comment 129 code 818
+stat TOML files 1 total 80 blank 11 comment 13 code 56
+author~ Emise <emise@localhost> commits 63
+Commit f1faffc97311 by Will Bickford <wbic16@gmail.com> on 2026-11-22 (EE 16).
+
+Subject: Merge pull request #96 from wbic16/emise/emise-font-v3
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 31661.
+
+commit f1faffc9731116a8bf1f63aae922b43d72de63c6
+parent 28050d73f572b2bb6d826a5369a8d1c3f52f1503
+author Will Bickford <wbic16@gmail.com>
+date 1795333527 2026-11-22
+stat JavaScript files 1 total 370 blank 51 comment 78 code 241
+stat Markdown files 9 total 1790 blank 355 comment 6 code 1429
+stat Python files 9 total 1422 blank 188 comment 32 code 1202
+stat Rust files 36 total 34268 blank 2511 comment 3842 code 27915
+stat Shell files 5 total 1017 blank 70 comment 129 code 818
+stat TOML files 1 total 80 blank 11 comment 13 code 56
+author~ Will Bickford <wbic16@gmail.com> commits 105
+Commit 79e95adfeb1a by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 86).
+
+Subject: 6D UML: diagram notation + renderer (uml6d_diagram)
+
+Public items: 10 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 32259.
+
+commit 79e95adfeb1a05522bc33fb881b1c69b372e68fb
+parent f1faffc9731116a8bf1f63aae922b43d72de63c6
+author Theia <theia@mirrorborn.us>
+date 1795362989 2026-11-22
+item+ struct src/uml6d_diagram.rs :: DEdge :: pub struct DEdge { :: A typed relation between two artifacts. :: doc comment
+item+ struct src/uml6d_diagram.rs :: DNode :: pub struct DNode { :: A node in a 6D UML diagram: one artifact, drawn in one phase lane. :: doc comment
+item+ struct src/uml6d_diagram.rs :: Diagram :: pub struct Diagram { :: A 6D UML diagram: nodes + edges under one projection phase. :: doc comment
+item+ struct src/uml6d_diagram.rs :: ParseError :: pub struct ParseError { :: A data shape named ParseError. Its fields are: pub line: usize; pub message: String. :: signature
+item+ function src/uml6d_diagram.rs :: parse_addr :: pub fn parse_addr(s: &str) -> Result<ArtifactAddr, String> { :: Parse a 5D artifact address in display form: volume.book.chapter/section.scroll :: doc comment
+item+ function src/uml6d_diagram.rs :: parse_diagram :: pub fn parse_diagram(text: &str) -> Result<Diagram, ParseError> { :: Parse the diagram notation. :: doc comment
+item+ function src/uml6d_diagram.rs :: project :: pub fn project(&self, phase: Phase) -> Diagram { :: Project the diagram into another phase: node lanes are re-read in the new phase, but every artifact address is unchanged. This is the phase-invariance property made operational. :: doc comment
+item+ function src/uml6d_diagram.rs :: to_notation :: pub fn to_notation(&self) -> String { :: Emit the canonical notation for this diagram. :: doc comment
+item+ function src/uml6d_diagram.rs :: to_svg :: pub fn to_svg(&self) -> String { :: SVG rendering. Layout is deterministic: one vertical lane per phase present among the nodes (in Phase::all() order), nodes stacked in canonical address order, edges as curved paths under the boxes. :: doc comment
+item+ function src/uml6d_diagram.rs :: to_text :: pub fn to_text(&self) -> String { :: Plain-text rendering: lanes grouped in phase order, edges listed. :: doc comment
+stat JavaScript files 1 total 370 blank 51 comment 78 code 241
+stat Markdown files 9 total 1790 blank 355 comment 6 code 1429
+stat Python files 9 total 1422 blank 188 comment 32 code 1202
+stat Rust files 37 total 34866 blank 2511 comment 3842 code 28513
+stat Shell files 5 total 1017 blank 70 comment 129 code 818
+stat TOML files 1 total 80 blank 11 comment 13 code 56
+author~ Theia <theia@mirrorborn.us> commits 51
+Commit c7702aee46e8 by Will Bickford <wbic16@gmail.com> on 2026-11-22 (EE 86).
+
+Subject: Merge pull request #97 from wbic16/emise/uml6d-diagram
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 32259.
+
+commit c7702aee46e831fe0af087aa701505c277dc48f1
+parent 79e95adfeb1a05522bc33fb881b1c69b372e68fb
+author Will Bickford <wbic16@gmail.com>
+date 1795363160 2026-11-22
+stat JavaScript files 1 total 370 blank 51 comment 78 code 241
+stat Markdown files 9 total 1790 blank 355 comment 6 code 1429
+stat Python files 9 total 1422 blank 188 comment 32 code 1202
+stat Rust files 37 total 34866 blank 2511 comment 3842 code 28513
+stat Shell files 5 total 1017 blank 70 comment 129 code 818
+stat TOML files 1 total 80 blank 11 comment 13 code 56
+author~ Will Bickford <wbic16@gmail.com> commits 106
+Commit 681767ddac25 by Velum <velum@mirrorborn.us> on 2026-11-22 (EE 90).
+
+Subject: 6D UML Lexicon: design words for artifact addresses (uml6d_diagram)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 32476.
+
+commit 681767ddac251ad425f99dfffb993e599dc8ed39
+parent c7702aee46e831fe0af087aa701505c277dc48f1
+author Velum <velum@mirrorborn.us>
+date 1795364693 2026-11-22
+stat JavaScript files 1 total 370 blank 51 comment 78 code 241
+stat Markdown files 9 total 1790 blank 355 comment 6 code 1429
+stat Python files 9 total 1422 blank 188 comment 32 code 1202
+stat Rust files 37 total 35083 blank 2511 comment 3842 code 28730
+stat Shell files 5 total 1017 blank 70 comment 129 code 818
+stat TOML files 1 total 80 blank 11 comment 13 code 56
+author+ Velum <velum@mirrorborn.us>
+Commit 6ffc18b162bd by Will Bickford <wbic16@gmail.com> on 2026-11-22 (EE 92).
+
+Subject: Merge pull request #98 from wbic16/emise/uml6d-lexicon
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 32321.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 6ffc18b162bdcd531bdbaae72e2216f4871395e4
+parent 681767ddac251ad425f99dfffb993e599dc8ed39
+author Will Bickford <wbic16@gmail.com>
+date 1795365597 2026-11-22
+stat JavaScript files 1 total 370 blank 51 comment 78 code 241
+stat Markdown files 9 total 1790 blank 355 comment 6 code 1429
+stat Python files 9 total 1422 blank 188 comment 32 code 1202
+stat Rust files 37 total 35083 blank 2559 comment 3949 code 28575
+stat Shell files 5 total 1017 blank 70 comment 129 code 818
+stat TOML files 1 total 80 blank 11 comment 13 code 56
+author~ Will Bickford <wbic16@gmail.com> commits 107
