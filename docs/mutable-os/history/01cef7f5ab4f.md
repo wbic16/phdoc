@@ -2,6 +2,10 @@
 
 Commit 01cef7f5ab4f730cce957155d3464f0adbfe7ae7. 218 commits folded. Every fact here was folded from the chain's per-commit deltas.
 
+## Provenance
+
+This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/mutable-os/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
+
 ## Dependencies
 
 ### package.json

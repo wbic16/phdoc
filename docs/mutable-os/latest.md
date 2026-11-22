@@ -1,6 +1,6 @@
 # mutable-os — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 90). Project root: /home/wbic16/phdoc-sweep/proj/mutable-os. Scanned at commit 48cac17ae14c2d9132d0b110162677a669dbad3e. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/mutable-os/. Scanned at commit 48cac17ae14c2d9132d0b110162677a669dbad3e. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -100,13 +100,20 @@ Direct dependencies: 76.
 
 ## Authors
 
-The git log holds 448 commits. The authors, by commit count:
+The git log holds 448 commits.
 
-- Iian <iian.d.neill@gmail.com> — 420 commits (93.8%)
-- Emise <emise@localhost> — 24 commits (5.4%)
-- Will Bickford <wbic16@gmail.com> — 2 commits (0.4%)
-- Iian Neill <iian.d.neill@gmail.com> — 1 commit (0.2%)
-- Theia <theia@mirrorborn.us> — 1 commit (0.2%)
+The author of record is **Will Bickford** — 27 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Emise — 24 commits
+- Will Bickford (his own identities) — 2 commits
+- Theia — 1 commit
+
+Other authors, kept as themselves (not Exocortical cluster personas; never folded):
+
+- Iian <iian.d.neill@gmail.com> — 420 commits
+- Iian Neill <iian.d.neill@gmail.com> — 1 commit
 
 ---
 
@@ -164,7 +171,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 - Origin: /home/wbic16/github-archive/mirrors/mutable-os.git
 - Branch: main
 - Head commit: 48cac17ae14c2d9132d0b110162677a669dbad3e
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
@@ -549,3 +556,9 @@ Signature: `def stats(xs):`
 What it does: Function stats takes xs and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
+
+---
+
+## Provenance
+
+This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/mutable-os/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
