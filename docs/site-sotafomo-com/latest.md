@@ -1,6 +1,6 @@
 # site-sotafomo-com — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 105). Project root: /source/site-sotafomo-com. Scanned at commit 02f24266f7dab8c6a5602cb0cf97d5343e232652. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 107). Project root: /source/site-sotafomo-com. Scanned at commit 02f24266f7dab8c6a5602cb0cf97d5343e232652. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -66,7 +66,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 - Origin: git@github.com:wbic16/site-sotafomo-com.git
 - Branch: exo
 - Head commit: 02f24266f7dab8c6a5602cb0cf97d5343e232652
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
