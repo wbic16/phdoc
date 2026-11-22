@@ -1,6 +1,6 @@
 # kgoat — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 79). Project root: /home/wbic16/kgoat-build. Scanned at commit caa81e669ba114570f845fea796dc19ebf0644b1. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 94). Project root: /home/wbic16/phdoc-sweep/proj/kgoat. Scanned at commit caa81e669ba114570f845fea796dc19ebf0644b1. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -79,7 +79,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 ## Upstream git repo
 
-- Origin: git@github.com:wbic16/kgoat.git
+- Origin: /home/wbic16/github-archive/mirrors/kgoat.git
 - Branch: exo
 - Head commit: caa81e669ba114570f845fea796dc19ebf0644b1
 - Working tree: clean
@@ -519,3 +519,9 @@ Signature: `pub fn parse_node(coord: &str, text: &str) -> Result<Node, Vec<Strin
 What it does: Parse one node scroll. `coord` is the scroll's coordinate in its home phext. On failure, returns every violation found in the scroll.
 
 (Where these words came from: doc comment.)
+
+---
+
+## Provenance
+
+This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/kgoat/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
