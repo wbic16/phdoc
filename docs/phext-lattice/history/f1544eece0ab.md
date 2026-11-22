@@ -2,6 +2,10 @@
 
 Commit f1544eece0ab109910a498604b9dee6378582637. 25 commits folded. Every fact here was folded from the chain's per-commit deltas.
 
+## Provenance
+
+This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/phext-lattice/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
+
 ## Dependencies
 
 ### Cargo.toml
@@ -27,10 +31,13 @@ Commit f1544eece0ab109910a498604b9dee6378582637. 25 commits folded. Every fact h
 
 ## Authors
 
-- Theia <theia@mirrorborn.us> — 19 commits
-- Lux <lux@phext.io> — 3 commits
-- Orin <orin@mirrorborn.us> — 2 commits
-- Lux <lux@mirrorborn.us> — 1 commits
+The author of record is **Will Bickford** — 25 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Theia — 19 commits
+- Lux — 4 commits
+- Orin — 2 commits
 
 ## Complexity
 

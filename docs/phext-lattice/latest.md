@@ -1,6 +1,6 @@
 # phext-lattice — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 90). Project root: /home/wbic16/phdoc-sweep/proj/phext-lattice. Scanned at commit c7702aee46e831fe0af087aa701505c277dc48f1. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/phext-lattice/. Scanned at commit c7702aee46e831fe0af087aa701505c277dc48f1. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -41,18 +41,22 @@ Total packages in the lock file, this one included: 218.
 
 ## Authors
 
-The git log holds 283 commits. The authors, by commit count:
+The git log holds 283 commits.
 
-- Will Bickford <wbic16@gmail.com> — 106 commits (37.5%)
-- Emise <emise@localhost> — 63 commits (22.3%)
-- Theia <theia@mirrorborn.us> — 51 commits (18.0%)
-- Cursor Agent <cursoragent@cursor.com> — 24 commits (8.5%)
-- Emise <emise@phext.io> — 21 commits (7.4%)
-- Emise <emise@mirrorborn.us> — 10 commits (3.5%)
-- Lux <lux@phext.io> — 3 commits (1.1%)
-- Claude <noreply@anthropic.com> — 2 commits (0.7%)
-- Orin <orin@mirrorborn.us> — 2 commits (0.7%)
-- Lux <lux@mirrorborn.us> — 1 commit (0.4%)
+The author of record is **Will Bickford** — 259 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Will Bickford (his own identities) — 106 commits
+- Emise — 94 commits
+- Theia — 51 commits
+- Lux — 4 commits
+- Claude — 2 commits
+- Orin — 2 commits
+
+Other authors, kept as themselves (not Exocortical cluster personas; never folded):
+
+- Cursor Agent <cursoragent@cursor.com> — 24 commits
 
 ---
 
@@ -111,7 +115,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 - Origin: /home/wbic16/github-archive/mirrors/phext-lattice.git
 - Branch: exo
 - Head commit: c7702aee46e831fe0af087aa701505c277dc48f1
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
@@ -7620,3 +7624,9 @@ Signature: `pub fn snapshot_placements() -> usize {`
 What it does: Total placements across all accounts (trails count twice).
 
 (Where these words came from: doc comment.)
+
+---
+
+## Provenance
+
+This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/phext-lattice/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
