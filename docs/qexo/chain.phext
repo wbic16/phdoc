@@ -1,0 +1,598 @@
+Commit d3e2455406f8 by Will Bickford <wbic16@gmail.com> on 2026-11-09 (EE 0).
+
+Subject: Initial commit
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 0.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit d3e2455406f81baae73054cd8b5145bc3953a544
+parent none
+author Will Bickford <wbic16@gmail.com>
+date 1794202273 2026-11-09
+author+ Will Bickford <wbic16@gmail.com>
+Commit 12cfe70b6c27 by Emise <emise@localhost> on 2026-11-13 (EE 0).
+
+Subject: qexo v1.3.0 — Android port: a full phextnet node on the phone (Termux)
+
+Public items: 171 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 9952.
+
+commit 12cfe70b6c2752198792267c6f6700d70557d78a
+parent d3e2455406f81baae73054cd8b5145bc3953a544
+author Emise <emise@localhost>
+date 1794553908 2026-11-13
+item+ enum src/cli.rs :: Command :: pub enum Command { :: A named choice named Command. It is one of: Help; Version; WiringCheck; FileOp; Config; Doctor; List; Register; Release; Update; Evolve; Host; Unhost; Message; Status; Plan; Serve; Bare; Unknown. :: signature
+item+ function src/cli.rs :: help_text :: pub fn help_text() -> String { :: Function help_text takes no inputs beyond the value it is called on, and gives back String. :: signature
+item+ function src/cli.rs :: parse :: pub fn parse(args: &[String]) -> Command { :: Function parse takes args: &[String] and gives back Command. :: signature
+item+ function src/core.rs :: config :: pub fn config(auto_update: bool, evolve: bool) -> i32 { :: Function config takes auto_update: bool, evolve: bool and gives back i32. :: signature
+item+ function src/core.rs :: evolve :: pub fn evolve(check_only: bool) -> i32 { :: `qexo evolve [--check]` — one convergence pass over the phextnet. Manual runs always converge, whatever the `evolve` config key says — the key only steers the auto timer's trigger (see `qexo config --evolve`). :: doc comment
+item+ function src/core.rs :: host :: pub fn host(persona: Option<String>, boot: Option<String>) -> i32 { :: Function host takes persona: Option<String>, boot: Option<String> and gives back i32. :: signature
+item+ function src/core.rs :: list :: pub fn list() -> i32 { :: Function list takes no inputs beyond the value it is called on, and gives back i32. :: signature
+item+ function src/core.rs :: message :: pub fn message(persona: &str, text: &str) -> i32 { :: Function message takes persona: &str, text: &str and gives back i32. :: signature
+item+ function src/core.rs :: plan_cmd :: pub fn plan_cmd() -> i32 { :: Function plan_cmd takes no inputs beyond the value it is called on, and gives back i32. :: signature
+item+ function src/core.rs :: register :: pub fn register(args: &[String]) -> i32 { :: Function register takes args: &[String] and gives back i32. :: signature
+item+ function src/core.rs :: release :: pub fn release() -> i32 { :: `qexo release` — on the signer: package the running binary into the releases dir, write + sign the manifest scroll, print what was announced. :: doc comment
+item+ function src/core.rs :: serve :: pub fn serve(port: u16) -> i32 { :: Function serve takes port: u16 and gives back i32. :: signature
+item+ function src/core.rs :: status :: pub fn status() -> i32 { :: Function status takes no inputs beyond the value it is called on, and gives back i32. :: signature
+item+ function src/core.rs :: unhost :: pub fn unhost(name: &str) -> i32 { :: Function unhost takes name: &str and gives back i32. :: signature
+item+ function src/core.rs :: update :: pub fn update(check_only: bool) -> i32 { :: `qexo update [--check]` — poll the trusted peers, judge every offer by the trust rule, and apply the trusted one. :: doc comment
+item+ struct src/crypto.rs :: Gpg :: pub struct Gpg { :: A data shape named Gpg. Its fields are: pub home: String. :: signature
+item+ function src/crypto.rs :: Gpg::open_in :: pub fn open_in(state_dir: &Path) -> Gpg { :: Open (creating if needed, mode 0700) the qexo keyring under `<state_dir>/gnupg`. :: doc comment
+item+ function src/crypto.rs :: decrypt :: pub fn decrypt(&self, armored: &str) -> Result<Vec<u8>, String> { :: Function decrypt takes &self, armored: &str and gives back Result<Vec<u8>, String>. :: signature
+item+ function src/crypto.rs :: encrypt_to :: pub fn encrypt_to(&self, recipients: &[&str], signer: Option<&str>, data: &[u8]) -> Result<String, String> { :: Encrypt (armored, signed) to recipients — used for keychain sealing (single holding-node recipient + Will's recovery key as second recipient when configured: the multi-recipient rule of section 8A.4). :: doc comment
+item+ function src/crypto.rs :: export_public :: pub fn export_public(&self, fingerprint: &str) -> Result<String, String> { :: Function export_public takes &self, fingerprint: &str and gives back Result<String, String>. :: signature
+item+ function src/crypto.rs :: fingerprint_of :: pub fn fingerprint_of(&self, armored: &str) -> Result<String, String> { :: The fingerprint of an armored public key, read WITHOUT importing it (`--show-keys`): identification is separate from the act of taking a key into the keyring, so a caller can learn who a key claims to be before deciding anything. :: doc comment
+item+ function src/crypto.rs :: generate :: pub fn generate(&self, name: &str, kind_label: &str) -> Result<String, String> { :: Generate a keypair (ed25519, sign-only for node/persona use). Returns the fingerprint. :: doc comment
+item+ function src/crypto.rs :: gpg_available :: pub fn gpg_available() -> bool { :: Function gpg_available takes no inputs beyond the value it is called on, and gives back bool. :: signature
+item+ function src/crypto.rs :: import_public :: pub fn import_public(&self, armored: &str) -> Result<String, String> { :: Function import_public takes &self, armored: &str and gives back Result<String, String>. :: signature
+item+ function src/crypto.rs :: list_fingerprints :: pub fn list_fingerprints(&self) -> Result<Vec<String>, String> { :: Function list_fingerprints takes no inputs beyond the value it is called on, and gives back Result<Vec<String>, String>. :: signature
+item+ function src/crypto.rs :: sign_detached :: pub fn sign_detached(&self, fingerprint: &str, data: &[u8]) -> Result<String, String> { :: Detached armored signature over `data`, by `fingerprint`. :: doc comment
+item+ function src/crypto.rs :: verify_detached :: pub fn verify_detached(&self, signature_armored: &str, data: &[u8]) -> Result<String, String> { :: Verify a detached armored signature. Returns the signing key's fingerprint on success. The signature travels via a temp file in the keyring dir because gpg's verify needs random access to it; its contents are signature material only. :: doc comment
+item+ struct src/doctor.rs :: Finding :: pub struct Finding { :: A data shape named Finding. Its fields are: pub item: String; pub ok: bool; pub detail: String; pub fixable: bool. :: signature
+item+ struct src/doctor.rs :: Report :: pub struct Report { :: A data shape named Report. Its fields are: pub findings: Vec<Finding>. :: signature
+item+ function src/doctor.rs :: Report::ok :: pub fn ok(&self) -> bool { :: Function Report::ok takes no inputs beyond the value it is called on, and gives back bool. :: signature
+item+ function src/doctor.rs :: check :: pub fn check(state_dir: &Path, state_file: &Path) -> Report { :: Function check takes state_dir: &Path, state_file: &Path and gives back Report. :: signature
+item+ function src/doctor.rs :: check_lattice :: pub fn check_lattice(lat: &Lattice) -> Report { :: Check the lattice layer of an EXISTING state document: home index and homeland indexes exist; every record is named by its homeland's index; no index line names a ghost. :: doc comment
+item+ function src/doctor.rs :: fix :: pub fn fix(state_dir: &Path, state_file: &Path) -> Vec<String> { :: Apply the filesystem repairs: create the state directory, tighten the keyring mode, remove a stale lock. Returns the human list of what was done. Never creates the state file. :: doc comment
+item+ function src/doctor.rs :: fix_lattice :: pub fn fix_lattice(lat: &mut Lattice) -> Vec<String> { :: Repair the lattice layer: regenerate every index scroll from the records. Returns the human list of what changed. :: doc comment
+item+ function src/doctor.rs :: headline :: pub fn headline(&self) -> String { :: One-line headline for `status`: "doctor ok" or "doctor: N problem(s)". :: doc comment
+item+ function src/doctor.rs :: problems :: pub fn problems(&self) -> usize { :: Function problems takes no inputs beyond the value it is called on, and gives back usize. :: signature
+item+ function src/doctor.rs :: render :: pub fn render(&self) -> String { :: Function render takes no inputs beyond the value it is called on, and gives back String. :: signature
+item+ function src/hash.rs :: hex :: pub fn hex(bytes: &[u8]) -> String { :: Function hex takes bytes: &[u8] and gives back String. :: signature
+item+ function src/hash.rs :: sha256 :: pub fn sha256(data: &[u8]) -> [u8; 32] { :: Function sha256 takes data: &[u8] and gives back [u8; 32]. :: signature
+item+ function src/hash.rs :: sha256_hex :: pub fn sha256_hex(data: &[u8]) -> String { :: Function sha256_hex takes data: &[u8] and gives back String. :: signature
+item+ const src/infer.rs :: DEFAULT_ENDPOINT :: pub const DEFAULT_ENDPOINT: &str = "http://127.0.0.1:11434"; :: A fixed value named DEFAULT_ENDPOINT, set to "http://127.0.0.1:11434". :: signature
+item+ const src/infer.rs :: DEFAULT_MODEL :: pub const DEFAULT_MODEL: &str = "gemma4:e4b"; :: A fixed value named DEFAULT_MODEL, set to "gemma4:e4b". :: signature
+item+ struct src/infer.rs :: Infer :: pub struct Infer { :: A data shape named Infer. Its fields are: pub endpoint: String; pub model: String. :: signature
+item+ function src/infer.rs :: Infer::from_env :: pub fn from_env() -> Infer { :: From the environment: QEXO_OLLAMA_URL, QEXO_MODEL. (The lattice Config family will hold these as field scrolls when the Layer 2 map lands; env is the dev valve, as with QEXO_STATE.) :: doc comment
+item+ enum src/infer.rs :: InferError :: pub enum InferError { :: A named choice named InferError. It is one of: Unreachable; ModelAbsent; BadResponse; Refused. :: signature
+item+ function src/infer.rs :: chat :: pub fn chat(&self, system: &str, prompt: &str, keep_alive: &str) -> Result<String, InferError> { :: One chat exchange. `system` is the persona's boot text (a scroll's content, handed across the border as a plain string); `keep_alive` follows Ollama's convention ("30m" to hold the model resident, "0" to unload). :: doc comment
+item+ function src/infer.rs :: new :: pub fn new(endpoint: &str, model: &str) -> Infer { :: Function new takes endpoint: &str, model: &str and gives back Infer. :: signature
+item+ function src/infer.rs :: prime :: pub fn prime(&self, boot_text: &str) -> Result<String, InferError> { :: Load the persona into local inference: a priming exchange with a long keep-alive, so the model stays resident with the persona's boot text as its system context. :: doc comment
+item+ function src/infer.rs :: require_model :: pub fn require_model(&self) -> Result<(), InferError> { :: Confirm the endpoint is up AND carries our model. :: doc comment
+item+ function src/infer.rs :: tags :: pub fn tags(&self) -> Result<Vec<String>, InferError> { :: Model names the endpoint currently serves (GET /api/tags). :: doc comment
+item+ function src/infer.rs :: unload :: pub fn unload(&self) -> Result<(), InferError> { :: Unload the model (keep_alive 0). Best-effort by design: the caller records the session closed regardless; a dead endpoint holds nothing anyway. :: doc comment
+item+ const src/lattice.rs :: CONFIG_RECORD :: pub const CONFIG_RECORD: Coord = [9, 9, 9, 2, 1, 1, 1, 1, 1]; :: qexo's own config record: the node's settings as field lines — no config file anywhere else. It lives at Collection 2 of the 9.9.9/9.9.9/9.9.9 homeland; Collection 1's first scroll is the homeland index, here as in every homeland (the two must never collide: an index that reports on the config record cannot BE it). :: doc comment
+item+ const src/lattice.rs :: HL_CONFIG :: pub const HL_CONFIG: [u32; 3] = [9, 9, 9]; :: A fixed value named HL_CONFIG, set to [9, 9, 9]. :: signature
+item+ const src/lattice.rs :: HL_HOME :: pub const HL_HOME: [u32; 3] = [1, 1, 1]; :: A fixed value named HL_HOME, set to [1, 1, 1]. :: signature
+item+ const src/lattice.rs :: HL_KEYS :: pub const HL_KEYS: [u32; 3] = [2, 2, 2]; :: A fixed value named HL_KEYS, set to [2, 2, 2]. :: signature
+item+ const src/lattice.rs :: HL_LEDGERS :: pub const HL_LEDGERS: [u32; 3] = [6, 6, 6]; :: A fixed value named HL_LEDGERS, set to [6, 6, 6]. :: signature
+item+ const src/lattice.rs :: HL_MAIL :: pub const HL_MAIL: [u32; 3] = [7, 7, 7]; :: A fixed value named HL_MAIL, set to [7, 7, 7]. :: signature
+item+ const src/lattice.rs :: HL_PEERS :: pub const HL_PEERS: [u32; 3] = [3, 3, 3]; :: A fixed value named HL_PEERS, set to [3, 3, 3]. :: signature
+item+ const src/lattice.rs :: HL_PERSONAS :: pub const HL_PERSONAS: [u32; 3] = [4, 4, 4]; :: A fixed value named HL_PERSONAS, set to [4, 4, 4]. :: signature
+item+ const src/lattice.rs :: HL_PLAN :: pub const HL_PLAN: [u32; 3] = [5, 5, 5]; :: A fixed value named HL_PLAN, set to [5, 5, 5]. :: signature
+item+ const src/lattice.rs :: HL_TELEMETRY :: pub const HL_TELEMETRY: [u32; 3] = [8, 8, 8]; :: A fixed value named HL_TELEMETRY, set to [8, 8, 8]. :: signature
+item+ const src/lattice.rs :: HOME :: pub const HOME: Coord = [1, 1, 1, 1, 1, 1, 1, 1, 1]; :: The home scroll: prose index of the whole state file. :: doc comment
+item+ const src/lattice.rs :: IDENTITY :: pub const IDENTITY: Coord = [1, 1, 1, 1, 1, 1, 1, 1, 2]; :: Node identity record, adjacent to home in the home run. :: doc comment
+item+ const src/lattice.rs :: KEYS_DELEGATIONS_C :: pub const KEYS_DELEGATIONS_C: u32 = 6; :: A fixed value named KEYS_DELEGATIONS_C, set to 6. :: signature
+item+ const src/lattice.rs :: KEYS_GRANTS_C :: pub const KEYS_GRANTS_C: u32 = 5; :: A fixed value named KEYS_GRANTS_C, set to 5. :: signature
+item+ const src/lattice.rs :: KEYS_INDEX_C :: pub const KEYS_INDEX_C: u32 = 1; :: Clusters (Collection) inside keys & trust (anchor 2.2.2/2.2.2/2.2.2), neighboring runs in the order the brief names them: the node key first, then persona keys, peer keys, grants, delegations, policy. :: doc comment
+item+ const src/lattice.rs :: KEYS_NODE_C :: pub const KEYS_NODE_C: u32 = 2; :: A fixed value named KEYS_NODE_C, set to 2. :: signature
+item+ const src/lattice.rs :: KEYS_PEER_C :: pub const KEYS_PEER_C: u32 = 4; :: A fixed value named KEYS_PEER_C, set to 4. :: signature
+item+ const src/lattice.rs :: KEYS_PERSONA_C :: pub const KEYS_PERSONA_C: u32 = 3; :: A fixed value named KEYS_PERSONA_C, set to 3. :: signature
+item+ const src/lattice.rs :: KEYS_POLICY_C :: pub const KEYS_POLICY_C: u32 = 7; :: A fixed value named KEYS_POLICY_C, set to 7. :: signature
+item+ const src/lattice.rs :: LEDGER_EMOTION :: pub const LEDGER_EMOTION: u32 = 5; :: A fixed value named LEDGER_EMOTION, set to 5. :: signature
+item+ const src/lattice.rs :: LEDGER_GOAL_ACTIVITY :: pub const LEDGER_GOAL_ACTIVITY: u32 = 6; :: A fixed value named LEDGER_GOAL_ACTIVITY, set to 6. :: signature
+item+ const src/lattice.rs :: LEDGER_INSTANCES :: pub const LEDGER_INSTANCES: u32 = 4; :: A fixed value named LEDGER_INSTANCES, set to 4. :: signature
+item+ const src/lattice.rs :: LEDGER_RECEIPTS :: pub const LEDGER_RECEIPTS: u32 = 2; :: Ledger kinds as clusters (Collection) inside 6.6.6. :: doc comment
+item+ const src/lattice.rs :: LEDGER_RELEASES :: pub const LEDGER_RELEASES: u32 = 8; :: Release announcements (v1.1.0): one Book per announced release — the manifest record at Scroll 1, its detached signature at Scroll 2. The manifest is the phextnet's trust object: it is what travels and what gets verified; the binary bytes ride the wire beside the state file, never inside it. :: doc comment
+item+ const src/lattice.rs :: LEDGER_SYNC :: pub const LEDGER_SYNC: u32 = 7; :: A fixed value named LEDGER_SYNC, set to 7. :: signature
+item+ const src/lattice.rs :: LEDGER_TELEPORTS :: pub const LEDGER_TELEPORTS: u32 = 3; :: A fixed value named LEDGER_TELEPORTS, set to 3. :: signature
+item+ struct src/lattice.rs :: Lattice :: pub struct Lattice { :: The loaded state document. All reads and writes of node state go through this type; no other module touches the file directly. :: doc comment
+item+ function src/lattice.rs :: Lattice::born :: pub fn born(path: PathBuf) -> Lattice { :: An unborn state document bound to `path` (config's birth). :: doc comment
+item+ const src/lattice.rs :: MAIL_BOX_C :: pub const MAIL_BOX_C: u32 = 3; :: A fixed value named MAIL_BOX_C, set to 3. :: signature
+item+ const src/lattice.rs :: MAIL_SESSIONS_C :: pub const MAIL_SESSIONS_C: u32 = 2; :: Sessions (Collection 2) and mailbox (Collection 3) inside 7.7.7. :: doc comment
+item+ const src/lattice.rs :: NODE_KEY_PUBLIC :: pub const NODE_KEY_PUBLIC: Coord = [2, 2, 2, KEYS_NODE_C, 1, 1, 1, 1, 2]; :: A fixed value named NODE_KEY_PUBLIC, set to [2, 2, 2, KEYS_NODE_C, 1, 1, 1, 1, 2]. :: signature
+item+ const src/lattice.rs :: NODE_KEY_RECORD :: pub const NODE_KEY_RECORD: Coord = [2, 2, 2, KEYS_NODE_C, 1, 1, 1, 1, 1]; :: The node key record and its armored public key (adjacent scroll). :: doc comment
+item+ const src/lattice.rs :: PLAN_CURRENT :: pub const PLAN_CURRENT: Coord = [5, 5, 5, 2, 1, 1, 1, 1, 1]; :: Plan (anchor 5.5.5/5.5.5/5.5.5): the current plan lives in Collection 2 (fields at Scroll 1, the human rendering at Scroll 2, adjacent); history is a run of Books in Collection 3, one Book per emitted plan. :: doc comment
+item+ const src/lattice.rs :: PLAN_CURRENT_RENDER :: pub const PLAN_CURRENT_RENDER: Coord = [5, 5, 5, 2, 1, 1, 1, 1, 2]; :: A fixed value named PLAN_CURRENT_RENDER, set to [5, 5, 5, 2, 1, 1, 1, 1, 2]. :: signature
+item+ const src/lattice.rs :: PLAN_HISTORY_C :: pub const PLAN_HISTORY_C: u32 = 3; :: A fixed value named PLAN_HISTORY_C, set to 3. :: signature
+item+ struct src/lattice.rs :: RecordRef :: pub struct RecordRef { :: A data shape named RecordRef. Its fields are: pub kind: &'static str; pub name: String; pub coord: Coord; pub status: String. :: signature
+item+ const src/lattice.rs :: TELEM_DISK_C :: pub const TELEM_DISK_C: u32 = 2; :: Telemetry: disk observations (Collection 2) inside 8.8.8. :: doc comment
+item+ function src/lattice.rs :: at :: pub fn at(h: [u32; 3], rest: [u32; 6]) -> Coord { :: Compose an address from a homeland and the remaining six components [Collection, Volume, Book, Chapter, Section, Scroll]. :: doc comment
+item+ function src/lattice.rs :: component_values :: pub fn component_values(px: &Phext, prefix: &[u32], idx: usize) -> Vec<u32> { :: Distinct values of component `idx` among scrolls under `prefix`, sorted — e.g. the Books present in a cluster. :: doc comment
+item+ function src/lattice.rs :: field :: pub fn field(text: &str, key: &str) -> Option<String> { :: Read `key` from a record scroll's `key: value` lines. :: doc comment
+item+ function src/lattice.rs :: fp_short :: pub fn fp_short(fp: &str) -> String { :: One-line shortening of a fingerprint for prose. :: doc comment
+item+ function src/lattice.rs :: index_addr :: pub fn index_addr(h: [u32; 3]) -> Coord { :: A homeland's ANCHOR: the full 9D address of its index scroll — the patterned address the region is named by (Layer 2 v2): the homeland digit in all nine components, e.g. keys & trust anchors at 2.2.2/2.2.2/2.2.2. (For the home homeland this is 1.1.1/1.1.1/1.1.1 itself — the home scroll IS its anchor.) Records live in the anchor's vicinity: they share the homeland triple and place themselves in the remaining six components, which never reach the anchor's own full-pattern address. :: doc comment
+item+ function src/lattice.rs :: ledger_kind_name :: pub fn ledger_kind_name(cluster: u32) -> Option<&'static str> { :: Function ledger_kind_name takes cluster: u32 and gives back Option<&'static str>. :: signature
+item+ function src/lattice.rs :: load :: pub fn load() -> Result<Option<Lattice>, String> { :: Load the state file if it exists. Ok(None) = not born yet (no file): callers treat that as "run config", never as an occasion to invent a substitute store. :: doc comment
+item+ function src/lattice.rs :: load_from :: pub fn load_from(path: &PathBuf) -> Result<Option<Lattice>, String> { :: Load from an explicit path (tests, doctor). :: doc comment
+item+ function src/lattice.rs :: next_free_book :: pub fn next_free_book(px: &Phext, first5: [u32; 5], start: u32) -> u32 { :: The next free Book (>= start) in the cluster addressed by [Library, Shelf, Series, Collection, Volume]: the adjacency rule — a new record goes beside its kin, at the end of the family's local run. :: doc comment
+item+ function src/lattice.rs :: next_free_cluster :: pub fn next_free_cluster(px: &Phext, h: [u32; 3], start: u32) -> u32 { :: The next free Collection (>= start) in a homeland: a new entity cluster beside the existing ones. A cluster counts as used when anything lives under [homeland, cluster, Volume 1] — records and their runs all sit at Volume 1, while the homeland's anchor scroll (at the full-pattern address, whose Volume is the homeland digit) never masquerades as a record cluster. :: doc comment
+item+ function src/lattice.rs :: next_free_scroll :: pub fn next_free_scroll(px: &Phext, first8: [u32; 8], start: u32) -> Coord { :: The next free Scroll (>= start) in the run addressed by the first eight components. :: doc comment
+item+ function src/lattice.rs :: path :: pub fn path(&self) -> &PathBuf { :: Function path takes no inputs beyond the value it is called on, and gives back &PathBuf. :: signature
+item+ function src/lattice.rs :: prefix_scrolls :: pub fn prefix_scrolls<'a>(px: &'a Phext, prefix: &[u32]) -> Vec<(Coord, &'a String)> { :: Every scroll whose address starts with `prefix`, in ascending (coordinate) order — the range read of a run or a homeland. :: doc comment
+item+ function src/lattice.rs :: record :: pub fn record(fields: &[(&str, &str)]) -> String { :: Build a record scroll from field lines. :: doc comment
+item+ function src/lattice.rs :: records :: pub fn records(px: &Phext) -> Vec<RecordRef> { :: Enumerate peer, persona, and session records across the homelands, in address order. :: doc comment
+item+ function src/lattice.rs :: regen_indexes :: pub fn regen_indexes(px: &mut Phext) { :: Regenerate the home index and every homeland index scroll from the records present. Called by config at birth, by commands after every mutation, and by `doctor --fix` as its repair. :: doc comment
+item+ function src/lattice.rs :: save :: pub fn save(&self) -> Result<(), String> { :: Persist the whole document. Phext serializes canonically (ascending coordinates, delimiter ladder), so a save is a rewrite of one file — the format's write model, accepted. :: doc comment
+item+ function src/lattice.rs :: set_field :: pub fn set_field(text: &str, key: &str, value: &str) -> String { :: Set `key` in a record scroll: replace its line if present, append it if not. Edits the scroll in place, as Layer 2 asks. :: doc comment
+item+ function src/lattice.rs :: state_dir :: pub fn state_dir() -> PathBuf { :: The directory holding the state file (and the GPG keyring, which is the gpg tool's own machinery and lives beside the file it serves). :: doc comment
+item+ function src/lattice.rs :: state_path :: pub fn state_path() -> PathBuf { :: The canonical state path: /var/lib/qexo/state.phext. QEXO_STATE overrides it for development and tests only. :: doc comment
+item+ function src/lattice.rs :: state_path_is_fallback :: pub fn state_path_is_fallback() -> bool { :: Whether the state path in use is the Android $HOME fallback (always false on other platforms, and false when QEXO_STATE named the path — an explicit choice is not a fallback). :: doc comment
+item+ command src/main.rs :: explode :: command "explode" :: A command named explode. The program runs it when the user types this word on the command line. :: signature
+item+ entry-point src/main.rs :: main :: fn main() { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: signature
+item+ command src/main.rs :: parse :: command "parse" :: A command named parse. The program runs it when the user types this word on the command line. :: signature
+item+ command src/main.rs :: seal :: command "seal" :: A command named seal. The program runs it when the user types this word on the command line. :: signature
+item+ command src/main.rs :: select :: command "select" :: A command named select. The program runs it when the user types this word on the command line. :: signature
+item+ command src/main.rs :: unseal :: command "unseal" :: A command named unseal. The program runs it when the user types this word on the command line. :: signature
+item+ type src/phext.rs :: Coord :: pub type Coord = [u32; 9]; :: A type name, Coord, that stands for another type. :: signature
+item+ struct src/phext.rs :: CoordFmt :: pub struct CoordFmt(pub Coord); :: A data shape named CoordFmt. The scanner did not read its fields. :: signature
+item+ struct src/phext.rs :: Phext :: pub struct Phext { :: A data shape named Phext. Its fields are: pub scrolls: BTreeMap<Coord, String>. :: signature
+item+ function src/phext.rs :: Phext::new :: pub fn new() -> Phext { :: Function Phext::new takes no inputs beyond the value it is called on, and gives back Phext. :: signature
+item+ function src/phext.rs :: fmt_coord :: pub fn fmt_coord(c: &Coord) -> String { :: Function fmt_coord takes c: &Coord and gives back String. :: signature
+item+ function src/phext.rs :: get :: pub fn get(&self, coord: &Coord) -> Option<&String> { :: Function get takes &self, coord: &Coord and gives back Option<&String>. :: signature
+item+ function src/phext.rs :: insert :: pub fn insert(&mut self, coord: Coord, text: String) { :: Function insert takes &mut self, coord: Coord, text: String and gives back nothing; it does its work on what it is given. :: signature
+item+ function src/phext.rs :: parse :: pub fn parse(text: &str) -> Phext { :: Parse the canonical serialized form. Position starts at 1.1.1/1.1.1/1.1.1; each delimiter increments its component and resets all less-significant components to 1. A scroll EXISTS only when it holds at least a byte: delimiter stacks (the climb to a distant address) pass through intermediate positions without minting empty scrolls there. :: doc comment
+item+ function src/phext.rs :: parse_coord :: pub fn parse_coord(s: &str) -> Option<Coord> { :: Function parse_coord takes s: &str and gives back Option<Coord>. :: signature
+item+ function src/phext.rs :: serialize :: pub fn serialize(&self) -> String { :: Serialize canonically: ascending coordinates, walking the dead-reckoning path from each scroll to the next. A single delimiter advances ONE component by ONE — so reaching a distant address takes a STACK of delimiters (component by component, most significant first, each emission resetting the less-significant components to 1), with no text between them. That is how CYOA's sparse landscape is actually laid down (a scroll at 13.13.13 is reached by climbing, not by one jump), and it is the only serialization parse can read back faithfully: an earlier form of this function emitted just the highest changed component's delimiter, which made every jump of more than 1 in any component land at the wrong address on re-read — patterned homeland addresses (2.2.2/2.2.2/2.2.2 and kin) were unrepresentable. Found by the v1.0 battery, 2026-11-12: records a command had just written could not be found by the next process. :: doc comment
+item+ function src/phext.rs :: toc :: pub fn toc(&self) -> Vec<(Coord, usize)> { :: Function toc takes no inputs beyond the value it is called on, and gives back Vec<(Coord, usize)>. :: signature
+item+ enum src/plan.rs :: Class :: pub enum Class { :: A named choice named Class. It is one of: Video; Build; Light. :: signature
+item+ function src/plan.rs :: Class::name :: pub fn name(&self) -> &'static str { :: Function Class::name takes no inputs beyond the value it is called on, and gives back &'static str. :: signature
+item+ struct src/plan.rs :: DiskObs :: pub struct DiskObs { :: One disk observation: the current reading, and (as history entries) the series the forecast gate rates growth from. In the lattice these are telemetry scrolls; here they are values. :: doc comment
+item+ const src/plan.rs :: FORECAST_HORIZON_DAYS :: pub const FORECAST_HORIZON_DAYS: f64 = 365.0; :: How far ahead a crossing projection is reported, in days. A linear rate read off the last interval is a short-horizon instrument: a crossing farther out than this will be re-projected hundreds of times before it can matter, and naming a day count for it lends it a precision it does not have. Crossings beyond the horizon are reported as no crossing. :: doc comment
+item+ struct src/plan.rs :: Forecast :: pub struct Forecast { :: A data shape named Forecast. Its fields are: pub available: bool; pub files_per_day: f64; pub gb_per_day: f64; pub span_days: f64; pub nearest_label: String; pub nearest_days: Option<f64>; pub file_amber_days: Option<f64>; pub byte_amber_days: Option<f64>. :: signature
+item+ function src/plan.rs :: Forecast::unavailable :: pub fn unavailable() -> Forecast { :: Function Forecast::unavailable takes no inputs beyond the value it is called on, and gives back Forecast. :: signature
+item+ struct src/plan.rs :: GateConfig :: pub struct GateConfig { :: The gate's thresholds, read from the node's config record in state.phext (homeland 9.9.9/9.9.9/9.9.9). Absent keys mean the defaults — the defaults are the volume lens only: a ranch volume is judged by its own free fraction, and no absolute ceiling applies until a node writes one into its config. :: doc comment
+item+ function src/plan.rs :: GateConfig::from_lookup :: pub fn from_lookup<F: Fn(&str) -> Option<String>>(get: F) -> GateConfig { :: Build from a config record via a field lookup (the record's `key: value` lines; the caller supplies the reader so this module stays free of lattice mechanics). Keys: volume_lens, disk_gate_free_amber_pct, disk_gate_free_red_pct, quota_lens, quota_amber_gb, quota_red_gb, file_amber, file_red. :: doc comment
+item+ struct src/plan.rs :: GateEval :: pub struct GateEval { :: The gate's verdict, with its reasons kept as text: which lens fired and the numbers it fired on. The plan renders these; a gate that cannot say why it fired is a gate no one can argue with — or trust. :: doc comment
+item+ struct src/plan.rs :: GateInputs :: pub struct GateInputs { :: Everything the gate needs beyond the observations: the volume the probe measured (None when the probe could not read one), the root the file count was taken under, and the thresholds. :: doc comment
+item+ const src/plan.rs :: PLAN_VERSION :: pub const PLAN_VERSION: &str = "v1.3.0"; :: A fixed value named PLAN_VERSION, set to "v1.3.0". :: signature
+item+ struct src/plan.rs :: PlanData :: pub struct PlanData { :: A data shape named PlanData. Its fields are: pub disk_date: String; pub used_gb: f64; pub disk_level: String; pub files: u64; pub vol_root: String; pub total_bytes: u64; pub used_bytes: u64; pub free_bytes: u64; pub files_root: String; pub byte_gate: String; pub file_gate: String; pub gate_reason: String; pub byte_detail: String; pub file_detail: String; pub disk_gate: String; pub disk_gate_action: String; pub forecast: Forecast; pub ram_available_mb: f64; pub load1: f64; pub counts: (usize, usize, usize), // video, build, light; pub rows: Vec<PlanRow>. :: signature
+item+ function src/plan.rs :: PlanData::open_tasks :: pub fn open_tasks(&self) -> usize { :: Function PlanData::open_tasks takes no inputs beyond the value it is called on, and gives back usize. :: signature
+item+ struct src/plan.rs :: PlanRow :: pub struct PlanRow { :: A data shape named PlanRow. Its fields are: pub coordinate: String; pub title: String; pub class: Class; pub execution: String. :: signature
+item+ struct src/plan.rs :: TaskInput :: pub struct TaskInput { :: A task row as the planner consumes it. :: doc comment
+item+ struct src/plan.rs :: Volume :: pub struct Volume { :: A volume as the probe measures it: the filesystem under a named root, in bytes. The gate judges THIS volume — not a quota remembered from another machine. :: doc comment
+item+ function src/plan.rs :: Volume::free_pct :: pub fn free_pct(&self) -> f64 { :: Free space as a percentage of the whole volume. :: doc comment
+item+ function src/plan.rs :: classify :: pub fn classify(title: &str, request: &str) -> Class { :: Function classify takes title: &str, request: &str and gives back Class. :: signature
+item+ function src/plan.rs :: compute :: pub fn compute(tasks: &[TaskInput], current: &DiskObs, history: &[DiskObs], host: (f64, f64), gate: &GateInputs) -> PlanData { :: Compute the plan: - byte gate: the worse of the lenses that are ON (see evaluate_gate) — the volume lens judges the measured volume's free fraction; the quota lens, only where a node configures it, reproduces the old absolute ceiling (AMBER 95 GB / RED 102 GB, thresholds anchored to the 2026-11-08 EDQUOT failure at ~106 GB on the Muse VM's staging quota — a real ceiling on that one machine, a false verdict everywhere else). - file gate (v2.2): AMBER/RED at the configured counts under the named staging root — the count is the faster-moving half of the disk currency, and a byte-only gate can sit GREEN while the count runs at the wall. - disk gate = the worse of the two halves. - forecast gate (v2.3, re-based on the lenses in v1.0.3): a GREEN disk gate escalates to AMBER when the nearest crossing projected under the node's configured lenses is within 3 days. A planner that only watches crossings gives no lead time — and a forecast that projects levels the gate no longer reads gives false alarms instead. :: doc comment
+item+ function src/plan.rs :: days_from_civil :: pub fn days_from_civil(y: i64, m: i64, d: i64) -> i64 { :: Days from civil date (Howard Hinnant's algorithm) — the v2.3 date arithmetic, carried verbatim in behavior. :: doc comment
+item+ function src/plan.rs :: evaluate_gate :: pub fn evaluate_gate(current: &DiskObs, vol: Option<&Volume>, files_root: &str, cfg: &GateConfig) -> GateEval { :: Evaluate the disk gate from values: the current observation, the measured volume, the file count's root, the thresholds. Byte half = the worse of the lenses that are ON; disk gate = the worse of byte and file halves. The observation's own level word is NOT consulted: since the telemetry series is qexo's own, the level recorded with an observation is this very evaluation's output (the caller stamps it), not an input. :: doc comment
+item+ function src/plan.rs :: execution :: pub fn execution(&self) -> &'static str { :: Function execution takes no inputs beyond the value it is called on, and gives back &'static str. :: signature
+item+ function src/plan.rs :: fmt_count :: pub fn fmt_count(n: u64) -> String { :: Format a count with thousands separators (1,100,000). :: doc comment
+item+ function src/plan.rs :: fmt_gib :: pub fn fmt_gib(bytes: u64) -> String { :: Format bytes as GiB (2^30) with thousands separators — the units `df -h` speaks, labeled so no one has to guess. :: doc comment
+item+ function src/plan.rs :: forecast_gate :: pub fn forecast_gate(history: &[DiskObs], cfg: &GateConfig, total_bytes: Option<u64>) -> Forecast { :: The forecast computation (v2.3 semantics, re-based on the gate's lenses in v1.0.3): rate growth from the history's last two observations, then project days to the crossings of the SAME thresholds evaluate_gate reads — the volume lens's free fractions of this volume's total, the quota lens's ceilings (only when the node has that lens on), and the file lens's configured counts. Until v1.0.3 the byte half projected the legacy absolute levels (95/102 GB) whatever the node's configuration, so the forecast contradicted the gate it forecasts on every ranch volume.  A crossing the current reading has already reached is the gate's verdict, not a forecast: projecting it would report 0.0 days for a level the lenses already own — exactly the v1.0.2 fleet failure, where the second plan on a healthy ranch node flipped to FORECAST AMBER because its volume had long since passed a ceiling that no longer applies to it. Flat or falling growth projects nothing, and nothing is projected beyond FORECAST_HORIZON_DAYS. Fewer than two usable observations degrades to unavailable — never invented. :: doc comment
+item+ function src/plan.rs :: host_snapshot :: pub fn host_snapshot() -> (f64, f64) { :: (MemAvailable MB, loadavg 1min) of the host qexo runs on — a live probe of /proc, as before. :: doc comment
+item+ function src/plan.rs :: render :: pub fn render(plan: &PlanData) -> String { :: Human-readable rendering of a plan (the v1 shape, kept). In the scratch line this renders from PlanData; the same text is what a plan record stores as its rendered scroll. :: doc comment
+item+ function src/wiring.rs :: check :: pub fn check(main_text: &str, file_stems: &[String]) -> (Vec<String>, Vec<String>) { :: Compare a root's declarations against the module files present. Returns (orphaned, missing): files with no declaration, and declarations with no file. Both empty means the wiring is exact. `main` is the root itself and is never expected as a declaration. :: doc comment
+item+ function src/wiring.rs :: check_dir :: pub fn check_dir(src_dir: &Path) -> Result<(Vec<String>, Vec<String>, usize), String> { :: Run the gate against a source directory: read its `main.rs`, list its `*.rs` stems, and apply `check`. :: doc comment
+item+ function src/wiring.rs :: declared_modules :: pub fn declared_modules(main_text: &str) -> Vec<String> { :: Module names declared by `mod <name>;` (or `pub mod <name>;`) lines in a crate root's text, in declaration order. :: doc comment
+item+ function src/xz.rs :: crc32 :: pub fn crc32(data: &[u8]) -> u32 { :: Function crc32 takes data: &[u8] and gives back u32. :: signature
+item+ function src/xz.rs :: crc64 :: pub fn crc64(data: &[u8]) -> u64 { :: Function crc64 takes data: &[u8] and gives back u64. :: signature
+item+ function src/xz.rs :: decode_stored :: pub fn decode_stored(stream: &[u8]) -> Result<Vec<u8>, String> { :: Decode a stored-chunk xz stream produced by encode_stored(). :: doc comment
+item+ function src/xz.rs :: encode_stored :: pub fn encode_stored(data: &[u8]) -> Vec<u8> { :: Encode `data` as a complete xz stream (stored LZMA2 chunks, CRC64 block check, single block). Byte-deterministic for a given input. :: doc comment
+item+ function src/xz.rs :: unseal :: pub fn unseal(stream: &[u8]) -> Result<Vec<u8>, String> { :: Unseal any xz stream: stored form decodes natively; compressed streams shell out to the system `xz` (wrap, don't fork). :: doc comment
+item+ function tools/build_bake.py :: main :: def main() -> int: :: Function main takes no inputs beyond the value it is called on, and gives back int:. :: signature
+item+ function tools/build_bake.py :: parse_index :: def parse_index(text: str) -> dict: :: Function parse_index takes text: str and gives back dict:. :: signature
+item+ function tools/build_bake.py :: roman :: def roman(s: str) -> int: :: Function roman takes s: str and gives back int:. :: signature
+item+ function tools/build_bake_remote.py :: advance :: def advance(coord): :: Function advance takes coord and gives back nothing; it does its work on what it is given. :: signature
+item+ function tools/build_bake_remote.py :: head :: def head(repo): :: Function head takes repo and gives back nothing; it does its work on what it is given. :: signature
+item+ function tools/build_bake_remote.py :: scan_markers :: def scan_markers(): :: Function scan_markers takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function tools/build_bake_remote.py :: seal :: def seal(raw): :: Function seal takes raw and gives back nothing; it does its work on what it is given. :: signature
+item+ function tools/build_bake_remote.py :: serialize :: def serialize(scrolls): :: Function serialize takes scrolls and gives back nothing; it does its work on what it is given. :: signature
+item+ function tools/build_bake_remote.py :: sha :: def sha(b): :: Function sha takes b and gives back nothing; it does its work on what it is given. :: signature
+item+ function tools/fetch_volumen_index.py :: main :: def main() -> int: :: Function main takes no inputs beyond the value it is called on, and gives back int:. :: signature
+stat Markdown files 9 total 1856 blank 0 comment 0 code 1856
+stat Python files 3 total 382 blank 0 comment 0 code 382
+stat Rust files 12 total 7654 blank 0 comment 0 code 7654
+stat TOML files 2 total 60 blank 0 comment 0 code 60
+author+ Emise <emise@localhost>
+Commit e92f69abc4c5 by Will Bickford <wbic16@gmail.com> on 2026-11-14 (EE 0).
+
+Subject: Merge pull request #1 from wbic16/emise/android-v1.3.0
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 9952.
+
+commit e92f69abc4c5f483381b184fabb46ece33c242da
+parent 12cfe70b6c2752198792267c6f6700d70557d78a
+author Will Bickford <wbic16@gmail.com>
+date 1794642685 2026-11-14
+stat Markdown files 9 total 1856 blank 0 comment 0 code 1856
+stat Python files 3 total 382 blank 0 comment 0 code 382
+stat Rust files 12 total 7654 blank 0 comment 0 code 7654
+stat TOML files 2 total 60 blank 0 comment 0 code 60
+author~ Will Bickford <wbic16@gmail.com> commits 2
+Commit ee57d460dc11 by Emise <emise@localhost> on 2026-11-14 (EE 0).
+
+Subject: qexo v1.6.0 — the Android repo comes current: synced to quarterexo v1.6.0
+
+Public items: 18 added, 3 removed, 19 changed. Dependencies: libphext added at 0.6.0; pgp added at =0.21.1; rand added at 0.8. Code lines after this commit: 14584.
+
+commit ee57d460dc11947f195958487d3eb211fc6a5271
+parent e92f69abc4c5f483381b184fabb46ece33c242da
+author Emise <emise@localhost>
+date 1794646460 2026-11-14
+dep+ Cargo.toml :: libphext :: 0.6.0
+dep+ Cargo.toml :: pgp :: =0.21.1
+dep+ Cargo.toml :: rand :: 0.8
+item~ function src/core.rs :: config :: pub fn config(auto_update: bool, evolve: bool, release_signer: Option<String>) -> i32 { :: Function config takes auto_update: bool, evolve: bool, release_signer: Option<String> and gives back i32. :: signature
+item~ function src/core.rs :: list :: pub fn list(json: bool) -> i32 { :: Function list takes json: bool and gives back i32. :: signature
+item~ struct src/crypto.rs :: Gpg :: pub struct Gpg { :: The node's keyring: a handle on the keyring directory, nothing more — key material is read from the store on each operation, so a `Gpg` never holds stale keys. :: doc comment
+item~ function src/crypto.rs :: Gpg::open_in :: pub fn open_in(state_dir: &Path) -> Gpg { :: Root the keyring at a state DIRECTORY (the state file's parent): the gnupg home is created beside the state file if needed, mode 0700 on Unix. Used by every caller that already knows where the state lives. :: doc comment
+item~ function src/crypto.rs :: decrypt :: pub fn decrypt(&self, armored: &str) -> Result<Vec<u8>, String> { :: Decrypt an armored message with this node's own key. :: doc comment
+item~ function src/crypto.rs :: encrypt_to :: pub fn encrypt_to( &self, recipients: &[String], signer: Option<&str>, data: &[u8], ) -> Result<String, String> { :: Encrypt `data` to every recipient fingerprint (all must be in the keyring), optionally signing with this node's own secret key first. The signed-then-sealed persona keychain exchange (DESIGN §4.7). :: doc comment
+item~ function src/crypto.rs :: export_public :: pub fn export_public(&self, fingerprint: &str) -> Result<String, String> { :: The armored public key for a fingerprint in the keyring. :: doc comment
+item~ function src/crypto.rs :: fingerprint_of :: pub fn fingerprint_of(&self, armored: &str) -> Result<String, String> { :: The fingerprint of armored public key material, without importing it. :: doc comment
+item~ function src/crypto.rs :: generate :: pub fn generate(&self, name: &str, kind_label: &str) -> Result<String, String> { :: Generate this node's key: an Ed25519 signing key whose user id is `name (kind_label)` — the same shape the gpg era's batch spec produced. Unprotected, as qexo node keys have always been. Idempotent: a node that already has a secret key keeps it — and a node whose GnuPG-era key cannot be migrated gets the migration error here, never a silent replacement key. :: doc comment
+item~ function src/crypto.rs :: import_public :: pub fn import_public(&self, armored: &str) -> Result<String, String> { :: Import an armored public key into the keyring. :: doc comment
+item~ function src/crypto.rs :: list_fingerprints :: pub fn list_fingerprints(&self) -> Result<Vec<String>, String> { :: The fingerprints of the secret keys this keyring holds — in practice the node's own, exactly one. :: doc comment
+item+ function src/crypto.rs :: name_of :: pub fn name_of(&self, armored: &str) -> Result<String, String> { :: The user id (name) carried by armored public key material — what gpg's colon listing used to report and `register` derives a peer's host from. :: doc comment
+item~ function src/crypto.rs :: sign_detached :: pub fn sign_detached(&self, fingerprint: &str, data: &[u8]) -> Result<String, String> { :: A detached, armored signature over `data` by the named key (which must be this node's own — the only secret key a keyring holds). :: doc comment
+item~ function src/crypto.rs :: verify_detached :: pub fn verify_detached(&self, armored_sig: &str, data: &[u8]) -> Result<String, String> { :: Verify a detached armored signature over `data` against every public key the keyring holds; on success returns the signing key's fingerprint — the VALIDSIG fingerprint the update path's trust check compares. :: doc comment
+item- function src/crypto.rs :: gpg_available
+item+ function src/inventory.rs :: inventory :: pub fn inventory(name: Option<String>, install: Option<String>) -> i32 { :: `qexo inventory [<name>]` / `qexo inventory --install <name>` (alias verb: catalog). :: doc comment
+item+ const src/lattice.rs :: HL_LEARN :: pub const HL_LEARN: [u32; 3] = [10, 10, 10]; :: Lessons & learning (v1.4.0): the tens — practice, repeated. The anchor pattern extends by one: where the nine ones-to-nines homelands were the node's records of the world, the tens are the node's record of its operator's practice. :: doc comment
+item+ const src/lattice.rs :: LEARN_DECK_C :: pub const LEARN_DECK_C: u32 = 2; :: The curriculum deck's cluster inside the learn homeland: one Book per card, grown by adjacency (Layer 2 growth rule). :: doc comment
+item+ struct src/lattice.rs :: StateFacts :: pub struct StateFacts { :: The facts the resolution order reads. Probed from the live system by `state_path`; supplied directly by tests. :: doc comment
+item+ function src/lattice.rs :: birth_path :: pub fn birth_path() -> (PathBuf, bool) { :: The path a birth should use, with the fallback applied: when resolution chose the system path for a state that does not exist yet and the system directory cannot be created by this user, the birth falls back to the per-user path — returned as (path, fell_back) so the caller can say so out loud, the way the Android home fallback always has. An env-chosen path is the operator's word and is never second-guessed. :: doc comment
+item+ function src/lattice.rs :: index_addresses :: pub fn index_addresses() -> Vec<Coord> { :: Every index scroll the current Layer 2 layout defines: the home index plus each homeland's anchor scroll, the tens included. This is the whole set a state must carry to be whole under the running binary's layout. :: doc comment
+item+ function src/lattice.rs :: learn_preference :: pub fn learn_preference() -> bool { :: Function learn_preference takes no inputs beyond the value it is called on, and gives back bool. :: signature
+item+ function src/lattice.rs :: pick_state_path :: pub fn pick_state_path(facts: StateFacts, system: &std::path::Path, user: Option<&std::path::Path>) -> PathBuf { :: The resolution order (v1.4.1), stated exactly as shipped: 1. QEXO_STATE, when set non-empty (the caller's word). 2. THE WRITE-INTENT RULE (new in v1.4.1): a write-intending verb in unprivileged hands, facing a system state it cannot write, selects the per-user path instead — existing or to be born there by config. The system state belongs to its owner; this user's node is their own. (Read-only verbs are untouched by this rule and keep the order below exactly as v1.4.0 shipped it.) 2b. THE LEARN RULE (new in v1.4.2): `qexo learn` in unprivileged hands, when a per-user state EXISTS, selects the per-user path — the deck belongs to the operator, not to the machine's owner. With no per-user state, learn falls through to the order below like any reader (v1.4.1 diverted it to the missing path and errored; v1.4.0 answered). 3. The system path, when the system state exists and this process can read it — a system install stays canonical, byte-for-byte, and read-only verbs never fail on its permissions when a per-user state exists instead (rule 4 is what they fall to). 4. The per-user path, when a per-user state exists. 5. The system path again when it exists but cannot be read and no per-user state exists — the honest error names the real file rather than inventing an empty node. 6. Nothing exists: the system path for a privileged process, the per-user path otherwise (a fresh `qexo config` as a normal user births a per-user node); with no home directory to anchor to, the system path. A node has ONE state: the resolution finds the first that exists, and `qexo status` names which path is live. :: doc comment
+item~ function src/lattice.rs :: save :: pub fn save(&mut self) -> Result<(), String> { :: Persist the whole document. Phext serializes canonically (ascending coordinates, delimiter ladder), so a save is a rewrite of one file — the format's write model, accepted.  Every save first runs the state top-up (v1.4.1): `seed_missing_indexes` makes the document whole under the running binary's Layer 2 layout before it is written. save() is the write boundary — every mutating verb ends here, and no read or --check path ever reaches it (their byte-inert guarantees are untouched) — so an inherited state gains the homelands its birth binary predates on the first write the new binary makes, whichever verb that write belongs to. :: doc comment
+item+ function src/lattice.rs :: seed_missing_indexes :: pub fn seed_missing_indexes(px: &mut Phext) -> Vec<Coord> { :: The state top-up (v1.4.1): seed any index scroll the current layout defines that this document lacks, with exactly the text `regen_indexes` would give it. Born of the v1.4.0 fleet refusal: states born under 1.3.0 carry no lessons homeland, so the new layout's index is missing through no damage of theirs — an upgraded state becomes whole by the running binary's own hand the first time it writes. Surgical by construction: an index that EXISTS is never touched (records and indexes alike), a missing one is copied from a scratch regeneration of this same document. Idempotent — a whole state seeds nothing. Returns the addresses seeded. :: doc comment
+item+ function src/lattice.rs :: set_learn_preference :: pub fn set_learn_preference() { :: Function set_learn_preference takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function src/lattice.rs :: set_write_intent :: pub fn set_write_intent() { :: Function set_write_intent takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item~ function src/lattice.rs :: state_path :: pub fn state_path() -> PathBuf { :: The node's state path, resolved by the order above. :: doc comment
+item+ function src/lattice.rs :: system_state_path :: pub fn system_state_path() -> PathBuf { :: The system state path: /var/lib/qexo/state.phext — canonical for system installs (root-run services, the ranch fleet). :: doc comment
+item+ function src/lattice.rs :: user_state_path :: pub fn user_state_path() -> Option<PathBuf> { :: The per-user state path (v1.4.0): $HOME/.qexo/state.phext — on Windows, under the user profile (%USERPROFILE%, falling back to HOME), resolved the same cfg way the codebase splits platforms elsewhere. A node installed by an unprivileged user (a plain `cargo install qexo`) lives here, whole: state file and GPG keyring side by side, no sudo anywhere in its life. :: doc comment
+item+ function src/lattice.rs :: write_intent :: pub fn write_intent() -> bool { :: Function write_intent takes no inputs beyond the value it is called on, and gives back bool. :: signature
+item- function src/lattice.rs :: fp_short
+item- function src/lattice.rs :: state_path_is_fallback
+item+ const src/learn.rs :: MASTERY_INTERVAL_DAYS :: pub const MASTERY_INTERVAL_DAYS: i64 = 21; :: A card counts as mastered at this interval (days). :: doc comment
+item+ function src/learn.rs :: learn :: pub fn learn(status_only: bool) -> i32 { :: `qexo learn [--status]`. :: doc comment
+item~ function src/phext.rs :: parse :: pub fn parse(text: &str) -> Phext { :: Parse with the library: explode reckons every scroll's address libphext's way; this adapter then drops the empty stops (see the module note — a scroll exists when it holds at least a byte). :: doc comment
+item~ function src/phext.rs :: serialize :: pub fn serialize(&self) -> String { :: Serialize with the library: implode sorts the scrolls and walks the dead-reckoning path emitting libphext's delimiter ladder (library break \x01 at the top). :: doc comment
+item+ const src/plan.rs :: FORECAST_WINDOW_INTERVALS :: pub const FORECAST_WINDOW_INTERVALS: usize = 7; :: How many of the most recent intervals the forecast rates (v1.2.1). The window bounds the median's memory: older intervals fall out instead of anchoring the rate forever, and a history shorter than the window simply contributes every interval it has. :: doc comment
+item~ const src/plan.rs :: PLAN_VERSION :: pub const PLAN_VERSION: &str = "v1.6.0"; :: A fixed value named PLAN_VERSION, set to "v1.6.0". :: signature
+item~ function src/plan.rs :: forecast_gate :: pub fn forecast_gate(history: &[DiskObs], cfg: &GateConfig, total_bytes: Option<u64>) -> Forecast { :: The forecast computation (v2.3 semantics, re-based on the gate's lenses in v1.0.3; rates re-based on the median interval in v1.2.1): rate growth from the history — the median of the per-interval rates over the most recent FORECAST_WINDOW_INTERVALS intervals, falling back to the single interval when the history holds only two observations — then project days to the crossings of the SAME thresholds evaluate_gate reads — the volume lens's free fractions of this volume's total, the quota lens's ceilings (only when the node has that lens on), and the file lens's configured counts. Until v1.0.3 the byte half projected the legacy absolute levels (95/102 GB) whatever the node's configuration, so the forecast contradicted the gate it forecasts on every ranch volume.  A crossing the current reading has already reached is the gate's verdict, not a forecast: projecting it would report 0.0 days for a level the lenses already own — exactly the v1.0.2 fleet failure, where the second plan on a healthy ranch node flipped to FORECAST AMBER because its volume had long since passed a ceiling that no longer applies to it. Flat or falling growth projects nothing, and nothing is projected beyond FORECAST_HORIZON_DAYS. Fewer than two usable observations degrades to unavailable — never invented.  Why the median (v1.2.1, from the 2026-11-12 evaluation of 2026-11-11 and re-proven by 2026-11-12's interval): rating from the last interval alone made the nearest-crossing estimate whipsaw with whatever the last day happened to do — file AMBER read ~1.4 days out on the 2026-11-10 interval, ~14 days out on 2026-11-11's, ~9.9 days out on 2026-11-12's, while the underlying series never changed character. The median of the recent intervals reports the series' typical rate: a planner whose warnings hold still long enough to act on. :: doc comment
+stat Markdown files 9 total 2563 blank 0 comment 0 code 2563
+stat Python files 3 total 382 blank 0 comment 0 code 382
+stat Rust files 14 total 11561 blank 0 comment 0 code 11561
+stat TOML files 2 total 78 blank 0 comment 0 code 78
+author~ Emise <emise@localhost> commits 2
+Commit ce0731d76f4e by Will Bickford <wbic16@gmail.com> on 2026-11-14 (EE 0).
+
+Subject: Merge pull request #2 from wbic16/emise/android-catchup-v1.6.0
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 14584.
+
+commit ce0731d76f4e2b53cc8ae82d7db73ea5310d3db0
+parent ee57d460dc11947f195958487d3eb211fc6a5271
+author Will Bickford <wbic16@gmail.com>
+date 1794646848 2026-11-14
+stat Markdown files 9 total 2563 blank 0 comment 0 code 2563
+stat Python files 3 total 382 blank 0 comment 0 code 382
+stat Rust files 14 total 11561 blank 0 comment 0 code 11561
+stat TOML files 2 total 78 blank 0 comment 0 code 78
+author~ Will Bickford <wbic16@gmail.com> commits 3
+Commit af48ebcf6212 by Emise <emise@localhost> on 2026-11-14 (EE 0).
+
+Subject: qexo v1.6.1 — learn --app: the wizard's engine as a line protocol for front-ends (Android launcher v2)
+
+Public items: 1 added, 0 removed, 1 changed. Dependencies did not change. Code lines after this commit: 15037.
+
+commit af48ebcf62120c92538d87ddf2b4fb80764e578e
+parent ce0731d76f4e2b53cc8ae82d7db73ea5310d3db0
+author Emise <emise@localhost>
+date 1794648322 2026-11-14
+item+ function src/learn.rs :: learn_app :: pub fn learn_app() -> i32 { :: `qexo learn --app` — the wizard's engine over stdin/stdout. Exit codes match learn(): 0 clean, 1 a state save failed, plus require_born's codes when the node is unborn. :: doc comment
+item~ const src/plan.rs :: PLAN_VERSION :: pub const PLAN_VERSION: &str = "v1.6.1"; :: A fixed value named PLAN_VERSION, set to "v1.6.1". :: signature
+stat Markdown files 9 total 2612 blank 0 comment 0 code 2612
+stat Python files 3 total 382 blank 0 comment 0 code 382
+stat Rust files 14 total 11965 blank 0 comment 0 code 11965
+stat TOML files 2 total 78 blank 0 comment 0 code 78
+author~ Emise <emise@localhost> commits 3
+Commit fd940ec74ad8 by Will Bickford <wbic16@gmail.com> on 2026-11-14 (EE 0).
+
+Subject: Merge pull request #3 from wbic16/emise/android-learn-app-v1.6.1
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 15037.
+
+commit fd940ec74ad812bdbb4c7475cbd6b3f3a53313f9
+parent af48ebcf62120c92538d87ddf2b4fb80764e578e
+author Will Bickford <wbic16@gmail.com>
+date 1794649011 2026-11-14
+stat Markdown files 9 total 2612 blank 0 comment 0 code 2612
+stat Python files 3 total 382 blank 0 comment 0 code 382
+stat Rust files 14 total 11965 blank 0 comment 0 code 11965
+stat TOML files 2 total 78 blank 0 comment 0 code 78
+author~ Will Bickford <wbic16@gmail.com> commits 4
+Commit 281c6caaaa39 by Emise <emise@localhost> on 2026-11-14 (EE 0).
+
+Subject: inventory: bake phccbox into the roster
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 15046.
+
+commit 281c6caaaa392504073334a40ef6e55c98eddb81
+parent fd940ec74ad812bdbb4c7475cbd6b3f3a53313f9
+author Emise <emise@localhost>
+date 1794649291 2026-11-14
+stat Markdown files 9 total 2612 blank 0 comment 0 code 2612
+stat Python files 3 total 382 blank 0 comment 0 code 382
+stat Rust files 14 total 11974 blank 0 comment 0 code 11974
+stat TOML files 2 total 78 blank 0 comment 0 code 78
+author~ Emise <emise@localhost> commits 4
+Commit c5840693d993 by Will Bickford <wbic16@gmail.com> on 2026-11-14 (EE 0).
+
+Subject: Merge pull request #4 from wbic16/emise/phccbox-roster
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 15046.
+
+commit c5840693d993f751bc206e46e3bdfe9baee74124
+parent 281c6caaaa392504073334a40ef6e55c98eddb81
+author Will Bickford <wbic16@gmail.com>
+date 1794649604 2026-11-14
+stat Markdown files 9 total 2612 blank 0 comment 0 code 2612
+stat Python files 3 total 382 blank 0 comment 0 code 382
+stat Rust files 14 total 11974 blank 0 comment 0 code 11974
+stat TOML files 2 total 78 blank 0 comment 0 code 78
+author~ Will Bickford <wbic16@gmail.com> commits 5
+Commit b01ec931c199 by Emise <emise@localhost> on 2026-11-15 (EE 0).
+
+Subject: qexo v1.7.0 — distributed-builds: the node upgrade command for the compile cluster
+
+Public items: 2 added, 0 removed, 1 changed. Dependencies did not change. Code lines after this commit: 15340.
+
+commit b01ec931c1999afa4805f3f29f5ff2c43d0ccc31
+parent c5840693d993f751bc206e46e3bdfe9baee74124
+author Emise <emise@localhost>
+date 1794728732 2026-11-15
+item+ function src/distbuilds.rs :: distributed_builds :: pub fn distributed_builds(scheduler: bool, status: bool, branch: Option<String>) -> i32 { :: Function distributed_builds takes scheduler: bool, status: bool, branch: Option<String> and gives back i32. :: signature
+item+ function src/distbuilds.rs :: report :: pub fn report() -> i32 { :: The verification half, shared by the upgrade run and --status: every line is a fact probed now, nothing remembered. :: doc comment
+item~ const src/plan.rs :: PLAN_VERSION :: pub const PLAN_VERSION: &str = "v1.7.0"; :: A fixed value named PLAN_VERSION, set to "v1.7.0". :: signature
+stat Markdown files 9 total 2638 blank 0 comment 0 code 2638
+stat Python files 3 total 382 blank 0 comment 0 code 382
+stat Rust files 15 total 12242 blank 0 comment 0 code 12242
+stat TOML files 2 total 78 blank 0 comment 0 code 78
+author~ Emise <emise@localhost> commits 5
+Commit 03f996199bf6 by Will Bickford <wbic16@gmail.com> on 2026-11-15 (EE 0).
+
+Subject: Merge pull request #5 from wbic16/emise/distributed-builds-v1.7.0
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 15340.
+
+commit 03f996199bf6ce76186e8b84ec176f832b394e45
+parent b01ec931c1999afa4805f3f29f5ff2c43d0ccc31
+author Will Bickford <wbic16@gmail.com>
+date 1794730200 2026-11-15
+stat Markdown files 9 total 2638 blank 0 comment 0 code 2638
+stat Python files 3 total 382 blank 0 comment 0 code 382
+stat Rust files 15 total 12242 blank 0 comment 0 code 12242
+stat TOML files 2 total 78 blank 0 comment 0 code 78
+author~ Will Bickford <wbic16@gmail.com> commits 6
+Commit a845450fb76b by Emise <emise@phext.io> on 2026-11-18 (EE 0).
+
+Subject: Twin sync: the dispatch core, whole (slices 1-7), at stamp 1.7.3
+
+Public items: 136 added, 1 removed, 2 changed. Dependencies did not change. Code lines after this commit: 26846.
+
+commit a845450fb76b15cf226342042a343825935daffd
+parent 03f996199bf6ce76186e8b84ec176f832b394e45
+author Emise <emise@phext.io>
+date 1794968828 2026-11-18
+item+ function src/app.rs :: app_session :: pub fn app_session() -> i32 { :: The dispatch app session (§2.3): greeting block, then one command per line until `quit` or EOF. Entered from any dispatch verb's `--app` form. Exit codes match learn --app's shape: 0 clean, plus require_born's codes when the node is unborn; command refusals are in-band. :: doc comment
+item+ struct src/bridge.rs :: Bridge :: pub struct Bridge { :: One bridge record (Collection 5, Scroll 1 of its Book). :: doc comment
+item+ struct src/bridge.rs :: Chosen :: pub struct Chosen { :: A completed routing: the bridge chosen, and the probe scroll that verifies it live for this dispatch. :: doc comment
+item+ const src/bridge.rs :: DEFAULT_FRESHNESS :: pub const DEFAULT_FRESHNESS: u64 = 900; :: A fixed value named DEFAULT_FRESHNESS, set to 900. :: signature
+item+ struct src/bridge.rs :: HealthRec :: pub struct HealthRec { :: One health-log atom (a probe and its outcome). :: doc comment
+item+ const src/bridge.rs :: KINDS :: pub const KINDS: [&str; 9] = [ :: The kind enum (§9.1) — the model line (`tlm`, `slm`, `llm`) is in it from the first bridge slice, so the local line registers the day each can answer a probe, with no schema change waiting for it. :: doc comment
+item+ enum src/bridge.rs :: Liveness :: pub enum Liveness { :: What the health log says about a bridge right now — calculated on every call, never stored (§9.1). :: doc comment
+item+ struct src/bridge.rs :: ProbeOutcome :: pub struct ProbeOutcome { :: A data shape named ProbeOutcome. Its fields are: pub kind: &'static str; pub ok: bool; pub detail: String; pub latency_ms: u128. :: signature
+item+ enum src/bridge.rs :: Route :: pub enum Route { :: A named choice named Route. It is one of: Chosen; Wait; WouldProbe; NoRoute. :: signature
+item+ function src/bridge.rs :: append_health :: pub fn append_health(px: &mut Phext, bridge: &Bridge, out: &ProbeOutcome) -> Coord { :: Append one probe outcome to a bridge's health log; returns the scroll's address (the probe cite routing puts in the dispatch receipt). :: doc comment
+item+ function src/bridge.rs :: bridge_addr :: pub fn bridge_addr(book: u32) -> Coord { :: The address of bridge Book `book`'s record scroll. :: doc comment
+item+ function src/bridge.rs :: brief_prefs :: pub fn brief_prefs(brief: &str) -> Vec<String> { :: The `bridge:` preference lines of a brief, in order, duplicates removed (the brief_facts precedent). :: doc comment
+item+ function src/bridge.rs :: cmd_bridge :: pub fn cmd_bridge(args: &[String]) -> i32 { :: Function cmd_bridge takes args: &[String] and gives back i32. :: signature
+item+ function src/bridge.rs :: find_bridge :: pub fn find_bridge(px: &Phext, name: &str) -> Option<Bridge> { :: Function find_bridge takes px: &Phext, name: &str and gives back Option<Bridge>. :: signature
+item+ function src/bridge.rs :: health_addr :: pub fn health_addr(book: u32, scroll: u32) -> Coord { :: The address of a health-log scroll in bridge Book `book`. :: doc comment
+item+ function src/bridge.rs :: health_label :: pub fn health_label(px: &Phext, bridge: &Bridge) -> String { :: A human rendering of the calculated health, for the `qexo bridge` list and the dispatch --check report. :: doc comment
+item+ function src/bridge.rs :: liveness :: pub fn liveness(px: &Phext, bridge: &Bridge) -> Liveness { :: Function liveness takes px: &Phext, bridge: &Bridge and gives back Liveness. :: signature
+item+ function src/bridge.rs :: load_bridges :: pub fn load_bridges(px: &Phext) -> Vec<Bridge> { :: Every bridge record in the state, in Book order. :: doc comment
+item+ function src/bridge.rs :: load_health :: pub fn load_health(px: &Phext, book: u32) -> Vec<HealthRec> { :: A bridge Book's health log, in scroll order. :: doc comment
+item+ function src/bridge.rs :: mid_execution_skips :: pub fn mid_execution_skips(px: &Phext, item_s: &str, last_attempt: u32) -> Vec<String> { :: Bridges this item must not be re-routed to on its next dispatch: the `from` of a `bridge-failover` receipt filed at the item's last closed attempt — the mid-execution advance (§9.2), calculated from the ledger like everything else. :: doc comment
+item+ function src/bridge.rs :: parse_bridge :: pub fn parse_bridge(book: u32, text: &str) -> Bridge { :: Function parse_bridge takes book: u32, text: &str and gives back Bridge. :: signature
+item+ function src/bridge.rs :: probe :: pub fn probe(endpoint: &str) -> ProbeOutcome { :: Probe an endpoint, by its shape: http/https URLs are fetched, a bare host:port is connected to, anything else is treated as a local path (a gateway path, a mailbox directory) and checked for presence. :: doc comment
+item+ function src/bridge.rs :: route :: pub fn route( px: &mut Phext, item_s: &str, attempt: u32, prefs: &[String], skip: &[String], probe_now: bool, ) -> Route { :: Walk an item's bridge preferences (§9.2). With `probe_now`, stale or failed evidence is probed on the spot (health scrolls and failover receipts are appended into `px`; the caller saves). Without it (dispatch --check, byte-inert) the walk reads the evidence as it stands and writes nothing. :: doc comment
+item+ const src/dispatch.rs :: ALL_STATES :: pub const ALL_STATES: [ItemState; 8] = [ :: A fixed value named ALL_STATES, set to [. :: signature
+item+ enum src/dispatch.rs :: Actor :: pub enum Actor { :: Who performs a transition (spec §4.6 names an actor per transition; actors are checked, not trusted — illegal combination 4 is a cancel by the wrong actor). The CLI verbs act as Manual (pause/resume) and WillEmise (cancel: the operator at their own node). The remaining kinds are constructed by the transition engine's callers in slices 3–5 (drain, wire dispatch, F5) — the table below is the one oracle they will all pass through. :: doc comment
+item+ struct src/dispatch.rs :: AssignmentRec :: pub struct AssignmentRec { :: An assignment record (11.11.11, Collection 3, §3.1), parsed leniently — slice 4 writes these; the doctor reads them now. An assignment is LIVE while it carries no `status:` line: the status line is its retirement marker (§3.1: "an assignment Book retires (status line) when its attempt closes"). :: doc comment
+item+ enum src/dispatch.rs :: AuditOwed :: pub enum AuditOwed { :: A named choice named AuditOwed. It is one of: NonPingClose; AutoPause; Override; RegisterClose. :: signature
+item+ struct src/dispatch.rs :: AuditRec :: pub struct AuditRec { :: An audit record (6.6.6, Collection 9, §7.1), parsed. :: doc comment
+item+ struct src/dispatch.rs :: Item :: pub struct Item { :: A queue item record (§3.2), parsed. Raw field strings ride beside the parsed values so the doctor can flag a corrupt count or state instead of silently reckoning it as zero. Every §3.2 field is parsed even where slice 2 does not read it yet — the record's shape is the contract, and slices 3–4 read the rest. :: doc comment
+item+ enum src/dispatch.rs :: ItemState :: pub enum ItemState { :: The eight queue states (spec §4.6). `dispatched` = bundle accepted, execution not yet evidenced; `waiting` = blocked on Will, cites its register number, dispatch skips it; `paused` = manual; `paused-auto` = the §8 auto-pause after the third consecutive failure. :: doc comment
+item+ function src/dispatch.rs :: ItemState::parse :: pub fn parse(s: &str) -> Option<ItemState> { :: Function ItemState::parse takes s: &str and gives back Option<ItemState>. :: signature
+item+ struct src/dispatch.rs :: Plan :: pub struct Plan { :: What a legal transition will do, before anything is written: the state it lands in (a third consecutive failure lands in `paused-auto`, not `queued`, §8), the counters after it, the register cite it sets, and the audit it owes (§7.2), if any. :: doc comment
+item+ struct src/dispatch.rs :: RunLines :: pub struct RunLines { :: One verb run's rendered lines, split by stream, plus the structured facts a second driver renders in its own shape (slice 7, spec §2.3). A verb core fills a RunLines and never prints directly: in `live` mode each line is also printed as it is produced — the CLI driver's mode, byte- and order-identical to the verb's historic printing — while the `--app` driver captures the run and renders `facts` as its `key: value` block instead. The core is one; the drivers can never disagree about what a verb did, only about how it is rendered. :: doc comment
+item+ function src/dispatch.rs :: RunLines::new :: pub fn new() -> RunLines { :: Capturing mode: lines are collected, nothing printed. :: doc comment
+item+ struct src/dispatch.rs :: Transition :: pub struct Transition { :: A transition request (spec §4.6). `evidence` is the note, the failure evidence, or the resolution evidence, per the transition; `checked`/`showed`/`verdict` are the F4 live-surface evidence shape (§7) a `done` requires; `register` supplies the register cite a move to `waiting` needs when the record does not already carry one; `manual` distinguishes a human resume from any automatic one — `paused-auto` yields only to the manual kind (§8). :: doc comment
+item+ function src/dispatch.rs :: Transition::new :: pub fn new(to: ItemState, actor: Actor, actor_name: &str) -> Transition { :: Function Transition::new takes to: ItemState, actor: Actor, actor_name: &str and gives back Transition. :: signature
+item+ struct src/dispatch.rs :: TransitionReceipt :: pub struct TransitionReceipt { :: A transition receipt (6.6.6, Collection 2, action: transition), parsed — the doctor's evidence (§4.5). :: doc comment
+item+ function src/dispatch.rs :: append_audit :: pub fn append_audit( px: &mut phext::Phext, kind: &str, item: &str, checked: &str, showed: &str, verdict: &str, actor: &str, ) -> Coord { :: Append an audit scroll to the audits run (6.6.6, Collection 9, spec §7.1) and return its coordinate. The record is the spec's shape: a header line, then fields. :: doc comment
+item+ function src/dispatch.rs :: apply_transition :: pub fn apply_transition(lat: &mut Lattice, book: u32, t: &Transition) -> Result<Coord, String> { :: Apply a transition: the item's new state, its receipt, and its audit (where one is owed) are mutated into the document together; the CALLER saves once — so the save either contains all of it or none of it (§4.2's one-write rule), and a verb acks only after that save (§4.1). Returns the receipt's coordinate. :: doc comment
+item+ function src/dispatch.rs :: audit :: pub fn audit(args: &[String]) -> i32 { :: `qexo audit` (spec §2.1, §7.2): Will's window on the audit cluster — list with filters, newest last (ledger order); `audit show` renders one in full. If it isn't in the audit cluster, it didn't happen quietly. :: doc comment
+item+ function src/dispatch.rs :: brief_addr :: pub fn brief_addr(book: u32) -> Coord { :: The address of item Book `book`'s brief scroll. :: doc comment
+item+ function src/dispatch.rs :: cancel :: pub fn cancel(args: &[String]) -> i32 { :: Function cancel takes args: &[String] and gives back i32. :: signature
+item+ function src/dispatch.rs :: check_transition :: pub fn check_transition(item: &Item, t: &Transition) -> Result<Plan, String> { :: The legality oracle (spec §4.6): is this transition allowed from the item's current state, by this actor, with this evidence? Every refusal names the rule it breaks. Pure — it reads the item and the request and decides; `apply_transition` is the only writer. :: doc comment
+item+ function src/dispatch.rs :: daily_goal :: pub fn daily_goal(px: &phext::Phext) -> Option<String> { :: The node's current daily goal: a field on the config record (`daily-goal:` in 9.9.9, Collection 2), set at the morning synthesis. Absent = no daily class today. :: doc comment
+item+ function src/dispatch.rs :: enqueue :: pub fn enqueue(args: &[String]) -> i32 { :: Function enqueue takes args: &[String] and gives back i32. :: signature
+item+ function src/dispatch.rs :: enqueue_core :: pub fn enqueue_core( lat: &mut Lattice, parsed: &EnqueueArgs, brief: &str, ) -> Result<String, (String, i32)> { :: The enqueue act itself (§3.2, §4.1), over a loaded lattice: the title derivation, the F6 burn:never refusal (§9.2), the item record, the save. Write- before-ack lives here — the item's address is returned only after the save that carries the record completes, so an address in hand is proof the record is durable. The CLI verb above and the `--app` driver (slice 7, §2.3) both end here: an item is born identically whichever surface filed it. Errors carry the CLI's message (without its `qexo enqueue:` prefix) and the exit code the CLI returns for them. :: doc comment
+item+ function src/dispatch.rs :: err :: pub fn err(&mut self, line: String) { :: Function err takes &mut self, line: String and gives back nothing; it does its work on what it is given. :: signature
+item+ function src/dispatch.rs :: fact :: pub fn fact(&mut self, key: &str, value: &str) { :: Function fact takes &mut self, key: &str, value: &str and gives back nothing; it does its work on what it is given. :: signature
+item+ function src/dispatch.rs :: goal_class :: pub fn goal_class(item: &Item, daily_goal: Option<&str>) -> u8 { :: The §5.1 goal class: 0 = names the current daily goal, 1 = standing, 2 = background (names some other goal). :: doc comment
+item+ function src/dispatch.rs :: goal_class_name :: pub fn goal_class_name(class: u8) -> &'static str { :: Function goal_class_name takes class: u8 and gives back &'static str. :: signature
+item+ function src/dispatch.rs :: is_sha256_hex :: pub fn is_sha256_hex(s: &str) -> bool { :: A SHA-256 digest's shape: 64 hex characters. (The digest's truth against the canonical bundle is slice 4's check, where the bundle builder lands; the shape is what a hand-corrupted field breaks today.) :: doc comment
+item+ function src/dispatch.rs :: is_terminal :: pub fn is_terminal(self) -> bool { :: Function is_terminal takes no inputs beyond the value it is called on, and gives back bool. :: signature
+item+ function src/dispatch.rs :: item_addr :: pub fn item_addr(book: u32) -> Coord { :: The address of item Book `book`'s record scroll. :: doc comment
+item+ function src/dispatch.rs :: item_record :: pub fn item_record( title: &str, coordinate: Option<&str>, register: Option<&str>, origin: &str, enqueued: &str, enqueued_by: &str, goal: &str, value: Option<u32>, cost: Option<u32>, after: Option<&str>, exit: Option<&str>, ) -> String { :: Build the item record scroll (spec §3.2). Field order is the spec's; absent optional fields are omitted, never blanked — renderings print their absence (`coordinate: unminted`, `roi: unestimated`) from the omission. :: doc comment
+item+ function src/dispatch.rs :: live :: pub fn live() -> RunLines { :: Live mode: lines print as produced (and are still collected, for callers that want the record). :: doc comment
+item+ function src/dispatch.rs :: load_assignments :: pub fn load_assignments(px: &phext::Phext) -> Vec<AssignmentRec> { :: Function load_assignments takes px: &phext::Phext and gives back Vec<AssignmentRec>. :: signature
+item+ function src/dispatch.rs :: load_audits :: pub fn load_audits(px: &phext::Phext) -> Vec<AuditRec> { :: Function load_audits takes px: &phext::Phext and gives back Vec<AuditRec>. :: signature
+item+ function src/dispatch.rs :: load_items :: pub fn load_items(px: &phext::Phext) -> Vec<Item> { :: Every queue item in the document, in Book (arrival) order. :: doc comment
+item+ function src/dispatch.rs :: load_transition_receipts :: pub fn load_transition_receipts(px: &phext::Phext) -> Vec<TransitionReceipt> { :: Function load_transition_receipts takes px: &phext::Phext and gives back Vec<TransitionReceipt>. :: signature
+item+ function src/dispatch.rs :: local_actor :: pub fn local_actor(px: &phext::Phext) -> String { :: This node's actor string — node name + full fingerprint, the shape `enqueued-by` already carries (receipts cite actors the same way, §4.2). :: doc comment
+item+ function src/dispatch.rs :: name :: pub fn name(self) -> &'static str { :: Function name takes no inputs beyond the value it is called on, and gives back &'static str. :: signature
+item+ function src/dispatch.rs :: order_items :: pub fn order_items(items: Vec<Item>, daily: Option<&str>) -> Vec<Item> { :: The queue's full order (spec §5 + §2.1): paused-auto items pin to the head, flagged, always; `pin: head` items follow, rendered as the pins they are (§5.2); `pin: after <address>` items sit immediately after their target; everything else takes its calculated position. A pin whose target is not in this rendering keeps its calculated position — the pin still renders, so the anomaly is visible rather than silent. :: doc comment
+item+ function src/dispatch.rs :: out :: pub fn out(&mut self, line: String) { :: Function out takes &mut self, line: String and gives back nothing; it does its work on what it is given. :: signature
+item+ function src/dispatch.rs :: parse_item :: pub fn parse_item(book: u32, text: &str) -> Item { :: Function parse_item takes book: u32, text: &str and gives back Item. :: signature
+item+ function src/dispatch.rs :: pause :: pub fn pause(args: &[String]) -> i32 { :: Function pause takes args: &[String] and gives back i32. :: signature
+item+ function src/dispatch.rs :: queue :: pub fn queue(all: bool, node: Option<String>, explain: Option<String>) -> i32 { :: Function queue takes all: bool, node: Option<String>, explain: Option<String> and gives back i32. :: signature
+item+ function src/dispatch.rs :: resume :: pub fn resume(args: &[String]) -> i32 { :: Function resume takes args: &[String] and gives back i32. :: signature
+item+ function src/dispatch.rs :: show :: pub fn show(addr_s: &str) -> i32 { :: Function show takes addr_s: &str and gives back i32. :: signature
+item+ function src/doctor.rs :: check_queue :: pub fn check_queue(lat: &Lattice) -> Report { :: Doctor's queue section. The §4.5 counts: items by state; terminal items lacking a receipt (must be 0); receipts citing no live item (must be 0); assignments whose heartbeat is stale (counted here; since slice 5 the F5 path acts on them — a stale assignment for an item homed here with no detection on file is a finding, and the failure counter is checked against its receipted history, §8); an audit record for every non-ping closure (a closure without one is a finding, §7.2 — a register-close audit satisfies it for a register-driven closure, §10.3). Slice 3 adds the register link's integrity: a register-born item with no register-seq, a register-seq carried by two items, and the pending write-back count (visible, never a failure — the drain's sweep retries them, §10.4). The §4.6 illegal combinations are checked one by one, each in its own words. No queue finding is fixable by doctor: the repair is a transition or Will's hand, never an invention — a nonzero must-be-0 count is a doctor failure of the same class as a missing homeland index (§4.5). :: doc comment
+item+ const src/lattice.rs :: DISPATCH_ASSIGN_C :: pub const DISPATCH_ASSIGN_C: u32 = 3; :: A fixed value named DISPATCH_ASSIGN_C, set to 3. :: signature
+item+ const src/lattice.rs :: DISPATCH_BRIDGES_C :: pub const DISPATCH_BRIDGES_C: u32 = 5; :: A fixed value named DISPATCH_BRIDGES_C, set to 5. :: signature
+item+ const src/lattice.rs :: DISPATCH_ITEMS_C :: pub const DISPATCH_ITEMS_C: u32 = 2; :: Clusters (Collection) inside dispatch & queue, in the spec's order: queue items first (the ledger family — one Book per item in arrival sequence), then assignments, schedules, bridges, and the register link. Slice 1 lays down the homeland and the items cluster; the rest take their clusters as their slices land. :: doc comment
+item+ const src/lattice.rs :: DISPATCH_REGISTER_C :: pub const DISPATCH_REGISTER_C: u32 = 6; :: A fixed value named DISPATCH_REGISTER_C, set to 6. :: signature
+item+ const src/lattice.rs :: DISPATCH_SCHED_C :: pub const DISPATCH_SCHED_C: u32 = 4; :: A fixed value named DISPATCH_SCHED_C, set to 4. :: signature
+item+ const src/lattice.rs :: HL_DISPATCH :: pub const HL_DISPATCH: [u32; 3] = [11, 11, 11]; :: Dispatch & queue (dispatch core slice 1, spec §3.1): the elevens — send-off country. The pattern extends by one again: the elevens are the node's record of work in flight — what was queued, what is assigned, what runs where. :: doc comment
+item+ const src/lattice.rs :: LEDGER_AUDITS :: pub const LEDGER_AUDITS: u32 = 9; :: Audits (dispatch core slice 2, spec §7.1): one Book per audit — the record of what was checked and why an act was allowed to happen quietly (non-ping closures, re-orders, auto-pauses, register closes, verifications). Collections 2–8 are the shipped ledger kinds; 9 is next, assigned by the spec. :: doc comment
+item~ struct src/lattice.rs :: Lattice :: pub struct Lattice { :: The loaded state document. All reads and writes of node state go through this type; no other module touches the file directly.  The file is a chain (dispatch core slice 1, spec §3.3): universe 1 is `px` — the state every shipped verb reads and writes — and universes 2.. are carried in `extra`, untouched by universe-1 work, preserved across every save. Attempts live there at the same addresses as their item records. :: doc comment
+item+ function src/lattice.rs :: set_universe :: pub fn set_universe(&mut self, n: usize, u: Phext) { :: Replace universe N (1-based), growing the chain with empty universes where a gap would open — slice 4's writer: an acceptance files its attempt universe, an origin files its as-dispatched snapshot. Universe 1 is `px` itself. :: doc comment
+item+ function src/lattice.rs :: universe :: pub fn universe(&self, n: usize) -> Option<&Phext> { :: Universe N of the state chain (1-based; 1 is `px`). :: doc comment
+item+ function src/lattice.rs :: universe_count :: pub fn universe_count(&self) -> usize { :: How many universes the loaded chain carries. :: doc comment
+item+ function src/phext.rs :: parse_universe_addr :: pub fn parse_universe_addr(s: &str) -> Option<(usize, Coord)> { :: Parse an address as the CLI verbs take it: a bare 9D coordinate means universe 1; a `$N:` prefix (libphext 0.6's multiverse addressing) names universe N of a chain. Returns (universe, coordinate); universe numbers start at 1. :: doc comment
+item+ function src/phext.rs :: parse_universes :: pub fn parse_universes(text: &str) -> (Vec<Phext>, bool) { :: Parse a CHAIN file (libphext 0.6: members joined by the chain break \x02, the chain optionally closed by \x03) into its universes — one Phext per member, in chain order — plus the chain's closed flag. A plain single-phext file is a chain of one universe, and reads exactly as `parse` reads it when the file carries no chain bytes as content. (A stream holding several chains is flattened in order: qexo state is one chain, and flattening never loses a member on a load→save round trip.) :: doc comment
+item+ function src/phext.rs :: serialize_universes :: pub fn serialize_universes(universes: &[Phext], closed: bool) -> String { :: Serialize universes back into a chain file. A single universe serializes EXACTLY as `serialize` does — no chain bytes are added — so every state file written before chains existed round-trips byte-for-byte, and a chain only appears on disk once a second universe does. :: doc comment
+item~ const src/plan.rs :: PLAN_VERSION :: pub const PLAN_VERSION: &str = concat!("v", env!("CARGO_PKG_VERSION")); :: A fixed value named PLAN_VERSION, set to concat!("v", env!("CARGO_PKG_VERSION")). :: signature
+item+ const src/plan.rs :: VERSION :: pub const VERSION: &str = env!("CARGO_PKG_VERSION"); :: The build's own version, from the Cargo manifest — the single source every user-facing version stamp derives from (v1.7.2). Hand-written version literals drifted three releases behind (the "qexo v1.4.0" help/status prints on a v1.7.1 binary); deriving them makes that drift impossible by construction. :: doc comment
+item+ function src/plan.rs :: parse_roster :: pub fn parse_roster(v: Option<String>) -> Vec<String> { :: Parse the config record's `ranch_roster` value (v1.7.3): comma-separated node names, whitespace-trimmed, empties and duplicates dropped, order preserved (order carries no preference — the draw is uniform over the roster — it is kept only so the receipt reads as configured). :: doc comment
+item- function src/plan.rs :: execution
+item+ struct src/register.rs :: Credentials :: pub struct Credentials { :: The register credentials, by name. Values are held only in memory, only for the call that presents them; nothing in this module prints, stores, or logs them — the struct deliberately does not derive Debug, so a token is never one careless print away from a log. :: doc comment
+item+ struct src/register.rs :: DrainOutcome :: pub struct DrainOutcome { :: A data shape named DrainOutcome. Its fields are: pub filed: Vec<String>; pub closed: Vec<String>; pub orphan_audits: Vec<String>; pub deduped_entries: usize; pub duplicate_resolutions: usize; pub writeback_pending: Vec<PendingWriteback>. :: signature
+item+ struct src/register.rs :: DrainRecord :: pub struct DrainRecord { :: The register link's standing facts: where the register is, how far the drain has read, and the last pass's cite. Calculated views (lag, health) derive from this record and the service's high-water seqs — never the other way round. :: doc comment
+item+ struct src/register.rs :: EntryAtom :: pub struct EntryAtom { :: A register entry atom (§10.1): text in, from a user, at a time, at a seq. The seq is the drain's dedup key. :: doc comment
+item+ struct src/register.rs :: Fetched :: pub struct Fetched { :: What one drain pass pulled: both logs past the watermarks, and each log's high-water seq (the service's own `last_seq` — where the watermarks may advance to once everything is filed). :: doc comment
+item+ struct src/register.rs :: PendingWriteback :: pub struct PendingWriteback { :: A write-back the drain found still owed: a terminal register item whose resolution is not yet recorded at the register. The sweep after the pull retries these. :: doc comment
+item+ struct src/register.rs :: ResolutionAtom :: pub struct ResolutionAtom { :: A register resolution atom (§10.1): register number, outcome, the user who resolved it, an optional note. :: doc comment
+item+ function src/register.rs :: apply_drain :: pub fn apply_drain(lat: &mut Lattice, fetched: &Fetched, actor: &str) -> Result<DrainOutcome, String> { :: Function apply_drain takes lat: &mut Lattice, fetched: &Fetched, actor: &str and gives back Result<DrainOutcome, String>. :: signature
+item+ function src/register.rs :: credentials_path :: pub fn credentials_path() -> PathBuf { :: Function credentials_path takes no inputs beyond the value it is called on, and gives back PathBuf. :: signature
+item+ function src/register.rs :: drain :: pub fn drain(check: bool, url: Option<String>) -> i32 { :: Function drain takes check: bool, url: Option<String> and gives back i32. :: signature
+item+ function src/register.rs :: drain_record_addr :: pub fn drain_record_addr() -> Coord { :: Function drain_record_addr takes no inputs beyond the value it is called on, and gives back Coord. :: signature
+item+ function src/register.rs :: drain_run :: pub fn drain_run(check: bool, url: Option<String>) -> (i32, dispatch::RunLines) { :: The drain as a captured run (slice 7, spec §2.3): the same pass `drain` makes — fetch, apply, the write-back sweep — rendered into a RunLines instead of printed, so the `--app` driver drives the identical engine and renders its facts in the protocol's shape. :: doc comment
+item+ function src/register.rs :: load_credentials :: pub fn load_credentials() -> Credentials { :: Function load_credentials takes no inputs beyond the value it is called on, and gives back Credentials. :: signature
+item+ function src/register.rs :: load_drain_record :: pub fn load_drain_record(px: &phext::Phext) -> Option<DrainRecord> { :: Function load_drain_record takes px: &phext::Phext and gives back Option<DrainRecord>. :: signature
+item+ function src/register.rs :: parse_credentials :: pub fn parse_credentials(text: &str) -> Credentials { :: Parse the env file's `KEY=value` lines. The keys are the register service's own env names (§10.4) — the drainer node's file carries the same names the box carries, so a value is provisioned once, by Will's hand, in one pass. :: doc comment
+item+ function src/register.rs :: post_entry :: pub fn post_entry(base: &str, qexo_token: &str, text: &str) -> Result<u64, String> { :: POST an entry under the qexo service token (the ratified Q2 leg: items born on the phone appear in the register web view). Returns the entry atom's seq. Its production caller is the phone/app surface (slice 7); slice 3 proves the leg against the double in tests. :: doc comment
+item+ function src/register.rs :: post_resolution :: pub fn post_resolution( base: &str, qexo_token: &str, number: &str, outcome: &str, note: Option<&str>, ) -> Result<u64, String> { :: POST a resolution for register number `n` under the qexo service token. Returns the resolution atom's seq at the register. The token authorizes this and the entries-append — nothing else (§10.4, Q2). :: doc comment
+item+ function src/register.rs :: stamp_of_epoch :: pub fn stamp_of_epoch(ts: i64) -> String { :: The house stamp for an epoch-seconds instant — the same reckoning `now_stamp` writes and `stamp_minutes` parses back, applied to a register atom's `ts`. :: doc comment
+item+ function src/register.rs :: write_back :: pub fn write_back(lat: &mut Lattice, item: &dispatch::Item, outcome: &str, note: Option<&str>) -> Result<u64, String> { :: Record one owed write-back: post the resolution, then — in one save — flip the item's field to `recorded` and write the receipt that proves it (credential cited by name only). A post that lands but cannot be recorded is named as such; the retry it causes posts a duplicate the register keeps and the drain no-ops — the service's own contract (§10.1). :: doc comment
+item+ function src/register.rs :: write_back_with :: pub fn write_back_with( lat: &mut Lattice, item: &dispatch::Item, outcome: &str, note: Option<&str>, creds: &Credentials, ) -> Result<u64, String> { :: Function write_back_with takes lat: &mut Lattice, item: &dispatch::Item, outcome: &str, note: Option<&str>, creds: &Credentials, and gives back Result<u64, String>. :: signature
+item+ enum src/wire.rs :: AcceptOutcome :: pub enum AcceptOutcome { :: The outcome of an acceptance attempt — the serve handler renders it, the dispatch verb cites it. :: doc comment
+item+ const src/wire.rs :: BUNDLE_ANCHOR :: pub const BUNDLE_ANCHOR: Coord = [11, 11, 11, 11, 11, 11, 11, 11, 11]; :: The bundle manifest's address inside $1: — the bundle's own 11.11.11/11.11.11/11.11.11 (§3.4). :: doc comment
+item+ const src/wire.rs :: BUNDLE_SIG :: pub const BUNDLE_SIG: Coord = [11, 11, 11, 11, 11, 11, 11, 11, 12]; :: The detached signature beside the manifest — the next scroll of the anchor's Book (§3.4: "beside it at Scroll 2"). :: doc comment
+item+ struct src/wire.rs :: BriefFacts :: pub struct BriefFacts { :: What placement and the bundle builder read from an item's brief scroll: `capability:` lines (repeatable), `heavy: yes`, and `context:` citations naming scroll selections in the origin's state (one coordinate, or a range `coord..coord`, inclusive, in coordinate order). :: doc comment
+item+ struct src/wire.rs :: Bundle :: pub struct Bundle { :: A built bundle: its identity hash (§4.3), its manifest, and its unsigned universes. :: doc comment
+item+ const src/wire.rs :: HEAVY_CAP :: pub const HEAVY_CAP: usize = 4; :: The heavy-work cap (§6): at most 4 heavy items running fleet-wide, FIFO among heavy items. :: doc comment
+item+ struct src/wire.rs :: NodeFacts :: pub struct NodeFacts { :: One candidate's facts for one placement round. `None` on a measured field means unmeasured, which §6 treats as ineligible — never as zero ("load measured from telemetry, never assumed"). :: doc comment
+item+ struct src/wire.rs :: ParsedBundle :: pub struct ParsedBundle { :: A parsed wire bundle: the manifest's claims, the universes as received, and the manifest's exact bytes (the signature's payload). :: doc comment
+item+ struct src/wire.rs :: Placement :: pub struct Placement { :: A placement round's full account: the eligible set in draw order, every exclusion with its reason, the draw (or the named target), and the seed. :: doc comment
+item+ const src/wire.rs :: THERMAL_LIMIT_C :: pub const THERMAL_LIMIT_C: f64 = 75.0; :: The thermal gate (§6): a node at or above 75 °C fails eligibility (b). :: doc comment
+item+ function src/wire.rs :: accept_wire_bundle :: pub fn accept_wire_bundle(lat: &mut Lattice, gpg: &Gpg, bytes: &[u8]) -> AcceptOutcome { :: Accept a wire bundle on this node (§3.4), in the acceptance rule's order: parse → the signer is a registered peer and the signature verifies → the per-universe hashes match → capability fit → dedup and fencing (§4.3, §4.6 combination 2). On acceptance the attempt is filed and the assignment record written — LIVE (no `status:` line). A replay of the same (item, sha256, attempt) returns the original acceptance receipt and writes nothing. A lower attempt, or an equal attempt carrying a different hash, is refused as stale (the fencing rule); a higher attempt supersedes live older assignments, which are retired in the same pass. Refusals file a refusal receipt in this node's ledgers (§4.6 combination 5's shape) and never file an attempt. Mutates in memory; the caller saves. :: doc comment
+item+ function src/wire.rs :: brief_facts :: pub fn brief_facts(brief: &str) -> BriefFacts { :: Function brief_facts takes brief: &str and gives back BriefFacts. :: signature
+item+ function src/wire.rs :: build_bundle :: pub fn build_bundle( px: &Phext, item: &Item, attempt: u32, resume_from: Option<&str>, resume_text: Option<&str>, bridge: Option<(&str, &str)>, ) -> Result<Bundle, String> { :: Function build_bundle takes px: &Phext, item: &Item, attempt: u32, resume_from: Option<&str>, resume_text: Option<&str>, bridge: Option< and gives back Result<Bundle, String>. :: signature
+item+ function src/wire.rs :: build_bundle_parts :: pub fn build_bundle_parts( px: &Phext, item: &Item, attempt: u32, resume_from: Option<&str>, resume_text: Option<&str>, bridge: Option<(&str, &str)>, ) -> Result<(Vec<Phext>, String), String> { :: Build a bundle's universes (unsigned) and manifest for `item` as it stands in `px` — the record pre-transition (state queued, attempts = attempt−1). `resume_text` is the checkpoint scroll the origin holds in custody for `resume_from`'s cite (§8): when both are present, the checkpoint rides as the bundle's last universe, provenanced like any context universe, so the replacement executor receives the resume currency itself — not just its address. :: doc comment
+item+ function src/wire.rs :: check_checkpoint_outputs :: pub fn check_checkpoint_outputs(text: &str, read: &dyn Fn(&str) -> Option<String>) -> Result<usize, String> { :: Verify a checkpoint's cited outputs (§8): every `output:` line names a scroll, every `output-sha256:` line the hash the executor took of it at checkpoint time; `read` fetches a cited scroll's current text (the origin reads over the scroll route). Ok(n) = n outputs read back and hash-matched. A checkpoint citing no outputs returns Ok(0) — it verifies nothing and proves no progress; the caller treats only n ≥ 1 as a verified progress event. Err names the first failure: an unreadable output, a hash that does not match, or a cite/hash count mismatch. :: doc comment
+item+ function src/wire.rs :: cmd_checkpoint :: pub fn cmd_checkpoint(args: &[String]) -> i32 { :: `qexo checkpoint <item-address> --note <text> [--output <coordinate>]…` — executor-local (§6): a checkpoint scroll in the attempt universe's item Book (the next free scroll at Scroll 4+), a running → running oracle transition, and the cite recorded on the attempt copy and the assignment. Each `--output` names a scroll this attempt produced (a bare coordinate, or `$<n>:<coordinate>` to name its universe); the executor resolves it from its own chain and records the scroll's SHA-256 beside the cite — the pair the origin later reads back to verify progress (§8). An output that cannot be read here is refused before anything is written: a checkpoint never cites what its own node cannot produce. :: doc comment
+item+ function src/wire.rs :: cmd_dispatch :: pub fn cmd_dispatch(item_arg: Option<&str>, to: Option<&str>, check: bool) -> i32 { :: `qexo dispatch [<item-address>] [--to <node>] [--check]` — §2.1, §5, §6. One save, at the end, on success; --check writes nothing at all. The CLI driver: the run below, printed live, byte for byte as always. :: doc comment
+item+ function src/wire.rs :: cmd_fail :: pub fn cmd_fail(args: &[String]) -> i32 { :: `qexo fail <item-address> --note <evidence>` — executor-local (§4.6): the oracle's failure transition on the attempt copy with the evidence the spec requires (the plan lands the third consecutive failure in paused-auto, §8), and the assignment retired with the same evidence as its status — the origin reads it on its next heartbeat reconciliation. :: doc comment
+item+ function src/wire.rs :: cmd_heartbeat :: pub fn cmd_heartbeat(item_arg: &str) -> i32 { :: `qexo heartbeat <item-address>` — one verb, two sides (§6). Executor side: beat — the `heartbeat:` line lands on the assignment record and the attempt universe's record scroll; the first beat moves the item dispatched → running through the oracle. Origin side: read the executor's assignment record over the scroll route and reconcile the home record with what it says — or, on §8's evidences, detect the executor's loss and teleport the item. :: doc comment
+item+ function src/wire.rs :: dispatch_app_run :: pub fn dispatch_app_run(item_arg: Option<&str>, to: Option<&str>, check: bool) -> (i32, dispatch::RunLines) { :: The same dispatch as a captured run (slice 7, §2.3): the `--app` driver's road — one engine, its facts rendered in the protocol's shape by the caller. :: doc comment
+item+ function src/wire.rs :: draw :: pub fn draw(eligible: &[String], seed: u64) -> Option<String> { :: The draw: splitmix64 over the round's seed, modulo the eligible set — uniform over the set as listed, and the eligible set is always listed in a stable order (self first, then peers by cluster), so a round replays exactly from its receipted seed (§6). :: doc comment
+item+ function src/wire.rs :: eligibility :: pub fn eligibility(f: &NodeFacts, required_caps: &[String], bundle_bytes: u64) -> Result<(), String> { :: The eligibility verdict (§6, in the spec's own order): (a) reachability, (b) load and temperature, (c) a resident agent at work, (d) data locality — then capability fit. `Ok(())` is eligible; the `Err` is the exclusion's reason, tagged with its criterion, which the placement receipt carries verbatim (§14: exclusions are recorded, never silent). :: doc comment
+item+ function src/wire.rs :: field_all :: pub fn field_all(text: &str, key: &str) -> Vec<String> { :: Every line in `text` carrying `key:`, in order — `lattice::field` reads the first; capability lists, exclusion lists, and hash lists are plural. :: doc comment
+item+ function src/wire.rs :: file_attempt :: pub fn file_attempt(lat: &mut Lattice, pb: &ParsedBundle, assignment_book: u32) -> Result<(), String> { :: File an accepted bundle's attempt (§3.3, §3.4): the attempt universe (attempt N → universe N+1) holds the executor's working copy of the item — the record copy with `home:` set to the origin node, `bundle-sha256:` set, state dispatched — the brief, and the bundle's paperwork under the assignment's Book family. Universe 1 holds a second copy at the item's home address — the record the oracle and the local verbs read; the attempt itself (its heartbeat lines, its checkpoint scrolls) lives in the stratum, never merged into universe 1 (§3.3). An address already holding a DIFFERENT bundle's copy is a named refusal — two bundles never share a home address in a stratum. :: doc comment
+item+ function src/wire.rs :: file_origin_snapshot :: pub fn file_origin_snapshot(lat: &mut Lattice, pb: &ParsedBundle, assignment_book: u32) { :: File the ORIGIN's as-dispatched snapshot of an attempt (§4.6 combination 7's conservative reading: attempts homed here need chain universes ≥ attempts+1 in the origin's own state). The snapshot is the bundle's contents verbatim — the pristine record copy, the brief, the manifest, the context provenances — never the executor's working copy; the doctor's combination 6 recomputes from either form (the recomputation strips exactly the fields acceptance adds). :: doc comment
+item+ function src/wire.rs :: next_assignment_book :: pub fn next_assignment_book(lat: &Lattice) -> u32 { :: The next free assignment Book (Collection 3). :: doc comment
+item+ function src/wire.rs :: parse_wire_bundle :: pub fn parse_wire_bundle(bytes: &[u8]) -> Result<ParsedBundle, String> { :: Function parse_wire_bundle takes bytes: &[u8] and gives back Result<ParsedBundle, String>. :: signature
+item+ function src/wire.rs :: place :: pub fn place(facts: &[NodeFacts], required_caps: &[String], bundle_bytes: u64, to: Option<&str>) -> Placement { :: Run one placement round over gathered facts. With `--to`, the named node is the target — but its eligibility is still computed and recorded, and an ineligible named node places nothing (§6: naming overrides the draw, never the gates). :: doc comment
+item+ function src/wire.rs :: recompute_bundle_sha256 :: pub fn recompute_bundle_sha256(lat: &Lattice, item_addr: &Coord, attempt: u32) -> Option<String> { :: Recompute an accepted attempt's bundle hash from its stratum: the manifest verbatim (filed under the assignment's Book family), the pristine record copy reconstructed from the working copy (the acceptance's own writes stripped, the pre-transition state restored), the brief, and the context universes regrouped by their provenance scrolls. Returns None when the stratum lacks the pieces (combination 7 owns that finding) and Some(hash) otherwise. The origin's as-dispatched snapshot recomputes identically — its record copy is already pristine, so the strips are no-ops. :: doc comment
+item+ function src/wire.rs :: sign_bundle :: pub fn sign_bundle(gpg: &Gpg, bundle: &Bundle) -> Result<String, String> { :: Sign a built bundle into its wire bytes: the detached signature over the manifest's exact bytes at the anchor's Scroll 2 (§3.4 — the releases cluster's manifest+signature pattern). :: doc comment
+item+ function src/wire.rs :: unsigned_chain_bytes :: pub fn unsigned_chain_bytes(universes: &[Phext]) -> String { :: The canonical bytes a bundle's hash is taken over: the chain of its universes with the signature scroll removed. Deterministic in the item record, the brief, the context selections, the origin identity, the attempt, and the routed bridge (§9.2 — the choice is cited in the manifest, so a different route is a different bundle) — nothing else (§4.3). :: doc comment
+item+ function src/wire.rs :: verify_bundle :: pub fn verify_bundle(lat: &Lattice, gpg: &Gpg, pb: &ParsedBundle) -> Result<(), String> { :: Verify a parsed bundle (§3.4, in the acceptance rule's order): the claimed signer must be a registered peer in this node's state and the detached signature must verify under that identity (registering a peer imported its key — verification is the shipped path); every context universe's hash must match the manifest's list. The bundle hash is carried by the identity rule (§4.3), not verified against the manifest — the manifest cannot contain it; it is checked against the item's record by the callers that hold one. :: doc comment
+stat Markdown files 9 total 3119 blank 0 comment 0 code 3119
+stat Python files 3 total 382 blank 0 comment 0 code 382
+stat Rust files 20 total 23267 blank 0 comment 0 code 23267
+stat TOML files 2 total 78 blank 0 comment 0 code 78
+author+ Emise <emise@phext.io>
+Commit 1f31709f7154 by Will Bickford <wbic16@gmail.com> on 2026-11-18 (EE 0).
+
+Subject: Merge pull request #6 from wbic16/emise/dispatch-slice7-twin-sync
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 26846.
+
+commit 1f31709f71548932ed01516011a41a1ed9817f35
+parent a845450fb76b15cf226342042a343825935daffd
+author Will Bickford <wbic16@gmail.com>
+date 1794970153 2026-11-18
+stat Markdown files 9 total 3119 blank 0 comment 0 code 3119
+stat Python files 3 total 382 blank 0 comment 0 code 382
+stat Rust files 20 total 23267 blank 0 comment 0 code 23267
+stat TOML files 2 total 78 blank 0 comment 0 code 78
+author~ Will Bickford <wbic16@gmail.com> commits 7
+Commit 867cef2fcb3f by Emise <emise@phext.io> on 2026-11-18 (EE 0).
+
+Subject: Version bump: 1.7.3 -> 1.8.0 (dispatch core ship, spec §13.3 slice 8)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 26846.
+
+commit 867cef2fcb3ff7b61f7699f338f3e84706abd908
+parent 1f31709f71548932ed01516011a41a1ed9817f35
+author Emise <emise@phext.io>
+date 1794972587 2026-11-18
+stat Markdown files 9 total 3119 blank 0 comment 0 code 3119
+stat Python files 3 total 382 blank 0 comment 0 code 382
+stat Rust files 20 total 23267 blank 0 comment 0 code 23267
+stat TOML files 2 total 78 blank 0 comment 0 code 78
+author~ Emise <emise@phext.io> commits 2
+Commit 9ba4f826d998 by Emise <emise@phext.io> on 2026-11-18 (EE 0).
+
+Subject: v1.8.0 release notes: CHANGELOG + SHIP-NOTES (dispatch core ship, spec §13.3 slice 8)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 26901.
+
+commit 9ba4f826d998a22ba9d6f703a697619c89ed5a38
+parent 867cef2fcb3ff7b61f7699f338f3e84706abd908
+author Emise <emise@phext.io>
+date 1794973143 2026-11-18
+stat Markdown files 9 total 3174 blank 0 comment 0 code 3174
+stat Python files 3 total 382 blank 0 comment 0 code 382
+stat Rust files 20 total 23267 blank 0 comment 0 code 23267
+stat TOML files 2 total 78 blank 0 comment 0 code 78
+author~ Emise <emise@phext.io> commits 3
+Commit 6f5497308ddc by Will Bickford <wbic16@gmail.com> on 2026-11-18 (EE 0).
+
+Subject: Merge pull request #7 from wbic16/emise/dispatch-slice8-ship
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 21428.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 6f5497308ddc733398f0c915c8f9c63a9a095531
+parent 9ba4f826d998a22ba9d6f703a697619c89ed5a38
+author Will Bickford <wbic16@gmail.com>
+date 1794973474 2026-11-18
+stat Markdown files 9 total 3174 blank 466 comment 0 code 2708
+stat Python files 3 total 382 blank 41 comment 22 code 319
+stat Rust files 20 total 23267 blank 1033 comment 3870 code 18364
+stat TOML files 2 total 78 blank 10 comment 31 code 37
+author~ Will Bickford <wbic16@gmail.com> commits 8
