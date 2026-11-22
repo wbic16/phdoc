@@ -1,6 +1,6 @@
 # scrolltown — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/scrolltown. Scanned at commit 2d1ca6ad931f8d41f45cd34be1f37b7013afa7d9. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/scrolltown/. Scanned at commit 2d1ca6ad931f8d41f45cd34be1f37b7013afa7d9. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -14,11 +14,14 @@ No dependency manifest was found (no Cargo.toml, package.json, requirements.txt,
 
 ## Authors
 
-The git log holds 21 commits. The authors, by commit count:
+The git log holds 21 commits.
 
-- Emise <emise@localhost> — 14 commits (66.7%)
-- Emise <emise@phext.io> — 4 commits (19.0%)
-- Will Bickford <wbic16@gmail.com> — 3 commits (14.3%)
+The author of record is **Will Bickford** — 21 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Emise — 18 commits
+- Will Bickford (his own identities) — 3 commits
 
 ---
 
@@ -74,7 +77,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 - Origin: /home/wbic16/github-archive/mirrors/scrolltown.git
 - Branch: exo
 - Head commit: 2d1ca6ad931f8d41f45cd34be1f37b7013afa7d9
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
