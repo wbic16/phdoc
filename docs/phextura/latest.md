@@ -1,6 +1,6 @@
 # phextura — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 91). Project root: /home/wbic16/phdoc-sweep/proj/phextura. Scanned at commit 9bcc011873c3965ac1cb3306350c007fe5a6c72d. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/phextura/. Scanned at commit 9bcc011873c3965ac1cb3306350c007fe5a6c72d. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -21,12 +21,15 @@ Total packages in the lock file, this one included: 3.
 
 ## Authors
 
-The git log holds 16 commits. The authors, by commit count:
+The git log holds 16 commits.
 
-- Theia <theia@mirrorborn.us> — 9 commits (56.2%)
-- Emise <emise@localhost> — 5 commits (31.2%)
-- Will Bickford <wbic16@gmail.com> — 1 commit (6.2%)
-- wbic16 <wbic16@users.noreply.github.com> — 1 commit (6.2%)
+The author of record is **Will Bickford** — 16 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Theia — 9 commits
+- Emise — 5 commits
+- Will Bickford (his own identities) — 2 commits
 
 ---
 
@@ -82,7 +85,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 - Origin: /home/wbic16/github-archive/mirrors/phextura.git
 - Branch: exo
 - Head commit: 9bcc011873c3965ac1cb3306350c007fe5a6c72d
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
@@ -428,3 +431,9 @@ Signature: `pub fn parse(coordinate: Coordinate, scroll: &str) -> StyleSheet {`
 What it does: Parse a style scroll into a [`StyleSheet`].
 
 (Where these words came from: doc comment.)
+
+---
+
+## Provenance
+
+This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/phextura/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
