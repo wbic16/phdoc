@@ -1,0 +1,26 @@
+# phcc — reference as of commit 32ba2eadf6f2
+
+Commit 32ba2eadf6f2c47bb3682d57a1b1b87bda933eb7. 321 commits folded. Every fact here was folded from the chain's per-commit deltas.
+
+## Provenance
+
+This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/phcc/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
+
+## Dependencies
+
+No dependencies recorded at this point.
+
+## Authors
+
+- bellard <bellard> — 321 commits
+
+## Complexity
+
+- C: 19 files, 25411 lines total, 2339 blank, 3377 comment, 19695 code
+- C header: 13 files, 3473 lines total, 474 blank, 1506 comment, 1493 code
+- Shell: 1 file, 33 lines total, 4 blank, 1 comment, 28 code
+
+Declared RFCs at this point: none declared.
+
+## Public methods and commands
+

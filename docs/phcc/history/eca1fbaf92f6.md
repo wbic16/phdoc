@@ -1,0 +1,32 @@
+# phcc — reference as of commit eca1fbaf92f6
+
+Commit eca1fbaf92f63abc43cbda87c0c512a54da8aaf2. 514 commits folded. Every fact here was folded from the chain's per-commit deltas.
+
+## Provenance
+
+This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/phcc/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
+
+## Dependencies
+
+No dependencies recorded at this point.
+
+## Authors
+
+- Adam Sampson <ats@offog.org> — 1 commit
+- Alexander Egorenkov <ae@linux-pc-2.(none)> — 1 commit
+- Daniel Glöckner <daniel-gl@gmx.net> — 15 commits
+- Kirill Smelkov <kirr@landau.phys.spbu.ru> — 2 commits
+- Shinichiro Hamaji <shinichiro.hamaji _at_ gmail.com> — 42 commits
+- bellard <bellard> — 393 commits
+- grischka <grischka> — 60 commits
+
+## Complexity
+
+- C: 31 files, 31533 lines total, 2917 blank, 4432 comment, 24184 code
+- C header: 76 files, 24177 lines total, 1708 blank, 13433 comment, 9036 code
+- Shell: 1 file, 33 lines total, 4 blank, 1 comment, 28 code
+
+Declared RFCs at this point: none declared.
+
+## Public methods and commands
+
