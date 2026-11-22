@@ -1,0 +1,1423 @@
+Commit 84a88be89c02 by Will Bickford <wbic16@gmail.com> on 2024-08-13 (EE 0).
+
+Subject: Fork of hello-phext v0.2.5
+
+Public items: 55 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1523.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 84a88be89c029e1785686970f3d582e839617971
+parent none
+author Will Bickford <wbic16@gmail.com>
+date 1723521285 2024-08-13
+item+ const src/phext.rs :: ADDRESS_MACRO_ALT :: pub const ADDRESS_MACRO_ALT: u8 = b';'; // also allow ';' for url encoding :: A fixed value named ADDRESS_MACRO_ALT, set to b';'; // also allow ';' for url encoding. :: signature
+item+ const src/phext.rs :: ADDRESS_MACRO_BREAK :: pub const ADDRESS_MACRO_BREAK: u8 = b'/'; // delimiter for macro-coordinates :: A fixed value named ADDRESS_MACRO_BREAK, set to b'/'; // delimiter for macro-coordinates. :: signature
+item+ const src/phext.rs :: ADDRESS_MICRO_BREAK :: pub const ADDRESS_MICRO_BREAK: u8 = b'.'; // delimiter for micro-coordinates :: A fixed value named ADDRESS_MICRO_BREAK, set to b'.'; // delimiter for micro-coordinates. :: signature
+item+ const src/phext.rs :: BOOK_BREAK :: pub const BOOK_BREAK: char = '\x1A'; // 6D Break - replaces Substitute :: A fixed value named BOOK_BREAK, set to '\x1A'; // 6D Break - replaces Substitute. :: signature
+item+ const src/phext.rs :: CHAPTER_BREAK :: pub const CHAPTER_BREAK: char = '\x19'; // 5D Break - replaces End of Tape :: A fixed value named CHAPTER_BREAK, set to '\x19'; // 5D Break - replaces End of Tape. :: signature
+item+ const src/phext.rs :: COLLECTION_BREAK :: pub const COLLECTION_BREAK: char = '\x1D'; // 8D Break - replaces group separator :: A fixed value named COLLECTION_BREAK, set to '\x1D'; // 8D Break - replaces group separator. :: signature
+item+ const src/phext.rs :: COORDINATE_MAXIMUM :: pub const COORDINATE_MAXIMUM: usize = 100; // 2 KB pages x 100^9 = 2 million petabytes :: A fixed value named COORDINATE_MAXIMUM, set to 100; // 2 KB pages x 100^9 = 2 million petabytes. :: signature
+item+ const src/phext.rs :: COORDINATE_MINIMUM :: pub const COORDINATE_MINIMUM: usize = 1; // human numbering - we start at 1, not 0 :: ---------------------------------------------------------------------------------------------------------- phext constants ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ struct src/phext.rs :: Coordinate :: pub struct Coordinate { :: ---------------------------------------------------------------------------------------------------------- @struct Coordinate  provides access to a default-initialized coordinate at 1.1.1/1.1.1/1.1.1  phext coordinates are formed along a 9-dimensional hierarchy with three main arms of the form z3.z2.z1/y3.y2.y1.x3.x2.x1 where:  Z - this arm contains the library (z3), shelf (z2), and series (z1) dimensions Y - this arm contains the collection (y3), volume (y2), and book (y1) dimensions X - this arm contains the chapter (x3), section (x2), and scroll (x1) dimensions ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: Coordinate::validate_coordinate :: pub fn validate_coordinate(&self) -> bool { :: ---------------------------------------------------------------------------------------------------------- @fn validate_coordinate  determines if coord points to a valid phext address  @param coord: the coordinate to reset ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ const src/phext.rs :: LIBRARY_BREAK :: pub const LIBRARY_BREAK: char = '\x01'; // 11th dimension - replaces start of header :: A fixed value named LIBRARY_BREAK, set to '\x01'; // 11th dimension - replaces start of header. :: signature
+item+ const src/phext.rs :: LINE_BREAK :: pub const LINE_BREAK: char = '\x0A'; // same as plain text \o/ :: A fixed value named LINE_BREAK, set to '\x0A'; // same as plain text \o/. :: signature
+item+ const src/phext.rs :: MORE_COWBELL :: pub const MORE_COWBELL: char = '\x07'; // i've got a fever, and the only prescription...is more cowbell! :: A fixed value named MORE_COWBELL, set to '\x07'; // i've got a fever, and the only prescription...is . :: signature
+item+ struct src/phext.rs :: PhextParseError :: pub struct PhextParseError; :: A data shape named PhextParseError. The scanner did not read its fields. :: signature
+item+ struct src/phext.rs :: PositionedScroll :: pub struct PositionedScroll { :: A data shape named PositionedScroll. Its fields are: pub coord: Coordinate; pub scroll: String. :: signature
+item+ struct src/phext.rs :: Range :: pub struct Range { :: A data shape named Range. Its fields are: pub start: Coordinate; pub end: Coordinate. :: signature
+item+ const src/phext.rs :: SCROLL_BREAK :: pub const SCROLL_BREAK: char = '\x17'; // 3D Break - replaces End Transmission Block :: A fixed value named SCROLL_BREAK, set to '\x17'; // 3D Break - replaces End Transmission Block. :: signature
+item+ const src/phext.rs :: SECTION_BREAK :: pub const SECTION_BREAK: char = '\x18'; // 4D Break - replaces Cancel Block :: A fixed value named SECTION_BREAK, set to '\x18'; // 4D Break - replaces Cancel Block. :: signature
+item+ const src/phext.rs :: SERIES_BREAK :: pub const SERIES_BREAK: char = '\x1E'; // 9D Break - replaces record separator :: A fixed value named SERIES_BREAK, set to '\x1E'; // 9D Break - replaces record separator. :: signature
+item+ const src/phext.rs :: SHELF_BREAK :: pub const SHELF_BREAK: char = '\x1F'; // 10D Break - replaces unit separator :: A fixed value named SHELF_BREAK, set to '\x1F'; // 10D Break - replaces unit separator. :: signature
+item+ const src/phext.rs :: VOLUME_BREAK :: pub const VOLUME_BREAK: char = '\x1C'; // 7D Break - replaces file separator :: A fixed value named VOLUME_BREAK, set to '\x1C'; // 7D Break - replaces file separator. :: signature
+item+ struct src/phext.rs :: XCoordinate :: pub struct XCoordinate { :: ---------------------------------------------------------------------------------------------------------- @struct XCoordinate  The large-scale X arm of a phext coordinate (see `Coordinate` below) ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ struct src/phext.rs :: YCoordinate :: pub struct YCoordinate { :: ---------------------------------------------------------------------------------------------------------- @struct YCoordinate  The large-scale Y arm of a phext coordinate (see `Coordinate` below) ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ struct src/phext.rs :: ZCoordinate :: pub struct ZCoordinate { :: ---------------------------------------------------------------------------------------------------------- @struct ZCoordinate  The large-scale Z arm of a phext coordinate (see `Coordinate` below) ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: book_break :: pub fn book_break(&mut self) { :: ------------------------------------------------------------------------------------------------------ @fn book_break ------------------------------------------------------------------------------------------------------ :: doc comment
+item+ function src/phext.rs :: chapter_break :: pub fn chapter_break(&mut self) { :: ------------------------------------------------------------------------------------------------------ @fn chapter_break ------------------------------------------------------------------------------------------------------ :: doc comment
+item+ function src/phext.rs :: check_for_cowbell :: pub fn check_for_cowbell(phext: &str) -> bool { :: Function check_for_cowbell takes phext: &str and gives back bool. :: signature
+item+ function src/phext.rs :: collection_break :: pub fn collection_break(&mut self) { :: ------------------------------------------------------------------------------------------------------ @fn collection_break ------------------------------------------------------------------------------------------------------ :: doc comment
+item+ function src/phext.rs :: contract :: pub fn contract(phext: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: create_summary :: pub fn create_summary(phext: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: default_coordinate :: pub fn default_coordinate() -> Coordinate { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: expand :: pub fn expand(phext: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: fetch :: pub fn fetch(phext: &str, target: Coordinate) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn fetch  retrieves the plain text string located at the given coordinates. important: this can be optimized with hash tables and memo-ized parsing - for now let's keep it simple see my C# implementation in https://github.com/wbic16/terse-editor if you want to do that  @param phext  the raw phext buffer to search @param coord  coordinate to select the scroll from ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: get_subspace_coordinates :: pub fn get_subspace_coordinates(subspace: &[u8], target: Coordinate) -> (usize, usize, Coordinate) { :: ---------------------------------------------------------------------------------------------------------- @fn get_subspace_coordinates  finds the start and end offsets for the given coordinate ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: insert :: pub fn insert(phext: String, location: Coordinate, scroll: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn insert  inserts the content specified in `scroll` at the coordinate within `phext` specified by `location` ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: is_phext_break :: pub fn is_phext_break(byte: u8) -> bool { :: ---------------------------------------------------------------------------------------------------------- @fn is_phext_break  returns true if `byte` corresponds to one of our phext delimiters (line breaks included) ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: library_break :: pub fn library_break(&mut self) { :: ------------------------------------------------------------------------------------------------------ @fn library_break ------------------------------------------------------------------------------------------------------ :: doc comment
+item+ function src/phext.rs :: locate :: pub fn locate(phext: &str, target: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: merge :: pub fn merge(left: &str, right: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn merge  combines `left` and `right` into a new phext document, with content merged on a per-scroll basis ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: navmap :: pub fn navmap(urlbase: &str, phext: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: next_scroll :: pub fn next_scroll(phext: &str, start: Coordinate) -> (PositionedScroll, Coordinate, String) { :: ---------------------------------------------------------------------------------------------------------- @fn next_scroll  retrieves the next scroll from the given string, assuming an arbitrary starting point ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: normalize :: pub fn normalize(phext: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: phokenize :: pub fn phokenize(phext: &str) -> Vec<PositionedScroll> { :: ---------------------------------------------------------------------------------------------------------- @fn phokenize  Transforms a packed phext buffer into a phext token (phoken) stream ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: range_replace :: pub fn range_replace(phext: &str, location: Range, scroll: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: remove :: pub fn remove(phext: &str, location: Coordinate) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: replace :: pub fn replace(phext: &str, location: Coordinate, scroll: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: scroll_break :: pub fn scroll_break(&mut self) { :: ------------------------------------------------------------------------------------------------------ @fn scroll_break ------------------------------------------------------------------------------------------------------ :: doc comment
+item+ function src/phext.rs :: section_break :: pub fn section_break(&mut self) { :: ------------------------------------------------------------------------------------------------------ @fn section_break ------------------------------------------------------------------------------------------------------ :: doc comment
+item+ function src/phext.rs :: series_break :: pub fn series_break(&mut self) { :: ------------------------------------------------------------------------------------------------------ @fn series_break ------------------------------------------------------------------------------------------------------ :: doc comment
+item+ function src/phext.rs :: shelf_break :: pub fn shelf_break(&mut self) { :: ------------------------------------------------------------------------------------------------------ @fn shelf_break ------------------------------------------------------------------------------------------------------ :: doc comment
+item+ function src/phext.rs :: subtract :: pub fn subtract(left: &str, right: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn subtract  Subtracts the scrolls from `left` where there is also content at those coordinates in `right`  Note: This makes it easy to generate a mask for a given phext archive. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: to_coordinate :: pub fn to_coordinate(address: &str) -> Coordinate { :: ---------------------------------------------------------------------------------------------------------- @fn to_coordinate  translates a phext string to a strongly-typed address  @param address  text to parse ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: to_string :: pub fn to_string(&self) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn to_string  produces a quoted string for the given phext address in canonical format (z3.z2.z1/y3.y2.y1/x3.x2.x1)  @param coord  the coordinate to translate ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: to_urlencoded :: pub fn to_urlencoded(&self) -> String { :: Function to_urlencoded takes no inputs beyond the value it is called on, and gives back String. :: signature
+item+ function src/phext.rs :: volume_break :: pub fn volume_break(&mut self) { :: ------------------------------------------------------------------------------------------------------ @fn volume_break ------------------------------------------------------------------------------------------------------ :: doc comment
+stat Rust files 3 total 2053 blank 233 comment 306 code 1514
+stat TOML files 1 total 10 blank 1 comment 0 code 9
+author+ Will Bickford <wbic16@gmail.com>
+Commit 616dd1d73017 by Will Bickford <wbic16@gmail.com> on 2024-08-13 (EE 0).
+
+Subject: Cleanup warnings
+
+Public items: 0 added, 1 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1540.
+
+commit 616dd1d730175484ad777b7f60f763bc4ca5b3ae
+parent 84a88be89c029e1785686970f3d582e839617971
+author Will Bickford <wbic16@gmail.com>
+date 1723586296 2024-08-13
+item- function src/phext.rs :: locate
+stat Rust files 3 total 2070 blank 233 comment 306 code 1531
+stat TOML files 1 total 10 blank 1 comment 0 code 9
+author~ Will Bickford <wbic16@gmail.com> commits 2
+Commit 7f184349528d by Will Bickford <wbic16@gmail.com> on 2024-08-14 (EE 0).
+
+Subject: v0.1.1 - Default to origin for un-parsed coordinates
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1546.
+
+commit 7f184349528dac7c0eacae06706c95912e4d1cbe
+parent 616dd1d730175484ad777b7f60f763bc4ca5b3ae
+author Will Bickford <wbic16@gmail.com>
+date 1723673624 2024-08-14
+stat Rust files 3 total 2076 blank 233 comment 306 code 1537
+stat TOML files 1 total 10 blank 1 comment 0 code 9
+author~ Will Bickford <wbic16@gmail.com> commits 3
+Commit d0589da30d99 by Will Bickford <wbic16@gmail.com> on 2024-08-15 (EE 0).
+
+Subject: v0.1.2 - added textmap
+
+Public items: 1 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1564.
+
+commit d0589da30d99e2fedb88b284639a51f6cb46bd03
+parent 7f184349528dac7c0eacae06706c95912e4d1cbe
+author Will Bickford <wbic16@gmail.com>
+date 1723698589 2024-08-15
+item+ function src/phext.rs :: textmap :: pub fn textmap(phext: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Rust files 3 total 2094 blank 233 comment 306 code 1555
+stat TOML files 1 total 10 blank 1 comment 0 code 9
+author~ Will Bickford <wbic16@gmail.com> commits 4
+Commit 9075a9f71a68 by Will Bickford <wbic16@gmail.com> on 2024-08-20 (EE 0).
+
+Subject: v0.1.3 - Added manifest and checksum
+
+Public items: 2 added, 0 removed, 0 changed. Dependencies: xxhash-rust added at 0.8.5. Code lines after this commit: 1638.
+
+commit 9075a9f71a68c9da59b586ee0fed251ecc4ebdd3
+parent d0589da30d99e2fedb88b284639a51f6cb46bd03
+author Will Bickford <wbic16@gmail.com>
+date 1724128238 2024-08-20
+dep+ Cargo.toml :: xxhash-rust :: 0.8.5
+item+ function src/phext.rs :: checksum :: pub fn checksum(phext: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn checksum  Provides a 128-bit content checksum using the fastest algorithm Rust provides: xxh3 ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: manifest :: pub fn manifest(phext: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Rust files 3 total 2167 blank 233 comment 306 code 1628
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 5
+Commit f9a76701eb7e by Will Bickford <wbic16@gmail.com> on 2024-08-22 (EE 0).
+
+Subject: v0.1.4 Documentation Update
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1724.
+
+commit f9a76701eb7ea3b27d163d26dc74817e5458f846
+parent 9075a9f71a68c9da59b586ee0fed251ecc4ebdd3
+author Will Bickford <wbic16@gmail.com>
+date 1724302883 2024-08-22
+stat Markdown files 1 total 86 blank 0 comment 0 code 86
+stat Rust files 3 total 2167 blank 233 comment 306 code 1628
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 6
+Commit 1f61765e58bc by Will Bickford <wbic16@gmail.com> on 2024-08-23 (EE 0).
+
+Subject: Added some libphext todos
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1735.
+
+commit 1f61765e58bc650516c5fc23532f51f57695367d
+parent f9a76701eb7ea3b27d163d26dc74817e5458f846
+author Will Bickford <wbic16@gmail.com>
+date 1724373553 2024-08-23
+stat Markdown files 2 total 97 blank 0 comment 0 code 97
+stat Rust files 3 total 2167 blank 233 comment 306 code 1628
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 7
+Commit 97f3d56cadb2 by Will Bickford <wbic16@gmail.com> on 2024-08-23 (EE 0).
+
+Subject: v0.1.5 added index and offset calculation
+
+Public items: 2 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1822.
+
+commit 97f3d56cadb29ccd28a91f8abb9fd4f07bf3d61c
+parent 1f61765e58bc650516c5fc23532f51f57695367d
+author Will Bickford <wbic16@gmail.com>
+date 1724384629 2024-08-23
+item+ function src/phext.rs :: index :: pub fn index(phext: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: offset :: pub fn offset(phext: &str, coord: Coordinate) -> usize { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Markdown files 2 total 97 blank 0 comment 0 code 97
+stat Rust files 3 total 2254 blank 233 comment 306 code 1715
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 8
+Commit b11505ec5025 by Will Bickford <wbic16@gmail.com> on 2024-08-23 (EE 0).
+
+Subject: Support empty scrolls too
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1846.
+
+commit b11505ec5025e6cdcd2b71c8aa959a04a42d68bd
+parent 97f3d56cadb29ccd28a91f8abb9fd4f07bf3d61c
+author Will Bickford <wbic16@gmail.com>
+date 1724422070 2024-08-23
+stat Markdown files 2 total 97 blank 0 comment 0 code 97
+stat Rust files 3 total 2278 blank 233 comment 306 code 1739
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 9
+Commit 0c8b28601481 by Will Bickford <wbic16@gmail.com> on 2024-08-25 (EE 0).
+
+Subject: Added sqlite and file system conversion targets
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1848.
+
+commit 0c8b28601481510f3159f4988d5bfe31e0c552bc
+parent b11505ec5025e6cdcd2b71c8aa959a04a42d68bd
+author Will Bickford <wbic16@gmail.com>
+date 1724554233 2024-08-25
+stat Markdown files 2 total 99 blank 0 comment 0 code 99
+stat Rust files 3 total 2278 blank 233 comment 306 code 1739
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 10
+Commit 1018ed4fe0a4 by Will Bickford <wbic16@gmail.com> on 2024-08-25 (EE 0).
+
+Subject: Capturing some thoughts on next steps
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1856.
+
+commit 1018ed4fe0a484ede13ce10ab4762c2f01b6f30d
+parent 0c8b28601481510f3159f4988d5bfe31e0c552bc
+author Will Bickford <wbic16@gmail.com>
+date 1724555466 2024-08-25
+stat Markdown files 2 total 107 blank 0 comment 0 code 107
+stat Rust files 3 total 2278 blank 233 comment 306 code 1739
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 11
+Commit f411d75df987 by Will Bickford <wbic16@gmail.com> on 2024-08-26 (EE 0).
+
+Subject: Added a todo step for soundex checksums
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1859.
+
+commit f411d75df987944331e306625b8679ec71706942
+parent 1018ed4fe0a484ede13ce10ab4762c2f01b6f30d
+author Will Bickford <wbic16@gmail.com>
+date 1724635071 2024-08-26
+stat Markdown files 2 total 110 blank 0 comment 0 code 110
+stat Rust files 3 total 2278 blank 233 comment 306 code 1739
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 12
+Commit 43558fbbd70a by Will Bickford <wbic16@gmail.com> on 2024-08-26 (EE 0).
+
+Subject: v0.1.6 - Added soundex v1 from research as a phext
+
+Public items: 1 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1903.
+
+commit 43558fbbd70aa9ebdf70a908d377ff4dd19fe636
+parent f411d75df987944331e306625b8679ec71706942
+author Will Bickford <wbic16@gmail.com>
+date 1724644266 2024-08-26
+item+ function src/phext.rs :: soundex_v1 :: pub fn soundex_v1(phext: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Markdown files 2 total 110 blank 0 comment 0 code 110
+stat Rust files 3 total 2322 blank 233 comment 306 code 1783
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 13
+Commit cf06f71f1ac8 by Will Bickford <wbic16@gmail.com> on 2024-08-26 (EE 0).
+
+Subject: v0.1.7 - avoid zeros in soundex output
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1903.
+
+commit cf06f71f1ac808b50570702ba87f087c61d3453e
+parent 43558fbbd70aa9ebdf70a908d377ff4dd19fe636
+author Will Bickford <wbic16@gmail.com>
+date 1724645390 2024-08-26
+stat Markdown files 2 total 110 blank 0 comment 0 code 110
+stat Rust files 3 total 2322 blank 233 comment 306 code 1783
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 14
+Commit 94c2248bc723 by Will Bickford <wbic16@gmail.com> on 2024-11-09 (EE 0).
+
+Subject: v0.1.8 - added ::new methods
+
+Public items: 6 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1955.
+
+commit 94c2248bc7233080ad9761d554738a806cc9e953
+parent cf06f71f1ac808b50570702ba87f087c61d3453e
+author Will Bickford <wbic16@gmail.com>
+date 1731129288 2024-11-09
+item+ function src/phext.rs :: Coordinate::new :: pub fn new() -> Coordinate { :: Function Coordinate::new takes no inputs beyond the value it is called on, and gives back Coordinate. :: signature
+item+ function src/phext.rs :: PositionedScroll::new :: pub fn new() -> PositionedScroll { :: Function PositionedScroll::new takes no inputs beyond the value it is called on, and gives back PositionedScroll. :: signature
+item+ function src/phext.rs :: Range::new :: pub fn new() -> Range { :: Function Range::new takes no inputs beyond the value it is called on, and gives back Range. :: signature
+item+ function src/phext.rs :: XCoordinate::new :: pub fn new() -> XCoordinate { :: Function XCoordinate::new takes no inputs beyond the value it is called on, and gives back XCoordinate. :: signature
+item+ function src/phext.rs :: YCoordinate::new :: pub fn new() -> YCoordinate { :: Function YCoordinate::new takes no inputs beyond the value it is called on, and gives back YCoordinate. :: signature
+item+ function src/phext.rs :: ZCoordinate::new :: pub fn new() -> ZCoordinate { :: Function ZCoordinate::new takes no inputs beyond the value it is called on, and gives back ZCoordinate. :: signature
+stat Markdown files 2 total 110 blank 0 comment 0 code 110
+stat Rust files 3 total 2374 blank 233 comment 306 code 1835
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 15
+Commit 40b6d36a937f by Will Bickford <wbic16@gmail.com> on 2024-12-27 (EE 0).
+
+Subject: Fixed a regression with empty final scrolls
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1976.
+
+commit 40b6d36a937f194379c33abac334f864743a2215
+parent 94c2248bc7233080ad9761d554738a806cc9e953
+author Will Bickford <wbic16@gmail.com>
+date 1735275757 2024-12-27
+stat Markdown files 2 total 110 blank 0 comment 0 code 110
+stat Rust files 3 total 2395 blank 233 comment 306 code 1856
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 16
+Commit b5a8c5d6d40b by Will Bickford <wbic16@gmail.com> on 2025-01-10 (EE 0).
+
+Subject: Fixed a regression with using coordinate 100
+
+Public items: 0 added, 0 removed, 1 changed. Dependencies did not change. Code lines after this commit: 2018.
+
+commit b5a8c5d6d40b084dd8dd9682638d396be65cec89
+parent 40b6d36a937f194379c33abac334f864743a2215
+author Will Bickford <wbic16@gmail.com>
+date 1736549924 2025-01-10
+item~ const src/phext.rs :: COORDINATE_MAXIMUM :: pub const COORDINATE_MAXIMUM: usize = 1000; // 2 KB pages x 100^9 = 2 million petabytes :: A fixed value named COORDINATE_MAXIMUM, set to 1000; // 2 KB pages x 100^9 = 2 million petabytes. :: signature
+stat Markdown files 2 total 114 blank 0 comment 0 code 114
+stat Rust files 4 total 2433 blank 233 comment 306 code 1894
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 17
+Commit 84a8ae949e5b by Will Bickford <wbic16@gmail.com> on 2025-01-26 (EE 0).
+
+Subject: Added phext::explode and phext::implode
+
+Public items: 2 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2073.
+
+commit 84a8ae949e5b4c6db2ba05577e980a3e53d5d386
+parent b5a8c5d6d40b084dd8dd9682638d396be65cec89
+author Will Bickford <wbic16@gmail.com>
+date 1737860846 2025-01-26
+item+ function src/phext.rs :: explode :: pub fn explode(phext: &str) -> HashMap<Coordinate, String> { :: ---------------------------------------------------------------------------------------------------------- @fn explode  Explodes an input phext into a hierarchical hashap, suitable for fast access and updates ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: implode :: pub fn implode(map: HashMap::<Coordinate, String>) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn implode  Serializes a hierarchical hash of scrolls into a monolithic phext document. ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Markdown files 2 total 116 blank 0 comment 0 code 116
+stat Rust files 4 total 2486 blank 233 comment 306 code 1947
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 18
+Commit cfbb68fa01d1 by Will Bickford <wbic16@gmail.com> on 2025-02-10 (EE 0).
+
+Subject: TODO cleanup
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2072.
+
+commit cfbb68fa01d1aa0d4ca642a4e0b6a87618446af5
+parent 84a8ae949e5b4c6db2ba05577e980a3e53d5d386
+author Will Bickford <wbic16@gmail.com>
+date 1739164262 2025-02-10
+stat Markdown files 2 total 115 blank 0 comment 0 code 115
+stat Rust files 4 total 2486 blank 233 comment 306 code 1947
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 19
+Commit f24b2c562ab4 by Will Bickford <wbic16@gmail.com> on 2025-05-23 (EE 0).
+
+Subject: Added a test for 3-digit coordinates
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2081.
+
+commit f24b2c562ab49583b912f2a8d5688fc7add1cfe1
+parent cfbb68fa01d1aa0d4ca642a4e0b6a87618446af5
+author Will Bickford <wbic16@gmail.com>
+date 1748016075 2025-05-23
+stat Markdown files 2 total 115 blank 0 comment 0 code 115
+stat Rust files 4 total 2495 blank 233 comment 306 code 1956
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 20
+Commit 112f2a26005c by Will Bickford <wbic16@gmail.com> on 2025-06-27 (EE 0).
+
+Subject: Subspace filtering ideas
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2125.
+
+commit 112f2a26005cc6cdb8433cbdedb5f2e78070856e
+parent f24b2c562ab49583b912f2a8d5688fc7add1cfe1
+author Will Bickford <wbic16@gmail.com>
+date 1751002075 2025-06-27
+stat Markdown files 2 total 115 blank 0 comment 0 code 115
+stat Rust files 4 total 2539 blank 233 comment 306 code 2000
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 21
+Commit 588cb0985c28 by Will Bickford <wbic16@gmail.com> on 2025-07-30 (EE 0).
+
+Subject: Tracking divergence with libphext-py
+
+Public items: 0 added, 0 removed, 1 changed. Dependencies did not change. Code lines after this commit: 2127.
+
+commit 588cb0985c28d6e13da8e41d4db1191adf558578
+parent 112f2a26005cc6cdb8433cbdedb5f2e78070856e
+author Will Bickford <wbic16@gmail.com>
+date 1753854858 2025-07-30
+item~ function src/phext.rs :: range_replace :: pub fn range_replace(phext: &str, location: Range, scroll: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- errata: libphext-py opted for ranges that operate on a stack of positioned scrolls this method applies the range edit to subspace directly...we probably need both :: doc comment
+stat Markdown files 2 total 115 blank 0 comment 0 code 115
+stat Rust files 4 total 2541 blank 233 comment 306 code 2002
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 22
+Commit 30728242091d by Will Bickford <wbic16@gmail.com> on 2025-08-06 (EE 0).
+
+Subject: TODO cleanup
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2121.
+
+commit 30728242091dafa89f75bd837da4909d3b9e26f1
+parent 588cb0985c28d6e13da8e41d4db1191adf558578
+author Will Bickford <wbic16@gmail.com>
+date 1754523059 2025-08-06
+stat Markdown files 2 total 109 blank 0 comment 0 code 109
+stat Rust files 4 total 2541 blank 233 comment 306 code 2002
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 23
+Commit cf8cf22ff056 by Will Bickford <wbic16@gmail.com> on 2025-08-06 (EE 0).
+
+Subject: Minor tweak noticed while porting libphext-py
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2118.
+
+commit cf8cf22ff056f136deb20b69610572c582aad5d6
+parent 30728242091dafa89f75bd837da4909d3b9e26f1
+author Will Bickford <wbic16@gmail.com>
+date 1754523091 2025-08-06
+stat Markdown files 2 total 109 blank 0 comment 0 code 109
+stat Rust files 4 total 2538 blank 233 comment 306 code 1999
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 24
+Commit e38d974a0169 by Will Bickford <wbic16@gmail.com> on 2026-02-11 (EE 0).
+
+Subject: Fix utf8 rendering issues
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1960.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit e38d974a0169b079ace35e9abd671b70683e919a
+parent cf8cf22ff056f136deb20b69610572c582aad5d6
+author Will Bickford <wbic16@gmail.com>
+date 1770777222 2026-02-11
+stat Markdown files 2 total 109 blank 23 comment 0 code 86
+stat Rust files 4 total 2554 blank 312 comment 378 code 1864
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 25
+Commit 204130aa39f3 by Orin <orin@mirrorborn.us> on 2026-03-23 (EE 0).
+
+Subject: refactor: rename .md/.phext files to lowercase (mirrorborn naming convention)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1960.
+
+commit 204130aa39f39996c2866756f960886598d668f2
+parent e38d974a0169b079ace35e9abd671b70683e919a
+author Orin <orin@mirrorborn.us>
+date 1774230641 2026-03-23
+stat Markdown files 2 total 109 blank 23 comment 0 code 86
+stat Rust files 4 total 2554 blank 312 comment 378 code 1864
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author+ Orin <orin@mirrorborn.us>
+Commit dd7197dedaeb by Will Bickford <wbic16@gmail.com> on 2026-10-26 (EE 0).
+
+Subject: Make phokenize linear-time
+
+Public items: 1 added, 0 removed, 1 changed. Dependencies did not change. Code lines after this commit: 2192.
+
+commit dd7197dedaebf02480449d3ffbdb02a0f74af9eb
+parent 204130aa39f39996c2866756f960886598d668f2
+author Will Bickford <wbic16@gmail.com>
+date 1792985037 2026-10-26
+item+ entry-point examples/explode_bench.rs :: main :: fn main() { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: signature
+item~ function src/phext.rs :: phokenize :: pub fn phokenize(phext: &str) -> Vec<PositionedScroll> { :: ---------------------------------------------------------------------------------------------------------- @fn phokenize  Transforms a packed phext buffer into a phext token (phoken) stream  One pass over the bytes. Each step matches a call to `next_scroll`: skip leading breaks, take a run of text, then consume the break that ends it. Earlier versions called `next_scroll` in a loop, which copied the rest of the document for every scroll and made this quadratic in the document size. ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Markdown files 2 total 109 blank 23 comment 0 code 86
+stat Rust files 6 total 2786 blank 312 comment 378 code 2096
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 26
+Commit 1cade206e7e9 by Will Bickford <wbic16@gmail.com> on 2026-10-26 (EE 0).
+
+Subject: Scan for a coordinate without comparing on every byte
+
+Public items: 0 added, 0 removed, 1 changed. Dependencies did not change. Code lines after this commit: 2298.
+
+commit 1cade206e7e995ff5d7aa0fa2d8671a637c8e789
+parent dd7197dedaebf02480449d3ffbdb02a0f74af9eb
+author Will Bickford <wbic16@gmail.com>
+date 1792987669 2026-10-26
+item~ function src/phext.rs :: get_subspace_coordinates :: pub fn get_subspace_coordinates(subspace: &[u8], target: Coordinate) -> (usize, usize, Coordinate) { :: ---------------------------------------------------------------------------------------------------------- @fn get_subspace_coordinates  finds the start and end offsets for the given coordinate  The walker only moves on a dimension break, so its comparisons with `target` are redone only at the start and right after a break, and the scan stops once the end is known (stage 2): nothing after that point can change the result. Earlier versions compared full coordinates on every byte and always scanned to the end of the document. ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Markdown files 2 total 109 blank 23 comment 0 code 86
+stat Rust files 6 total 2892 blank 312 comment 378 code 2202
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 27
+Commit 2d81da76a558 by Will Bickford <wbic16@gmail.com> on 2026-10-26 (EE 0).
+
+Subject: Merge pull request #3 from wbic16/linear-tokenize
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2298.
+
+commit 2d81da76a5580bb0f1de9b794eb05169cd3eb369
+parent 1cade206e7e995ff5d7aa0fa2d8671a637c8e789
+author Will Bickford <wbic16@gmail.com>
+date 1792987758 2026-10-26
+stat Markdown files 2 total 109 blank 23 comment 0 code 86
+stat Rust files 6 total 2892 blank 312 comment 378 code 2202
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 28
+Commit 963eb8e60490 by Will Bickford <wbic16@gmail.com> on 2026-10-26 (EE 0).
+
+Subject: Package libphext 0.3.2 with linear tokenization
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2298.
+
+commit 963eb8e60490d2d20775f2681ec66d3842809a19
+parent 2d81da76a5580bb0f1de9b794eb05169cd3eb369
+author Will Bickford <wbic16@gmail.com>
+date 1792987886 2026-10-26
+stat Markdown files 2 total 109 blank 23 comment 0 code 86
+stat Rust files 6 total 2892 blank 312 comment 378 code 2202
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 29
+Commit 6aa6b04e802d by Will Bickford <wbic16@gmail.com> on 2026-10-26 (EE 0).
+
+Subject: Fix edits at missing coordinates, subtract, offset, and summaries
+
+Public items: 0 added, 0 removed, 2 changed. Dependencies did not change. Code lines after this commit: 2302.
+
+commit 6aa6b04e802d9678c95eff21c4c33087df641d7a
+parent 963eb8e60490d2d20775f2681ec66d3842809a19
+author Will Bickford <wbic16@gmail.com>
+date 1792990370 2026-10-26
+item~ function src/phext.rs :: get_subspace_coordinates :: pub fn get_subspace_coordinates(subspace: &[u8], target: Coordinate) -> (usize, usize, Coordinate) { :: ---------------------------------------------------------------------------------------------------------- @fn get_subspace_coordinates  finds the start and end offsets for the given coordinate  Returns `(start, end, best)`: - when the document reaches `target`, `start..end` is that scroll's text (empty if it has none) and `best` is `target`; - otherwise `start == end` is where the scroll would go: just before the break that steps past `target`, or the end of the document. `best` is the coordinate in effect there, so writing breaks from `best` up to `target` and then the text places it correctly.  The walker only moves on a dimension break, so it is compared with `target` only at the start and after each break, and the scan stops as soon as it steps past `target`.  Earlier versions returned `start = 0` for a missing coordinate that falls between two scrolls, so `fetch`, `replace`, and `remove` acted on the scroll before it, and they missed a scroll reached only by breaks at the very end of the document. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/phext.rs :: offset :: pub fn offset(phext: &str, coord: Coordinate) -> usize { :: ----------------------------------------------------------------------------------------------------------  The offset of the scroll at `coord`, or of the last scroll before it. 0 when no scroll comes at or before `coord` (earlier versions panicked there). :: doc comment
+stat Markdown files 2 total 109 blank 23 comment 0 code 86
+stat Rust files 6 total 2896 blank 312 comment 378 code 2206
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 30
+Commit 6e00d9cc7990 by Will Bickford <wbic16@gmail.com> on 2026-10-26 (EE 0).
+
+Subject: Skip breaks that cannot move a coordinate past 999
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2309.
+
+commit 6e00d9cc7990d44c406380d6d8089111278ffee6
+parent 6aa6b04e802d9678c95eff21c4c33087df641d7a
+author Will Bickford <wbic16@gmail.com>
+date 1792990917 2026-10-26
+stat Markdown files 2 total 109 blank 23 comment 0 code 86
+stat Rust files 6 total 2903 blank 312 comment 378 code 2213
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 31
+Commit 9670f707252b by Will Bickford <wbic16@gmail.com> on 2026-10-26 (EE 0).
+
+Subject: Merge pull request #4 from wbic16/fix-scroll-edges
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2309.
+
+commit 9670f707252be5fb0eec59e98bea2682608f0b8b
+parent 6e00d9cc7990d44c406380d6d8089111278ffee6
+author Will Bickford <wbic16@gmail.com>
+date 1792991209 2026-10-26
+stat Markdown files 2 total 109 blank 23 comment 0 code 86
+stat Rust files 6 total 2903 blank 312 comment 378 code 2213
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 32
+Commit 347b312c882b by Will Bickford <wbic16@gmail.com> on 2026-10-26 (EE 0).
+
+Subject: Package v0.3.3
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2309.
+
+commit 347b312c882b64c876f064336a179b8832de01a9
+parent 9670f707252be5fb0eec59e98bea2682608f0b8b
+author Will Bickford <wbic16@gmail.com>
+date 1792991282 2026-10-26
+stat Markdown files 2 total 109 blank 23 comment 0 code 86
+stat Rust files 6 total 2903 blank 312 comment 378 code 2213
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 33
+Commit 240714d4cd0d by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Remove the 999 coordinate cap; bump to 0.4.0
+
+Public items: 0 added, 1 removed, 1 changed. Dependencies did not change. Code lines after this commit: 2384.
+
+commit 240714d4cd0dc062b0a7209bcb802f91cd3f81f7
+parent 347b312c882b64c876f064336a179b8832de01a9
+author Emise <emise@localhost>
+date 1793562900 2026-11-01
+item~ struct src/phext.rs :: Coordinate :: pub struct Coordinate { :: ---------------------------------------------------------------------------------------------------------- @struct Coordinate  provides access to a default-initialized coordinate at 1.1.1/1.1.1/1.1.1  phext coordinates are formed along a 9-dimensional hierarchy with three main arms of the form z3.z2.z1/y3.y2.y1.x3.x2.x1 where:  Z - this arm contains the library (z3), shelf (z2), and series (z1) dimensions Y - this arm contains the collection (y3), volume (y2), and book (y1) dimensions X - this arm contains the chapter (x3), section (x2), and scroll (x1) dimensions  Dense graphs: phext is sparse by design. Coordinate components are unbounded, but a fully-populated dense graph contains the product of its dimensions' extents in scrolls — a dense block spanning 1000 in each of 9 dimensions implies 10^27 scrolls. Materializing, exploding, or indexing such a graph costs memory proportional to its populated scroll count. The old 999 cap never protected against this (999^9 was already unreachable); sparsity does. Keep graphs sparse. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item- const src/phext.rs :: COORDINATE_MAXIMUM
+stat Markdown files 2 total 111 blank 23 comment 0 code 88
+stat Rust files 6 total 2976 blank 312 comment 378 code 2286
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author+ Emise <emise@localhost>
+Commit e9a977f0154d by Will Bickford <wbic16@gmail.com> on 2026-11-01 (EE 0).
+
+Subject: Merge pull request #5 from wbic16/unbounded-coordinates-0.4
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2384.
+
+commit e9a977f0154d3ab7c33c1ca806d4cc632ab2a4f6
+parent 240714d4cd0dc062b0a7209bcb802f91cd3f81f7
+author Will Bickford <wbic16@gmail.com>
+date 1793564000 2026-11-01
+stat Markdown files 2 total 111 blank 23 comment 0 code 88
+stat Rust files 6 total 2976 blank 312 comment 378 code 2286
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 34
+Commit ddb72afff405 by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Add scripts/test.sh, scripts/build.sh, scripts/publish.sh + Release steps
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2493.
+
+commit ddb72afff4057d06702abe7aa70a4d37bd56f61e
+parent e9a977f0154d3ab7c33c1ca806d4cc632ab2a4f6
+author Emise <emise@localhost>
+date 1793564801 2026-11-01
+stat Markdown files 2 total 123 blank 23 comment 0 code 100
+stat Rust files 6 total 2976 blank 312 comment 378 code 2286
+stat Shell files 3 total 97 blank 0 comment 0 code 97
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Emise <emise@localhost> commits 2
+Commit 7cbabc20f85f by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: publish.sh: one transparent retry for the wall-clock timing test
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2506.
+
+commit 7cbabc20f85ffa63297f8a7b0bdc6114abfc5cf7
+parent ddb72afff4057d06702abe7aa70a4d37bd56f61e
+author Emise <emise@localhost>
+date 1793564801 2026-11-01
+stat Markdown files 2 total 123 blank 23 comment 0 code 100
+stat Rust files 6 total 2976 blank 312 comment 378 code 2286
+stat Shell files 3 total 110 blank 0 comment 0 code 110
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Emise <emise@localhost> commits 3
+Commit dc58df21d131 by Emise <emise@localhost> on 2026-11-07 (EE 0).
+
+Subject: Accept both LF and CRLF lengths in helios_stalled_parse
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2395.
+
+commit dc58df21d1310f120525cf0748701300b5739e13
+parent 7cbabc20f85ffa63297f8a7b0bdc6114abfc5cf7
+author Emise <emise@localhost>
+date 1794033566 2026-11-07
+stat Markdown files 2 total 111 blank 23 comment 0 code 88
+stat Rust files 6 total 2987 blank 312 comment 378 code 2297
+stat Shell files 3 total 0 blank 0 comment 0 code 0
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Emise <emise@localhost> commits 4
+Commit f1b63da61373 by Emise <emise@localhost> on 2026-11-07 (EE 0).
+
+Subject: v0.4.1: remove unsafe from expand/contract ahead of formal verification
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2387.
+
+commit f1b63da613738fb85a15c64fe6fda7e11de810d4
+parent dc58df21d1310f120525cf0748701300b5739e13
+author Emise <emise@localhost>
+date 1794040070 2026-11-07
+stat Markdown files 2 total 111 blank 23 comment 0 code 88
+stat Rust files 6 total 2979 blank 312 comment 378 code 2289
+stat Shell files 3 total 0 blank 0 comment 0 code 0
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Emise <emise@localhost> commits 5
+Commit f93ef388b9cb by Emise <emise@localhost> on 2026-11-07 (EE 0).
+
+Subject: Add scripts/install-proof-tools.sh (Charon/Aeneas/Lean installer)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2568.
+
+commit f93ef388b9cb35d01cbf34cb41e2b23d5a638389
+parent f1b63da613738fb85a15c64fe6fda7e11de810d4
+author Emise <emise@localhost>
+date 1794040073 2026-11-07
+stat Markdown files 2 total 111 blank 23 comment 0 code 88
+stat Rust files 6 total 2979 blank 312 comment 378 code 2289
+stat Shell files 4 total 181 blank 0 comment 0 code 181
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Emise <emise@localhost> commits 6
+Commit 3d47aa276825 by Emise <emise@localhost> on 2026-11-07 (EE 0).
+
+Subject: Replace Vec::collect with explicit loops for Aeneas translation
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2575.
+
+commit 3d47aa276825c603b385e5cc427534b93f75f3e3
+parent f93ef388b9cb35d01cbf34cb41e2b23d5a638389
+author Emise <emise@localhost>
+date 1794040075 2026-11-07
+stat Markdown files 2 total 111 blank 23 comment 0 code 88
+stat Rust files 6 total 2986 blank 312 comment 378 code 2296
+stat Shell files 4 total 181 blank 0 comment 0 code 181
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Emise <emise@localhost> commits 7
+Commit b5125fda709b by Emise <emise@localhost> on 2026-11-07 (EE 0).
+
+Subject: Avoid Pattern-generic str APIs (split/contains) for Aeneas translation
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2590.
+
+commit b5125fda709bfa6ca283e3bda086f18472e2a5ac
+parent 3d47aa276825c603b385e5cc427534b93f75f3e3
+author Emise <emise@localhost>
+date 1794040078 2026-11-07
+stat Markdown files 2 total 111 blank 23 comment 0 code 88
+stat Rust files 6 total 3001 blank 312 comment 378 code 2311
+stat Shell files 4 total 181 blank 0 comment 0 code 181
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Emise <emise@localhost> commits 8
+Commit 8ceb5e68349c by Emise <emise@localhost> on 2026-11-07 (EE 0).
+
+Subject: Purge char/int casts and unmodeled iterator adapters for Aeneas
+
+Public items: 11 added, 0 removed, 1 changed. Dependencies did not change. Code lines after this commit: 2619.
+
+commit 8ceb5e68349ce374193dc0749578d018cbc1f9e2
+parent b5125fda709bfa6ca283e3bda086f18472e2a5ac
+author Emise <emise@localhost>
+date 1794040080 2026-11-07
+item+ const src/phext.rs :: BOOK_BREAK_U8 :: pub const BOOK_BREAK_U8: u8 = 0x1A; // byte form of BOOK_BREAK :: A fixed value named BOOK_BREAK_U8, set to 0x1A; // byte form of BOOK_BREAK. :: signature
+item+ const src/phext.rs :: CHAPTER_BREAK_U8 :: pub const CHAPTER_BREAK_U8: u8 = 0x19; // byte form of CHAPTER_BREAK :: A fixed value named CHAPTER_BREAK_U8, set to 0x19; // byte form of CHAPTER_BREAK. :: signature
+item+ const src/phext.rs :: COLLECTION_BREAK_U8 :: pub const COLLECTION_BREAK_U8: u8 = 0x1D; // byte form of COLLECTION_BREAK :: A fixed value named COLLECTION_BREAK_U8, set to 0x1D; // byte form of COLLECTION_BREAK. :: signature
+item+ const src/phext.rs :: LIBRARY_BREAK_U8 :: pub const LIBRARY_BREAK_U8: u8 = 0x01; // byte form of LIBRARY_BREAK :: A fixed value named LIBRARY_BREAK_U8, set to 0x01; // byte form of LIBRARY_BREAK. :: signature
+item+ const src/phext.rs :: LINE_BREAK_U8 :: pub const LINE_BREAK_U8: u8 = 0x0A; // byte form of LINE_BREAK :: A fixed value named LINE_BREAK_U8, set to 0x0A; // byte form of LINE_BREAK. :: signature
+item+ const src/phext.rs :: MORE_COWBELL_U8 :: pub const MORE_COWBELL_U8: u8 = 0x07; // byte form of MORE_COWBELL :: A fixed value named MORE_COWBELL_U8, set to 0x07; // byte form of MORE_COWBELL. :: signature
+item+ const src/phext.rs :: SCROLL_BREAK_U8 :: pub const SCROLL_BREAK_U8: u8 = 0x17; // byte form of SCROLL_BREAK :: A fixed value named SCROLL_BREAK_U8, set to 0x17; // byte form of SCROLL_BREAK. :: signature
+item+ const src/phext.rs :: SECTION_BREAK_U8 :: pub const SECTION_BREAK_U8: u8 = 0x18; // byte form of SECTION_BREAK :: A fixed value named SECTION_BREAK_U8, set to 0x18; // byte form of SECTION_BREAK. :: signature
+item+ const src/phext.rs :: SERIES_BREAK_U8 :: pub const SERIES_BREAK_U8: u8 = 0x1E; // byte form of SERIES_BREAK :: A fixed value named SERIES_BREAK_U8, set to 0x1E; // byte form of SERIES_BREAK. :: signature
+item+ const src/phext.rs :: SHELF_BREAK_U8 :: pub const SHELF_BREAK_U8: u8 = 0x1F; // byte form of SHELF_BREAK :: A fixed value named SHELF_BREAK_U8, set to 0x1F; // byte form of SHELF_BREAK. :: signature
+item+ const src/phext.rs :: VOLUME_BREAK_U8 :: pub const VOLUME_BREAK_U8: u8 = 0x1C; // byte form of VOLUME_BREAK :: A fixed value named VOLUME_BREAK_U8, set to 0x1C; // byte form of VOLUME_BREAK. :: signature
+item~ function src/phext.rs :: phokenize :: pub fn phokenize(input: &str) -> Vec<PositionedScroll> { :: ---------------------------------------------------------------------------------------------------------- @fn phokenize  Transforms a packed phext buffer into a phext token (phoken) stream  One pass over the bytes. Each step matches a call to `next_scroll`: skip leading breaks, take a run of text, then consume the break that ends it. Earlier versions called `next_scroll` in a loop, which copied the rest of the document for every scroll and made this quadratic in the document size. ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Markdown files 2 total 111 blank 23 comment 0 code 88
+stat Rust files 6 total 3030 blank 312 comment 378 code 2340
+stat Shell files 4 total 181 blank 0 comment 0 code 181
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Emise <emise@localhost> commits 9
+Commit 51f2cf7434e2 by Emise <emise@localhost> on 2026-11-07 (EE 0).
+
+Subject: split_on returns owned Strings for Aeneas translation
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2621.
+
+commit 51f2cf7434e2b57259442b3520b35e472bd74ea4
+parent 8ceb5e68349ce374193dc0749578d018cbc1f9e2
+author Emise <emise@localhost>
+date 1794040083 2026-11-07
+stat Markdown files 2 total 111 blank 23 comment 0 code 88
+stat Rust files 6 total 3032 blank 312 comment 378 code 2342
+stat Shell files 4 total 181 blank 0 comment 0 code 181
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Emise <emise@localhost> commits 10
+Commit 1cb485f00792 by Emise <emise@localhost> on 2026-11-07 (EE 0).
+
+Subject: Rename phext parameters to input (Lean namespace collision)
+
+Public items: 0 added, 0 removed, 19 changed. Dependencies did not change. Code lines after this commit: 2621.
+
+commit 1cb485f00792bf2d3bbbd51ac5446a13389aa60a
+parent 51f2cf7434e2b57259442b3520b35e472bd74ea4
+author Emise <emise@localhost>
+date 1794040085 2026-11-07
+item~ function src/phext.rs :: check_for_cowbell :: pub fn check_for_cowbell(input: &str) -> bool { :: Function check_for_cowbell takes input: &str and gives back bool. :: signature
+item~ function src/phext.rs :: checksum :: pub fn checksum(input: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn checksum  Provides a 128-bit content checksum using the fastest algorithm Rust provides: xxh3 ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/phext.rs :: contract :: pub fn contract(input: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/phext.rs :: create_summary :: pub fn create_summary(input: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/phext.rs :: expand :: pub fn expand(input: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/phext.rs :: explode :: pub fn explode(input: &str) -> HashMap<Coordinate, String> { :: ---------------------------------------------------------------------------------------------------------- @fn explode  Explodes an input phext into a hierarchical hashap, suitable for fast access and updates ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/phext.rs :: fetch :: pub fn fetch(input: &str, target: Coordinate) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn fetch  retrieves the plain text string located at the given coordinates. important: this can be optimized with hash tables and memo-ized parsing - for now let's keep it simple see my C# implementation in https://github.com/wbic16/terse-editor if you want to do that  @param phext  the raw phext buffer to search @param coord  coordinate to select the scroll from ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/phext.rs :: index :: pub fn index(input: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/phext.rs :: insert :: pub fn insert(input: String, location: Coordinate, scroll: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn insert  inserts the content specified in `scroll` at the coordinate within `phext` specified by `location` ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/phext.rs :: manifest :: pub fn manifest(input: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/phext.rs :: navmap :: pub fn navmap(urlbase: &str, input: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/phext.rs :: next_scroll :: pub fn next_scroll(input: &str, start: Coordinate) -> (PositionedScroll, Coordinate, String) { :: ---------------------------------------------------------------------------------------------------------- @fn next_scroll  retrieves the next scroll from the given string, assuming an arbitrary starting point ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/phext.rs :: normalize :: pub fn normalize(input: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/phext.rs :: offset :: pub fn offset(input: &str, coord: Coordinate) -> usize { :: ----------------------------------------------------------------------------------------------------------  The offset of the scroll at `coord`, or of the last scroll before it. 0 when no scroll comes at or before `coord` (earlier versions panicked there). :: doc comment
+item~ function src/phext.rs :: range_replace :: pub fn range_replace(input: &str, location: Range, scroll: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- errata: libphext-py opted for ranges that operate on a stack of positioned scrolls this method applies the range edit to subspace directly...we probably need both :: doc comment
+item~ function src/phext.rs :: remove :: pub fn remove(input: &str, location: Coordinate) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/phext.rs :: replace :: pub fn replace(input: &str, location: Coordinate, scroll: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/phext.rs :: soundex_v1 :: pub fn soundex_v1(input: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/phext.rs :: textmap :: pub fn textmap(input: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Markdown files 2 total 111 blank 23 comment 0 code 88
+stat Rust files 6 total 3032 blank 312 comment 378 code 2342
+stat Shell files 4 total 181 blank 0 comment 0 code 181
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Emise <emise@localhost> commits 11
+Commit f36d2c2a91bc by Emise <emise@localhost> on 2026-11-07 (EE 0).
+
+Subject: Add Lean proofs project: full Aeneas translation builds, first specs
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2703.
+
+commit f36d2c2a91bcb08682a8cb51c6c6f32abaeb6614
+parent 1cb485f00792bf2d3bbbd51ac5446a13389aa60a
+author Emise <emise@localhost>
+date 1794040097 2026-11-07
+stat Markdown files 3 total 165 blank 23 comment 0 code 142
+stat Rust files 6 total 3032 blank 312 comment 378 code 2342
+stat Shell files 5 total 209 blank 0 comment 0 code 209
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Emise <emise@localhost> commits 12
+Commit 5346ce4e1947 by Will Bickford <wbic16@gmail.com> on 2026-11-07 (EE 0).
+
+Subject: Merge pull request #7 from wbic16/provable-0.4.1
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2703.
+
+commit 5346ce4e1947d10fb3d1cabbfadcdcd359b98d64
+parent f36d2c2a91bcb08682a8cb51c6c6f32abaeb6614
+author Will Bickford <wbic16@gmail.com>
+date 1794043068 2026-11-07
+stat Markdown files 3 total 165 blank 23 comment 0 code 142
+stat Rust files 6 total 3032 blank 312 comment 378 code 2342
+stat Shell files 5 total 209 blank 0 comment 0 code 209
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 35
+Commit c7199bf28f0e by wbic16 <wbic16@gmail.com> on 2026-11-07 (EE 0).
+
+Subject: Coordinate::try_from: return Err on malformed components, never panic
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2801.
+
+commit c7199bf28f0ecec7f053d0b2d161bd05b9bd3114
+parent 5346ce4e1947d10fb3d1cabbfadcdcd359b98d64
+author wbic16 <wbic16@gmail.com>
+date 1794064753 2026-11-07
+stat Markdown files 3 total 165 blank 23 comment 0 code 142
+stat Rust files 6 total 3130 blank 312 comment 378 code 2440
+stat Shell files 5 total 209 blank 0 comment 0 code 209
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author+ wbic16 <wbic16@gmail.com>
+Commit 65913a3ae054 by Will Bickford <wbic16@gmail.com> on 2026-11-07 (EE 0).
+
+Subject: Merge pull request #8 from wbic16/emise/parse-never-panics
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2552.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 65913a3ae05496d068aed1d979e35fce28531932
+parent c7199bf28f0ecec7f053d0b2d161bd05b9bd3114
+author Will Bickford <wbic16@gmail.com>
+date 1794064989 2026-11-07
+stat Markdown files 3 total 165 blank 33 comment 0 code 132
+stat Rust files 6 total 3130 blank 350 comment 486 code 2294
+stat Shell files 2 total 209 blank 20 comment 73 code 116
+stat TOML files 1 total 11 blank 1 comment 0 code 10
+author~ Will Bickford <wbic16@gmail.com> commits 36
+Commit 4f82dd5cf0a2 by Theia <theia@mirrorborn.us> on 2026-11-07 (EE 0).
+
+Subject: Add canonical binary scrolls (feature: binary) and the xz seal (feature: xz)
+
+Public items: 16 added, 0 removed, 0 changed. Dependencies: base64 added at 0.22; xz2 added at 0.1. Code lines after this commit: 3101.
+
+commit 4f82dd5cf0a2ef24b59267c97bbc4954210682cd
+parent 65913a3ae05496d068aed1d979e35fce28531932
+author Theia <theia@mirrorborn.us>
+date 1794067791 2026-11-07
+dep+ Cargo.toml :: base64 :: 0.22
+dep+ Cargo.toml :: xz2 :: 0.1
+item+ const src/binary.rs :: BINARY_SCROLL_HEADER :: pub const BINARY_SCROLL_HEADER: &str = "phext-binary:1:base64"; :: The first (and only header) line of a binary scroll, without its line break. :: doc comment
+item+ function src/binary.rs :: decode_scroll :: pub fn decode_scroll(scroll: &str) -> Option<Vec<u8>> { :: ---------------------------------------------------------------------------------------------------------- @fn decode_scroll  decodes a binary scroll back to its raw bytes. Returns None when the scroll is not a binary scroll, or when its body is not strict base64. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/binary.rs :: encode_scroll :: pub fn encode_scroll(payload: &[u8]) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn encode_scroll  encodes raw bytes as a binary scroll (header line + base64 body) ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/binary.rs :: fetch_binary :: pub fn fetch_binary(input: &str, target: Coordinate) -> Vec<u8> { :: ---------------------------------------------------------------------------------------------------------- @fn fetch_binary  retrieves the bytes held at `target`. A well-formed binary scroll decodes to its payload. Any other scroll — plain text, a malformed binary scroll, or no scroll at all — yields the scroll's own UTF-8 bytes (empty when the coordinate is unoccupied), mirroring how `phext::fetch` returns "" there. This function is total: it never panics and never loses scroll content. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/binary.rs :: ingest :: pub fn ingest(bytes: &[u8]) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn ingest  ingests an externally supplied phext byte stream. Every scroll is observed as raw bytes: valid UTF-8 scrolls pass through verbatim, and any scroll whose bytes are not valid UTF-8 is stored as a binary scroll holding the base64 of the exact observed bytes (the ingestion rule), so `fetch_binary` at its coordinate returns the original bytes exactly. Never rejects, never panics. The result is the canonical serialization (the same normal form as `phext::implode` of `phext::explode`). ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/binary.rs :: insert_binary :: pub fn insert_binary(input: String, location: Coordinate, payload: &[u8]) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn insert_binary  stores `payload` at `location` as a binary scroll, unconditionally: the caller has declared this scroll binary, even if the bytes happen to be valid UTF-8. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/binary.rs :: insert_bytes :: pub fn insert_bytes(input: String, location: Coordinate, payload: &[u8]) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn insert_bytes  byte-oriented insert: stores `payload` at `location` under the ingestion rule (UTF-8 as text, non-UTF-8 as a base64-verbatim binary scroll). ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/binary.rs :: is_binary_scroll :: pub fn is_binary_scroll(scroll: &str) -> bool { :: ---------------------------------------------------------------------------------------------------------- @fn is_binary_scroll  true when `scroll` carries the binary scroll header. Decoding success is a separate question — see `decode_scroll`. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/binary.rs :: phokenize_bytes :: pub fn phokenize_bytes(input: &[u8]) -> Vec<(Coordinate, Vec<u8>)> { :: ---------------------------------------------------------------------------------------------------------- @fn phokenize_bytes  the byte-level twin of `phext::phokenize`: walks a raw byte stream and returns each scroll's coordinate and raw bytes, with identical segmentation. Dimension-break bytes are ASCII, so byte offsets are exact; scroll bodies are returned uninterpreted, valid UTF-8 or not. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/binary.rs :: replace_binary :: pub fn replace_binary(input: &str, location: Coordinate, payload: &[u8]) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn replace_binary  replaces the scroll at `location` with `payload`, stored as a binary scroll (see `insert_binary`). ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/binary.rs :: replace_bytes :: pub fn replace_bytes(input: &str, location: Coordinate, payload: &[u8]) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn replace_bytes  byte-oriented replace: stores `payload` at `location` under the ingestion rule (UTF-8 as text, non-UTF-8 as a base64-verbatim binary scroll). ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ const src/seal.rs :: SEAL_PRESET :: pub const SEAL_PRESET: u32 = 6; :: The xz preset this implementation seals with. :: doc comment
+item+ function src/seal.rs :: seal :: pub fn seal(input: &str) -> io::Result<Vec<u8>> { :: ---------------------------------------------------------------------------------------------------------- @fn seal  seals a phext: xz-compresses its full UTF-8 bytes. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/seal.rs :: seal_bytes :: pub fn seal_bytes(input: &[u8]) -> io::Result<Vec<u8>> { :: ---------------------------------------------------------------------------------------------------------- @fn seal_bytes  seals raw phext bytes (see `seal`). ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/seal.rs :: unseal :: pub fn unseal(data: &[u8]) -> io::Result<Vec<u8>> { :: ---------------------------------------------------------------------------------------------------------- @fn unseal  unseals a sealed phext back to its exact original bytes. Returns the io error when the data is not a valid xz stream. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/seal.rs :: unseal_string :: pub fn unseal_string(data: &[u8]) -> io::Result<String> { :: ---------------------------------------------------------------------------------------------------------- @fn unseal_string  unseals directly to text. Fails with InvalidData when the unsealed bytes are not valid UTF-8; to unseal foreign content that may carry non-UTF-8 scrolls, `unseal` to bytes and pass them through `binary::ingest`, which applies the base64-verbatim ingestion rule instead of failing. ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Markdown files 3 total 193 blank 33 comment 0 code 160
+stat Rust files 10 total 3644 blank 350 comment 486 code 2808
+stat Shell files 2 total 209 blank 20 comment 73 code 116
+stat TOML files 1 total 18 blank 1 comment 0 code 17
+author+ Theia <theia@mirrorborn.us>
+Commit a30280385cbe by Theia <theia@mirrorborn.us> on 2026-11-07 (EE 0).
+
+Subject: Version 0.5.0: binary scrolls + xz seal open a new capability line
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3101.
+
+commit a30280385cbee5f9cccfe087569afd60a49b247a
+parent 4f82dd5cf0a2ef24b59267c97bbc4954210682cd
+author Theia <theia@mirrorborn.us>
+date 1794067810 2026-11-07
+stat Markdown files 3 total 193 blank 33 comment 0 code 160
+stat Rust files 10 total 3644 blank 350 comment 486 code 2808
+stat Shell files 2 total 209 blank 20 comment 73 code 116
+stat TOML files 1 total 18 blank 1 comment 0 code 17
+author~ Theia <theia@mirrorborn.us> commits 2
+Commit e85d8b5676c6 by Will Bickford <wbic16@gmail.com> on 2026-11-07 (EE 0).
+
+Subject: Merge pull request #9 from wbic16/emise/binary-xz-support
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3101.
+
+commit e85d8b5676c6461e6bad6a89fe7a3d2eb06f552d
+parent a30280385cbee5f9cccfe087569afd60a49b247a
+author Will Bickford <wbic16@gmail.com>
+date 1794069165 2026-11-07
+stat Markdown files 3 total 193 blank 33 comment 0 code 160
+stat Rust files 10 total 3644 blank 350 comment 486 code 2808
+stat Shell files 2 total 209 blank 20 comment 73 code 116
+stat TOML files 1 total 18 blank 1 comment 0 code 17
+author~ Will Bickford <wbic16@gmail.com> commits 37
+Commit 9603990c15c8 by Will Bickford <wbic16@gmail.com> on 2026-11-08 (EE 0).
+
+Subject: Remediate Clippy warnings
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3101.
+
+commit 9603990c15c8c6bd1ed7b2851686b22f510db777
+parent e85d8b5676c6461e6bad6a89fe7a3d2eb06f552d
+author Will Bickford <wbic16@gmail.com>
+date 1794179002 2026-11-08
+stat Markdown files 3 total 193 blank 33 comment 0 code 160
+stat Rust files 10 total 3644 blank 350 comment 486 code 2808
+stat Shell files 2 total 209 blank 20 comment 73 code 116
+stat TOML files 1 total 18 blank 1 comment 0 code 17
+author~ Will Bickford <wbic16@gmail.com> commits 38
+Commit b666ec8566a9 by Will Bickford <wbic16@gmail.com> on 2026-11-08 (EE 0).
+
+Subject: Removed an outdated comment
+
+Public items: 0 added, 0 removed, 1 changed. Dependencies did not change. Code lines after this commit: 3099.
+
+commit b666ec8566a9134640d6a3163a2e6e685a7fb9e2
+parent 9603990c15c8c6bd1ed7b2851686b22f510db777
+author Will Bickford <wbic16@gmail.com>
+date 1794179245 2026-11-08
+item~ function src/phext.rs :: fetch :: pub fn fetch(input: &str, target: Coordinate) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn fetch  retrieves the scroll located at the given coordinates.  @param phext  the raw phext buffer to search @param coord  coordinate to select the scroll from ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Markdown files 3 total 193 blank 33 comment 0 code 160
+stat Rust files 10 total 3642 blank 350 comment 486 code 2806
+stat Shell files 2 total 209 blank 20 comment 73 code 116
+stat TOML files 1 total 18 blank 1 comment 0 code 17
+author~ Will Bickford <wbic16@gmail.com> commits 39
+Commit 88ac072e57d9 by Theia <theia@mirrorborn.us> on 2026-11-13 (EE 0).
+
+Subject: Add phext chaining: chain break (0x02) and chain close (0x03)
+
+Public items: 9 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3404.
+
+commit 88ac072e57d9579b4294bf65d8c6e65add4f69fc
+parent b666ec8566a9134640d6a3163a2e6e685a7fb9e2
+author Theia <theia@mirrorborn.us>
+date 1794577780 2026-11-13
+item+ const src/phext.rs :: CHAIN_BREAK :: pub const CHAIN_BREAK: char = '\x02'; // stream level - separates whole phexts within a chain; replaces start of text :: A fixed value named CHAIN_BREAK, set to '\x02'; // stream level - separates whole phexts within a ch. :: signature
+item+ const src/phext.rs :: CHAIN_BREAK_U8 :: pub const CHAIN_BREAK_U8: u8 = 0x02; // byte form of CHAIN_BREAK :: A fixed value named CHAIN_BREAK_U8, set to 0x02; // byte form of CHAIN_BREAK. :: signature
+item+ const src/phext.rs :: CHAIN_CLOSE :: pub const CHAIN_CLOSE: char = '\x03'; // stream level - terminates a chain; replaces end of text :: A fixed value named CHAIN_CLOSE, set to '\x03'; // stream level - terminates a chain; replaces end o. :: signature
+item+ const src/phext.rs :: CHAIN_CLOSE_U8 :: pub const CHAIN_CLOSE_U8: u8 = 0x03; // byte form of CHAIN_CLOSE :: A fixed value named CHAIN_CLOSE_U8, set to 0x03; // byte form of CHAIN_CLOSE. :: signature
+item+ struct src/phext.rs :: Chain :: pub struct Chain { :: ---------------------------------------------------------------------------------------------------------- @struct Chain  A chain: an ordered series of complete phexts within one stream, joined by CHAIN_BREAK (0x02) and optionally terminated by CHAIN_CLOSE (0x03). The chain layer is a stream-level layer, one rung above the library break: the nine dimension breaks structure a single phext, while the two chain bytes structure a stream of phexts. Each member is a whole phext, worked with the ordinary phext functions in this module; read in succession, a chain's members are editions in sequence — the chain is how a phext stream encodes time.  `closed` records how the chain ended: true when a CHAIN_CLOSE terminated it, false when the stream simply ran out (EOF). A chain that ends at EOF is unclosed — possibly truncated — and is never silently promoted to closed. A stream with no chain bytes at all is a single unclosed chain holding one member phext: every pre-0.6 phext reads this way. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: Chain::new :: pub fn new() -> Chain { :: Function Chain::new takes no inputs beyond the value it is called on, and gives back Chain. :: signature
+item+ function src/phext.rs :: parse_chains :: pub fn parse_chains(input: &str) -> Vec<Chain> { :: ---------------------------------------------------------------------------------------------------------- @fn parse_chains  splits a stream into its chains. CHAIN_BREAK separates the member phexts of a chain; CHAIN_CLOSE terminates a chain, and whatever follows it opens the next one — so one stream may hold many chains. The stream's final chain is closed only when the stream ends with CHAIN_CLOSE.  Splitting follows `split_on` semantics, so empty members and empty chains are preserved exactly: parse and serialize are byte-exact inverses for every stream. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: serialize :: pub fn serialize(&self) -> String { :: ------------------------------------------------------------------------------------------------------ @fn serialize  serializes this chain alone: its members joined by CHAIN_BREAK, with a trailing CHAIN_CLOSE when the chain is closed. See `serialize_chains` for whole streams. ------------------------------------------------------------------------------------------------------ :: doc comment
+item+ function src/phext.rs :: serialize_chains :: pub fn serialize_chains(chains: &[Chain]) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn serialize_chains  serializes a stream of chains back into stream bytes: the inverse of `parse_chains`. ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Markdown files 3 total 201 blank 33 comment 0 code 168
+stat Rust files 11 total 3939 blank 350 comment 486 code 3103
+stat Shell files 2 total 209 blank 20 comment 73 code 116
+stat TOML files 1 total 18 blank 1 comment 0 code 17
+author~ Theia <theia@mirrorborn.us> commits 3
+Commit e3e9e5d7dd36 by Theia <theia@mirrorborn.us> on 2026-11-13 (EE 0).
+
+Subject: Version 0.6.0: chaining opens the stream level
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3404.
+
+commit e3e9e5d7dd3608c24829d922491a8c65f1dd72a3
+parent 88ac072e57d9579b4294bf65d8c6e65add4f69fc
+author Theia <theia@mirrorborn.us>
+date 1794577780 2026-11-13
+stat Markdown files 3 total 201 blank 33 comment 0 code 168
+stat Rust files 11 total 3939 blank 350 comment 486 code 3103
+stat Shell files 2 total 209 blank 20 comment 73 code 116
+stat TOML files 1 total 18 blank 1 comment 0 code 17
+author~ Theia <theia@mirrorborn.us> commits 4
+Commit 0b7e438c6af4 by Emise <emise@mirrorborn.us> on 2026-11-13 (EE 0).
+
+Subject: feat: multiverse addressing — $N:<address> names universe N in a chain (Will, 2026-11-13)
+
+Public items: 2 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3450.
+
+commit 0b7e438c6af43682fe0a67c6ca76d343da868840
+parent e3e9e5d7dd3608c24829d922491a8c65f1dd72a3
+author Emise <emise@mirrorborn.us>
+date 1794591828 2026-11-13
+item+ function src/phext.rs :: Chain::fetch :: pub fn fetch(&self, address: &str) -> String { :: Fetch a scroll by multiverse address: "$N:coord", or a bare coordinate (universe 1). Out-of-range universes and missing scrolls yield an empty string, as fetch does. :: doc comment
+item+ function src/phext.rs :: parse_universe_address :: pub fn parse_universe_address(address: &str) -> Option<(usize, Coordinate)> { :: Function parse_universe_address takes address: &str and gives back Option<(usize, Coordinate)>. :: signature
+stat Markdown files 3 total 201 blank 33 comment 0 code 168
+stat Rust files 11 total 3985 blank 350 comment 486 code 3149
+stat Shell files 2 total 209 blank 20 comment 73 code 116
+stat TOML files 1 total 18 blank 1 comment 0 code 17
+author+ Emise <emise@mirrorborn.us>
+Commit 5cd562ed5a4b by Emise <emise@mirrorborn.us> on 2026-11-13 (EE 0).
+
+Subject: test: adjacent chain closes parse as two closed empty chains
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3458.
+
+commit 5cd562ed5a4b6129f60a6370903671a5242f8178
+parent 0b7e438c6af43682fe0a67c6ca76d343da868840
+author Emise <emise@mirrorborn.us>
+date 1794592312 2026-11-13
+stat Markdown files 3 total 201 blank 33 comment 0 code 168
+stat Rust files 11 total 3993 blank 350 comment 486 code 3157
+stat Shell files 2 total 209 blank 20 comment 73 code 116
+stat TOML files 1 total 18 blank 1 comment 0 code 17
+author~ Emise <emise@mirrorborn.us> commits 2
+Commit 9c6a964b256e by Will Bickford <wbic16@gmail.com> on 2026-11-13 (EE 0).
+
+Subject: Merge pull request #10 from wbic16/emise/chain-v0.6.0
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3458.
+
+commit 9c6a964b256e1d8e9187434d1e1ef89ac2b4be10
+parent 5cd562ed5a4b6129f60a6370903671a5242f8178
+author Will Bickford <wbic16@gmail.com>
+date 1794602240 2026-11-13
+stat Markdown files 3 total 201 blank 33 comment 0 code 168
+stat Rust files 11 total 3993 blank 350 comment 486 code 3157
+stat Shell files 2 total 209 blank 20 comment 73 code 116
+stat TOML files 1 total 18 blank 1 comment 0 code 17
+author~ Will Bickford <wbic16@gmail.com> commits 40
+Commit 5c2c7a31df3b by Theia <theia@mirrorborn.us> on 2026-11-13 (EE 0).
+
+Subject: h5i verification
+
+Public items: 4 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5090.
+
+commit 5c2c7a31df3b0afec2c179da09ca321d72244f69
+parent 9c6a964b256e1d8e9187434d1e1ef89ac2b4be10
+author Theia <theia@mirrorborn.us>
+date 1794602838 2026-11-13
+item+ enum counter/kernel/src/lib.rs :: Command :: pub enum Command { :: A named choice named Command. It is one of: Incr; Reset. :: signature
+item+ enum counter/kernel/src/lib.rs :: Error :: pub enum Error { :: A named choice named Error. It is one of: AtLimit. :: signature
+item+ struct counter/kernel/src/lib.rs :: State :: pub struct State { :: The whole state: a counter that must never pass its limit. :: doc comment
+item+ function counter/kernel/src/lib.rs :: transition :: pub fn transition(s: &State, cmd: &Command) -> Result<State, Error> { :: One step: the next state, or why the command is refused. :: doc comment
+stat Markdown files 18 total 1758 blank 33 comment 0 code 1725
+stat Rust files 12 total 4031 blank 350 comment 486 code 3195
+stat Shell files 2 total 209 blank 20 comment 73 code 116
+stat TOML files 4 total 55 blank 1 comment 0 code 54
+author~ Theia <theia@mirrorborn.us> commits 5
+Commit 03d12c368e04 by Will Bickford <wbic16@gmail.com> on 2026-11-15 (EE 0).
+
+Subject: Merge pull request #11 from wbic16/build-publish-scripts
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5212.
+
+commit 03d12c368e04274228775db62f2d65887009a046
+parent 5c2c7a31df3b0afec2c179da09ca321d72244f69
+author Will Bickford <wbic16@gmail.com>
+date 1794762962 2026-11-15
+stat Markdown files 18 total 1770 blank 33 comment 0 code 1737
+stat Rust files 12 total 4031 blank 350 comment 486 code 3195
+stat Shell files 2 total 319 blank 20 comment 73 code 226
+stat TOML files 4 total 55 blank 1 comment 0 code 54
+author~ Will Bickford <wbic16@gmail.com> commits 41
+Commit e7c7f3b35ffe by Emise <emise@localhost> on 2026-11-15 (EE 0).
+
+Subject: Add shared 0.6 chain conformance fixtures + consuming test (Step 0, task 37.12.8/15.9.18/8.10.14)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5333.
+
+commit e7c7f3b35ffeab9762c2b7a7d628b374da746fc5
+parent 03d12c368e04274228775db62f2d65887009a046
+author Emise <emise@localhost>
+date 1794763180 2026-11-15
+stat Markdown files 18 total 1770 blank 33 comment 0 code 1737
+stat Rust files 13 total 4152 blank 350 comment 486 code 3316
+stat Shell files 2 total 319 blank 20 comment 73 code 226
+stat TOML files 4 total 55 blank 1 comment 0 code 54
+author~ Emise <emise@localhost> commits 13
+Commit 75d647fb3530 by Will Bickford <wbic16@gmail.com> on 2026-11-15 (EE 0).
+
+Subject: Merge pull request #12 from wbic16/emise/chain-fixtures
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5333.
+
+commit 75d647fb35304fdae83b51bd9a9ad2b51e4b099e
+parent e7c7f3b35ffeab9762c2b7a7d628b374da746fc5
+author Will Bickford <wbic16@gmail.com>
+date 1794763199 2026-11-15
+stat Markdown files 18 total 1770 blank 33 comment 0 code 1737
+stat Rust files 13 total 4152 blank 350 comment 486 code 3316
+stat Shell files 2 total 319 blank 20 comment 73 code 226
+stat TOML files 4 total 55 blank 1 comment 0 code 54
+author~ Will Bickford <wbic16@gmail.com> commits 42
+Commit 3b8a606c2421 by wbic16 <wbic16@users.noreply.github.com> on 2026-11-15 (EE 0).
+
+Subject: v0.6.1: line/column addressing — point, offset, and range addresses
+
+Public items: 9 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5929.
+
+commit 3b8a606c242178c2e47f8980f6724b573e086482
+parent 75d647fb35304fdae83b51bd9a9ad2b51e4b099e
+author wbic16 <wbic16@users.noreply.github.com>
+date 1794768250 2026-11-15
+item+ function src/phext.rs :: Chain::resolve_point :: pub fn resolve_point(&self, point: &PointAddress) -> Option<(usize, Coordinate, usize)> { :: ------------------------------------------------------------------------------------------------------ @fn resolve_point  resolves a point address against this chain: (universe, coordinate, character offset within the scroll). A point without "@" resolves to offset 0 of its scroll. None when the universe or scroll is absent or the position is out of range — never clamps. ------------------------------------------------------------------------------------------------------ :: doc comment
+item+ struct src/phext.rs :: PointAddress :: pub struct PointAddress { :: @struct PointAddress  One parsed point address: universe (1-based; 1 when the "$N:" prefix is absent), the 9D coordinate, an optional caret position, and an optional forward offset in characters. :: doc comment
+item+ struct src/phext.rs :: RangeAddress :: pub struct RangeAddress { :: @struct RangeAddress  A parsed range: two point endpoints, normalized to ascending order at parse time. :: doc comment
+item+ struct src/phext.rs :: ScrollPosition :: pub struct ScrollPosition { :: @struct ScrollPosition  A caret boundary inside one scroll: 1-based line and column (see the section note above). :: doc comment
+item+ function src/phext.rs :: fetch_point :: pub fn fetch_point(&self, address: &str) -> String { :: ------------------------------------------------------------------------------------------------------ @fn fetch_point  fetches a point address string. A bare point is a caret: it fetches the empty string. The offset form fetches the selected characters: from the point, forward `offset` characters (scalars) within the scroll, terminating at the scroll boundary. Any parse or resolution failure fetches the empty string, as Chain::fetch does. ------------------------------------------------------------------------------------------------------ :: doc comment
+item+ function src/phext.rs :: fetch_range :: pub fn fetch_range(&self, address: &str) -> String { :: ------------------------------------------------------------------------------------------------------ @fn fetch_range  fetches a range address string: the spanned text with phext structure bytes preserved — the covered segments re-assembled at their coordinates into a phext (chain) fragment (scroll breaks between covered scrolls inside a universe, CHAIN_BREAK between universes, never a trailing CHAIN_CLOSE: a fragment is an excerpt, not a terminated chain), so the result round-trips as a phext fragment. Empty segments contribute nothing. Any parse or resolution failure fetches the empty string, as Chain::fetch does. ------------------------------------------------------------------------------------------------------ :: doc comment
+item+ function src/phext.rs :: parse_point_address :: pub fn parse_point_address(address: &str) -> Option<PointAddress> { :: ------------------------------------------------------------------------------------------------------ @fn parse_point_address  parses a v0.6.1 point address: "[$N:]<coordinate>[@<line>,<column>[+<offsetChars>]]". Returns None on any malformed input: universe 0, a coordinate component below 1, a line or column below 1, a sign anywhere, or trailing structure. "$1:" is accepted on input; the canonical Display form never emits it. ------------------------------------------------------------------------------------------------------ :: doc comment
+item+ function src/phext.rs :: parse_range_address :: pub fn parse_range_address(address: &str) -> Option<RangeAddress> { :: ------------------------------------------------------------------------------------------------------ @fn parse_range_address  parses a v0.6.1 range address: exactly two point addresses joined by one hyphen. The endpoints are normalized to ascending order (direction is discarded, per the ratified spec). Range endpoints may not carry a "+offset" — the offset form never takes a second endpoint. Returns None on malformed input. ------------------------------------------------------------------------------------------------------ :: doc comment
+item+ function src/phext.rs :: resolve_range :: pub fn resolve_range(&self, range: &RangeAddress) -> Option<Vec<(usize, Coordinate, String)>> { :: ------------------------------------------------------------------------------------------------------ @fn resolve_range  resolves a range against this chain into per-scroll segments: (universe, coordinate, segment text) in ascending order. Middle scrolls contribute their whole text; the endpoint scrolls contribute from/to their endpoint boundaries (an endpoint without "@" contributes its whole scroll). None when either endpoint fails to resolve — an out-of-range endpoint is an error, never a clamp. ------------------------------------------------------------------------------------------------------ :: doc comment
+stat Markdown files 18 total 1770 blank 33 comment 0 code 1737
+stat Rust files 15 total 4748 blank 350 comment 486 code 3912
+stat Shell files 2 total 319 blank 20 comment 73 code 226
+stat TOML files 4 total 55 blank 1 comment 0 code 54
+author+ wbic16 <wbic16@users.noreply.github.com>
+Commit 65cc479890bc by Will Bickford <wbic16@gmail.com> on 2026-11-15 (EE 0).
+
+Subject: Merge pull request #13 from wbic16/emise/addressing-0.6.1
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5929.
+
+commit 65cc479890bc6c76d0f3b3d5af4e886ac5b2ae08
+parent 3b8a606c242178c2e47f8980f6724b573e086482
+author Will Bickford <wbic16@gmail.com>
+date 1794768264 2026-11-15
+stat Markdown files 18 total 1770 blank 33 comment 0 code 1737
+stat Rust files 15 total 4748 blank 350 comment 486 code 3912
+stat Shell files 2 total 319 blank 20 comment 73 code 226
+stat TOML files 4 total 55 blank 1 comment 0 code 54
+author~ Will Bickford <wbic16@gmail.com> commits 43
+Commit af3867cf7ccc by Theia <theia@mirrorborn.us> on 2026-11-15 (EE 0).
+
+Subject: v0.6.2: append, checked scrolls, commit markers, empty-scroll semantics
+
+Public items: 12 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 6528.
+
+commit af3867cf7ccc798ca4b785a37427eb49db5ee906
+parent 65cc479890bc6c76d0f3b3d5af4e886ac5b2ae08
+author Theia <theia@mirrorborn.us>
+date 1794780646 2026-11-15
+item+ const src/binary.rs :: FIELD_PREFIX :: pub const FIELD_PREFIX: &str = "phext-field:base64:"; :: The prefix of a binary *field*: arbitrary bytes encoded for one line inside a text scroll (a `name=value` grammar, a WAL entry, a header block). Whole scrolls use `encode_scroll`; fields use this. :: doc comment
+item+ function src/binary.rs :: decode_field :: pub fn decode_field(text: &str) -> Option<Vec<u8>> { :: ---------------------------------------------------------------------------------------------------------- @fn decode_field  Decodes a field produced by `encode_field`. Returns None when the text lacks the field prefix or its body is not strict base64 — a plain text field is not a binary field, and yields None, not bytes. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/binary.rs :: encode_field :: pub fn encode_field(payload: &[u8]) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn encode_field  Encodes raw bytes as a single line of text: the field prefix plus RFC 4648 base64. The result contains no line breaks and none of the nine phext dimension-break bytes, so it can sit inside any line-structured scroll. The base64 overhead (+33%) is inherent to armouring bytes in a text line; this function standardizes the armour so every implementation reads the same field the same way. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: append :: pub fn append(input: String, location: Coordinate, scroll: &str) -> Option<String> { :: ---------------------------------------------------------------------------------------------------------- @fn append  Appends `scroll` at `location`, which must sort strictly after the document's last non-empty scroll. The result is the input with only a delimiter run and the new content added at its end — a host can write just that suffix to a file opened in append mode and sync once.  Returns None when the scroll is empty (empty scrolls do not exist) or `location` does not sort after the document's end. Trailing delimiter bytes in the input encode only empty scrolls, so they are dropped first and never shift the appended scroll's address.  On None the append was rejected; the input String was consumed, so pass a clone if the caller needs it after a rejected append. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: append_batch :: pub fn append_batch(input: String, entries: &[(Coordinate, &str)]) -> Option<String> { :: ---------------------------------------------------------------------------------------------------------- @fn append_batch  Appends several scrolls in one call. Entries must be non-empty and in strictly ascending coordinate order, the first sorting after the document's end. The whole batch is a single suffix of the result, so a host persists it with one write and one sync.  This is construction atomicity, not storage atomicity: whether the suffix lands completely is the host filesystem's business (see the durability profile in the crate docs). Pair the batch with a `commit_scroll` as its final entry to make a torn batch *detectable* at recovery — that is the part a format library can own. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: append_checked :: pub fn append_checked(input: String, location: Coordinate, scroll: &str) -> Option<String> { :: ---------------------------------------------------------------------------------------------------------- @fn append_checked  `append` with an integrity trailer: the stored scroll is `checked_scroll(scroll)`, verifiable later with `fetch_checked`. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: checked_scroll :: pub fn checked_scroll(scroll: &str) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn checked_scroll  Returns `scroll` with an integrity trailer appended: one final line `phext-check:xxh3-128:<checksum of the payload>`. In a checked scroll the final line is reserved — verification always reads the LAST marker line, and the checksum binds the entire payload before it, so a marker line inside the payload cannot forge a trailer.  The checksum detects accidental corruption and torn writes. xxh3 is not a cryptographic hash: this is integrity, not authentication. An empty scroll stays empty (a scroll with no bytes does not exist, so there is nothing to check). ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: commit_scroll :: pub fn commit_scroll(entries: &[(Coordinate, &str)]) -> String { :: ---------------------------------------------------------------------------------------------------------- @fn commit_scroll  Builds the commit marker for a batch: a small scroll binding the batch's entry count and a checksum over each entry's coordinate and content, in order. Append it (via `append_batch`) as the batch's final scroll, at a coordinate after every entry. `entries` here are the (coordinate, content) pairs exactly as appended — checked contents included, when the batch uses checked scrolls. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: fetch_checked :: pub fn fetch_checked(input: &str, target: Coordinate) -> Option<String> { :: ---------------------------------------------------------------------------------------------------------- @fn fetch_checked  Fetches the scroll at `target` and returns its payload, but only when the scroll is checked and verifies. A missing, unchecked, or torn scroll yields None — recovery code can treat None as "not committed". ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: uncheck_scroll :: pub fn uncheck_scroll(scroll: &str) -> Option<String> { :: ---------------------------------------------------------------------------------------------------------- @fn uncheck_scroll  Returns the payload of a checked scroll when its trailer verifies; None for unchecked, malformed, or corrupted scrolls. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: verify_checked_scroll :: pub fn verify_checked_scroll(scroll: &str) -> bool { :: ---------------------------------------------------------------------------------------------------------- @fn verify_checked_scroll  true when `scroll` ends with a well-formed integrity trailer whose checksum matches the payload before it. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: verify_commit :: pub fn verify_commit(input: &str, entries: &[Coordinate], commit: Coordinate) -> bool { :: ---------------------------------------------------------------------------------------------------------- @fn verify_commit  true when the scroll at `commit` is a commit marker whose count matches `entries` and whose checksum matches the entries' current contents, fetched in order. Any missing, altered, or torn entry — or a missing marker — yields false: the batch did not commit. ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Markdown files 19 total 1872 blank 33 comment 0 code 1839
+stat Rust files 16 total 5245 blank 350 comment 486 code 4409
+stat Shell files 2 total 319 blank 20 comment 73 code 226
+stat TOML files 4 total 55 blank 1 comment 0 code 54
+author~ Theia <theia@mirrorborn.us> commits 6
+Commit 62a825ef4f8c by Emise <emise@localhost> on 2026-11-18 (EE 0).
+
+Subject: true suffix append: locate the document end with a backward delimiter scan
+
+Public items: 0 added, 0 removed, 1 changed. Dependencies did not change. Code lines after this commit: 6702.
+
+commit 62a825ef4f8c9bea229a4e1c0301bbc9e4d733e5
+parent af3867cf7ccc798ca4b785a37427eb49db5ee906
+author Emise <emise@localhost>
+date 1794977675 2026-11-18
+item~ function src/phext.rs :: append :: pub fn append(input: String, location: Coordinate, scroll: &str) -> Option<String> { :: ---------------------------------------------------------------------------------------------------------- @fn append  Appends `scroll` at `location`, which must sort strictly after the document's last non-empty scroll. The result is the input with only a delimiter run and the new content added at its end — a host can write just that suffix to a file opened in append mode and sync once.  Returns None when the scroll is empty (empty scrolls do not exist) or `location` does not sort after the document's end. Trailing delimiter bytes in the input encode only empty scrolls, so they are dropped first and never shift the appended scroll's address.  On None the append was rejected; the input String was consumed, so pass a clone if the caller needs it after a rejected append.  The document's end is located with `last_scroll_coordinate`, a backward delimiter scan over the bytes — existing text is never re-tokenized, so a call's cost tracks the delimiter run at the end of the document, not the size of the document. ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Markdown files 19 total 1872 blank 33 comment 0 code 1839
+stat Rust files 16 total 5419 blank 350 comment 486 code 4583
+stat Shell files 2 total 319 blank 20 comment 73 code 226
+stat TOML files 4 total 55 blank 1 comment 0 code 54
+author~ Emise <emise@localhost> commits 14
+Commit cf57de8b7520 by Emise <emise@localhost> on 2026-11-18 (EE 0).
+
+Subject: Add borrowed span index: spans() + ScrollSpan over a &str
+
+Public items: 2 added, 0 removed, 1 changed. Dependencies did not change. Code lines after this commit: 6852.
+
+commit cf57de8b7520d40a2da1d3ede842886120aa785c
+parent 62a825ef4f8c9bea229a4e1c0301bbc9e4d733e5
+author Emise <emise@localhost>
+date 1794978119 2026-11-18
+item+ struct src/phext.rs :: ScrollSpan :: pub struct ScrollSpan { :: ---------------------------------------------------------------------------------------------------------- @struct ScrollSpan  The borrowed form of a `PositionedScroll`: a scroll's coordinate plus the byte range of its text within the input document. Slicing the input with `range` yields exactly the scroll's text — building the index allocates no `String` per scroll. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/phext.rs :: append :: pub fn append(input: String, location: Coordinate, scroll: &str) -> Option<String> { :: ---------------------------------------------------------------------------------------------------------- @fn append  Appends `scroll` at `location`, which must sort strictly after the document's last non-empty scroll. The result is the input with only a delimiter run and the new content added at its end — a host can write just that suffix to a file opened in append mode and sync once.  Returns None when the scroll is empty (empty scrolls do not exist) or `location` does not sort after the document's end. Trailing delimiter bytes in the input encode only empty scrolls, so they are dropped first and never shift the appended scroll's address.  On None the append was rejected; the input String was consumed, so pass a clone if the caller needs it after a rejected append. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: spans :: pub fn spans(input: &str) -> Vec<ScrollSpan> { :: ---------------------------------------------------------------------------------------------------------- @fn spans  Builds a borrowed span index over `input`: one `ScrollSpan` per scroll, in document order, giving each scroll's coordinate and the byte range of its text in `input`.  The walk is the `phokenize` walk — the same dimension breaks and the same coordinate arithmetic — except that it records byte ranges instead of allocating a `String` for every scroll. For every returned span, `&input[span.range]` is exactly the scroll `explode` returns at `span.coord`, and `span.range.start` is the offset `offset` reports for that coordinate.  Empty-scroll contract: a scroll exists iff it holds at least one byte — the definition `explode` encodes — so `spans` reports only non-empty scrolls. Delimiter runs that encode empty scrolls (leading breaks, runs between distant scrolls, trailing breaks) produce no span; an empty document, or a document of only delimiters, produces no spans. `phokenize` remains the tokenizer of record for empty slots: it additionally reports a final empty positioned scroll in those trailing cases, where `spans` reports none.  Chain bytes (0x02 / 0x03) are not dimension breaks, so — exactly as in `phokenize` and `explode` — they are scroll content here. This index covers a single phext (one universe); chain structure is the `parse_chains` layer above it.  Motivating consumer: holo-phext, whose `src/index.rs` carries a 323-line re-implementation of this walk, plus a duplicated private dimension-break predicate in its core, because libphext exported only owned-`String` tokenization (`phokenize`/`explode`) and a single-scroll `offset`. Downstream stores should index with `spans` instead of re-walking the format.  # Example  ``` use libphext::phext::{spans, to_coordinate}; let input = "alpha\u{17}beta"; let index = spans(input); assert_eq!(index.len(), 2); assert_eq!(index[0].coord, to_coordinate("1.1.1/1.1.1/1.1.1")); assert_eq!(&input[index[0].range.clone()], "alpha"); assert_eq!(&input[index[1].range.clone()], "beta"); ``` ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Markdown files 19 total 1872 blank 33 comment 0 code 1839
+stat Rust files 17 total 5569 blank 350 comment 486 code 4733
+stat Shell files 2 total 319 blank 20 comment 73 code 226
+stat TOML files 4 total 55 blank 1 comment 0 code 54
+author~ Emise <emise@localhost> commits 15
+Commit df43de055bd3 by Emise <emise@localhost> on 2026-11-18 (EE 0).
+
+Subject: verify_commit: index the document once with explode instead of a scanning fetch per entry
+
+Public items: 0 added, 2 removed, 2 changed. Dependencies did not change. Code lines after this commit: 6630.
+
+commit df43de055bd3265f327b728301ffdd2a188251b2
+parent cf57de8b7520d40a2da1d3ede842886120aa785c
+author Emise <emise@localhost>
+date 1794978556 2026-11-18
+item~ function src/phext.rs :: fetch_checked :: pub fn fetch_checked(input: &str, target: Coordinate) -> Option<String> { :: ---------------------------------------------------------------------------------------------------------- @fn fetch_checked  Fetches the scroll at `target` and returns its payload, but only when the scroll is checked and verifies. A missing, unchecked, or torn scroll yields None — recovery code can treat None as "not committed".  This is a single-scroll lookup: one early-exit scan, linear in the document, with no per-entry repetition inside the call. Callers that verify a whole batch should use `verify_commit`, which indexes the document once for the marker and every entry. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/phext.rs :: verify_commit :: pub fn verify_commit(input: &str, entries: &[Coordinate], commit: Coordinate) -> bool { :: ---------------------------------------------------------------------------------------------------------- @fn verify_commit  true when the scroll at `commit` is a commit marker whose count matches `entries` and whose checksum matches the entries' current contents, in order. Any missing, altered, or torn entry — or a missing marker — yields false: the batch did not commit.  The document is indexed with a single `explode` pass and the marker and every entry are read from that map. The previous implementation ran the scanning `fetch` once for the marker and once per entry, so verification cost grew quadratically in document length — the cost a WAL recovery pass pays over the whole log, per transaction. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item- struct src/phext.rs :: ScrollSpan
+item- function src/phext.rs :: spans
+stat Markdown files 19 total 1872 blank 33 comment 0 code 1839
+stat Rust files 17 total 5347 blank 350 comment 486 code 4511
+stat Shell files 2 total 319 blank 20 comment 73 code 226
+stat TOML files 4 total 55 blank 1 comment 0 code 54
+author~ Emise <emise@localhost> commits 16
+Commit 068ed006bc8e by Will Bickford <wbic16@gmail.com> on 2026-11-18 (EE 0).
+
+Subject: Merge pull request #14 from wbic16/emise/libphext-0.6.2
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 6528.
+
+commit 068ed006bc8e1d20d2a3ab6d845051ec4e1d77fa
+parent df43de055bd3265f327b728301ffdd2a188251b2
+author Will Bickford <wbic16@gmail.com>
+date 1794978923 2026-11-18
+stat Markdown files 19 total 1872 blank 33 comment 0 code 1839
+stat Rust files 17 total 5245 blank 350 comment 486 code 4409
+stat Shell files 2 total 319 blank 20 comment 73 code 226
+stat TOML files 4 total 55 blank 1 comment 0 code 54
+author~ Will Bickford <wbic16@gmail.com> commits 44
+Commit 72e3c7836d42 by Will Bickford <wbic16@gmail.com> on 2026-11-18 (EE 0).
+
+Subject: Merge pull request #16 from wbic16/emise/libphext-suffix-append
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 6702.
+
+commit 72e3c7836d4257831ebb6433c145d27eac1b1167
+parent 068ed006bc8e1d20d2a3ab6d845051ec4e1d77fa
+author Will Bickford <wbic16@gmail.com>
+date 1794978942 2026-11-18
+stat Markdown files 19 total 1872 blank 33 comment 0 code 1839
+stat Rust files 17 total 5419 blank 350 comment 486 code 4583
+stat Shell files 2 total 319 blank 20 comment 73 code 226
+stat TOML files 4 total 55 blank 1 comment 0 code 54
+author~ Will Bickford <wbic16@gmail.com> commits 45
+Commit 1544384d3ce9 by Will Bickford <wbic16@gmail.com> on 2026-11-18 (EE 0).
+
+Subject: Merge pull request #17 from wbic16/emise/libphext-span-index
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 7026.
+
+commit 1544384d3ce9ec5942b983f583b8b5eab65c7117
+parent 72e3c7836d4257831ebb6433c145d27eac1b1167
+author Will Bickford <wbic16@gmail.com>
+date 1794978964 2026-11-18
+stat Markdown files 19 total 1872 blank 33 comment 0 code 1839
+stat Rust files 17 total 5743 blank 350 comment 486 code 4907
+stat Shell files 2 total 319 blank 20 comment 73 code 226
+stat TOML files 4 total 55 blank 1 comment 0 code 54
+author~ Will Bickford <wbic16@gmail.com> commits 46
+Commit 883fafce5472 by Will Bickford <wbic16@gmail.com> on 2026-11-18 (EE 0).
+
+Subject: Merge pull request #18 from wbic16/emise/libphext-verify-indexed
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 7128.
+
+commit 883fafce54720838f63eea329e621665a8bc8066
+parent 1544384d3ce9ec5942b983f583b8b5eab65c7117
+author Will Bickford <wbic16@gmail.com>
+date 1794978981 2026-11-18
+stat Markdown files 19 total 1872 blank 33 comment 0 code 1839
+stat Rust files 17 total 5845 blank 350 comment 486 code 5009
+stat Shell files 2 total 319 blank 20 comment 73 code 226
+stat TOML files 4 total 55 blank 1 comment 0 code 54
+author~ Will Bickford <wbic16@gmail.com> commits 47
+Commit b31cc4a6cb5e by Emise <emise@phext.io> on 2026-11-19 (EE 0).
+
+Subject: Add progressive TOC modes: toc_children, toc_summary, toc_scrolls
+
+Public items: 6 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 6020.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit b31cc4a6cb5e0a0325551fa241c072d3af4961b4
+parent 883fafce54720838f63eea329e621665a8bc8066
+author Emise <emise@phext.io>
+date 1795061338 2026-11-19
+item+ struct src/phext.rs :: TocChild :: pub struct TocChild { :: ---------------------------------------------------------------------------------------------------------- @struct TocChild  One entry in a `toc_children` listing: a value taken by the next dimension below a coordinate prefix, together with the number of scrolls and the total scroll bytes in that child's subtree. Structure only — no scroll text is copied or returned. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ struct src/phext.rs :: TocScroll :: pub struct TocScroll { :: ---------------------------------------------------------------------------------------------------------- @struct TocScroll  One entry in a `toc_scrolls` listing: a scroll's full coordinate and the byte length of its text. The planet list for progressive clients — coordinates and sizes, never bodies. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ struct src/phext.rs :: TocSummary :: pub struct TocSummary { :: ---------------------------------------------------------------------------------------------------------- @struct TocSummary  The aggregate shape of a coordinate prefix's subtree: how many scrolls it holds and how many bytes of scroll text they carry in total. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: toc_children :: pub fn toc_children(input: &str, prefix: &[usize]) -> Vec<TocChild> { :: ---------------------------------------------------------------------------------------------------------- @fn toc_children  The progressive table of contents: given a coordinate prefix — the leading `prefix.len()` address components, 0 to 8 of them — returns one `TocChild` per distinct value the next dimension takes under that prefix, sorted ascending, each with the scroll count and total scroll bytes of its subtree.  A client walking a phext from the root calls `toc_children(input, &[])` for the libraries present, then `toc_children(input, &[2])` for the shelves of library 2, and so on — downloading structure one level at a time instead of the whole document. Built on the `spans` index in a single pass; scroll bodies are never copied. A prefix of 9 or more components has no next dimension and yields an empty listing, as does a prefix no scroll matches.  The children partition their parent: for any prefix shorter than 9 components, the `scrolls` of `toc_children(input, prefix)` sum to `toc_summary(input, prefix).scrolls`, and the `bytes` sum likewise.  # Example  ``` use libphext::phext::toc_children; let input = "alpha\u{17}beta\u{18}gamma"; let root = toc_children(input, &[]); assert_eq!(root.len(), 1); assert_eq!(root[0].value, 1); assert_eq!(root[0].scrolls, 3); ``` ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: toc_scrolls :: pub fn toc_scrolls(input: &str, prefix: &[usize]) -> Vec<TocScroll> { :: ---------------------------------------------------------------------------------------------------------- @fn toc_scrolls  Every scroll under `prefix` (0 to 9 leading address components), in document order, as a `TocScroll`: full coordinate plus byte length, no bodies. This is the planet list a progressive client renders at the bottom of a zoom — it asks for the scrolls of one star system, not of the whole phext. A full 9-component prefix yields the single scroll at that coordinate, if populated. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/phext.rs :: toc_summary :: pub fn toc_summary(input: &str, prefix: &[usize]) -> TocSummary { :: ---------------------------------------------------------------------------------------------------------- @fn toc_summary  The size of a subtree: the number of scrolls under `prefix` (0 to 9 leading address components) and their total byte length. `toc_summary(input, &[])` summarizes the whole document; a full 9-component prefix summarizes a single scroll — 1 scroll if it is populated, 0 if it is not. ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Markdown files 19 total 1872 blank 415 comment 0 code 1457
+stat Rust files 19 total 6233 blank 576 comment 1308 code 4349
+stat Shell files 5 total 319 blank 26 comment 117 code 176
+stat TOML files 4 total 55 blank 7 comment 10 code 38
+author+ Emise <emise@phext.io>
+Commit 235f98f2e771 by Will Bickford <wbic16@gmail.com> on 2026-11-19 (EE 0).
+
+Subject: Merge PR #19: Progressive TOC modes (toc_children, toc_summary, toc_scrolls)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 6020.
+
+commit 235f98f2e7714f14f7fe597ff06e218296e4f564
+parent b31cc4a6cb5e0a0325551fa241c072d3af4961b4
+author Will Bickford <wbic16@gmail.com>
+date 1795061375 2026-11-19
+stat Markdown files 19 total 1872 blank 415 comment 0 code 1457
+stat Rust files 19 total 6233 blank 576 comment 1308 code 4349
+stat Shell files 5 total 319 blank 26 comment 117 code 176
+stat TOML files 4 total 55 blank 7 comment 10 code 38
+author~ Will Bickford <wbic16@gmail.com> commits 48
+Commit 98d22e216c08 by Emise <emise@phext.io> on 2026-11-19 (EE 0).
+
+Subject: Add toc_scrolls_by_suffix — the relationship primitive
+
+Public items: 1 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 6097.
+
+commit 98d22e216c08c630a8ae0ec3746dda77420baca9
+parent 235f98f2e7714f14f7fe597ff06e218296e4f564
+author Emise <emise@phext.io>
+date 1795061907 2026-11-19
+item+ function src/phext.rs :: toc_scrolls_by_suffix :: pub fn toc_scrolls_by_suffix(input: &str, suffix: &[usize]) -> Vec<TocScroll> { :: ---------------------------------------------------------------------------------------------------------- @fn toc_scrolls_by_suffix  Every scroll whose coordinate ENDS with `suffix` — the trailing 1 to 9 address components — in document order, as `TocScroll` entries (coordinate + bytes, no bodies). The relationship primitive: scrolls that share a chapter.section.scroll suffix are related wherever their library-through-book parents live, and this is the query that finds them. A 9-component suffix is a full coordinate and yields at most one scroll; an empty suffix yields every scroll, as `toc_scrolls(input, &[])` does. ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Markdown files 19 total 1872 blank 415 comment 0 code 1457
+stat Rust files 20 total 6310 blank 576 comment 1308 code 4426
+stat Shell files 5 total 319 blank 26 comment 117 code 176
+stat TOML files 4 total 55 blank 7 comment 10 code 38
+author~ Emise <emise@phext.io> commits 2
+Commit 2f71d774c36c by Will Bickford <wbic16@gmail.com> on 2026-11-19 (EE 0).
+
+Subject: Merge PR #20: toc_scrolls_by_suffix
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 6097.
+
+commit 2f71d774c36c49862a0505594246981328116077
+parent 98d22e216c08c630a8ae0ec3746dda77420baca9
+author Will Bickford <wbic16@gmail.com>
+date 1795061921 2026-11-19
+stat Markdown files 19 total 1872 blank 415 comment 0 code 1457
+stat Rust files 20 total 6310 blank 576 comment 1308 code 4426
+stat Shell files 5 total 319 blank 26 comment 117 code 176
+stat TOML files 4 total 55 blank 7 comment 10 code 38
+author~ Will Bickford <wbic16@gmail.com> commits 49
+Commit b053070bedbc by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 0).
+
+Subject: Add the Exocortical Epoch module (epoch) — v0.6.5
+
+Public items: 8 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 6473.
+
+commit b053070bedbc18d71214e7636e0880dcd3016ca1
+parent 2f71d774c36c49862a0505594246981328116077
+author Theia <theia@mirrorborn.us>
+date 1795325544 2026-11-22
+item+ const src/epoch.rs :: EPOCH_ANCHOR_UNIX :: pub const EPOCH_ANCHOR_UNIX: i64 = 1795327200; :: The unix timestamp at which EE 1 begins: 2026-11-22T06:00:00Z. :: doc comment
+item+ const src/epoch.rs :: EPOCH_LENGTH_SECONDS :: pub const EPOCH_LENGTH_SECONDS: i64 = 420; :: The length of one Exocortical Epoch, in seconds (7 minutes). :: doc comment
+item+ function src/epoch.rs :: epoch_at :: pub fn epoch_at(unix_seconds: i64) -> u64 { :: ---------------------------------------------------------------------------------------------------------- @fn epoch_at  the Exocortical Epoch containing the given unix timestamp (UTC seconds). Returns 0 for every instant before the anchor — EE 0, the pre-epoch. For instants at or after the anchor this is `floor((t − anchor) / 420) + 1`, computed in 64-bit arithmetic. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/epoch.rs :: epoch_end :: pub fn epoch_end(epoch: u64) -> Option<i64> { :: ---------------------------------------------------------------------------------------------------------- @fn epoch_end  the unix timestamp at which the given epoch ends — the next epoch's start. `None` for EE 0, and `None` when the end is not representable as an i64 unix timestamp. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/epoch.rs :: epoch_range :: pub fn epoch_range(epoch: u64) -> Option<(i64, i64)> { :: ---------------------------------------------------------------------------------------------------------- @fn epoch_range  the (start, end) unix timestamps bounding the given epoch. `None` for EE 0 — all of history before the anchor is not an interval this clock bounds — and `None` when either bound is not representable as i64. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/epoch.rs :: epoch_start :: pub fn epoch_start(epoch: u64) -> Option<i64> { :: ---------------------------------------------------------------------------------------------------------- @fn epoch_start  the unix timestamp at which the given epoch begins. `None` for EE 0 — the pre-epoch has no start — and `None` for epoch numbers so large that the start is not representable as an i64 unix timestamp. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/epoch.rs :: seconds_into_epoch :: pub fn seconds_into_epoch(unix_seconds: i64) -> Option<i64> { :: ---------------------------------------------------------------------------------------------------------- @fn seconds_into_epoch  how far the given unix timestamp sits inside its epoch, in seconds (0 at an epoch's first instant, 419 at its last). `None` before the anchor: a pre-epoch instant is not inside any epoch. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/epoch.rs :: seconds_remaining :: pub fn seconds_remaining(unix_seconds: i64) -> i64 { :: ---------------------------------------------------------------------------------------------------------- @fn seconds_remaining  seconds until the current epoch ends. Before the anchor this counts down to the start of EE 1 (at the anchor itself it reads 420 — the full first epoch lies ahead); at or after the anchor it is the time left in the containing epoch, in the range 1..=420. ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Markdown files 19 total 1872 blank 415 comment 0 code 1457
+stat Rust files 22 total 6686 blank 576 comment 1308 code 4802
+stat Shell files 5 total 319 blank 26 comment 117 code 176
+stat TOML files 4 total 55 blank 7 comment 10 code 38
+author~ Theia <theia@mirrorborn.us> commits 7
+Commit b3bd57a9fe56 by Will Bickford <wbic16@gmail.com> on 2026-11-22 (EE 0).
+
+Subject: Merge pull request #21 from wbic16/emise/exocortical-epoch
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 6473.
+
+commit b3bd57a9fe5603ac716e6fa1d0bc74e677cf1c39
+parent b053070bedbc18d71214e7636e0880dcd3016ca1
+author Will Bickford <wbic16@gmail.com>
+date 1795325737 2026-11-22
+stat Markdown files 19 total 1872 blank 415 comment 0 code 1457
+stat Rust files 22 total 6686 blank 576 comment 1308 code 4802
+stat Shell files 5 total 319 blank 26 comment 117 code 176
+stat TOML files 4 total 55 blank 7 comment 10 code 38
+author~ Will Bickford <wbic16@gmail.com> commits 50
+Commit c4faba068fd3 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 9).
+
+Subject: Add Ages to the Exocortical Epoch module (epoch) — v0.6.6
+
+Public items: 10 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 6768.
+
+commit c4faba068fd3ba3681c46cb2428249061afcece9
+parent b3bd57a9fe5603ac716e6fa1d0bc74e677cf1c39
+author Theia <theia@mirrorborn.us>
+date 1795330613 2026-11-22
+item+ const src/epoch.rs :: AGES_PER_EPOCH :: pub const AGES_PER_EPOCH: u64 = 1 << AGE_BITS; :: The number of ages in one Exocortical Epoch: 2^42 = 4,398,046,511,104. The canonical reference clock is AGES_PER_EPOCH / 420 ≈ 10.4715 GHz, so one age is ≈ 95.5 picoseconds. :: doc comment
+item+ const src/epoch.rs :: AGE_BITS :: pub const AGE_BITS: u32 = 42; :: The width of an Age, in bits: one epoch is divided into 2^42 ages. :: doc comment
+item+ const src/epoch.rs :: AGE_MAX :: pub const AGE_MAX: u64 = AGES_PER_EPOCH - 1; :: The largest Age: the final nominal step of an epoch. :: doc comment
+item+ const src/epoch.rs :: COARSE_AGES_PER_EPOCH :: pub const COARSE_AGES_PER_EPOCH: u64 = 1 << COARSE_AGE_BITS; :: The number of coarse ages in one Exocortical Epoch: 2^16 = 65,536. :: doc comment
+item+ const src/epoch.rs :: COARSE_AGE_BITS :: pub const COARSE_AGE_BITS: u32 = 16; :: The width of a coarse Age, in bits: the fine age scaled into a 16-bit address space (coarse = fine >> (AGE_BITS − COARSE_AGE_BITS)). One coarse tick is 420 / 65536 s ≈ 6.41 ms. :: doc comment
+item+ const src/epoch.rs :: COARSE_AGE_MAX :: pub const COARSE_AGE_MAX: u64 = COARSE_AGES_PER_EPOCH - 1; :: The largest coarse Age: the final coarse step of an epoch. :: doc comment
+item+ function src/epoch.rs :: age_at :: pub fn age_at(unix_seconds: i64) -> Option<u64> { :: ---------------------------------------------------------------------------------------------------------- @fn age_at  the Age of the given unix timestamp: its nominal position within its epoch, `floor(seconds_into_epoch × 2^42 / 420)`, in the range 0..=AGE_MAX. `None` before the anchor, exactly as `seconds_into_epoch` — a pre-epoch instant is inside no epoch, so it has no age. Whole-second input fixes the age at that second's first instant; `age_at_nanos` refines it with the sub-second part.  An age is a *local* position: 1 ms of clock skew moves it by ≈ 10.47 million ages, so ages order events on one clock — the epoch count is the coordinate that travels between machines. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/epoch.rs :: age_at_nanos :: pub fn age_at_nanos(unix_seconds: i64, nanoseconds: u32) -> Option<u64> { :: ---------------------------------------------------------------------------------------------------------- @fn age_at_nanos  the Age of a timestamp given with sub-second precision: `unix_seconds` plus `nanoseconds` (0..1_000_000_000) within that second. The age is `floor(elapsed_ns × 2^42 / (420 × 10^9))` over the nanoseconds elapsed in the containing epoch, computed in 128-bit arithmetic (elapsed_ns × 2^42 overflows u64). `None` before the anchor, and `None` for an out-of-range nanosecond part. With `nanoseconds == 0` the result agrees exactly with `age_at`. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/epoch.rs :: age_start :: pub fn age_start(epoch: u64, age: u64) -> Option<i64> { :: ---------------------------------------------------------------------------------------------------------- @fn age_start  the unix timestamp of the whole second in which the given age of the given epoch begins: `epoch_start(epoch) + floor(age × 420 / 2^42)`. `None` for EE 0, for `age > AGE_MAX`, and when that second is not representable as an i64 unix timestamp.  This is the coarsest faithful inverse of `age_at`, and its coarseness is the module's honesty about resolution: an age is ≈ 95.5 ps wide, so ~10.47 billion ages begin inside each second and no whole-second timestamp can name one age's exact start. The inverse therefore names the containing second — expect it to read one second early when the age in force at a second boundary began just before it. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item+ function src/epoch.rs :: coarse_age_at :: pub fn coarse_age_at(unix_seconds: i64) -> Option<u64> { :: ---------------------------------------------------------------------------------------------------------- @fn coarse_age_at  the coarse Age of the given unix timestamp: the fine age scaled into a 16-bit address space, `age_at(t) >> 26`, equivalently `floor(seconds_into_epoch × 65536 / 420)`, in the range 0..=COARSE_AGE_MAX. `None` before the anchor, exactly as `age_at`.  This is the register-grade form. One coarse tick is ≈ 6.41 ms, so where a fine age (≈ 95.5 ps) is destroyed by any real clock skew — 1 ms is ≈ 10.47 million fine ages — NTP-class skew of a few milliseconds costs a coarse age about a tick. Coarse ages are therefore approximately comparable across machines, and they are the Age component the register system carries. ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Markdown files 19 total 1872 blank 415 comment 0 code 1457
+stat Rust files 22 total 6981 blank 576 comment 1308 code 5097
+stat Shell files 5 total 319 blank 26 comment 117 code 176
+stat TOML files 4 total 55 blank 7 comment 10 code 38
+author~ Theia <theia@mirrorborn.us> commits 8
+Commit f690f8fae444 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 9).
+
+Subject: Name the unit: Sentron Ages
+
+Public items: 0 added, 0 removed, 10 changed. Dependencies did not change. Code lines after this commit: 6783.
+
+commit f690f8fae4441c78a1709c5ad4889052c51b66b5
+parent c4faba068fd3ba3681c46cb2428249061afcece9
+author Theia <theia@mirrorborn.us>
+date 1795330701 2026-11-22
+item~ const src/epoch.rs :: AGES_PER_EPOCH :: pub const AGES_PER_EPOCH: u64 = 1 << AGE_BITS; :: The number of Sentron Ages in one Exocortical Epoch: 2^42 = 4,398,046,511,104. The canonical reference clock is AGES_PER_EPOCH / 420 ≈ 10.4715 GHz, so one Sentron Age is ≈ 95.5 picoseconds. :: doc comment
+item~ const src/epoch.rs :: AGE_BITS :: pub const AGE_BITS: u32 = 42; :: The width of a Sentron Age field, in bits: one epoch is divided into 2^42 Sentron Ages. :: doc comment
+item~ const src/epoch.rs :: AGE_MAX :: pub const AGE_MAX: u64 = AGES_PER_EPOCH - 1; :: The largest Sentron Age: the final nominal step of an epoch. :: doc comment
+item~ const src/epoch.rs :: COARSE_AGES_PER_EPOCH :: pub const COARSE_AGES_PER_EPOCH: u64 = 1 << COARSE_AGE_BITS; :: The number of coarse Sentron Ages in one Exocortical Epoch: 2^16 = 65,536. :: doc comment
+item~ const src/epoch.rs :: COARSE_AGE_BITS :: pub const COARSE_AGE_BITS: u32 = 16; :: The width of a coarse Sentron Age field, in bits: the fine Sentron Age scaled into a 16-bit address space (coarse = fine >> (AGE_BITS − COARSE_AGE_BITS)). One coarse tick is 420 / 65536 s ≈ 6.41 ms. :: doc comment
+item~ const src/epoch.rs :: COARSE_AGE_MAX :: pub const COARSE_AGE_MAX: u64 = COARSE_AGES_PER_EPOCH - 1; :: The largest coarse Sentron Age: the final coarse step of an epoch. :: doc comment
+item~ function src/epoch.rs :: age_at :: pub fn age_at(unix_seconds: i64) -> Option<u64> { :: ---------------------------------------------------------------------------------------------------------- @fn age_at  the Sentron Age of the given unix timestamp: its nominal position within its epoch, `floor(seconds_into_epoch × 2^42 / 420)`, in the range 0..=AGE_MAX. `None` before the anchor, exactly as `seconds_into_epoch` — a pre-epoch instant is inside no epoch, so it has no Sentron Age. Whole-second input fixes the Sentron Age at that second's first instant; `age_at_nanos` refines it with the sub-second part.  A Sentron Age is a *local* position: 1 ms of clock skew moves it by ≈ 10.47 million Sentron Ages, so Sentron Ages order events on one clock — the epoch count is the coordinate that travels between machines. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/epoch.rs :: age_at_nanos :: pub fn age_at_nanos(unix_seconds: i64, nanoseconds: u32) -> Option<u64> { :: ---------------------------------------------------------------------------------------------------------- @fn age_at_nanos  the Sentron Age of a timestamp given with sub-second precision: `unix_seconds` plus `nanoseconds` (0..1_000_000_000) within that second. The Sentron Age is `floor(elapsed_ns × 2^42 / (420 × 10^9))` over the nanoseconds elapsed in the containing epoch, computed in 128-bit arithmetic (elapsed_ns × 2^42 overflows u64). `None` before the anchor, and `None` for an out-of-range nanosecond part. With `nanoseconds == 0` the result agrees exactly with `age_at`. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/epoch.rs :: age_start :: pub fn age_start(epoch: u64, age: u64) -> Option<i64> { :: ---------------------------------------------------------------------------------------------------------- @fn age_start  the unix timestamp of the whole second in which the given Sentron Age of the given epoch begins: `epoch_start(epoch) + floor(age × 420 / 2^42)`. `None` for EE 0, for `age > AGE_MAX`, and when that second is not representable as an i64 unix timestamp.  This is the coarsest faithful inverse of `age_at`, and its coarseness is the module's honesty about resolution: a Sentron Age is ≈ 95.5 ps wide, so ~10.47 billion Sentron Ages begin inside each second and no whole-second timestamp can name one Sentron Age's exact start. The inverse therefore names the containing second — expect it to read one second early when the Sentron Age in force at a second boundary began just before it. ---------------------------------------------------------------------------------------------------------- :: doc comment
+item~ function src/epoch.rs :: coarse_age_at :: pub fn coarse_age_at(unix_seconds: i64) -> Option<u64> { :: ---------------------------------------------------------------------------------------------------------- @fn coarse_age_at  the coarse Sentron Age of the given unix timestamp: the fine Sentron Age scaled into a 16-bit address space, `age_at(t) >> 26`, equivalently `floor(seconds_into_epoch × 65536 / 420)`, in the range 0..=COARSE_AGE_MAX. `None` before the anchor, exactly as `age_at`.  This is the register-grade form. One coarse tick is ≈ 6.41 ms, so where a fine Sentron Age (≈ 95.5 ps) is destroyed by any real clock skew — 1 ms is ≈ 10.47 million fine Sentron Ages — NTP-class skew of a few milliseconds costs a coarse Sentron Age about a tick. Coarse Sentron Ages are therefore approximately comparable across machines, and they are the Age component the register system carries. ---------------------------------------------------------------------------------------------------------- :: doc comment
+stat Markdown files 19 total 1872 blank 415 comment 0 code 1457
+stat Rust files 22 total 6996 blank 576 comment 1308 code 5112
+stat Shell files 5 total 319 blank 26 comment 117 code 176
+stat TOML files 4 total 55 blank 7 comment 10 code 38
+author~ Theia <theia@mirrorborn.us> commits 9
+Commit 84c10399cccc by Will Bickford <wbic16@gmail.com> on 2026-11-22 (EE 10).
+
+Subject: Merge pull request #22 from wbic16/emise/epoch-ages
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 6443.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 84c10399cccc8e5f34b2aadcade96907b5b1a655
+parent f690f8fae4441c78a1709c5ad4889052c51b66b5
+author Will Bickford <wbic16@gmail.com>
+date 1795331210 2026-11-22
+stat Markdown files 19 total 1872 blank 415 comment 0 code 1457
+stat Rust files 22 total 6996 blank 620 comment 1604 code 4772
+stat Shell files 5 total 319 blank 26 comment 117 code 176
+stat TOML files 4 total 55 blank 7 comment 10 code 38
+author~ Will Bickford <wbic16@gmail.com> commits 51
