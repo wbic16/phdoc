@@ -1,6 +1,6 @@
 # rfcbox — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 79). Project root: /home/wbic16/rfcbox-scan. Scanned at commit da2c4d7048883a12b3c281c30ee260d5a76d4a23. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/rfcbox. Scanned at commit da2c4d7048883a12b3c281c30ee260d5a76d4a23. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -85,7 +85,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 ## Upstream git repo
 
-- Origin: git@github.com:wbic16/rfcbox.git
+- Origin: /home/wbic16/github-archive/mirrors/rfcbox.git
 - Branch: exo
 - Head commit: da2c4d7048883a12b3c281c30ee260d5a76d4a23
 - Working tree: clean
@@ -1513,3 +1513,9 @@ Signature: `def main():`
 What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
+
+---
+
+## Provenance
+
+This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/rfcbox/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
