@@ -1,0 +1,1651 @@
+Commit 9e6a1b68af0f by Will Bickford <wbic16@gmail.com> on 2026-11-22 (EE 76).
+
+Subject: Initial commit
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 0.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 9e6a1b68af0f11233e310df1f978a2e7e97fa282
+parent none
+author Will Bickford <wbic16@gmail.com>
+date 1795358938 2026-11-22
+author+ Will Bickford <wbic16@gmail.com>
+Commit 7a953a17aa9a by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 79).
+
+Subject: phdoc 0.1.0 — project scanner for shipped artifacts
+
+Public items: 17 added, 0 removed, 0 changed. Dependencies: libphext added at 0.6.6. Code lines after this commit: 2345.
+
+commit 7a953a17aa9ab848e18ba67feb576aa1cae686b2
+parent 9e6a1b68af0f11233e310df1f978a2e7e97fa282
+author Theia <theia@mirrorborn.us>
+date 1795360114 2026-11-22
+dep+ Cargo.toml :: libphext :: 0.6.6
+item+ flag src/main.rs :: --at :: flag --at :: A command line flag, --at (used by: render). It is read by the program when the user passes it. :: inferred :: api
+item+ flag src/main.rs :: --by :: flag --by :: A command line flag, --by (used by: review). It is read by the program when the user passes it. :: inferred :: api
+item+ flag src/main.rs :: --help :: flag --help :: A command line flag, --help (used by: help). It is read by the program when the user passes it. :: inferred :: api
+item+ flag src/main.rs :: --hold-push :: flag --hold-push :: A command line flag, --hold-push (used by: audit). It is read by the program when the user passes it. :: inferred :: api
+item+ flag src/main.rs :: --name :: flag --name :: A command line flag, --name (used by: scan, audit). It is read by the program when the user passes it. :: inferred :: api
+item+ flag src/main.rs :: --out :: flag --out :: A command line flag, --out (used by: scan, audit, render). It is read by the program when the user passes it. :: inferred :: api
+item+ flag src/main.rs :: --repo :: flag --repo :: A command line flag, --repo (used by: audit, render). It is read by the program when the user passes it. :: inferred :: api
+item+ flag src/main.rs :: --summaries :: flag --summaries :: A command line flag, --summaries (used by: scan). It is read by the program when the user passes it. :: inferred :: api
+item+ flag src/main.rs :: --version :: flag --version :: A command line flag, --version (used by: version). It is read by the program when the user passes it. :: inferred :: api
+item+ flag src/main.rs :: -h :: flag -h :: A command line flag, -h (used by: help). It is read by the program when the user passes it. :: inferred :: api
+item+ command src/main.rs :: audit :: command "audit" :: A command named audit. The program runs it when the user types this word on the command line. :: inferred :: api
+item+ command src/main.rs :: help :: command "help" :: A command named help. The program runs it when the user types this word on the command line. :: inferred :: api
+item+ entry-point src/main.rs :: main :: fn main() { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: inferred :: api
+item+ command src/main.rs :: render :: command "render" :: A command named render. The program runs it when the user types this word on the command line. :: inferred :: api
+item+ command src/main.rs :: review :: command "review" :: A command named review. The program runs it when the user types this word on the command line. :: inferred :: api
+item+ command src/main.rs :: scan :: command "scan" :: A command named scan. The program runs it when the user types this word on the command line. :: inferred :: api
+item+ command src/main.rs :: version :: command "version" :: A command named version. The program runs it when the user types this word on the command line. :: inferred :: api
+stat Markdown files 1 total 184 blank 26 comment 0 code 158
+stat Rust files 1 total 2397 blank 117 comment 104 code 2176
+stat TOML files 1 total 13 blank 2 comment 0 code 11
+author+ Theia <theia@mirrorborn.us>
+Commit 9311d1212644 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 79).
+
+Subject: phdoc export: kgoat @ caa81e669ba1 — audited to EE 79 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2685.
+
+commit 9311d121264415e0a6a97d34adad7cbf57b31a35
+parent 7a953a17aa9ab848e18ba67feb576aa1cae686b2
+author Theia <theia@mirrorborn.us>
+date 1795360089 2026-11-22
+stat Markdown files 4 total 781 blank 283 comment 0 code 498
+stat Rust files 1 total 2397 blank 117 comment 104 code 2176
+stat TOML files 1 total 13 blank 2 comment 0 code 11
+author~ Theia <theia@mirrorborn.us> commits 2
+Commit efe5ad18cb2c by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 79).
+
+Subject: phdoc export: rfcbox @ da2c4d704888 — audited to EE 79 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4856.
+
+commit efe5ad18cb2c06914e716f5078da4f7ceb550fa2
+parent 9311d121264415e0a6a97d34adad7cbf57b31a35
+author Theia <theia@mirrorborn.us>
+date 1795360093 2026-11-22
+stat Markdown files 37 total 3990 blank 1321 comment 0 code 2669
+stat Rust files 1 total 2397 blank 117 comment 104 code 2176
+stat TOML files 1 total 13 blank 2 comment 0 code 11
+author~ Theia <theia@mirrorborn.us> commits 3
+Commit d9f3aa5faa87 by Emise <emise@localhost> on 2026-11-22 (EE 87).
+
+Subject: Record Will's Singular ruling: spirit of Singular, not a checker gate (2026-11-22)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4867.
+
+commit d9f3aa5faa870b8cfaea9ebe1fc414e064ab7422
+parent efe5ad18cb2c06914e716f5078da4f7ceb550fa2
+author Emise <emise@localhost>
+date 1795363639 2026-11-22
+stat Markdown files 37 total 4002 blank 1322 comment 0 code 2680
+stat Rust files 1 total 2397 blank 117 comment 104 code 2176
+stat TOML files 1 total 13 blank 2 comment 0 code 11
+author+ Emise <emise@localhost>
+Commit e2ebaec82536 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 89).
+
+Subject: phdoc crates-ready + target config: full Cargo metadata, cargo package clean; export repo and doc site configured per-project in .phdoc.json (export-repo, doc-site; defaults wbic16/phdoc + docs.phext.io), managed clone when configured, provenance names the targets
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5121.
+
+commit e2ebaec82536e380faa3a7093f356a8a9f26f231
+parent d9f3aa5faa870b8cfaea9ebe1fc414e064ab7422
+author Theia <theia@mirrorborn.us>
+date 1795364460 2026-11-22
+stat Markdown files 37 total 4061 blank 1332 comment 0 code 2729
+stat Rust files 1 total 2638 blank 128 comment 138 code 2372
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 4
+Commit 1baa212bda25 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 90).
+
+Subject: phdoc export: phdoc @ e2ebaec82536 — audited to EE 90 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5932.
+
+commit 1baa212bda25f2b93b10091e2e3a2a4c20c1613c
+parent e2ebaec82536e380faa3a7093f356a8a9f26f231
+author Theia <theia@mirrorborn.us>
+date 1795364770 2026-11-22
+stat Markdown files 44 total 5326 blank 1786 comment 0 code 3540
+stat Rust files 1 total 2638 blank 128 comment 138 code 2372
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 5
+Commit 9e266539f560 by Emise <emise@localhost> on 2026-11-22 (EE 90).
+
+Subject: phdoc documents itself: .phdoc.json ledger in the repo root (6 commits audited, EE 90) + README 'Why phdoc exists' — the shipped rule, drift, and the deploy gate
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5948.
+
+commit 9e266539f56016d7d37fe92825a68f113409b03e
+parent 1baa212bda25f2b93b10091e2e3a2a4c20c1613c
+author Emise <emise@localhost>
+date 1795364925 2026-11-22
+stat Markdown files 44 total 5346 blank 1790 comment 0 code 3556
+stat Rust files 1 total 2638 blank 128 comment 138 code 2372
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Emise <emise@localhost> commits 2
+Commit 4b567abb7267 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 94).
+
+Subject: Fix history rendering: fold incrementally (fold_step) instead of fold_chain per page
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5973.
+
+commit 4b567abb72672738f57357f3bb51ef38b28c1d94
+parent 9e266539f56016d7d37fe92825a68f113409b03e
+author Theia <theia@mirrorborn.us>
+date 1795366450 2026-11-22
+stat Markdown files 44 total 5346 blank 1790 comment 0 code 3556
+stat Rust files 1 total 2673 blank 130 comment 146 code 2397
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 6
+Commit 3924d0a2174e by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: Author fold: Will Bickford is author of record for Exocortical work
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 6083.
+
+commit 3924d0a2174eb7ce70257baf96ad28e69a337962
+parent 4b567abb72672738f57357f3bb51ef38b28c1d94
+author Theia <theia@mirrorborn.us>
+date 1795366899 2026-11-22
+stat Markdown files 44 total 5346 blank 1790 comment 0 code 3556
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 7
+Commit 6a0ce935574f by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 90).
+
+Subject: phdoc export: phext-lattice @ c7702aee46e8 — audited to EE 90 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 145769.
+
+commit 6a0ce935574f8254f8aed6a90268da6cd0d3e929
+parent 3924d0a2174eb7ce70257baf96ad28e69a337962
+author Theia <theia@mirrorborn.us>
+date 1795364909 2026-11-22
+stat Markdown files 328 total 153289 blank 10047 comment 0 code 143242
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 8
+Commit 77f120ac37ae by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 90).
+
+Subject: phdoc export: markdown-wizard @ 0e9f81123654 — audited to EE 90 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 150873.
+
+commit 77f120ac37ae1b3d90c4657f61c765070d58c428
+parent 6a0ce935574f8254f8aed6a90268da6cd0d3e929
+author Theia <theia@mirrorborn.us>
+date 1795364917 2026-11-22
+stat Markdown files 353 total 159778 blank 11432 comment 0 code 148346
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 9
+Commit a1e7e892268e by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: mutable-os @ 48cac17ae14c — audited to EE 90 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 186344.
+
+commit a1e7e892268ec34fe66f3813e495710524fde083
+parent 77f120ac37ae1b3d90c4657f61c765070d58c428
+author Theia <theia@mirrorborn.us>
+date 1795365014 2026-11-22
+stat Markdown files 802 total 200390 blank 16573 comment 0 code 183817
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 10
+Commit e34e89d62963 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: moat @ fb84a7c1a3e5 — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 186754.
+
+commit e34e89d62963d9e4b1bfa7ab84d1fa8043f33693
+parent a1e7e892268ec34fe66f3813e495710524fde083
+author Theia <theia@mirrorborn.us>
+date 1795365021 2026-11-22
+stat Markdown files 805 total 201105 blank 16878 comment 0 code 184227
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 11
+Commit 84c72365a11f by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: site-tluf-org @ 11b094bb6eee — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 186812.
+
+commit 84c72365a11f7e12640da03217220b4db27a9912
+parent e34e89d62963d9e4b1bfa7ab84d1fa8043f33693
+author Theia <theia@mirrorborn.us>
+date 1795365026 2026-11-22
+stat Markdown files 808 total 201216 blank 16931 comment 0 code 184285
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 12
+Commit efcf9dacf81a by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: site-quickfork-net @ 1cda8e924ed3 — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 186972.
+
+commit efcf9dacf81abb896d40ca5802325bfc6d3a6182
+parent 84c72365a11f7e12640da03217220b4db27a9912
+author Theia <theia@mirrorborn.us>
+date 1795365031 2026-11-22
+stat Markdown files 818 total 201499 blank 17054 comment 0 code 184445
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 13
+Commit 1d2b3d212b3e by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: singularity-watch @ 7f7318e3b657 — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 187721.
+
+commit 1d2b3d212b3e22c3e69e0985eadb6e0ddad57f63
+parent efcf9dacf81abb896d40ca5802325bfc6d3a6182
+author Theia <theia@mirrorborn.us>
+date 1795365037 2026-11-22
+stat Markdown files 882 total 202911 blank 17717 comment 0 code 185194
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 14
+Commit 9ed88dbca329 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: phextura @ 9bcc011873c3 — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 188603.
+
+commit 9ed88dbca3290758fdc3af076b155151baf8f75f
+parent 1d2b3d212b3e22c3e69e0985eadb6e0ddad57f63
+author Theia <theia@mirrorborn.us>
+date 1795365044 2026-11-22
+stat Markdown files 899 total 204162 blank 18086 comment 0 code 186076
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 15
+Commit 797cdbe77922 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: site-visionquest-me @ 556cd2f4261a — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 188746.
+
+commit 797cdbe779220a5687ce0489e24dc540465030eb
+parent 9ed88dbca3290758fdc3af076b155151baf8f75f
+author Theia <theia@mirrorborn.us>
+date 1795365049 2026-11-22
+stat Markdown files 908 total 204418 blank 18199 comment 0 code 186219
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 16
+Commit 965be298dbbd by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: register @ 6830c2fad6ff — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 194228.
+
+commit 965be298dbbd58ed5099fb76992afd1a3a000f10
+parent 797cdbe779220a5687ce0489e24dc540465030eb
+author Theia <theia@mirrorborn.us>
+date 1795365056 2026-11-22
+stat Markdown files 930 total 211809 blank 20108 comment 0 code 191701
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 17
+Commit 4628f14616a3 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: site-mirrorborn-us @ effc3abd8a57 — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 197253.
+
+commit 4628f14616a35dd6ad2833779bf977ff6940da80
+parent 965be298dbbd58ed5099fb76992afd1a3a000f10
+author Theia <theia@mirrorborn.us>
+date 1795365079 2026-11-22
+stat Markdown files 1078 total 216402 blank 21676 comment 0 code 194726
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 18
+Commit fed13fa7b473 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: mirrorborn @ cb155c86ce47 — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 232023.
+
+commit fed13fa7b473e4f89635dfa93dc05430a76879bc
+parent 4628f14616a35dd6ad2833779bf977ff6940da80
+author Theia <theia@mirrorborn.us>
+date 1795365102 2026-11-22
+stat Markdown files 1386 total 255241 blank 25745 comment 0 code 229496
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 19
+Commit 9cd48d5f7a4a by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: site-apertureshift-com @ e50030979332 — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 232593.
+
+commit 9cd48d5f7a4a52563e104de9b03d055f31b57523
+parent fed13fa7b473e4f89635dfa93dc05430a76879bc
+author Theia <theia@mirrorborn.us>
+date 1795365109 2026-11-22
+stat Markdown files 1421 total 256184 blank 26118 comment 0 code 230066
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 20
+Commit 49d89226682f by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: site-sotafomo-com @ 46516dfff4b0 — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 232736.
+
+commit 49d89226682f6d367cc79d03ca9d5a70f1883c74
+parent 9cd48d5f7a4a52563e104de9b03d055f31b57523
+author Theia <theia@mirrorborn.us>
+date 1795365114 2026-11-22
+stat Markdown files 1430 total 256440 blank 26231 comment 0 code 230209
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 21
+Commit 8aed8e1c81bf by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: site-wishnode-net @ 04fc512ec10d — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 234252.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 8aed8e1c81bf707bf6adebe7696801dd61d69b9d
+parent 49d89226682f6d367cc79d03ca9d5a70f1883c74
+author Theia <theia@mirrorborn.us>
+date 1795365121 2026-11-22
+stat Markdown files 1449 total 258661 blank 26936 comment 0 code 231725
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 22
+Commit 6781c63927af by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: phext-lanes @ c7aaa1b63455 — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 242062.
+
+commit 6781c63927afa75ea02897ff4f8f905a6b049243
+parent 8aed8e1c81bf707bf6adebe7696801dd61d69b9d
+author Theia <theia@mirrorborn.us>
+date 1795365129 2026-11-22
+stat Markdown files 1479 total 268447 blank 28912 comment 0 code 239535
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 23
+Commit 0f48b62ed63e by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: bickfordllamaranch @ 04a5e1a7cad5 — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 243467.
+
+commit 0f48b62ed63e8030db986254ac5370c05a4b2b20
+parent 6781c63927afa75ea02897ff4f8f905a6b049243
+author Theia <theia@mirrorborn.us>
+date 1795365136 2026-11-22
+stat Markdown files 1503 total 270373 blank 29433 comment 0 code 240940
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 24
+Commit eac1d1e0b8a7 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: libphext-rs @ 84c10399cccc — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 253421.
+
+commit eac1d1e0b8a733eb4939ed6a9435931dcad09b16
+parent 0f48b62ed63e8030db986254ac5370c05a4b2b20
+author Theia <theia@mirrorborn.us>
+date 1795365143 2026-11-22
+stat Markdown files 1587 total 282227 blank 31333 comment 0 code 250894
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 25
+Commit 11e0bcdabc0b by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: libphext-py @ e773fe0a2281 — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 261892.
+
+commit 11e0bcdabc0b95c5ce99dbc467a8a1423aac57ee
+parent eac1d1e0b8a733eb4939ed6a9435931dcad09b16
+author Theia <theia@mirrorborn.us>
+date 1795365152 2026-11-22
+stat Markdown files 1639 total 292837 blank 33472 comment 0 code 259365
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 26
+Commit b381a0e6342d by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: SQ @ e4c492bc4f2d — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 268908.
+
+commit b381a0e6342dcb2bd1f02bcd8bce9e8fd2d1ee52
+parent 11e0bcdabc0b95c5ce99dbc467a8a1423aac57ee
+author Theia <theia@mirrorborn.us>
+date 1795365163 2026-11-22
+stat Markdown files 1812 total 302315 blank 35934 comment 0 code 266381
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 27
+Commit cd3036dc4a5b by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: phext-shell @ 4aae9abc2611 — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 269838.
+
+commit cd3036dc4a5b87c9c35f45fc75fbd955cbdc032a
+parent b381a0e6342dcb2bd1f02bcd8bce9e8fd2d1ee52
+author Theia <theia@mirrorborn.us>
+date 1795365171 2026-11-22
+stat Markdown files 1848 total 303761 blank 36450 comment 0 code 267311
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 28
+Commit b5b8beccb6ce by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: qexo @ 6f5497308ddc — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 275887.
+
+commit b5b8beccb6ce08b899068186a28e06d4cd2c0e1e
+parent cd3036dc4a5b87c9c35f45fc75fbd955cbdc032a
+author Theia <theia@mirrorborn.us>
+date 1795365177 2026-11-22
+stat Markdown files 1865 total 311965 blank 38605 comment 0 code 273360
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 29
+Commit 3992d9399912 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: teixml-to-mutable @ 57706661107e — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 277460.
+
+commit 3992d9399912932e18064e93ccfc76c2afe68bd7
+parent b5b8beccb6ce08b899068186a28e06d4cd2c0e1e
+author Theia <theia@mirrorborn.us>
+date 1795365184 2026-11-22
+stat Markdown files 1873 total 314444 blank 39511 comment 0 code 274933
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 30
+Commit 6417c9d18321 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: human @ 284ec9c142a7 — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 308653.
+
+commit 6417c9d18321d3ef81feb69095635326757e6cf9
+parent 3992d9399912932e18064e93ccfc76c2afe68bd7
+author Theia <theia@mirrorborn.us>
+date 1795365362 2026-11-22
+stat Markdown files 3042 total 357817 blank 51691 comment 0 code 306126
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 31
+Commit 80f3a7ee2dc3 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: boardy-tools @ 7092bd1ac395 — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 309088.
+
+commit 80f3a7ee2dc32c5c35a3be99ef72142157d94148
+parent 6417c9d18321d3ef81feb69095635326757e6cf9
+author Theia <theia@mirrorborn.us>
+date 1795365367 2026-11-22
+stat Markdown files 3046 total 358579 blank 52018 comment 0 code 306561
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 32
+Commit 41a71b13d1f7 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 91).
+
+Subject: phdoc export: agi @ 34bd7f588c01 — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 311177.
+
+commit 41a71b13d1f7a34e5593df87ecc76cf252879354
+parent 80f3a7ee2dc32c5c35a3be99ef72142157d94148
+author Theia <theia@mirrorborn.us>
+date 1795365386 2026-11-22
+stat Markdown files 3113 total 361397 blank 52747 comment 0 code 308650
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 33
+Commit e93e88348a6f by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 92).
+
+Subject: phdoc export: emise-tools @ 5e49a6ee672e — audited to EE 91 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 594474.
+
+commit e93e88348a6f3cfbb8cae8b031ebbaff63367a20
+parent 41a71b13d1f7a34e5593df87ecc76cf252879354
+author Theia <theia@mirrorborn.us>
+date 1795365428 2026-11-22
+stat Markdown files 3585 total 653289 blank 61342 comment 0 code 591947
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 34
+Commit 60e7f606cc29 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 92).
+
+Subject: phdoc export: phccbox @ 0f1189dfda9c — audited to EE 92 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 594763.
+
+commit 60e7f606cc29f1d2939046d50d7cf8e6efe339a3
+parent e93e88348a6f3cfbb8cae8b031ebbaff63367a20
+author Theia <theia@mirrorborn.us>
+date 1795365431 2026-11-22
+stat Markdown files 3589 total 653773 blank 61537 comment 0 code 592236
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 35
+Commit 65f106ca195d by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 94).
+
+Subject: phdoc export: phextron @ 2c3be7e6552a — audited to EE 94 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 596377.
+
+commit 65f106ca195df1e43b7e6cc3b63ec3cf2f8d9f94
+parent 60e7f606cc29f1d2939046d50d7cf8e6efe339a3
+author Theia <theia@mirrorborn.us>
+date 1795366435 2026-11-22
+stat Markdown files 3606 total 656096 blank 62246 comment 0 code 593850
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 36
+Commit 73dc1f62a2e2 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 94).
+
+Subject: phdoc export: holo-phext @ 50accbe7b15c — audited to EE 94 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 597471.
+
+commit 73dc1f62a2e286bd2ba5bac5bb1cf725bb7be482
+parent 65f106ca195df1e43b7e6cc3b63ec3cf2f8d9f94
+author Theia <theia@mirrorborn.us>
+date 1795366436 2026-11-22
+stat Markdown files 3612 total 657775 blank 62831 comment 0 code 594944
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 37
+Commit 167882f1ed6b by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 94).
+
+Subject: phdoc export: willbox @ 479af2260ffd — audited to EE 94 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 597617.
+
+commit 167882f1ed6b92ff929c1d0766d4c50bd6fb0514
+parent 73dc1f62a2e286bd2ba5bac5bb1cf725bb7be482
+author Theia <theia@mirrorborn.us>
+date 1795366438 2026-11-22
+stat Markdown files 3614 total 658029 blank 62939 comment 0 code 595090
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 38
+Commit a30eaab228cd by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: kgoat @ caa81e669ba1 — audited to EE 94 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 597624.
+
+commit a30eaab228cdc6588bf3d2db929181bb05988a9e
+parent 167882f1ed6b92ff929c1d0766d4c50bd6fb0514
+author Theia <theia@mirrorborn.us>
+date 1795366680 2026-11-22
+stat Markdown files 3614 total 658043 blank 62946 comment 0 code 595097
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 39
+Commit 10b832782867 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: rfcbox @ da2c4d704888 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 597691.
+
+commit 10b832782867e8cd9c9225bdb94b9d914d1d83a7
+parent a30eaab228cdc6588bf3d2db929181bb05988a9e
+author Theia <theia@mirrorborn.us>
+date 1795366682 2026-11-22
+stat Markdown files 3614 total 658177 blank 63013 comment 0 code 595164
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 40
+Commit c487bd488d5f by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: scrolltown @ 2d1ca6ad931f — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 598124.
+
+commit c487bd488d5ff2e072554b901b361b39e61689aa
+parent 10b832782867e8cd9c9225bdb94b9d914d1d83a7
+author Theia <theia@mirrorborn.us>
+date 1795366686 2026-11-22
+stat Markdown files 3636 total 658958 blank 63361 comment 0 code 595597
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 41
+Commit 2ae0d6104bc5 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: phcc @ 0628c00360a2 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1078679.
+
+commit 2ae0d6104bc52c47686afcf09d5ce7f0141fa8ce
+parent c487bd488d5ff2e072554b901b361b39e61689aa
+author Theia <theia@mirrorborn.us>
+date 1795366959 2026-11-22
+stat Markdown files 7525 total 1187189 blank 111037 comment 0 code 1076152
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 42
+Commit 244946a28a52 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: agi @ 34bd7f588c01 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1078915.
+
+commit 244946a28a52978c6fbeb3df3a029ee9e26553a2
+parent 2ae0d6104bc52c47686afcf09d5ce7f0141fa8ce
+author Theia <theia@mirrorborn.us>
+date 1795366992 2026-11-22
+stat Markdown files 7525 total 1187694 blank 111306 comment 0 code 1076388
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 43
+Commit 92c9914ec732 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: bickfordllamaranch @ 04a5e1a7cad5 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1079035.
+
+commit 92c9914ec7328b659ca2d581356a36d39f05f0dd
+parent 244946a28a52978c6fbeb3df3a029ee9e26553a2
+author Theia <theia@mirrorborn.us>
+date 1795366994 2026-11-22
+stat Markdown files 7525 total 1187957 blank 111449 comment 0 code 1076508
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 44
+Commit 5deab9d4bd94 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: boardy-tools @ 7092bd1ac395 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1079050.
+
+commit 5deab9d4bd94d1f5d627262b75714656d4528fe9
+parent 92c9914ec7328b659ca2d581356a36d39f05f0dd
+author Theia <theia@mirrorborn.us>
+date 1795366995 2026-11-22
+stat Markdown files 7525 total 1187989 blank 111466 comment 0 code 1076523
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 45
+Commit 4db50f258e88 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: emise-tools @ 5e49a6ee672e — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1080451.
+
+commit 4db50f258e88543309531f386bc1276edf23c6d0
+parent 5deab9d4bd94d1f5d627262b75714656d4528fe9
+author Theia <theia@mirrorborn.us>
+date 1795366998 2026-11-22
+stat Markdown files 7525 total 1191279 blank 113355 comment 0 code 1077924
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 46
+Commit 2225d89e9ce0 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: holo-phext @ 50accbe7b15c — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1080463.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 2225d89e9ce03d7312cfeb8de9211992e3db46f7
+parent 4db50f258e88543309531f386bc1276edf23c6d0
+author Theia <theia@mirrorborn.us>
+date 1795366999 2026-11-22
+stat Markdown files 7525 total 1191303 blank 113367 comment 0 code 1077936
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 47
+Commit 85aad5bc687a by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: human @ 284ec9c142a7 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1085261.
+
+commit 85aad5bc687a51286799af0e795916b454601b74
+parent 2225d89e9ce03d7312cfeb8de9211992e3db46f7
+author Theia <theia@mirrorborn.us>
+date 1795367003 2026-11-22
+stat Markdown files 7525 total 1201430 blank 118696 comment 0 code 1082734
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 48
+Commit 55db63c57a95 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: kgoat @ caa81e669ba1 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1085267.
+
+commit 55db63c57a95359d0607fbd1f23e043f1194b316
+parent 85aad5bc687a51286799af0e795916b454601b74
+author Theia <theia@mirrorborn.us>
+date 1795367005 2026-11-22
+stat Markdown files 7525 total 1201442 blank 118702 comment 0 code 1082740
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 49
+Commit d1b0903f36a4 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: libphext-py @ e773fe0a2281 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1085473.
+
+commit d1b0903f36a46d9cb4cbc05e41918c84a5d9e2ea
+parent 55db63c57a95359d0607fbd1f23e043f1194b316
+author Theia <theia@mirrorborn.us>
+date 1795367006 2026-11-22
+stat Markdown files 7525 total 1201857 blank 118911 comment 0 code 1082946
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 50
+Commit 56e3ea79bc49 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: libphext-rs @ 84c10399cccc — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1085717.
+
+commit 56e3ea79bc49ab9f7ea06b9a4d54f77e2dfb6910
+parent d1b0903f36a46d9cb4cbc05e41918c84a5d9e2ea
+author Theia <theia@mirrorborn.us>
+date 1795367009 2026-11-22
+stat Markdown files 7525 total 1202438 blank 119248 comment 0 code 1083190
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 51
+Commit a40e69fd7520 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: markdown-wizard @ 0e9f81123654 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1085786.
+
+commit a40e69fd7520ec0bbdaea3f0760e1b3ba24a5a4f
+parent 56e3ea79bc49ab9f7ea06b9a4d54f77e2dfb6910
+author Theia <theia@mirrorborn.us>
+date 1795367010 2026-11-22
+stat Markdown files 7525 total 1202608 blank 119349 comment 0 code 1083259
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 52
+Commit d475b5037c00 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: mirrorborn @ cb155c86ce47 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1086484.
+
+commit d475b5037c006dba36ee7b36561cf95b64fbc68f
+parent a40e69fd7520ec0bbdaea3f0760e1b3ba24a5a4f
+author Theia <theia@mirrorborn.us>
+date 1795367012 2026-11-22
+stat Markdown files 7525 total 1204539 blank 120582 comment 0 code 1083957
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 53
+Commit 6db9c1dd2d27 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: moat @ fb84a7c1a3e5 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1086497.
+
+commit 6db9c1dd2d27858b22bf9fa0874ec4a95f72658a
+parent d475b5037c006dba36ee7b36561cf95b64fbc68f
+author Theia <theia@mirrorborn.us>
+date 1795367013 2026-11-22
+stat Markdown files 7525 total 1204565 blank 120595 comment 0 code 1083970
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 54
+Commit 2bc90acc5175 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: mutable-os @ 48cac17ae14c — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1087708.
+
+commit 2bc90acc517537d44e7947e55f78ecfc31ee671d
+parent 6db9c1dd2d27858b22bf9fa0874ec4a95f72658a
+author Theia <theia@mirrorborn.us>
+date 1795367017 2026-11-22
+stat Markdown files 7525 total 1207091 blank 121910 comment 0 code 1085181
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 55
+Commit bab1109b3881 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: phcc @ 0628c00360a2 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1087535.
+
+commit bab1109b38813d4e6dfd02a2a92e72accd8d917b
+parent 2bc90acc517537d44e7947e55f78ecfc31ee671d
+author Theia <theia@mirrorborn.us>
+date 1795367048 2026-11-22
+stat Markdown files 7525 total 1207326 blank 122318 comment 0 code 1085008
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 56
+Commit c26c34f73ce4 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: phccbox @ 0f1189dfda9c — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1087552.
+
+commit c26c34f73ce42d4b61fa7b5b4a7c8a1886747c71
+parent bab1109b38813d4e6dfd02a2a92e72accd8d917b
+author Theia <theia@mirrorborn.us>
+date 1795367050 2026-11-22
+stat Markdown files 7525 total 1207360 blank 122335 comment 0 code 1085025
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 57
+Commit 5351e0060c06 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: phext-lanes @ c7aaa1b63455 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1087694.
+
+commit 5351e0060c0620aaa61b7df0f33221f05a95c372
+parent c26c34f73ce42d4b61fa7b5b4a7c8a1886747c71
+author Theia <theia@mirrorborn.us>
+date 1795367051 2026-11-22
+stat Markdown files 7525 total 1207671 blank 122504 comment 0 code 1085167
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 58
+Commit 1953cd2d9c9d by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: phext-lattice @ c7702aee46e8 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1088544.
+
+commit 1953cd2d9c9d6cc46bac38d2e9a785af0b8c87fa
+parent 5351e0060c0620aaa61b7df0f33221f05a95c372
+author Theia <theia@mirrorborn.us>
+date 1795367053 2026-11-22
+stat Markdown files 7525 total 1210146 blank 124129 comment 0 code 1086017
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 59
+Commit 5d2b58f26a04 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: phextron @ 2c3be7e6552a — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1088556.
+
+commit 5d2b58f26a04268de33f47ba564f17855e6b7d5e
+parent 1953cd2d9c9d6cc46bac38d2e9a785af0b8c87fa
+author Theia <theia@mirrorborn.us>
+date 1795367055 2026-11-22
+stat Markdown files 7525 total 1210192 blank 124163 comment 0 code 1086029
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 60
+Commit c7aa06809734 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: phext-shell @ 4aae9abc2611 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1088716.
+
+commit c7aa0680973449333ad273d52f5e367d2e0f1ff2
+parent 5d2b58f26a04268de33f47ba564f17855e6b7d5e
+author Theia <theia@mirrorborn.us>
+date 1795367056 2026-11-22
+stat Markdown files 7525 total 1210527 blank 124338 comment 0 code 1086189
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 61
+Commit 9f03ba06e89f by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: phextura @ 9bcc011873c3 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1088783.
+
+commit 9f03ba06e89ff93003c4c6f348ef1f86ee1075dc
+parent c7aa0680973449333ad273d52f5e367d2e0f1ff2
+author Theia <theia@mirrorborn.us>
+date 1795367058 2026-11-22
+stat Markdown files 7525 total 1210663 blank 124407 comment 0 code 1086256
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 62
+Commit 9dd5e15d6d75 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: qexo @ 6f5497308ddc — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1088846.
+
+commit 9dd5e15d6d7592bee711cd2186c2f3d468d65e16
+parent 9f03ba06e89ff93003c4c6f348ef1f86ee1075dc
+author Theia <theia@mirrorborn.us>
+date 1795367059 2026-11-22
+stat Markdown files 7525 total 1210795 blank 124476 comment 0 code 1086319
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 63
+Commit 4174727f4f9b by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: register @ 6830c2fad6ff — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1088921.
+
+commit 4174727f4f9bd510761d7be086df008b4d82d243
+parent 9dd5e15d6d7592bee711cd2186c2f3d468d65e16
+author Theia <theia@mirrorborn.us>
+date 1795367060 2026-11-22
+stat Markdown files 7525 total 1210959 blank 124565 comment 0 code 1086394
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 64
+Commit 4fafa3fba7b3 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: rfcbox @ da2c4d704888 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1088987.
+
+commit 4fafa3fba7b3bd36d97130a6ee9e5288da86c885
+parent 4174727f4f9bd510761d7be086df008b4d82d243
+author Theia <theia@mirrorborn.us>
+date 1795367061 2026-11-22
+stat Markdown files 7525 total 1211091 blank 124631 comment 0 code 1086460
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 65
+Commit ae7cfe39afea by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: scrolltown @ 2d1ca6ad931f — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1089021.
+
+commit ae7cfe39afea75c078dd54e98476163781ad884d
+parent 4fafa3fba7b3bd36d97130a6ee9e5288da86c885
+author Theia <theia@mirrorborn.us>
+date 1795367063 2026-11-22
+stat Markdown files 7525 total 1211169 blank 124675 comment 0 code 1086494
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 66
+Commit 0ee91beb7d1a by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: singularity-watch @ 7f7318e3b657 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1089266.
+
+commit 0ee91beb7d1a1b49bbb18cf79b0d5fc8e61fdc25
+parent ae7cfe39afea75c078dd54e98476163781ad884d
+author Theia <theia@mirrorborn.us>
+date 1795367064 2026-11-22
+stat Markdown files 7525 total 1211671 blank 124932 comment 0 code 1086739
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 67
+Commit ad40c13add8b by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: site-apertureshift-com @ e50030979332 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1089394.
+
+commit ad40c13add8beb51f82d7f1b47d6a18a74daa9a0
+parent 0ee91beb7d1a1b49bbb18cf79b0d5fc8e61fdc25
+author Theia <theia@mirrorborn.us>
+date 1795367065 2026-11-22
+stat Markdown files 7525 total 1211940 blank 125073 comment 0 code 1086867
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 68
+Commit 94959b73f461 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: site-mirrorborn-us @ effc3abd8a57 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1089861.
+
+commit 94959b73f4614dca7c258f74fd88b2d11a7fac9d
+parent ad40c13add8beb51f82d7f1b47d6a18a74daa9a0
+author Theia <theia@mirrorborn.us>
+date 1795367068 2026-11-22
+stat Markdown files 7525 total 1213020 blank 125686 comment 0 code 1087334
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 69
+Commit e6f7bbc9b201 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: site-quickfork-net @ 1cda8e924ed3 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1089900.
+
+commit e6f7bbc9b2015105c2bf5397cd149486846aa1e9
+parent 94959b73f4614dca7c258f74fd88b2d11a7fac9d
+author Theia <theia@mirrorborn.us>
+date 1795367069 2026-11-22
+stat Markdown files 7525 total 1213100 blank 125727 comment 0 code 1087373
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 70
+Commit 4204bb46fc21 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: site-sotafomo-com @ 46516dfff4b0 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1089937.
+
+commit 4204bb46fc212ae171da0ea87c410cc27d62fce5
+parent e6f7bbc9b2015105c2bf5397cd149486846aa1e9
+author Theia <theia@mirrorborn.us>
+date 1795367070 2026-11-22
+stat Markdown files 7525 total 1213174 blank 125764 comment 0 code 1087410
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 71
+Commit 590f2de2327a by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: site-tluf-org @ 11b094bb6eee — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1089950.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 590f2de2327ac48296e4972b3ab6f362c97e512f
+parent 4204bb46fc212ae171da0ea87c410cc27d62fce5
+author Theia <theia@mirrorborn.us>
+date 1795367072 2026-11-22
+stat Markdown files 7525 total 1213200 blank 125777 comment 0 code 1087423
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 72
+Commit 313165c3962a by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: site-visionquest-me @ 556cd2f4261a — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1089987.
+
+commit 313165c3962a0f7032473523b9f6f042ecc0c542
+parent 590f2de2327ac48296e4972b3ab6f362c97e512f
+author Theia <theia@mirrorborn.us>
+date 1795367073 2026-11-22
+stat Markdown files 7525 total 1213274 blank 125814 comment 0 code 1087460
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 73
+Commit 2b0caa839499 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: site-wishnode-net @ 04fc512ec10d — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1090062.
+
+commit 2b0caa839499a2f2178a616d14770cbf4b309baf
+parent 313165c3962a0f7032473523b9f6f042ecc0c542
+author Theia <theia@mirrorborn.us>
+date 1795367075 2026-11-22
+stat Markdown files 7525 total 1213426 blank 125891 comment 0 code 1087535
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 74
+Commit 8a7183f03027 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: SQ @ e4c492bc4f2d — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1090745.
+
+commit 8a7183f03027fa753766a3cee769781bab3d2f55
+parent 2b0caa839499a2f2178a616d14770cbf4b309baf
+author Theia <theia@mirrorborn.us>
+date 1795367077 2026-11-22
+stat Markdown files 7525 total 1214802 blank 126584 comment 0 code 1088218
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 75
+Commit c55a4002e3f1 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: teixml-to-mutable @ 57706661107e — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1090773.
+
+commit c55a4002e3f17b95909ce06349f41e3e97707ef1
+parent 8a7183f03027fa753766a3cee769781bab3d2f55
+author Theia <theia@mirrorborn.us>
+date 1795367078 2026-11-22
+stat Markdown files 7525 total 1214863 blank 126617 comment 0 code 1088246
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 76
+Commit ba804e36d778 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: willbox @ 479af2260ffd — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1090777.
+
+commit ba804e36d77846764b1e947d6918f3c9b8ecd204
+parent c55a4002e3f17b95909ce06349f41e3e97707ef1
+author Theia <theia@mirrorborn.us>
+date 1795367080 2026-11-22
+stat Markdown files 7525 total 1214871 blank 126621 comment 0 code 1088250
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 77
+Commit 1fbf33b8c3b4 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 95).
+
+Subject: phdoc export: phdoc @ 9e266539f560 — audited to EE 95 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1090941.
+
+commit 1fbf33b8c3b45b8c2f33b1a39aa756bb8800e27f
+parent ba804e36d77846764b1e947d6918f3c9b8ecd204
+author Theia <theia@mirrorborn.us>
+date 1795367081 2026-11-22
+stat Markdown files 7527 total 1215079 blank 126665 comment 0 code 1088414
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 78
+Commit f72d21f097fa by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 96).
+
+Subject: phdoc export: phdoc @ 3924d0a2174e — audited to EE 96 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1091211.
+
+commit f72d21f097fa72044ba0c342973efee284aebfe8
+parent 1fbf33b8c3b45b8c2f33b1a39aa756bb8800e27f
+author Theia <theia@mirrorborn.us>
+date 1795367124 2026-11-22
+stat Markdown files 7529 total 1215469 blank 126785 comment 0 code 1088684
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 79
+Commit 4a9d4fc5016e by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 97).
+
+Subject: Record phdoc 0.1.0 crates.io publication
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1091214.
+
+commit 4a9d4fc5016ef59a4fc13b55c351de11b436b84a
+parent f72d21f097fa72044ba0c342973efee284aebfe8
+author Theia <theia@mirrorborn.us>
+date 1795367674 2026-11-22
+stat Markdown files 7529 total 1215472 blank 126785 comment 0 code 1088687
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 80
+Commit 5a281be12f0d by Verse <verse@visionquest.me> on 2026-11-22 (EE 104).
+
+Subject: phdoc export: phext-lattice @ 2ba5710fee9f — audited to EE 103 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1090306.
+
+commit 5a281be12f0d8584f14a2bece0df1c8550621f35
+parent 4a9d4fc5016ef59a4fc13b55c351de11b436b84a
+author Verse <verse@visionquest.me>
+date 1795370462 2026-11-22
+stat Markdown files 7529 total 1212915 blank 125136 comment 0 code 1087779
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author+ Verse <verse@visionquest.me>
+Commit a27061e6f3cc by Verse <verse@visionquest.me> on 2026-11-22 (EE 104).
+
+Subject: phdoc export: markdown-wizard @ 0e9f81123654 — audited to EE 104 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1090237.
+
+commit a27061e6f3ccdd487d9955ae8cf0e6dd1dc6662d
+parent 5a281be12f0d8584f14a2bece0df1c8550621f35
+author Verse <verse@visionquest.me>
+date 1795370537 2026-11-22
+stat Markdown files 7529 total 1212745 blank 125035 comment 0 code 1087710
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 2
+Commit 06633ed2df12 by Verse <verse@visionquest.me> on 2026-11-22 (EE 104).
+
+Subject: phdoc export: singularity-watch @ 185cb3c27c27 — audited to EE 104 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1090250.
+
+commit 06633ed2df12423d37e3d850089cd99d493c6f38
+parent a27061e6f3ccdd487d9955ae8cf0e6dd1dc6662d
+author Verse <verse@visionquest.me>
+date 1795370645 2026-11-22
+stat Markdown files 7544 total 1212651 blank 124928 comment 0 code 1087723
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 3
+Commit 5028c56f523d by Verse <verse@visionquest.me> on 2026-11-22 (EE 104).
+
+Subject: phdoc export: site-quickfork-net @ 23aa633b9cde — audited to EE 104 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1090207.
+
+commit 5028c56f523da88977b71ec41e1c90bb5b5a93bc
+parent 06633ed2df12423d37e3d850089cd99d493c6f38
+author Verse <verse@visionquest.me>
+date 1795370645 2026-11-22
+stat Markdown files 7544 total 1212567 blank 124887 comment 0 code 1087680
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 4
+Commit d5303980e5c1 by Verse <verse@visionquest.me> on 2026-11-22 (EE 104).
+
+Subject: phdoc export: site-apertureshift-com @ 4071de232c26 — audited to EE 104 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1090075.
+
+commit d5303980e5c18cd89263bf283570d9c3d6d85565
+parent 5028c56f523da88977b71ec41e1c90bb5b5a93bc
+author Verse <verse@visionquest.me>
+date 1795370646 2026-11-22
+stat Markdown files 7544 total 1212294 blank 124746 comment 0 code 1087548
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 5
+Commit c69ed834fa1f by Verse <verse@visionquest.me> on 2026-11-22 (EE 104).
+
+Subject: phdoc export: phext-lanes @ c7aaa1b63455 — audited to EE 104 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1089933.
+
+commit c69ed834fa1fcbaf5d321eb45c7b6837aac496c1
+parent d5303980e5c18cd89263bf283570d9c3d6d85565
+author Verse <verse@visionquest.me>
+date 1795370763 2026-11-22
+stat Markdown files 7544 total 1211983 blank 124577 comment 0 code 1087406
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 6
+Commit 940f08c5c0ec by Verse <verse@visionquest.me> on 2026-11-22 (EE 104).
+
+Subject: phdoc export: mutable-os @ 48cac17ae14c — audited to EE 104 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1088722.
+
+commit 940f08c5c0eceee29a7dfdabcb57e0c688887f0a
+parent c69ed834fa1fcbaf5d321eb45c7b6837aac496c1
+author Verse <verse@visionquest.me>
+date 1795370797 2026-11-22
+stat Markdown files 7544 total 1209457 blank 123262 comment 0 code 1086195
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 7
+Commit e4394735a65e by Verse <verse@visionquest.me> on 2026-11-22 (EE 105).
+
+Subject: phdoc export: mootable @ df424f3ab63a — audited to EE 104 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1111544.
+
+commit e4394735a65e5b3dce0f337240a15251ae7be6f3
+parent 940f08c5c0eceee29a7dfdabcb57e0c688887f0a
+author Verse <verse@visionquest.me>
+date 1795370888 2026-11-22
+stat Markdown files 7882 total 1236181 blank 127164 comment 0 code 1109017
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 8
+Commit f6e4933a17fe by Verse <verse@visionquest.me> on 2026-11-22 (EE 105).
+
+Subject: phdoc export: bickfordllamaranch @ 7fd5334b18c5 — audited to EE 105 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1111375.
+
+commit f6e4933a17feb8bd1eb1987b76b08cc462e20876
+parent e4394735a65e5b3dce0f337240a15251ae7be6f3
+author Verse <verse@visionquest.me>
+date 1795370888 2026-11-22
+stat Markdown files 7882 total 1235827 blank 126979 comment 0 code 1108848
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 9
+Commit 51996e2f815d by Verse <verse@visionquest.me> on 2026-11-22 (EE 105).
+
+Subject: phdoc export: site-mirrorborn-us @ 738982127a13 — audited to EE 105 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1110908.
+
+commit 51996e2f815d81c480654a8de8f936fce0bfd069
+parent f6e4933a17feb8bd1eb1987b76b08cc462e20876
+author Verse <verse@visionquest.me>
+date 1795370906 2026-11-22
+stat Markdown files 7882 total 1234747 blank 126366 comment 0 code 1108381
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 10
+Commit 7246a00d27d2 by Verse <verse@visionquest.me> on 2026-11-22 (EE 105).
+
+Subject: phdoc export: site-sotafomo-com @ 02f24266f7da — audited to EE 105 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1110868.
+
+commit 7246a00d27d2725430f58fb03c52bef41870c628
+parent 51996e2f815d81c480654a8de8f936fce0bfd069
+author Verse <verse@visionquest.me>
+date 1795370907 2026-11-22
+stat Markdown files 7882 total 1234670 blank 126329 comment 0 code 1108341
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 11
+Commit 476d64ac3cbd by Verse <verse@visionquest.me> on 2026-11-22 (EE 105).
+
+Subject: phdoc export: site-visionquest-me @ 1226cca02e82 — audited to EE 105 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1110828.
+
+commit 476d64ac3cbdbcfb20ffc36b989b4916622be3d7
+parent 7246a00d27d2725430f58fb03c52bef41870c628
+author Verse <verse@visionquest.me>
+date 1795370908 2026-11-22
+stat Markdown files 7882 total 1234593 blank 126292 comment 0 code 1108301
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 12
+Commit 23a86fa0a0fe by Verse <verse@visionquest.me> on 2026-11-22 (EE 105).
+
+Subject: phdoc export: site-wishnode-net @ 2ffd7eb8c72c — audited to EE 105 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1110167.
+
+commit 23a86fa0a0fe512df3463116c1144a9c6003004b
+parent 476d64ac3cbdbcfb20ffc36b989b4916622be3d7
+author Verse <verse@visionquest.me>
+date 1795370908 2026-11-22
+stat Markdown files 7882 total 1233363 blank 125723 comment 0 code 1107640
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 13
+Commit 7f4c73007375 by Verse <verse@visionquest.me> on 2026-11-22 (EE 106).
+
+Subject: phdoc export: phext-lattice @ 6ffc18b162bd — audited to EE 106 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1111460.
+
+commit 7f4c73007375473e6a0375c180582aafc06fd30b
+parent 23a86fa0a0fe512df3463116c1144a9c6003004b
+author Verse <verse@visionquest.me>
+date 1795371637 2026-11-22
+stat Markdown files 7884 total 1234714 blank 125781 comment 0 code 1108933
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 14
+Commit 97fc1a358d44 by Verse <verse@visionquest.me> on 2026-11-22 (EE 106).
+
+Subject: phdoc export: markdown-wizard @ 0e9f81123654 — audited to EE 106 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1111460.
+
+commit 97fc1a358d442a09fa3be397fe33124941315cd3
+parent 7f4c73007375473e6a0375c180582aafc06fd30b
+author Verse <verse@visionquest.me>
+date 1795371683 2026-11-22
+stat Markdown files 7884 total 1234714 blank 125781 comment 0 code 1108933
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 15
+Commit 42c1b23e44fa by Verse <verse@visionquest.me> on 2026-11-22 (EE 106).
+
+Subject: phdoc export: singularity-watch @ 185cb3c27c27 — audited to EE 106 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1111460.
+
+commit 42c1b23e44fac3d52de4a9d627aa6d0a8f266ecb
+parent 97fc1a358d442a09fa3be397fe33124941315cd3
+author Verse <verse@visionquest.me>
+date 1795371695 2026-11-22
+stat Markdown files 7884 total 1234714 blank 125781 comment 0 code 1108933
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 16
+Commit 827067d84059 by Verse <verse@visionquest.me> on 2026-11-22 (EE 106).
+
+Subject: phdoc export: site-quickfork-net @ 23aa633b9cde — audited to EE 106 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1111460.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 827067d8405933c8a8da405cebd2e9e74da4c5e2
+parent 42c1b23e44fac3d52de4a9d627aa6d0a8f266ecb
+author Verse <verse@visionquest.me>
+date 1795371695 2026-11-22
+stat Markdown files 7884 total 1234714 blank 125781 comment 0 code 1108933
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 17
+Commit 04fcf6ad0826 by Verse <verse@visionquest.me> on 2026-11-22 (EE 106).
+
+Subject: phdoc export: site-apertureshift-com @ 4071de232c26 — audited to EE 106 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1111460.
+
+commit 04fcf6ad08264e86346a5f150820396c9afe49c1
+parent 827067d8405933c8a8da405cebd2e9e74da4c5e2
+author Verse <verse@visionquest.me>
+date 1795371696 2026-11-22
+stat Markdown files 7884 total 1234714 blank 125781 comment 0 code 1108933
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 18
+Commit 97372cd6aeb5 by Verse <verse@visionquest.me> on 2026-11-22 (EE 107).
+
+Subject: phdoc export: phext-lanes @ c7aaa1b63455 — audited to EE 107 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1111460.
+
+commit 97372cd6aeb51029a0d141204f04ac8388522f38
+parent 04fcf6ad08264e86346a5f150820396c9afe49c1
+author Verse <verse@visionquest.me>
+date 1795371758 2026-11-22
+stat Markdown files 7884 total 1234714 blank 125781 comment 0 code 1108933
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 19
+Commit 90917c2b3be4 by Verse <verse@visionquest.me> on 2026-11-22 (EE 107).
+
+Subject: phdoc export: mutable-os @ 48cac17ae14c — audited to EE 107 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1111460.
+
+commit 90917c2b3be4e51b95eb6bc9cc803ebce116aafe
+parent 97372cd6aeb51029a0d141204f04ac8388522f38
+author Verse <verse@visionquest.me>
+date 1795371788 2026-11-22
+stat Markdown files 7884 total 1234714 blank 125781 comment 0 code 1108933
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 20
+Commit 7391dc362ba4 by Verse <verse@visionquest.me> on 2026-11-22 (EE 107).
+
+Subject: phdoc export: mootable @ df424f3ab63a — audited to EE 107 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1111460.
+
+commit 7391dc362ba4e9862c65a67a71096f7a4dd9925f
+parent 90917c2b3be4e51b95eb6bc9cc803ebce116aafe
+author Verse <verse@visionquest.me>
+date 1795371798 2026-11-22
+stat Markdown files 7884 total 1234714 blank 125781 comment 0 code 1108933
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 21
+Commit 6dbeacd9cd48 by Verse <verse@visionquest.me> on 2026-11-22 (EE 107).
+
+Subject: phdoc export: bickfordllamaranch @ 7fd5334b18c5 — audited to EE 107 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1111460.
+
+commit 6dbeacd9cd4830af2b43999a5fea196b5e51a3ee
+parent 7391dc362ba4e9862c65a67a71096f7a4dd9925f
+author Verse <verse@visionquest.me>
+date 1795371799 2026-11-22
+stat Markdown files 7884 total 1234714 blank 125781 comment 0 code 1108933
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 22
+Commit df440de17f80 by Verse <verse@visionquest.me> on 2026-11-22 (EE 107).
+
+Subject: phdoc export: site-mirrorborn-us @ 738982127a13 — audited to EE 107 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1111460.
+
+commit df440de17f804c0098d08db86d2ae5e6608d6a9c
+parent 6dbeacd9cd4830af2b43999a5fea196b5e51a3ee
+author Verse <verse@visionquest.me>
+date 1795371826 2026-11-22
+stat Markdown files 7884 total 1234714 blank 125781 comment 0 code 1108933
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 23
+Commit e06222b3da29 by Verse <verse@visionquest.me> on 2026-11-22 (EE 107).
+
+Subject: phdoc export: site-sotafomo-com @ 02f24266f7da — audited to EE 107 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1111460.
+
+commit e06222b3da297a3019f1bf3e8e575b8e20633876
+parent df440de17f804c0098d08db86d2ae5e6608d6a9c
+author Verse <verse@visionquest.me>
+date 1795371826 2026-11-22
+stat Markdown files 7884 total 1234714 blank 125781 comment 0 code 1108933
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 24
+Commit 1d5b42fefabe by Verse <verse@visionquest.me> on 2026-11-22 (EE 107).
+
+Subject: phdoc export: site-visionquest-me @ 1226cca02e82 — audited to EE 107 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1111460.
+
+commit 1d5b42fefabe7d4cfafa57f72c8de3aa4ef80ef6
+parent e06222b3da297a3019f1bf3e8e575b8e20633876
+author Verse <verse@visionquest.me>
+date 1795371827 2026-11-22
+stat Markdown files 7884 total 1234714 blank 125781 comment 0 code 1108933
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 25
+Commit 5785ec8fc4f0 by Verse <verse@visionquest.me> on 2026-11-22 (EE 107).
+
+Subject: phdoc export: site-wishnode-net @ 2ffd7eb8c72c — audited to EE 107 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1111460.
+
+commit 5785ec8fc4f0e82bc89039f037ba23596f2aa7e0
+parent 1d5b42fefabe7d4cfafa57f72c8de3aa4ef80ef6
+author Verse <verse@visionquest.me>
+date 1795371828 2026-11-22
+stat Markdown files 7884 total 1234714 blank 125781 comment 0 code 1108933
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Verse <verse@visionquest.me> commits 26
+Commit a97900001932 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 135).
+
+Subject: phdoc: exempt bickfordllamaranch — personal sites are exempt from phdoc documentation (Will, 2026-11-22)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1110104.
+
+commit a979000019328b91858069ce34faeb643ed135c1
+parent 5785ec8fc4f0e82bc89039f037ba23596f2aa7e0
+author Theia <theia@mirrorborn.us>
+date 1795383733 2026-11-22
+stat Markdown files 7860 total 1232879 blank 125302 comment 0 code 1107577
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 81
+Commit 894faf49c081 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 136).
+
+Subject: phdoc export: site-apertureshift-com @ e50030979332 — audited to EE 136 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1110236.
+
+commit 894faf49c081da03b03725ec2c3f64ad73f4ed5c
+parent a979000019328b91858069ce34faeb643ed135c1
+author Theia <theia@mirrorborn.us>
+date 1795383911 2026-11-22
+stat Markdown files 7860 total 1233152 blank 125443 comment 0 code 1107709
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 82
+Commit 4c7f1a95296d by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 136).
+
+Subject: phdoc export: site-mirrorborn-us @ effc3abd8a57 — audited to EE 136 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1110703.
+
+commit 4c7f1a95296d7d421bed35855afff4cc0597071d
+parent 894faf49c081da03b03725ec2c3f64ad73f4ed5c
+author Theia <theia@mirrorborn.us>
+date 1795383915 2026-11-22
+stat Markdown files 7860 total 1234232 blank 126056 comment 0 code 1108176
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 83
+Commit 3623b46546e3 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 136).
+
+Subject: phdoc export: site-quickfork-net @ 1cda8e924ed3 — audited to EE 136 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1110746.
+
+commit 3623b46546e378cf6c6fa97c8ea753169ce9f8a1
+parent 4c7f1a95296d7d421bed35855afff4cc0597071d
+author Theia <theia@mirrorborn.us>
+date 1795383919 2026-11-22
+stat Markdown files 7860 total 1234316 blank 126097 comment 0 code 1108219
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 84
+Commit 1179ccf4040a by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 136).
+
+Subject: phdoc export: site-sotafomo-com @ 46516dfff4b0 — audited to EE 136 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1110786.
+
+commit 1179ccf4040a79a292ce7852bc3135a286ce8895
+parent 3623b46546e378cf6c6fa97c8ea753169ce9f8a1
+author Theia <theia@mirrorborn.us>
+date 1795383924 2026-11-22
+stat Markdown files 7860 total 1234393 blank 126134 comment 0 code 1108259
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 85
+Commit 5d79aedfc762 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 136).
+
+Subject: phdoc export: site-visionquest-me @ 556cd2f4261a — audited to EE 136 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1110826.
+
+commit 5d79aedfc76240fc1032c320cedeee004d15361c
+parent 1179ccf4040a79a292ce7852bc3135a286ce8895
+author Theia <theia@mirrorborn.us>
+date 1795383928 2026-11-22
+stat Markdown files 7860 total 1234470 blank 126171 comment 0 code 1108299
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 86
+Commit 0c4502c5cda9 by Theia <theia@mirrorborn.us> on 2026-11-22 (EE 136).
+
+Subject: phdoc export: site-wishnode-net @ 04fc512ec10d — audited to EE 136 (phdoc 0.1.0)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1111487.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 0c4502c5cda927c5195b4f4f97715c0b696c8358
+parent 5d79aedfc76240fc1032c320cedeee004d15361c
+author Theia <theia@mirrorborn.us>
+date 1795383932 2026-11-22
+stat Markdown files 7860 total 1235700 blank 126740 comment 0 code 1108960
+stat Rust files 1 total 2805 blank 133 comment 165 code 2507
+stat TOML files 1 total 22 blank 2 comment 0 code 20
+author~ Theia <theia@mirrorborn.us> commits 87
