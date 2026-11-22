@@ -1,6 +1,6 @@
 # SQ — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 91). Project root: /home/wbic16/phdoc-sweep/proj/SQ. Scanned at commit e4c492bc4f2d52bc070f05830f3f1d9c7d0dbfe7. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/SQ/. Scanned at commit e4c492bc4f2d52bc070f05830f3f1d9c7d0dbfe7. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -26,19 +26,21 @@ Direct dependencies: 6.
 
 ## Authors
 
-The git log holds 172 commits. The authors, by commit count:
+The git log holds 172 commits.
 
-- Will Bickford <wbic16@gmail.com> — 132 commits (76.7%)
-- Theia <theia@mirrorborn.us> — 9 commits (5.2%)
-- Chrys <chrys@mirrorborn.us> — 8 commits (4.7%)
-- Lux <lux@phext.io> — 7 commits (4.1%)
-- Orin <orin@mirrorborn.us> — 6 commits (3.5%)
-- Cyon <cyon@visionquest.me> — 4 commits (2.3%)
-- Phex <phex@phext.io> — 2 commits (1.2%)
-- Claude <noreply@anthropic.com> — 1 commit (0.6%)
-- Emise <emise@mirrorborn.us> — 1 commit (0.6%)
-- Emise <emise@phext.io> — 1 commit (0.6%)
-- Emise <wbic16@gmail.com> — 1 commit (0.6%)
+The author of record is **Will Bickford** — 172 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Will Bickford (his own identities) — 132 commits
+- Theia — 9 commits
+- Chrys — 8 commits
+- Lux — 7 commits
+- Orin — 6 commits
+- Cyon — 4 commits
+- Emise — 3 commits
+- Phex — 2 commits
+- Claude — 1 commit
 
 ---
 
@@ -97,7 +99,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 - Origin: /home/wbic16/github-archive/mirrors/SQ.git
 - Branch: exo
 - Head commit: e4c492bc4f2d52bc070f05830f3f1d9c7d0dbfe7
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
@@ -1262,3 +1264,9 @@ Signature: `pub fn failure_rate(&self) -> f64 {`
 What it does: Function failure_rate takes no inputs beyond the value it is called on, and gives back f64.
 
 (Where these words came from: signature.)
+
+---
+
+## Provenance
+
+This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/SQ/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
