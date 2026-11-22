@@ -2,15 +2,22 @@
 
 Commit dd5eb9a7f82cca7c427302c6bf678800c3d18e66. 397 commits folded. Every fact here was folded from the chain's per-commit deltas.
 
+## Provenance
+
+This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/emise-tools/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
+
 ## Dependencies
 
 No dependencies recorded at this point.
 
 ## Authors
 
-- Emise <emise@localhost> — 395 commits
-- Emise <emise@mirrorborn.us> — 1 commits
-- Will Bickford <wbic16@gmail.com> — 1 commits
+The author of record is **Will Bickford** — 397 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Emise — 396 commits
+- Will Bickford (his own identities) — 1 commit
 
 ## Complexity
 
