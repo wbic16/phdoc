@@ -1,0 +1,1166 @@
+# scrolltown — project documentation
+
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 150). Scanned at commit 65a7e17fd1e60d72bd813df0446a487c33a71c4a. Everything in this document was extracted from the revision named above: its manifests, its git log, and its source text. Descriptions are labeled by how they were obtained — direct (the source's own words), inferred (read off a signature), agent-supplied (written by a reviewer), verified (backed by a validated contract), or unverified — and only validated contracts are marked verified.
+
+This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
+
+---
+
+## Summary
+
+**A Saturday-morning cartoon that lives inside the Great Scroll.**
+
+(The opening of the project's README, quoted as written.)
+
+---
+
+## Dependencies
+
+No dependency manifest was found (no Cargo.toml, package.json, requirements.txt, or go.mod), so no dependencies are declared in a form the scanner reads.
+
+---
+
+## Authors
+
+The git log holds 34 commits.
+
+The author of record is **Will Bickford** — 34 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Emise — 31 commits
+- Will Bickford (his own identities) — 3 commits
+
+---
+
+## Complexity
+
+The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.
+
+- Markdown: 56 files, 4405 lines total, 692 blank, 20 comment, 3693 code
+- Python: 6 files, 1883 lines total, 153 blank, 113 comment, 1617 code
+- Shell: 3 files, 103 lines total, 5 blank, 17 comment, 81 code
+
+All languages: 65 files, 6391 lines total, 5391 lines of code. Functions read: 77.
+
+Largest files:
+
+- series/intro/draw_prepass.py — 537 lines
+- series/animation-exercises/gate-01-steamboat-willie/gate_validator.py — 395 lines
+- EPISODE-INDEX.md — 321 lines
+- STORY-ARC.md — 310 lines
+- series/live-drawing/draw_session02.py — 299 lines
+
+Largest functions, by span in lines:
+
+- validate_page in series/animation-exercises/gate-01-steamboat-willie/gate_validator.py — about 133 lines
+- Y in series/intro/draw_prepass.py — about 90 lines
+- main in history/build.py — about 88 lines
+- add in series/live-drawing/draw_session01.py — about 68 lines
+- draw_segment in series/live-drawing/draw_session01.py — about 68 lines
+
+---
+
+## Code quality signals
+
+Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.
+
+- Tests: 0 test functions counted in the source, across 0 files whose names mark them as test files.
+- CI: no CI configuration was found in the project.
+- Lint and format: no lint or format configuration file was found.
+- TODO marks in the source: 0. FIXME marks: 0.
+- Public items with a doc comment: 11 of 71 (15%).
+
+---
+
+## Declared RFCs
+
+No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+
+
+---
+
+## Upstream git repo
+
+- Origin: https://github.com/wbic16/scrolltown
+- Branch: exo
+- Head commit: 65a7e17fd1e60d72bd813df0446a487c33a71c4a
+- Working tree: clean
+
+---
+
+## Public methods and commands
+
+Every public method and command the scanner found, each with a plain English note. Each note is labeled with where its words came from: direct (the code's own doc comment), inferred (read off the item's signature), agent-supplied (written by the user's agent), or awaiting a summary.
+
+- function `parse_manifest` (history/build.py:26) — Function parse_manifest takes path.
+- function `sha256_of` (history/build.py:42) — Function sha256_of takes path.
+- function `resolve` (history/build.py:49) — Function resolve takes rel, roots.
+- function `main` (history/build.py:92) — Function main takes no inputs beyond the value it is called on.
+- function `load_gray` (series/animation-exercises/gate-01-steamboat-willie/gate_validator.py:83) — Function load_gray takes path, size=None.
+- function `dilate` (series/animation-exercises/gate-01-steamboat-willie/gate_validator.py:90) — Chebyshev dilation by `steps` px (3x3 structuring element).
+- function `clipped_distance` (series/animation-exercises/gate-01-steamboat-willie/gate_validator.py:101) — For each pixel in target_mask, Chebyshev distance to source_mask,
+- function `strong_edges` (series/animation-exercises/gate-01-steamboat-willie/gate_validator.py:121) — Strong-edge map of an original film frame: gradient magnitude on a
+- function `label_components` (series/animation-exercises/gate-01-steamboat-willie/gate_validator.py:136) — Two-pass union-find labeling over row runs.
+- function `find` (series/animation-exercises/gate-01-steamboat-willie/gate_validator.py:141) — Function find takes a.
+- function `union` (series/animation-exercises/gate-01-steamboat-willie/gate_validator.py:147) — Function union takes a, b.
+- function `downscale_mask` (series/animation-exercises/gate-01-steamboat-willie/gate_validator.py:195) — Function downscale_mask takes mask, factor=2.
+- function `validate_page` (series/animation-exercises/gate-01-steamboat-willie/gate_validator.py:202) — Function validate_page takes page_path, frame_path.
+- function `main` (series/animation-exercises/gate-01-steamboat-willie/gate_validator.py:335) — Function main takes no inputs beyond the value it is called on.
+- function `parse_coord` (series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py:54) — Function parse_coord takes s.
+- function `implode` (series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py:62) — scrolls: dict coord-string -> text.
+- function `read_source` (series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py:80) — Function read_source takes rec.
+- function `render_scroll` (series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py:88) — Function render_scroll takes rec, raw.
+- function `render_home` (series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py:106) — Function render_home takes records.
+- function `load_manifest` (series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py:134) — Function load_manifest takes no inputs beyond the value it is called on.
+- function `build` (series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py:139) — Function build takes no inputs beyond the value it is called on.
+- function `main` (series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py:157) — Function main takes no inputs beyond the value it is called on.
+- function `ease` (series/intro/draw_prepass.py:52) — Function ease takes t.
+- function `clamp01` (series/intro/draw_prepass.py:56) — Function clamp01 takes t.
+- function `Painter.__init__` (series/intro/draw_prepass.py:60) — Function Painter.__init__ takes no inputs beyond the value it is called on.
+- function `Painter.S` (series/intro/draw_prepass.py:66) — Function Painter.S takes self, v.
+- function `Painter.line` (series/intro/draw_prepass.py:68) — Function Painter.line takes self, pts, fill=INK, width=2, rng=None, jit=1.2, overshoot=0.0.
+- function `Painter.poly` (series/intro/draw_prepass.py:81) — Function Painter.poly takes self, pts, fill, outline=INK, width=2.
+- function `Painter.rect` (series/intro/draw_prepass.py:85) — Function Painter.rect takes self, box, fill, outline=None, width=2.
+- function `Painter.ellipse` (series/intro/draw_prepass.py:90) — Function Painter.ellipse takes self, box, fill, outline=None, width=2.
+- function `Painter.hatch_rect` (series/intro/draw_prepass.py:95) — Function Painter.hatch_rect takes self, box, color, rng, spacing=5, width=1.
+- function `Painter.glow` (series/intro/draw_prepass.py:106) — Function Painter.glow takes self, cx, cy, r, color=FLAME, peak=110.
+- function `Painter.finish` (series/intro/draw_prepass.py:114) — Function Painter.finish takes no inputs beyond the value it is called on.
+- function `sky` (series/intro/draw_prepass.py:119) — Function sky takes p, top=.
+- function `house` (series/intro/draw_prepass.py:127) — One house, base at ground gy.
+- function `draw_fern` (series/intro/draw_prepass.py:147) — Fern, feet at (cx, gy), total height s.
+- function `X` (series/intro/draw_prepass.py:151) — Function X takes dx.
+- function `Y` (series/intro/draw_prepass.py:152) — Function Y takes dy.
+- function `draw_waverly` (series/intro/draw_prepass.py:242) — Waverly standing, facing left toward the scroll.
+- function `X` (series/intro/draw_prepass.py:245) — Function X takes dx.
+- function `Y` (series/intro/draw_prepass.py:246) — Function Y takes dy.
+- function `draw_scroll` (series/intro/draw_prepass.py:277) — The Great Scroll: right roll fixed at x_roll_r; unrolls leftward.
+- function `draw_wide_town` (series/intro/draw_prepass.py:328) — Function draw_wide_town takes p, f, rng.
+- function `field_lines` (series/intro/draw_prepass.py:358) — Function field_lines takes no inputs beyond the value it is called on.
+- function `g2s` (series/intro/draw_prepass.py:374) — Function g2s takes u, v.
+- function `field_manifest` (series/intro/draw_prepass.py:378) — Function field_manifest takes no inputs beyond the value it is called on.
+- function `beat1` (series/intro/draw_prepass.py:388) — Function beat1 takes f.
+- function `beat2` (series/intro/draw_prepass.py:408) — Function beat2 takes f.
+- function `beat3` (series/intro/draw_prepass.py:427) — Function beat3 takes f.
+- function `beat4` (series/intro/draw_prepass.py:448) — Function beat4 takes f.
+- function `render_frame` (series/intro/draw_prepass.py:495) — Function render_frame takes f.
+- function `main` (series/intro/draw_prepass.py:509) — Function main takes no inputs beyond the value it is called on.
+- function `Stroke.__init__` (series/live-drawing/draw_session01.py:41) — Function Stroke.__init__ takes self, pts, width=2.4, color=INK.
+- function `Stroke.point_at` (series/live-drawing/draw_session01.py:53) — Function Stroke.point_at takes self, dist.
+- function `jittered` (series/live-drawing/draw_session01.py:63) — Subdivide a polyline, add fast-hand jitter, optional end overshoot.
+- function `arc_pts` (series/live-drawing/draw_session01.py:81) — Function arc_pts takes cx, cy, r, a0, a1, n=26, ry=None.
+- function `add` (series/live-drawing/draw_session01.py:88) — Function add takes act, pts, rng, width=2.4, color=INK, jit=1.1, overshoot=0.0.
+- function `schedule` (series/live-drawing/draw_session01.py:156) — Function schedule takes strokes, t_start, t_end, speed=640.0.
+- function `glow_sprite` (series/live-drawing/draw_session01.py:172) — Function glow_sprite takes size=256.
+- function `glow_alpha` (series/live-drawing/draw_session01.py:183) — Function glow_alpha takes t.
+- function `draw_segment` (series/live-drawing/draw_session01.py:214) — Function draw_segment takes s, d_from, d_to.
+- function `Stroke.__init__` (series/live-drawing/draw_session02.py:38) — Function Stroke.__init__ takes self, pts, width=2.4, color=INK.
+- function `Stroke.point_at` (series/live-drawing/draw_session02.py:49) — Function Stroke.point_at takes self, dist.
+- function `jittered` (series/live-drawing/draw_session02.py:59) — Looser than session 1: bigger step, bigger fast-hand jitter.
+- function `arc_pts` (series/live-drawing/draw_session02.py:76) — Function arc_pts takes cx, cy, r, a0, a1, n=18, ry=None.
+- function `add` (series/live-drawing/draw_session02.py:82) — Function add takes act, pts, rng, width=2.4, color=INK, jit=2.2, overshoot=0.0.
+- function `ContourPen.__init__` (series/live-drawing/draw_session02.py:150) — Function ContourPen.__init__ takes self, glyphSet.
+- function `schedule` (series/live-drawing/draw_session02.py:214) — Function schedule takes strokes, t_start, t_end, speed=1500.0.
+- function `glow_sprite` (series/live-drawing/draw_session02.py:231) — Function glow_sprite takes size=256.
+- function `glow_alpha` (series/live-drawing/draw_session02.py:242) — Function glow_alpha takes t.
+- function `draw_segment` (series/live-drawing/draw_session02.py:250) — Function draw_segment takes s, d_from, d_to.
+
+---
+
+## function — parse_manifest
+
+Found in history/build.py at line 26.
+
+Surface: public API.
+
+Signature: `def parse_manifest(path)`
+
+What it does: Function parse_manifest takes path. Its return type is unannotated; the code shows it returning [e for e in entries if e.get("id")].
+
+(Where these words came from: inferred.)
+
+---
+
+## function — sha256_of
+
+Found in history/build.py at line 42.
+
+Surface: public API.
+
+Signature: `def sha256_of(path)`
+
+What it does: Function sha256_of takes path. Its return type is unannotated; the code shows it returning h.hexdigest().
+
+(Where these words came from: inferred.)
+
+---
+
+## function — resolve
+
+Found in history/build.py at line 49.
+
+Surface: public API.
+
+Signature: `def resolve(rel, roots)`
+
+What it does: Function resolve takes rel, roots. Its return type is unannotated; the code shows it returning p; None.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — main
+
+Found in history/build.py at line 92.
+
+Surface: public API.
+
+Signature: `def main()`
+
+What it does: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — load_gray
+
+Found in series/animation-exercises/gate-01-steamboat-willie/gate_validator.py at line 83.
+
+Surface: public API.
+
+Signature: `def load_gray(path, size=None)`
+
+What it does: Function load_gray takes path, size=None. Its return type is unannotated; the code shows it returning np.asarray(im).astype(np.float32).
+
+(Where these words came from: inferred.)
+
+---
+
+## function — dilate
+
+Found in series/animation-exercises/gate-01-steamboat-willie/gate_validator.py at line 90.
+
+Surface: public API.
+
+Signature: `def dilate(mask, steps)`
+
+What it does: Chebyshev dilation by `steps` px (3x3 structuring element).
+
+(Where these words came from: direct.)
+
+---
+
+## function — clipped_distance
+
+Found in series/animation-exercises/gate-01-steamboat-willie/gate_validator.py at line 101.
+
+Surface: public API.
+
+Signature: `def clipped_distance(target_mask, source_mask, clip)`
+
+What it does: For each pixel in target_mask, Chebyshev distance to source_mask,
+
+(Where these words came from: direct.)
+
+---
+
+## function — strong_edges
+
+Found in series/animation-exercises/gate-01-steamboat-willie/gate_validator.py at line 121.
+
+Surface: public API.
+
+Signature: `def strong_edges(gray)`
+
+What it does: Strong-edge map of an original film frame: gradient magnitude on a
+
+(Where these words came from: direct.)
+
+---
+
+## function — label_components
+
+Found in series/animation-exercises/gate-01-steamboat-willie/gate_validator.py at line 136.
+
+Surface: public API.
+
+Signature: `def label_components(mask)`
+
+What it does: Two-pass union-find labeling over row runs. Returns (count, sizes).
+
+(Where these words came from: direct.)
+
+---
+
+## function — find
+
+Found in series/animation-exercises/gate-01-steamboat-willie/gate_validator.py at line 141.
+
+Surface: public API.
+
+Signature: `def find(a)`
+
+What it does: Function find takes a. Its return type is unannotated; the code shows it returning a.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — union
+
+Found in series/animation-exercises/gate-01-steamboat-willie/gate_validator.py at line 147.
+
+Surface: public API.
+
+Signature: `def union(a, b)`
+
+What it does: Function union takes a, b. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — downscale_mask
+
+Found in series/animation-exercises/gate-01-steamboat-willie/gate_validator.py at line 195.
+
+Surface: public API.
+
+Signature: `def downscale_mask(mask, factor=2)`
+
+What it does: Function downscale_mask takes mask, factor=2. Its return type is unannotated; the code shows it returning mask[:h2 * factor, :w2 * factor].reshape(.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — validate_page
+
+Found in series/animation-exercises/gate-01-steamboat-willie/gate_validator.py at line 202.
+
+Surface: public API.
+
+Signature: `def validate_page(page_path, frame_path)`
+
+What it does: Function validate_page takes page_path, frame_path. Its return type is unannotated; the code shows it returning {.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — main
+
+Found in series/animation-exercises/gate-01-steamboat-willie/gate_validator.py at line 335.
+
+Surface: public API.
+
+Signature: `def main()`
+
+What it does: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — parse_coord
+
+Found in series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py at line 54.
+
+Surface: public API.
+
+Signature: `def parse_coord(s)`
+
+What it does: Function parse_coord takes s. Its return type is unannotated; the code shows it returning vals.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — implode
+
+Found in series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py at line 62.
+
+Surface: public API.
+
+Signature: `def implode(scrolls)`
+
+What it does: scrolls: dict coord-string -> text. Same state machine as
+
+(Where these words came from: direct.)
+
+---
+
+## function — read_source
+
+Found in series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py at line 80.
+
+Surface: public API.
+
+Signature: `def read_source(rec)`
+
+What it does: Function read_source takes rec. Its return type is unannotated; the code shows it returning raw, hashlib.sha256(raw).hexdigest().
+
+(Where these words came from: inferred.)
+
+---
+
+## function — render_scroll
+
+Found in series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py at line 88.
+
+Surface: public API.
+
+Signature: `def render_scroll(rec, raw)`
+
+What it does: Function render_scroll takes rec, raw. Its return type is unannotated; the code shows it returning scroll.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — render_home
+
+Found in series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py at line 106.
+
+Surface: public API.
+
+Signature: `def render_home(records)`
+
+What it does: Function render_home takes records. Its return type is unannotated; the code shows it returning "\n".join(lines).
+
+(Where these words came from: inferred.)
+
+---
+
+## function — load_manifest
+
+Found in series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py at line 134.
+
+Surface: public API.
+
+Signature: `def load_manifest()`
+
+What it does: Function load_manifest takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning json.load(f)["scrolls"].
+
+(Where these words came from: inferred.)
+
+---
+
+## function — build
+
+Found in series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py at line 139.
+
+Surface: public API.
+
+Signature: `def build()`
+
+What it does: Function build takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning implode(scrolls), records, stale.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — main
+
+Found in series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py at line 157.
+
+Surface: public API.
+
+Signature: `def main()`
+
+What it does: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning 1; 0.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — ease
+
+Found in series/intro/draw_prepass.py at line 52.
+
+Surface: public API.
+
+Signature: `def ease(t)`
+
+What it does: Function ease takes t. Its return type is unannotated; the code shows it returning t * t * (3 - 2 * t).
+
+(Where these words came from: inferred.)
+
+---
+
+## function — clamp01
+
+Found in series/intro/draw_prepass.py at line 56.
+
+Surface: public API.
+
+Signature: `def clamp01(t): return max(0.0, min(1.0, t))`
+
+What it does: Function clamp01 takes t. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — Painter.__init__
+
+Found in series/intro/draw_prepass.py at line 60.
+
+Surface: public API.
+
+Signature: `def __init__(self)`
+
+What it does: Function Painter.__init__ takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — Painter.S
+
+Found in series/intro/draw_prepass.py at line 66.
+
+Surface: public API.
+
+Signature: `def S(self, v): return v * SS`
+
+What it does: Function Painter.S takes self, v. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — Painter.line
+
+Found in series/intro/draw_prepass.py at line 68.
+
+Surface: public API.
+
+Signature: `def line(self, pts, fill=INK, width=2, rng=None, jit=1.2, overshoot=0.0)`
+
+What it does: Function Painter.line takes self, pts, fill=INK, width=2, rng=None, jit=1.2, overshoot=0.0. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — Painter.poly
+
+Found in series/intro/draw_prepass.py at line 81.
+
+Surface: public API.
+
+Signature: `def poly(self, pts, fill, outline=INK, width=2)`
+
+What it does: Function Painter.poly takes self, pts, fill, outline=INK, width=2. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — Painter.rect
+
+Found in series/intro/draw_prepass.py at line 85.
+
+Surface: public API.
+
+Signature: `def rect(self, box, fill, outline=None, width=2)`
+
+What it does: Function Painter.rect takes self, box, fill, outline=None, width=2. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — Painter.ellipse
+
+Found in series/intro/draw_prepass.py at line 90.
+
+Surface: public API.
+
+Signature: `def ellipse(self, box, fill, outline=None, width=2)`
+
+What it does: Function Painter.ellipse takes self, box, fill, outline=None, width=2. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — Painter.hatch_rect
+
+Found in series/intro/draw_prepass.py at line 95.
+
+Surface: public API.
+
+Signature: `def hatch_rect(self, box, color, rng, spacing=5, width=1)`
+
+What it does: Function Painter.hatch_rect takes self, box, color, rng, spacing=5, width=1. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — Painter.glow
+
+Found in series/intro/draw_prepass.py at line 106.
+
+Surface: public API.
+
+Signature: `def glow(self, cx, cy, r, color=FLAME, peak=110)`
+
+What it does: Function Painter.glow takes self, cx, cy, r, color=FLAME, peak=110. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — Painter.finish
+
+Found in series/intro/draw_prepass.py at line 114.
+
+Surface: public API.
+
+Signature: `def finish(self)`
+
+What it does: Function Painter.finish takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning out.convert("RGB").resize((W, H), Image.LANCZOS).
+
+(Where these words came from: inferred.)
+
+---
+
+## function — sky
+
+Found in series/intro/draw_prepass.py at line 119.
+
+Surface: public API.
+
+Signature: `def sky(p, top=(56, 40, 76), horizon=(216, 138, 92), h=404)`
+
+What it does: Function sky takes p, top=. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — house
+
+Found in series/intro/draw_prepass.py at line 127.
+
+Surface: public API.
+
+Signature: `def house(p, x, gy, w, h, rng, lit=(), body=(96, 74, 88), roof=(64, 44, 54))`
+
+What it does: One house, base at ground gy. lit = set of window indices lit (0..3).
+
+(Where these words came from: direct.)
+
+---
+
+## function — draw_fern
+
+Found in series/intro/draw_prepass.py at line 147.
+
+Surface: public API.
+
+Signature: `def draw_fern(p, cx, gy, s, arm_raise, lit, rng, anchors=None, tag="fern")`
+
+What it does: Fern, feet at (cx, gy), total height s. arm_raise 0..1, lit 0..1.
+
+(Where these words came from: direct.)
+
+---
+
+## function — X
+
+Found in series/intro/draw_prepass.py at line 151.
+
+Surface: public API.
+
+Signature: `def X(dx): return cx + dx * u`
+
+What it does: Function X takes dx. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — Y
+
+Found in series/intro/draw_prepass.py at line 152.
+
+Surface: public API.
+
+Signature: `def Y(dy): return gy - dy * u`
+
+What it does: Function Y takes dy. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — draw_waverly
+
+Found in series/intro/draw_prepass.py at line 242.
+
+Surface: public API.
+
+Signature: `def draw_waverly(p, cx, gy, s, rng, anchors=None)`
+
+What it does: Waverly standing, facing left toward the scroll. Height s.
+
+(Where these words came from: direct.)
+
+---
+
+## function — X
+
+Found in series/intro/draw_prepass.py at line 245.
+
+Surface: public API.
+
+Signature: `def X(dx): return cx + dx * u`
+
+What it does: Function X takes dx. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — Y
+
+Found in series/intro/draw_prepass.py at line 246.
+
+Surface: public API.
+
+Signature: `def Y(dy): return gy - dy * u`
+
+What it does: Function Y takes dy. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — draw_scroll
+
+Found in series/intro/draw_prepass.py at line 277.
+
+Surface: public API.
+
+Signature: `def draw_scroll(p, x_roll_r, gy_top, open_t, lit_houses, rng)`
+
+What it does: The Great Scroll: right roll fixed at x_roll_r; unrolls leftward.
+
+(Where these words came from: direct.)
+
+---
+
+## function — draw_wide_town
+
+Found in series/intro/draw_prepass.py at line 328.
+
+Surface: public API.
+
+Signature: `def draw_wide_town(p, f, rng)`
+
+What it does: Function draw_wide_town takes p, f, rng. Its return type is unannotated; the code shows it returning gy.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — field_lines
+
+Found in series/intro/draw_prepass.py at line 358.
+
+Surface: public API.
+
+Signature: `def field_lines()`
+
+What it does: Function field_lines takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning lines.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — g2s
+
+Found in series/intro/draw_prepass.py at line 374.
+
+Surface: public API.
+
+Signature: `def g2s(u, v)`
+
+What it does: Function g2s takes u, v. Its return type is unannotated; the code shows it returning (FIELD_C[0] + (x - y) / SQ2, FIELD_C[1] + (x + y.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — field_manifest
+
+Found in series/intro/draw_prepass.py at line 378.
+
+Surface: public API.
+
+Signature: `def field_manifest()`
+
+What it does: Function field_manifest takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning out.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — beat1
+
+Found in series/intro/draw_prepass.py at line 388.
+
+Surface: public API.
+
+Signature: `def beat1(f)`
+
+What it does: Function beat1 takes f. Its return type is unannotated; the code shows it returning p.finish(), anchors.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — beat2
+
+Found in series/intro/draw_prepass.py at line 408.
+
+Surface: public API.
+
+Signature: `def beat2(f)`
+
+What it does: Function beat2 takes f. Its return type is unannotated; the code shows it returning p.finish(), anchors.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — beat3
+
+Found in series/intro/draw_prepass.py at line 427.
+
+Surface: public API.
+
+Signature: `def beat3(f)`
+
+What it does: Function beat3 takes f. Its return type is unannotated; the code shows it returning img, anchors.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — beat4
+
+Found in series/intro/draw_prepass.py at line 448.
+
+Surface: public API.
+
+Signature: `def beat4(f)`
+
+What it does: Function beat4 takes f. Its return type is unannotated; the code shows it returning img, {}.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — render_frame
+
+Found in series/intro/draw_prepass.py at line 495.
+
+Surface: public API.
+
+Signature: `def render_frame(f)`
+
+What it does: Function render_frame takes f. Its return type is unannotated; the code shows it returning img, anchors.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — main
+
+Found in series/intro/draw_prepass.py at line 509.
+
+Surface: public API.
+
+Signature: `def main()`
+
+What it does: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — Stroke.__init__
+
+Found in series/live-drawing/draw_session01.py at line 41.
+
+Surface: public API.
+
+Signature: `def __init__(self, pts, width=2.4, color=INK)`
+
+What it does: Function Stroke.__init__ takes self, pts, width=2.4, color=INK. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — Stroke.point_at
+
+Found in series/live-drawing/draw_session01.py at line 53.
+
+Surface: public API.
+
+Signature: `def point_at(self, dist)`
+
+What it does: Function Stroke.point_at takes self, dist. Its return type is unannotated; the code shows it returning (a[0] + (b[0]-a[0]) * f, a[1] + (b[1]-a[1]) * f); self.pts[-1].
+
+(Where these words came from: inferred.)
+
+---
+
+## function — jittered
+
+Found in series/live-drawing/draw_session01.py at line 63.
+
+Surface: public API.
+
+Signature: `def jittered(pts, rng, jit=1.1, step=7.0, overshoot=0.0)`
+
+What it does: Subdivide a polyline, add fast-hand jitter, optional end overshoot.
+
+(Where these words came from: direct.)
+
+---
+
+## function — arc_pts
+
+Found in series/live-drawing/draw_session01.py at line 81.
+
+Surface: public API.
+
+Signature: `def arc_pts(cx, cy, r, a0, a1, n=26, ry=None)`
+
+What it does: Function arc_pts takes cx, cy, r, a0, a1, n=26, ry=None. Its return type is unannotated; the code shows it returning [(cx + r * math.cos(math.radians(a0 + (a1-a0) * .
+
+(Where these words came from: inferred.)
+
+---
+
+## function — add
+
+Found in series/live-drawing/draw_session01.py at line 88.
+
+Surface: public API.
+
+Signature: `def add(act, pts, rng, width=2.4, color=INK, jit=1.1, overshoot=0.0)`
+
+What it does: Function add takes act, pts, rng, width=2.4, color=INK, jit=1.1, overshoot=0.0. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — schedule
+
+Found in series/live-drawing/draw_session01.py at line 156.
+
+Surface: public API.
+
+Signature: `def schedule(strokes, t_start, t_end, speed=640.0)`
+
+What it does: Function schedule takes strokes, t_start, t_end, speed=640.0. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — glow_sprite
+
+Found in series/live-drawing/draw_session01.py at line 172.
+
+Surface: public API.
+
+Signature: `def glow_sprite(size=256)`
+
+What it does: Function glow_sprite takes size=256. Its return type is unannotated; the code shows it returning g.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — glow_alpha
+
+Found in series/live-drawing/draw_session01.py at line 183.
+
+Surface: public API.
+
+Signature: `def glow_alpha(t): # flame lit at ~ end of flame stroke`
+
+What it does: Function glow_alpha takes t. Its return type is unannotated; the code shows it returning 0.0 if t < 12.5 else min(0.5, (t - 12.5) / 3.0 *.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — draw_segment
+
+Found in series/live-drawing/draw_session01.py at line 214.
+
+Surface: public API.
+
+Signature: `def draw_segment(s, d_from, d_to)`
+
+What it does: Function draw_segment takes s, d_from, d_to. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — Stroke.__init__
+
+Found in series/live-drawing/draw_session02.py at line 38.
+
+Surface: public API.
+
+Signature: `def __init__(self, pts, width=2.4, color=INK)`
+
+What it does: Function Stroke.__init__ takes self, pts, width=2.4, color=INK. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — Stroke.point_at
+
+Found in series/live-drawing/draw_session02.py at line 49.
+
+Surface: public API.
+
+Signature: `def point_at(self, dist)`
+
+What it does: Function Stroke.point_at takes self, dist. Its return type is unannotated; the code shows it returning (a[0] + (b[0]-a[0]) * f, a[1] + (b[1]-a[1]) * f); self.pts[-1].
+
+(Where these words came from: inferred.)
+
+---
+
+## function — jittered
+
+Found in series/live-drawing/draw_session02.py at line 59.
+
+Surface: public API.
+
+Signature: `def jittered(pts, rng, jit=2.2, step=9.0, overshoot=0.0)`
+
+What it does: Looser than session 1: bigger step, bigger fast-hand jitter.
+
+(Where these words came from: direct.)
+
+---
+
+## function — arc_pts
+
+Found in series/live-drawing/draw_session02.py at line 76.
+
+Surface: public API.
+
+Signature: `def arc_pts(cx, cy, r, a0, a1, n=18, ry=None)`
+
+What it does: Function arc_pts takes cx, cy, r, a0, a1, n=18, ry=None. Its return type is unannotated; the code shows it returning [(cx + r * math.cos(math.radians(a0 + (a1-a0) * .
+
+(Where these words came from: inferred.)
+
+---
+
+## function — add
+
+Found in series/live-drawing/draw_session02.py at line 82.
+
+Surface: public API.
+
+Signature: `def add(act, pts, rng, width=2.4, color=INK, jit=2.2, overshoot=0.0)`
+
+What it does: Function add takes act, pts, rng, width=2.4, color=INK, jit=2.2, overshoot=0.0. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — ContourPen.__init__
+
+Found in series/live-drawing/draw_session02.py at line 150.
+
+Surface: public API.
+
+Signature: `def __init__(self, glyphSet)`
+
+What it does: Function ContourPen.__init__ takes self, glyphSet. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — schedule
+
+Found in series/live-drawing/draw_session02.py at line 214.
+
+Surface: public API.
+
+Signature: `def schedule(strokes, t_start, t_end, speed=1500.0)`
+
+What it does: Function schedule takes strokes, t_start, t_end, speed=1500.0. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — glow_sprite
+
+Found in series/live-drawing/draw_session02.py at line 231.
+
+Surface: public API.
+
+Signature: `def glow_sprite(size=256)`
+
+What it does: Function glow_sprite takes size=256. Its return type is unannotated; the code shows it returning g.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — glow_alpha
+
+Found in series/live-drawing/draw_session02.py at line 242.
+
+Surface: public API.
+
+Signature: `def glow_alpha(t)`
+
+What it does: Function glow_alpha takes t. Its return type is unannotated; the code shows it returning 0.0 if t < 2.9 else min(0.5, (t - 2.9) / 1.2 * 0.
+
+(Where these words came from: inferred.)
+
+---
+
+## function — draw_segment
+
+Found in series/live-drawing/draw_session02.py at line 250.
+
+Surface: public API.
+
+Signature: `def draw_segment(s, d_from, d_to)`
+
+What it does: Function draw_segment takes s, d_from, d_to. Its return type is unannotated; no return statement was read in its body.
+
+(Where these words came from: inferred.)
+
+---
+
+## Provenance
+
+This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/scrolltown/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.

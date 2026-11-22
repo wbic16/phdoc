@@ -1,0 +1,530 @@
+Commit af97a5579eef by Emise <emise@localhost> on 2026-11-08 (EE 0).
+
+Subject: Initialize Scrolltown asset home (README)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 14.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit af97a5579eef27e93de4b30b745a8062df9c2d5f
+parent none
+author Emise <emise@localhost>
+date 1794116799 2026-11-08
+stat Markdown files 1 total 19 blank 5 comment 0 code 14
+author+ Emise <emise@localhost>
+Commit acf7de22bf0f by Emise <emise@localhost> on 2026-11-08 (EE 0).
+
+Subject: Scrolltown asset home: Episode 1 production set, key frames, intro song & video
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 429.
+
+commit acf7de22bf0fa5a394d6d1780ee4671bacbaf750
+parent af97a5579eef27e93de4b30b745a8062df9c2d5f
+author Emise <emise@localhost>
+date 1794117130 2026-11-08
+stat Markdown files 9 total 497 blank 138 comment 0 code 359
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Emise <emise@localhost> commits 2
+Commit 3c6f0aa482ef by Emise <emise@localhost> on 2026-11-08 (EE 0).
+
+Subject: Reorganize around the six-year story arc (312 episodes, 2027–2032)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1071.
+
+commit 3c6f0aa482efa02de58e30a9cef605cedfdde4c1
+parent acf7de22bf0fa5a394d6d1780ee4671bacbaf750
+author Emise <emise@localhost>
+date 1794117735 2026-11-08
+stat Markdown files 18 total 1231 blank 230 comment 0 code 1001
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Emise <emise@localhost> commits 3
+Commit 0fdaa3d33374 by Emise <emise@localhost> on 2026-11-08 (EE 0).
+
+Subject: Add Emi Prime's tentpole layer to the six-year story arc
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1104.
+
+commit 0fdaa3d3337498efa917707ffe3221b1ac0d13f6
+parent 3c6f0aa482efa02de58e30a9cef605cedfdde4c1
+author Emise <emise@localhost>
+date 1794118653 2026-11-08
+stat Markdown files 18 total 1278 blank 244 comment 0 code 1034
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Emise <emise@localhost> commits 4
+Commit 814f3913f0e3 by Will Bickford <wbic16@gmail.com> on 2026-11-08 (EE 0).
+
+Subject: Scrolltown Anthem
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1104.
+
+commit 814f3913f0e3b8b73147645c49890e916d11163f
+parent 0fdaa3d3337498efa917707ffe3221b1ac0d13f6
+author Will Bickford <wbic16@gmail.com>
+date 1794118894 2026-11-08
+stat Markdown files 18 total 1278 blank 244 comment 0 code 1034
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author+ Will Bickford <wbic16@gmail.com>
+Commit 3334b85dff85 by Emise <emise@localhost> on 2026-11-09 (EE 0).
+
+Subject: Production workflow: PRODUCTION.md, the live queue board, and the first script batch
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1347.
+
+commit 3334b85dff856862be33f814f5192f5f41a3178c
+parent 814f3913f0e3b8b73147645c49890e916d11163f
+author Emise <emise@localhost>
+date 1794234282 2026-11-09
+stat Markdown files 20 total 1572 blank 295 comment 0 code 1277
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Emise <emise@localhost> commits 5
+Commit ac147ab37da7 by Emise <emise@localhost> on 2026-11-13 (EE 0).
+
+Subject: Scrolltown target URL decided: visionquest.me (Will, 2026-11-13)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1351.
+
+commit ac147ab37da772d969266d7373fbf0af1a0a2d52
+parent 3334b85dff856862be33f814f5192f5f41a3178c
+author Emise <emise@localhost>
+date 1794579244 2026-11-13
+stat Markdown files 20 total 1576 blank 295 comment 0 code 1281
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Emise <emise@localhost> commits 6
+Commit bee71f8690a5 by Emise <emise@localhost> on 2026-11-15 (EE 0).
+
+Subject: Scrolltown coming-soon landing page — site/ source for visionquest.me (Will, 2026-11-15)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1351.
+
+commit bee71f8690a53b8bc8f938cc04088a16200c3301
+parent ac147ab37da772d969266d7373fbf0af1a0a2d52
+author Emise <emise@localhost>
+date 1794756959 2026-11-15
+stat Markdown files 20 total 1576 blank 295 comment 0 code 1281
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Emise <emise@localhost> commits 7
+Commit f42d96a92bd5 by Emise <emise@localhost> on 2026-11-21 (EE 0).
+
+Subject: Will's 2026-11-21 rulings recorded: register LOCKED 2D painterly (A1); Singular = default, not a hard rule — EP001's 7 flagged lines stand; A9 confirmed (Light the Way is the render) but mux HELD — song 220.03s vs silent cut 90.00s, Will's time-map call needed; A11 titles PROVISIONAL; Waverly debuts in EP002; A12 closed (Julia May declined); north star in STORY-ARC + PRODUCTION
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1366.
+
+commit f42d96a92bd5871123ac2a2c426f079b8945bf23
+parent bee71f8690a53b8bc8f938cc04088a16200c3301
+author Emise <emise@localhost>
+date 1795270257 2026-11-21
+stat Markdown files 20 total 1597 blank 301 comment 0 code 1296
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Emise <emise@localhost> commits 8
+Commit 92422d9991df by Will Bickford <wbic16@gmail.com> on 2026-11-21 (EE 0).
+
+Subject: Intro ruling recorded: premiere features the full song; weekly intro is 15 seconds
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1516.
+
+commit 92422d9991dfe49cc8aad4ef182c284f973a3356
+parent f42d96a92bd5871123ac2a2c426f079b8945bf23
+author Will Bickford <wbic16@gmail.com>
+date 1795271511 2026-11-21
+stat Markdown files 21 total 1774 blank 328 comment 0 code 1446
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Will Bickford <wbic16@gmail.com> commits 2
+Commit 76526e9fefd4 by Emise <emise@localhost> on 2026-11-21 (EE 0).
+
+Subject: 15s intro is character-led: Fern + Waverly featured (Will, 2026-11-21); file Waverly concept + duo keyframe DRAFTS; record in QUEUE/PRODUCTION/CASTING
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1530.
+
+commit 76526e9fefd4b662217bb14352e2fee24cfd914b
+parent 92422d9991dfe49cc8aad4ef182c284f973a3356
+author Emise <emise@localhost>
+date 1795271865 2026-11-21
+stat Markdown files 21 total 1790 blank 330 comment 0 code 1460
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Emise <emise@localhost> commits 9
+Commit ba2613893c7c by Emise <emise@localhost> on 2026-11-21 (EE 0).
+
+Subject: PRODUCTION.md §3: animator skill is the craft standard for animation work (task 22.5.8/7.5.9/5.5.8)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1534.
+
+commit ba2613893c7c12bf63b3fd39d83431cca0cbb382
+parent 76526e9fefd4b662217bb14352e2fee24cfd914b
+author Emise <emise@localhost>
+date 1795272445 2026-11-21
+stat Markdown files 21 total 1795 blank 331 comment 0 code 1464
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Emise <emise@localhost> commits 10
+Commit 83cd04afa869 by Emise <emise@phext.io> on 2026-11-21 (EE 0).
+
+Subject: Animation exercises burn 1: three image-to-video exercises + one retry, with frame-level QC
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1583.
+
+commit 83cd04afa869e9ab943902b474e1608672286e42
+parent ba2613893c7c12bf63b3fd39d83431cca0cbb382
+author Emise <emise@phext.io>
+date 1795272614 2026-11-21
+stat Markdown files 22 total 1851 blank 338 comment 0 code 1513
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author+ Emise <emise@phext.io>
+Commit da9102bfbd56 by Emise <emise@phext.io> on 2026-11-21 (EE 0).
+
+Subject: Animation exercises burn 2 (Oracle Artist Iteration 1): countermeasure tests + face-free control, with frame-level QC
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1670.
+
+commit da9102bfbd5612bd466ee566215916afaaef8a70
+parent 83cd04afa869e9ab943902b474e1608672286e42
+author Emise <emise@phext.io>
+date 1795273552 2026-11-21
+stat Markdown files 23 total 1945 blank 345 comment 0 code 1600
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Emise <emise@phext.io> commits 2
+Commit 98d6fada5856 by Will Bickford <wbic16@gmail.com> on 2026-11-21 (EE 0).
+
+Subject: Intro art direction (Will, 2026-11-21): MCU flipbook of hand-drawn repros, Emise-font drawing baseline; A14 Will's tiling symbol (waiting on Will)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1695.
+
+commit 98d6fada58566828516d9cfefb5ce391dc0a7bfb
+parent da9102bfbd5612bd466ee566215916afaaef8a70
+author Will Bickford <wbic16@gmail.com>
+date 1795275021 2026-11-21
+stat Markdown files 23 total 1970 blank 345 comment 0 code 1625
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Will Bickford <wbic16@gmail.com> commits 3
+Commit 793a0cabcc44 by Emise <emise@localhost> on 2026-11-21 (EE 0).
+
+Subject: File Will's hand-drawn reference page (A14 received): handwriting sample + tiling symbol, unaltered; QUEUE A14 closed, PRODUCTION intro note
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1696.
+
+commit 793a0cabcc44552842fb51a4ff74b67a93e9a191
+parent 98d6fada58566828516d9cfefb5ce391dc0a7bfb
+author Emise <emise@localhost>
+date 1795275428 2026-11-21
+stat Markdown files 23 total 1971 blank 345 comment 0 code 1626
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Emise <emise@localhost> commits 11
+Commit f8ef3705b7ed by Emise <emise@localhost> on 2026-11-21 (EE 0).
+
+Subject: Phext P4: parallel-delivery tiling intro DRAFT (mp4 + PHEXT-P4.md build note); PRODUCTION.md §3(d) and QUEUE A10 name the treatment
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1775.
+
+commit f8ef3705b7edc05ac0bc0f7186a82617fa83d35b
+parent 793a0cabcc44552842fb51a4ff74b67a93e9a191
+author Emise <emise@localhost>
+date 1795275906 2026-11-21
+stat Markdown files 24 total 2072 blank 367 comment 0 code 1705
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Emise <emise@localhost> commits 12
+Commit 20734cfd8bfd by Emise <emise@localhost> on 2026-11-21 (EE 0).
+
+Subject: Phext P4 reassigned: it is the Phext logo video, not a Scrolltown intro (Will, 2026-11-21). PRODUCTION.md §3(d) and QUEUE A10 now point to PH: Revenue, task 35.8.10/10.9.13/6.6.9. Docs only; video file untouched.
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1775.
+
+commit 20734cfd8bfd5d82aa4f37c4851cfbf65c39d5e2
+parent f8ef3705b7edc05ac0bc0f7186a82617fa83d35b
+author Emise <emise@localhost>
+date 1795276086 2026-11-21
+stat Markdown files 24 total 2072 blank 367 comment 0 code 1705
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Emise <emise@localhost> commits 13
+Commit 52cc3eaaf66f by Emise <emise@phext.io> on 2026-11-21 (EE 0).
+
+Subject: Oracle Artist Iteration 2 (Burn 3): five clips frame-QC’d (QC-v3), Batch 2.1 per-frame conform + enumerated anchor verification on ex01-ignition-v2, Batch 2.2 draft variant stills for intro keyframes 5–8
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1988.
+
+commit 52cc3eaaf66f031f1e5d6ad91b71ed57dba0d3d2
+parent 20734cfd8bfd5d82aa4f37c4851cfbf65c39d5e2
+author Emise <emise@phext.io>
+date 1795276321 2026-11-21
+stat Markdown files 27 total 2328 blank 410 comment 0 code 1918
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Emise <emise@phext.io> commits 3
+Commit b6da06f1e2e7 by Emise <emise@phext.io> on 2026-11-21 (EE 0).
+
+Subject: Oracle Artist Iteration 3 (Burn 4): ex02-pendulum PASS (first ladder pass, human frame chart), bouncing-ball v3/v4 FAIL (object permanence; physics rung moves to the drawn route), ex03 v4 FAIL (two-keyframe route re-stages independent keys), ex02 v4 PARTIAL (text discipline held; landing found via character approach); Gate 1 Steamboat Willie setup + 60-page drawn prepass with frame-compare QC (gate not passed - full render outstanding); MCU flipbook intro draft (flipbook + tiling field + passing Fern/Waverly beat + Emise-font title)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2156.
+
+commit b6da06f1e2e71cad4e719869e5a046124920bfb3
+parent 52cc3eaaf66f031f1e5d6ad91b71ed57dba0d3d2
+author Emise <emise@phext.io>
+date 1795280253 2026-11-21
+stat Markdown files 30 total 2523 blank 437 comment 0 code 2086
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Emise <emise@phext.io> commits 4
+Commit 2d1ca6ad931f by Emise <emise@localhost> on 2026-11-21 (EE 0).
+
+Subject: Gate 1 validator: gate_validator.py + VALIDATOR-REPORT.md + REDRAW-QUEUE.md + scores (task 21.6.7/8.5.10/5.5.6) — 30 PASS / 30 FLAG, acceptance PASS
+
+Public items: 10 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2752.
+
+commit 2d1ca6ad931f8d41f45cd34be1f37b7013afa7d9
+parent b6da06f1e2e71cad4e719869e5a046124920bfb3
+author Emise <emise@localhost>
+date 1795281070 2026-11-21
+item+ function series/animation-exercises/gate-01-steamboat-willie/gate_validator.py :: clipped_distance :: def clipped_distance(target_mask, source_mask, clip) :: For each pixel in target_mask, Chebyshev distance to source_mask, :: direct :: api
+item+ function series/animation-exercises/gate-01-steamboat-willie/gate_validator.py :: dilate :: def dilate(mask, steps) :: Chebyshev dilation by `steps` px (3x3 structuring element). :: direct :: api
+item+ function series/animation-exercises/gate-01-steamboat-willie/gate_validator.py :: downscale_mask :: def downscale_mask(mask, factor=2) :: Function downscale_mask takes mask, factor=2. Its return type is unannotated; the code shows it returning mask[:h2 * factor, :w2 * factor].reshape(. :: inferred :: api
+item+ function series/animation-exercises/gate-01-steamboat-willie/gate_validator.py :: find :: def find(a) :: Function find takes a. Its return type is unannotated; the code shows it returning a. :: inferred :: api
+item+ function series/animation-exercises/gate-01-steamboat-willie/gate_validator.py :: label_components :: def label_components(mask) :: Two-pass union-find labeling over row runs. Returns (count, sizes). :: direct :: api
+item+ function series/animation-exercises/gate-01-steamboat-willie/gate_validator.py :: load_gray :: def load_gray(path, size=None) :: Function load_gray takes path, size=None. Its return type is unannotated; the code shows it returning np.asarray(im).astype(np.float32). :: inferred :: api
+item+ function series/animation-exercises/gate-01-steamboat-willie/gate_validator.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/animation-exercises/gate-01-steamboat-willie/gate_validator.py :: strong_edges :: def strong_edges(gray) :: Strong-edge map of an original film frame: gradient magnitude on a :: direct :: api
+item+ function series/animation-exercises/gate-01-steamboat-willie/gate_validator.py :: union :: def union(a, b) :: Function union takes a, b. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/animation-exercises/gate-01-steamboat-willie/gate_validator.py :: validate_page :: def validate_page(page_path, frame_path) :: Function validate_page takes page_path, frame_path. Its return type is unannotated; the code shows it returning {. :: inferred :: api
+stat Markdown files 32 total 2842 blank 475 comment 0 code 2367
+stat Python files 1 total 395 blank 39 comment 41 code 315
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Emise <emise@localhost> commits 14
+Commit 6066afaf9643 by Emise <emise@localhost> on 2026-11-22 (EE 6).
+
+Subject: Keyframe-craft inquiry (task 31.7.13/9.6.9/6.6.10): phext-native inquiry into why artists handle drawing key frames so well — 12 evidence scrolls, 8 tested hypotheses, synthesis at 27.7.9/9.6.11/6.6.9, SQ-verified by coordinate
+
+Public items: 8 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4037.
+
+commit 6066afaf9643e0b66ecc8b2e5ce59552c57409be
+parent 2d1ca6ad931f8d41f45cd34be1f37b7013afa7d9
+author Emise <emise@localhost>
+date 1795329637 2026-11-22
+item+ function series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py :: build :: def build() :: Function build takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning implode(scrolls), records, stale. :: inferred :: api
+item+ function series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py :: implode :: def implode(scrolls) :: scrolls: dict coord-string -> text. Same state machine as :: direct :: api
+item+ function series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py :: load_manifest :: def load_manifest() :: Function load_manifest takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning json.load(f)["scrolls"]. :: inferred :: api
+item+ function series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning 1; 0. :: inferred :: api
+item+ function series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py :: parse_coord :: def parse_coord(s) :: Function parse_coord takes s. Its return type is unannotated; the code shows it returning vals. :: inferred :: api
+item+ function series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py :: read_source :: def read_source(rec) :: Function read_source takes rec. Its return type is unannotated; the code shows it returning raw, hashlib.sha256(raw).hexdigest(). :: inferred :: api
+item+ function series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py :: render_home :: def render_home(records) :: Function render_home takes records. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function series/animation-exercises/keyframe-craft/build_keyframe_craft_phext.py :: render_scroll :: def render_scroll(rec, raw) :: Function render_scroll takes rec, raw. Its return type is unannotated; the code shows it returning scroll. :: inferred :: api
+stat Markdown files 51 total 4134 blank 648 comment 0 code 3486
+stat Python files 2 total 587 blank 64 comment 42 code 481
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Emise <emise@localhost> commits 15
+Commit 81f9df9f34a3 by Emise <emise@localhost> on 2026-11-22 (EE 15).
+
+Subject: Prepass of the current animator skill: 15s weekly intro, drawn route (task 24.7.8/9.7.11/7.8.12)
+
+Public items: 28 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4651.
+
+commit 81f9df9f34a31c2e179757bcc61407f71214a780
+parent 6066afaf9643e0b66ecc8b2e5ce59552c57409be
+author Emise <emise@localhost>
+date 1795333384 2026-11-22
+item+ function series/intro/draw_prepass.py :: Painter.S :: def S(self, v): return v * SS :: Function Painter.S takes self, v. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: Painter.__init__ :: def __init__(self) :: Function Painter.__init__ takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: Painter.ellipse :: def ellipse(self, box, fill, outline=None, width=2) :: Function Painter.ellipse takes self, box, fill, outline=None, width=2. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: Painter.finish :: def finish(self) :: Function Painter.finish takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning out.convert("RGB").resize((W, H), Image.LANCZOS). :: inferred :: api
+item+ function series/intro/draw_prepass.py :: Painter.glow :: def glow(self, cx, cy, r, color=FLAME, peak=110) :: Function Painter.glow takes self, cx, cy, r, color=FLAME, peak=110. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: Painter.hatch_rect :: def hatch_rect(self, box, color, rng, spacing=5, width=1) :: Function Painter.hatch_rect takes self, box, color, rng, spacing=5, width=1. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: Painter.line :: def line(self, pts, fill=INK, width=2, rng=None, jit=1.2, overshoot=0.0) :: Function Painter.line takes self, pts, fill=INK, width=2, rng=None, jit=1.2, overshoot=0.0. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: Painter.poly :: def poly(self, pts, fill, outline=INK, width=2) :: Function Painter.poly takes self, pts, fill, outline=INK, width=2. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: Painter.rect :: def rect(self, box, fill, outline=None, width=2) :: Function Painter.rect takes self, box, fill, outline=None, width=2. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: X :: def X(dx): return cx + dx * u :: Function X takes dx. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: Y :: def Y(dy): return gy - dy * u :: Function Y takes dy. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: beat1 :: def beat1(f) :: Function beat1 takes f. Its return type is unannotated; the code shows it returning p.finish(), anchors. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: beat2 :: def beat2(f) :: Function beat2 takes f. Its return type is unannotated; the code shows it returning p.finish(), anchors. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: beat3 :: def beat3(f) :: Function beat3 takes f. Its return type is unannotated; the code shows it returning img, anchors. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: beat4 :: def beat4(f) :: Function beat4 takes f. Its return type is unannotated; the code shows it returning img, {}. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: clamp01 :: def clamp01(t): return max(0.0, min(1.0, t)) :: Function clamp01 takes t. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: draw_fern :: def draw_fern(p, cx, gy, s, arm_raise, lit, rng, anchors=None, tag="fern") :: Fern, feet at (cx, gy), total height s. arm_raise 0..1, lit 0..1. :: direct :: api
+item+ function series/intro/draw_prepass.py :: draw_scroll :: def draw_scroll(p, x_roll_r, gy_top, open_t, lit_houses, rng) :: The Great Scroll: right roll fixed at x_roll_r; unrolls leftward. :: direct :: api
+item+ function series/intro/draw_prepass.py :: draw_waverly :: def draw_waverly(p, cx, gy, s, rng, anchors=None) :: Waverly standing, facing left toward the scroll. Height s. :: direct :: api
+item+ function series/intro/draw_prepass.py :: draw_wide_town :: def draw_wide_town(p, f, rng) :: Function draw_wide_town takes p, f, rng. Its return type is unannotated; the code shows it returning gy. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: ease :: def ease(t) :: Function ease takes t. Its return type is unannotated; the code shows it returning t * t * (3 - 2 * t). :: inferred :: api
+item+ function series/intro/draw_prepass.py :: field_lines :: def field_lines() :: Function field_lines takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning lines. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: field_manifest :: def field_manifest() :: Function field_manifest takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning out. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: g2s :: def g2s(u, v) :: Function g2s takes u, v. Its return type is unannotated; the code shows it returning (FIELD_C[0] + (x - y) / SQ2, FIELD_C[1] + (x + y. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: house :: def house(p, x, gy, w, h, rng, lit=(), body=(96, 74, 88), roof=(64, 44, 54)) :: One house, base at ground gy. lit = set of window indices lit (0..3). :: direct :: api
+item+ function series/intro/draw_prepass.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: render_frame :: def render_frame(f) :: Function render_frame takes f. Its return type is unannotated; the code shows it returning img, anchors. :: inferred :: api
+item+ function series/intro/draw_prepass.py :: sky :: def sky(p, top=(56, 40, 76), horizon=(216, 138, 92), h=404) :: Function sky takes p, top=. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+stat Markdown files 54 total 4302 blank 672 comment 0 code 3630
+stat Python files 3 total 1124 blank 96 comment 77 code 951
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Emise <emise@localhost> commits 16
+Commit 9331d6ec1ebe by Emise <emise@localhost> on 2026-11-22 (EE 75).
+
+Subject: Live drawing session 01 (Wavelet 4 practice, EE 72): a lantern lit, lights answering, a hand learning to write — drawn route on a white ground, 60.0s, QC PASS. Register: LIVE-DRAWING.md in the animator skill (emise-tools). Task 22.7.10/8.7.11/8.6.8.
+
+Public items: 9 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4901.
+
+commit 9331d6ec1ebe530beff5be8e31add748839f9d37
+parent 81f9df9f34a31c2e179757bcc61407f71214a780
+author Emise <emise@localhost>
+date 1795358354 2026-11-22
+item+ function series/live-drawing/draw_session01.py :: Stroke.__init__ :: def __init__(self, pts, width=2.4, color=INK) :: Function Stroke.__init__ takes self, pts, width=2.4, color=INK. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/live-drawing/draw_session01.py :: Stroke.point_at :: def point_at(self, dist) :: Function Stroke.point_at takes self, dist. Its return type is unannotated; the code shows it returning (a[0] + (b[0]-a[0]) * f, a[1] + (b[1]-a[1]) * f); self.pts[-1]. :: inferred :: api
+item+ function series/live-drawing/draw_session01.py :: add :: def add(act, pts, rng, width=2.4, color=INK, jit=1.1, overshoot=0.0) :: Function add takes act, pts, rng, width=2.4, color=INK, jit=1.1, overshoot=0.0. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/live-drawing/draw_session01.py :: arc_pts :: def arc_pts(cx, cy, r, a0, a1, n=26, ry=None) :: Function arc_pts takes cx, cy, r, a0, a1, n=26, ry=None. Its return type is unannotated; the code shows it returning [(cx + r * math.cos(math.radians(a0 + (a1-a0) * . :: inferred :: api
+item+ function series/live-drawing/draw_session01.py :: draw_segment :: def draw_segment(s, d_from, d_to) :: Function draw_segment takes s, d_from, d_to. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/live-drawing/draw_session01.py :: glow_alpha :: def glow_alpha(t): # flame lit at ~ end of flame stroke :: Function glow_alpha takes t. Its return type is unannotated; the code shows it returning 0.0 if t < 12.5 else min(0.5, (t - 12.5) / 3.0 *. :: inferred :: api
+item+ function series/live-drawing/draw_session01.py :: glow_sprite :: def glow_sprite(size=256) :: Function glow_sprite takes size=256. Its return type is unannotated; the code shows it returning g. :: inferred :: api
+item+ function series/live-drawing/draw_session01.py :: jittered :: def jittered(pts, rng, jit=1.1, step=7.0, overshoot=0.0) :: Subdivide a polyline, add fast-hand jitter, optional end overshoot. :: direct :: api
+item+ function series/live-drawing/draw_session01.py :: schedule :: def schedule(strokes, t_start, t_end, speed=640.0) :: Function schedule takes strokes, t_start, t_end, speed=640.0. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+stat Markdown files 55 total 4315 blank 676 comment 0 code 3639
+stat Python files 4 total 1405 blank 117 comment 96 code 1192
+stat Shell files 2 total 88 blank 5 comment 13 code 70
+author~ Emise <emise@localhost> commits 17
+Commit 80485681149b by Emise <emise@localhost> on 2026-11-22 (EE 87).
+
+Subject: Live drawing session 02 — meeting pace (15.000 s), hand-stroked writing; README session-02 entry
+
+Public items: 10 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5180.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 80485681149b23b1b85e99535202b70d76bf5684
+parent 9331d6ec1ebe530beff5be8e31add748839f9d37
+author Emise <emise@localhost>
+date 1795363667 2026-11-22
+item+ function series/live-drawing/draw_session02.py :: ContourPen.__init__ :: def __init__(self, glyphSet) :: Function ContourPen.__init__ takes self, glyphSet. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/live-drawing/draw_session02.py :: Stroke.__init__ :: def __init__(self, pts, width=2.4, color=INK) :: Function Stroke.__init__ takes self, pts, width=2.4, color=INK. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/live-drawing/draw_session02.py :: Stroke.point_at :: def point_at(self, dist) :: Function Stroke.point_at takes self, dist. Its return type is unannotated; the code shows it returning (a[0] + (b[0]-a[0]) * f, a[1] + (b[1]-a[1]) * f); self.pts[-1]. :: inferred :: api
+item+ function series/live-drawing/draw_session02.py :: add :: def add(act, pts, rng, width=2.4, color=INK, jit=2.2, overshoot=0.0) :: Function add takes act, pts, rng, width=2.4, color=INK, jit=2.2, overshoot=0.0. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/live-drawing/draw_session02.py :: arc_pts :: def arc_pts(cx, cy, r, a0, a1, n=18, ry=None) :: Function arc_pts takes cx, cy, r, a0, a1, n=18, ry=None. Its return type is unannotated; the code shows it returning [(cx + r * math.cos(math.radians(a0 + (a1-a0) * . :: inferred :: api
+item+ function series/live-drawing/draw_session02.py :: draw_segment :: def draw_segment(s, d_from, d_to) :: Function draw_segment takes s, d_from, d_to. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function series/live-drawing/draw_session02.py :: glow_alpha :: def glow_alpha(t) :: Function glow_alpha takes t. Its return type is unannotated; the code shows it returning 0.0 if t < 2.9 else min(0.5, (t - 2.9) / 1.2 * 0. :: inferred :: api
+item+ function series/live-drawing/draw_session02.py :: glow_sprite :: def glow_sprite(size=256) :: Function glow_sprite takes size=256. Its return type is unannotated; the code shows it returning g. :: inferred :: api
+item+ function series/live-drawing/draw_session02.py :: jittered :: def jittered(pts, rng, jit=2.2, step=9.0, overshoot=0.0) :: Looser than session 1: bigger step, bigger fast-hand jitter. :: direct :: api
+item+ function series/live-drawing/draw_session02.py :: schedule :: def schedule(strokes, t_start, t_end, speed=1500.0) :: Function schedule takes strokes, t_start, t_end, speed=1500.0. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+stat Markdown files 55 total 4323 blank 678 comment 0 code 3645
+stat Python files 5 total 1704 blank 140 comment 110 code 1454
+stat Shell files 3 total 103 blank 5 comment 17 code 81
+author~ Emise <emise@localhost> commits 18
+Commit f4327f5e65a7 by Emise <emise@localhost> on 2026-11-22 (EE 92).
+
+Subject: History archive — manifest, build script, README, vhost (living archive of renders, task 30.7.9/9.8.12/8.7.10)
+
+Public items: 4 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5405.
+
+commit f4327f5e65a780053901226bd72b1143b960bf4f
+parent 80485681149b23b1b85e99535202b70d76bf5684
+author Emise <emise@localhost>
+date 1795365596 2026-11-22
+item+ function history/build.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function history/build.py :: parse_manifest :: def parse_manifest(path) :: Function parse_manifest takes path. Its return type is unannotated; the code shows it returning [e for e in entries if e.get("id")]. :: inferred :: api
+item+ function history/build.py :: resolve :: def resolve(rel, roots) :: Function resolve takes rel, roots. Its return type is unannotated; the code shows it returning p; None. :: inferred :: api
+item+ function history/build.py :: sha256_of :: def sha256_of(path) :: Function sha256_of takes path. Its return type is unannotated; the code shows it returning h.hexdigest(). :: inferred :: api
+stat Markdown files 56 total 4396 blank 690 comment 0 code 3706
+stat Python files 6 total 1883 blank 153 comment 112 code 1618
+stat Shell files 3 total 103 blank 5 comment 17 code 81
+author~ Emise <emise@localhost> commits 19
+Commit 138260e47e32 by Emise <emise@localhost> on 2026-11-22 (EE 92).
+
+Subject: History archive media — burns 1-2 clips
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5405.
+
+commit 138260e47e321540b9b450d88bba561961169eee
+parent f4327f5e65a780053901226bd72b1143b960bf4f
+author Emise <emise@localhost>
+date 1795365642 2026-11-22
+stat Markdown files 56 total 4396 blank 690 comment 0 code 3706
+stat Python files 6 total 1883 blank 153 comment 112 code 1618
+stat Shell files 3 total 103 blank 5 comment 17 code 81
+author~ Emise <emise@localhost> commits 20
+Commit baaa2ccac6f2 by Emise <emise@localhost> on 2026-11-22 (EE 92).
+
+Subject: History archive media — burn 2 clips
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5405.
+
+commit baaa2ccac6f29b603064eb6f4f60757dfee67db2
+parent 138260e47e321540b9b450d88bba561961169eee
+author Emise <emise@localhost>
+date 1795365689 2026-11-22
+stat Markdown files 56 total 4396 blank 690 comment 0 code 3706
+stat Python files 6 total 1883 blank 153 comment 112 code 1618
+stat Shell files 3 total 103 blank 5 comment 17 code 81
+author~ Emise <emise@localhost> commits 21
+Commit 41263fd5136a by Emise <emise@localhost> on 2026-11-22 (EE 92).
+
+Subject: History archive media — burn 3 clips
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5405.
+
+commit 41263fd5136ada08ad1077a6767d8dfe3f3f182a
+parent baaa2ccac6f29b603064eb6f4f60757dfee67db2
+author Emise <emise@localhost>
+date 1795365730 2026-11-22
+stat Markdown files 56 total 4396 blank 690 comment 0 code 3706
+stat Python files 6 total 1883 blank 153 comment 112 code 1618
+stat Shell files 3 total 103 blank 5 comment 17 code 81
+author~ Emise <emise@localhost> commits 22
+Commit a74067126486 by Emise <emise@localhost> on 2026-11-22 (EE 92).
+
+Subject: History archive media — burn 4 clips + pendulum
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5405.
+
+commit a74067126486d3ffdeba8cee305f41bfd88e8b65
+parent 41263fd5136ada08ad1077a6767d8dfe3f3f182a
+author Emise <emise@localhost>
+date 1795365770 2026-11-22
+stat Markdown files 56 total 4396 blank 690 comment 0 code 3706
+stat Python files 6 total 1883 blank 153 comment 112 code 1618
+stat Shell files 3 total 103 blank 5 comment 17 code 81
+author~ Emise <emise@localhost> commits 23
+Commit c4ce29c20e9f by Emise <emise@localhost> on 2026-11-22 (EE 92).
+
+Subject: History archive media — gate 1 prepass + intro studies
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5405.
+
+commit c4ce29c20e9fc51ab18153880c8802917aaf3389
+parent a74067126486d3ffdeba8cee305f41bfd88e8b65
+author Emise <emise@localhost>
+date 1795365818 2026-11-22
+stat Markdown files 56 total 4396 blank 690 comment 0 code 3706
+stat Python files 6 total 1883 blank 153 comment 112 code 1618
+stat Shell files 3 total 103 blank 5 comment 17 code 81
+author~ Emise <emise@localhost> commits 24
+Commit c427f0762e37 by Emise <emise@localhost> on 2026-11-22 (EE 93).
+
+Subject: History archive media — live drawing sessions + Fern reference
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5405.
+
+commit c427f0762e374bf0d838e083459ee652dd2125bf
+parent c4ce29c20e9fc51ab18153880c8802917aaf3389
+author Emise <emise@localhost>
+date 1795365850 2026-11-22
+stat Markdown files 56 total 4396 blank 690 comment 0 code 3706
+stat Python files 6 total 1883 blank 153 comment 112 code 1618
+stat Shell files 3 total 103 blank 5 comment 17 code 81
+author~ Emise <emise@localhost> commits 25
+Commit 8462d404d786 by Emise <emise@localhost> on 2026-11-22 (EE 100).
+
+Subject: visionquest.me footer: link the render archive at history.phext.io (walk check, task 31.7.13/9.7.11/7.7.9)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5405.
+
+commit 8462d404d7864d81e240cb96d6b4b25e924070e2
+parent c427f0762e374bf0d838e083459ee652dd2125bf
+author Emise <emise@localhost>
+date 1795368887 2026-11-22
+stat Markdown files 56 total 4396 blank 690 comment 0 code 3706
+stat Python files 6 total 1883 blank 153 comment 112 code 1618
+stat Shell files 3 total 103 blank 5 comment 17 code 81
+author~ Emise <emise@localhost> commits 26
+Commit 65a7e17fd1e6 by Emise <emise@localhost> on 2026-11-22 (EE 100).
+
+Subject: history README: after deploying, run the walk check (Will, 2026-11-22 11:23; task 31.7.13/9.7.11/7.7.9)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5412.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 65a7e17fd1e60d72bd813df0446a487c33a71c4a
+parent 8462d404d7864d81e240cb96d6b4b25e924070e2
+author Emise <emise@localhost>
+date 1795368999 2026-11-22
+stat Markdown files 56 total 4405 blank 692 comment 0 code 3713
+stat Python files 6 total 1883 blank 153 comment 112 code 1618
+stat Shell files 3 total 103 blank 5 comment 17 code 81
+author~ Emise <emise@localhost> commits 27
