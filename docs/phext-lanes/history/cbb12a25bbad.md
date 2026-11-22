@@ -1,0 +1,273 @@
+# phext-lanes — reference as of commit cbb12a25bbad
+
+Commit cbb12a25bbadcddb6b719a59cb463f8c0a741480. 13 commits folded. Every fact here was folded from the chain's per-commit deltas.
+
+## Provenance
+
+This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/phext-lanes/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
+
+## Dependencies
+
+### Cargo.toml
+
+- axum — =0.7.9
+- chrono — =0.4.39
+- clap — =4.5.23
+- hyper — =1.5.2
+- hyper-util — =0.1.10
+- libphext — =0.3.1
+- serde — =1.0.217
+- serde_json — =1.0.134
+- tokio — =1.42.0
+- http-body-util — =0.1.5
+- tower — =0.5.3
+- hmac — =0.12.1
+- sha2 — =0.10.8
+- ureq — =2.8.0
+- url — =2.5.2
+
+## Authors
+
+The author of record is **Will Bickford** — 4 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Will Bickford (his own identities) — 3 commits
+- Verse — 1 commit
+
+Other authors, kept as themselves (not Exocortical cluster personas; never folded):
+
+- Cursor Agent <cursoragent@cursor.com> — 9 commits
+
+## Complexity
+
+- Markdown: 1 file, 233 lines total, 79 blank, 0 comment, 154 code
+- Rust: 17 files, 9642 lines total, 657 blank, 202 comment, 8783 code
+- Shell: 1 file, 797 lines total, 51 blank, 22 comment, 724 code
+- TOML: 1 file, 28 lines total, 2 blank, 2 comment, 24 code
+
+Declared RFCs at this point: none declared.
+
+## Public methods and commands
+
+- function `certbot_print` (deploy.sh) — Function certbot_print takes no inputs beyond the value it is called on.
+- function `die` (deploy.sh) — Function die takes no inputs beyond the value it is called on.
+- function `dns_points_at` (deploy.sh) — Function dns_points_at takes no inputs beyond the value it is called on.
+- function `domain_v4s` (deploy.sh) — Function domain_v4s takes no inputs beyond the value it is called on.
+- function `ensure_build_path` (deploy.sh) — Function ensure_build_path takes no inputs beyond the value it is called on.
+- function `ensure_rate_limit` (deploy.sh) — Function ensure_rate_limit takes no inputs beyond the value it is called on.
+- function `expand_tilde` (deploy.sh) — Function expand_tilde takes no inputs beyond the value it is called on.
+- function `http_code` (deploy.sh) — Function http_code takes no inputs beyond the value it is called on.
+- function `main` (deploy.sh) — Function main takes no inputs beyond the value it is called on.
+- function `port_is_foreign` (deploy.sh) — Function port_is_foreign takes no inputs beyond the value it is called on.
+- function `public_ipv4` (deploy.sh) — Function public_ipv4 takes no inputs beyond the value it is called on.
+- function `rollback_nginx` (deploy.sh) — Function rollback_nginx takes no inputs beyond the value it is called on.
+- function `site_matches` (deploy.sh) — Function site_matches takes no inputs beyond the value it is called on.
+- function `ss_listen_dump` (deploy.sh) — Function ss_listen_dump takes no inputs beyond the value it is called on.
+- function `usage` (deploy.sh) — Function usage takes no inputs beyond the value it is called on.
+- struct `AdminTokenCheck` (src/auth.rs) — Deny everyone except a bearer of the configured admin token.
+- function `AdminTokenCheck::from_env` (src/auth.rs) — Function AdminTokenCheck::from_env takes no inputs beyond the value it is called on.
+- function `AdminTokenCheck::from_token` (src/auth.rs) — Function AdminTokenCheck::from_token takes token: impl Into<String>.
+- trait `PlotHolderCheck` (src/auth.rs) — Proof that the caller holds a founding plot.
+- function `format_feed` (src/calm.rs) — Function format_feed takes feed: &Feed, details: bool.
+- function `format_thread` (src/calm.rs) — Function format_thread takes thread: &Thread, details: bool.
+- function `held_count` (src/calm.rs) — Function held_count takes feed: &Feed.
+- const `DEFAULT_FILE` (src/config.rs) — A fixed value named DEFAULT_FILE, set to "data/chat.phext".
+- const `DEFAULT_HOST` (src/config.rs) — A fixed value named DEFAULT_HOST, set to "127.0.0.1".
+- const `DEFAULT_PORT` (src/config.rs) — A fixed value named DEFAULT_PORT, set to 7841.
+- const `DEFAULT_USER` (src/config.rs) — A fixed value named DEFAULT_USER, set to "mira".
+- struct `Listen` (src/config.rs) — A data shape named Listen.
+- struct `Settings` (src/config.rs) — A data shape named Settings.
+- function `load` (src/config.rs) — Function load takes flag_user: Option<&str>, flag_file: Option<&Path>.
+- function `load_listen` (src/config.rs) — Function load_listen takes flag_host: Option<&str>, flag_port: Option<u16>.
+- function `resolve` (src/config.rs) — Function resolve takes flag_user: Option<&str>, flag_file: Option<&Path>, env_user: Option<&str>, env_file: Option<&str>, config_json: Option<&str>,.
+- function `resolve_listen` (src/config.rs) — Function resolve_listen takes flag_host: Option<&str>, flag_port: Option<u16>, env_host: Option<&str>, env_port: Option<&str>,.
+- const `ROSTER_LIBRARY` (src/coord.rs) — Library reserved for reader records.
+- enum `Target` (src/coord.rs) — A named choice named Target.
+- const `WEIGHTS` (src/coord.rs) — Library, shelf, series, collection, volume, book.
+- function `arms` (src/coord.rs) — Function arms takes coord: Coordinate.
+- function `format_coord` (src/coord.rs) — Function format_coord takes coord: Coordinate.
+- function `is_card_slot` (src/coord.rs) — Function is_card_slot takes coord: Coordinate.
+- function `is_roster` (src/coord.rs) — Function is_roster takes coord: Coordinate.
+- function `min_distance` (src/coord.rs) — Function min_distance takes thread: Coordinate, interests: &[Coordinate].
+- function `next_message_scroll` (src/coord.rs) — Smallest free message scroll in chapter 1, section 1.
+- function `one_line` (src/coord.rs) — Function one_line takes text: &str.
+- function `parse_coord` (src/coord.rs) — Function parse_coord takes input: &str.
+- function `parse_target` (src/coord.rs) — Function parse_target takes input: &str.
+- function `sanitize` (src/coord.rs) — Strip dimension breaks so a message cannot split the phext.
+- function `section_anchor` (src/coord.rs) — Function section_anchor takes coord: Coordinate.
+- function `section_key` (src/coord.rs) — Chapter and section stay.
+- function `thread_anchor` (src/coord.rs) — Function thread_anchor takes coord: Coordinate.
+- function `thread_key` (src/coord.rs) — Function thread_key takes coord: Coordinate.
+- function `topic_key` (src/coord.rs) — Function topic_key takes coord: Coordinate.
+- function `weighted_distance` (src/coord.rs) — Function weighted_distance takes a: Coordinate, b: Coordinate.
+- function `with_scroll` (src/coord.rs) — Function with_scroll takes thread: Coordinate, scroll: usize.
+- enum `Error` (src/error.rs) — A named choice named Error.
+- enum `FabricError` (src/fabric.rs) — A named choice named FabricError.
+- struct `Hub` (src/fabric.rs) — 
+- function `Hub::create_empty` (src/fabric.rs) — Function Hub::create_empty takes &self, requested: Option<&str>, ip: &str.
+- function `Hub::create_upload` (src/fabric.rs) — Function Hub::create_upload takes &self, requested: Option<&str>, bytes: &[u8], ip: &str,.
+- function `Hub::list` (src/fabric.rs) — Function Hub::list takes no inputs beyond the value it is called on.
+- function `Hub::open` (src/fabric.rs) — Function Hub::open takes default_path: impl Into<PathBuf>.
+- function `Hub::with_store` (src/fabric.rs) — Function Hub::with_store takes &self, fabric: Option<&str>, body: impl FnOnce.
+- const `MAX_FABRICS` (src/fabric.rs) — A fixed value named MAX_FABRICS, set to 100.
+- const `MAX_FABRIC_BYTES` (src/fabric.rs) — A fixed value named MAX_FABRIC_BYTES, set to 5 * 1024 * 1024.
+- struct `ParsedRoute` (src/fabric.rs) — A data shape named ParsedRoute.
+- enum `Route` (src/fabric.rs) — A named choice named Route.
+- enum `RouteError` (src/fabric.rs) — A named choice named RouteError.
+- function `day_stamp` (src/fabric.rs) — Function day_stamp takes now: chrono::DateTime<chrono::Utc>.
+- function `download_filename` (src/fabric.rs) — Function download_filename takes fabric: Option<&str>, lane_title: Option<&str>, day: &str.
+- function `fabrics_dir` (src/fabric.rs) — Function fabrics_dir takes default_file: &Path.
+- function `lane_document` (src/fabric.rs) — Function lane_document takes doc: &str, thread: &Thread.
+- function `normalize_name` (src/fabric.rs) — Function normalize_name takes raw: &str.
+- function `parse_route` (src/fabric.rs) — Function parse_route takes path: &str.
+- function `parse_upload` (src/fabric.rs) — Function parse_upload takes bytes: &[u8].
+- function `roster_only` (src/fabric.rs) — Function roster_only takes no inputs beyond the value it is called on.
+- struct `Issued` (src/invite.rs) — A data shape named Issued.
+- const `JOIN_COOKIE` (src/invite.rs) — A fixed value named JOIN_COOKIE, set to "lanes_join".
+- struct `Listed` (src/invite.rs) — A data shape named Listed.
+- struct `Owners` (src/invite.rs) — 
+- function `Owners::from_env` (src/invite.rs) — Function Owners::from_env takes no inputs beyond the value it is called on.
+- function `Owners::invite_only` (src/invite.rs) — Function Owners::invite_only takes no inputs beyond the value it is called on.
+- function `Owners::is_empty` (src/invite.rs) — Function Owners::is_empty takes no inputs beyond the value it is called on.
+- function `Owners::len` (src/invite.rs) — Function Owners::len takes no inputs beyond the value it is called on.
+- function `Owners::matches` (src/invite.rs) — Function Owners::matches takes &self, who: &str, email: &str.
+- function `Owners::parse` (src/invite.rs) — Function Owners::parse takes raw: &str.
+- enum `RedeemFail` (src/invite.rs) — A named choice named RedeemFail.
+- function `RedeemFail::message` (src/invite.rs) — Function RedeemFail::message takes no inputs beyond the value it is called on.
+- function `beside` (src/invite.rs) — Default invite file: next to the phext, not inside the checkout when the phext lives in `/var/lib/phext-lanes`.
+- function `create` (src/invite.rs) — Function create takes path: &Path, uses: u32, exp: Option<DateTime<Utc>>, now: DateTime<Utc>,.
+- function `list` (src/invite.rs) — Function list takes path: &Path.
+- function `redeem` (src/invite.rs) — Function redeem takes path: &Path, token: &str, now: DateTime<Utc>.
+- function `resolve` (src/invite.rs) — `LANES_INVITES` wins.
+- function `revoke` (src/invite.rs) — Function revoke takes path: &Path, id: &str.
+- function `token_shape` (src/invite.rs) — Function token_shape takes token: &str.
+- re-export `error::Error` (src/lib.rs) — A re-export: error::Error is made reachable through this module, so other code can use it from here.
+- enum `Bucket` (src/limit.rs) — A named choice named Bucket.
+- struct `Limiter` (src/limit.rs) — 
+- function `Limiter::hit` (src/limit.rs) — Function Limiter::hit takes &self, bucket: Bucket, id: &str.
+- function `Limiter::standard` (src/limit.rs) — Function Limiter::standard takes no inputs beyond the value it is called on.
+- function `Limiter::with_caps` (src/limit.rs) — Function Limiter::with_caps takes auth_per_ip: usize, writes_per_ip: usize, writes_per_account: usize.
+- function `lane_id` (src/link.rs) — Function lane_id takes coord: Coordinate.
+- function `parse_lane_id` (src/link.rs) — Function parse_lane_id takes id: &str.
+- function `parse_post_id` (src/link.rs) — Function parse_post_id takes id: &str.
+- function `parse_section_lane_id` (src/link.rs) — Function parse_section_lane_id takes id: &str.
+- function `post_id` (src/link.rs) — Function post_id takes coord: Coordinate.
+- function `section_lane_id` (src/link.rs) — Stable id for one chapter and section.
+- struct `Message` (src/model.rs) — A data shape named Message.
+- function `Message::poster_key` (src/model.rs) — Share caps follow the OAuth identity when the scroll has one.
+- const `PLAIN_AUTHOR` (src/model.rs) — Author stamped on a scroll that is not a Lanes message.
+- enum `Scroll` (src/model.rs) — A named choice named Scroll.
+- struct `Thread` (src/model.rs) — A data shape named Thread.
+- struct `User` (src/model.rs) — A data shape named User.
+- function `User::to_scroll` (src/model.rs) — Function User::to_scroll takes no inputs beyond the value it is called on.
+- function `content_tokens` (src/model.rs) — Lowercased content words.
+- function `format_card` (src/model.rs) — Function format_card takes topic: &str, title: &str, keywords: &str.
+- function `format_message` (src/model.rs) — Function format_message takes author: &str, ts: DateTime<Utc>, text: &str.
+- function `format_message_as` (src/model.rs) — Function format_message_as takes author: &str, who: &str, ts: DateTime<Utc>, text: &str.
+- function `keyword_line` (src/model.rs) — Function keyword_line takes text: &str.
+- function `member_id` (src/model.rs) — Roster ids keep a single colon (`github:100`).
+- function `opening_line` (src/model.rs) — First non-empty line, clipped.
+- function `parse_scroll` (src/model.rs) — Function parse_scroll takes raw: &str.
+- function `preview` (src/model.rs) — Function preview takes text: &str, limit: usize.
+- function `rest_after_opening` (src/model.rs) — The scroll after its first non-empty line.
+- function `title_from_text` (src/model.rs) — Function title_from_text takes text: &str.
+- struct `Identity` (src/oauth.rs) — A data shape named Identity.
+- trait `IdentitySource` (src/oauth.rs) — 
+- struct `Oauth` (src/oauth.rs) — 
+- function `Oauth::authorize_url` (src/oauth.rs) — Function Oauth::authorize_url takes &self, provider_name: &str, next: &str,.
+- function `Oauth::closed` (src/oauth.rs) — Function Oauth::closed takes no inputs beyond the value it is called on.
+- function `Oauth::cookie_secure` (src/oauth.rs) — Function Oauth::cookie_secure takes no inputs beyond the value it is called on.
+- function `Oauth::csrf_matches` (src/oauth.rs) — Function Oauth::csrf_matches takes &self, session: &Session, header: &str.
+- function `Oauth::finish` (src/oauth.rs) — Function Oauth::finish takes &self, provider_name: &str, code: &str, state: &str, pending_cookie: &str,.
+- function `Oauth::from_env` (src/oauth.rs) — Function Oauth::from_env takes no inputs beyond the value it is called on.
+- function `Oauth::providers` (src/oauth.rs) — Function Oauth::providers takes no inputs beyond the value it is called on.
+- function `Oauth::read_session` (src/oauth.rs) — Function Oauth::read_session takes &self, cookie_header: &str.
+- function `Oauth::ready` (src/oauth.rs) — Function Oauth::ready takes no inputs beyond the value it is called on.
+- function `Oauth::test_ready` (src/oauth.rs) — Function Oauth::test_ready takes no inputs beyond the value it is called on.
+- function `Oauth::test_session_cookie` (src/oauth.rs) — Function Oauth::test_session_cookie takes no inputs beyond the value it is called on.
+- struct `Pending` (src/oauth.rs) — A data shape named Pending.
+- struct `Session` (src/oauth.rs) — A data shape named Session.
+- const `TEST_CSRF` (src/oauth.rs) — A fixed value named TEST_CSRF, set to "csrf-test-token".
+- function `clean_email` (src/oauth.rs) — Function clean_email takes raw: &str.
+- function `clean_handle` (src/oauth.rs) — Function clean_handle takes raw: &str.
+- function `clear_cookie` (src/oauth.rs) — Function clear_cookie takes name: &str, secure: bool.
+- function `cookie_from_headers` (src/oauth.rs) — Function cookie_from_headers takes headers: &axum::http::HeaderMap.
+- function `cookie_header` (src/oauth.rs) — Function cookie_header takes name: &str, value: &str, max_age: i64, secure: bool.
+- function `display_name` (src/oauth.rs) — Function display_name takes raw: &str, fallback: &str.
+- function `pending_cookie` (src/oauth.rs) — Function pending_cookie takes value: &str, secure: bool.
+- function `pending_cookie_name` (src/oauth.rs) — Function pending_cookie_name takes no inputs beyond the value it is called on.
+- function `pending_token` (src/oauth.rs) — Function pending_token takes cookie_header: &str.
+- function `safe_next` (src/oauth.rs) — Function safe_next takes next: &str.
+- function `session_cookie` (src/oauth.rs) — Function session_cookie takes value: &str, secure: bool.
+- function `session_cookie_name` (src/oauth.rs) — Function session_cookie_name takes no inputs beyond the value it is called on.
+- const `AUTHOR_CAP` (src/rank.rs) — A fixed value named AUTHOR_CAP, set to 2.
+- struct `Feed` (src/rank.rs) — A data shape named Feed.
+- struct `FeedThread` (src/rank.rs) — A data shape named FeedThread.
+- const `LOUD_AT` (src/rank.rs) — Authors with at least this many messages are loud.
+- struct `Lane` (src/rank.rs) — A data shape named Lane.
+- const `MAX_THREADS` (src/rank.rs) — A fixed value named MAX_THREADS, set to 8.
+- struct `MapEntry` (src/rank.rs) — A data shape named MapEntry.
+- struct `Suggestion` (src/rank.rs) — A data shape named Suggestion.
+- function `admitted_by` (src/rank.rs) — Function admitted_by takes feed: &Feed, author: &str.
+- function `age_secs` (src/rank.rs) — Function age_secs takes ts: DateTime<Utc>, now: DateTime<Utc>.
+- function `build_feed` (src/rank.rs) — Function build_feed takes threads: &[Thread], interests: &[Coordinate], now: DateTime<Utc>, cap: usize, max_threads: usize,.
+- function `fresh_thread` (src/rank.rs) — Function fresh_thread takes threads: &[Thread], home: Coordinate.
+- function `is_flooded` (src/rank.rs) — Function is_flooded takes count: usize, share: f64.
+- function `majority` (src/rank.rs) — Function majority takes messages: &[Message].
+- function `map_of` (src/rank.rs) — Function map_of takes threads: &[Thread], interests: &[Coordinate].
+- function `nearness` (src/rank.rs) — Function nearness takes distance: u64.
+- function `suggest` (src/rank.rs) — Function suggest takes threads: &[Thread], interests: &[Coordinate], text: &str, now: DateTime<Utc>,.
+- function `suggest_fresh` (src/rank.rs) — A new book on the reader's home shelf.
+- function `thread_score` (src/rank.rs) — Function thread_score takes distance: u64, age_secs: u64.
+- const `ADA` (src/seed.rs) — A fixed value named ADA, set to "Ada North".
+- const `BREAD` (src/seed.rs) — A fixed value named BREAD, set to "Bread hour".
+- const `BREAD_THREAD` (src/seed.rs) — A fixed value named BREAD_THREAD, set to "4.1.1/1.1.1".
+- const `CASEY` (src/seed.rs) — A fixed value named CASEY, set to "Casey Horn".
+- const `FERN` (src/seed.rs) — A fixed value named FERN, set to "Fern wall".
+- const `FERN_THREAD` (src/seed.rs) — A fixed value named FERN_THREAD, set to "1.2.1/1.1.1".
+- const `HALL` (src/seed.rs) — A fixed value named HALL, set to "General".
+- const `HALL_THREAD` (src/seed.rs) — A fixed value named HALL_THREAD, set to "1.1.1/1.1.1".
+- const `JULES` (src/seed.rs) — A fixed value named JULES, set to "Jules Fen".
+- const `MIRA` (src/seed.rs) — A fixed value named MIRA, set to "Mira Quill".
+- const `PLANES` (src/seed.rs) — A fixed value named PLANES, set to "Hand planes".
+- const `PLANES_THREAD` (src/seed.rs) — A fixed value named PLANES_THREAD, set to "2.1.1/1.1.1".
+- const `REN` (src/seed.rs) — A fixed value named REN, set to "Ren Sato".
+- const `RIVER` (src/seed.rs) — A fixed value named RIVER, set to "River wards".
+- const `RIVER_THREAD` (src/seed.rs) — A fixed value named RIVER_THREAD, set to "3.1.1/1.1.1".
+- const `SWAP` (src/seed.rs) — A fixed value named SWAP, set to "Seed swap".
+- const `SWAP_THREAD` (src/seed.rs) — A fixed value named SWAP_THREAD, set to "1.2.1/1.2.1".
+- function `blank` (src/seed.rs) — A new chat: one General thread, no readers, no messages.
+- function `demo_instant` (src/seed.rs) — Function demo_instant takes no inputs beyond the value it is called on.
+- function `document` (src/seed.rs) — Build the demo phext by inserting each scroll in coordinate order.
+- function `readers` (src/seed.rs) — Function readers takes no inputs beyond the value it is called on.
+- struct `AppState` (src/server.rs) — 
+- function `AppState::open` (src/server.rs) — Function AppState::open takes path: std::path::PathBuf.
+- function `AppState::with_auth` (src/server.rs) — Function AppState::with_auth takes path: std::path::PathBuf, auth: Arc<dyn PlotHolderCheck>,.
+- function `listen_addr` (src/server.rs) — `host:port`, with brackets when `host` is an IPv6 address.
+- function `router` (src/server.rs) — Function router takes state: AppState.
+- function `serve` (src/server.rs) — Function serve takes path: std::path::PathBuf, host: &str, port: u16.
+- struct `Placed` (src/store.rs) — A data shape named Placed.
+- struct `Post` (src/store.rs) — A data shape named Post.
+- struct `Store` (src/store.rs) — 
+- function `Store::byte_index` (src/store.rs) — Offsets from `phext::index`, one coordinate per line.
+- function `Store::doc` (src/store.rs) — Function Store::doc takes no inputs beyond the value it is called on.
+- function `Store::ensure_member` (src/store.rs) — Add a reader, or refresh their display name.
+- function `Store::from_doc` (src/store.rs) — Function Store::from_doc takes path: impl Into<PathBuf>, doc: String.
+- function `Store::init_empty` (src/store.rs) — Create a chat with a General thread and no demo cast.
+- function `Store::load_doc` (src/store.rs) — Load a fabric that already exists.
+- function `Store::note_interest` (src/store.rs) — Remember a thread this member posted in or opened.
+- function `Store::open` (src/store.rs) — Function Store::open takes path: impl Into<PathBuf>.
+- function `Store::path` (src/store.rs) — Function Store::path takes no inputs beyond the value it is called on.
+- function `Store::place` (src/store.rs) — Function Store::place takes &mut self, post: Post.
+- function `Store::reseed` (src/store.rs) — Function Store::reseed takes &mut self, now: DateTime<Utc>.
+- function `Store::select` (src/store.rs) — `phext::fetch`
+- function `Store::toc` (src/store.rs) — `phext::textmap`
+- function `Store::world` (src/store.rs) — The parsed fabric.
+- struct `World` (src/store.rs) — A data shape named World.
+- function `World::find_lane` (src/store.rs) — Function World::find_lane takes &self, id: &str.
+- function `World::find_post` (src/store.rs) — The message scroll named by a post id.
+- function `World::find_thread` (src/store.rs) — A thread title, or a thread or scroll coordinate.
+- function `World::find_user` (src/store.rs) — Function World::find_user takes &self, query: &str.
+- function `World::thread` (src/store.rs) — Function World::thread takes &self, key: &str.
+- function `world_from` (src/store.rs) — Function world_from takes doc: &str.

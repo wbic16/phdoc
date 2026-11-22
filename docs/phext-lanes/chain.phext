@@ -1,0 +1,536 @@
+Commit 70783dc47b9e by Will Bickford <wbic16@gmail.com> on 2026-10-22 (EE 0).
+
+Subject: Initial commit
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 0.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 70783dc47b9ec28d354d3c6a99c841f9cbe14734
+parent none
+author Will Bickford <wbic16@gmail.com>
+date 1792711432 2026-10-22
+author+ Will Bickford <wbic16@gmail.com>
+Commit 820e5cb8ecfa by Cursor Agent <cursoragent@cursor.com> on 2026-10-22 (EE 0).
+
+Subject: Merge main into exo, keeping both histories
+
+Public items: 89 added, 0 removed, 0 changed. Dependencies: axum added at =0.7.9; chrono added at =0.4.39; clap added at =4.5.23; hyper added at =1.5.2; hyper-util added at =0.1.10; libphext added at =0.3.1; serde added at =1.0.217; serde_json added at =1.0.134; tokio added at =1.42.0. Code lines after this commit: 2812.
+
+commit 820e5cb8ecfa9693f71de081f000508fb5ece960
+parent 70783dc47b9ec28d354d3c6a99c841f9cbe14734
+author Cursor Agent <cursoragent@cursor.com>
+date 1792711771 2026-10-22
+dep+ Cargo.toml :: axum :: =0.7.9
+dep+ Cargo.toml :: chrono :: =0.4.39
+dep+ Cargo.toml :: clap :: =4.5.23
+dep+ Cargo.toml :: hyper :: =1.5.2
+dep+ Cargo.toml :: hyper-util :: =0.1.10
+dep+ Cargo.toml :: libphext :: =0.3.1
+dep+ Cargo.toml :: serde :: =1.0.217
+dep+ Cargo.toml :: serde_json :: =1.0.134
+dep+ Cargo.toml :: tokio :: =1.42.0
+item+ const src/coord.rs :: ROSTER_LIBRARY :: pub const ROSTER_LIBRARY: usize = 5; :: Library reserved for reader records. Chat topics use the other libraries. :: direct :: api
+item+ enum src/coord.rs :: Target :: pub enum Target { :: A named choice named Target. It is one of: Thread; Scroll. :: inferred :: api
+item+ const src/coord.rs :: WEIGHTS :: pub const WEIGHTS: [u64; 6] = [16, 8, 4, 2, 2, 1]; :: Library, shelf, series, collection, volume, book. Topic steps outweigh thread steps, so a different library cannot outrank a subscribed shelf just by being newer. :: direct :: api
+item+ function src/coord.rs :: arms :: pub fn arms(coord: Coordinate) -> [usize; 6] { :: Function arms takes coord: Coordinate. It gives back [usize; 6]. :: inferred :: api
+item+ function src/coord.rs :: format_coord :: pub fn format_coord(coord: Coordinate) -> String { :: Function format_coord takes coord: Coordinate. It gives back String. :: inferred :: api
+item+ function src/coord.rs :: is_card_slot :: pub fn is_card_slot(coord: Coordinate) -> bool { :: Function is_card_slot takes coord: Coordinate. It gives back bool. :: inferred :: api
+item+ function src/coord.rs :: is_roster :: pub fn is_roster(coord: Coordinate) -> bool { :: Function is_roster takes coord: Coordinate. It gives back bool. :: inferred :: api
+item+ function src/coord.rs :: min_distance :: pub fn min_distance(thread: Coordinate, interests: &[Coordinate]) -> u64 { :: Function min_distance takes thread: Coordinate, interests: &[Coordinate]. It gives back u64. :: inferred :: api
+item+ function src/coord.rs :: next_message_scroll :: pub fn next_message_scroll(used: impl IntoIterator<Item = usize>) -> usize { :: Smallest free message scroll in chapter 1, section 1. Scroll 1 is reserved for the thread card. :: direct :: api
+item+ function src/coord.rs :: one_line :: pub fn one_line(text: &str) -> String { :: Function one_line takes text: &str. It gives back String. :: inferred :: api
+item+ function src/coord.rs :: parse_coord :: pub fn parse_coord(input: &str) -> Result<Coordinate, String> { :: Function parse_coord takes input: &str. It gives back Result<Coordinate, String>. :: inferred :: api
+item+ function src/coord.rs :: parse_target :: pub fn parse_target(input: &str) -> Result<Target, String> { :: Function parse_target takes input: &str. It gives back Result<Target, String>. :: inferred :: api
+item+ function src/coord.rs :: sanitize :: pub fn sanitize(text: &str) -> String { :: Strip dimension breaks so a message cannot split the phext. Newlines stay; they are inside the scroll. :: direct :: api
+item+ function src/coord.rs :: thread_anchor :: pub fn thread_anchor(coord: Coordinate) -> Coordinate { :: Function thread_anchor takes coord: Coordinate. It gives back Coordinate. :: inferred :: api
+item+ function src/coord.rs :: thread_key :: pub fn thread_key(coord: Coordinate) -> String { :: Function thread_key takes coord: Coordinate. It gives back String. :: inferred :: api
+item+ function src/coord.rs :: topic_key :: pub fn topic_key(coord: Coordinate) -> String { :: Function topic_key takes coord: Coordinate. It gives back String. :: inferred :: api
+item+ function src/coord.rs :: weighted_distance :: pub fn weighted_distance(a: Coordinate, b: Coordinate) -> u64 { :: Function weighted_distance takes a: Coordinate, b: Coordinate. It gives back u64. :: inferred :: api
+item+ function src/coord.rs :: with_scroll :: pub fn with_scroll(thread: Coordinate, scroll: usize) -> Coordinate { :: Function with_scroll takes thread: Coordinate, scroll: usize. It gives back Coordinate. :: inferred :: api
+item+ enum src/error.rs :: Error :: pub enum Error { :: A named choice named Error. It is one of: Io; Bad. :: inferred :: api
+item+ re-export src/lib.rs :: error::Error :: pub use error::Error; :: A re-export: error::Error is made reachable through this module, so other code can use it from here. :: inferred :: api
+item+ struct src/model.rs :: Message :: pub struct Message { :: A data shape named Message. Its fields are: pub coord: Coordinate; pub author: String; pub ts: DateTime<Utc>; pub text: String. :: inferred :: api
+item+ enum src/model.rs :: Scroll :: pub enum Scroll { :: A named choice named Scroll. It is one of: User; Card. :: inferred :: api
+item+ struct src/model.rs :: Thread :: pub struct Thread { :: A data shape named Thread. Its fields are: pub coord: Coordinate; pub topic: String; pub title: String; pub keywords: String; pub messages: Vec<Message>. :: inferred :: api
+item+ struct src/model.rs :: User :: pub struct User { :: A data shape named User. Its fields are: pub id: String; pub name: String; pub blurb: String; pub interests: Vec<Coordinate>. :: inferred :: api
+item+ function src/model.rs :: User::to_scroll :: pub fn to_scroll(&self) -> String { :: Function User::to_scroll takes no inputs beyond the value it is called on. It gives back String. :: inferred :: api
+item+ function src/model.rs :: content_tokens :: pub fn content_tokens(text: &str) -> std::collections::BTreeSet<String> { :: Lowercased content words. A trailing "s" is stripped so "ferns" meets "fern". :: direct :: api
+item+ function src/model.rs :: format_card :: pub fn format_card(topic: &str, title: &str, keywords: &str) -> String { :: Function format_card takes topic: &str, title: &str, keywords: &str. It gives back String. :: inferred :: api
+item+ function src/model.rs :: format_message :: pub fn format_message(author: &str, ts: DateTime<Utc>, text: &str) -> String { :: Function format_message takes author: &str, ts: DateTime<Utc>, text: &str. It gives back String. :: inferred :: api
+item+ function src/model.rs :: keyword_line :: pub fn keyword_line(text: &str) -> String { :: Function keyword_line takes text: &str. It gives back String. :: inferred :: api
+item+ function src/model.rs :: parse_scroll :: pub fn parse_scroll(raw: &str) -> Option<Scroll> { :: Function parse_scroll takes raw: &str. It gives back Option<Scroll>. :: inferred :: api
+item+ function src/model.rs :: preview :: pub fn preview(text: &str, limit: usize) -> String { :: Function preview takes text: &str, limit: usize. It gives back String. :: inferred :: api
+item+ function src/model.rs :: title_from_text :: pub fn title_from_text(text: &str) -> String { :: Function title_from_text takes text: &str. It gives back String. :: inferred :: api
+item+ const src/rank.rs :: AUTHOR_CAP :: pub const AUTHOR_CAP: usize = 2; :: A fixed value named AUTHOR_CAP, set to 2. :: inferred :: api
+item+ struct src/rank.rs :: Feed :: pub struct Feed { :: A data shape named Feed. Its fields are: pub threads: Vec<FeedThread>; pub lanes: Vec<Lane>. :: inferred :: api
+item+ struct src/rank.rs :: FeedThread :: pub struct FeedThread { :: A data shape named FeedThread. Its fields are: pub coord: Coordinate; pub topic: String; pub title: String; pub distance: u64; pub score: f64; pub nearness: &'static str; pub admitted: Vec<Message>; pub held: Vec<Message>. :: inferred :: api
+item+ const src/rank.rs :: LOUD_AT :: pub const LOUD_AT: usize = 8; :: Authors with at least this many messages are loud. Only they are capped. A reader with a handful of notes is left intact. :: direct :: api
+item+ struct src/rank.rs :: Lane :: pub struct Lane { :: A data shape named Lane. Its fields are: pub author: String; pub held: usize; pub shown: usize; pub threads: Vec<String>. :: inferred :: api
+item+ const src/rank.rs :: MAX_THREADS :: pub const MAX_THREADS: usize = 8; :: A fixed value named MAX_THREADS, set to 8. :: inferred :: api
+item+ struct src/rank.rs :: MapEntry :: pub struct MapEntry { :: A data shape named MapEntry. Its fields are: pub coord: Coordinate; pub topic: String; pub title: String; pub distance: u64; pub message_count: usize; pub latest_author: Option<String>; pub latest_ts: Option<DateTime<Utc>>; pub preview: String; pub majority_author: Option<String>; pub majority_count: usize; pub majority_share: f64; pub flooded: bool. :: inferred :: api
+item+ struct src/rank.rs :: Suggestion :: pub struct Suggestion { :: A data shape named Suggestion. Its fields are: pub coord: Coordinate; pub thread: Coordinate; pub title: String; pub topic: String; pub new_thread: bool; pub overlap: Vec<String>; pub reason: String. :: inferred :: api
+item+ function src/rank.rs :: admitted_by :: pub fn admitted_by(feed: &Feed, author: &str) -> usize { :: Function admitted_by takes feed: &Feed, author: &str. It gives back usize. :: inferred :: api
+item+ function src/rank.rs :: age_secs :: pub fn age_secs(ts: DateTime<Utc>, now: DateTime<Utc>) -> u64 { :: Function age_secs takes ts: DateTime<Utc>, now: DateTime<Utc>. It gives back u64. :: inferred :: api
+item+ function src/rank.rs :: build_feed :: pub fn build_feed( threads: &[Thread], interests: &[Coordinate], now: DateTime<Utc>, cap: usize, max_threads: usize, ) -> Feed { :: Function build_feed takes threads: &[Thread], interests: &[Coordinate], now: DateTime<Utc>, cap: usize, max_threads: usize,. It gives back Feed. :: inferred :: api
+item+ function src/rank.rs :: fresh_thread :: pub fn fresh_thread(threads: &[Thread], home: Coordinate) -> Coordinate { :: Function fresh_thread takes threads: &[Thread], home: Coordinate. It gives back Coordinate. :: inferred :: api
+item+ function src/rank.rs :: is_flooded :: pub fn is_flooded(count: usize, share: f64) -> bool { :: Function is_flooded takes count: usize, share: f64. It gives back bool. :: inferred :: api
+item+ function src/rank.rs :: majority :: pub fn majority(messages: &[Message]) -> (Option<String>, usize, f64) { :: Function majority takes messages: &[Message]. It gives back (Option<String>, usize, f64). :: inferred :: api
+item+ function src/rank.rs :: map_of :: pub fn map_of(threads: &[Thread], interests: &[Coordinate]) -> Vec<MapEntry> { :: Function map_of takes threads: &[Thread], interests: &[Coordinate]. It gives back Vec<MapEntry>. :: inferred :: api
+item+ function src/rank.rs :: nearness :: pub fn nearness(distance: u64) -> &'static str { :: Function nearness takes distance: u64. It gives back &'static str. :: inferred :: api
+item+ function src/rank.rs :: suggest :: pub fn suggest( threads: &[Thread], interests: &[Coordinate], text: &str, now: DateTime<Utc>, ) -> Suggestion { :: Function suggest takes threads: &[Thread], interests: &[Coordinate], text: &str, now: DateTime<Utc>,. It gives back Suggestion. :: inferred :: api
+item+ function src/rank.rs :: thread_score :: pub fn thread_score(distance: u64, age_secs: u64) -> f64 { :: Function thread_score takes distance: u64, age_secs: u64. It gives back f64. :: inferred :: api
+item+ const src/seed.rs :: ADA :: pub const ADA: &str = "Ada North"; :: A fixed value named ADA, set to "Ada North". :: inferred :: api
+item+ const src/seed.rs :: BREAD :: pub const BREAD: &str = "Bread hour"; :: A fixed value named BREAD, set to "Bread hour". :: inferred :: api
+item+ const src/seed.rs :: BREAD_THREAD :: pub const BREAD_THREAD: &str = "4.1.1/1.1.1"; :: A fixed value named BREAD_THREAD, set to "4.1.1/1.1.1". :: inferred :: api
+item+ const src/seed.rs :: CASEY :: pub const CASEY: &str = "Casey Horn"; :: A fixed value named CASEY, set to "Casey Horn". :: inferred :: api
+item+ const src/seed.rs :: FERN :: pub const FERN: &str = "Fern wall"; :: A fixed value named FERN, set to "Fern wall". :: inferred :: api
+item+ const src/seed.rs :: FERN_THREAD :: pub const FERN_THREAD: &str = "1.2.1/1.1.1"; :: A fixed value named FERN_THREAD, set to "1.2.1/1.1.1". :: inferred :: api
+item+ const src/seed.rs :: HALL :: pub const HALL: &str = "General"; :: A fixed value named HALL, set to "General". :: inferred :: api
+item+ const src/seed.rs :: HALL_THREAD :: pub const HALL_THREAD: &str = "1.1.1/1.1.1"; :: A fixed value named HALL_THREAD, set to "1.1.1/1.1.1". :: inferred :: api
+item+ const src/seed.rs :: JULES :: pub const JULES: &str = "Jules Fen"; :: A fixed value named JULES, set to "Jules Fen". :: inferred :: api
+item+ const src/seed.rs :: MIRA :: pub const MIRA: &str = "Mira Quill"; :: A fixed value named MIRA, set to "Mira Quill". :: inferred :: api
+item+ const src/seed.rs :: PLANES :: pub const PLANES: &str = "Hand planes"; :: A fixed value named PLANES, set to "Hand planes". :: inferred :: api
+item+ const src/seed.rs :: PLANES_THREAD :: pub const PLANES_THREAD: &str = "2.1.1/1.1.1"; :: A fixed value named PLANES_THREAD, set to "2.1.1/1.1.1". :: inferred :: api
+item+ const src/seed.rs :: REN :: pub const REN: &str = "Ren Sato"; :: A fixed value named REN, set to "Ren Sato". :: inferred :: api
+item+ const src/seed.rs :: RIVER :: pub const RIVER: &str = "River wards"; :: A fixed value named RIVER, set to "River wards". :: inferred :: api
+item+ const src/seed.rs :: RIVER_THREAD :: pub const RIVER_THREAD: &str = "3.1.1/1.1.1"; :: A fixed value named RIVER_THREAD, set to "3.1.1/1.1.1". :: inferred :: api
+item+ const src/seed.rs :: SWAP :: pub const SWAP: &str = "Seed swap"; :: A fixed value named SWAP, set to "Seed swap". :: inferred :: api
+item+ const src/seed.rs :: SWAP_THREAD :: pub const SWAP_THREAD: &str = "1.2.1/1.2.1"; :: A fixed value named SWAP_THREAD, set to "1.2.1/1.2.1". :: inferred :: api
+item+ function src/seed.rs :: demo_instant :: pub fn demo_instant() -> DateTime<Utc> { :: Function demo_instant takes no inputs beyond the value it is called on. It gives back DateTime<Utc>. :: inferred :: api
+item+ function src/seed.rs :: document :: pub fn document(now: DateTime<Utc>) -> String { :: Build the demo phext by inserting each scroll in coordinate order. :: direct :: api
+item+ function src/seed.rs :: readers :: pub fn readers() -> Vec<User> { :: Function readers takes no inputs beyond the value it is called on. It gives back Vec<User>. :: inferred :: api
+item+ struct src/server.rs :: AppState :: pub struct AppState { ::  :: awaiting :: api
+item+ function src/server.rs :: router :: pub fn router(state: AppState) -> Router { :: Function router takes state: AppState. It gives back Router. :: inferred :: api
+item+ function src/server.rs :: serve :: pub async fn serve(path: std::path::PathBuf, port: u16) -> Result<(), Error> { :: Function serve takes path: std::path::PathBuf, port: u16. It gives back Result<(), Error>. :: inferred :: api
+item+ struct src/store.rs :: Placed :: pub struct Placed { :: A data shape named Placed. Its fields are: pub coord: Coordinate; pub thread: Coordinate; pub title: String; pub topic: String; pub new_thread: bool. :: inferred :: api
+item+ struct src/store.rs :: Post :: pub struct Post { :: A data shape named Post. Its fields are: pub author: String; pub text: String; pub target: Target; pub now: DateTime<Utc>. :: inferred :: api
+item+ struct src/store.rs :: Store :: pub struct Store { ::  :: awaiting :: api
+item+ function src/store.rs :: Store::byte_index :: pub fn byte_index(&self) -> String { :: Offsets from `phext::index`, one coordinate per line. :: direct :: api
+item+ function src/store.rs :: Store::doc :: pub fn doc(&self) -> &str { :: Function Store::doc takes no inputs beyond the value it is called on. It gives back &str. :: inferred :: api
+item+ function src/store.rs :: Store::open :: pub fn open(path: impl Into<PathBuf>) -> Result<Self, Error> { :: Function Store::open takes path: impl Into<PathBuf>. It gives back Result<Self, Error>. :: inferred :: api
+item+ function src/store.rs :: Store::path :: pub fn path(&self) -> &Path { :: Function Store::path takes no inputs beyond the value it is called on. It gives back &Path. :: inferred :: api
+item+ function src/store.rs :: Store::place :: pub fn place(&mut self, post: Post) -> Result<Placed, Error> { :: Function Store::place takes &mut self, post: Post. It gives back Result<Placed, Error>. :: inferred :: api
+item+ function src/store.rs :: Store::reseed :: pub fn reseed(&mut self, now: DateTime<Utc>) -> Result<(), Error> { :: Function Store::reseed takes &mut self, now: DateTime<Utc>. It gives back Result<(), Error>. :: inferred :: api
+item+ function src/store.rs :: Store::select :: pub fn select(&self, coord: Coordinate) -> String { :: `phext::fetch` :: direct :: api
+item+ function src/store.rs :: Store::toc :: pub fn toc(&self) -> String { :: `phext::textmap` :: direct :: api
+item+ function src/store.rs :: Store::world :: pub fn world(&self) -> World { :: Function Store::world takes no inputs beyond the value it is called on. It gives back World. :: inferred :: api
+item+ struct src/store.rs :: World :: pub struct World { :: A data shape named World. Its fields are: pub users: Vec<User>; pub threads: Vec<Thread>. :: inferred :: api
+item+ function src/store.rs :: World::find_user :: pub fn find_user(&self, query: &str) -> Option<&User> { :: Function World::find_user takes &self, query: &str. It gives back Option<&User>. :: inferred :: api
+item+ function src/store.rs :: World::thread :: pub fn thread(&self, key: &str) -> Option<&Thread> { :: Function World::thread takes &self, key: &str. It gives back Option<&Thread>. :: inferred :: api
+item+ function src/store.rs :: world_from :: pub fn world_from(doc: &str) -> World { :: Function world_from takes doc: &str. It gives back World. :: inferred :: api
+stat Markdown files 1 total 175 blank 53 comment 0 code 122
+stat Rust files 9 total 2984 blank 216 comment 95 code 2673
+stat TOML files 1 total 19 blank 1 comment 1 code 17
+author+ Cursor Agent <cursoragent@cursor.com>
+Commit 7a5cd4ae7cf3 by Will Bickford <wbic16@gmail.com> on 2026-10-23 (EE 0).
+
+Subject: Merge pull request #1 from wbic16/cursor/streamline-lanes-55a9
+
+Public items: 9 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3297.
+
+commit 7a5cd4ae7cf3728fab4e9839be109c05e31cf80c
+parent 820e5cb8ecfa9693f71de081f000508fb5ece960
+author Will Bickford <wbic16@gmail.com>
+date 1792716547 2026-10-23
+item+ function src/calm.rs :: format_feed :: pub fn format_feed(feed: &Feed, details: bool) -> String { :: Function format_feed takes feed: &Feed, details: bool. It gives back String. :: inferred :: api
+item+ function src/calm.rs :: format_thread :: pub fn format_thread(thread: &Thread, details: bool) -> String { :: Function format_thread takes thread: &Thread, details: bool. It gives back String. :: inferred :: api
+item+ function src/calm.rs :: held_count :: pub fn held_count(feed: &Feed) -> usize { :: Function held_count takes feed: &Feed. It gives back usize. :: inferred :: api
+item+ const src/config.rs :: DEFAULT_FILE :: pub const DEFAULT_FILE: &str = "data/chat.phext"; :: A fixed value named DEFAULT_FILE, set to "data/chat.phext". :: inferred :: api
+item+ const src/config.rs :: DEFAULT_USER :: pub const DEFAULT_USER: &str = "mira"; :: A fixed value named DEFAULT_USER, set to "mira". :: inferred :: api
+item+ struct src/config.rs :: Settings :: pub struct Settings { :: A data shape named Settings. Its fields are: pub user: String; pub file: PathBuf. :: inferred :: api
+item+ function src/config.rs :: load :: pub fn load(flag_user: Option<&str>, flag_file: Option<&Path>) -> Result<Settings, Error> { :: Function load takes flag_user: Option<&str>, flag_file: Option<&Path>. It gives back Result<Settings, Error>. :: inferred :: api
+item+ function src/config.rs :: resolve :: pub fn resolve( flag_user: Option<&str>, flag_file: Option<&Path>, env_user: Option<&str>, env_file: Option<&str>, config_json: Option<&str>, ) -> Result<Settings, Error> { :: Function resolve takes flag_user: Option<&str>, flag_file: Option<&Path>, env_user: Option<&str>, env_file: Option<&str>, config_json: Option<&str>,. It gives back Result<Settings, Error>. :: inferred :: api
+item+ function src/store.rs :: World::find_thread :: pub fn find_thread(&self, query: &str) -> Result<&Thread, String> { :: A thread title, or a thread or scroll coordinate. :: direct :: api
+stat Markdown files 1 total 159 blank 50 comment 0 code 109
+stat Rust files 11 total 3538 blank 263 comment 104 code 3171
+stat TOML files 1 total 19 blank 1 comment 1 code 17
+author~ Will Bickford <wbic16@gmail.com> commits 2
+Commit 28b468ebbb90 by Cursor Agent <cursoragent@cursor.com> on 2026-10-23 (EE 0).
+
+Subject: Add a redeploy script for mc.phext.io
+
+Public items: 19 added, 0 removed, 1 changed. Dependencies did not change. Code lines after this commit: 3858.
+
+commit 28b468ebbb90ae749e9fe14b7d15bc4d49a6b405
+parent 7a5cd4ae7cf3728fab4e9839be109c05e31cf80c
+author Cursor Agent <cursoragent@cursor.com>
+date 1792717071 2026-10-23
+item+ function deploy.sh :: certbot_print :: certbot_print() :: Function certbot_print takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ function deploy.sh :: die :: die() :: Function die takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ function deploy.sh :: dns_points_at :: dns_points_at() :: Function dns_points_at takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ function deploy.sh :: domain_v4s :: domain_v4s() :: Function domain_v4s takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ function deploy.sh :: expand_tilde :: expand_tilde() :: Function expand_tilde takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ function deploy.sh :: http_code :: http_code() :: Function http_code takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ function deploy.sh :: main :: main() :: Function main takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ function deploy.sh :: port_is_foreign :: port_is_foreign() :: Function port_is_foreign takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ function deploy.sh :: public_ipv4 :: public_ipv4() :: Function public_ipv4 takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ function deploy.sh :: restore_file :: restore_file() :: Function restore_file takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ function deploy.sh :: ss_listen_dump :: ss_listen_dump() :: Function ss_listen_dump takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ function deploy.sh :: usage :: usage() :: Function usage takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ function deploy.sh :: vhost_matches :: vhost_matches() :: Function vhost_matches takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ const src/config.rs :: DEFAULT_HOST :: pub const DEFAULT_HOST: &str = "127.0.0.1"; :: A fixed value named DEFAULT_HOST, set to "127.0.0.1". :: inferred :: api
+item+ const src/config.rs :: DEFAULT_PORT :: pub const DEFAULT_PORT: u16 = 7841; :: A fixed value named DEFAULT_PORT, set to 7841. :: inferred :: api
+item+ struct src/config.rs :: Listen :: pub struct Listen { :: A data shape named Listen. Its fields are: pub host: String; pub port: u16. :: inferred :: api
+item+ function src/config.rs :: load_listen :: pub fn load_listen(flag_host: Option<&str>, flag_port: Option<u16>) -> Result<Listen, Error> { :: Function load_listen takes flag_host: Option<&str>, flag_port: Option<u16>. It gives back Result<Listen, Error>. :: inferred :: api
+item+ function src/config.rs :: resolve_listen :: pub fn resolve_listen( flag_host: Option<&str>, flag_port: Option<u16>, env_host: Option<&str>, env_port: Option<&str>, ) -> Result<Listen, Error> { :: Function resolve_listen takes flag_host: Option<&str>, flag_port: Option<u16>, env_host: Option<&str>, env_port: Option<&str>,. It gives back Result<Listen, Error>. :: inferred :: api
+item+ function src/server.rs :: listen_addr :: pub fn listen_addr(host: &str, port: u16) -> String { :: `host:port`, with brackets when `host` is an IPv6 address. :: direct :: api
+item~ function src/server.rs :: serve :: pub async fn serve(path: std::path::PathBuf, host: &str, port: u16) -> Result<(), Error> { :: Function serve takes path: std::path::PathBuf, host: &str, port: u16. It gives back Result<(), Error>. :: inferred :: api
+stat Markdown files 1 total 179 blank 57 comment 0 code 122
+stat Rust files 11 total 3638 blank 272 comment 106 code 3260
+stat Shell files 1 total 511 blank 39 comment 13 code 459
+stat TOML files 1 total 19 blank 1 comment 1 code 17
+author~ Cursor Agent <cursoragent@cursor.com> commits 2
+Commit efd7f4c05a6a by Cursor Agent <cursoragent@cursor.com> on 2026-10-23 (EE 0).
+
+Subject: Record the mc.phext.io address as 44.248.235.76
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3865.
+
+commit efd7f4c05a6ad91d92e1efaaecc3467245837bd8
+parent 28b468ebbb90ae749e9fe14b7d15bc4d49a6b405
+author Cursor Agent <cursoragent@cursor.com>
+date 1792717329 2026-10-23
+stat Markdown files 1 total 179 blank 57 comment 0 code 122
+stat Rust files 11 total 3638 blank 272 comment 106 code 3260
+stat Shell files 1 total 520 blank 39 comment 15 code 466
+stat TOML files 1 total 19 blank 1 comment 1 code 17
+author~ Cursor Agent <cursoragent@cursor.com> commits 3
+Commit 714bc015ff4f by Verse <verse@visionquest.me> on 2026-10-23 (EE 0).
+
+Subject: Run as ubuntu, not ec2-user
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3866.
+
+commit 714bc015ff4f0e9035dd1c63697bd043ffa6e525
+parent efd7f4c05a6ad91d92e1efaaecc3467245837bd8
+author Verse <verse@visionquest.me>
+date 1792717607 2026-10-23
+stat Markdown files 1 total 179 blank 57 comment 0 code 122
+stat Rust files 11 total 3638 blank 272 comment 106 code 3260
+stat Shell files 1 total 520 blank 38 comment 15 code 467
+stat TOML files 1 total 19 blank 1 comment 1 code 17
+author+ Verse <verse@visionquest.me>
+Commit 8020c68fb806 by Cursor Agent <cursoragent@cursor.com> on 2026-10-23 (EE 0).
+
+Subject: Serve mc.phext.io with the host nginx
+
+Public items: 3 added, 2 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3916.
+
+commit 8020c68fb80652b10d816379267111619c6ef678
+parent 714bc015ff4f0e9035dd1c63697bd043ffa6e525
+author Cursor Agent <cursoragent@cursor.com>
+date 1792719406 2026-10-23
+item+ function deploy.sh :: ensure_build_path :: ensure_build_path() :: Function ensure_build_path takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ function deploy.sh :: rollback_nginx :: rollback_nginx() :: Function rollback_nginx takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ function deploy.sh :: site_matches :: site_matches() :: Function site_matches takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item- function deploy.sh :: restore_file
+item- function deploy.sh :: vhost_matches
+stat Markdown files 1 total 179 blank 57 comment 0 code 122
+stat Rust files 11 total 3638 blank 272 comment 106 code 3260
+stat Shell files 1 total 580 blank 47 comment 16 code 517
+stat TOML files 1 total 19 blank 1 comment 1 code 17
+author~ Cursor Agent <cursoragent@cursor.com> commits 4
+Commit 5edae8989520 by Cursor Agent <cursoragent@cursor.com> on 2026-10-23 (EE 0).
+
+Subject: Add permanent links for a thread and a message
+
+Public items: 6 added, 0 removed, 0 changed. Dependencies: http-body-util added at =0.1.5; tower added at =0.5.3. Code lines after this commit: 4560.
+
+commit 5edae89895203ded0a86b97d6a0410ccb7134fd7
+parent 8020c68fb80652b10d816379267111619c6ef678
+author Cursor Agent <cursoragent@cursor.com>
+date 1792721206 2026-10-23
+dep+ Cargo.toml :: http-body-util :: =0.1.5
+dep+ Cargo.toml :: tower :: =0.5.3
+item+ function src/link.rs :: lane_id :: pub fn lane_id(coord: Coordinate) -> String { :: Function lane_id takes coord: Coordinate. It gives back String. :: inferred :: api
+item+ function src/link.rs :: parse_lane_id :: pub fn parse_lane_id(id: &str) -> Option<Coordinate> { :: Function parse_lane_id takes id: &str. It gives back Option<Coordinate>. :: inferred :: api
+item+ function src/link.rs :: parse_post_id :: pub fn parse_post_id(id: &str) -> Option<Coordinate> { :: Function parse_post_id takes id: &str. It gives back Option<Coordinate>. :: inferred :: api
+item+ function src/link.rs :: post_id :: pub fn post_id(coord: Coordinate) -> String { :: Function post_id takes coord: Coordinate. It gives back String. :: inferred :: api
+item+ function src/store.rs :: World::find_lane :: pub fn find_lane(&self, id: &str) -> Option<&Thread> { :: Function World::find_lane takes &self, id: &str. It gives back Option<&Thread>. :: inferred :: api
+item+ function src/store.rs :: World::find_post :: pub fn find_post(&self, id: &str) -> Option<(&Thread, &Message)> { :: The message scroll named by a post id. The thread card is not a post. :: direct :: api
+stat Markdown files 1 total 181 blank 58 comment 0 code 123
+stat Rust files 12 total 4347 blank 332 comment 115 code 3900
+stat Shell files 1 total 580 blank 47 comment 16 code 517
+stat TOML files 1 total 23 blank 2 comment 1 code 20
+author~ Cursor Agent <cursoragent@cursor.com> commits 5
+Commit 94e0904dc780 by Cursor Agent <cursoragent@cursor.com> on 2026-10-23 (EE 0).
+
+Subject: Add a phext fork and gate new fabrics on a plot check
+
+Public items: 28 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5711.
+
+commit 94e0904dc78046e5d7d3677f3152c4cc51efef64
+parent 5edae89895203ded0a86b97d6a0410ccb7134fd7
+author Cursor Agent <cursoragent@cursor.com>
+date 1792722578 2026-10-23
+item+ struct src/auth.rs :: AdminTokenCheck :: pub struct AdminTokenCheck { :: Deny everyone except a bearer of the configured admin token. :: direct :: api
+item+ function src/auth.rs :: AdminTokenCheck::from_env :: pub fn from_env() -> Self { :: Function AdminTokenCheck::from_env takes no inputs beyond the value it is called on. It gives back Self. :: inferred :: api
+item+ function src/auth.rs :: AdminTokenCheck::from_token :: pub fn from_token(token: impl Into<String>) -> Self { :: Function AdminTokenCheck::from_token takes token: impl Into<String>. It gives back Self. :: inferred :: api
+item+ trait src/auth.rs :: PlotHolderCheck :: pub trait PlotHolderCheck: Send + Sync { :: Proof that the caller holds a founding plot. `proof` is the secret the request presented. An empty proof is never enough. A future Tessera check can replace the admin-token implementation without changing the call sites. :: direct :: api
+item+ enum src/fabric.rs :: FabricError :: pub enum FabricError { :: A named choice named FabricError. It is one of: Bad; Conflict; Limited; Forbidden; Missing; Io. :: inferred :: api
+item+ struct src/fabric.rs :: Hub :: pub struct Hub { ::  :: awaiting :: api
+item+ function src/fabric.rs :: Hub::create_empty :: pub fn create_empty(&self, requested: Option<&str>, ip: &str) -> Result<String, FabricError> { :: Function Hub::create_empty takes &self, requested: Option<&str>, ip: &str. It gives back Result<String, FabricError>. :: inferred :: api
+item+ function src/fabric.rs :: Hub::create_upload :: pub fn create_upload( &self, requested: Option<&str>, bytes: &[u8], ip: &str, ) -> Result<String, FabricError> { :: Function Hub::create_upload takes &self, requested: Option<&str>, bytes: &[u8], ip: &str,. It gives back Result<String, FabricError>. :: inferred :: api
+item+ function src/fabric.rs :: Hub::list :: pub fn list(&self) -> Result<Vec<String>, FabricError> { :: Function Hub::list takes no inputs beyond the value it is called on. It gives back Result<Vec<String>, FabricError>. :: inferred :: api
+item+ function src/fabric.rs :: Hub::open :: pub fn open(default_path: impl Into<PathBuf>) -> Result<Self, Error> { :: Function Hub::open takes default_path: impl Into<PathBuf>. It gives back Result<Self, Error>. :: inferred :: api
+item+ function src/fabric.rs :: Hub::with_store :: pub fn with_store<T>( &self, fabric: Option<&str>, body: impl FnOnce(&mut Store) -> T, ) -> Result<T, FabricError> { :: Function Hub::with_store takes &self, fabric: Option<&str>, body: impl FnOnce. It gives back T, ) -> Result<T, FabricError>. :: inferred :: api
+item+ const src/fabric.rs :: MAX_FABRICS :: pub const MAX_FABRICS: usize = 100; :: A fixed value named MAX_FABRICS, set to 100. :: inferred :: api
+item+ const src/fabric.rs :: MAX_FABRIC_BYTES :: pub const MAX_FABRIC_BYTES: usize = 5 * 1024 * 1024; :: A fixed value named MAX_FABRIC_BYTES, set to 5 * 1024 * 1024. :: inferred :: api
+item+ struct src/fabric.rs :: ParsedRoute :: pub struct ParsedRoute { :: A data shape named ParsedRoute. Its fields are: pub fabric: Option<String>; pub route: Route. :: inferred :: api
+item+ enum src/fabric.rs :: Route :: pub enum Route { :: A named choice named Route. It is one of: Home; Lane; Post; Download; Health; State; ApiLane; ApiPost; Room; Suggest; Toc; Scroll; PostMessage; Reset; Access; Create; Upload. :: inferred :: api
+item+ enum src/fabric.rs :: RouteError :: pub enum RouteError { :: A named choice named RouteError. It is one of: Unknown; BadFabric. :: inferred :: api
+item+ function src/fabric.rs :: day_stamp :: pub fn day_stamp(now: chrono::DateTime<chrono::Utc>) -> String { :: Function day_stamp takes now: chrono::DateTime<chrono::Utc>. It gives back String. :: inferred :: api
+item+ function src/fabric.rs :: download_filename :: pub fn download_filename(fabric: Option<&str>, lane_title: Option<&str>, day: &str) -> String { :: Function download_filename takes fabric: Option<&str>, lane_title: Option<&str>, day: &str. It gives back String. :: inferred :: api
+item+ function src/fabric.rs :: fabrics_dir :: pub fn fabrics_dir(default_file: &Path) -> PathBuf { :: Function fabrics_dir takes default_file: &Path. It gives back PathBuf. :: inferred :: api
+item+ function src/fabric.rs :: lane_document :: pub fn lane_document(doc: &str, thread: &Thread) -> String { :: Function lane_document takes doc: &str, thread: &Thread. It gives back String. :: inferred :: api
+item+ function src/fabric.rs :: normalize_name :: pub fn normalize_name(raw: &str) -> Result<String, FabricError> { :: Function normalize_name takes raw: &str. It gives back Result<String, FabricError>. :: inferred :: api
+item+ function src/fabric.rs :: parse_route :: pub fn parse_route(path: &str) -> Result<ParsedRoute, RouteError> { :: Function parse_route takes path: &str. It gives back Result<ParsedRoute, RouteError>. :: inferred :: api
+item+ function src/fabric.rs :: parse_upload :: pub fn parse_upload(bytes: &[u8]) -> Result<String, FabricError> { :: Function parse_upload takes bytes: &[u8]. It gives back Result<String, FabricError>. :: inferred :: api
+item+ function src/fabric.rs :: roster_only :: pub fn roster_only() -> String { :: Function roster_only takes no inputs beyond the value it is called on. It gives back String. :: inferred :: api
+item+ function src/server.rs :: AppState::open :: pub fn open(path: std::path::PathBuf) -> Result<Self, Error> { :: Function AppState::open takes path: std::path::PathBuf. It gives back Result<Self, Error>. :: inferred :: api
+item+ function src/server.rs :: AppState::with_auth :: pub fn with_auth( path: std::path::PathBuf, auth: Arc<dyn PlotHolderCheck>, ) -> Result<Self, Error> { :: Function AppState::with_auth takes path: std::path::PathBuf, auth: Arc<dyn PlotHolderCheck>,. It gives back Result<Self, Error>. :: inferred :: api
+item+ function src/store.rs :: Store::from_doc :: pub fn from_doc(path: impl Into<PathBuf>, doc: String) -> Self { :: Function Store::from_doc takes path: impl Into<PathBuf>, doc: String. It gives back Self. :: inferred :: api
+item+ function src/store.rs :: Store::load_doc :: pub fn load_doc(path: impl Into<PathBuf>) -> Result<Self, Error> { :: Load a fabric that already exists. Do not seed over it. :: direct :: api
+stat Markdown files 1 total 183 blank 59 comment 0 code 124
+stat Rust files 14 total 5537 blank 418 comment 132 code 4987
+stat Shell files 1 total 644 blank 48 comment 16 code 580
+stat TOML files 1 total 23 blank 2 comment 1 code 20
+author~ Cursor Agent <cursoragent@cursor.com> commits 6
+Commit 088df9808394 by Cursor Agent <cursoragent@cursor.com> on 2026-10-23 (EE 0).
+
+Subject: Show ordinary phext scrolls as read-only section lanes.
+
+Public items: 7 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 6332.
+
+commit 088df980839468785a4fccd1859e8ce15f2a107a
+parent 94e0904dc78046e5d7d3677f3152c4cc51efef64
+author Cursor Agent <cursoragent@cursor.com>
+date 1792724191 2026-10-23
+item+ function src/coord.rs :: section_anchor :: pub fn section_anchor(coord: Coordinate) -> Coordinate { :: Function section_anchor takes coord: Coordinate. It gives back Coordinate. :: inferred :: api
+item+ function src/coord.rs :: section_key :: pub fn section_key(coord: Coordinate) -> String { :: Chapter and section stay. Scrolls in one section share a lane. :: direct :: api
+item+ function src/link.rs :: parse_section_lane_id :: pub fn parse_section_lane_id(id: &str) -> Option<Coordinate> { :: Function parse_section_lane_id takes id: &str. It gives back Option<Coordinate>. :: inferred :: api
+item+ function src/link.rs :: section_lane_id :: pub fn section_lane_id(coord: Coordinate) -> String { :: Stable id for one chapter and section. Prefix `s`, eight coordinate parts. :: direct :: api
+item+ const src/model.rs :: PLAIN_AUTHOR :: pub const PLAIN_AUTHOR: &str = "phext"; :: Author stamped on a scroll that is not a Lanes message. :: direct :: api
+item+ function src/model.rs :: opening_line :: pub fn opening_line(text: &str, limit: usize) -> String { :: First non-empty line, clipped. Empty text becomes "Scroll". :: direct :: api
+item+ function src/model.rs :: rest_after_opening :: pub fn rest_after_opening(text: &str) -> String { :: The scroll after its first non-empty line. :: direct :: api
+stat Markdown files 1 total 185 blank 60 comment 0 code 125
+stat Rust files 14 total 6202 blank 452 comment 143 code 5607
+stat Shell files 1 total 644 blank 48 comment 16 code 580
+stat TOML files 1 total 23 blank 2 comment 1 code 20
+author~ Cursor Agent <cursoragent@cursor.com> commits 7
+Commit d0cfa0415d24 by Cursor Agent <cursoragent@cursor.com> on 2026-10-23 (EE 0).
+
+Subject: Follow the color scheme and parse each fabric once.
+
+Public items: 0 added, 0 removed, 1 changed. Dependencies did not change. Code lines after this commit: 6363.
+
+commit d0cfa0415d24c4a1de0dc7d6b189bda959dbc889
+parent 088df980839468785a4fccd1859e8ce15f2a107a
+author Cursor Agent <cursoragent@cursor.com>
+date 1792729905 2026-10-23
+item~ function src/store.rs :: Store::world :: pub fn world(&self) -> &World { :: The parsed fabric. Rebuilt only when the file changes. :: direct :: api
+stat Markdown files 1 total 185 blank 60 comment 0 code 125
+stat Rust files 14 total 6237 blank 452 comment 147 code 5638
+stat Shell files 1 total 644 blank 48 comment 16 code 580
+stat TOML files 1 total 23 blank 2 comment 1 code 20
+author~ Cursor Agent <cursoragent@cursor.com> commits 8
+Commit 1fc2d60c14fe by Cursor Agent <cursoragent@cursor.com> on 2026-10-23 (EE 0).
+
+Subject: Require GitHub or Google sign-in before a write.
+
+Public items: 35 added, 0 removed, 0 changed. Dependencies: hmac added at =0.12.1; sha2 added at =0.10.8; ureq added at =2.8.0; url added at =2.5.2. Code lines after this commit: 7920.
+
+commit 1fc2d60c14fe6fcbed0e64c8f7f6eefc5e638753
+parent d0cfa0415d24c4a1de0dc7d6b189bda959dbc889
+author Cursor Agent <cursoragent@cursor.com>
+date 1792733896 2026-10-23
+dep+ Cargo.toml :: hmac :: =0.12.1
+dep+ Cargo.toml :: sha2 :: =0.10.8
+dep+ Cargo.toml :: ureq :: =2.8.0
+dep+ Cargo.toml :: url :: =2.5.2
+item+ function deploy.sh :: ensure_rate_limit :: ensure_rate_limit() :: Function ensure_rate_limit takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ enum src/limit.rs :: Bucket :: pub enum Bucket { :: A named choice named Bucket. It is one of: AuthIp; WriteIp; WriteAccount. :: inferred :: api
+item+ struct src/limit.rs :: Limiter :: pub struct Limiter { ::  :: awaiting :: api
+item+ function src/limit.rs :: Limiter::hit :: pub fn hit(&self, bucket: Bucket, id: &str) -> Result<(), ()> { :: Function Limiter::hit takes &self, bucket: Bucket, id: &str. It gives back Result<(), ()>. :: inferred :: api
+item+ function src/limit.rs :: Limiter::standard :: pub fn standard() -> Self { :: Function Limiter::standard takes no inputs beyond the value it is called on. It gives back Self. :: inferred :: api
+item+ function src/limit.rs :: Limiter::with_caps :: pub fn with_caps(auth_per_ip: usize, writes_per_ip: usize, writes_per_account: usize) -> Self { :: Function Limiter::with_caps takes auth_per_ip: usize, writes_per_ip: usize, writes_per_account: usize. It gives back Self. :: inferred :: api
+item+ function src/model.rs :: Message::poster_key :: pub fn poster_key(&self) -> &str { :: Share caps follow the OAuth identity when the scroll has one. :: direct :: api
+item+ function src/model.rs :: format_message_as :: pub fn format_message_as(author: &str, who: &str, ts: DateTime<Utc>, text: &str) -> String { :: Function format_message_as takes author: &str, who: &str, ts: DateTime<Utc>, text: &str. It gives back String. :: inferred :: api
+item+ struct src/oauth.rs :: Identity :: pub struct Identity { :: A data shape named Identity. Its fields are: pub who: String; pub handle: String. :: inferred :: api
+item+ trait src/oauth.rs :: IdentitySource :: pub trait IdentitySource: Send + Sync { ::  :: awaiting :: api
+item+ struct src/oauth.rs :: Oauth :: pub struct Oauth { ::  :: awaiting :: api
+item+ function src/oauth.rs :: Oauth::authorize_url :: pub fn authorize_url( &self, provider_name: &str, next: &str, ) -> Result<(String, String), String> { :: Function Oauth::authorize_url takes &self, provider_name: &str, next: &str,. It gives back Result<(String, String), String>. :: inferred :: api
+item+ function src/oauth.rs :: Oauth::closed :: pub fn closed() -> Self { :: Function Oauth::closed takes no inputs beyond the value it is called on. It gives back Self. :: inferred :: api
+item+ function src/oauth.rs :: Oauth::cookie_secure :: pub fn cookie_secure(&self) -> bool { :: Function Oauth::cookie_secure takes no inputs beyond the value it is called on. It gives back bool. :: inferred :: api
+item+ function src/oauth.rs :: Oauth::csrf_matches :: pub fn csrf_matches(&self, session: &Session, header: &str) -> bool { :: Function Oauth::csrf_matches takes &self, session: &Session, header: &str. It gives back bool. :: inferred :: api
+item+ function src/oauth.rs :: Oauth::finish :: pub fn finish( &self, provider_name: &str, code: &str, state: &str, pending_cookie: &str, ) -> Result<(Identity, String, String), String> { :: Function Oauth::finish takes &self, provider_name: &str, code: &str, state: &str, pending_cookie: &str,. It gives back Result<(Identity, String, String), String>. :: inferred :: api
+item+ function src/oauth.rs :: Oauth::from_env :: pub fn from_env() -> Self { :: Function Oauth::from_env takes no inputs beyond the value it is called on. It gives back Self. :: inferred :: api
+item+ function src/oauth.rs :: Oauth::providers :: pub fn providers(&self) -> Vec<&'static str> { :: Function Oauth::providers takes no inputs beyond the value it is called on. It gives back Vec<&'static str>. :: inferred :: api
+item+ function src/oauth.rs :: Oauth::read_session :: pub fn read_session(&self, cookie_header: &str) -> Option<Session> { :: Function Oauth::read_session takes &self, cookie_header: &str. It gives back Option<Session>. :: inferred :: api
+item+ function src/oauth.rs :: Oauth::ready :: pub fn ready(&self) -> bool { :: Function Oauth::ready takes no inputs beyond the value it is called on. It gives back bool. :: inferred :: api
+item+ function src/oauth.rs :: Oauth::test_ready :: pub fn test_ready() -> Self { :: Function Oauth::test_ready takes no inputs beyond the value it is called on. It gives back Self. :: inferred :: api
+item+ function src/oauth.rs :: Oauth::test_session_cookie :: pub fn test_session_cookie() -> String { :: Function Oauth::test_session_cookie takes no inputs beyond the value it is called on. It gives back String. :: inferred :: api
+item+ struct src/oauth.rs :: Pending :: pub struct Pending { :: A data shape named Pending. Its fields are: pub provider: String; pub state: String; pub verifier: String; pub next: String. :: inferred :: api
+item+ struct src/oauth.rs :: Session :: pub struct Session { :: A data shape named Session. Its fields are: pub who: String; pub handle: String; pub csrf: String. :: inferred :: api
+item+ const src/oauth.rs :: TEST_CSRF :: pub const TEST_CSRF: &str = "csrf-test-token"; :: A fixed value named TEST_CSRF, set to "csrf-test-token". :: inferred :: api
+item+ function src/oauth.rs :: clean_handle :: pub fn clean_handle(raw: &str) -> String { :: Function clean_handle takes raw: &str. It gives back String. :: inferred :: api
+item+ function src/oauth.rs :: clear_cookie :: pub fn clear_cookie(name: &str, secure: bool) -> String { :: Function clear_cookie takes name: &str, secure: bool. It gives back String. :: inferred :: api
+item+ function src/oauth.rs :: cookie_from_headers :: pub fn cookie_from_headers(headers: &axum::http::HeaderMap) -> String { :: Function cookie_from_headers takes headers: &axum::http::HeaderMap. It gives back String. :: inferred :: api
+item+ function src/oauth.rs :: cookie_header :: pub fn cookie_header(name: &str, value: &str, max_age: i64, secure: bool) -> String { :: Function cookie_header takes name: &str, value: &str, max_age: i64, secure: bool. It gives back String. :: inferred :: api
+item+ function src/oauth.rs :: pending_cookie :: pub fn pending_cookie(value: &str, secure: bool) -> String { :: Function pending_cookie takes value: &str, secure: bool. It gives back String. :: inferred :: api
+item+ function src/oauth.rs :: pending_cookie_name :: pub fn pending_cookie_name() -> &'static str { :: Function pending_cookie_name takes no inputs beyond the value it is called on. It gives back &'static str. :: inferred :: api
+item+ function src/oauth.rs :: pending_token :: pub fn pending_token(cookie_header: &str) -> Option<String> { :: Function pending_token takes cookie_header: &str. It gives back Option<String>. :: inferred :: api
+item+ function src/oauth.rs :: safe_next :: pub fn safe_next(next: &str) -> String { :: Function safe_next takes next: &str. It gives back String. :: inferred :: api
+item+ function src/oauth.rs :: session_cookie :: pub fn session_cookie(value: &str, secure: bool) -> String { :: Function session_cookie takes value: &str, secure: bool. It gives back String. :: inferred :: api
+item+ function src/oauth.rs :: session_cookie_name :: pub fn session_cookie_name() -> &'static str { :: Function session_cookie_name takes no inputs beyond the value it is called on. It gives back &'static str. :: inferred :: api
+stat Markdown files 1 total 193 blank 64 comment 0 code 129
+stat Rust files 16 total 7794 blank 550 comment 160 code 7084
+stat Shell files 1 total 753 blank 51 comment 19 code 683
+stat TOML files 1 total 28 blank 2 comment 2 code 24
+author~ Cursor Agent <cursoragent@cursor.com> commits 9
+Commit cbb12a25bbad by Will Bickford <wbic16@gmail.com> on 2026-10-25 (EE 0).
+
+Subject: Merge pull request #2 from wbic16/cursor/invite-only-members-8c3e
+
+Public items: 27 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 9685.
+
+commit cbb12a25bbadcddb6b719a59cb463f8c0a741480
+parent 1fc2d60c14fe6fcbed0e64c8f7f6eefc5e638753
+author Will Bickford <wbic16@gmail.com>
+date 1792963293 2026-10-25
+item+ struct src/invite.rs :: Issued :: pub struct Issued { :: A data shape named Issued. Its fields are: pub id: String; pub token: String; pub uses: u32; pub exp: Option<DateTime<Utc>>. :: inferred :: api
+item+ const src/invite.rs :: JOIN_COOKIE :: pub const JOIN_COOKIE: &str = "lanes_join"; :: A fixed value named JOIN_COOKIE, set to "lanes_join". :: inferred :: api
+item+ struct src/invite.rs :: Listed :: pub struct Listed { :: A data shape named Listed. Its fields are: pub id: String; pub uses: u32; pub remaining: u32; pub exp: Option<DateTime<Utc>>; pub revoked: bool; pub created: DateTime<Utc>. :: inferred :: api
+item+ struct src/invite.rs :: Owners :: pub struct Owners { ::  :: awaiting :: api
+item+ function src/invite.rs :: Owners::from_env :: pub fn from_env() -> Self { :: Function Owners::from_env takes no inputs beyond the value it is called on. It gives back Self. :: inferred :: api
+item+ function src/invite.rs :: Owners::invite_only :: pub fn invite_only(&self) -> bool { :: Function Owners::invite_only takes no inputs beyond the value it is called on. It gives back bool. :: inferred :: api
+item+ function src/invite.rs :: Owners::is_empty :: pub fn is_empty(&self) -> bool { :: Function Owners::is_empty takes no inputs beyond the value it is called on. It gives back bool. :: inferred :: api
+item+ function src/invite.rs :: Owners::len :: pub fn len(&self) -> usize { :: Function Owners::len takes no inputs beyond the value it is called on. It gives back usize. :: inferred :: api
+item+ function src/invite.rs :: Owners::matches :: pub fn matches(&self, who: &str, email: &str) -> bool { :: Function Owners::matches takes &self, who: &str, email: &str. It gives back bool. :: inferred :: api
+item+ function src/invite.rs :: Owners::parse :: pub fn parse(raw: &str) -> Self { :: Function Owners::parse takes raw: &str. It gives back Self. :: inferred :: api
+item+ enum src/invite.rs :: RedeemFail :: pub enum RedeemFail { :: A named choice named RedeemFail. It is one of: Invalid; Expired; Revoked; Spent. :: inferred :: api
+item+ function src/invite.rs :: RedeemFail::message :: pub fn message(self) -> &'static str { :: Function RedeemFail::message takes no inputs beyond the value it is called on. It gives back &'static str. :: inferred :: api
+item+ function src/invite.rs :: beside :: pub fn beside(phext: &Path) -> PathBuf { :: Default invite file: next to the phext, not inside the checkout when the phext lives in `/var/lib/phext-lanes`. :: direct :: api
+item+ function src/invite.rs :: create :: pub fn create( path: &Path, uses: u32, exp: Option<DateTime<Utc>>, now: DateTime<Utc>, ) -> Result<Issued, Error> { :: Function create takes path: &Path, uses: u32, exp: Option<DateTime<Utc>>, now: DateTime<Utc>,. It gives back Result<Issued, Error>. :: inferred :: api
+item+ function src/invite.rs :: list :: pub fn list(path: &Path) -> Result<Vec<Listed>, Error> { :: Function list takes path: &Path. It gives back Result<Vec<Listed>, Error>. :: inferred :: api
+item+ function src/invite.rs :: redeem :: pub fn redeem(path: &Path, token: &str, now: DateTime<Utc>) -> Result<(), RedeemFail> { :: Function redeem takes path: &Path, token: &str, now: DateTime<Utc>. It gives back Result<(), RedeemFail>. :: inferred :: api
+item+ function src/invite.rs :: resolve :: pub fn resolve(phext: &Path) -> PathBuf { :: `LANES_INVITES` wins. Otherwise [`beside`]. :: direct :: api
+item+ function src/invite.rs :: revoke :: pub fn revoke(path: &Path, id: &str) -> Result<(), Error> { :: Function revoke takes path: &Path, id: &str. It gives back Result<(), Error>. :: inferred :: api
+item+ function src/invite.rs :: token_shape :: pub fn token_shape(token: &str) -> bool { :: Function token_shape takes token: &str. It gives back bool. :: inferred :: api
+item+ function src/model.rs :: member_id :: pub fn member_id(id: &str) -> String { :: Roster ids keep a single colon (`github:100`). Other punctuation is dropped. :: direct :: api
+item+ function src/oauth.rs :: clean_email :: pub fn clean_email(raw: &str) -> String { :: Function clean_email takes raw: &str. It gives back String. :: inferred :: api
+item+ function src/oauth.rs :: display_name :: pub fn display_name(raw: &str, fallback: &str) -> String { :: Function display_name takes raw: &str, fallback: &str. It gives back String. :: inferred :: api
+item+ function src/rank.rs :: suggest_fresh :: pub fn suggest_fresh( threads: &[Thread], interests: &[Coordinate], text: &str, _now: DateTime<Utc>, ) -> Suggestion { :: A new book on the reader's home shelf. Same placement as a suggestion that shared no words. Used when someone explicitly starts a thread. :: direct :: api
+item+ function src/seed.rs :: blank :: pub fn blank() -> String { :: A new chat: one General thread, no readers, no messages. This does not include the fictional cast. [`document`] does. :: direct :: api
+item+ function src/store.rs :: Store::ensure_member :: pub fn ensure_member(&mut self, id: &str, name: &str) -> Result<bool, Error> { :: Add a reader, or refresh their display name. Interests start empty. Returns true when the roster scroll was created. :: direct :: api
+item+ function src/store.rs :: Store::init_empty :: pub fn init_empty(path: impl AsRef<Path>) -> Result<(), Error> { :: Create a chat with a General thread and no demo cast. A file that already has content is left untouched. `--seed` is the only path that replaces an existing chat, and it wipes that file. :: direct :: api
+item+ function src/store.rs :: Store::note_interest :: pub fn note_interest(&mut self, id: &str, thread: Coordinate) -> Result<(), Error> { :: Remember a thread this member posted in or opened. The feed still uses the existing distance ranking. No interests means every thread is equally near, so a new member sees recency until this list grows. The first thread stays their home shelf. :: direct :: api
+stat Markdown files 1 total 233 blank 79 comment 0 code 154
+stat Rust files 17 total 9642 blank 657 comment 202 code 8783
+stat Shell files 1 total 797 blank 51 comment 22 code 724
+stat TOML files 1 total 28 blank 2 comment 2 code 24
+author~ Will Bickford <wbic16@gmail.com> commits 3
+Commit b99ce200f50c by Will Bickford <wbic16@gmail.com> on 2026-10-25 (EE 0).
+
+Subject: Merge pull request #3 from wbic16/primer-and-canonical-uris
+
+Public items: 5 added, 0 removed, 3 changed. Dependencies did not change. Code lines after this commit: 9986.
+
+commit b99ce200f50ce98624ecbda9bdc9e5f19b8a19ba
+parent cbb12a25bbadcddb6b719a59cb463f8c0a741480
+author Will Bickford <wbic16@gmail.com>
+date 1792965259 2026-10-25
+item+ function src/link.rs :: canonical_lane :: pub fn canonical_lane(id: &str) -> Option<String> { :: The canonical nine-part address for a lane id in any accepted form. :: direct :: api
+item+ function src/link.rs :: canonical_post :: pub fn canonical_post(id: &str) -> Option<String> { :: The canonical address for a post id in any accepted form. :: direct :: api
+item~ function src/link.rs :: parse_lane_id :: pub fn parse_lane_id(id: &str) -> Option<Coordinate> { :: A chat lane: the thread's card, `…/1.1.1`, or the six-part thread. :: direct :: api
+item~ function src/link.rs :: section_lane_id :: pub fn section_lane_id(coord: Coordinate) -> String { :: Address of one chapter and section: the coordinate of its first scroll. :: direct :: api
+item+ const src/seed.rs :: PRIMER :: pub const PRIMER: &str = "How phext works"; :: A fixed value named PRIMER, set to "How phext works". :: inferred :: api
+item+ const src/seed.rs :: PRIMER_AUTHOR :: pub const PRIMER_AUTHOR: &str = "Lanes"; :: A fixed value named PRIMER_AUTHOR, set to "Lanes". :: inferred :: api
+item+ const src/seed.rs :: PRIMER_THREAD :: pub const PRIMER_THREAD: &str = "1.1.1/1.1.2"; :: A fixed value named PRIMER_THREAD, set to "1.1.1/1.1.2". :: inferred :: api
+item~ function src/seed.rs :: blank :: pub fn blank(now: DateTime<Utc>) -> String { :: A new chat: a General thread and the phext primer. No readers. This does not include the fictional cast. [`document`] does. :: direct :: api
+stat Markdown files 1 total 237 blank 81 comment 0 code 156
+stat Rust files 17 total 9974 blank 672 comment 221 code 9081
+stat Shell files 1 total 798 blank 51 comment 22 code 725
+stat TOML files 1 total 28 blank 2 comment 2 code 24
+author~ Will Bickford <wbic16@gmail.com> commits 4
+Commit 119d46fa10e4 by Will Bickford <wbic16@gmail.com> on 2026-10-25 (EE 0).
+
+Subject: Merge pull request #4 from wbic16/readable-threads
+
+Public items: 19 added, 4 removed, 5 changed. Dependencies did not change. Code lines after this commit: 10688.
+
+commit 119d46fa10e4aee28ea4745f5a3fc2744b2a8633
+parent b99ce200f50ce98624ecbda9bdc9e5f19b8a19ba
+author Will Bickford <wbic16@gmail.com>
+date 1792967577 2026-10-25
+item~ function src/calm.rs :: format_thread :: pub fn format_thread(thread: &Thread, details: bool, limits: &rank::Limits) -> String { :: Function format_thread takes thread: &Thread, details: bool, limits: &rank::Limits. It gives back String. :: inferred :: api
+item+ const src/config.rs :: KEYS :: pub const KEYS: [&'static str; 6] = [ :: A fixed value named KEYS, set to [. :: inferred :: api
+item+ struct src/config.rs :: LimitOverrides :: pub struct LimitOverrides { :: Feed limits one lane overrides on top of the server's [`Limits`]. Rate limits are not here: they protect the whole server. :: direct :: api
+item+ function src/config.rs :: LimitOverrides::apply :: pub fn apply(&self, base: Limits) -> Limits { :: Function LimitOverrides::apply takes &self, base: Limits. It gives back Limits. :: inferred :: api
+item+ function src/config.rs :: LimitOverrides::is_empty :: pub fn is_empty(&self) -> bool { :: Function LimitOverrides::is_empty takes no inputs beyond the value it is called on. It gives back bool. :: inferred :: api
+item+ function src/config.rs :: LimitOverrides::lines :: pub fn lines(&self) -> Vec<String> { :: `key: value` lines for the ones that are set. :: direct :: api
+item+ function src/config.rs :: LimitOverrides::read :: pub fn read(&mut self, key: &str, value: &str) { :: Read one `key: value` line. Unknown keys and bad numbers are skipped, so a hand-edited scroll never breaks the lane. :: direct :: api
+item+ struct src/config.rs :: Limits :: pub struct Limits { :: How much the feed shows and how fast people may write. :: direct :: api
+item+ function src/config.rs :: Limits::check :: pub fn check(&self) -> Result<(), (&'static str, &'static str, String)> { :: The first value out of range, as `(key, allowed range, value)`. :: direct :: api
+item+ function src/config.rs :: Limits::is_flooded :: pub fn is_flooded(&self, count: usize, share: f64) -> bool { :: True when one author wrote enough of a large enough thread. :: direct :: api
+item+ function src/config.rs :: load_limits :: pub fn load_limits() -> Result<Limits, Error> { :: Limits from the environment and `lanes.json`, checked for range. :: direct :: api
+item+ function src/config.rs :: resolve_limits :: pub fn resolve_limits( env: impl Fn(&str) -> Option<String>, config_json: Option<&str>, ) -> Result<Limits, Error> { :: Function resolve_limits takes env: impl Fn. It gives back Option<String>, config_json: Option<&str>, ) -> Result<Limits, Error>. :: inferred :: api
+item+ const src/coord.rs :: SETTINGS_COORD :: pub const SETTINGS_COORD: &str = "5.1.1/1.1.2/1.1.1"; :: The lane's settings scroll: owners and limit overrides. Book 2 of the roster library, so it never collides with a reader (book 1). :: direct :: api
+item+ function src/limit.rs :: Limiter::from_limits :: pub fn from_limits(limits: &crate::config::Limits) -> Self { :: The rate caps from the server's configured limits. :: direct :: api
+item+ struct src/model.rs :: LaneSettings :: pub struct LaneSettings { :: Who owns a lane and how its feed is limited. One scroll at [`crate::coord::SETTINGS_COORD`]. :: direct :: api
+item+ function src/model.rs :: LaneSettings::is_owner :: pub fn is_owner(&self, who: &str) -> bool { :: Function LaneSettings::is_owner takes &self, who: &str. It gives back bool. :: inferred :: api
+item+ function src/model.rs :: LaneSettings::to_scroll :: pub fn to_scroll(&self) -> String { :: Function LaneSettings::to_scroll takes no inputs beyond the value it is called on. It gives back String. :: inferred :: api
+item~ function src/rank.rs :: build_feed :: pub fn build_feed( threads: &[Thread], interests: &[Coordinate], now: DateTime<Utc>, limits: &Limits, ) -> Feed { :: Function build_feed takes threads: &[Thread], interests: &[Coordinate], now: DateTime<Utc>, limits: &Limits,. It gives back Feed. :: inferred :: api
+item+ function src/rank.rs :: build_feed_for :: pub fn build_feed_for( threads: &[Thread], interests: &[Coordinate], now: DateTime<Utc>, limits: &Limits, reader: Option<&str>, ) -> Feed { :: [`build_feed`] for one reader. The reader's own posts are never held: the cap keeps other voices from flooding a feed, and nobody needs protecting from themselves. `reader` is a [`Message::poster_key`]. :: direct :: api
+item+ re-export src/rank.rs :: crate::config::Limits :: pub use crate::config::Limits; :: A re-export: crate::config::Limits is made reachable through this module, so other code can use it from here. :: inferred :: api
+item~ function src/rank.rs :: map_of :: pub fn map_of(threads: &[Thread], interests: &[Coordinate], limits: &Limits) -> Vec<MapEntry> { :: Function map_of takes threads: &[Thread], interests: &[Coordinate], limits: &Limits. It gives back Vec<MapEntry>. :: inferred :: api
+item- const src/rank.rs :: AUTHOR_CAP
+item- const src/rank.rs :: LOUD_AT
+item- const src/rank.rs :: MAX_THREADS
+item- function src/rank.rs :: is_flooded
+item~ function src/server.rs :: AppState::open :: pub fn open(path: std::path::PathBuf, limits: Limits) -> Result<Self, Error> { :: Function AppState::open takes path: std::path::PathBuf, limits: Limits. It gives back Result<Self, Error>. :: inferred :: api
+item~ function src/server.rs :: serve :: pub async fn serve( path: std::path::PathBuf, host: &str, port: u16, limits: Limits, ) -> Result<(), Error> { :: Function serve takes path: std::path::PathBuf, host: &str, port: u16, limits: Limits,. It gives back Result<(), Error>. :: inferred :: api
+item+ function src/store.rs :: Store::save_settings :: pub fn save_settings(&mut self, settings: &LaneSettings) -> Result<(), Error> { :: Write the settings scroll, replacing any earlier one. :: direct :: api
+stat Markdown files 1 total 261 blank 88 comment 0 code 173
+stat Rust files 17 total 10733 blank 716 comment 268 code 9749
+stat Shell files 1 total 832 blank 51 comment 39 code 742
+stat TOML files 1 total 28 blank 2 comment 2 code 24
+author~ Will Bickford <wbic16@gmail.com> commits 5
+Commit c7aaa1b63455 by Will Bickford <wbic16@gmail.com> on 2026-10-26 (EE 0).
+
+Subject: Merge pull request #5 from wbic16/mapped-store
+
+Public items: 14 added, 0 removed, 4 changed. Dependencies: libphext =0.3.1 -> =0.3.3; memmap2 added at =0.9.5. Code lines after this commit: 11217.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit c7aaa1b63455cafe94dc75f762274a72d54a784e
+parent 119d46fa10e4aee28ea4745f5a3fc2744b2a8633
+author Will Bickford <wbic16@gmail.com>
+date 1793057691 2026-10-26
+dep~ Cargo.toml :: libphext :: =0.3.1 -> =0.3.3
+dep+ Cargo.toml :: memmap2 :: =0.9.5
+item+ entry-point examples/bench.rs :: main :: fn main() { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: inferred :: example
+item+ struct src/cache.rs :: Cache :: pub struct Cache { ::  :: awaiting :: api
+item+ function src/cache.rs :: Cache::get :: pub fn get(&self, key: &str, version: Version) -> Option<Bytes> { :: Function Cache::get takes &self, key: &str, version: Version. It gives back Option<Bytes>. :: inferred :: api
+item+ function src/cache.rs :: Cache::is_empty :: pub fn is_empty(&self) -> bool { :: Function Cache::is_empty takes no inputs beyond the value it is called on. It gives back bool. :: inferred :: api
+item+ function src/cache.rs :: Cache::len :: pub fn len(&self) -> usize { :: Function Cache::len takes no inputs beyond the value it is called on. It gives back usize. :: inferred :: api
+item+ function src/cache.rs :: Cache::new :: pub fn new(ttl: Duration, capacity: usize) -> Self { :: Function Cache::new takes ttl: Duration, capacity: usize. It gives back Self. :: inferred :: api
+item+ function src/cache.rs :: Cache::put :: pub fn put(&self, key: String, version: Version, body: Bytes) { :: Function Cache::put takes &self, key: String, version: Version, body: Bytes. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ type src/cache.rs :: Version :: pub type Version = (u64, u64); :: Store version and hub generation the body was built from. :: direct :: api
+item+ function src/fabric.rs :: Hub::generation :: pub fn generation(&self) -> u64 { :: Changes whenever the list of fabrics does. :: direct :: api
+item+ function src/scrolls.rs :: serialize :: pub fn serialize<'a>(scrolls: impl IntoIterator<Item = (Coordinate, &'a str)>) -> String { :: A phext document from scrolls in ascending coordinate order. Empty scrolls are skipped, as `phext::implode` skips them. :: direct :: api
+item+ function src/scrolls.rs :: textmap :: pub fn textmap(doc: &str, scrolls: &[(Coordinate, Range<usize>)]) -> String { :: One line per scroll, in the format of `phext::textmap`. :: direct :: api
+item+ function src/scrolls.rs :: tokenize :: pub fn tokenize(doc: &str) -> Vec<(Coordinate, Range<usize>)> { :: Every non-empty scroll and where its text sits in `doc`, in document order. Coordinates only grow, so the output is sorted. :: direct :: api
+item~ function src/store.rs :: Store::byte_index :: pub fn byte_index(&self) -> String { :: Where each scroll starts in the file, one coordinate per line. :: direct :: api
+item~ function src/store.rs :: Store::doc :: pub fn doc(&self) -> &str { :: The whole phext, straight from the mapping. :: direct :: api
+item~ function src/store.rs :: Store::select :: pub fn select(&self, coord: Coordinate) -> String { :: One scroll, as `phext::fetch` returns it. :: direct :: api
+item+ function src/store.rs :: Store::text :: pub fn text(&self, coord: Coordinate) -> &str { :: One scroll's text, borrowed from the mapping. Empty when nothing is there. :: direct :: api
+item~ function src/store.rs :: Store::toc :: pub fn toc(&self) -> String { :: The contents listing, as `phext::textmap` writes it. :: direct :: api
+item+ function src/store.rs :: Store::version :: pub fn version(&self) -> u64 { :: Bumped on every save. Equal versions mean equal contents. :: direct :: api
+stat Markdown files 1 total 279 blank 94 comment 0 code 185
+stat Rust files 20 total 11369 blank 769 comment 335 code 10265
+stat Shell files 1 total 832 blank 51 comment 39 code 742
+stat TOML files 1 total 29 blank 2 comment 2 code 25
+author~ Will Bickford <wbic16@gmail.com> commits 6
