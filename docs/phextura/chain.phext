@@ -1,0 +1,199 @@
+Commit 71f729175240 by Theia <theia@mirrorborn.us> on 2026-11-11 (EE 0).
+
+Subject: phextura: DESIGN.md, README.md, compiling crate skeleton on libphext 0.5.0
+
+Public items: 26 added, 0 removed, 0 changed. Dependencies: libphext added at 0.5.0. Code lines after this commit: 392.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 71f7291752401fd4516f98009612467070934258
+parent none
+author Theia <theia@mirrorborn.us>
+date 1794377931 2026-11-11
+dep+ Cargo.toml :: libphext :: 0.5.0
+item+ struct src/bibliography.rs :: Entry :: pub struct Entry { :: One bibliography entry, parsed from its scroll. :: direct :: api
+item+ function src/bibliography.rs :: Entry::field :: pub fn field(&self, name: &str) -> Option<&str> { :: Look up a field by name (`author`, `title`, `year`, …). :: direct :: api
+item+ function src/bibliography.rs :: Entry::parse :: pub fn parse(coordinate: Coordinate, scroll: &str) -> Entry { :: Parse an entry from its scroll text at `coordinate`. :: direct :: api
+item+ function src/bibliography.rs :: duplicate_candidates :: pub fn duplicate_candidates(entries: &[Entry]) -> Vec<(Coordinate, Coordinate)> { :: Group likely-duplicate entries for an author's review. Intended mechanism: `libphext::phext::soundex_v1` on author names as a candidate generator only — a phonetic match is a hint for a human, never proof that two entries are the same work. :: direct :: api
+item+ const src/document.rs :: BIBLIOGRAPHY :: pub const BIBLIOGRAPHY: usize = 2; :: One bibliography entry per scroll. :: direct :: api
+item+ const src/document.rs :: BODY :: pub const BODY: usize = 1; :: Chapters, sections, and content blocks. :: direct :: api
+item+ const src/document.rs :: MEDIA :: pub const MEDIA: usize = 3; :: Figures and embedded media payloads. :: direct :: api
+item+ const src/document.rs :: METADATA :: pub const METADATA: usize = 6; :: Title, authors, abstract, provenance, checksum manifest. :: direct :: api
+item+ struct src/document.rs :: Paper :: pub struct Paper { :: A phextura paper: the corpus text and the coordinate of its root. :: direct :: api
+item+ function src/document.rs :: Paper::fetch :: pub fn fetch(&self, coord: Coordinate) -> String { :: Fetch one scroll of the paper by coordinate (`libphext::phext::fetch` is the intended mechanism). :: direct :: api
+item+ function src/document.rs :: Paper::load :: pub fn load(corpus: &str) -> Paper { :: Load a paper from imploded phext text (`libphext::phext::explode` is the intended mechanism for working with its scrolls). :: direct :: api
+item+ function src/document.rs :: Paper::new :: pub fn new(root: Coordinate) -> Paper { :: Create an empty paper rooted at `root`. Intended behavior: seed the metadata subspace and an empty body. :: direct :: api
+item+ const src/document.rs :: STYLES :: pub const STYLES: usize = 4; :: Style scrolls. :: direct :: api
+item+ const src/document.rs :: SUPPLEMENTS :: pub const SUPPLEMENTS: usize = 5; :: Embedded documents: data, code, extended proofs. :: direct :: api
+item+ struct src/media.rs :: MediaHeader :: pub struct MediaHeader { :: The header of an embedded media item: one scroll in the media division, preceding the payload scrolls it describes. :: direct :: api
+item+ enum src/media.rs :: PayloadEncoding :: pub enum PayloadEncoding { :: How a payload's bytes are carried as scroll text. :: direct :: api
+item+ function src/media.rs :: verify :: pub fn verify(header: &MediaHeader, payload_text: &str) -> bool { :: Verify a payload against its header checksum before rendering. :: direct :: api
+item+ struct src/reference.rs :: DanglingReference :: pub struct DanglingReference { :: One dangling reference found by validation: where it is written, and the coordinate it fails to reach. :: direct :: api
+item+ struct src/reference.rs :: Reference :: pub struct Reference { :: A typed cross-reference: the coordinate of the scroll it points at. :: direct :: api
+item+ function src/reference.rs :: Reference::parse :: pub fn parse(text: &str) -> Result<Reference, PhextParseError> { :: Parse a reference from its written form in prose. Delegates to `Coordinate`'s `TryFrom` impl, so malformed addresses surface as [`PhextParseError`] — a lint error, not a panic (the 0.5.0 behavior; 0.4.1 panicked here). :: direct :: api
+item+ function src/reference.rs :: validate :: pub fn validate(corpus: &str) -> Vec<DanglingReference> { :: Validate every reference in a corpus in one pass. Intended mechanism: build the reference graph with `libphext::phext::navmap`, then `fetch` each target. :: direct :: api
+item+ function src/render.rs :: render_html :: pub fn render_html(paper: &Paper) -> String { :: Render a paper to HTML. :: direct :: api
+item+ function src/render.rs :: render_print :: pub fn render_print(paper: &Paper) -> Vec<u8> { :: Render a paper to a print-oriented backend (future work; the layout engine is deliberately unspecified in DESIGN.md §10). :: direct :: api
+item+ struct src/style.rs :: StyleAssignment :: pub struct StyleAssignment { :: Which style governs a subspace of a paper. :: direct :: api
+item+ struct src/style.rs :: StyleSheet :: pub struct StyleSheet { :: A style sheet: the scroll that declares it, and its declarations. :: direct :: api
+item+ function src/style.rs :: parse :: pub fn parse(coordinate: Coordinate, scroll: &str) -> StyleSheet { :: Parse a style scroll into a [`StyleSheet`]. :: direct :: api
+stat Markdown files 2 total 322 blank 57 comment 0 code 265
+stat Rust files 7 total 278 blank 28 comment 130 code 120
+stat TOML files 1 total 8 blank 1 comment 0 code 7
+author+ Theia <theia@mirrorborn.us>
+Commit d147343aa79f by Theia <theia@mirrorborn.us> on 2026-11-11 (EE 0).
+
+Subject: phextura DESIGN: base64 hoisting is canonical binary support by design; add self-extracting papers (5.1)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 419.
+
+commit d147343aa79f5e1c1b0cf0b5f12e65efda4ba58a
+parent 71f7291752401fd4516f98009612467070934258
+author Theia <theia@mirrorborn.us>
+date 1794378963 2026-11-11
+stat Markdown files 2 total 352 blank 60 comment 0 code 292
+stat Rust files 7 total 278 blank 28 comment 130 code 120
+stat TOML files 1 total 8 blank 1 comment 0 code 7
+author~ Theia <theia@mirrorborn.us> commits 2
+Commit f5f0dbef7546 by Theia <theia@mirrorborn.us> on 2026-11-11 (EE 0).
+
+Subject: phextura DESIGN 5.1: self-extraction extends to proof - checker as cargo, proofs as scrolls
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 431.
+
+commit f5f0dbef75465e45d9cde4f5776a78ef93eb8761
+parent d147343aa79f5e1c1b0cf0b5f12e65efda4ba58a
+author Theia <theia@mirrorborn.us>
+date 1794378999 2026-11-11
+stat Markdown files 2 total 365 blank 61 comment 0 code 304
+stat Rust files 7 total 278 blank 28 comment 130 code 120
+stat TOML files 1 total 8 blank 1 comment 0 code 7
+author~ Theia <theia@mirrorborn.us> commits 3
+Commit 7fe59e9a0a4c by Theia <theia@mirrorborn.us> on 2026-11-11 (EE 0).
+
+Subject: DESIGN: Lean proof payload is provisional — bootstrap pending a phext-native proof format
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 450.
+
+commit 7fe59e9a0a4c0af57ef78e3816f1e5421dfb4757
+parent f5f0dbef75465e45d9cde4f5776a78ef93eb8761
+author Theia <theia@mirrorborn.us>
+date 1794379217 2026-11-11
+stat Markdown files 2 total 388 blank 65 comment 0 code 323
+stat Rust files 7 total 278 blank 28 comment 130 code 120
+stat TOML files 1 total 8 blank 1 comment 0 code 7
+author~ Theia <theia@mirrorborn.us> commits 4
+Commit 2b3909a67b65 by Emise <emise@localhost> on 2026-11-11 (EE 0).
+
+Subject: phextura demo: arXiv:2611.08794 as a phextura corpus (examples/2611.08794) — 1,154 scrolls, 780/780 references resolve, 0 dangling; rendered reading view + friction log
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 568.
+
+commit 2b3909a67b658562cbf3b42ff6f33d2e3a388593
+parent 7fe59e9a0a4c0af57ef78e3816f1e5421dfb4757
+author Emise <emise@localhost>
+date 1794380376 2026-11-11
+stat Markdown files 3 total 532 blank 91 comment 0 code 441
+stat Rust files 7 total 278 blank 28 comment 130 code 120
+stat TOML files 1 total 8 blank 1 comment 0 code 7
+author+ Emise <emise@localhost>
+Commit d894c94f6642 by Theia <theia@mirrorborn.us> on 2026-11-11 (EE 0).
+
+Subject: phextura: Pass 3 design loop - PRINCIPLES.md (first-principles derivation, critic-reconciled), DESIGN.md amended (warrant graph, role vocabulary + governance, one float one address, provenance graph, manifest-relative closure, corrected validation costs), README carries the motto: Rigorous Delight
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1492.
+
+commit d894c94f6642e30cf19751716a0fde9320ff96f6
+parent 2b3909a67b658562cbf3b42ff6f33d2e3a388593
+author Theia <theia@mirrorborn.us>
+date 1794380685 2026-11-11
+stat Markdown files 4 total 1561 blank 196 comment 0 code 1365
+stat Rust files 7 total 278 blank 28 comment 130 code 120
+stat TOML files 1 total 8 blank 1 comment 0 code 7
+author~ Theia <theia@mirrorborn.us> commits 5
+Commit 81090f879f0c by Emise <emise@localhost> on 2026-11-11 (EE 0).
+
+Subject: Layer 2: global research addresses on phext (DRAFT spec v0.1)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2161.
+
+commit 81090f879f0c50418a255cad674a3b683bc9bd8c
+parent d894c94f6642e30cf19751716a0fde9320ff96f6
+author Emise <emise@localhost>
+date 1794381349 2026-11-11
+stat Markdown files 5 total 2315 blank 281 comment 0 code 2034
+stat Rust files 7 total 278 blank 28 comment 130 code 120
+stat TOML files 1 total 8 blank 1 comment 0 code 7
+author~ Emise <emise@localhost> commits 2
+Commit 1bebe9565137 by Emise <emise@localhost> on 2026-11-11 (EE 0).
+
+Subject: phextura: STANDOFF.md — standoff compatibility profile (mutable as first editor); task 23.7.11/8.7.11/6.7.9
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2842.
+
+commit 1bebe9565137b58f92d51b4448cf30c414bce88a
+parent 81090f879f0c50418a255cad674a3b683bc9bd8c
+author Emise <emise@localhost>
+date 1794431332 2026-11-11
+stat Markdown files 6 total 3089 blank 374 comment 0 code 2715
+stat Rust files 7 total 278 blank 28 comment 130 code 120
+stat TOML files 1 total 8 blank 1 comment 0 code 7
+author~ Emise <emise@localhost> commits 3
+Commit 012053fb6647 by wbic16 <wbic16@users.noreply.github.com> on 2026-11-12 (EE 0).
+
+Subject: templates: import the CTAN document classes as templates.phextura
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2842.
+
+commit 012053fb6647b1e7173edf1da3aae7d85d33c36f
+parent 1bebe9565137b58f92d51b4448cf30c414bce88a
+author wbic16 <wbic16@users.noreply.github.com>
+date 1794454755 2026-11-12
+stat Markdown files 6 total 3089 blank 374 comment 0 code 2715
+stat Rust files 7 total 278 blank 28 comment 130 code 120
+stat TOML files 1 total 8 blank 1 comment 0 code 7
+author+ wbic16 <wbic16@users.noreply.github.com>
+Commit 1aef570fa447 by Emise <emise@localhost> on 2026-11-12 (EE 0).
+
+Subject: phextura: UPGRADE.md — the focus document (LaTeX joined the 21st century, as .txt -> .phext)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3064.
+
+commit 1aef570fa447bce7f4d35c5bc8175b2dbb5b8f84
+parent 012053fb6647b1e7173edf1da3aae7d85d33c36f
+author Emise <emise@localhost>
+date 1794456781 2026-11-12
+stat Markdown files 7 total 3333 blank 396 comment 0 code 2937
+stat Rust files 7 total 278 blank 28 comment 130 code 120
+stat TOML files 1 total 8 blank 1 comment 0 code 7
+author~ Emise <emise@localhost> commits 4
+Commit 0230ecab261c by Emise <emise@localhost> on 2026-11-12 (EE 0).
+
+Subject: Panel review: phextura surface-syntax policy (six-seat simulated panel, 2026-11-11)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3569.
+
+commit 0230ecab261c4a30f874a3c43d843ca447b21fbf
+parent 1aef570fa447bce7f4d35c5bc8175b2dbb5b8f84
+author Emise <emise@localhost>
+date 1794457862 2026-11-12
+stat Markdown files 8 total 4040 blank 598 comment 0 code 3442
+stat Rust files 7 total 278 blank 28 comment 130 code 120
+stat TOML files 1 total 8 blank 1 comment 0 code 7
+author~ Emise <emise@localhost> commits 5
+Commit 9bcc011873c3 by Will Bickford <wbic16@gmail.com> on 2026-11-14 (EE 0).
+
+Subject: Merge pull request #1 from wbic16/emise/tei-profile
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4044.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 9bcc011873c3965ac1cb3306350c007fe5a6c72d
+parent 0230ecab261c4a30f874a3c43d843ca447b21fbf
+author Will Bickford <wbic16@gmail.com>
+date 1794648682 2026-11-14
+stat Markdown files 9 total 4612 blank 695 comment 0 code 3917
+stat Rust files 7 total 278 blank 28 comment 130 code 120
+stat TOML files 1 total 8 blank 1 comment 0 code 7
+author+ Will Bickford <wbic16@gmail.com>
