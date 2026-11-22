@@ -1,0 +1,133 @@
+# phcc — reference as of commit 39b2afeb7c5c
+
+Commit 39b2afeb7c5c7de9a6c6457b5a4ec102d4e364b1. 2174 commits folded. Every fact here was folded from the chain's per-commit deltas.
+
+## Provenance
+
+This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/phcc/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
+
+## Dependencies
+
+No dependencies recorded at this point.
+
+## Authors
+
+- bellard <bellard> — 393 commits
+- grischka <grischka> — 367 commits
+- Thomas Preud'homme <robotux@celest.fr> — 235 commits
+- seyko <seyko2@gmail.com> — 194 commits
+- Michael Matz <matz@suse.de> — 186 commits
+- Edmund Grimley Evans <Edmund.Grimley.Evans@gmail.com> — 71 commits
+- Joe Soroka <gits@joesoroka.com> — 67 commits
+- Thomas Preud'homme <thomas.preudhomme@celest.fr> — 64 commits
+- Henry Kroll III <henry@comptune.com> — 63 commits
+- jiang <30155751@qq.com> — 49 commits
+- Shinichiro Hamaji <shinichiro.hamaji _at_ gmail.com> — 48 commits
+- Daniel Glöckner <daniel-gl@gmx.net> — 42 commits
+- Vlad Vissoultchev <wqweto@gmail.com> — 26 commits
+- Philip <pipcet@gmail.com> — 25 commits
+- James Lyon <jamesly0n@hotmail.com> — 20 commits
+- Avi Halachmi (:avih) <avihpit@yahoo.com> — 17 commits
+- Kirill Smelkov <kirr@navytux.spb.ru> — 16 commits
+- gus knight <waddlesplash@gmail.com> — 13 commits
+- Christian Jullien <Christian Jullien> — 12 commits
+- Vincent Lefevre <vincent@vinc17.net> — 12 commits
+- Detlef Riekenberg <tcc.dev@web.de> — 11 commits
+- Pavlas, Zdenek <zden3k@gmail.com> — 11 commits
+- Shinichiro Hamaji <shinichiro.hamaji@gmail.com> — 11 commits
+- mingodad <mingodad@gmail.com> — 10 commits
+- minux <minux.ma@gmail.com> — 9 commits
+- Akim Demaille <akim@lrde.epita.fr> — 8 commits
+- Kirill Smelkov <kirr@landau.phys.spbu.ru> — 8 commits
+- Urs Janssen <urs@hq.tin.org> — 8 commits
+- Carlos Montiers <carlos@thefunsouth.com> — 7 commits
+- Christian Jullien <jullien@coltrane.eligis.com> — 7 commits
+- David Mertens <dcmertens.perl@gmail.com> — 7 commits
+- Frederic Feret <tommy.planet@free.fr> — 7 commits
+- Kirill Smelkov <kirr@mns.spb.ru> — 7 commits
+- Lee Duhem <lee.duhem@gmail.com> — 6 commits
+- Roy <roytam@gmail.com> — 6 commits
+- Detlef Riekenberg <wine.dev@web.de> — 5 commits
+- Jean-Claude Beaudoin <jean.claude.beaudoin@gmail.com> — 5 commits
+- Matteo Cypriani <mcy@lm7.fr> — 5 commits
+- Raphael Cohn <raphael.cohn@stormmq.com> — 5 commits
+- Sergei Trofimovich <st@anti-virus.by> — 5 commits
+- Milutin Jovanović <jovanovic.milutin@gmail.com> — 4 commits
+- Ramsay Jones <ramsay@ramsay1.demon.co.uk> — 4 commits
+- Reimar Döffinger <Reimar.Doeffinger@gmx.de> — 4 commits
+- yuanbin <Administrator@yuan.(none)> — 4 commits
+- Bernhard Reutner-Fischer <rep.dot.nop@gmail.com> — 3 commits
+- Changming Xu <xcmhit@gmail.com> — 3 commits
+- Christian Jullien <jullien@openbsd.eligis.com> — 3 commits
+- Gabriel Corneanu <gabrielcorneanu@gmail.com> — 3 commits
+- Jaroslav Kysela <perex@perex.cz> — 3 commits
+- Kamil Rytarowski <n54@gmx.com> — 3 commits
+- Milutin Jovanovic <jovanovic.milutin@gmail.com> — 3 commits
+- Steven G. Messervey <nuke48386@yahoo.com> — 3 commits
+- YX Hao <lifenjoiner@163.com> — 3 commits
+- Andrew Mulbrook <andrew262@gmail.com> — 2 commits
+- Archidemon <_dangerdl@mail.ru> — 2 commits
+- Austin English <austinenglish@gmail.com> — 2 commits
+- Christian Jullien <jullien@sims3.eligis.com> — 2 commits
+- Domingo Alvarez Duarte <mingodad@gmail.com> — 2 commits
+- Iavael <iavaelooeyt@gmail.com> — 2 commits
+- Thomas Preud'homme <robotux@armelhome.rsr.lip6.fr> — 2 commits
+- Thomas Stalder <git@netsolux.ch> — 2 commits
+- Timo VJ Lahde <timovj.lahde@gmail.com> — 2 commits
+- keren <keren@bluebird.(none)> — 2 commits
+- Adam Sampson <ats@offog.org> — 1 commits
+- Alexander Egorenkov <ae@linux-pc-2.(none)> — 1 commits
+- Alexandre Becoulet <diaxen@ganymede.localdomain> — 1 commits
+- Ali Gholami Rudi <ali@rudi.ir> — 1 commits
+- Amine Najahi <mohaminaj@gmail.com> — 1 commits
+- Andrew Aladjev <aladjev.andrew@gmail.com> — 1 commits
+- Austin English <me@example.com> — 1 commits
+- Balazs Kezes <rlblaster@gmail.com> — 1 commits
+- Ben Bacarisse <software@bsb.me.uk> — 1 commits
+- Christian Jullien <jullien@sims.eligis.com> — 1 commits
+- Christian Jullien <none> — 1 commits
+- Claudio Bley <b_l_e_y@ml1.net> — 1 commits
+- Edmund Grimley Evans <Edmund.Grimley-Evans@arm.com> — 1 commits
+- Fabrice Bellard <bellard.org> — 1 commits
+- Feret@.(none) <Feret@.(none)> — 1 commits
+- Frédéric Féret <frederic.feret@outlook.com> — 1 commits
+- Henry K <henry@desk.local> — 1 commits
+- Hitoshi Mitake <h.mitake@gmail.com> — 1 commits
+- James Buren <ryu0@ymail.com> — 1 commits
+- Joseph Poirier <jdpoirier@gmail.com> — 1 commits
+- Jov <amutu@amutu.com> — 1 commits
+- Luigi Rizzo <rizzo> — 1 commits
+- Manuel Simoni <msimoni@gmail.com> — 1 commits
+- Nicolas Limare <nicolas.limare@cmla.ens-cachan.fr> — 1 commits
+- Nikos Mavrogiannopoulos <nmav@gnutls.org> — 1 commits
+- Romain Francoise <rfrancoise@debian.org> — 1 commits
+- Roy Tam <roytam@gmail.com> — 1 commits
+- Sam Watkins <sam@nikas.(none)> — 1 commits
+- Sergey Vinokurov <serg.foo@gmail.com> — 1 commits
+- Soloist Deng <soloist.deng-gmail.com> — 1 commits
+- Thomas Coudray <amanone@gmail.com> — 1 commits
+- Thomas Preud'homme <robotux@mallow.celest.fr> — 1 commits
+- Timo VJ Lähde <timovj.lahde@gmail.com> — 1 commits
+- U-UNIT1\dennis <dennis@UNIT1.(none)> — 1 commits
+- Urs Janssen <urs@niko.tin.org> — 1 commits
+- Vittorio Giovara <vittorio.giovara@gmail.com> — 1 commits
+- bobbl <bobbl@gmx.de> — 1 commits
+- mob <mob> — 1 commits
+- orbea <ovariegata@yahoo.com> — 1 commits
+- root <root@mallow.celest.fr> — 1 commits
+- unknown <TimoL@.(none)> — 1 commits
+- unknown <wctam@.itedn32a.localdomain> — 1 commits
+- yuanbin <yuanbin0@gmail.com> — 1 commits
+
+## Complexity
+
+- C: 149 files, 48524 lines total, 4790 blank, 6863 comment, 36871 code
+- C header: 94 files, 40502 lines total, 4739 blank, 22230 comment, 13533 code
+- Markdown: 0 files, 0 lines total, 41 blank, 0 comment, 0 code
+- Python: 0 files, 0 lines total, 2 blank, 0 comment, 0 code
+- Shell: 1 files, 33 lines total, 4 blank, 1 comment, 28 code
+
+Declared RFCs at this point: none declared.
+
+## Public methods and commands
+

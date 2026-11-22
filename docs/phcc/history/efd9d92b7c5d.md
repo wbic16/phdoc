@@ -1,0 +1,80 @@
+# phcc — reference as of commit efd9d92b7c5d
+
+Commit efd9d92b7c5d88387709a891c54848f266f7fada. 1068 commits folded. Every fact here was folded from the chain's per-commit deltas.
+
+## Provenance
+
+This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/phcc/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
+
+## Dependencies
+
+No dependencies recorded at this point.
+
+## Authors
+
+- bellard <bellard> — 393 commits
+- grischka <grischka> — 227 commits
+- Joe Soroka <gits@joesoroka.com> — 67 commits
+- Thomas Preud'homme <thomas.preudhomme@celest.fr> — 64 commits
+- Henry Kroll III <henry@comptune.com> — 62 commits
+- Shinichiro Hamaji <shinichiro.hamaji _at_ gmail.com> — 48 commits
+- Thomas Preud'homme <robotux@celest.fr> — 45 commits
+- Daniel Glöckner <daniel-gl@gmx.net> — 28 commits
+- Michael Matz <matz@suse.de> — 12 commits
+- Detlef Riekenberg <tcc.dev@web.de> — 11 commits
+- Kirill Smelkov <kirr@navytux.spb.ru> — 10 commits
+- Shinichiro Hamaji <shinichiro.hamaji@gmail.com> — 10 commits
+- Kirill Smelkov <kirr@landau.phys.spbu.ru> — 8 commits
+- Frederic Feret <tommy.planet@free.fr> — 7 commits
+- Kirill Smelkov <kirr@mns.spb.ru> — 7 commits
+- Detlef Riekenberg <wine.dev@web.de> — 5 commits
+- Sergei Trofimovich <st@anti-virus.by> — 5 commits
+- Milutin Jovanović <jovanovic.milutin@gmail.com> — 4 commits
+- yuanbin <Administrator@yuan.(none)> — 4 commits
+- Bernhard Reutner-Fischer <rep.dot.nop@gmail.com> — 3 commits
+- Changming Xu <xcmhit@gmail.com> — 3 commits
+- Gabriel Corneanu <gabrielcorneanu@gmail.com> — 3 commits
+- Jaroslav Kysela <perex@perex.cz> — 3 commits
+- Milutin Jovanovic <jovanovic.milutin@gmail.com> — 3 commits
+- Vincent Lefevre <vincent@vinc17.net> — 3 commits
+- Andrew Mulbrook <andrew262@gmail.com> — 2 commits
+- Thomas Preud'homme <robotux@armelhome.rsr.lip6.fr> — 2 commits
+- Timo VJ Lahde <timovj.lahde@gmail.com> — 2 commits
+- Adam Sampson <ats@offog.org> — 1 commits
+- Alexander Egorenkov <ae@linux-pc-2.(none)> — 1 commits
+- Alexandre Becoulet <diaxen@ganymede.localdomain> — 1 commits
+- Ali Gholami Rudi <ali@rudi.ir> — 1 commits
+- Ben Bacarisse <software@bsb.me.uk> — 1 commits
+- Christian Jullien <none> — 1 commits
+- Claudio Bley <b_l_e_y@ml1.net> — 1 commits
+- Feret@.(none) <Feret@.(none)> — 1 commits
+- Henry K <henry@desk.local> — 1 commits
+- Hitoshi Mitake <h.mitake@gmail.com> — 1 commits
+- Luigi Rizzo <rizzo> — 1 commits
+- Manuel Simoni <msimoni@gmail.com> — 1 commits
+- Nicolas Limare <nicolas.limare@cmla.ens-cachan.fr> — 1 commits
+- Nikos Mavrogiannopoulos <nmav@gnutls.org> — 1 commits
+- Ramsay Jones <ramsay@ramsay1.demon.co.uk> — 1 commits
+- Romain Francoise <rfrancoise@debian.org> — 1 commits
+- Roy Tam <roytam@gmail.com> — 1 commits
+- Sam Watkins <sam@nikas.(none)> — 1 commits
+- Sergey Vinokurov <serg.foo@gmail.com> — 1 commits
+- Soloist Deng <soloist.deng-gmail.com> — 1 commits
+- Timo VJ Lähde <timovj.lahde@gmail.com> — 1 commits
+- U-UNIT1\dennis <dennis@UNIT1.(none)> — 1 commits
+- bobbl <bobbl@gmx.de> — 1 commits
+- mob <mob> — 1 commits
+- unknown <TimoL@.(none)> — 1 commits
+- unknown <wctam@.itedn32a.localdomain> — 1 commits
+- yuanbin <yuanbin0@gmail.com> — 1 commits
+
+## Complexity
+
+- C: 90 files, 36620 lines total, 3580 blank, 5197 comment, 27843 code
+- C header: 98 files, 39868 lines total, 4582 blank, 20716 comment, 14570 code
+- Shell: 1 files, 33 lines total, 4 blank, 1 comment, 28 code
+
+Declared RFCs at this point: none declared.
+
+## Public methods and commands
+
