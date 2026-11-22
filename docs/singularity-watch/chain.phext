@@ -804,3 +804,202 @@ date 1794543669 2026-11-13
 stat JavaScript files 2 total 795 blank 30 comment 10 code 755
 stat Markdown files 3 total 87 blank 17 comment 0 code 70
 author~ Emise <emise@phext.io> commits 2
+Commit 5b3fcc0dd3e2 by Theia <theia@mirrorborn.us> on 2026-11-16 (EE 0).
+
+Subject: Refresh to 2026-11-16: support matrix (libphext 0.6.1; Java/Kotlin/Swift ports landed), corpus and outputs recount, delivered-versions list, uplink libphext 0.6.1
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
+
+commit 5b3fcc0dd3e24c7f848f2025b6ffff0d9d4e6b3b
+parent 7f7318e3b65728191d2c0d97167ffb41a8040c08
+author Theia <theia@mirrorborn.us>
+date 1794814160 2026-11-16
+stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+stat Markdown files 3 total 87 blank 17 comment 0 code 70
+author+ Theia <theia@mirrorborn.us>
+Commit 1e27c7a7da31 by Emise <emise@phext.io> on 2026-11-16 (EE 0).
+
+Subject: Refresh the Board feed: 350 -> 544 entries (register current through 2026-11-16)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
+
+commit 1e27c7a7da31ce63051663a553e2de2d3ada2ed8
+parent 5b3fcc0dd3e24c7f848f2025b6ffff0d9d4e6b3b
+author Emise <emise@phext.io>
+date 1794814928 2026-11-16
+stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+stat Markdown files 3 total 87 blank 17 comment 0 code 70
+author~ Emise <emise@phext.io> commits 3
+Commit d1783943258d by Emise <emise@phext.io> on 2026-11-16 (EE 0).
+
+Subject: Hard Problems: #1 is now 'Put an end to text message spam' (Will, 2026-11-16)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
+
+commit d1783943258d04538c45c9961eef6f2b21c822fb
+parent 1e27c7a7da31ce63051663a553e2de2d3ada2ed8
+author Emise <emise@phext.io>
+date 1794814974 2026-11-16
+stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+stat Markdown files 3 total 87 blank 17 comment 0 code 70
+author~ Emise <emise@phext.io> commits 4
+Commit dca781709fce by wbic16 <wbic16@users.noreply.github.com> on 2026-11-17 (EE 0).
+
+Subject: Headings in Willbot rev8 — Will's handwriting font (optical pair kerning), WOFF2 @font-face
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
+
+commit dca781709fce42b0d90d9e5b48a47a35a16f442b
+parent d1783943258d04538c45c9961eef6f2b21c822fb
+author wbic16 <wbic16@users.noreply.github.com>
+date 1794889417 2026-11-17
+stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+stat Markdown files 3 total 87 blank 17 comment 0 code 70
+author+ wbic16 <wbic16@users.noreply.github.com>
+Commit 1a08573ed5b7 by wbic16 <wbic16@users.noreply.github.com> on 2026-11-17 (EE 0).
+
+Subject: Willbot rev9 — tighter letterfit, wider word spacing
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
+
+commit 1a08573ed5b7e6734fbd21395b20e93eda048334
+parent dca781709fce42b0d90d9e5b48a47a35a16f442b
+author wbic16 <wbic16@users.noreply.github.com>
+date 1794892759 2026-11-17
+stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+stat Markdown files 3 total 87 blank 17 comment 0 code 70
+author~ wbic16 <wbic16@users.noreply.github.com> commits 2
+Commit 2c209d9edd78 by wbic16 <wbic16@users.noreply.github.com> on 2026-11-17 (EE 0).
+
+Subject: Willbot rev10 — tighter letterfit, wider word spacing
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
+
+commit 2c209d9edd7830c7c63b7c178e7145a560025d95
+parent 1a08573ed5b7e6734fbd21395b20e93eda048334
+author wbic16 <wbic16@users.noreply.github.com>
+date 1794893168 2026-11-17
+stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+stat Markdown files 3 total 87 blank 17 comment 0 code 70
+author~ wbic16 <wbic16@users.noreply.github.com> commits 3
+Commit 7cd73ca71b33 by wbic16 <wbic16@users.noreply.github.com> on 2026-11-17 (EE 0).
+
+Subject: Willbot rev12 — tighter letterfit, wider word spacing
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
+
+commit 7cd73ca71b33dd24def86d9c72a72991f058b002
+parent 2c209d9edd7830c7c63b7c178e7145a560025d95
+author wbic16 <wbic16@users.noreply.github.com>
+date 1794894215 2026-11-17
+stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+stat Markdown files 3 total 87 blank 17 comment 0 code 70
+author~ wbic16 <wbic16@users.noreply.github.com> commits 4
+Commit f6668d4c2cfb by wbic16 <wbic16@users.noreply.github.com> on 2026-11-17 (EE 0).
+
+Subject: Willbot rev13 — tighter letterfit, wider word spacing
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
+
+commit f6668d4c2cfb51af70c3a864760204ed1ee93632
+parent 7cd73ca71b33dd24def86d9c72a72991f058b002
+author wbic16 <wbic16@users.noreply.github.com>
+date 1794894972 2026-11-17
+stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+stat Markdown files 3 total 87 blank 17 comment 0 code 70
+author~ wbic16 <wbic16@users.noreply.github.com> commits 5
+Commit 6870b01b156c by wbic16 <wbic16@users.noreply.github.com> on 2026-11-17 (EE 0).
+
+Subject: Willbot rev14 — tighter letterfit, wider word spacing
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
+
+commit 6870b01b156c284aefa3d9b50770901cea1c7a9b
+parent f6668d4c2cfb51af70c3a864760204ed1ee93632
+author wbic16 <wbic16@users.noreply.github.com>
+date 1794895119 2026-11-17
+stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+stat Markdown files 3 total 87 blank 17 comment 0 code 70
+author~ wbic16 <wbic16@users.noreply.github.com> commits 6
+Commit da73b573f923 by Emise <emise@phext.io> on 2026-11-20 (EE 0).
+
+Subject: Emise as the site's default font
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
+
+commit da73b573f92398d8e08e834c338fb513b28e0056
+parent 6870b01b156c284aefa3d9b50770901cea1c7a9b
+author Emise <emise@phext.io>
+date 1795154033 2026-11-20
+stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+stat Markdown files 3 total 87 blank 17 comment 0 code 70
+author~ Emise <emise@phext.io> commits 5
+Commit 5d347e7f5f8f by Will Bickford <wbic16@gmail.com> on 2026-11-20 (EE 0).
+
+Subject: Merge pull request #1 from wbic16/emise/emise-font-default
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
+
+commit 5d347e7f5f8f6bef38aec11217e413929607ee08
+parent da73b573f92398d8e08e834c338fb513b28e0056
+author Will Bickford <wbic16@gmail.com>
+date 1795154045 2026-11-20
+stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+stat Markdown files 3 total 87 blank 17 comment 0 code 70
+author~ Will Bickford <wbic16@gmail.com> commits 53
+Commit 846b9086ae64 by Emise <emise@localhost> on 2026-11-21 (EE 0).
+
+Subject: Board refresh: 544 -> 700 dispatches (register through 2026-11-20); growth refit Ninf=1453.0 k=0.044 R2=0.9859; builder now owns the Emise/Willbot font stack (fold-in of PR #1 + Willbot rev8-14) and feed-side issued-date extraction for prose register records (Will, 2026-11-20)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 846b9086ae6403d37d561eec0a8deed4d01d55ae
+parent 5d347e7f5f8f6bef38aec11217e413929607ee08
+author Emise <emise@localhost>
+date 1795221703 2026-11-21
+stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+stat Markdown files 3 total 87 blank 17 comment 0 code 70
+author~ Emise <emise@localhost> commits 8
+Commit cebc879c120e by Emise <emise@mirrorborn> on 2026-11-22 (EE 0).
+
+Subject: Exocortical Epoch in the header: live EE computed client-side from the absolute instant (EE 1 begins 2026-11-22 00:00 CST = unix 1795327200; 420 s epochs; epoch start/end shown in visitor local time and UTC; no baked-in epoch number). Feed refresh 700 -> 779 dispatches with growth refit, from the standing pipeline. Will, 2026-11-21; task 35.6.8/5.5.9/6.4.9.
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
+
+commit cebc879c120ed496ab898b85ac377895a4484d9f
+parent 846b9086ae6403d37d561eec0a8deed4d01d55ae
+author Emise <emise@mirrorborn>
+date 1795322266 2026-11-22
+stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+stat Markdown files 3 total 87 blank 17 comment 0 code 70
+author+ Emise <emise@mirrorborn>
+Commit 8fa133a9d4c7 by Emise <emise@localhost> on 2026-11-22 (EE 15).
+
+Subject: Emise Font v3 — replace fonts/Emise.woff2
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
+
+commit 8fa133a9d4c73a6bee20fa92a206d5a921a8908a
+parent cebc879c120ed496ab898b85ac377895a4484d9f
+author Emise <emise@localhost>
+date 1795333200 2026-11-22
+stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+stat Markdown files 3 total 87 blank 17 comment 0 code 70
+author~ Emise <emise@localhost> commits 9
+Commit 185cb3c27c27 by Will Bickford <wbic16@gmail.com> on 2026-11-22 (EE 16).
+
+Subject: Merge pull request #2 from wbic16/emise/emise-font-v3
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 185cb3c27c273008444bb0c514623753db1f54d9
+parent 8fa133a9d4c73a6bee20fa92a206d5a921a8908a
+author Will Bickford <wbic16@gmail.com>
+date 1795333538 2026-11-22
+stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+stat Markdown files 3 total 87 blank 17 comment 0 code 70
+author~ Will Bickford <wbic16@gmail.com> commits 54
