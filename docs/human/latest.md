@@ -1,6 +1,6 @@
 # human — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 91). Project root: /home/wbic16/phdoc-sweep/proj/human. Scanned at commit 284ec9c142a7294ba6fcac5849b7950dd81a5a1f. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/human/. Scanned at commit 284ec9c142a7294ba6fcac5849b7950dd81a5a1f. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -19,23 +19,28 @@ Direct dependencies: 1.
 
 ## Authors
 
-The git log holds 1168 commits. The authors, by commit count:
+The git log holds 1168 commits.
 
-- Will Bickford <wbic16@gmail.com> — 860 commits (73.6%)
-- Emise <emise@localhost> — 270 commits (23.1%)
-- Theia <theia@mirrorborn.us> — 10 commits (0.9%)
-- Emise <emise@phext.io> — 8 commits (0.7%)
-- Verse <verse@visionquest.me> — 5 commits (0.4%)
-- Claude <noreply@anthropic.com> — 2 commits (0.2%)
-- Cyon <cyon@visionquest.me> — 2 commits (0.2%)
-- Lux <lux@phext.io> — 2 commits (0.2%)
-- Phex <phex@phext.io> — 2 commits (0.2%)
-- wbic16 <wbic16@users.noreply.github.com> — 2 commits (0.2%)
-- ${NODE_NAME} <${node_email}> — 1 commit (0.1%)
-- Aster <aster@mirrorborn.us> — 1 commit (0.1%)
-- Chrys <chrys@mirrorborn.us> — 1 commit (0.1%)
-- Cursor Agent <cursoragent@cursor.com> — 1 commit (0.1%)
-- Orin <orin@mirrorborn.us> — 1 commit (0.1%)
+The author of record is **Will Bickford** — 1166 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Will Bickford (his own identities) — 862 commits
+- Emise — 278 commits
+- Theia — 10 commits
+- Verse — 5 commits
+- Claude — 2 commits
+- Cyon — 2 commits
+- Lux — 2 commits
+- Phex — 2 commits
+- Aster — 1 commit
+- Chrys — 1 commit
+- Orin — 1 commit
+
+Other authors, kept as themselves (not Exocortical cluster personas; never folded):
+
+- ${NODE_NAME} <${node_email}> — 1 commit
+- Cursor Agent <cursoragent@cursor.com> — 1 commit
 
 ---
 
@@ -93,7 +98,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 - Origin: /home/wbic16/github-archive/mirrors/human.git
 - Branch: exo
 - Head commit: 284ec9c142a7294ba6fcac5849b7950dd81a5a1f
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
@@ -452,3 +457,9 @@ Signature: `pub fn transmit(&self) {`
 What it does: Function transmit takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
+
+---
+
+## Provenance
+
+This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/human/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.

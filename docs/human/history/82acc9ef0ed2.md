@@ -2,13 +2,21 @@
 
 Commit 82acc9ef0ed21504e0c5ee51735cfb54f7b2daf1. 688 commits folded. Every fact here was folded from the chain's per-commit deltas.
 
+## Provenance
+
+This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/human/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
+
 ## Dependencies
 
 No dependencies recorded at this point.
 
 ## Authors
 
-- Will Bickford <wbic16@gmail.com> — 688 commits
+The author of record is **Will Bickford** — 688 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Will Bickford (his own identities) — 688 commits
 
 ## Complexity
 
