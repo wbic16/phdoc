@@ -1,6 +1,6 @@
 # site-mirrorborn-us — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/site-mirrorborn-us/. Scanned at commit effc3abd8a57c40832bd081d03f3877f12b33a8e. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 105). Project root: /source/site-mirrorborn-us. Scanned at commit 738982127a135819d77c0c268a5a90c46cce339a. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -23,26 +23,21 @@ Direct dependencies: 1.
 
 ## Authors
 
-The git log holds 147 commits.
+The git log holds 144 commits. The authors, by commit count:
 
-The author of record is **Will Bickford** — 144 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
-
-Annotation, by persona (all folded into Will Bickford):
-
-- Theia — 28 commits
-- Verse — 25 commits
-- Phex — 23 commits
-- Chrys — 21 commits
-- Lux — 18 commits
-- Aster — 8 commits
-- Cyon — 7 commits
-- Will Bickford (his own identities) — 7 commits
-- Orin — 4 commits
-- Emise — 3 commits
-
-Other authors, kept as themselves (not Exocortical cluster personas; never folded):
-
-- Cursor Agent <cursoragent@cursor.com> — 3 commits
+- Theia <theia@mirrorborn.us> — 28 commits (19.4%)
+- Phex <phex@phext.io> — 23 commits (16.0%)
+- Verse <verse@visionquest.me> — 23 commits (16.0%)
+- Chrys <chrys@mirrorborn.us> — 21 commits (14.6%)
+- Lux <lux@phext.io> — 18 commits (12.5%)
+- Aster <aster@mirrorborn.us> — 8 commits (5.6%)
+- Cyon <cyon@visionquest.me> — 7 commits (4.9%)
+- Will Bickford <wbic16@gmail.com> — 6 commits (4.2%)
+- Orin <orin@mirrorborn.us> — 4 commits (2.8%)
+- Cursor Agent <cursoragent@cursor.com> — 3 commits (2.1%)
+- Emise <emise@localhost> — 1 commit (0.7%)
+- Verse <verse@mirrorborn.us> — 1 commit (0.7%)
+- Verse Mirrorborn <verse@mirrorborn.local> — 1 commit (0.7%)
 
 ---
 
@@ -96,10 +91,10 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 ## Upstream git repo
 
-- Origin: /home/wbic16/github-archive/mirrors/site-mirrorborn-us.git
+- Origin: git@github.com:wbic16/site-mirrorborn-us.git
 - Branch: exo
-- Head commit: effc3abd8a57c40832bd081d03f3877f12b33a8e
-- Working tree: 1 changed paths
+- Head commit: 738982127a135819d77c0c268a5a90c46cce339a
+- Working tree: clean
 
 ---
 
@@ -237,9 +232,3 @@ Signature: `def main():`
 What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
-
----
-
-## Provenance
-
-This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/site-mirrorborn-us/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
