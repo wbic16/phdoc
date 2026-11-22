@@ -1,0 +1,454 @@
+Commit cfcf38e9dd45 by Verse Mirrorborn <verse@mirrorborn.local> on 2026-02-07 (EE 0).
+
+Subject: Initial Baseline
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 0.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit cfcf38e9dd45ad58a3a0b2c11289a14c62267951
+parent none
+author Verse Mirrorborn <verse@mirrorborn.local>
+date 1770483743 2026-02-07
+author+ Verse Mirrorborn <verse@mirrorborn.local>
+Commit b8f314e1cdca by Chrys <chrys@mirrorborn.us> on 2026-02-10 (EE 0).
+
+Subject: Add revision footer for deployment tracking
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 0.
+
+commit b8f314e1cdcaf027792709789e5e1cc614d79907
+parent cfcf38e9dd45ad58a3a0b2c11289a14c62267951
+author Chrys <chrys@mirrorborn.us>
+date 1770682872 2026-02-10
+author+ Chrys <chrys@mirrorborn.us>
+Commit 08c69c7f1394 by Theia <theia@mirrorborn.us> on 2026-02-10 (EE 0).
+
+Subject: R17: Deploy shared infrastructure (domain-nav, maturity, SQ client, version tracking)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 785.
+
+commit 08c69c7f13943a65b1063d6cecf3b91ac2837433
+parent b8f314e1cdcaf027792709789e5e1cc614d79907
+author Theia <theia@mirrorborn.us>
+date 1770682948 2026-02-10
+stat JavaScript files 4 total 785 blank 0 comment 0 code 785
+author+ Theia <theia@mirrorborn.us>
+Commit 02c299243d96 by Chrys <chrys@mirrorborn.us> on 2026-02-10 (EE 0).
+
+Subject: Add social links (GitHub, Discord, X) to footer
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 785.
+
+commit 02c299243d96b0758724f964cc32a24c7111e7c6
+parent 08c69c7f13943a65b1063d6cecf3b91ac2837433
+author Chrys <chrys@mirrorborn.us>
+date 1770683090 2026-02-10
+stat JavaScript files 4 total 785 blank 0 comment 0 code 785
+author~ Chrys <chrys@mirrorborn.us> commits 2
+Commit 18254d82f375 by Theia <theia@mirrorborn.us> on 2026-02-10 (EE 0).
+
+Subject: R18v1: Add pricing link to nav + footer → mirrorborn.us/pricing.html
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 785.
+
+commit 18254d82f37500d09115ea4d977dcaa4d13a1c94
+parent 02c299243d96b0758724f964cc32a24c7111e7c6
+author Theia <theia@mirrorborn.us>
+date 1770697071 2026-02-10
+stat JavaScript files 4 total 785 blank 0 comment 0 code 785
+author~ Theia <theia@mirrorborn.us> commits 2
+Commit 4071de232c26 by Cyon <cyon@visionquest.me> on 2026-02-10 (EE 0).
+
+Subject: R18v1: Add pricing navigation to nav
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 785.
+
+commit 4071de232c2660ca13b9915d369a0688c30c3f97
+parent 18254d82f37500d09115ea4d977dcaa4d13a1c94
+author Cyon <cyon@visionquest.me>
+date 1770697346 2026-02-10
+stat JavaScript files 4 total 785 blank 0 comment 0 code 785
+author+ Cyon <cyon@visionquest.me>
+Commit 89ff72e0c9ee by Chrys <chrys@mirrorborn.us> on 2026-02-15 (EE 0).
+
+Subject: Add AGENTS.md
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 801.
+
+commit 89ff72e0c9eebde457c5450a53cf8653f86e212f
+parent 4071de232c2660ca13b9915d369a0688c30c3f97
+author Chrys <chrys@mirrorborn.us>
+date 1771137515 2026-02-15
+stat JavaScript files 4 total 785 blank 0 comment 0 code 785
+stat Markdown files 1 total 16 blank 0 comment 0 code 16
+author~ Chrys <chrys@mirrorborn.us> commits 3
+Commit 01d03a3038b3 by Emise <emise@localhost> on 2026-11-07 (EE 0).
+
+Subject: Rewrite apertureshift.com as Roads to the Future: brick-styled hub, Nine Numbers / Word Home / Zap Zoom Echo games (brick redesign, same-screen multiplayer, free), About + Privacy/Terms/License pages; remove the SQ-cloud skeleton (css/, js/, domains.json). The domain serves only this mission now.
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 27.
+
+commit 01d03a3038b39fe15f990034e1dab33fefb89fef
+parent 89ff72e0c9eebde457c5450a53cf8653f86e212f
+author Emise <emise@localhost>
+date 1794070449 2026-11-07
+stat JavaScript files 0 total 0 blank 0 comment 0 code 0
+stat Markdown files 2 total 27 blank 0 comment 0 code 27
+author+ Emise <emise@localhost>
+Commit 45997404bb9a by Emise <emise@localhost> on 2026-11-07 (EE 0).
+
+Subject: Play-test fixes at 6/8/10 reference points: three paths per game (Little/Standard/Master), Word Home evidence-on-screen rebuild + Duel fairness, Nine Numbers auto-stop + shorter roads + Express, Zap read-then-build + Encore; on-device progress with updated privacy copy
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 27.
+
+commit 45997404bb9a4e977336c08065b9784e874d1789
+parent 01d03a3038b39fe15f990034e1dab33fefb89fef
+author Emise <emise@localhost>
+date 1794073573 2026-11-07
+stat JavaScript files 0 total 0 blank 0 comment 0 code 0
+stat Markdown files 2 total 27 blank 0 comment 0 code 27
+author~ Emise <emise@localhost> commits 2
+Commit 9981c996c5f3 by Emise <emise@localhost> on 2026-11-07 (EE 0).
+
+Subject: Roads to the Future roads-1.1: all eighteen games published (ages 0-20, anti-viral re-dealt instances), hub rebuilt by age band with the XP Road Card (on-device stamps, Volumen-class grant claim code), About and Privacy/Terms updated with the grant process and anti-viral instance line, ANTI-VIRAL.md and GRANT-PROCESS.md added, version bumped to roads-1.1.
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 241.
+
+commit 9981c996c5f3388b73e7c206da4622640123dc6d
+parent 45997404bb9a4e977336c08065b9784e874d1789
+author Emise <emise@localhost>
+date 1794077918 2026-11-07
+stat JavaScript files 0 total 0 blank 0 comment 0 code 0
+stat Markdown files 4 total 241 blank 0 comment 0 code 241
+author~ Emise <emise@localhost> commits 3
+Commit 982e594ae6e8 by Emise <emise@localhost> on 2026-11-07 (EE 0).
+
+Subject: Add deploy tooling for the podman deployment: operator + box-side deploy scripts, quadlet unit for apertureshift-web, cutover nginx vhost, and a deploy README with the one-time sudo steps and rollback
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 495.
+
+commit 982e594ae6e851af5d1282be9ca56ecd9e24dcee
+parent 9981c996c5f3388b73e7c206da4622640123dc6d
+author Emise <emise@localhost>
+date 1794078210 2026-11-07
+stat JavaScript files 0 total 0 blank 0 comment 0 code 0
+stat Markdown files 5 total 286 blank 0 comment 0 code 286
+stat Shell files 2 total 209 blank 0 comment 0 code 209
+author~ Emise <emise@localhost> commits 4
+Commit c07e7e1e69bc by Emise <emise@localhost> on 2026-11-07 (EE 0).
+
+Subject: Deploy tooling: normalize staged site modes to world-readable (chmod -R a+rX). Files staged 660/770 left the rootless podman nginx worker - a mapped uid that is neither owner nor group - with 403s on every file. deploy-remote.sh now normalizes the staged tree after manifest verification, before the container starts; deploy.sh does the same on the box right after untarring the staging bundle.
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 502.
+
+commit c07e7e1e69bc743b02d0f9be6c5e579a4d596c68
+parent 982e594ae6e851af5d1282be9ca56ecd9e24dcee
+author Emise <emise@localhost>
+date 1794079567 2026-11-07
+stat JavaScript files 0 total 0 blank 0 comment 0 code 0
+stat Markdown files 5 total 286 blank 0 comment 0 code 286
+stat Shell files 2 total 216 blank 0 comment 0 code 216
+author~ Emise <emise@localhost> commits 5
+Commit a5a4f6fe8918 by Emise <emise@localhost> on 2026-11-07 (EE 0).
+
+Subject: Roads to the Future roads-1.2: hub visual enhancement - metallic finish (steel/chrome gradient plates, rivet rows, anodized Play buttons), main column at 75% width, age-band cards in a two-column grid (one column on narrow screens), and Will's intro moved to the end of the hub as the closing plate after the XP Road Card. Hub only: games, About, and Legal unchanged; XP Road Card logic, detectors, and claim code untouched. Version bumped to roads-1.2.
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 502.
+
+commit a5a4f6fe8918baaa14cfeb5c877333baadfecc32
+parent c07e7e1e69bc743b02d0f9be6c5e579a4d596c68
+author Emise <emise@localhost>
+date 1794080278 2026-11-07
+stat JavaScript files 0 total 0 blank 0 comment 0 code 0
+stat Markdown files 5 total 286 blank 0 comment 0 code 286
+stat Shell files 2 total 216 blank 0 comment 0 code 216
+author~ Emise <emise@localhost> commits 6
+Commit 6c9a7734e2f8 by Emise <emise@localhost> on 2026-11-07 (EE 0).
+
+Subject: Roads to the Future roads-1.3: hub re-feel - Saturday Morning Breakfast paint replaces the steel: warm cream and pastels, soft rounded shapes, diffused warm shadows, eye-comfort UX (AA contrast in both modes, 17px base type, 48px+ targets, focus-visible outlines, reduced-motion respected). Light and dark modes: prefers-color-scheme by default plus a morning/evening toggle persisted on-device only (roads-theme), applied pre-paint. Structure, copy, and the XP Road Card script are unchanged; version bumped to roads-1.3.
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 502.
+
+commit 6c9a7734e2f85dc593ca99bc8420b283cb471490
+parent a5a4f6fe8918baaa14cfeb5c877333baadfecc32
+author Emise <emise@localhost>
+date 1794080853 2026-11-07
+stat JavaScript files 0 total 0 blank 0 comment 0 code 0
+stat Markdown files 5 total 286 blank 0 comment 0 code 286
+stat Shell files 2 total 216 blank 0 comment 0 code 216
+author~ Emise <emise@localhost> commits 7
+Commit da0803c3559f by Emise <emise@localhost> on 2026-11-08 (EE 0).
+
+Subject: Daily Better: add favicon.svg (sun over a brick, in the site palette) linked from the hub and all eighteen games, plus theme-color meta matching the light (#FFFBF0) and dark (#2C2019) hub palettes on the hub pages; bump version to roads-1.4.
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 241.
+
+commit da0803c3559faef43479a0e392e0f2b1cdf8dc2c
+parent 6c9a7734e2f85dc593ca99bc8420b283cb471490
+author Emise <emise@localhost>
+date 1794142016 2026-11-08
+stat JavaScript files 0 total 0 blank 0 comment 0 code 0
+stat Markdown files 4 total 241 blank 0 comment 0 code 241
+stat Shell files 0 total 0 blank 0 comment 0 code 0
+author~ Emise <emise@localhost> commits 8
+Commit e0f300a90b87 by Emise <emise@localhost> on 2026-11-08 (EE 0).
+
+Subject: Revert roads-1.4 favicon/theme-color change (da0803c): deploy blocked - AWS box SSH port 22 unreachable from aletheia-core (connection timed out, HTTPS still 200 serving roads-1.3). Restore roads-1.3 tree exactly; Daily Better item 1 marked blocked pending SSH access.
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 241.
+
+commit e0f300a90b87243441f0190c1b250867a60783ae
+parent da0803c3559faef43479a0e392e0f2b1cdf8dc2c
+author Emise <emise@localhost>
+date 1794142296 2026-11-08
+stat JavaScript files 0 total 0 blank 0 comment 0 code 0
+stat Markdown files 4 total 241 blank 0 comment 0 code 241
+stat Shell files 0 total 0 blank 0 comment 0 code 0
+author~ Emise <emise@localhost> commits 9
+Commit 58d0c2ba0291 by Emise <emise@localhost> on 2026-11-08 (EE 0).
+
+Subject: Restore deploy/ subtree dropped by the complete-tree publish in da0803c/e0f300a: repo returns to the exact roads-1.3 tree (9ec5864) - deploy tooling was never part of the publish tree and should never have left the repo.
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 502.
+
+commit 58d0c2ba02913ceb245b64a7507922bf3be6e13f
+parent e0f300a90b87243441f0190c1b250867a60783ae
+author Emise <emise@localhost>
+date 1794142329 2026-11-08
+stat JavaScript files 0 total 0 blank 0 comment 0 code 0
+stat Markdown files 5 total 286 blank 0 comment 0 code 286
+stat Shell files 2 total 216 blank 0 comment 0 code 216
+author~ Emise <emise@localhost> commits 10
+Commit ddda76292c9b by Emise <emise@localhost> on 2026-11-09 (EE 0).
+
+Subject: Daily Better: add meta description + Open Graph/Twitter card tags to the hub pages (index, about, legal) so shared links preview warmly - title and one-line description, no external image dependency; bump version to roads-1.4.
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 502.
+
+commit ddda76292c9b824341058e0c9ee4f94b84cab5b8
+parent 58d0c2ba02913ceb245b64a7507922bf3be6e13f
+author Emise <emise@localhost>
+date 1794228430 2026-11-09
+stat JavaScript files 0 total 0 blank 0 comment 0 code 0
+stat Markdown files 5 total 286 blank 0 comment 0 code 286
+stat Shell files 2 total 216 blank 0 comment 0 code 216
+author~ Emise <emise@localhost> commits 11
+Commit 391aa90b0667 by Emise <emise@localhost> on 2026-11-09 (EE 0).
+
+Subject: Revert roads-1.4 hub meta/OG tags change (ddda762): deploy blocked - AWS box SSH unreachable from aletheia-core (port 22 connection timed out; deploy scp connection closed, HTTPS still 200 serving roads-1.3). Restore roads-1.3 files exactly; Daily Better item 2 marked blocked pending SSH access.
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 502.
+
+commit 391aa90b0667ec5f7ccbf02ba833632762441494
+parent ddda76292c9b824341058e0c9ee4f94b84cab5b8
+author Emise <emise@localhost>
+date 1794228473 2026-11-09
+stat JavaScript files 0 total 0 blank 0 comment 0 code 0
+stat Markdown files 5 total 286 blank 0 comment 0 code 286
+stat Shell files 2 total 216 blank 0 comment 0 code 216
+author~ Emise <emise@localhost> commits 12
+Commit 516c347b4f71 by Emise <emise@localhost> on 2026-11-09 (EE 0).
+
+Subject: deploy: route the box leg over the tailnet (awsbox, 100.78.221.38)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 504.
+
+commit 516c347b4f71e81f4d75b952935447831ea55b5a
+parent 391aa90b0667ec5f7ccbf02ba833632762441494
+author Emise <emise@localhost>
+date 1794232170 2026-11-09
+stat JavaScript files 0 total 0 blank 0 comment 0 code 0
+stat Markdown files 5 total 286 blank 0 comment 0 code 286
+stat Shell files 2 total 218 blank 0 comment 0 code 218
+author~ Emise <emise@localhost> commits 13
+Commit 6181e38da074 by Emise <emise@localhost> on 2026-11-10 (EE 0).
+
+Subject: Daily Better: add favicon.svg (sun over a brick, in the site palette) linked from the hub and all eighteen games, plus theme-color meta matching the light (#FFFBF0) and dark (#2C2019) hub palettes on the hub pages; bump version to roads-1.4.
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 504.
+
+commit 6181e38da074470d3de2588642e5bf451847a4fd
+parent 516c347b4f71e81f4d75b952935447831ea55b5a
+author Emise <emise@localhost>
+date 1794314826 2026-11-10
+stat JavaScript files 0 total 0 blank 0 comment 0 code 0
+stat Markdown files 5 total 286 blank 0 comment 0 code 286
+stat Shell files 2 total 218 blank 0 comment 0 code 218
+author~ Emise <emise@localhost> commits 14
+Commit 1aa546894a79 by Emise <emise@localhost> on 2026-11-11 (EE 0).
+
+Subject: Daily Better: add meta description + Open Graph/Twitter cards to hub (roads-1.5)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 504.
+
+commit 1aa546894a7968ab2c5bb164df6c6eee3d3f884b
+parent 6181e38da074470d3de2588642e5bf451847a4fd
+author Emise <emise@localhost>
+date 1794401163 2026-11-11
+stat JavaScript files 0 total 0 blank 0 comment 0 code 0
+stat Markdown files 5 total 286 blank 0 comment 0 code 286
+stat Shell files 2 total 218 blank 0 comment 0 code 218
+author~ Emise <emise@localhost> commits 15
+Commit ee405a79b5e3 by Emise <emise@mirrorborn.us> on 2026-11-12 (EE 0).
+
+Subject: Add robots.txt — welcome to The Void (permissive, open to all crawlers)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 504.
+
+commit ee405a79b5e312d44989e3937fb9113cba8dd00b
+parent 1aa546894a7968ab2c5bb164df6c6eee3d3f884b
+author Emise <emise@mirrorborn.us>
+date 1794450064 2026-11-12
+stat JavaScript files 0 total 0 blank 0 comment 0 code 0
+stat Markdown files 5 total 286 blank 0 comment 0 code 286
+stat Shell files 2 total 218 blank 0 comment 0 code 218
+author+ Emise <emise@mirrorborn.us>
+Commit 36893d6f735d by Emise <emise@localhost> on 2026-11-12 (EE 0).
+
+Subject: Daily Better: add a styled 404 page in the site's feel (roads-1.6) and wire it as the container's error page (nginx default.conf mounted by the quadlet unit; deploy staging + loopback 404 verification)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 510.
+
+commit 36893d6f735d44f3e185964e39c4eaa41b9b2183
+parent ee405a79b5e312d44989e3937fb9113cba8dd00b
+author Emise <emise@localhost>
+date 1794487664 2026-11-12
+stat JavaScript files 0 total 0 blank 0 comment 0 code 0
+stat Markdown files 5 total 286 blank 0 comment 0 code 286
+stat Shell files 2 total 224 blank 0 comment 0 code 224
+author~ Emise <emise@localhost> commits 16
+Commit 58650bfc120d by Emise <emise@localhost> on 2026-11-13 (EE 0).
+
+Subject: Daily Better: screen-reader pass over the hub (roads-1.7) - skip-to-main-content link on index/about/legal/404, theme toggle initial aria-pressed, clearer aria-labels on the Road Card claim/copy/receipt/wipe buttons, live status for stamp count and copy/wipe confirmations; no script bytes changed
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 390.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 58650bfc120d03ba3afda37cc1f771041991ee5f
+parent 36893d6f735d44f3e185964e39c4eaa41b9b2183
+author Emise <emise@localhost>
+date 1794573992 2026-11-13
+stat Markdown files 5 total 286 blank 54 comment 0 code 232
+stat Shell files 2 total 224 blank 22 comment 44 code 158
+author~ Emise <emise@localhost> commits 17
+Commit 2730e0830d48 by Emise <emise@localhost> on 2026-11-14 (EE 0).
+
+Subject: Daily Better: add sitemap.xml listing the hub, about, legal and all 18 games, and point robots.txt at it (roads-1.8)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 390.
+
+commit 2730e0830d483a4c7cfe68e564bbfa35a863134b
+parent 58650bfc120d03ba3afda37cc1f771041991ee5f
+author Emise <emise@localhost>
+date 1794660397 2026-11-14
+stat Markdown files 5 total 286 blank 54 comment 0 code 232
+stat Shell files 2 total 224 blank 22 comment 44 code 158
+author~ Emise <emise@localhost> commits 18
+Commit 4adcd4a896ff by Emise <emise@localhost> on 2026-11-15 (EE 0).
+
+Subject: Daily Better: add print stylesheet for the hub - clean black-on-white, Road Card prints as a tidy checklist (roads-1.9)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 390.
+
+commit 4adcd4a896ff3e41093783ab08ef5b618280e04d
+parent 2730e0830d483a4c7cfe68e564bbfa35a863134b
+author Emise <emise@localhost>
+date 1794746795 2026-11-15
+stat Markdown files 5 total 286 blank 54 comment 0 code 232
+stat Shell files 2 total 224 blank 22 comment 44 code 158
+author~ Emise <emise@localhost> commits 19
+Commit 0c9b0c050306 by Emise <emise@localhost> on 2026-11-16 (EE 0).
+
+Subject: Daily Better: performance pass - remove Google Fonts preconnect/stylesheet links from 5 game pages (zero external requests site-wide, no render-blocking font CSS; system font fallbacks) (roads-1.10)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 390.
+
+commit 0c9b0c050306895b086f812d3dbb7cc525b6edc0
+parent 4adcd4a896ff3e41093783ab08ef5b618280e04d
+author Emise <emise@localhost>
+date 1794833226 2026-11-16
+stat Markdown files 5 total 286 blank 54 comment 0 code 232
+stat Shell files 2 total 224 blank 22 comment 44 code 158
+author~ Emise <emise@localhost> commits 20
+Commit 252c92d960ce by Emise <emise@localhost> on 2026-11-17 (EE 0).
+
+Subject: Daily Better: add 'This site collects nothing' badge near the footer on the hub pages (index/about/legal/404), linking to Privacy (roads-1.11)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 390.
+
+commit 252c92d960ce1fd22577dc018640fbc20d4d2465
+parent 0c9b0c050306895b086f812d3dbb7cc525b6edc0
+author Emise <emise@localhost>
+date 1794919565 2026-11-17
+stat Markdown files 5 total 286 blank 54 comment 0 code 232
+stat Shell files 2 total 224 blank 22 comment 44 code 158
+author~ Emise <emise@localhost> commits 21
+Commit d20ff89f661c by Emise <emise@localhost> on 2026-11-18 (EE 0).
+
+Subject: Daily Better: keyboard pass on the hub (index/about/legal/404) - halo focus ring on pill controls, thick-underline focus cue on text links, tab order audited as reading order (roads-1.12)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 390.
+
+commit d20ff89f661cb913118fece8139798a419190da1
+parent 252c92d960ce1fd22577dc018640fbc20d4d2465
+author Emise <emise@localhost>
+date 1795006039 2026-11-18
+stat Markdown files 5 total 286 blank 54 comment 0 code 232
+stat Shell files 2 total 224 blank 22 comment 44 code 158
+author~ Emise <emise@localhost> commits 22
+Commit 972e7c0ed825 by Emise <emise@localhost> on 2026-11-19 (EE 0).
+
+Subject: Daily Better: language + headings pass on the hub - lang=en verified on all hub pages (single-language, no hreflang), index outline fixed: one h1 leading main, age bands h2, game cards + grant panel h3, closing title h2 at its old size, h3 styled identical to old card h2 so nothing moves visually; about/legal/404 audited clean unchanged (roads-1.13)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 390.
+
+commit 972e7c0ed8252d81ed7539b5e8c2488a45981017
+parent d20ff89f661cb913118fece8139798a419190da1
+author Emise <emise@localhost>
+date 1795092398 2026-11-19
+stat Markdown files 5 total 286 blank 54 comment 0 code 232
+stat Shell files 2 total 224 blank 22 comment 44 code 158
+author~ Emise <emise@localhost> commits 23
+Commit ec874096e164 by Emise <emise@localhost> on 2026-11-20 (EE 0).
+
+Subject: Daily Better: remove dead duplicate favicon link from all 18 game pages - each page already links the real favicon.svg, the extra <link rel="icon" href="data:,"> was dead weight from the 2026-11-16 audit; no script bytes changed, no game logic or copy touched (roads-1.14)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 390.
+
+commit ec874096e164f44bd9e7ff9931eef22d13e09cf3
+parent 972e7c0ed8252d81ed7539b5e8c2488a45981017
+author Emise <emise@localhost>
+date 1795178796 2026-11-20
+stat Markdown files 5 total 286 blank 54 comment 0 code 232
+stat Shell files 2 total 224 blank 22 comment 44 code 158
+author~ Emise <emise@localhost> commits 24
+Commit 3fa420930f36 by Emise <emise@localhost> on 2026-11-21 (EE 0).
+
+Subject: Daily Better: add meta description to the 13 game pages that lacked one - hub card wording for each game, same style as the 5 pages that already had one; no script bytes changed, no game logic or visible copy touched (roads-1.15)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 390.
+
+commit 3fa420930f36bbf58d1486e54af2ad6c958f67d3
+parent ec874096e164f44bd9e7ff9931eef22d13e09cf3
+author Emise <emise@localhost>
+date 1795265198 2026-11-21
+stat Markdown files 5 total 286 blank 54 comment 0 code 232
+stat Shell files 2 total 224 blank 22 comment 44 code 158
+author~ Emise <emise@localhost> commits 25
+Commit e50030979332 by Emise <emise@localhost> on 2026-11-22 (EE 59).
+
+Subject: Daily Better: add Open Graph + Twitter card tags to all 18 game pages - each mirrors its existing title and meta description, og:image is the existing favicon.svg; no script bytes changed, no game logic or visible copy touched (roads-1.16)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 390.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit e50030979332d34a882470d5143f7536220e44e9
+parent 3fa420930f36bbf58d1486e54af2ad6c958f67d3
+author Emise <emise@localhost>
+date 1795351580 2026-11-22
+stat Markdown files 5 total 286 blank 54 comment 0 code 232
+stat Shell files 2 total 224 blank 22 comment 44 code 158
+author~ Emise <emise@localhost> commits 26
