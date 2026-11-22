@@ -1,0 +1,83 @@
+# mirrorborn — reference as of commit be6bd5ebf3d3
+
+Commit be6bd5ebf3d36211a8259ec9bcbf180122a92abb. 33 commits folded. Every fact here was folded from the chain's per-commit deltas.
+
+## Provenance
+
+This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/mirrorborn/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
+
+## Dependencies
+
+No dependencies recorded at this point.
+
+## Authors
+
+The author of record is **Will Bickford** — 33 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Will Bickford (his own identities) — 24 commits
+- Verse — 6 commits
+- Cyon — 1 commit
+- Lux — 1 commit
+- Theia — 1 commit
+
+## Complexity
+
+- Markdown: 108 files, 6949 lines total, 1549 blank, 0 comment, 5400 code
+- Shell: 2 files, 1420 lines total, 138 blank, 35 comment, 1247 code
+
+Declared RFCs at this point: none declared.
+
+## Public methods and commands
+
+- function `append_holiday_taglines` (install.sh) — Function append_holiday_taglines takes no inputs beyond the value it is called on.
+- function `check_existing_openclaw` (install.sh) — Function check_existing_openclaw takes no inputs beyond the value it is called on.
+- function `check_git` (install.sh) — Function check_git takes no inputs beyond the value it is called on.
+- function `check_node` (install.sh) — Function check_node takes no inputs beyond the value it is called on.
+- function `cleanup_legacy_submodules` (install.sh) — Function cleanup_legacy_submodules takes no inputs beyond the value it is called on.
+- function `cleanup_npm_openclaw_paths` (install.sh) — Function cleanup_npm_openclaw_paths takes no inputs beyond the value it is called on.
+- function `cleanup_openclaw_bin_conflict` (install.sh) — Function cleanup_openclaw_bin_conflict takes no inputs beyond the value it is called on.
+- function `cleanup_tmpfiles` (install.sh) — Function cleanup_tmpfiles takes no inputs beyond the value it is called on.
+- function `configure_verbose` (install.sh) — Function configure_verbose takes no inputs beyond the value it is called on.
+- function `detect_downloader` (install.sh) — Function detect_downloader takes no inputs beyond the value it is called on.
+- function `detect_openclaw_checkout` (install.sh) — Function detect_openclaw_checkout takes no inputs beyond the value it is called on.
+- function `download_file` (install.sh) — Function download_file takes no inputs beyond the value it is called on.
+- function `ensure_npm_global_bin_on_path` (install.sh) — Function ensure_npm_global_bin_on_path takes no inputs beyond the value it is called on.
+- function `ensure_openclaw_bin_link` (install.sh) — Function ensure_openclaw_bin_link takes no inputs beyond the value it is called on.
+- function `ensure_pnpm` (install.sh) — Function ensure_pnpm takes no inputs beyond the value it is called on.
+- function `ensure_user_local_bin_on_path` (install.sh) — Function ensure_user_local_bin_on_path takes no inputs beyond the value it is called on.
+- function `extract_openclaw_conflict_path` (install.sh) — Function extract_openclaw_conflict_path takes no inputs beyond the value it is called on.
+- function `fix_npm_permissions` (install.sh) — Function fix_npm_permissions takes no inputs beyond the value it is called on.
+- function `install_git` (install.sh) — Function install_git takes no inputs beyond the value it is called on.
+- function `install_homebrew` (install.sh) — Function install_homebrew takes no inputs beyond the value it is called on.
+- function `install_node` (install.sh) — Function install_node takes no inputs beyond the value it is called on.
+- function `install_openclaw` (install.sh) — Function install_openclaw takes no inputs beyond the value it is called on.
+- function `install_openclaw_from_git` (install.sh) — Function install_openclaw_from_git takes no inputs beyond the value it is called on.
+- function `install_openclaw_npm` (install.sh) — Function install_openclaw_npm takes no inputs beyond the value it is called on.
+- function `is_gateway_daemon_loaded` (install.sh) — Function is_gateway_daemon_loaded takes no inputs beyond the value it is called on.
+- function `is_promptable` (install.sh) — Function is_promptable takes no inputs beyond the value it is called on.
+- function `is_root` (install.sh) — Function is_root takes no inputs beyond the value it is called on.
+- function `main` (install.sh) — Function main takes no inputs beyond the value it is called on.
+- function `map_legacy_env` (install.sh) — Function map_legacy_env takes no inputs beyond the value it is called on.
+- function `maybe_nodenv_rehash` (install.sh) — Function maybe_nodenv_rehash takes no inputs beyond the value it is called on.
+- function `maybe_open_dashboard` (install.sh) — Function maybe_open_dashboard takes no inputs beyond the value it is called on.
+- function `maybe_sudo` (install.sh) — Function maybe_sudo takes no inputs beyond the value it is called on.
+- function `mktempfile` (install.sh) — Function mktempfile takes no inputs beyond the value it is called on.
+- function `npm_global_bin_dir` (install.sh) — Function npm_global_bin_dir takes no inputs beyond the value it is called on.
+- function `parse_args` (install.sh) — Function parse_args takes no inputs beyond the value it is called on.
+- function `path_has_dir` (install.sh) — Function path_has_dir takes no inputs beyond the value it is called on.
+- function `pick_tagline` (install.sh) — Function pick_tagline takes no inputs beyond the value it is called on.
+- function `print_usage` (install.sh) — Function print_usage takes no inputs beyond the value it is called on.
+- function `prompt_choice` (install.sh) — Function prompt_choice takes no inputs beyond the value it is called on.
+- function `refresh_shell_command_cache` (install.sh) — Function refresh_shell_command_cache takes no inputs beyond the value it is called on.
+- function `require_sudo` (install.sh) — Function require_sudo takes no inputs beyond the value it is called on.
+- function `resolve_beta_version` (install.sh) — Function resolve_beta_version takes no inputs beyond the value it is called on.
+- function `resolve_openclaw_bin` (install.sh) — Function resolve_openclaw_bin takes no inputs beyond the value it is called on.
+- function `resolve_openclaw_version` (install.sh) — Function resolve_openclaw_version takes no inputs beyond the value it is called on.
+- function `resolve_workspace_dir` (install.sh) — Function resolve_workspace_dir takes no inputs beyond the value it is called on.
+- function `run_bootstrap_onboarding_if_needed` (install.sh) — Function run_bootstrap_onboarding_if_needed takes no inputs beyond the value it is called on.
+- function `run_doctor` (install.sh) — Function run_doctor takes no inputs beyond the value it is called on.
+- function `run_remote_bash` (install.sh) — Function run_remote_bash takes no inputs beyond the value it is called on.
+- function `warn_openclaw_not_found` (install.sh) — Function warn_openclaw_not_found takes no inputs beyond the value it is called on.
+- function `warn_shell_path_missing_dir` (install.sh) — Function warn_shell_path_missing_dir takes no inputs beyond the value it is called on.
