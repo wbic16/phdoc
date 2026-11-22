@@ -1,0 +1,996 @@
+Commit ea832ecbd116 by Will Bickford <wbic16@gmail.com> on 2025-07-27 (EE 0).
+
+Subject: Empty python project shell with unit tests
+
+Public items: 2 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 27.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit ea832ecbd11621a678e509e414d5c73cd41813f2
+parent none
+author Will Bickford <wbic16@gmail.com>
+date 1753640305 2025-07-27
+item+ function libphext/cli.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function tests/test_cli.py :: test_main_output :: def test_main_output(capfd) :: Function test_main_output takes capfd. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 3 total 9 blank 1 comment 0 code 8
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author+ Will Bickford <wbic16@gmail.com>
+Commit 5a6e007abc45 by Will Bickford <wbic16@gmail.com> on 2025-07-27 (EE 0).
+
+Subject: Basic coordinate parsing
+
+Public items: 22 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 168.
+
+commit 5a6e007abc4516a8e6f6b541c64f782a4861f4eb
+parent ea832ecbd11621a678e509e414d5c73cd41813f2
+author Will Bickford <wbic16@gmail.com>
+date 1753643048 2025-07-27
+item+ function libphext/coordinate.py :: Coordinate.__init__ :: def __init__(self, lb, sf, sr, cn, vm, bk, ch, sn, sc) :: Function Coordinate.__init__ takes self, lb, sf, sr, cn, vm, bk, ch, sn, sc. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function libphext/coordinate.py :: Coordinate.__str__ :: def __str__(self) -> str :: Function Coordinate.__str__ takes no inputs beyond the value it is called on. It gives back str. :: inferred :: api
+item+ function libphext/coordinate.py :: Coordinate.from_string :: def from_string(ignored, coord_str: str) :: Function Coordinate.from_string takes ignored, coord_str: str. Its return type is unannotated; the code shows it returning Coordinate(nums[0], nums[1], nums[2], nums[3], n. :: inferred :: api
+item+ function tests/test_coordinate.py :: test_independent_coordinates :: def test_independent_coordinates() :: Function test_independent_coordinates takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_internal_whitespace_support :: def test_internal_whitespace_support() :: Function test_internal_whitespace_support takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_large_coordinates :: def test_large_coordinates() :: Function test_large_coordinates takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_malformed_coordinates :: def test_malformed_coordinates() :: Function test_malformed_coordinates takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_negative_coordinates :: def test_negative_coordinates() :: Function test_negative_coordinates takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_no_input :: def test_no_input() :: Function test_no_input takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_null_book :: def test_null_book() :: Function test_null_book takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_null_chapter :: def test_null_chapter() :: Function test_null_chapter takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_null_collection :: def test_null_collection() :: Function test_null_collection takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_null_coordinates :: def test_null_coordinates() :: Function test_null_coordinates takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_null_library :: def test_null_library() :: Function test_null_library takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_null_scroll :: def test_null_scroll() :: Function test_null_scroll takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_null_section :: def test_null_section() :: Function test_null_section takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_null_series :: def test_null_series() :: Function test_null_series takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_null_shelf :: def test_null_shelf() :: Function test_null_shelf takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_null_volume :: def test_null_volume() :: Function test_null_volume takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_too_large_coordinates :: def test_too_large_coordinates() :: Function test_too_large_coordinates takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_valid_home_coordinate :: def test_valid_home_coordinate() :: Function test_valid_home_coordinate takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_whitespace_support :: def test_whitespace_support() :: Function test_whitespace_support takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 5 total 182 blank 31 comment 2 code 149
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 2
+Commit 8f08f9f40d25 by Will Bickford <wbic16@gmail.com> on 2025-07-27 (EE 0).
+
+Subject: Documented test coverage correspondence for coordinates
+
+Public items: 2 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 175.
+
+commit 8f08f9f40d25fec82493de45410fe2d2a3064be8
+parent 5a6e007abc4516a8e6f6b541c64f782a4861f4eb
+author Will Bickford <wbic16@gmail.com>
+date 1753643753 2025-07-27
+item+ function libphext/coordinate.py :: Coordinate.urlencoded :: def urlencoded(self) -> str :: Function Coordinate.urlencoded takes no inputs beyond the value it is called on. It gives back str. :: inferred :: api
+item+ function tests/test_coordinate.py :: test_to_urlencoded :: def test_to_urlencoded() :: Function test_to_urlencoded takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 5 total 198 blank 34 comment 8 code 156
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 3
+Commit 28371a6235e3 by Will Bickford <wbic16@gmail.com> on 2025-07-27 (EE 0).
+
+Subject: Added a PositionedScroll class
+
+Public items: 3 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 211.
+
+commit 28371a6235e336c524d560024b9417d95083d55c
+parent 8f08f9f40d25fec82493de45410fe2d2a3064be8
+author Will Bickford <wbic16@gmail.com>
+date 1753646020 2025-07-27
+item+ function libphext/positionedScroll.py :: PositionedScroll.__init__ :: def __init__(self, coord, text) :: Function PositionedScroll.__init__ takes self, coord, text. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function tests/test_positionedScroll.py :: test_positioned_scrolls :: def test_positioned_scrolls() :: Function test_positioned_scrolls takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_positionedScroll.py :: test_scroll_interface :: def test_scroll_interface() :: Function test_scroll_interface takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 7 total 243 blank 39 comment 12 code 192
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 4
+Commit 9d8efb0dd7e8 by Will Bickford <wbic16@gmail.com> on 2025-07-27 (EE 0).
+
+Subject: Added break methods
+
+Public items: 23 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 331.
+
+commit 9d8efb0dd7e84115b221025049dec4298d1279ca
+parent 28371a6235e336c524d560024b9417d95083d55c
+author Will Bickford <wbic16@gmail.com>
+date 1753654625 2025-07-27
+item+ function libphext/coordinate.py :: Coordinate.__eq__ :: def __eq__(self, other) :: Function Coordinate.__eq__ takes self, other. Its return type is unannotated; the code shows it returning isinstance(self, Coordinate) and isinstance(othe. :: inferred :: api
+item+ function libphext/coordinate.py :: Coordinate.__hash__ :: def __hash__(self) :: Function Coordinate.__hash__ takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning hash((. :: inferred :: api
+item+ function libphext/coordinate.py :: Coordinate.bookBreak :: def bookBreak(self) :: Function Coordinate.bookBreak takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function libphext/coordinate.py :: Coordinate.chapterBreak :: def chapterBreak(self) :: Function Coordinate.chapterBreak takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function libphext/coordinate.py :: Coordinate.collectionBreak :: def collectionBreak(self) :: Function Coordinate.collectionBreak takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function libphext/coordinate.py :: Coordinate.libraryBreak :: def libraryBreak(self) :: Function Coordinate.libraryBreak takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function libphext/coordinate.py :: Coordinate.scrollBreak :: def scrollBreak(self) :: Function Coordinate.scrollBreak takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function libphext/coordinate.py :: Coordinate.sectionBreak :: def sectionBreak(self) :: Function Coordinate.sectionBreak takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function libphext/coordinate.py :: Coordinate.seriesBreak :: def seriesBreak(self) :: Function Coordinate.seriesBreak takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function libphext/coordinate.py :: Coordinate.shelfBreak :: def shelfBreak(self) :: Function Coordinate.shelfBreak takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function libphext/coordinate.py :: Coordinate.volumeBreak :: def volumeBreak(self) :: Function Coordinate.volumeBreak takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function libphext/phext.py :: Phext.__init__ :: def __init__(self) :: Function Phext.__init__ takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function libphext/phext.py :: Phext.fetch :: def fetch(self, buffer, coord) -> dict[Coordinate, str] :: Function Phext.fetch takes self, buffer, coord. It gives back dict[Coordinate, str]. :: inferred :: api
+item+ function tests/test_coordinate.py :: test_book_break :: def test_book_break() :: Function test_book_break takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_chapter_break :: def test_chapter_break() :: Function test_chapter_break takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_collection_break :: def test_collection_break() :: Function test_collection_break takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_library_break :: def test_library_break() :: Function test_library_break takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_scroll_break :: def test_scroll_break() :: Function test_scroll_break takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_section_break :: def test_section_break() :: Function test_section_break takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_series_break :: def test_series_break() :: Function test_series_break takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_shelf_break :: def test_shelf_break() :: Function test_shelf_break takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_volume_break :: def test_volume_break() :: Function test_volume_break takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_positionedScroll.py :: test_realistic_parse :: def test_realistic_parse() :: Function test_realistic_parse takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 8 total 388 blank 63 comment 13 code 312
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 5
+Commit b292b1530f06 by Will Bickford <wbic16@gmail.com> on 2025-07-28 (EE 0).
+
+Subject: Added basic phokenization
+
+Public items: 4 added, 1 removed, 0 changed. Dependencies did not change. Code lines after this commit: 415.
+
+commit b292b1530f06e066612f83455665636d5b26ba94
+parent 9d8efb0dd7e84115b221025049dec4298d1279ca
+author Will Bickford <wbic16@gmail.com>
+date 1753674564 2025-07-28
+item+ function libphext/coordinate.py :: Coordinate.copy_coordinate :: def copy_coordinate(self, other) :: Function Coordinate.copy_coordinate takes self, other. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function libphext/phext.py :: Phext.defaultCoordinate :: def defaultCoordinate(self) -> Coordinate :: Function Phext.defaultCoordinate takes no inputs beyond the value it is called on. It gives back Coordinate. :: inferred :: api
+item+ function libphext/phext.py :: Phext.phokenize :: def phokenize(self, buffer) -> List[PositionedScroll] :: Function Phext.phokenize takes self, buffer. It gives back List[PositionedScroll]. :: inferred :: api
+item+ function tests/test_positionedScroll.py :: test_phokenize :: def test_phokenize() :: Function test_phokenize takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item- function tests/test_positionedScroll.py :: test_realistic_parse
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 8 total 485 blank 74 comment 15 code 396
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 6
+Commit a3d92be18ea1 by Will Bickford <wbic16@gmail.com> on 2025-07-28 (EE 0).
+
+Subject: Implemented fetch
+
+Public items: 1 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 500.
+
+commit a3d92be18ea1ccca19c57292888f6e1458dc0f8b
+parent b292b1530f06e066612f83455665636d5b26ba94
+author Will Bickford <wbic16@gmail.com>
+date 1753675910 2025-07-28
+item+ function tests/test_positionedScroll.py :: test_dead_reckoning :: def test_dead_reckoning() :: Function test_dead_reckoning takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 8 total 574 blank 76 comment 17 code 481
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 7
+Commit 8d5430169112 by Will Bickford <wbic16@gmail.com> on 2025-07-29 (EE 0).
+
+Subject: Working on the port
+
+Public items: 5 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 613.
+
+commit 8d54301691123e83ac1869a5d1c9e5d36d393b2f
+parent a3d92be18ea1ccca19c57292888f6e1458dc0f8b
+author Will Bickford <wbic16@gmail.com>
+date 1753756224 2025-07-29
+item+ function libphext/phext.py :: Phext.insert :: def insert(self, buffer, coord, scroll) :: Function Phext.insert takes self, buffer, coord, scroll. Its return type is unannotated; the code shows it returning result. :: inferred :: api
+item+ function tests/test_phext.py :: test_coordinate_based_insert :: def test_coordinate_based_insert() :: Function test_coordinate_based_insert takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_dead_reckoning :: def test_dead_reckoning() :: Function test_dead_reckoning takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_line_break :: def test_line_break() :: Function test_line_break takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_more_cowbell :: def test_more_cowbell() :: Function test_more_cowbell takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 9 total 696 blank 84 comment 18 code 594
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 8
+Commit ab06c17173f0 by Will Bickford <wbic16@gmail.com> on 2025-07-30 (EE 0).
+
+Subject: Added Insert, dephokenize, and append_scroll
+
+Public items: 4 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 693.
+
+commit ab06c17173f036e00bba9ba7f4bba87238934f73
+parent 8d54301691123e83ac1869a5d1c9e5d36d393b2f
+author Will Bickford <wbic16@gmail.com>
+date 1753837780 2025-07-30
+item+ function libphext/coordinate.py :: Coordinate.__lt__ :: def __lt__(self, other) :: Function Coordinate.__lt__ takes self, other. Its return type is unannotated; the code shows it returning NotImplemented; self.as_tuple() < other.as_tuple(). :: inferred :: api
+item+ function libphext/coordinate.py :: Coordinate.as_tuple :: def as_tuple(self) -> tuple :: Function Coordinate.as_tuple takes no inputs beyond the value it is called on. It gives back tuple. :: inferred :: api
+item+ function libphext/phext.py :: Phext.append_scroll :: def append_scroll(self, entry: PositionedScroll, location: Coordinate) -> PositionedScroll :: Function Phext.append_scroll takes self, entry: PositionedScroll, location: Coordinate. It gives back PositionedScroll. :: inferred :: api
+item+ function libphext/phext.py :: Phext.dephokenize :: def dephokenize(self, phokens: list[PositionedScroll]) -> str :: Function Phext.dephokenize takes self, phokens: list[PositionedScroll]. It gives back str. :: inferred :: api
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 9 total 781 blank 90 comment 17 code 674
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 9
+Commit e41c3e706a54 by Will Bickford <wbic16@gmail.com> on 2025-07-30 (EE 0).
+
+Subject: Stubbed out the remaining test methods
+
+Public items: 27 added, 1 removed, 0 changed. Dependencies did not change. Code lines after this commit: 760.
+
+commit e41c3e706a54fdb4ea06b8b1159b71650f37c9ff
+parent ab06c17173f036e00bba9ba7f4bba87238934f73
+author Will Bickford <wbic16@gmail.com>
+date 1753843246 2025-07-30
+item+ function libphext/phext.py :: Phext.isPhextBreak :: def isPhextBreak(self, byte) :: Function Phext.isPhextBreak takes self, byte. Its return type is unannotated; the code shows it returning byte == self.LINE_BREAK or \. :: inferred :: api
+item+ function libphext/phext.py :: Phext.normalize :: def normalize(self, buffer) -> str :: Function Phext.normalize takes self, buffer. It gives back str. :: inferred :: api
+item+ function tests/test_phext.py :: test_contract :: def test_contract() :: Function test_contract takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_coordinate_based_remove :: def test_coordinate_based_remove() :: Function test_coordinate_based_remove takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_coordinate_based_replace :: def test_coordinate_based_replace() :: Function test_coordinate_based_replace takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_expand :: def test_expand() :: Function test_expand takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_fs_read_write :: def test_fs_read_write() :: Function test_fs_read_write takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_hash_support :: def test_hash_support() :: Function test_hash_support takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_insert_performance_2k_scrolls :: def test_insert_performance_2k_scrolls() :: Function test_insert_performance_2k_scrolls takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_insert_performance_medium_scrolls :: def test_insert_performance_medium_scrolls() :: Function test_insert_performance_medium_scrolls takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_larger_coordinates :: def test_larger_coordinates() :: Function test_larger_coordinates takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_last_empty_scroll :: def test_last_empty_scroll() :: Function test_last_empty_scroll takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_macrophext :: def test_macrophext() :: Function test_macrophext takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_merge :: def test_merge() :: Function test_merge takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_navmap :: def test_navmap() :: Function test_navmap takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_next_scroll :: def test_next_scroll() :: Function test_next_scroll takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_normalize :: def test_normalize() :: Function test_normalize takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_phext_breaks :: def test_phext_breaks() :: Function test_phext_breaks takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_phext_index :: def test_phext_index() :: Function test_phext_index takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_phext_soundex_v1 :: def test_phext_soundex_v1() :: Function test_phext_soundex_v1 takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_range_based_replace :: def test_range_based_replace() :: Function test_range_based_replace takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_replace_create :: def test_replace_create() :: Function test_replace_create takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_scroll_manifest :: def test_scroll_manifest() :: Function test_scroll_manifest takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_subspace_filter :: def test_subspace_filter() :: Function test_subspace_filter takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_subtract :: def test_subtract() :: Function test_subtract takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_summary :: def test_summary() :: Function test_summary takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phext.py :: test_textmap :: def test_textmap() :: Function test_textmap takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item- function tests/test_positionedScroll.py :: test_dead_reckoning
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 9 total 919 blank 136 comment 42 code 741
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 10
+Commit baedcfeed2ee by Will Bickford <wbic16@gmail.com> on 2025-07-30 (EE 0).
+
+Subject: Verified coordinate based insert
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 759.
+
+commit baedcfeed2ee62857ccfb57309ad2c6c9967caac
+parent e41c3e706a54fdb4ea06b8b1159b71650f37c9ff
+author Will Bickford <wbic16@gmail.com>
+date 1753850440 2025-07-30
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 9 total 917 blank 136 comment 41 code 740
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 11
+Commit 08dd1e2c7759 by Will Bickford <wbic16@gmail.com> on 2025-07-30 (EE 0).
+
+Subject: Ported more tests
+
+Public items: 2 added, 0 removed, 5 changed. Dependencies did not change. Code lines after this commit: 825.
+
+commit 08dd1e2c7759cb80cec408945de4c03c50f21c2d
+parent baedcfeed2ee62857ccfb57309ad2c6c9967caac
+author Will Bickford <wbic16@gmail.com>
+date 1753852077 2025-07-30
+item~ function libphext/phext.py :: Phext.fetch :: def fetch(self, buffer:str, coord:Coordinate) -> dict[Coordinate, str] :: Function Phext.fetch takes self, buffer:str, coord:Coordinate. It gives back dict[Coordinate, str]. :: inferred :: api
+item~ function libphext/phext.py :: Phext.insert :: def insert(self, buffer:str, coord:Coordinate, scroll:str) :: Function Phext.insert takes self, buffer:str, coord:Coordinate, scroll:str. Its return type is unannotated; the code shows it returning self.update(buffer, coord, scroll, False). :: inferred :: api
+item~ function libphext/phext.py :: Phext.isPhextBreak :: def isPhextBreak(self, byte:str) :: Function Phext.isPhextBreak takes self, byte:str. Its return type is unannotated; the code shows it returning byte == self.LINE_BREAK or \. :: inferred :: api
+item~ function libphext/phext.py :: Phext.normalize :: def normalize(self, buffer:str) -> str :: Function Phext.normalize takes self, buffer:str. It gives back str. :: inferred :: api
+item~ function libphext/phext.py :: Phext.phokenize :: def phokenize(self, buffer:str) -> List[PositionedScroll] :: Function Phext.phokenize takes self, buffer:str. It gives back List[PositionedScroll]. :: inferred :: api
+item+ function libphext/phext.py :: Phext.replace :: def replace(self, buffer, coord, scroll) :: Function Phext.replace takes self, buffer, coord, scroll. Its return type is unannotated; the code shows it returning self.update(buffer, coord, scroll, True). :: inferred :: api
+item+ function libphext/phext.py :: Phext.update :: def update(self, buffer:str, coord:Coordinate, scroll:str, overwrite:bool) :: Function Phext.update takes self, buffer:str, coord:Coordinate, scroll:str, overwrite:bool. Its return type is unannotated; the code shows it returning serialized. :: inferred :: api
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 9 total 1042 blank 155 comment 81 code 806
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 12
+Commit b07debde0234 by Will Bickford <wbic16@gmail.com> on 2025-07-30 (EE 0).
+
+Subject: Added remove
+
+Public items: 1 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 858.
+
+commit b07debde023496b7b2667d289344f49ef1e9b0fc
+parent 08dd1e2c7759cb80cec408945de4c03c50f21c2d
+author Will Bickford <wbic16@gmail.com>
+date 1753852922 2025-07-30
+item+ function libphext/phext.py :: Phext.remove :: def remove(self, buffer, coord) :: Function Phext.remove takes self, buffer, coord. Its return type is unannotated; the code shows it returning self.normalize(intermediate). :: inferred :: api
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 9 total 1096 blank 166 comment 91 code 839
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 13
+Commit f726d41007b7 by Will Bickford <wbic16@gmail.com> on 2025-07-30 (EE 0).
+
+Subject: More logical range-based replace...which differs from libphext-rs, which took a more subspace-oriented approach - probably need to offer both modes - nothing is using these methods yet, obviously
+
+Public items: 1 added, 0 removed, 4 changed. Dependencies did not change. Code lines after this commit: 892.
+
+commit f726d41007b7e9625972ddb6ba99584d78eeb339
+parent b07debde023496b7b2667d289344f49ef1e9b0fc
+author Will Bickford <wbic16@gmail.com>
+date 1753854778 2025-07-30
+item~ function libphext/phext.py :: Phext.insert :: def insert(self, buffer:str, coord:Coordinate, scroll:str) -> str :: Function Phext.insert takes self, buffer:str, coord:Coordinate, scroll:str. It gives back str. :: inferred :: api
+item+ function libphext/phext.py :: Phext.range_replace :: def range_replace(self, buffer, range:Range, text) -> str :: Function Phext.range_replace takes self, buffer, range:Range, text. It gives back str. :: inferred :: api
+item~ function libphext/phext.py :: Phext.remove :: def remove(self, buffer, coord) -> str :: Function Phext.remove takes self, buffer, coord. It gives back str. :: inferred :: api
+item~ function libphext/phext.py :: Phext.replace :: def replace(self, buffer, coord, scroll) -> str :: Function Phext.replace takes self, buffer, coord, scroll. It gives back str. :: inferred :: api
+item~ function libphext/phext.py :: Phext.update :: def update(self, buffer:str, coord:Coordinate, scroll:str, overwrite:bool) -> str :: Function Phext.update takes self, buffer:str, coord:Coordinate, scroll:str, overwrite:bool. It gives back str. :: inferred :: api
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1135 blank 171 comment 91 code 873
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 14
+Commit ecf7cd6c21cc by Will Bickford <wbic16@gmail.com> on 2025-07-30 (EE 0).
+
+Subject: Another delta from libphext-rs - next_scroll opts for working from the positioned scroll stack again
+
+Public items: 1 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 911.
+
+commit ecf7cd6c21cc3437b4959cc449d5d8aa0cbd7e9e
+parent f726d41007b7e9625972ddb6ba99584d78eeb339
+author Will Bickford <wbic16@gmail.com>
+date 1753855767 2025-07-30
+item+ function libphext/phext.py :: Phext.next_scroll :: def next_scroll(self, buffer, coord:Coordinate) -> List[PositionedScroll] :: Function Phext.next_scroll takes self, buffer, coord:Coordinate. It gives back List[PositionedScroll]. :: inferred :: api
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1156 blank 172 comment 92 code 892
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 15
+Commit a270eddb2410 by Will Bickford <wbic16@gmail.com> on 2025-07-31 (EE 0).
+
+Subject: Added SubspaceBeacon
+
+Public items: 1 added, 0 removed, 4 changed. Dependencies did not change. Code lines after this commit: 978.
+
+commit a270eddb2410616da1979a37d08a4e860f39ba8e
+parent ecf7cd6c21cc3437b4959cc449d5d8aa0cbd7e9e
+author Will Bickford <wbic16@gmail.com>
+date 1753934550 2025-07-31
+item+ function libphext/phext.py :: Phext.get_subspace_coordinates :: def get_subspace_coordinates(self, buffer:str, target:Coordinate) :: Function Phext.get_subspace_coordinates takes self, buffer:str, target:Coordinate. Its return type is unannotated; the code shows it returning result. :: inferred :: api
+item~ function libphext/phext.py :: Phext.next_scroll :: def next_scroll(self, buffer:str, coord:Coordinate) -> List[PositionedScroll] :: Function Phext.next_scroll takes self, buffer:str, coord:Coordinate. It gives back List[PositionedScroll]. :: inferred :: api
+item~ function libphext/phext.py :: Phext.range_replace :: def range_replace(self, buffer:str, range:Range, text:str) -> str :: Function Phext.range_replace takes self, buffer:str, range:Range, text:str. It gives back str. :: inferred :: api
+item~ function libphext/phext.py :: Phext.remove :: def remove(self, buffer:str, coord:Coordinate) -> str :: Function Phext.remove takes self, buffer:str, coord:Coordinate. It gives back str. :: inferred :: api
+item~ function libphext/phext.py :: Phext.replace :: def replace(self, buffer:str, coord:Coordinate, scroll:str) -> str :: Function Phext.replace takes self, buffer:str, coord:Coordinate, scroll:str. It gives back str. :: inferred :: api
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1235 blank 183 comment 93 code 959
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 16
+Commit 3510cedd2209 by Will Bickford <wbic16@gmail.com> on 2025-07-31 (EE 0).
+
+Subject: Added merge
+
+Public items: 1 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1040.
+
+commit 3510cedd220915b95ed824b648698051939872e2
+parent a270eddb2410616da1979a37d08a4e860f39ba8e
+author Will Bickford <wbic16@gmail.com>
+date 1753936589 2025-07-31
+item+ function libphext/phext.py :: Phext.merge :: def merge(self, left: str, right:str) -> str :: Function Phext.merge takes self, left: str, right:str. It gives back str. :: inferred :: api
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1309 blank 195 comment 93 code 1021
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 17
+Commit d587bcde5974 by Will Bickford <wbic16@gmail.com> on 2025-07-31 (EE 0).
+
+Subject: Added substract
+
+Public items: 1 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1064.
+
+commit d587bcde59749c845b7246332e25ae29f674f484
+parent 3510cedd220915b95ed824b648698051939872e2
+author Will Bickford <wbic16@gmail.com>
+date 1753937663 2025-07-31
+item+ function libphext/phext.py :: Phext.subtract :: def subtract(self, left:str, right:str) -> str :: Function Phext.subtract takes self, left:str, right:str. It gives back str. :: inferred :: api
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1334 blank 196 comment 93 code 1045
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 18
+Commit a8256b6d2851 by Will Bickford <wbic16@gmail.com> on 2025-07-31 (EE 0).
+
+Subject: Verified normalize
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1067.
+
+commit a8256b6d2851901fac59be47b2fff96a740e4821
+parent d587bcde59749c845b7246332e25ae29f674f484
+author Will Bickford <wbic16@gmail.com>
+date 1753937744 2025-07-31
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1337 blank 196 comment 93 code 1048
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 19
+Commit 33f03b34e822 by Will Bickford <wbic16@gmail.com> on 2025-07-31 (EE 0).
+
+Subject: Added expand
+
+Public items: 1 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1112.
+
+commit 33f03b34e8224d6b913f4d681177193972fefdcf
+parent a8256b6d2851901fac59be47b2fff96a740e4821
+author Will Bickford <wbic16@gmail.com>
+date 1753938155 2025-07-31
+item+ function libphext/phext.py :: Phext.expand :: def expand(self, buffer:str) -> str :: Function Phext.expand takes self, buffer:str. It gives back str. :: inferred :: api
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1392 blank 206 comment 93 code 1093
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 20
+Commit 44a9df8cd1e2 by Will Bickford <wbic16@gmail.com> on 2025-07-31 (EE 0).
+
+Subject: Added contract
+
+Public items: 1 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1141.
+
+commit 44a9df8cd1e228c2539a8085e03f536a2066c507
+parent 33f03b34e8224d6b913f4d681177193972fefdcf
+author Will Bickford <wbic16@gmail.com>
+date 1753938378 2025-07-31
+item+ function libphext/phext.py :: Phext.contract :: def contract(self, buffer:str) -> str :: Function Phext.contract takes self, buffer:str. It gives back str. :: inferred :: api
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1423 blank 208 comment 93 code 1122
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 21
+Commit 4fa11e3cb31c by Will Bickford <wbic16@gmail.com> on 2025-07-31 (EE 0).
+
+Subject: Verified replace_create
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1155.
+
+commit 4fa11e3cb31cd4ca3e9a0240cec11afc574fad64
+parent 44a9df8cd1e228c2539a8085e03f536a2066c507
+author Will Bickford <wbic16@gmail.com>
+date 1753938903 2025-07-31
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1439 blank 210 comment 93 code 1136
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 22
+Commit 1c1232f05460 by Will Bickford <wbic16@gmail.com> on 2025-07-31 (EE 0).
+
+Subject: Added summary
+
+Public items: 1 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1174.
+
+commit 1c1232f05460b2f5185813277092ccaa32e1f06f
+parent 4fa11e3cb31cd4ca3e9a0240cec11afc574fad64
+author Will Bickford <wbic16@gmail.com>
+date 1753939223 2025-07-31
+item+ function libphext/phext.py :: Phext.create_summary :: def create_summary(self, buffer:str) -> str :: Function Phext.create_summary takes self, buffer:str. It gives back str. :: inferred :: api
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1460 blank 212 comment 93 code 1155
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 23
+Commit e764d5cbf268 by Will Bickford <wbic16@gmail.com> on 2025-07-31 (EE 0).
+
+Subject: Added navmap
+
+Public items: 1 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1190.
+
+commit e764d5cbf268b6bb0cbead6540dce0682062ba87
+parent 1c1232f05460b2f5185813277092ccaa32e1f06f
+author Will Bickford <wbic16@gmail.com>
+date 1753939666 2025-07-31
+item+ function libphext/phext.py :: Phext.navmap :: def navmap(self, urlbase:str, buffer:str) -> str :: Function Phext.navmap takes self, urlbase:str, buffer:str. It gives back str. :: inferred :: api
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1477 blank 213 comment 93 code 1171
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 24
+Commit 5064860dc2cc by Will Bickford <wbic16@gmail.com> on 2025-07-31 (EE 0).
+
+Subject: Added textmap
+
+Public items: 1 added, 0 removed, 1 changed. Dependencies did not change. Code lines after this commit: 1200.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 5064860dc2ccde212b6449e4f10879bea6313e35
+parent e764d5cbf268b6bb0cbead6540dce0682062ba87
+author Will Bickford <wbic16@gmail.com>
+date 1753939847 2025-07-31
+item~ function libphext/phext.py :: Phext.dephokenize :: def dephokenize(self, stack: list[PositionedScroll]) -> str :: Function Phext.dephokenize takes self, stack: list[PositionedScroll]. It gives back str. :: inferred :: api
+item+ function libphext/phext.py :: Phext.textmap :: def textmap(self, buffer:str) -> str :: Function Phext.textmap takes self, buffer:str. It gives back str. :: inferred :: api
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1488 blank 214 comment 93 code 1181
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 25
+Commit 987c96b00fe2 by Will Bickford <wbic16@gmail.com> on 2025-07-31 (EE 0).
+
+Subject: Added manifest support
+
+Public items: 2 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1247.
+
+commit 987c96b00fe268845438f78b67963711690a171a
+parent 5064860dc2ccde212b6449e4f10879bea6313e35
+author Will Bickford <wbic16@gmail.com>
+date 1753940493 2025-07-31
+item+ function libphext/phext.py :: Phext.checksum :: def checksum(self, buffer:str) -> str :: Function Phext.checksum takes self, buffer:str. It gives back str. :: inferred :: api
+item+ function libphext/phext.py :: Phext.manifest :: def manifest(self, buffer:str) -> str :: Function Phext.manifest takes self, buffer:str. It gives back str. :: inferred :: api
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1549 blank 228 comment 93 code 1228
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 26
+Commit f089664a9094 by Will Bickford <wbic16@gmail.com> on 2025-08-01 (EE 0).
+
+Subject: Added soundex_v1
+
+Public items: 2 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1277.
+
+commit f089664a90940b9c36e53e4cf1d762f24a212fb5
+parent 987c96b00fe268845438f78b67963711690a171a
+author Will Bickford <wbic16@gmail.com>
+date 1754017014 2025-08-01
+item+ function libphext/phext.py :: Phext.soundex_internal :: def soundex_internal(self, buffer:str) -> str :: Function Phext.soundex_internal takes self, buffer:str. It gives back str. :: inferred :: api
+item+ function libphext/phext.py :: Phext.soundex_v1 :: def soundex_v1(self, buffer:str) -> str :: Function Phext.soundex_v1 takes self, buffer:str. It gives back str. :: inferred :: api
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1584 blank 233 comment 93 code 1258
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 27
+Commit fe6d35632c82 by Will Bickford <wbic16@gmail.com> on 2025-08-01 (EE 0).
+
+Subject: Verified basic performance
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1325.
+
+commit fe6d35632c829e2f93f898de52d0520297e03479
+parent f089664a90940b9c36e53e4cf1d762f24a212fb5
+author Will Bickford <wbic16@gmail.com>
+date 1754018243 2025-08-01
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1640 blank 240 comment 94 code 1306
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 28
+Commit cbea6f2f8ee1 by Will Bickford <wbic16@gmail.com> on 2025-08-01 (EE 0).
+
+Subject: Investigated medium scroll perf - will re-visit after MCP integration
+
+Public items: 0 added, 1 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1323.
+
+commit cbea6f2f8ee1ed923a79af63606b62216012408d
+parent fe6d35632c829e2f93f898de52d0520297e03479
+author Will Bickford <wbic16@gmail.com>
+date 1754020359 2025-08-01
+item- function tests/test_phext.py :: test_insert_performance_medium_scrolls
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1708 blank 240 comment 164 code 1304
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 29
+Commit 59844cfbc6e3 by Will Bickford <wbic16@gmail.com> on 2025-08-02 (EE 0).
+
+Subject: Added hash/dict support
+
+Public items: 2 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1345.
+
+commit 59844cfbc6e308ba332d2a9dc063e4a722ace4b8
+parent cbea6f2f8ee1ed923a79af63606b62216012408d
+author Will Bickford <wbic16@gmail.com>
+date 1754103539 2025-08-02
+item+ function libphext/phext.py :: Phext.explode :: def explode(self, buffer:str) -> dict[Coordinate, str] :: Function Phext.explode takes self, buffer:str. It gives back dict[Coordinate, str]. :: inferred :: api
+item+ function libphext/phext.py :: Phext.implode :: def implode(self, hash: dict[Coordinate, str]) -> str :: Function Phext.implode takes self, hash: dict[Coordinate, str]. It gives back str. :: inferred :: api
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1734 blank 244 comment 164 code 1326
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 30
+Commit f0971aabd7b8 by Will Bickford <wbic16@gmail.com> on 2025-08-02 (EE 0).
+
+Subject: Verified large coordinates
+
+Public items: 0 added, 2 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1346.
+
+commit f0971aabd7b88368d4f90375d120840d09105cda
+parent 59844cfbc6e308ba332d2a9dc063e4a722ace4b8
+author Will Bickford <wbic16@gmail.com>
+date 1754103942 2025-08-02
+item- function tests/test_phext.py :: test_macrophext
+item- function tests/test_phext.py :: test_subspace_filter
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1780 blank 244 comment 209 code 1327
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 31
+Commit 67eecb21e1f2 by Will Bickford <wbic16@gmail.com> on 2025-08-02 (EE 0).
+
+Subject: Finished feature parity with libphext-rs
+
+Public items: 3 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1438.
+
+commit 67eecb21e1f224ab2b27971f2286768b052bf5dd
+parent f0971aabd7b88368d4f90375d120840d09105cda
+author Will Bickford <wbic16@gmail.com>
+date 1754105097 2025-08-02
+item+ function libphext/phext.py :: Phext.index :: def index(self, buffer:str) -> str :: Function Phext.index takes self, buffer:str. It gives back str. :: inferred :: api
+item+ function libphext/phext.py :: Phext.index_phokens :: def index_phokens(self, buffer:str) -> list[PositionedScroll] :: Function Phext.index_phokens takes self, buffer:str. It gives back list[PositionedScroll]. :: inferred :: api
+item+ function libphext/phext.py :: Phext.offset :: def offset(self, buffer:str, coord:Coordinate) -> int :: Function Phext.offset takes self, buffer:str, coord:Coordinate. It gives back int. :: inferred :: api
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1888 blank 260 comment 209 code 1419
+stat TOML files 1 total 19 blank 3 comment 0 code 16
+author~ Will Bickford <wbic16@gmail.com> commits 32
+Commit f5cc35ec080b by Will Bickford <wbic16@gmail.com> on 2025-08-02 (EE 0).
+
+Subject: Distribution of phext-0.3.0
+
+Public items: 51 added, 52 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1460.
+
+commit f5cc35ec080bc8dd611cbfab4c1e03109ffbb73e
+parent 67eecb21e1f224ab2b27971f2286768b052bf5dd
+author Will Bickford <wbic16@gmail.com>
+date 1754144403 2025-08-02
+item- function libphext/cli.py :: main
+item- function libphext/coordinate.py :: Coordinate.__eq__
+item- function libphext/coordinate.py :: Coordinate.__hash__
+item- function libphext/coordinate.py :: Coordinate.__init__
+item- function libphext/coordinate.py :: Coordinate.__lt__
+item- function libphext/coordinate.py :: Coordinate.__str__
+item- function libphext/coordinate.py :: Coordinate.as_tuple
+item- function libphext/coordinate.py :: Coordinate.bookBreak
+item- function libphext/coordinate.py :: Coordinate.chapterBreak
+item- function libphext/coordinate.py :: Coordinate.collectionBreak
+item- function libphext/coordinate.py :: Coordinate.copy_coordinate
+item- function libphext/coordinate.py :: Coordinate.from_string
+item- function libphext/coordinate.py :: Coordinate.libraryBreak
+item- function libphext/coordinate.py :: Coordinate.scrollBreak
+item- function libphext/coordinate.py :: Coordinate.sectionBreak
+item- function libphext/coordinate.py :: Coordinate.seriesBreak
+item- function libphext/coordinate.py :: Coordinate.shelfBreak
+item- function libphext/coordinate.py :: Coordinate.urlencoded
+item- function libphext/coordinate.py :: Coordinate.volumeBreak
+item+ function phext/coordinate.py :: Coordinate.__eq__ :: def __eq__(self, other) :: Function Coordinate.__eq__ takes self, other. Its return type is unannotated; the code shows it returning isinstance(self, Coordinate) and isinstance(othe. :: inferred :: api
+item+ function phext/coordinate.py :: Coordinate.__hash__ :: def __hash__(self) :: Function Coordinate.__hash__ takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning hash((. :: inferred :: api
+item+ function phext/coordinate.py :: Coordinate.__init__ :: def __init__(self, lb, sf, sr, cn, vm, bk, ch, sn, sc) :: Function Coordinate.__init__ takes self, lb, sf, sr, cn, vm, bk, ch, sn, sc. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function phext/coordinate.py :: Coordinate.__lt__ :: def __lt__(self, other) :: Function Coordinate.__lt__ takes self, other. Its return type is unannotated; the code shows it returning NotImplemented; self.as_tuple() < other.as_tuple(). :: inferred :: api
+item+ function phext/coordinate.py :: Coordinate.__str__ :: def __str__(self) -> str :: Function Coordinate.__str__ takes no inputs beyond the value it is called on. It gives back str. :: inferred :: api
+item+ function phext/coordinate.py :: Coordinate.as_tuple :: def as_tuple(self) -> tuple :: Function Coordinate.as_tuple takes no inputs beyond the value it is called on. It gives back tuple. :: inferred :: api
+item+ function phext/coordinate.py :: Coordinate.bookBreak :: def bookBreak(self) :: Function Coordinate.bookBreak takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function phext/coordinate.py :: Coordinate.chapterBreak :: def chapterBreak(self) :: Function Coordinate.chapterBreak takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function phext/coordinate.py :: Coordinate.collectionBreak :: def collectionBreak(self) :: Function Coordinate.collectionBreak takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function phext/coordinate.py :: Coordinate.copy_coordinate :: def copy_coordinate(self, other) :: Function Coordinate.copy_coordinate takes self, other. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function phext/coordinate.py :: Coordinate.from_string :: def from_string(ignored, coord_str: str) :: Function Coordinate.from_string takes ignored, coord_str: str. Its return type is unannotated; the code shows it returning Coordinate(nums[0], nums[1], nums[2], nums[3], n. :: inferred :: api
+item+ function phext/coordinate.py :: Coordinate.libraryBreak :: def libraryBreak(self) :: Function Coordinate.libraryBreak takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function phext/coordinate.py :: Coordinate.scrollBreak :: def scrollBreak(self) :: Function Coordinate.scrollBreak takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function phext/coordinate.py :: Coordinate.sectionBreak :: def sectionBreak(self) :: Function Coordinate.sectionBreak takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function phext/coordinate.py :: Coordinate.seriesBreak :: def seriesBreak(self) :: Function Coordinate.seriesBreak takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function phext/coordinate.py :: Coordinate.shelfBreak :: def shelfBreak(self) :: Function Coordinate.shelfBreak takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function phext/coordinate.py :: Coordinate.urlencoded :: def urlencoded(self) -> str :: Function Coordinate.urlencoded takes no inputs beyond the value it is called on. It gives back str. :: inferred :: api
+item+ function phext/coordinate.py :: Coordinate.volumeBreak :: def volumeBreak(self) :: Function Coordinate.volumeBreak takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item- function libphext/phext.py :: Phext.__init__
+item- function libphext/phext.py :: Phext.append_scroll
+item- function libphext/phext.py :: Phext.checksum
+item- function libphext/phext.py :: Phext.contract
+item- function libphext/phext.py :: Phext.create_summary
+item- function libphext/phext.py :: Phext.defaultCoordinate
+item- function libphext/phext.py :: Phext.dephokenize
+item- function libphext/phext.py :: Phext.expand
+item- function libphext/phext.py :: Phext.explode
+item- function libphext/phext.py :: Phext.fetch
+item- function libphext/phext.py :: Phext.get_subspace_coordinates
+item- function libphext/phext.py :: Phext.implode
+item- function libphext/phext.py :: Phext.index
+item- function libphext/phext.py :: Phext.index_phokens
+item- function libphext/phext.py :: Phext.insert
+item- function libphext/phext.py :: Phext.isPhextBreak
+item- function libphext/phext.py :: Phext.manifest
+item- function libphext/phext.py :: Phext.merge
+item- function libphext/phext.py :: Phext.navmap
+item- function libphext/phext.py :: Phext.next_scroll
+item- function libphext/phext.py :: Phext.normalize
+item- function libphext/phext.py :: Phext.offset
+item- function libphext/phext.py :: Phext.phokenize
+item- function libphext/phext.py :: Phext.range_replace
+item- function libphext/phext.py :: Phext.remove
+item- function libphext/phext.py :: Phext.replace
+item- function libphext/phext.py :: Phext.soundex_internal
+item- function libphext/phext.py :: Phext.soundex_v1
+item- function libphext/phext.py :: Phext.subtract
+item- function libphext/phext.py :: Phext.textmap
+item- function libphext/phext.py :: Phext.update
+item+ function phext/phext.py :: Phext.__init__ :: def __init__(self) :: Function Phext.__init__ takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function phext/phext.py :: Phext.append_scroll :: def append_scroll(self, entry: PositionedScroll, location: Coordinate) -> PositionedScroll :: Function Phext.append_scroll takes self, entry: PositionedScroll, location: Coordinate. It gives back PositionedScroll. :: inferred :: api
+item+ function phext/phext.py :: Phext.checksum :: def checksum(self, buffer:str) -> str :: Function Phext.checksum takes self, buffer:str. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.contract :: def contract(self, buffer:str) -> str :: Function Phext.contract takes self, buffer:str. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.create_summary :: def create_summary(self, buffer:str) -> str :: Function Phext.create_summary takes self, buffer:str. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.defaultCoordinate :: def defaultCoordinate(self) -> Coordinate :: Function Phext.defaultCoordinate takes no inputs beyond the value it is called on. It gives back Coordinate. :: inferred :: api
+item+ function phext/phext.py :: Phext.dephokenize :: def dephokenize(self, stack: list[PositionedScroll]) -> str :: Function Phext.dephokenize takes self, stack: list[PositionedScroll]. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.expand :: def expand(self, buffer:str) -> str :: Function Phext.expand takes self, buffer:str. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.explode :: def explode(self, buffer:str) -> dict[Coordinate, str] :: Function Phext.explode takes self, buffer:str. It gives back dict[Coordinate, str]. :: inferred :: api
+item+ function phext/phext.py :: Phext.fetch :: def fetch(self, buffer:str, coord:Coordinate) -> dict[Coordinate, str] :: Function Phext.fetch takes self, buffer:str, coord:Coordinate. It gives back dict[Coordinate, str]. :: inferred :: api
+item+ function phext/phext.py :: Phext.get_subspace_coordinates :: def get_subspace_coordinates(self, buffer:str, target:Coordinate) :: Function Phext.get_subspace_coordinates takes self, buffer:str, target:Coordinate. Its return type is unannotated; the code shows it returning result. :: inferred :: api
+item+ function phext/phext.py :: Phext.implode :: def implode(self, hash: dict[Coordinate, str]) -> str :: Function Phext.implode takes self, hash: dict[Coordinate, str]. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.index :: def index(self, buffer:str) -> str :: Function Phext.index takes self, buffer:str. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.index_phokens :: def index_phokens(self, buffer:str) -> list[PositionedScroll] :: Function Phext.index_phokens takes self, buffer:str. It gives back list[PositionedScroll]. :: inferred :: api
+item+ function phext/phext.py :: Phext.insert :: def insert(self, buffer:str, coord:Coordinate, scroll:str) -> str :: Function Phext.insert takes self, buffer:str, coord:Coordinate, scroll:str. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.isPhextBreak :: def isPhextBreak(self, byte:str) :: Function Phext.isPhextBreak takes self, byte:str. Its return type is unannotated; the code shows it returning byte == self.LINE_BREAK or \. :: inferred :: api
+item+ function phext/phext.py :: Phext.manifest :: def manifest(self, buffer:str) -> str :: Function Phext.manifest takes self, buffer:str. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.merge :: def merge(self, left: str, right:str) -> str :: Function Phext.merge takes self, left: str, right:str. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.navmap :: def navmap(self, urlbase:str, buffer:str) -> str :: Function Phext.navmap takes self, urlbase:str, buffer:str. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.next_scroll :: def next_scroll(self, buffer:str, coord:Coordinate) -> List[PositionedScroll] :: Function Phext.next_scroll takes self, buffer:str, coord:Coordinate. It gives back List[PositionedScroll]. :: inferred :: api
+item+ function phext/phext.py :: Phext.normalize :: def normalize(self, buffer:str) -> str :: Function Phext.normalize takes self, buffer:str. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.offset :: def offset(self, buffer:str, coord:Coordinate) -> int :: Function Phext.offset takes self, buffer:str, coord:Coordinate. It gives back int. :: inferred :: api
+item+ function phext/phext.py :: Phext.phokenize :: def phokenize(self, buffer:str) -> List[PositionedScroll] :: Function Phext.phokenize takes self, buffer:str. It gives back List[PositionedScroll]. :: inferred :: api
+item+ function phext/phext.py :: Phext.range_replace :: def range_replace(self, buffer:str, range:Range, text:str) -> str :: Function Phext.range_replace takes self, buffer:str, range:Range, text:str. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.remove :: def remove(self, buffer:str, coord:Coordinate) -> str :: Function Phext.remove takes self, buffer:str, coord:Coordinate. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.replace :: def replace(self, buffer:str, coord:Coordinate, scroll:str) -> str :: Function Phext.replace takes self, buffer:str, coord:Coordinate, scroll:str. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.soundex_internal :: def soundex_internal(self, buffer:str) -> str :: Function Phext.soundex_internal takes self, buffer:str. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.soundex_v1 :: def soundex_v1(self, buffer:str) -> str :: Function Phext.soundex_v1 takes self, buffer:str. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.subtract :: def subtract(self, left:str, right:str) -> str :: Function Phext.subtract takes self, left:str, right:str. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.textmap :: def textmap(self, buffer:str) -> str :: Function Phext.textmap takes self, buffer:str. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.update :: def update(self, buffer:str, coord:Coordinate, scroll:str, overwrite:bool) -> str :: Function Phext.update takes self, buffer:str, coord:Coordinate, scroll:str, overwrite:bool. It gives back str. :: inferred :: api
+item- function libphext/positionedScroll.py :: PositionedScroll.__init__
+item+ function phext/positionedScroll.py :: PositionedScroll.__init__ :: def __init__(self, coord, text) :: Function PositionedScroll.__init__ takes self, coord, text. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item- function tests/test_cli.py :: test_main_output
+item+ function tests/test_range.py :: test_range_exists :: def test_range_exists() :: Function test_range_exists takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+stat Markdown files 1 total 5 blank 2 comment 0 code 3
+stat Python files 10 total 1899 blank 261 comment 209 code 1429
+stat TOML files 1 total 33 blank 5 comment 0 code 28
+author~ Will Bickford <wbic16@gmail.com> commits 33
+Commit 93dee8602c9b by Will Bickford <wbic16@gmail.com> on 2025-08-03 (EE 0).
+
+Subject: Added a hello world to demonstrate how to work with scrolls
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1476.
+
+commit 93dee8602c9b074b60e6f52df8c4512b89a3355c
+parent f5cc35ec080bc8dd611cbfab4c1e03109ffbb73e
+author Will Bickford <wbic16@gmail.com>
+date 1754264126 2025-08-03
+stat Markdown files 1 total 27 blank 8 comment 0 code 19
+stat Python files 10 total 1899 blank 261 comment 209 code 1429
+stat TOML files 1 total 33 blank 5 comment 0 code 28
+author~ Will Bickford <wbic16@gmail.com> commits 34
+Commit 9c77cf335120 by Will Bickford <wbic16@gmail.com> on 2025-08-05 (EE 0).
+
+Subject: Documented methods
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1511.
+
+commit 9c77cf3351201102e99eab311add21cff606dbc0
+parent 93dee8602c9b074b60e6f52df8c4512b89a3355c
+author Will Bickford <wbic16@gmail.com>
+date 1754367456 2025-08-05
+stat Markdown files 1 total 65 blank 11 comment 0 code 54
+stat Python files 10 total 1899 blank 261 comment 209 code 1429
+stat TOML files 1 total 33 blank 5 comment 0 code 28
+author~ Will Bickford <wbic16@gmail.com> commits 35
+Commit 7e98461538ac by Orin <orin@mirrorborn.us> on 2026-03-23 (EE 0).
+
+Subject: refactor: rename .md/.phext files to lowercase (mirrorborn naming convention)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1511.
+
+commit 7e98461538ac8e42a13f08866319ea909c2b1774
+parent 9c77cf3351201102e99eab311add21cff606dbc0
+author Orin <orin@mirrorborn.us>
+date 1774230639 2026-03-23
+stat Markdown files 1 total 65 blank 11 comment 0 code 54
+stat Python files 10 total 1899 blank 261 comment 209 code 1429
+stat TOML files 1 total 33 blank 5 comment 0 code 28
+author+ Orin <orin@mirrorborn.us>
+Commit aa3bc80b4b43 by Will Bickford <wbic16@gmail.com> on 2026-10-26 (EE 0).
+
+Subject: Merge pull request #1 from wbic16/saturate-999
+
+Public items: 3 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1530.
+
+commit aa3bc80b4b4368ec40ed270bb6242f37424ff81b
+parent 7e98461538ac8e42a13f08866319ea909c2b1774
+author Will Bickford <wbic16@gmail.com>
+date 1792983178 2026-10-26
+item+ function phext/coordinate.py :: advance_coordinate :: def advance_coordinate(index: int) -> int :: Function advance_coordinate takes index: int. It gives back int. :: inferred :: api
+item+ function tests/test_coordinate.py :: test_breaks_saturate_at_999 :: def test_breaks_saturate_at_999() :: Function test_breaks_saturate_at_999 takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_phokenize_scroll_saturation :: def test_phokenize_scroll_saturation() :: Function test_phokenize_scroll_saturation takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+stat Markdown files 1 total 65 blank 11 comment 0 code 54
+stat Python files 10 total 1923 blank 265 comment 210 code 1448
+stat TOML files 1 total 33 blank 5 comment 0 code 28
+author~ Will Bickford <wbic16@gmail.com> commits 36
+Commit 25f3ab6d1266 by Will Bickford <wbic16@gmail.com> on 2026-10-26 (EE 0).
+
+Subject: Merge pull request #2 from wbic16/linear-tokenize
+
+Public items: 49 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2209.
+
+commit 25f3ab6d1266ea430f28664b951229ff63d4906e
+parent aa3bc80b4b4368ec40ed270bb6242f37424ff81b
+author Will Bickford <wbic16@gmail.com>
+date 1792989230 2026-10-26
+item+ function test/bench.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function test/bench.py :: timed :: def timed(label, fn) :: Function timed takes label, fn. Its return type is unannotated; the code shows it returning result. :: inferred :: api
+item+ function tests/legacy_phext.py :: LegacyPhext.__init__ :: def __init__(self) :: Function LegacyPhext.__init__ takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.append_scroll :: def append_scroll(self, entry: PositionedScroll, location: Coordinate) -> PositionedScroll :: Function LegacyPhext.append_scroll takes self, entry: PositionedScroll, location: Coordinate. It gives back PositionedScroll. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.checksum :: def checksum(self, buffer:str) -> str :: Function LegacyPhext.checksum takes self, buffer:str. It gives back str. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.contract :: def contract(self, buffer:str) -> str :: Function LegacyPhext.contract takes self, buffer:str. It gives back str. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.create_summary :: def create_summary(self, buffer:str) -> str :: Function LegacyPhext.create_summary takes self, buffer:str. It gives back str. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.defaultCoordinate :: def defaultCoordinate(self) -> Coordinate :: Function LegacyPhext.defaultCoordinate takes no inputs beyond the value it is called on. It gives back Coordinate. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.dephokenize :: def dephokenize(self, stack: list[PositionedScroll]) -> str :: Function LegacyPhext.dephokenize takes self, stack: list[PositionedScroll]. It gives back str. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.expand :: def expand(self, buffer:str) -> str :: Function LegacyPhext.expand takes self, buffer:str. It gives back str. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.explode :: def explode(self, buffer:str) -> dict[Coordinate, str] :: Function LegacyPhext.explode takes self, buffer:str. It gives back dict[Coordinate, str]. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.fetch :: def fetch(self, buffer:str, coord:Coordinate) -> dict[Coordinate, str] :: Function LegacyPhext.fetch takes self, buffer:str, coord:Coordinate. It gives back dict[Coordinate, str]. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.get_subspace_coordinates :: def get_subspace_coordinates(self, buffer:str, target:Coordinate) :: Function LegacyPhext.get_subspace_coordinates takes self, buffer:str, target:Coordinate. Its return type is unannotated; the code shows it returning result. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.implode :: def implode(self, hash: dict[Coordinate, str]) -> str :: Function LegacyPhext.implode takes self, hash: dict[Coordinate, str]. It gives back str. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.index :: def index(self, buffer:str) -> str :: Function LegacyPhext.index takes self, buffer:str. It gives back str. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.index_phokens :: def index_phokens(self, buffer:str) -> list[PositionedScroll] :: Function LegacyPhext.index_phokens takes self, buffer:str. It gives back list[PositionedScroll]. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.insert :: def insert(self, buffer:str, coord:Coordinate, scroll:str) -> str :: Function LegacyPhext.insert takes self, buffer:str, coord:Coordinate, scroll:str. It gives back str. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.isPhextBreak :: def isPhextBreak(self, byte:str) :: Function LegacyPhext.isPhextBreak takes self, byte:str. Its return type is unannotated; the code shows it returning byte == self.LINE_BREAK or \. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.manifest :: def manifest(self, buffer:str) -> str :: Function LegacyPhext.manifest takes self, buffer:str. It gives back str. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.merge :: def merge(self, left: str, right:str) -> str :: Function LegacyPhext.merge takes self, left: str, right:str. It gives back str. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.navmap :: def navmap(self, urlbase:str, buffer:str) -> str :: Function LegacyPhext.navmap takes self, urlbase:str, buffer:str. It gives back str. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.next_scroll :: def next_scroll(self, buffer:str, coord:Coordinate) -> List[PositionedScroll] :: Function LegacyPhext.next_scroll takes self, buffer:str, coord:Coordinate. It gives back List[PositionedScroll]. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.normalize :: def normalize(self, buffer:str) -> str :: Function LegacyPhext.normalize takes self, buffer:str. It gives back str. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.offset :: def offset(self, buffer:str, coord:Coordinate) -> int :: Function LegacyPhext.offset takes self, buffer:str, coord:Coordinate. It gives back int. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.phokenize :: def phokenize(self, buffer:str) -> List[PositionedScroll] :: Function LegacyPhext.phokenize takes self, buffer:str. It gives back List[PositionedScroll]. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.range_replace :: def range_replace(self, buffer:str, range:Range, text:str) -> str :: Function LegacyPhext.range_replace takes self, buffer:str, range:Range, text:str. It gives back str. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.remove :: def remove(self, buffer:str, coord:Coordinate) -> str :: Function LegacyPhext.remove takes self, buffer:str, coord:Coordinate. It gives back str. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.replace :: def replace(self, buffer:str, coord:Coordinate, scroll:str) -> str :: Function LegacyPhext.replace takes self, buffer:str, coord:Coordinate, scroll:str. It gives back str. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.soundex_internal :: def soundex_internal(self, buffer:str) -> str :: Function LegacyPhext.soundex_internal takes self, buffer:str. It gives back str. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.soundex_v1 :: def soundex_v1(self, buffer:str) -> str :: Function LegacyPhext.soundex_v1 takes self, buffer:str. It gives back str. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.subtract :: def subtract(self, left:str, right:str) -> str :: Function LegacyPhext.subtract takes self, left:str, right:str. It gives back str. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.textmap :: def textmap(self, buffer:str) -> str :: Function LegacyPhext.textmap takes self, buffer:str. It gives back str. :: inferred :: test
+item+ function tests/legacy_phext.py :: LegacyPhext.update :: def update(self, buffer:str, coord:Coordinate, scroll:str, overwrite:bool) -> str :: Function LegacyPhext.update takes self, buffer:str, coord:Coordinate, scroll:str, overwrite:bool. It gives back str. :: inferred :: test
+item+ function tests/test_phokenize.py :: as_pairs :: def as_pairs(stack) :: Function as_pairs takes stack. Its return type is unannotated; the code shows it returning [(ps.coord.as_tuple(), ps.text) for ps in stack]. :: inferred :: test
+item+ function tests/test_phokenize.py :: corpus :: def corpus() :: Function corpus takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning docs. :: inferred :: test
+item+ function tests/test_phokenize.py :: large_document :: def large_document(scrolls: int) -> str :: Function large_document takes scrolls: int. It gives back str. :: inferred :: test
+item+ function tests/test_phokenize.py :: outcome :: def outcome(fn, *args) :: Function outcome takes fn, *args. Its return type is unannotated; the code shows it returning fn(*args); type(e). :: inferred :: test
+item+ function tests/test_phokenize.py :: random_coordinate :: def random_coordinate(rng: random.Random) -> Coordinate :: Function random_coordinate takes rng: random.Random. It gives back Coordinate. :: inferred :: test
+item+ function tests/test_phokenize.py :: random_document :: def random_document(rng: random.Random) -> str :: Function random_document takes rng: random.Random. It gives back str. :: inferred :: test
+item+ function tests/test_phokenize.py :: test_append_scroll_matches_legacy :: def test_append_scroll_matches_legacy() :: Function test_append_scroll_matches_legacy takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phokenize.py :: test_append_scroll_out_of_order :: def test_append_scroll_out_of_order() :: Function test_append_scroll_out_of_order takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phokenize.py :: test_edits_match_legacy :: def test_edits_match_legacy() :: Function test_edits_match_legacy takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phokenize.py :: test_explode_implode_round_trip :: def test_explode_implode_round_trip() :: Function test_explode_implode_round_trip takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phokenize.py :: test_explode_performance_50k_scrolls :: def test_explode_performance_50k_scrolls() :: Function test_explode_performance_50k_scrolls takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phokenize.py :: test_lookups_match_legacy :: def test_lookups_match_legacy() :: Function test_lookups_match_legacy takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phokenize.py :: test_maps_and_index_match_legacy :: def test_maps_and_index_match_legacy() :: Function test_maps_and_index_match_legacy takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phokenize.py :: test_phokenize_coordinates_are_distinct_objects :: def test_phokenize_coordinates_are_distinct_objects() :: Function test_phokenize_coordinates_are_distinct_objects takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phokenize.py :: test_phokenize_matches_legacy :: def test_phokenize_matches_legacy() :: Function test_phokenize_matches_legacy takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_phokenize.py :: test_serialization_matches_legacy :: def test_serialization_matches_legacy() :: Function test_serialization_matches_legacy takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+stat Markdown files 1 total 118 blank 29 comment 0 code 89
+stat Python files 13 total 2690 blank 353 comment 249 code 2088
+stat TOML files 1 total 43 blank 7 comment 4 code 32
+author~ Will Bickford <wbic16@gmail.com> commits 37
+Commit 3b9d45dd497d by Will Bickford <wbic16@gmail.com> on 2026-11-01 (EE 0).
+
+Subject: Merge pull request #3 from wbic16/unbounded-coordinates-0.4
+
+Public items: 25 added, 3 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2430.
+
+commit 3b9d45dd497d2b6076937724dc1df7774c12da48
+parent 25f3ab6d1266ea430f28664b951229ff63d4906e
+author Will Bickford <wbic16@gmail.com>
+date 1793564162 2026-11-01
+item+ function phext/indexed.py :: IndexedPhext.__contains__ :: def __contains__(self, coord: Coordinate) -> bool :: Function IndexedPhext.__contains__ takes self, coord: Coordinate. It gives back bool. :: inferred :: api
+item+ function phext/indexed.py :: IndexedPhext.__init__ :: def __init__(self, buffer: str) :: Function IndexedPhext.__init__ takes self, buffer: str. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function phext/indexed.py :: IndexedPhext.__len__ :: def __len__(self) -> int :: Function IndexedPhext.__len__ takes no inputs beyond the value it is called on. It gives back int. :: inferred :: api
+item+ function phext/indexed.py :: IndexedPhext.coordinates :: def coordinates(self) -> list[Coordinate] :: Function IndexedPhext.coordinates takes no inputs beyond the value it is called on. It gives back list[Coordinate]. :: inferred :: api
+item+ function phext/indexed.py :: IndexedPhext.explode :: def explode(self) -> dict[Coordinate, str] :: Function IndexedPhext.explode takes no inputs beyond the value it is called on. It gives back dict[Coordinate, str]. :: inferred :: api
+item+ function phext/indexed.py :: IndexedPhext.fetch :: def fetch(self, coord: Coordinate) -> str :: Function IndexedPhext.fetch takes self, coord: Coordinate. It gives back str. :: inferred :: api
+item+ function phext/indexed.py :: IndexedPhext.index :: def index(self) -> dict[Coordinate, tuple[int, int]] :: Function IndexedPhext.index takes no inputs beyond the value it is called on. It gives back dict[Coordinate, tuple[int, int]]. :: inferred :: api
+item+ function phext/indexed.py :: IndexedPhext.keys :: def keys(self) -> list[Coordinate] :: Function IndexedPhext.keys takes no inputs beyond the value it is called on. It gives back list[Coordinate]. :: inferred :: api
+item+ function phext/phext.py :: Phext.index_offsets :: def index_offsets(self, buffer:str) -> dict[Coordinate, tuple[int, int]] :: Function Phext.index_offsets takes self, buffer:str. It gives back dict[Coordinate, tuple[int, int]]. :: inferred :: api
+item+ function phext/phext.py :: Phext.indexed :: def indexed(self, buffer:str) :: Function Phext.indexed takes self, buffer:str. Its return type is unannotated; the code shows it returning IndexedPhext(buffer). :: inferred :: api
+item+ function tests/test_coordinate.py :: test_breaks_are_unbounded :: def test_breaks_are_unbounded() :: Function test_breaks_are_unbounded takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_phokenize_scroll_unbounded :: def test_phokenize_scroll_unbounded() :: Function test_phokenize_scroll_unbounded takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_coordinate.py :: test_very_large_coordinates_round_trip :: def test_very_large_coordinates_round_trip() :: Function test_very_large_coordinates_round_trip takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item- function tests/test_coordinate.py :: test_breaks_saturate_at_999
+item- function tests/test_coordinate.py :: test_phokenize_scroll_saturation
+item- function tests/test_coordinate.py :: test_too_large_coordinates
+item+ function tests/test_indexed.py :: assert_equivalent :: def assert_equivalent(buffer) :: Function assert_equivalent takes buffer. Its return type is unannotated; the code shows it returning indexed. :: inferred :: test
+item+ function tests/test_indexed.py :: coord :: def coord(text) :: Function coord takes text. Its return type is unannotated; the code shows it returning Coordinate.from_string(text). :: inferred :: test
+item+ function tests/test_indexed.py :: counting :: def counting(self, buf) :: Function counting takes self, buf. Its return type is unannotated; the code shows it returning original(self, buf). :: inferred :: test
+item+ function tests/test_indexed.py :: test_index_offsets_built_once :: def test_index_offsets_built_once() :: Function test_index_offsets_built_once takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_indexed.py :: test_index_offsets_match_iter_scrolls :: def test_index_offsets_match_iter_scrolls() :: Function test_index_offsets_match_iter_scrolls takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_indexed.py :: test_indexed_empty_and_single_scroll :: def test_indexed_empty_and_single_scroll() :: Function test_indexed_empty_and_single_scroll takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_indexed.py :: test_indexed_explode_matches_explode :: def test_indexed_explode_matches_explode() :: Function test_indexed_explode_matches_explode takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_indexed.py :: test_indexed_fetch_beyond_999_chapter :: def test_indexed_fetch_beyond_999_chapter() :: Function test_indexed_fetch_beyond_999_chapter takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_indexed.py :: test_indexed_fetch_matches_fetch_everywhere :: def test_indexed_fetch_matches_fetch_everywhere() :: Function test_indexed_fetch_matches_fetch_everywhere takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_indexed.py :: test_indexed_generated_document :: def test_indexed_generated_document() :: Function test_indexed_generated_document takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_indexed.py :: test_indexed_unbounded_matches_fetch :: def test_indexed_unbounded_matches_fetch() :: Function test_indexed_unbounded_matches_fetch takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_indexed.py :: test_phext_indexed_convenience_constructor :: def test_phext_indexed_convenience_constructor() :: Function test_phext_indexed_convenience_constructor takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+stat Markdown files 1 total 149 blank 35 comment 0 code 114
+stat Python files 15 total 3009 blank 399 comment 326 code 2284
+stat TOML files 1 total 43 blank 7 comment 4 code 32
+author~ Will Bickford <wbic16@gmail.com> commits 38
+Commit c1a19129820f by Will Bickford <wbic16@gmail.com> on 2026-11-15 (EE 0).
+
+Subject: Merge pull request #4 from wbic16/build-publish-scripts
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2502.
+
+commit c1a19129820f008e1bda8f71a66b2b5d6a8de675
+parent 3b9d45dd497d2b6076937724dc1df7774c12da48
+author Will Bickford <wbic16@gmail.com>
+date 1794763535 2026-11-15
+stat Markdown files 1 total 156 blank 37 comment 0 code 119
+stat Python files 15 total 3009 blank 399 comment 326 code 2284
+stat Shell files 3 total 116 blank 8 comment 41 code 67
+stat TOML files 1 total 43 blank 7 comment 4 code 32
+author~ Will Bickford <wbic16@gmail.com> commits 39
+Commit 79a23e5d98f2 by Will Bickford <wbic16@gmail.com> on 2026-11-15 (EE 0).
+
+Subject: Merge pull request #5 from wbic16/emise/port-0.6.0
+
+Public items: 55 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3139.
+
+commit 79a23e5d98f2e3686528fa3ed5911de69808e59d
+parent c1a19129820f008e1bda8f71a66b2b5d6a8de675
+author Will Bickford <wbic16@gmail.com>
+date 1794763838 2026-11-15
+item+ function phext/binary.py :: decode_scroll :: def decode_scroll(scroll: str) :: Decodes a binary scroll back to its raw bytes. Returns None when :: direct :: api
+item+ function phext/binary.py :: encode_scroll :: def encode_scroll(payload: bytes) -> str :: Encodes raw bytes as a binary scroll (header line + base64 body). :: direct :: api
+item+ function phext/binary.py :: fetch_binary :: def fetch_binary(buffer: str, target: Coordinate) -> bytes :: Retrieves the bytes held at `target`. A well-formed binary scroll :: direct :: api
+item+ function phext/binary.py :: ingest :: def ingest(data: bytes) -> str :: Ingests an externally supplied phext byte stream. Every scroll is :: direct :: api
+item+ function phext/binary.py :: insert_binary :: def insert_binary(buffer: str, location: Coordinate, payload: bytes) -> str :: Stores `payload` at `location` as a binary scroll, unconditionally: :: direct :: api
+item+ function phext/binary.py :: insert_bytes :: def insert_bytes(buffer: str, location: Coordinate, payload: bytes) -> str :: Byte-oriented insert: stores `payload` at `location` under the :: direct :: api
+item+ function phext/binary.py :: is_binary_scroll :: def is_binary_scroll(scroll: str) -> bool :: True when `scroll` carries the binary scroll header. Decoding :: direct :: api
+item+ function phext/binary.py :: phokenize_bytes :: def phokenize_bytes(data: bytes) :: The byte-level twin of the reference `phokenize`: walks a raw byte :: direct :: api
+item+ function phext/binary.py :: replace_binary :: def replace_binary(buffer: str, location: Coordinate, payload: bytes) -> str :: Replaces the scroll at `location` with `payload`, stored as a :: direct :: api
+item+ function phext/binary.py :: replace_bytes :: def replace_bytes(buffer: str, location: Coordinate, payload: bytes) -> str :: Byte-oriented replace: stores `payload` at `location` under the :: direct :: api
+item+ function phext/chain.py :: Chain.fetch :: def fetch(self, address: str) -> str :: Fetch a scroll by multiverse address: ``$N:coord``, or a bare :: direct :: api
+item+ function phext/chain.py :: Chain.serialize :: def serialize(self) -> str :: Serializes this chain alone: its members joined by :: direct :: api
+item+ function phext/chain.py :: parse_chains :: def parse_chains(stream: str) :: Splits a stream into its chains. CHAIN_BREAK separates the member :: direct :: api
+item+ function phext/chain.py :: parse_universe_address :: def parse_universe_address(address: str) :: Parses a multiverse address into (universe, Coordinate), or None :: direct :: api
+item+ function phext/chain.py :: serialize_chains :: def serialize_chains(chains) -> str :: Serializes a stream of chains back into stream bytes: the inverse :: direct :: api
+item+ function phext/phext.py :: Phext.fetch_binary :: def fetch_binary(self, buffer: str, coord: Coordinate) -> bytes :: Function Phext.fetch_binary takes self, buffer: str, coord: Coordinate. It gives back bytes. :: inferred :: api
+item+ function phext/phext.py :: Phext.insert_binary :: def insert_binary(self, buffer: str, coord: Coordinate, payload: bytes) -> str :: Function Phext.insert_binary takes self, buffer: str, coord: Coordinate, payload: bytes. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.insert_bytes :: def insert_bytes(self, buffer: str, coord: Coordinate, payload: bytes) -> str :: Function Phext.insert_bytes takes self, buffer: str, coord: Coordinate, payload: bytes. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.replace_binary :: def replace_binary(self, buffer: str, coord: Coordinate, payload: bytes) -> str :: Function Phext.replace_binary takes self, buffer: str, coord: Coordinate, payload: bytes. It gives back str. :: inferred :: api
+item+ function phext/phext.py :: Phext.replace_bytes :: def replace_bytes(self, buffer: str, coord: Coordinate, payload: bytes) -> str :: Function Phext.replace_bytes takes self, buffer: str, coord: Coordinate, payload: bytes. It gives back str. :: inferred :: api
+item+ function phext/seal.py :: seal :: def seal(text: str) -> bytes :: Seals a phext: xz-compresses its full UTF-8 bytes. :: direct :: api
+item+ function phext/seal.py :: seal_bytes :: def seal_bytes(data: bytes) -> bytes :: Seals raw phext bytes (see `seal`). :: direct :: api
+item+ function phext/seal.py :: unseal :: def unseal(data: bytes) -> bytes :: Unseals a sealed phext back to its exact original bytes. Raises :: direct :: api
+item+ function phext/seal.py :: unseal_string :: def unseal_string(data: bytes) -> str :: Unseals directly to text. Raises when the unsealed bytes are not :: direct :: api
+item+ function tests/test_binary.py :: coord :: def coord(address) :: Function coord takes address. Its return type is unannotated; the code shows it returning Coordinate.from_string(address). :: inferred :: test
+item+ function tests/test_binary.py :: test_decode_scroll_rejects_non_binary :: def test_decode_scroll_rejects_non_binary() :: Function test_decode_scroll_rejects_non_binary takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_binary.py :: test_encode_decode_round_trip :: def test_encode_decode_round_trip() :: Function test_encode_decode_round_trip takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_binary.py :: test_fetch_binary_fallbacks :: def test_fetch_binary_fallbacks() :: Function test_fetch_binary_fallbacks takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_binary.py :: test_ingest_canonical_phext_is_identity :: def test_ingest_canonical_phext_is_identity() :: Function test_ingest_canonical_phext_is_identity takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_binary.py :: test_ingest_empty_and_break_only_streams :: def test_ingest_empty_and_break_only_streams() :: Function test_ingest_empty_and_break_only_streams takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_binary.py :: test_ingest_foreign_byte_stream :: def test_ingest_foreign_byte_stream() :: Function test_ingest_foreign_byte_stream takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_binary.py :: test_insert_and_fetch_binary :: def test_insert_and_fetch_binary() :: Function test_insert_and_fetch_binary takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_binary.py :: test_phokenize_bytes_matches_literal_reference_on_random_streams :: def test_phokenize_bytes_matches_literal_reference_on_random_streams() :: Function test_phokenize_bytes_matches_literal_reference_on_random_streams takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_binary.py :: test_phokenize_bytes_matches_phokenize :: def test_phokenize_bytes_matches_phokenize() :: Function test_phokenize_bytes_matches_phokenize takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_binary.py :: test_update_rule_non_utf8_is_base64_verbatim :: def test_update_rule_non_utf8_is_base64_verbatim() :: Function test_update_rule_non_utf8_is_base64_verbatim takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_binary.py :: test_update_rule_utf8_stays_text :: def test_update_rule_utf8_stays_text() :: Function test_update_rule_utf8_stays_text takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_chain.py :: coord :: def coord(address) :: Function coord takes address. Its return type is unannotated; the code shows it returning Coordinate.from_string(address). :: inferred :: test
+item+ function tests/test_chain.py :: roundtrip :: def roundtrip(stream) :: Function roundtrip takes stream. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_chain.py :: test_adjacent_closes_are_two_empty_chains :: def test_adjacent_closes_are_two_empty_chains() :: Function test_adjacent_closes_are_two_empty_chains takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_chain.py :: test_chain_free_input_is_one_unclosed_chain :: def test_chain_free_input_is_one_unclosed_chain() :: Function test_chain_free_input_is_one_unclosed_chain takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_chain.py :: test_chain_layer_does_not_touch_member_structure :: def test_chain_layer_does_not_touch_member_structure() :: Function test_chain_layer_does_not_touch_member_structure takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_chain.py :: test_chained_members_carry_full_phexts :: def test_chained_members_carry_full_phexts() :: Function test_chained_members_carry_full_phexts takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_chain.py :: test_editions_in_succession_read_in_order :: def test_editions_in_succession_read_in_order() :: Function test_editions_in_succession_read_in_order takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_chain.py :: test_empty_and_break_only_streams_round_trip :: def test_empty_and_break_only_streams_round_trip() :: Function test_empty_and_break_only_streams_round_trip takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_chain.py :: test_multiverse_addressing :: def test_multiverse_addressing() :: Function test_multiverse_addressing takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_chain.py :: test_serialize_from_constructed_chains :: def test_serialize_from_constructed_chains() :: Function test_serialize_from_constructed_chains takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_chain.py :: test_two_chains_in_one_stream_parse_as_two_units :: def test_two_chains_in_one_stream_parse_as_two_units() :: Function test_two_chains_in_one_stream_parse_as_two_units takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_chain.py :: test_two_phexts_chained_and_closed_round_trip :: def test_two_phexts_chained_and_closed_round_trip() :: Function test_two_phexts_chained_and_closed_round_trip takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_chain.py :: test_unclosed_chain_at_eof_reports_truncated :: def test_unclosed_chain_at_eof_reports_truncated() :: Function test_unclosed_chain_at_eof_reports_truncated takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_chain_fixtures.py :: test_chain_fixture_case :: def test_chain_fixture_case(case) :: Function test_chain_fixture_case takes case. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_seal.py :: test_seal_carrying_binary_scrolls :: def test_seal_carrying_binary_scrolls() :: Function test_seal_carrying_binary_scrolls takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_seal.py :: test_seal_is_deterministic :: def test_seal_is_deterministic() :: Function test_seal_is_deterministic takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_seal.py :: test_seal_round_trip_empty_and_small :: def test_seal_round_trip_empty_and_small() :: Function test_seal_round_trip_empty_and_small takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_seal.py :: test_seal_round_trip_real_phext :: def test_seal_round_trip_real_phext() :: Function test_seal_round_trip_real_phext takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_seal.py :: test_unseal_rejects_non_xz_data :: def test_unseal_rejects_non_xz_data() :: Function test_unseal_rejects_non_xz_data takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+stat Markdown files 1 total 166 blank 41 comment 0 code 125
+stat Python files 22 total 3881 blank 568 comment 398 code 2915
+stat Shell files 3 total 116 blank 8 comment 41 code 67
+stat TOML files 1 total 43 blank 7 comment 4 code 32
+author~ Will Bickford <wbic16@gmail.com> commits 40
+Commit e773fe0a2281 by Will Bickford <wbic16@gmail.com> on 2026-11-15 (EE 0).
+
+Subject: Merge pull request #6 from wbic16/emise/addressing-0.6.1
+
+Public items: 27 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3706.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit e773fe0a2281408e8cefbd44bf07480986d34b6a
+parent 79a23e5d98f2e3686528fa3ed5911de69808e59d
+author Will Bickford <wbic16@gmail.com>
+date 1794768676 2026-11-15
+item+ function phext/addressing.py :: PointAddress.__str__ :: def __str__(self) -> str :: Function PointAddress.__str__ takes no inputs beyond the value it is called on. It gives back str. :: inferred :: api
+item+ function phext/addressing.py :: RangeAddress.__str__ :: def __str__(self) -> str :: Function RangeAddress.__str__ takes no inputs beyond the value it is called on. It gives back str. :: inferred :: api
+item+ function phext/addressing.py :: addressed_scroll_text :: def addressed_scroll_text(member: str, target: Coordinate) :: The scroll text at a coordinate in one member phext, in the :: direct :: api
+item+ function phext/addressing.py :: enumerate_scrolls :: def enumerate_scrolls(member: str) :: The member's scrolls in the phokenize sense: a list of :: direct :: api
+item+ function phext/addressing.py :: parse_point_address :: def parse_point_address(address: str) :: Parses a v0.6.1 point address: :: direct :: api
+item+ function phext/addressing.py :: parse_range_address :: def parse_range_address(address: str) :: Parses a v0.6.1 range address: exactly two point addresses joined :: direct :: api
+item+ function phext/addressing.py :: resolve_scroll_offset :: def resolve_scroll_offset(text: str, pos: ScrollPosition) :: Resolves a caret position inside one scroll to a character :: direct :: api
+item+ function phext/chain.py :: Chain.fetch_point :: def fetch_point(self, address: str) -> str :: Fetches a point address string. A bare point is a caret: it :: direct :: api
+item+ function phext/chain.py :: Chain.fetch_range :: def fetch_range(self, address: str) -> str :: Fetches a range address string: the spanned text with phext :: direct :: api
+item+ function phext/chain.py :: Chain.resolve_point :: def resolve_point(self, point) :: Resolves a point address against this chain: (universe, :: direct :: api
+item+ function phext/chain.py :: Chain.resolve_range :: def resolve_range(self, range_address) :: Resolves a range against this chain into per-scroll segments: :: direct :: api
+item+ function tests/test_address.py :: home :: def home() :: Function home takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning Coordinate.from_string("1.1.1/1.1.1/1.1.1"). :: inferred :: test
+item+ function tests/test_address.py :: make_chain :: def make_chain() :: Function make_chain takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning Chain(members=[member_a(), member_b()], closed=F. :: inferred :: test
+item+ function tests/test_address.py :: member_a :: def member_a() :: Function member_a takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning member. :: inferred :: test
+item+ function tests/test_address.py :: member_b :: def member_b() :: Function member_b takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning P.insert("", home(), "uni2 home\nsecond line"). :: inferred :: test
+item+ function tests/test_address.py :: scroll2 :: def scroll2() :: Function scroll2 takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning Coordinate.from_string("1.1.1/1.1.1/1.1.2"). :: inferred :: test
+item+ function tests/test_address.py :: test_point_fetch_offset :: def test_point_fetch_offset() :: Function test_point_fetch_offset takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_address.py :: test_point_fetch_offset_unicode :: def test_point_fetch_offset_unicode() :: Function test_point_fetch_offset_unicode takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_address.py :: test_point_parse_canonical :: def test_point_parse_canonical() :: Function test_point_parse_canonical takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_address.py :: test_point_parse_rejects :: def test_point_parse_rejects() :: Function test_point_parse_rejects takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_address.py :: test_point_resolve :: def test_point_resolve() :: Function test_point_resolve takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_address.py :: test_range_fetch_cross_scroll :: def test_range_fetch_cross_scroll() :: Function test_range_fetch_cross_scroll takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_address.py :: test_range_fetch_multiverse :: def test_range_fetch_multiverse() :: Function test_range_fetch_multiverse takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_address.py :: test_range_fetch_within_scroll :: def test_range_fetch_within_scroll() :: Function test_range_fetch_within_scroll takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_address.py :: test_range_parse_canonical :: def test_range_parse_canonical() :: Function test_range_parse_canonical takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_address.py :: test_range_resolution_errors :: def test_range_resolution_errors() :: Function test_range_resolution_errors takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function tests/test_range_fixtures.py :: test_range_fixture_case :: def test_range_fixture_case(case_name) :: Function test_range_fixture_case takes case_name. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+stat Markdown files 1 total 172 blank 44 comment 0 code 128
+stat Python files 25 total 4577 blank 656 comment 442 code 3479
+stat Shell files 3 total 116 blank 8 comment 41 code 67
+stat TOML files 1 total 43 blank 7 comment 4 code 32
+author~ Will Bickford <wbic16@gmail.com> commits 41
