@@ -1,0 +1,454 @@
+Commit 34c21a79e0a2 by Will Bickford <wbic16@gmail.com> on 2026-11-15 (EE 0).
+
+Subject: Initial commit: register builders home
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 11.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 34c21a79e0a2a8d8cab0183a8ef2763f58eab339
+parent none
+author Will Bickford <wbic16@gmail.com>
+date 1794767664 2026-11-15
+stat Markdown files 1 total 13 blank 2 comment 0 code 11
+author+ Will Bickford <wbic16@gmail.com>
+Commit 94d32691d113 by Emise <emise@localhost> on 2026-11-15 (EE 0).
+
+Subject: Publish phext register builders (2026-11-15 repo-coverage census: previously untracked)
+
+Public items: 74 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1616.
+
+commit 94d32691d113881c4947aa6baf1e0839247e9499
+parent 34c21a79e0a2a8d8cab0183a8ef2763f58eab339
+author Emise <emise@localhost>
+date 1794767683 2026-11-15
+item+ function build_accounting_phext.py :: avgf :: def avgf(k) :: Function avgf takes k. Its return type is unannotated; the code shows it returning sum(a.get(k, 0) for a in full_base) / len(full_b. :: inferred :: api
+item+ function build_accounting_phext.py :: btot :: def btot(k, aa=aa) :: Function btot takes k, aa=aa. Its return type is unannotated; the code shows it returning sum(a.get(k, 0) for a in aa). :: inferred :: api
+item+ function build_accounting_phext.py :: build :: def build() :: Function build takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function build_accounting_phext.py :: day_lines :: def day_lines(ds) :: Function day_lines takes ds. Its return type is unannotated; the code shows it returning "\n".join(out). :: inferred :: api
+item+ function build_accounting_phext.py :: gpt_day :: def gpt_day(d) :: Function gpt_day takes d. Its return type is unannotated; the code shows it returning (d - EPOCH).days + 1. :: inferred :: api
+item+ function build_accounting_phext.py :: lag_line :: def lag_line(atoms) :: Function lag_line takes atoms. Its return type is unannotated; the code shows it returning "lag: 0 timed deliveries"; f"lag: {len(atoms)} timed deliveries · mean {mea. :: inferred :: api
+item+ function build_accounting_phext.py :: net :: def net(a, d) :: Function net takes a, d. Its return type is unannotated; the code shows it returning a - d. :: inferred :: api
+item+ function build_accounting_phext.py :: rhu :: def rhu(x) :: Function rhu takes x. Its return type is unannotated; the code shows it returning int(x + 0.5) if x >= 0 else -int(-x + 0.5). :: inferred :: api
+item+ function build_accounting_phext.py :: t_all :: def t_all(k) :: Function t_all takes k. Its return type is unannotated; the code shows it returning sum(a.get(k, 0) for a in baseline). :: inferred :: api
+item+ function build_accounting_phext.py :: tot :: def tot(k) :: Function tot takes k. Its return type is unannotated; the code shows it returning sum(g.get(k, 0) for g in gs). :: inferred :: api
+item+ function build_accounting_phext.py :: week_lines :: def week_lines(w, sunday, dss) :: Function week_lines takes w, sunday, dss. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function build_accounting_phext.py :: week_of :: def week_of(d) :: Function week_of takes d. Its return type is unannotated; the code shows it returning (sunday - WEEK1_SUNDAY).days // 7 + 1, sunday. :: inferred :: api
+item+ function build_artifacts_phext.py :: build :: def build() :: Function build takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning implode(scrolls), artifacts, stale. :: inferred :: api
+item+ function build_artifacts_phext.py :: implode :: def implode(scrolls) :: scrolls: dict coord-string -> text. Same state machine as :: direct :: api
+item+ function build_artifacts_phext.py :: load_manifest :: def load_manifest() :: Function load_manifest takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning json.load(f)["artifacts"]. :: inferred :: api
+item+ function build_artifacts_phext.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning 1; 0. :: inferred :: api
+item+ function build_artifacts_phext.py :: parse_coord :: def parse_coord(s) :: Function parse_coord takes s. Its return type is unannotated; the code shows it returning vals. :: inferred :: api
+item+ function build_artifacts_phext.py :: read_source :: def read_source(a) :: Function read_source takes a. Its return type is unannotated; the code shows it returning raw, hashlib.sha256(raw).hexdigest(). :: inferred :: api
+item+ function build_artifacts_phext.py :: render_artifact :: def render_artifact(a, raw) :: Function render_artifact takes a, raw. Its return type is unannotated; the code shows it returning scroll. :: inferred :: api
+item+ function build_artifacts_phext.py :: render_home :: def render_home(artifacts) :: Function render_home takes artifacts. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_barnacles_phext.py :: build :: def build() :: Function build takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning implode(scrolls), data. :: inferred :: api
+item+ function build_barnacles_phext.py :: entry_coord :: def entry_coord(n) :: Entry n (1-indexed) -> 2.1.1/1.1.1/S.T.B (hundred/ten/unit). :: direct :: api
+item+ function build_barnacles_phext.py :: implode :: def implode(scrolls) :: Function implode takes scrolls. Its return type is unannotated; the code shows it returning bytes(out). :: inferred :: api
+item+ function build_barnacles_phext.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning 0; 1. :: inferred :: api
+item+ function build_barnacles_phext.py :: parse_coord :: def parse_coord(s) :: Function parse_coord takes s. Its return type is unannotated; the code shows it returning vals. :: inferred :: api
+item+ function build_barnacles_phext.py :: render_entry :: def render_entry(e, data) :: Function render_entry takes e, data. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_barnacles_phext.py :: render_home :: def render_home(data) :: Function render_home takes data. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_contests_phext.py :: build :: def build() :: Function build takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning implode(scrolls), contests. :: inferred :: api
+item+ function build_contests_phext.py :: entry_coord :: def entry_coord(k) :: Function entry_coord takes k. Its return type is unannotated; the code shows it returning f"1.1.1/1.1.1/1.1.{k + 1}". :: inferred :: api
+item+ function build_contests_phext.py :: implode :: def implode(scrolls) :: scrolls: dict coord-string -> text. Same state machine as :: direct :: api
+item+ function build_contests_phext.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning 0; 1. :: inferred :: api
+item+ function build_contests_phext.py :: parse_coord :: def parse_coord(s) :: Function parse_coord takes s. Its return type is unannotated; the code shows it returning vals. :: inferred :: api
+item+ function build_contests_phext.py :: render_contest :: def render_contest(k, c) :: Function render_contest takes k, c. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_contests_phext.py :: render_home :: def render_home(contests) :: Function render_home takes contests. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_contests_phext.py :: render_out_of_scope :: def render_out_of_scope(k, o) :: Function render_out_of_scope takes k, o. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_costs_phext.py :: B :: def B(x) :: Function B takes x. Its return type is unannotated; the code shows it returning f"${x/1e9:,.1f}B". :: inferred :: api
+item+ function build_costs_phext.py :: build :: def build() :: Function build takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning Phext().implode(table). :: inferred :: api
+item+ function build_doomer_phext.py :: build :: def build() :: Function build takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning implode(scrolls), data. :: inferred :: api
+item+ function build_doomer_phext.py :: implode :: def implode(scrolls) :: Function implode takes scrolls. Its return type is unannotated; the code shows it returning bytes(out). :: inferred :: api
+item+ function build_doomer_phext.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning 0; 1. :: inferred :: api
+item+ function build_doomer_phext.py :: parse_coord :: def parse_coord(s) :: Function parse_coord takes s. Its return type is unannotated; the code shows it returning vals. :: inferred :: api
+item+ function build_doomer_phext.py :: render_entry :: def render_entry(e) :: Function render_entry takes e. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_doomer_phext.py :: render_home :: def render_home(data) :: Function render_home takes data. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_jobs_phext.py :: build :: def build() :: Function build takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning implode(scrolls), jobs. :: inferred :: api
+item+ function build_jobs_phext.py :: implode :: def implode(scrolls) :: scrolls: dict coord-string -> text. Same state machine as :: direct :: api
+item+ function build_jobs_phext.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning 0; 1. :: inferred :: api
+item+ function build_jobs_phext.py :: parse_coord :: def parse_coord(s) :: Function parse_coord takes s. Its return type is unannotated; the code shows it returning vals. :: inferred :: api
+item+ function build_jobs_phext.py :: render_home :: def render_home(jobs) :: Function render_home takes jobs. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_jobs_phext.py :: render_job :: def render_job(j) :: Function render_job takes j. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_lessons_phext.py :: build :: def build() :: Build the phext blob from lessons-source.phext. :: direct :: api
+item+ function build_lessons_phext.py :: c :: def c(s) :: Function c takes s. Its return type is unannotated; the code shows it returning tuple(int(x) for part in s.split("/") for x in p. :: inferred :: api
+item+ function build_lessons_phext.py :: check :: def check() :: Rebuild to a temp file and compare SHA-256 with the committed :: direct :: api
+item+ function build_lessons_phext.py :: committed_index :: def committed_index() :: Parse the per-lesson index out of the committed lessons.phext Home scroll. :: direct :: api
+item+ function build_lessons_phext.py :: fmt :: def fmt(coord) :: Function fmt takes coord. Its return type is unannotated; the code shows it returning "%d.%d.%d/%d.%d.%d/%d.%d.%d" % coord. :: inferred :: api
+item+ function build_lessons_phext.py :: implode :: def implode(scrolls) :: scrolls: dict coord-string -> bytes. Same state machine as build_skills_phext.py. :: direct :: api
+item+ function build_lessons_phext.py :: lesson_meta :: def lesson_meta(coord_s, raw) :: (short statement, date given, mark) from one lesson scroll. :: direct :: api
+item+ function build_lessons_phext.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function build_lessons_phext.py :: parse_bytes :: def parse_bytes(data) :: Dead-reckoning parse of raw phext bytes -> {coord_str: raw_bytes} for :: direct :: api
+item+ function build_lessons_phext.py :: sha256_file :: def sha256_file(path) :: Function sha256_file takes path. Its return type is unannotated; the code shows it returning h.hexdigest(). :: inferred :: api
+item+ function build_mastery_phext.py :: build :: def build() :: Function build takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning implode(scrolls), entries. :: inferred :: api
+item+ function build_mastery_phext.py :: entry_coord :: def entry_coord(k) :: Function entry_coord takes k. Its return type is unannotated; the code shows it returning f"1.1.1/1.1.1/1.1.{k + 1}". :: inferred :: api
+item+ function build_mastery_phext.py :: implode :: def implode(scrolls) :: scrolls: dict coord-string -> text. Same state machine as :: direct :: api
+item+ function build_mastery_phext.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning 0; 1. :: inferred :: api
+item+ function build_mastery_phext.py :: parse_coord :: def parse_coord(s) :: Function parse_coord takes s. Its return type is unannotated; the code shows it returning vals. :: inferred :: api
+item+ function build_mastery_phext.py :: render_entry :: def render_entry(k, e) :: Function render_entry takes k, e. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_mastery_phext.py :: render_home :: def render_home(entries) :: Function render_home takes entries. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_trainer_phext.py :: build :: def build() :: Function build takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning implode(scrolls), entries, stale. :: inferred :: api
+item+ function build_trainer_phext.py :: implode :: def implode(scrolls) :: Function implode takes scrolls. Its return type is unannotated; the code shows it returning bytes(out). :: inferred :: api
+item+ function build_trainer_phext.py :: load_manifest :: def load_manifest() :: Function load_manifest takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning json.load(f)["scrolls"]. :: inferred :: api
+item+ function build_trainer_phext.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning 1; 0. :: inferred :: api
+item+ function build_trainer_phext.py :: parse_coord :: def parse_coord(s) :: Function parse_coord takes s. Its return type is unannotated; the code shows it returning vals. :: inferred :: api
+item+ function build_trainer_phext.py :: read_source :: def read_source(e) :: Function read_source takes e. Its return type is unannotated; the code shows it returning raw, hashlib.sha256(raw).hexdigest(). :: inferred :: api
+item+ function build_trainer_phext.py :: render_entry :: def render_entry(e, raw) :: Function render_entry takes e, raw. Its return type is unannotated; the code shows it returning scroll. :: inferred :: api
+item+ function build_trainer_phext.py :: render_home :: def render_home(entries) :: Function render_home takes entries. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+stat Markdown files 1 total 13 blank 2 comment 0 code 11
+stat Python files 11 total 1820 blank 221 comment 20 code 1579
+stat Shell files 2 total 30 blank 0 comment 4 code 26
+author+ Emise <emise@localhost>
+Commit 66c1919f44ab by Will Bickford <wbic16@gmail.com> on 2026-11-15 (EE 0).
+
+Subject: Merge PR #1: register web UI (grid of open items) for register.phext.io
+
+Public items: 6 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1903.
+
+commit 66c1919f44ab1d808c135ff96d7069cafe318c83
+parent 94d32691d113881c4947aa6baf1e0839247e9499
+author Will Bickford <wbic16@gmail.com>
+date 1794778509 2026-11-15
+item+ function register-ui/generate_register_page.py :: clean_md :: def clean_md(text) :: Strip light markdown: links -> text, backticks/bold markers out. :: direct :: api
+item+ function register-ui/generate_register_page.py :: fallback_action :: def fallback_action(item) :: Action text from the register prose when the mirror has none. :: direct :: api
+item+ function register-ui/generate_register_page.py :: linkify :: def linkify(escaped_text) :: Wrap bare URLs in anchors (input is already HTML-escaped). :: direct :: api
+item+ function register-ui/generate_register_page.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function register-ui/generate_register_page.py :: parse_register :: def parse_register(text) :: Parse numbered items out of the register markdown. :: direct :: api
+item+ function register-ui/generate_register_page.py :: repl :: def repl(m) :: Function repl takes m. Its return type is unannotated; the code shows it returning f'<a href="{url}" rel="noopener">{url}</a>{trail. :: inferred :: api
+stat Markdown files 2 total 51 blank 11 comment 0 code 40
+stat Python files 12 total 2072 blank 249 comment 26 code 1797
+stat Shell files 3 total 93 blank 8 comment 19 code 66
+author~ Will Bickford <wbic16@gmail.com> commits 2
+Commit ea46dfefe045 by Will Bickford <wbic16@gmail.com> on 2026-11-15 (EE 0).
+
+Subject: Merge PR #2: fix install verify SIGPIPE failure
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1905.
+
+commit ea46dfefe045bb5c1c1623e8aea801ceb98581a0
+parent 66c1919f44ab1d808c135ff96d7069cafe318c83
+author Will Bickford <wbic16@gmail.com>
+date 1794785045 2026-11-15
+stat Markdown files 2 total 51 blank 11 comment 0 code 40
+stat Python files 12 total 2072 blank 249 comment 26 code 1797
+stat Shell files 3 total 97 blank 8 comment 21 code 68
+author~ Will Bickford <wbic16@gmail.com> commits 3
+Commit 2beb2724dd07 by Will Bickford <wbic16@gmail.com> on 2026-11-15 (EE 0).
+
+Subject: Merge PR #3: add quick-entry line to the register page
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1953.
+
+commit 2beb2724dd0795723e862c930fb505957b766649
+parent ea46dfefe045bb5c1c1623e8aea801ceb98581a0
+author Will Bickford <wbic16@gmail.com>
+date 1794785625 2026-11-15
+stat Markdown files 2 total 51 blank 11 comment 0 code 40
+stat Python files 12 total 2128 blank 250 comment 33 code 1845
+stat Shell files 3 total 97 blank 8 comment 21 code 68
+author~ Will Bickford <wbic16@gmail.com> commits 4
+Commit 7c1702cc6926 by Will Bickford <wbic16@gmail.com> on 2026-11-16 (EE 0).
+
+Subject: Merge PR #4: Register service v2 (LDAP + passkeys, real Add to pile, Done buttons)
+
+Public items: 107 added, 0 removed, 0 changed. Dependencies: cbor2 added at ==6.3.0; cffi added at ==2.1.1; cryptography added at ==50.0.2; ldap3 added at ==2.9.1; pyOpenSSL added at ==26.4.0; pyasn1 added at ==0.6.5; pyasn1_modules added at ==0.4.2; pycparser added at ==3.12; typing_extensions added at ==4.16.0; webauthn added at ==3.0.1. Code lines after this commit: 3700.
+
+commit 7c1702cc6926c77aba677a85a4707481fcbf6ae4
+parent 2beb2724dd0795723e862c930fb505957b766649
+author Will Bickford <wbic16@gmail.com>
+date 1794803235 2026-11-16
+item+ function register-service/regsvc/app.py :: RegisterApp.__init__ :: def __init__(self, *, entries_log, resolutions_log, credentials, sessions, ldap_auth, ceremonies, secret, numbers_file=None, session_ttl=7 * 24 * 3600, preauth_ttl=300, drain_token=None) :: Function RegisterApp.__init__ takes self, *, entries_log, resolutions_log, credentials, sessions, ldap_auth, ceremonies, secret, numbers_file=None, session_ttl=7 * 24 * 3600, preauth_ttl=300, drain_token=None. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function register-service/regsvc/app.py :: RegisterApp.handle :: def handle(self, method, path, headers, body=b"") :: Function RegisterApp.handle takes self, method, path, headers, body=b"". Its return type is unannotated; the code shows it returning self._route(method, path, headers, body); _err(500, "internal error"). :: inferred :: api
+item+ function register-service/regsvc/ldap_auth.py :: LdapAuthenticator.__init__ :: def __init__(self, host, ca_cert_file, port=636, connection_factory=None) :: Function LdapAuthenticator.__init__ takes self, host, ca_cert_file, port=636, connection_factory=None. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function register-service/regsvc/ldap_auth.py :: LdapAuthenticator.authenticate :: def authenticate(self, uid, password) :: Return the uid on a successful bind, None on bad credentials. :: direct :: api
+item+ function register-service/regsvc/ldap_auth.py :: build_user_dn :: def build_user_dn(uid) :: DN for a uid, or None if the uid is not safe to interpolate. :: direct :: api
+item+ function register-service/regsvc/server.py :: Handler.do_GET :: def do_GET(self) :: Function Handler.do_GET takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function register-service/regsvc/server.py :: Handler.do_POST :: def do_POST(self) :: Function Handler.do_POST takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function register-service/regsvc/server.py :: Handler.log_message :: def log_message(self, fmt, *args): # keep journald noise low :: Function Handler.log_message takes self, fmt, *args. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function register-service/regsvc/server.py :: build_app :: def build_app(env=None) :: Function build_app takes env=None. Its return type is unannotated; the code shows it returning RegisterApp(. :: inferred :: api
+item+ function register-service/regsvc/server.py :: main :: def main(argv=None) :: Function main takes argv=None. Its return type is unannotated; the code shows it returning selftest(); 0. :: inferred :: api
+item+ function register-service/regsvc/server.py :: selftest :: def selftest(env=None) :: Function selftest takes env=None. Its return type is unannotated; the code shows it returning 1; 0. :: inferred :: api
+item+ function register-service/regsvc/store.py :: CredentialStore.__init__ :: def __init__(self, path) :: Function CredentialStore.__init__ takes self, path. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function register-service/regsvc/store.py :: CredentialStore.add :: def add(self, uid, credential) :: Function CredentialStore.add takes self, uid, credential. Its return type is unannotated; the code shows it returning False; True. :: inferred :: api
+item+ function register-service/regsvc/store.py :: CredentialStore.find :: def find(self, uid, credential_id) :: Function CredentialStore.find takes self, uid, credential_id. Its return type is unannotated; the code shows it returning c; None. :: inferred :: api
+item+ function register-service/regsvc/store.py :: CredentialStore.list_for :: def list_for(self, uid) :: Function CredentialStore.list_for takes self, uid. Its return type is unannotated; the code shows it returning list(self._data.get(uid, [])). :: inferred :: api
+item+ function register-service/regsvc/store.py :: CredentialStore.update_sign_count :: def update_sign_count(self, uid, credential_id, new_count) :: Function CredentialStore.update_sign_count takes self, uid, credential_id, new_count. Its return type is unannotated; the code shows it returning False; True. :: inferred :: api
+item+ function register-service/regsvc/store.py :: JsonlLog.__init__ :: def __init__(self, path) :: Function JsonlLog.__init__ takes self, path. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function register-service/regsvc/store.py :: JsonlLog.append :: def append(self, atom) :: Append one atom dict; returns the stored atom with seq+ts. :: direct :: api
+item+ function register-service/regsvc/store.py :: JsonlLog.last_seq :: def last_seq(self) :: Function JsonlLog.last_seq takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning self._seq. :: inferred :: api
+item+ function register-service/regsvc/store.py :: JsonlLog.read_all :: def read_all(self, after_seq=0) :: All atoms with seq > after_seq, in order. :: direct :: api
+item+ function register-service/regsvc/store.py :: SessionStore.__init__ :: def __init__(self, path) :: Function SessionStore.__init__ takes self, path. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function register-service/regsvc/store.py :: SessionStore.create :: def create(self, session_id, record) :: Function SessionStore.create takes self, session_id, record. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function register-service/regsvc/store.py :: SessionStore.delete :: def delete(self, session_id) :: Function SessionStore.delete takes self, session_id. Its return type is unannotated; the code shows it returning True; False. :: inferred :: api
+item+ function register-service/regsvc/store.py :: SessionStore.get :: def get(self, session_id) :: Function SessionStore.get takes self, session_id. Its return type is unannotated; the code shows it returning None; dict(rec). :: inferred :: api
+item+ function register-service/regsvc/store.py :: SessionStore.update :: def update(self, session_id, **fields) :: Function SessionStore.update takes self, session_id, **fields. Its return type is unannotated; the code shows it returning False; True. :: inferred :: api
+item+ function register-service/regsvc/webauthn_auth.py :: WebAuthnCeremonies.__init__ :: def __init__(self, rp_id, origin) :: Function WebAuthnCeremonies.__init__ takes self, rp_id, origin. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function register-service/regsvc/webauthn_auth.py :: WebAuthnCeremonies.authentication_options :: def authentication_options(self, credentials) :: Function WebAuthnCeremonies.authentication_options takes self, credentials. Its return type is unannotated; the code shows it returning options.challenge, webauthn.options_to_json(opti. :: inferred :: api
+item+ function register-service/regsvc/webauthn_auth.py :: WebAuthnCeremonies.registration_options :: def registration_options(self, uid, existing_credentials) :: Function WebAuthnCeremonies.registration_options takes self, uid, existing_credentials. Its return type is unannotated; the code shows it returning options.challenge, webauthn.options_to_json(opti. :: inferred :: api
+item+ function register-service/regsvc/webauthn_auth.py :: WebAuthnCeremonies.verify_authentication :: def verify_authentication(self, credential_json, expected_challenge, credential) :: Returns the new sign count; raises WebAuthnError on failure. :: direct :: api
+item+ function register-service/regsvc/webauthn_auth.py :: WebAuthnCeremonies.verify_registration :: def verify_registration(self, credential_json, expected_challenge) :: Function WebAuthnCeremonies.verify_registration takes self, credential_json, expected_challenge. Its return type is unannotated; the code shows it returning {. :: inferred :: api
+item+ function register-service/regsvc/webauthn_auth.py :: b64url :: def b64url(data: bytes) -> str :: Function b64url takes data: bytes. It gives back str. :: inferred :: api
+dep+ register-service/requirements.txt :: cbor2 :: ==6.3.0
+dep+ register-service/requirements.txt :: cffi :: ==2.1.1
+dep+ register-service/requirements.txt :: cryptography :: ==50.0.2
+dep+ register-service/requirements.txt :: ldap3 :: ==2.9.1
+dep+ register-service/requirements.txt :: pyOpenSSL :: ==26.4.0
+dep+ register-service/requirements.txt :: pyasn1 :: ==0.6.5
+dep+ register-service/requirements.txt :: pyasn1_modules :: ==0.4.2
+dep+ register-service/requirements.txt :: pycparser :: ==3.12
+dep+ register-service/requirements.txt :: typing_extensions :: ==4.16.0
+dep+ register-service/requirements.txt :: webauthn :: ==3.0.1
+item+ function register-service/tests/test_app.py :: AppTestCase.login :: def login(self) :: Function AppTestCase.login takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning body["csrf"]. :: inferred :: test
+item+ function register-service/tests/test_app.py :: AppTestCase.setUp :: def setUp(self) :: Function AppTestCase.setUp takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: Client.__init__ :: def __init__(self, app) :: Function Client.__init__ takes self, app. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: Client.call :: def call(self, method, path, body=None, csrf=None, raw_cookies=None) :: Function Client.call takes self, method, path, body=None, csrf=None, raw_cookies=None. Its return type is unannotated; the code shows it returning status, parsed, resp_headers. :: inferred :: test
+item+ function register-service/tests/test_app.py :: FakeCeremonies.__init__ :: def __init__(self) :: Function FakeCeremonies.__init__ takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: FakeCeremonies.authentication_options :: def authentication_options(self, credentials) :: Function FakeCeremonies.authentication_options takes self, credentials. Its return type is unannotated; the code shows it returning b"auth-challenge", '{"challenge":"auth"}'. :: inferred :: test
+item+ function register-service/tests/test_app.py :: FakeCeremonies.registration_options :: def registration_options(self, uid, existing) :: Function FakeCeremonies.registration_options takes self, uid, existing. Its return type is unannotated; the code shows it returning b"reg-challenge", '{"challenge":"reg"}'. :: inferred :: test
+item+ function register-service/tests/test_app.py :: FakeCeremonies.verify_authentication :: def verify_authentication(self, credential, challenge, stored) :: Function FakeCeremonies.verify_authentication takes self, credential, challenge, stored. Its return type is unannotated; the code shows it returning stored["sign_count"] + 1. :: inferred :: test
+item+ function register-service/tests/test_app.py :: FakeCeremonies.verify_registration :: def verify_registration(self, credential, challenge) :: Function FakeCeremonies.verify_registration takes self, credential, challenge. Its return type is unannotated; the code shows it returning {"credential_id": "cred-1", "public_key": "pk-1". :: inferred :: test
+item+ function register-service/tests/test_app.py :: FakeLdap.__init__ :: def __init__(self, valid=None, down=False) :: Function FakeLdap.__init__ takes self, valid=None, down=False. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: FakeLdap.authenticate :: def authenticate(self, uid, password) :: Function FakeLdap.authenticate takes self, uid, password. Its return type is unannotated; the code shows it returning uid; None. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestDone.test_done_numbers_file_missing_503 :: def test_done_numbers_file_missing_503(self) :: Function TestDone.test_done_numbers_file_missing_503 takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestDone.test_done_records_resolution_atom :: def test_done_records_resolution_atom(self) :: Function TestDone.test_done_records_resolution_atom takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestDone.test_done_requires_auth_and_csrf :: def test_done_requires_auth_and_csrf(self) :: Function TestDone.test_done_requires_auth_and_csrf takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestDone.test_done_twice_records_both_atoms :: def test_done_twice_records_both_atoms(self) :: Function TestDone.test_done_twice_records_both_atoms takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestDone.test_done_unknown_number_404 :: def test_done_unknown_number_404(self) :: Function TestDone.test_done_unknown_number_404 takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestDrainToken.call :: def call(self, method, path, headers=None, body=None) :: Function TestDrainToken.call takes self, method, path, headers=None, body=None. Its return type is unannotated; the code shows it returning status, json.loads(resp.decode()). :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestDrainToken.setUp :: def setUp(self) :: Function TestDrainToken.setUp takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestDrainToken.test_drain_token_cannot_write :: def test_drain_token_cannot_write(self) :: Function TestDrainToken.test_drain_token_cannot_write takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestDrainToken.test_drain_token_reads_both_logs :: def test_drain_token_reads_both_logs(self) :: Function TestDrainToken.test_drain_token_reads_both_logs takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestDrainToken.test_wrong_drain_token_401 :: def test_wrong_drain_token_401(self) :: Function TestDrainToken.test_wrong_drain_token_401 takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestEntries.test_add_and_list_entries :: def test_add_and_list_entries(self) :: Function TestEntries.test_add_and_list_entries takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestEntries.test_empty_and_huge_entries_rejected :: def test_empty_and_huge_entries_rejected(self) :: Function TestEntries.test_empty_and_huge_entries_rejected takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestEntries.test_entries_require_auth :: def test_entries_require_auth(self) :: Function TestEntries.test_entries_require_auth takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestEntries.test_entries_require_csrf :: def test_entries_require_csrf(self) :: Function TestEntries.test_entries_require_csrf takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestPasskeys.enroll :: def enroll(self) :: Function TestPasskeys.enroll takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning csrf. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestPasskeys.test_enroll_failure_stores_nothing :: def test_enroll_failure_stores_nothing(self) :: Function TestPasskeys.test_enroll_failure_stores_nothing takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestPasskeys.test_enroll_stores_credential :: def test_enroll_stores_credential(self) :: Function TestPasskeys.test_enroll_stores_credential takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestPasskeys.test_login_options_unknown_user_404 :: def test_login_options_unknown_user_404(self) :: Function TestPasskeys.test_login_options_unknown_user_404 takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestPasskeys.test_passkey_login_bad_assertion_401 :: def test_passkey_login_bad_assertion_401(self) :: Function TestPasskeys.test_passkey_login_bad_assertion_401 takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestPasskeys.test_passkey_login_happy_path :: def test_passkey_login_happy_path(self) :: Function TestPasskeys.test_passkey_login_happy_path takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestPasskeys.test_passkey_unknown_credential_401 :: def test_passkey_unknown_credential_401(self) :: Function TestPasskeys.test_passkey_unknown_credential_401 takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestPasskeys.test_passkey_verify_without_options_401 :: def test_passkey_verify_without_options_401(self) :: Function TestPasskeys.test_passkey_verify_without_options_401 takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestPasskeys.test_register_options_requires_session :: def test_register_options_requires_session(self) :: Function TestPasskeys.test_register_options_requires_session takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestPasskeys.test_verify_without_options_400 :: def test_verify_without_options_400(self) :: Function TestPasskeys.test_verify_without_options_400 takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestPasswordLogin.test_bad_password_401_no_cookie :: def test_bad_password_401_no_cookie(self) :: Function TestPasswordLogin.test_bad_password_401_no_cookie takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestPasswordLogin.test_ldap_down_503 :: def test_ldap_down_503(self) :: Function TestPasswordLogin.test_ldap_down_503 takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestPasswordLogin.test_login_then_session :: def test_login_then_session(self) :: Function TestPasswordLogin.test_login_then_session takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestPasswordLogin.test_logout :: def test_logout(self) :: Function TestPasswordLogin.test_logout takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestPasswordLogin.test_session_starts_logged_out :: def test_session_starts_logged_out(self) :: Function TestPasswordLogin.test_session_starts_logged_out takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestPasswordLogin.test_tampered_cookie_rejected :: def test_tampered_cookie_rejected(self) :: Function TestPasswordLogin.test_tampered_cookie_rejected takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: make_app :: def make_app(tmp, numbers=(9, 10, 21), ldap=None, ceremonies=None, numbers_file=True) :: Function make_app takes tmp, numbers=. Its return type is unannotated; the code shows it returning RegisterApp(. :: inferred :: test
+item+ function register-service/tests/test_ldap_auth.py :: FakeConn.__init__ :: def __init__(self, who=None) :: Function FakeConn.__init__ takes self, who=None. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_ldap_auth.py :: FakeConn.unbind :: def unbind(self) :: Function FakeConn.unbind takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_ldap_auth.py :: Std.who_am_i :: def who_am_i(self) :: Function Std.who_am_i takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning outer._who. :: inferred :: test
+item+ function register-service/tests/test_ldap_auth.py :: TestAuthenticate.auth :: def auth(self, factory) :: Function TestAuthenticate.auth takes self, factory. Its return type is unannotated; the code shows it returning LdapAuthenticator("aletheia-core.pizzly-halfmoon. :: inferred :: test
+item+ function register-service/tests/test_ldap_auth.py :: TestAuthenticate.make :: def make(server, user_dn, password) :: Function TestAuthenticate.make takes server, user_dn, password. Its return type is unannotated; the code shows it returning FakeConn(). :: inferred :: test
+item+ function register-service/tests/test_ldap_auth.py :: TestAuthenticate.test_bad_uid_never_touches_network :: def test_bad_uid_never_touches_network(self) :: Function TestAuthenticate.test_bad_uid_never_touches_network takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_ldap_auth.py :: TestAuthenticate.test_empty_password_never_touches_network :: def test_empty_password_never_touches_network(self) :: Function TestAuthenticate.test_empty_password_never_touches_network takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_ldap_auth.py :: TestAuthenticate.test_generic_transport_error_raises_unavailable :: def test_generic_transport_error_raises_unavailable(self) :: Function TestAuthenticate.test_generic_transport_error_raises_unavailable takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_ldap_auth.py :: TestAuthenticate.test_invalid_credentials_fail_closed :: def test_invalid_credentials_fail_closed(self) :: Function TestAuthenticate.test_invalid_credentials_fail_closed takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_ldap_auth.py :: TestAuthenticate.test_success :: def test_success(self) :: Function TestAuthenticate.test_success takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_ldap_auth.py :: TestAuthenticate.test_unreachable_raises_unavailable :: def test_unreachable_raises_unavailable(self) :: Function TestAuthenticate.test_unreachable_raises_unavailable takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_ldap_auth.py :: TestAuthenticate.test_whoami_mismatch_rejected :: def test_whoami_mismatch_rejected(self) :: Function TestAuthenticate.test_whoami_mismatch_rejected takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_ldap_auth.py :: TestBuildUserDn.test_injection_attempts_rejected :: def test_injection_attempts_rejected(self) :: Function TestBuildUserDn.test_injection_attempts_rejected takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_ldap_auth.py :: TestBuildUserDn.test_normal_uid :: def test_normal_uid(self) :: Function TestBuildUserDn.test_normal_uid takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_ldap_auth.py :: factory_raising :: def factory_raising(exc) :: Function factory_raising takes exc. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_ldap_auth.py :: factory_returning :: def factory_returning(conn) :: Function factory_returning takes conn. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_ldap_auth.py :: make :: def make(server, user_dn, password) :: Function make takes server, user_dn, password. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_store.py :: TestCredentialStore.setUp :: def setUp(self) :: Function TestCredentialStore.setUp takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_store.py :: TestCredentialStore.test_add_duplicate_id_rejected :: def test_add_duplicate_id_rejected(self) :: Function TestCredentialStore.test_add_duplicate_id_rejected takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_store.py :: TestCredentialStore.test_add_find_list :: def test_add_find_list(self) :: Function TestCredentialStore.test_add_find_list takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_store.py :: TestCredentialStore.test_sign_count_update_persists :: def test_sign_count_update_persists(self) :: Function TestCredentialStore.test_sign_count_update_persists takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_store.py :: TestJsonlLog.setUp :: def setUp(self) :: Function TestJsonlLog.setUp takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_store.py :: TestJsonlLog.test_append_assigns_monotonic_seq_and_ts :: def test_append_assigns_monotonic_seq_and_ts(self) :: Function TestJsonlLog.test_append_assigns_monotonic_seq_and_ts takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_store.py :: TestJsonlLog.test_duplicate_atoms_are_both_recorded :: def test_duplicate_atoms_are_both_recorded(self) :: Function TestJsonlLog.test_duplicate_atoms_are_both_recorded takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_store.py :: TestJsonlLog.test_read_all_and_after_seq :: def test_read_all_and_after_seq(self) :: Function TestJsonlLog.test_read_all_and_after_seq takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_store.py :: TestJsonlLog.test_seq_survives_reopen :: def test_seq_survives_reopen(self) :: Function TestJsonlLog.test_seq_survives_reopen takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_store.py :: TestSessionStore.setUp :: def setUp(self) :: Function TestSessionStore.setUp takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_store.py :: TestSessionStore.test_create_get_delete :: def test_create_get_delete(self) :: Function TestSessionStore.test_create_get_delete takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_store.py :: TestSessionStore.test_expired_session_is_gone :: def test_expired_session_is_gone(self) :: Function TestSessionStore.test_expired_session_is_gone takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_store.py :: TestSessionStore.test_update :: def test_update(self) :: Function TestSessionStore.test_update takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_webauthn_auth.py :: TestOptions.test_authentication_options_shape :: def test_authentication_options_shape(self) :: Function TestOptions.test_authentication_options_shape takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_webauthn_auth.py :: TestOptions.test_registration_options_shape :: def test_registration_options_shape(self) :: Function TestOptions.test_registration_options_shape takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_webauthn_auth.py :: TestVerifyFailsClosed.test_authentication_garbage_credential_raises :: def test_authentication_garbage_credential_raises(self) :: Function TestVerifyFailsClosed.test_authentication_garbage_credential_raises takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_webauthn_auth.py :: TestVerifyFailsClosed.test_registration_garbage_credential_raises :: def test_registration_garbage_credential_raises(self) :: Function TestVerifyFailsClosed.test_registration_garbage_credential_raises takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+stat Markdown files 3 total 96 blank 17 comment 0 code 79
+stat Python files 23 total 4027 blank 497 comment 66 code 3464
+stat Shell files 4 total 222 blank 21 comment 44 code 157
+author~ Will Bickford <wbic16@gmail.com> commits 5
+Commit 87969fafff11 by Will Bickford <wbic16@gmail.com> on 2026-11-16 (EE 0).
+
+Subject: Merge PR #5: fix LDAP selftest invalid-credentials classification
+
+Public items: 1 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3709.
+
+commit 87969fafff110f8daf6edd695f649385ae4a545a
+parent 7c1702cc6926c77aba677a85a4707481fcbf6ae4
+author Will Bickford <wbic16@gmail.com>
+date 1794803486 2026-11-16
+item+ function register-service/tests/test_ldap_auth.py :: TestAuthenticate.test_invalid_credentials_result_returns_none :: def test_invalid_credentials_result_returns_none(self) :: Function TestAuthenticate.test_invalid_credentials_result_returns_none takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+stat Markdown files 3 total 96 blank 17 comment 0 code 79
+stat Python files 23 total 4044 blank 498 comment 73 code 3473
+stat Shell files 4 total 222 blank 21 comment 44 code 157
+author~ Will Bickford <wbic16@gmail.com> commits 6
+Commit ae9a403d0660 by Will Bickford <wbic16@gmail.com> on 2026-11-16 (EE 0).
+
+Subject: Merge PR #6: surface WebAuthn ceremony errors on the page
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3709.
+
+commit ae9a403d066066013deee5edae0a27bce7ca7929
+parent 87969fafff110f8daf6edd695f649385ae4a545a
+author Will Bickford <wbic16@gmail.com>
+date 1794803745 2026-11-16
+stat Markdown files 3 total 96 blank 17 comment 0 code 79
+stat Python files 23 total 4044 blank 498 comment 73 code 3473
+stat Shell files 4 total 222 blank 21 comment 44 code 157
+author~ Will Bickford <wbic16@gmail.com> commits 7
+Commit b53cc29d0ee7 by Will Bickford <wbic16@gmail.com> on 2026-11-16 (EE 0).
+
+Subject: Merge pull request #7 from wbic16/emise/close-rationale-dialog
+
+Public items: 8 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3816.
+
+commit b53cc29d0ee709bdfd997d83977d55fa8a8523ef
+parent ae9a403d066066013deee5edae0a27bce7ca7929
+author Will Bickford <wbic16@gmail.com>
+date 1794805128 2026-11-16
+item+ function register-service/tests/test_app.py :: TestDone.test_done_blank_note_omitted :: def test_done_blank_note_omitted(self) :: Function TestDone.test_done_blank_note_omitted takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestDone.test_done_malformed_json_400 :: def test_done_malformed_json_400(self) :: Function TestDone.test_done_malformed_json_400 takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestDone.test_done_no_body_no_note_field :: def test_done_no_body_no_note_field(self) :: Function TestDone.test_done_no_body_no_note_field takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestDone.test_done_non_object_body_400 :: def test_done_non_object_body_400(self) :: Function TestDone.test_done_non_object_body_400 takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestDone.test_done_non_string_note_400 :: def test_done_non_string_note_400(self) :: Function TestDone.test_done_non_string_note_400 takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestDone.test_done_note_at_cap_accepted :: def test_done_note_at_cap_accepted(self) :: Function TestDone.test_done_note_at_cap_accepted takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestDone.test_done_note_over_cap_400 :: def test_done_note_over_cap_400(self) :: Function TestDone.test_done_note_over_cap_400 takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestDone.test_done_with_note_stores_note :: def test_done_with_note_stores_note(self) :: Function TestDone.test_done_with_note_stores_note takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+stat Markdown files 3 total 96 blank 17 comment 0 code 79
+stat Python files 23 total 4179 blank 509 comment 90 code 3580
+stat Shell files 4 total 222 blank 21 comment 44 code 157
+author~ Will Bickford <wbic16@gmail.com> commits 8
+Commit 0927b8569d9d by Will Bickford <wbic16@gmail.com> on 2026-11-16 (EE 0).
+
+Subject: Merge pull request #8 from wbic16/emise/cancel-without-completion
+
+Public items: 4 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3902.
+
+commit 0927b8569d9d8df69d6a5f57746619897aaaf941
+parent b53cc29d0ee709bdfd997d83977d55fa8a8523ef
+author Will Bickford <wbic16@gmail.com>
+date 1794805549 2026-11-16
+item+ function register-service/tests/test_app.py :: TestCancel.test_cancel_no_body_outcome_no_note :: def test_cancel_no_body_outcome_no_note(self) :: Function TestCancel.test_cancel_no_body_outcome_no_note takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestCancel.test_cancel_note_over_cap_400 :: def test_cancel_note_over_cap_400(self) :: Function TestCancel.test_cancel_note_over_cap_400 takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestCancel.test_cancel_records_cancelled_atom_with_note :: def test_cancel_records_cancelled_atom_with_note(self) :: Function TestCancel.test_cancel_records_cancelled_atom_with_note takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_app.py :: TestCancel.test_cancel_unknown_number_404 :: def test_cancel_unknown_number_404(self) :: Function TestCancel.test_cancel_unknown_number_404 takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+stat Markdown files 3 total 96 blank 17 comment 0 code 79
+stat Python files 23 total 4285 blank 517 comment 102 code 3666
+stat Shell files 4 total 222 blank 21 comment 44 code 157
+author~ Will Bickford <wbic16@gmail.com> commits 9
+Commit 4d002961f427 by Will Bickford <wbic16@gmail.com> on 2026-11-17 (EE 0).
+
+Subject: Merge pull request #10 from wbic16/emise/qexo-service-token
+
+Public items: 17 added, 0 removed, 1 changed. Dependencies did not change. Code lines after this commit: 4156.
+
+commit 4d002961f427c2edc7dac3519fdd6d10b70a8215
+parent 0927b8569d9d8df69d6a5f57746619897aaaf941
+author Will Bickford <wbic16@gmail.com>
+date 1794946913 2026-11-17
+item~ function register-service/regsvc/app.py :: RegisterApp.__init__ :: def __init__(self, *, entries_log, resolutions_log, credentials, sessions, ldap_auth, ceremonies, secret, numbers_file=None, session_ttl=7 * 24 * 3600, preauth_ttl=300, drain_token=None, qexo_token=None) :: Function RegisterApp.__init__ takes self, *, entries_log, resolutions_log, credentials, sessions, ldap_auth, ceremonies, secret, numbers_file=None, session_ttl=7 * 24 * 3600, preauth_ttl=300, drain_token=None, qexo_token=None. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function register-service/tests/test_qexo_token.py :: Client.__init__ :: def __init__(self, app) :: Function Client.__init__ takes self, app. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_qexo_token.py :: Client.call :: def call(self, method, path, body=None, headers=None, csrf=None) :: Function Client.call takes self, method, path, body=None, headers=None, csrf=None. Its return type is unannotated; the code shows it returning status, parsed, resp_headers. :: inferred :: test
+item+ function register-service/tests/test_qexo_token.py :: QexoTokenTestCase.drain :: def drain(self) :: Function QexoTokenTestCase.drain takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning {"X-Drain-Token": DRAIN}. :: inferred :: test
+item+ function register-service/tests/test_qexo_token.py :: QexoTokenTestCase.qexo :: def qexo(self) :: Function QexoTokenTestCase.qexo takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning {"X-Qexo-Token": QEXO}. :: inferred :: test
+item+ function register-service/tests/test_qexo_token.py :: QexoTokenTestCase.setUp :: def setUp(self) :: Function QexoTokenTestCase.setUp takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_qexo_token.py :: TestNegativeLegs.test_drain_token_cannot_write :: def test_drain_token_cannot_write(self) :: Function TestNegativeLegs.test_drain_token_cannot_write takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_qexo_token.py :: TestNegativeLegs.test_number_and_note_contracts_still_apply :: def test_number_and_note_contracts_still_apply(self) :: Function TestNegativeLegs.test_number_and_note_contracts_still_apply takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_qexo_token.py :: TestNegativeLegs.test_qexo_token_cannot_read :: def test_qexo_token_cannot_read(self) :: Function TestNegativeLegs.test_qexo_token_cannot_read takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_qexo_token.py :: TestNegativeLegs.test_qexo_token_grants_no_login :: def test_qexo_token_grants_no_login(self) :: Function TestNegativeLegs.test_qexo_token_grants_no_login takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_qexo_token.py :: TestNegativeLegs.test_unset_qexo_token_fails_closed :: def test_unset_qexo_token_fails_closed(self) :: Function TestNegativeLegs.test_unset_qexo_token_fails_closed takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_qexo_token.py :: TestNegativeLegs.test_wrong_and_absent_tokens_refuse :: def test_wrong_and_absent_tokens_refuse(self) :: Function TestNegativeLegs.test_wrong_and_absent_tokens_refuse takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_qexo_token.py :: TestPositiveLegs.test_body_cannot_spoof_another_user :: def test_body_cannot_spoof_another_user(self) :: Function TestPositiveLegs.test_body_cannot_spoof_another_user takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_qexo_token.py :: TestPositiveLegs.test_token_appends_an_entry_as_qexo :: def test_token_appends_an_entry_as_qexo(self) :: Function TestPositiveLegs.test_token_appends_an_entry_as_qexo takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_qexo_token.py :: TestPositiveLegs.test_token_records_done_and_cancel_with_note :: def test_token_records_done_and_cancel_with_note(self) :: Function TestPositiveLegs.test_token_records_done_and_cancel_with_note takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_qexo_token.py :: TestSessionPathUnchanged.test_session_append_and_close_still_record_the_user :: def test_session_append_and_close_still_record_the_user(self) :: Function TestSessionPathUnchanged.test_session_append_and_close_still_record_the_user takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
+item+ function register-service/tests/test_qexo_token.py :: make_app :: def make_app(tmp, numbers=(9, 10, 21), qexo_token=QEXO, drain_token=DRAIN, numbers_file=True) :: Function make_app takes tmp, numbers=. Its return type is unannotated; the code shows it returning RegisterApp(. :: inferred :: test
+item+ function register-service/tests/test_qexo_token.py :: read_log :: def read_log(tmp, name) :: Function read_log takes tmp, name. Its return type is unannotated; the code shows it returning []; [json.loads(line) for line in. :: inferred :: test
+stat Markdown files 3 total 108 blank 18 comment 0 code 90
+stat Python files 24 total 4565 blank 550 comment 113 code 3902
+stat Shell files 4 total 230 blank 22 comment 44 code 164
+author~ Will Bickford <wbic16@gmail.com> commits 10
+Commit 6830c2fad6ff by Emise <emise@localhost> on 2026-11-21 (EE 0).
+
+Subject: Repo-coverage census 2026-11-21: add 7 register builders (humanities, ietf, journal, patch, premises, sql, tailscale) - C items migrated to their wbic16/register home
+
+Public items: 56 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5533.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 6830c2fad6fffeefd4c2722a3fad80d04f8dd319
+parent 4d002961f427c2edc7dac3519fdd6d10b70a8215
+author Emise <emise@localhost>
+date 1795304931 2026-11-21
+item+ function build_humanities_phext.py :: build :: def build() :: Function build takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning implode(scrolls), documents, stale. :: inferred :: api
+item+ function build_humanities_phext.py :: implode :: def implode(scrolls) :: scrolls: dict coord-string -> text. Same state machine as :: direct :: api
+item+ function build_humanities_phext.py :: load_manifest :: def load_manifest() :: Function load_manifest takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning json.load(f)["documents"]. :: inferred :: api
+item+ function build_humanities_phext.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning 1; 0. :: inferred :: api
+item+ function build_humanities_phext.py :: parse_coord :: def parse_coord(s) :: Function parse_coord takes s. Its return type is unannotated; the code shows it returning vals. :: inferred :: api
+item+ function build_humanities_phext.py :: read_source :: def read_source(a) :: Function read_source takes a. Its return type is unannotated; the code shows it returning raw, hashlib.sha256(raw).hexdigest(). :: inferred :: api
+item+ function build_humanities_phext.py :: render_artifact :: def render_artifact(a, raw) :: Function render_artifact takes a, raw. Its return type is unannotated; the code shows it returning scroll. :: inferred :: api
+item+ function build_humanities_phext.py :: render_home :: def render_home(documents) :: Function render_home takes documents. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_ietf_phext.py :: build :: def build(source_path, corpus) :: Function build takes source_path, corpus. Its return type is unannotated; the code shows it returning implode(scrolls), src. :: inferred :: api
+item+ function build_ietf_phext.py :: capped :: def capped(nums, cap=LIST_CAP) :: Function capped takes nums, cap=LIST_CAP. Its return type is unannotated; the code shows it returning lst(nums); lst(nums[:cap]) + f", ... (+{len(nums) - cap} mo. :: inferred :: api
+item+ function build_ietf_phext.py :: clean :: def clean(s) :: Strip phext delimiter chars from generated metadata text. :: direct :: api
+item+ function build_ietf_phext.py :: escape_text :: def escape_text(text, expected_delims, rfc) :: Function escape_text takes text, expected_delims, rfc. Its return type is unannotated; the code shows it returning "".join(out). :: inferred :: api
+item+ function build_ietf_phext.py :: impl_short :: def impl_short(e) :: Function impl_short takes e. Its return type is unannotated; the code shows it returning "impl: none identified"; "impl: unmapped"; f"impl [{e['impl_status']}]: {names}". :: inferred :: api
+item+ function build_ietf_phext.py :: implode :: def implode(scrolls) :: Same state machine as build_tasks_phext.py / build_skills_phext.py. :: direct :: api
+item+ function build_ietf_phext.py :: lst :: def lst(nums) :: Function lst takes nums. Its return type is unannotated; the code shows it returning ", ".join(str(n) for n in nums) if nums else "--. :: inferred :: api
+item+ function build_ietf_phext.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function build_ietf_phext.py :: opt :: def opt(name, env, default=None) :: Function opt takes name, env, default=None. Its return type is unannotated; the code shows it returning args[args.index(name) + 1]; os.environ.get(env, default). :: inferred :: api
+item+ function build_ietf_phext.py :: parse_coord :: def parse_coord(s) :: Function parse_coord takes s. Its return type is unannotated; the code shows it returning vals. :: inferred :: api
+item+ function build_ietf_phext.py :: refs_of :: def refs_of(e, kind) :: Function refs_of takes e, kind. Its return type is unannotated; the code shows it returning [r["to_rfc"] for r in e["references"] if r["kind. :: inferred :: api
+item+ function build_ietf_phext.py :: reg_t3_coord :: def reg_t3_coord(rfc) :: Function reg_t3_coord takes rfc. Its return type is unannotated; the code shows it returning f"1.1.1/1.1.2/1.3.{rfc // 1000 + 1}". :: inferred :: api
+item+ function build_ietf_phext.py :: registry_line :: def registry_line(e, src) :: Function registry_line takes e, src. Its return type is unannotated; the code shows it returning " | ".join([f"RFC {e['rfc']}", e["coordinate"],; " | ".join(parts). :: inferred :: api
+item+ function build_ietf_phext.py :: render_home :: def render_home(src) :: Function render_home takes src. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_ietf_phext.py :: render_registry_overview :: def render_registry_overview(src) :: Function render_registry_overview takes src. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_ietf_phext.py :: render_rfc :: def render_rfc(e, src, corpus) :: Function render_rfc takes e, src, corpus. Its return type is unannotated; the code shows it returning head + "\n" + body; head + "\n--- RFC TEXT AS SERVED BY THE RFC EDIT. :: inferred :: api
+item+ function build_ietf_phext.py :: render_rfc_header :: def render_rfc_header(e, src) :: Function render_rfc_header takes e, src. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_ietf_phext.py :: subseries_str :: def subseries_str(e) :: Function subseries_str takes e. Its return type is unannotated; the code shows it returning "; ".join(parts) if parts else "--". :: inferred :: api
+item+ function build_journal_phext.py :: build :: def build() :: Function build takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning implode(scrolls), entries. :: inferred :: api
+item+ function build_journal_phext.py :: implode :: def implode(scrolls) :: scrolls: dict coord-string -> text. Same state machine as :: direct :: api
+item+ function build_journal_phext.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning 0; 1. :: inferred :: api
+item+ function build_journal_phext.py :: parse_coord :: def parse_coord(s) :: Function parse_coord takes s. Its return type is unannotated; the code shows it returning vals. :: inferred :: api
+item+ function build_journal_phext.py :: render_entry :: def render_entry(e) :: Function render_entry takes e. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_journal_phext.py :: render_home :: def render_home(entries) :: Function render_home takes entries. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_patch_phext.py :: build :: def build() :: Function build takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning implode(scrolls), tasks. :: inferred :: api
+item+ function build_patch_phext.py :: implode :: def implode(scrolls) :: scrolls: dict coord-string -> text. Same state machine as :: direct :: api
+item+ function build_patch_phext.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning 0; 1. :: inferred :: api
+item+ function build_patch_phext.py :: parse_coord :: def parse_coord(s) :: Function parse_coord takes s. Its return type is unannotated; the code shows it returning vals. :: inferred :: api
+item+ function build_patch_phext.py :: render_home :: def render_home(tasks) :: Function render_home takes tasks. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_patch_phext.py :: render_patch :: def render_patch(t) :: Function render_patch takes t. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_premises_phext.py :: build :: def build() :: Function build takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning implode(scrolls), premises. :: inferred :: api
+item+ function build_premises_phext.py :: implode :: def implode(scrolls) :: scrolls: dict coord-string -> text. Same state machine as :: direct :: api
+item+ function build_premises_phext.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning 0; 1. :: inferred :: api
+item+ function build_premises_phext.py :: parse_coord :: def parse_coord(s) :: Function parse_coord takes s. Its return type is unannotated; the code shows it returning vals. :: inferred :: api
+item+ function build_premises_phext.py :: render_home :: def render_home(premises) :: Function render_home takes premises. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_premises_phext.py :: render_premise :: def render_premise(p) :: Function render_premise takes p. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_sql_phext.py :: build :: def build() :: Function build takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning implode(scrolls), data. :: inferred :: api
+item+ function build_sql_phext.py :: dialect_gap_count :: def dialect_gap_count(d) :: Function dialect_gap_count takes d. Its return type is unannotated; the code shows it returning len(d["gaps"]) + sum(1 for a in d["actions"] if . :: inferred :: api
+item+ function build_sql_phext.py :: implode :: def implode(scrolls) :: scrolls: dict coord-string -> text. Same state machine as :: direct :: api
+item+ function build_sql_phext.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning 0; 1. :: inferred :: api
+item+ function build_sql_phext.py :: parse_coord :: def parse_coord(s) :: Function parse_coord takes s. Its return type is unannotated; the code shows it returning vals. :: inferred :: api
+item+ function build_sql_phext.py :: render_dialect :: def render_dialect(d) :: Function render_dialect takes d. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_sql_phext.py :: render_home :: def render_home(data) :: Function render_home takes data. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
+item+ function build_sql_phext.py :: render_page :: def render_page(p) :: Function render_page takes p. Its return type is unannotated; the code shows it returning f"# {p['title']}\n\nCoordinate: {p['coordinate']. :: inferred :: api
+item+ function build_tailscale_phext.py :: build_bytes :: def build_bytes() :: Function build_bytes takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning implode(scrolls). :: inferred :: api
+item+ function build_tailscale_phext.py :: implode :: def implode(scrolls) :: Function implode takes scrolls. Its return type is unannotated; the code shows it returning bytes(out). :: inferred :: api
+item+ function build_tailscale_phext.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning 0; 1. :: inferred :: api
+item+ function build_tailscale_phext.py :: parse_coord :: def parse_coord(s) :: Function parse_coord takes s. Its return type is unannotated; the code shows it returning vals. :: inferred :: api
+stat Markdown files 3 total 108 blank 18 comment 0 code 90
+stat Python files 31 total 6122 blank 722 comment 121 code 5279
+stat Shell files 4 total 230 blank 22 comment 44 code 164
+author~ Emise <emise@localhost> commits 2

@@ -1,0 +1,111 @@
+# register — reference as of commit ea46dfefe045
+
+Commit ea46dfefe045bb5c1c1623e8aea801ceb98581a0. 4 commits folded. Every fact here was folded from the chain's per-commit deltas.
+
+## Provenance
+
+This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/register/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
+
+## Dependencies
+
+No dependencies recorded at this point.
+
+## Authors
+
+The author of record is **Will Bickford** — 4 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Will Bickford (his own identities) — 3 commits
+- Emise — 1 commit
+
+## Complexity
+
+- Markdown: 2 files, 51 lines total, 11 blank, 0 comment, 40 code
+- Python: 12 files, 2072 lines total, 249 blank, 26 comment, 1797 code
+- Shell: 3 files, 97 lines total, 8 blank, 21 comment, 68 code
+
+Declared RFCs at this point: none declared.
+
+## Public methods and commands
+
+- function `avgf` (build_accounting_phext.py) — Function avgf takes k.
+- function `btot` (build_accounting_phext.py) — Function btot takes k, aa=aa.
+- function `build` (build_accounting_phext.py) — Function build takes no inputs beyond the value it is called on.
+- function `day_lines` (build_accounting_phext.py) — Function day_lines takes ds.
+- function `gpt_day` (build_accounting_phext.py) — Function gpt_day takes d.
+- function `lag_line` (build_accounting_phext.py) — Function lag_line takes atoms.
+- function `net` (build_accounting_phext.py) — Function net takes a, d.
+- function `rhu` (build_accounting_phext.py) — Function rhu takes x.
+- function `t_all` (build_accounting_phext.py) — Function t_all takes k.
+- function `tot` (build_accounting_phext.py) — Function tot takes k.
+- function `week_lines` (build_accounting_phext.py) — Function week_lines takes w, sunday, dss.
+- function `week_of` (build_accounting_phext.py) — Function week_of takes d.
+- function `build` (build_artifacts_phext.py) — Function build takes no inputs beyond the value it is called on.
+- function `implode` (build_artifacts_phext.py) — scrolls: dict coord-string -> text.
+- function `load_manifest` (build_artifacts_phext.py) — Function load_manifest takes no inputs beyond the value it is called on.
+- function `main` (build_artifacts_phext.py) — Function main takes no inputs beyond the value it is called on.
+- function `parse_coord` (build_artifacts_phext.py) — Function parse_coord takes s.
+- function `read_source` (build_artifacts_phext.py) — Function read_source takes a.
+- function `render_artifact` (build_artifacts_phext.py) — Function render_artifact takes a, raw.
+- function `render_home` (build_artifacts_phext.py) — Function render_home takes artifacts.
+- function `build` (build_barnacles_phext.py) — Function build takes no inputs beyond the value it is called on.
+- function `entry_coord` (build_barnacles_phext.py) — Entry n (1-indexed) -> 2.1.1/1.1.1/S.T.B (hundred/ten/unit).
+- function `implode` (build_barnacles_phext.py) — Function implode takes scrolls.
+- function `main` (build_barnacles_phext.py) — Function main takes no inputs beyond the value it is called on.
+- function `parse_coord` (build_barnacles_phext.py) — Function parse_coord takes s.
+- function `render_entry` (build_barnacles_phext.py) — Function render_entry takes e, data.
+- function `render_home` (build_barnacles_phext.py) — Function render_home takes data.
+- function `build` (build_contests_phext.py) — Function build takes no inputs beyond the value it is called on.
+- function `entry_coord` (build_contests_phext.py) — Function entry_coord takes k.
+- function `implode` (build_contests_phext.py) — scrolls: dict coord-string -> text.
+- function `main` (build_contests_phext.py) — Function main takes no inputs beyond the value it is called on.
+- function `parse_coord` (build_contests_phext.py) — Function parse_coord takes s.
+- function `render_contest` (build_contests_phext.py) — Function render_contest takes k, c.
+- function `render_home` (build_contests_phext.py) — Function render_home takes contests.
+- function `render_out_of_scope` (build_contests_phext.py) — Function render_out_of_scope takes k, o.
+- function `B` (build_costs_phext.py) — Function B takes x.
+- function `build` (build_costs_phext.py) — Function build takes no inputs beyond the value it is called on.
+- function `build` (build_doomer_phext.py) — Function build takes no inputs beyond the value it is called on.
+- function `implode` (build_doomer_phext.py) — Function implode takes scrolls.
+- function `main` (build_doomer_phext.py) — Function main takes no inputs beyond the value it is called on.
+- function `parse_coord` (build_doomer_phext.py) — Function parse_coord takes s.
+- function `render_entry` (build_doomer_phext.py) — Function render_entry takes e.
+- function `render_home` (build_doomer_phext.py) — Function render_home takes data.
+- function `build` (build_jobs_phext.py) — Function build takes no inputs beyond the value it is called on.
+- function `implode` (build_jobs_phext.py) — scrolls: dict coord-string -> text.
+- function `main` (build_jobs_phext.py) — Function main takes no inputs beyond the value it is called on.
+- function `parse_coord` (build_jobs_phext.py) — Function parse_coord takes s.
+- function `render_home` (build_jobs_phext.py) — Function render_home takes jobs.
+- function `render_job` (build_jobs_phext.py) — Function render_job takes j.
+- function `build` (build_lessons_phext.py) — Build the phext blob from lessons-source.phext.
+- function `c` (build_lessons_phext.py) — Function c takes s.
+- function `check` (build_lessons_phext.py) — Rebuild to a temp file and compare SHA-256 with the committed
+- function `committed_index` (build_lessons_phext.py) — Parse the per-lesson index out of the committed lessons.phext Home scroll.
+- function `fmt` (build_lessons_phext.py) — Function fmt takes coord.
+- function `implode` (build_lessons_phext.py) — scrolls: dict coord-string -> bytes.
+- function `lesson_meta` (build_lessons_phext.py) — (short statement, date given, mark) from one lesson scroll.
+- function `main` (build_lessons_phext.py) — Function main takes no inputs beyond the value it is called on.
+- function `parse_bytes` (build_lessons_phext.py) — Dead-reckoning parse of raw phext bytes -> {coord_str: raw_bytes} for
+- function `sha256_file` (build_lessons_phext.py) — Function sha256_file takes path.
+- function `build` (build_mastery_phext.py) — Function build takes no inputs beyond the value it is called on.
+- function `entry_coord` (build_mastery_phext.py) — Function entry_coord takes k.
+- function `implode` (build_mastery_phext.py) — scrolls: dict coord-string -> text.
+- function `main` (build_mastery_phext.py) — Function main takes no inputs beyond the value it is called on.
+- function `parse_coord` (build_mastery_phext.py) — Function parse_coord takes s.
+- function `render_entry` (build_mastery_phext.py) — Function render_entry takes k, e.
+- function `render_home` (build_mastery_phext.py) — Function render_home takes entries.
+- function `build` (build_trainer_phext.py) — Function build takes no inputs beyond the value it is called on.
+- function `implode` (build_trainer_phext.py) — Function implode takes scrolls.
+- function `load_manifest` (build_trainer_phext.py) — Function load_manifest takes no inputs beyond the value it is called on.
+- function `main` (build_trainer_phext.py) — Function main takes no inputs beyond the value it is called on.
+- function `parse_coord` (build_trainer_phext.py) — Function parse_coord takes s.
+- function `read_source` (build_trainer_phext.py) — Function read_source takes e.
+- function `render_entry` (build_trainer_phext.py) — Function render_entry takes e, raw.
+- function `render_home` (build_trainer_phext.py) — Function render_home takes entries.
+- function `clean_md` (register-ui/generate_register_page.py) — Strip light markdown: links -> text, backticks/bold markers out.
+- function `fallback_action` (register-ui/generate_register_page.py) — Action text from the register prose when the mirror has none.
+- function `linkify` (register-ui/generate_register_page.py) — Wrap bare URLs in anchors (input is already HTML-escaped).
+- function `main` (register-ui/generate_register_page.py) — Function main takes no inputs beyond the value it is called on.
+- function `parse_register` (register-ui/generate_register_page.py) — Parse numbered items out of the register markdown.
+- function `repl` (register-ui/generate_register_page.py) — Function repl takes m.
