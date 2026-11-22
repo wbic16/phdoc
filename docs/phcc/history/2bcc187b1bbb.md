@@ -13,7 +13,7 @@ No dependencies recorded at this point.
 ## Authors
 
 - bellard <bellard> — 393 commits
-- grischka <grischka> — 1 commits
+- grischka <grischka> — 1 commit
 
 ## Complexity
 

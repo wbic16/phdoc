@@ -1,6 +1,6 @@
 # phcc — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/phcc. Scanned at commit 0628c00360a22aafcaf4d0bf26a4991f9d29b900. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 95). Project root: /home/wbic16/phdoc-sweep/proj/phcc/. Scanned at commit 0628c00360a22aafcaf4d0bf26a4991f9d29b900. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -14,261 +14,262 @@ No dependency manifest was found (no Cargo.toml, package.json, requirements.txt,
 
 ## Authors
 
-The git log holds 3888 commits. The authors, by commit count:
+The git log holds 3888 commits.
 
-- grischka <grischka> — 555 commits (14.3%)
-- Michael Matz <matz@suse.de> — 462 commits (11.9%)
-- bellard <bellard> — 393 commits (10.1%)
-- herman ten brugge <hermantenbrugge@home.nl> — 352 commits (9.1%)
-- Thomas Preud'homme <robotux@celest.fr> — 239 commits (6.1%)
-- seyko <seyko2@gmail.com> — 194 commits (5.0%)
-- Christian Jullien <jullien@eligis.com> — 121 commits (3.1%)
-- Danny Milosavljevic <dannym@scratchpost.org> — 78 commits (2.0%)
-- Edmund Grimley Evans <Edmund.Grimley.Evans@gmail.com> — 72 commits (1.9%)
-- Joe Soroka <gits@joesoroka.com> — 67 commits (1.7%)
-- Thomas Preud'homme <thomas.preudhomme@celest.fr> — 64 commits (1.6%)
-- Henry Kroll III <henry@comptune.com> — 63 commits (1.6%)
-- Avi Halachmi (:avih) <avihpit@yahoo.com> — 56 commits (1.4%)
-- jiang <30155751@qq.com> — 49 commits (1.3%)
-- Shinichiro Hamaji <shinichiro.hamaji _at_ gmail.com> — 48 commits (1.2%)
-- Theia <theia@mirrorborn.us> — 46 commits (1.2%)
-- Daniel Glöckner <daniel-gl@gmx.net> — 42 commits (1.1%)
-- Detlef Riekenberg <wine.dev@web.de> — 42 commits (1.1%)
-- Christian Jullien <Christian Jullien> — 40 commits (1.0%)
-- Meng Zhuo <mengzhuo@iscas.ac.cn> — 31 commits (0.8%)
-- Petr Skocik <pskocik@gmail.com> — 30 commits (0.8%)
-- Vlad Vissoultchev <wqweto@gmail.com> — 27 commits (0.7%)
-- Philip <pipcet@gmail.com> — 25 commits (0.6%)
-- Ekaitz Zarraga <ekaitz@elenq.tech> — 20 commits (0.5%)
-- James Lyon <jamesly0n@hotmail.com> — 20 commits (0.5%)
-- noneofyourbusiness <noneofyourbusiness@danwin1210.de> — 19 commits (0.5%)
-- Aleksi Hannula <ahannula4+nixgit@gmail.com> — 18 commits (0.5%)
-- mingodad <mingodad@gmail.com> — 18 commits (0.5%)
-- matthias <uso.cosmo.ray@gmail.com> — 17 commits (0.4%)
-- Kirill Smelkov <kirr@navytux.spb.ru> — 16 commits (0.4%)
-- wanjochan <wanjochan@gmail.com> — 16 commits (0.4%)
-- Emise <emise@mirrorborn.us> — 15 commits (0.4%)
-- Reimar Döffinger <Reimar.Doeffinger@gmx.de> — 15 commits (0.4%)
-- Vincent Lefevre <vincent@vinc17.net> — 15 commits (0.4%)
-- Dmitry Selyutin <ghostmansd@gmail.com> — 14 commits (0.4%)
-- Mounir IDRASSI <mounir.idrassi@amcrypto.jp> — 14 commits (0.4%)
-- Steffen Nurpmeso <steffen@sdaoden.eu> — 13 commits (0.3%)
-- gus knight <waddlesplash@gmail.com> — 13 commits (0.3%)
-- Alveus <alveus@mirrorborn.us> — 12 commits (0.3%)
-- Matthias Gatto <uso.cosmo.ray@gmail.com> — 12 commits (0.3%)
-- Benjamin Oldenburg <benjamin.oldenburg@ordis.co.th> — 11 commits (0.3%)
-- Detlef Riekenberg <tcc.dev@web.de> — 11 commits (0.3%)
-- Larry Doolittle <ldoolitt@recycle.lbl.gov> — 11 commits (0.3%)
-- Pavlas, Zdenek <zden3k@gmail.com> — 11 commits (0.3%)
-- Shinichiro Hamaji <shinichiro.hamaji@gmail.com> — 11 commits (0.3%)
-- Stefan <stefan-guix@vodafonemail.de> — 11 commits (0.3%)
-- Emise <emise@mirrorborn> — 10 commits (0.3%)
-- Christopher Bazley <chris.bazley.wg14@gmail.com> — 9 commits (0.2%)
-- minux <minux.ma@gmail.com> — 9 commits (0.2%)
-- noneofyourbusiness <stpavlenko@kolabnow.ch> — 9 commits (0.2%)
-- Akim Demaille <akim@lrde.epita.fr> — 8 commits (0.2%)
-- Kirill Smelkov <kirr@landau.phys.spbu.ru> — 8 commits (0.2%)
-- Tyge Løvset <tylo@norceresearch.no> — 8 commits (0.2%)
-- Urs Janssen <urs@hq.tin.org> — 8 commits (0.2%)
-- Carlos Montiers <carlos@thefunsouth.com> — 7 commits (0.2%)
-- Christian Jullien <jullien@coltrane.eligis.com> — 7 commits (0.2%)
-- David Mertens <dcmertens.perl@gmail.com> — 7 commits (0.2%)
-- Frederic Feret <tommy.planet@free.fr> — 7 commits (0.2%)
-- Kirill Smelkov <kirr@mns.spb.ru> — 7 commits (0.2%)
-- Zhang Boyang <zhangboyang.id@gmail.com> — 7 commits (0.2%)
-- kbkpbot <kbkpbot@sina.com> — 7 commits (0.2%)
-- Kyryl Melekhin <k.melekhin@gmail.com> — 6 commits (0.2%)
-- Lee Duhem <lee.duhem@gmail.com> — 6 commits (0.2%)
-- Roy <roytam@gmail.com> — 6 commits (0.2%)
-- Sushant Pandurangi <sushpa@alumni.ethz.ch> — 6 commits (0.2%)
-- Ziyao <tswuyin_st127@163.com> — 6 commits (0.2%)
-- Arthur Williams <taaparthur@gmail.com> — 5 commits (0.1%)
-- Jean-Claude Beaudoin <jean.claude.beaudoin@gmail.com> — 5 commits (0.1%)
-- Matteo Cypriani <mcy@lm7.fr> — 5 commits (0.1%)
-- Raphael Cohn <raphael.cohn@stormmq.com> — 5 commits (0.1%)
-- Sergei Trofimovich <st@anti-virus.by> — 5 commits (0.1%)
-- Udo <Udo@Udos-PC> — 5 commits (0.1%)
-- Will Bickford <wbic16@gmail.com> — 5 commits (0.1%)
-- YX Hao <lifenjoiner@163.com> — 5 commits (0.1%)
-- Bernhard Reutner-Fischer <rep.dot.nop@gmail.com> — 4 commits (0.1%)
-- Christian Jullien <jullien@freebsd64.eligis.com> — 4 commits (0.1%)
-- Cyan Ogilvie <cyan.ogilvie@gmail.com> — 4 commits (0.1%)
-- Emise <emise@muse.local> — 4 commits (0.1%)
-- Jonathan M. Wilbur <jonathan@wilbur.space> — 4 commits (0.1%)
-- Milutin Jovanović <jovanovic.milutin@gmail.com> — 4 commits (0.1%)
-- Pursuer <1596067968@qq.com> — 4 commits (0.1%)
-- Ramsay Jones <ramsay@ramsay1.demon.co.uk> — 4 commits (0.1%)
-- Sergey Sushilin <sushilinsergey@gmail.com> — 4 commits (0.1%)
-- remph <lhr@disroot.org> — 4 commits (0.1%)
-- yuanbin <Administrator@yuan.(none)> — 4 commits (0.1%)
-- Andrei Warkentin <andrey.warkentin@gmail.com> — 3 commits (0.1%)
-- Changming Xu <xcmhit@gmail.com> — 3 commits (0.1%)
-- Christian Jullien <jullien@openbsd.eligis.com> — 3 commits (0.1%)
-- Christian Jullien <jullien@openbsd.home> — 3 commits (0.1%)
-- Christian Jullien <jullien@openbsd64.eligis.com> — 3 commits (0.1%)
-- Dylan Fei <feidylan23@gmail.com> — 3 commits (0.1%)
-- Gabriel Corneanu <gabrielcorneanu@gmail.com> — 3 commits (0.1%)
-- Jaroslav Kysela <perex@perex.cz> — 3 commits (0.1%)
-- Kamil Rytarowski <n54@gmx.com> — 3 commits (0.1%)
-- Milutin Jovanovic <jovanovic.milutin@gmail.com> — 3 commits (0.1%)
-- Riccardo Schirone <sirmy15@gmail.com> — 3 commits (0.1%)
-- Steven G. Messervey <nuke48386@yahoo.com> — 3 commits (0.1%)
-- coltrane <jullien@coltrane.eligis.com> — 3 commits (0.1%)
-- wbic16 <wbic16@users.noreply.github.com> — 3 commits (0.1%)
-- Andrew Mulbrook <andrew262@gmail.com> — 2 commits (0.1%)
-- Archidemon <_dangerdl@mail.ru> — 2 commits (0.1%)
-- Aron BARATH <baratharon@caesar.elte.hu> — 2 commits (0.1%)
-- Austin English <austinenglish@gmail.com> — 2 commits (0.1%)
-- Brian Callahan <bcallah@openbsd.org> — 2 commits (0.1%)
-- Christian Jullien <jullien@sims3.eligis.com> — 2 commits (0.1%)
-- CodeHz <codehz@outlook.com> — 2 commits (0.1%)
-- Domingo Alvarez Duarte <mingodad@gmail.com> — 2 commits (0.1%)
-- Emise (Muse) <wbic16@gmail.com> — 2 commits (0.1%)
-- Eric Raible <raible@gmail.com> — 2 commits (0.1%)
-- Giovanni Mascellani <gio@debian.org> — 2 commits (0.1%)
-- H-language <hydrogen.language@gmail.com> — 2 commits (0.1%)
-- Iavael <iavaelooeyt@gmail.com> — 2 commits (0.1%)
-- John Nunley <dev@notgull.net> — 2 commits (0.1%)
-- John Scott <jscott@posteo.net> — 2 commits (0.1%)
-- Marc Vertes <mvertes@free.fr> — 2 commits (0.1%)
-- OpenCode[AI] <opencode-ai@example.com> — 2 commits (0.1%)
-- Pascal Cuoq <cuoq@trust-in-soft.com> — 2 commits (0.1%)
-- Pursuer2 <1596067968@qq.com> — 2 commits (0.1%)
-- Reini Urban <reini.urban@gmail.com> — 2 commits (0.1%)
-- Scott Graham <scott.tinycc@h4ck3r.net> — 2 commits (0.1%)
-- Thomas Preud'homme <robotux@armelhome.rsr.lip6.fr> — 2 commits (0.1%)
-- Thomas Stalder <git@netsolux.ch> — 2 commits (0.1%)
-- Timo VJ Lahde <timovj.lahde@gmail.com> — 2 commits (0.1%)
-- Tyge <tylo@norceresearch.no> — 2 commits (0.1%)
-- U-NELSON\jullien <jullien@nelson.eligis.com> — 2 commits (0.1%)
-- kbkpbot <kbkpbot@gmail.com> — 2 commits (0.1%)
-- keren <keren@bluebird.(none)> — 2 commits (0.1%)
-- matthias gatto <uso.cosmo.ray@gmail.com> — 2 commits (0.1%)
-- waltje <decwiz@yahoo.com> — 2 commits (0.1%)
-- waterlens <waterlens@waterlens.moe> — 2 commits (0.1%)
-- Adam Sampson <ats@offog.org> — 1 commit (0.0%)
-- Alexander Egorenkov <ae@linux-pc-2.(none)> — 1 commit (0.0%)
-- Alexander Medvednikov <alexander@medvednikov.com> — 1 commit (0.0%)
-- Alexander Sosedkin <monk@unboiled.info> — 1 commit (0.0%)
-- Alexandre Becoulet <diaxen@ganymede.localdomain> — 1 commit (0.0%)
-- Ali Gholami Rudi <ali@rudi.ir> — 1 commit (0.0%)
-- Amine Najahi <mohaminaj@gmail.com> — 1 commit (0.0%)
-- Andrew Aladjev <aladjev.andrew@gmail.com> — 1 commit (0.0%)
-- Andrey Gursky <andrey.gursky@e-mail.ua> — 1 commit (0.0%)
-- Andrius Štikonas <andrius@stikonas.eu> — 1 commit (0.0%)
-- Anon <tsoding> — 1 commit (0.0%)
-- Arthur Williams <taaparthur@disroot.org> — 1 commit (0.0%)
-- Austin English <me@example.com> — 1 commit (0.0%)
-- Balazs Kezes <rlblaster@gmail.com> — 1 commit (0.0%)
-- Ben Bacarisse <software@bsb.me.uk> — 1 commit (0.0%)
-- Ben C <ben.c.dev@outlook.com> — 1 commit (0.0%)
-- Ben Noordhuis <info@bnoordhuis.nl> — 1 commit (0.0%)
-- Boian Berberov <bberberov@ieee.org> — 1 commit (0.0%)
-- Brian Callahan <bcallah@posteo.net> — 1 commit (0.0%)
-- Christian Jullien <jullien@byas.local> — 1 commit (0.0%)
-- Christian Jullien <jullien@debian64.eligis.com> — 1 commit (0.0%)
-- Christian Jullien <jullien@fedora64.eligis.com> — 1 commit (0.0%)
-- Christian Jullien <jullien@freebsd64.home> — 1 commit (0.0%)
-- Christian Jullien <jullien@sims.eligis.com> — 1 commit (0.0%)
-- Christian Jullien <none> — 1 commit (0.0%)
-- Claudio Bley <b_l_e_y@ml1.net> — 1 commit (0.0%)
-- DAVID <76133201+majestuoso@users.noreply.github.com> — 1 commit (0.0%)
-- DFP <dfp@disroot.org> — 1 commit (0.0%)
-- Devin Hussey <husseydevin@gmail.com> — 1 commit (0.0%)
-- Edmund Grimley Evans <Edmund.Grimley-Evans@arm.com> — 1 commit (0.0%)
-- Emil <ez@la.mine.nu> — 1 commit (0.0%)
-- Emise (for Will Bickford) <wbic16@github.com> — 1 commit (0.0%)
-- Fabrice Bellard <bellard.org> — 1 commit (0.0%)
-- Feret@.(none) <Feret@.(none)> — 1 commit (0.0%)
-- Frédéric Féret <frederic.feret@outlook.com> — 1 commit (0.0%)
-- Guest0x0 <guest0x0@outlook.com> — 1 commit (0.0%)
-- Gynt <Gynt@users.noreply.github.com> — 1 commit (0.0%)
-- Haelwenn (lanodan) Monnier <contact@hacktivis.me> — 1 commit (0.0%)
-- Henry K <henry@desk.local> — 1 commit (0.0%)
-- Hitoshi Mitake <h.mitake@gmail.com> — 1 commit (0.0%)
-- Huang Zhaobin <zhaob1n@foxmail.com> — 1 commit (0.0%)
-- James Buren <ryu0@ymail.com> — 1 commit (0.0%)
-- Jan Boon <jan.boon@kaetemi.be> — 1 commit (0.0%)
-- Jonathan Newman <jonathannewman314@gmail.com> — 1 commit (0.0%)
-- Jookia <166291@gmail.com> — 1 commit (0.0%)
-- Joseph Poirier <jdpoirier@gmail.com> — 1 commit (0.0%)
-- Jov <amutu@amutu.com> — 1 commit (0.0%)
-- Keith Thompson <Keith.S.Thompson@gmail.com> — 1 commit (0.0%)
-- Konstantin Baltsat <baltsat2002@mail.ru> — 1 commit (0.0%)
-- Kurt Nalty <kurt.nalty@kurtnalty.com> — 1 commit (0.0%)
-- Luc Everse <luc@wukl.net> — 1 commit (0.0%)
-- Luigi Rizzo <rizzo> — 1 commit (0.0%)
-- Manuel Simoni <msimoni@gmail.com> — 1 commit (0.0%)
-- Marek Knápek <knapek.mar@gmail.com> — 1 commit (0.0%)
-- Mathias Krause <minipli@grsecurity.net> — 1 commit (0.0%)
-- Maxim Logaev <maxlogaev@proton.me> — 1 commit (0.0%)
-- Meng Zhuo <mengzhuo1203@gmail.com> — 1 commit (0.0%)
-- Michael Wilder <mwilder.w@gmail.com> — 1 commit (0.0%)
-- Nicolas Limare <nicolas.limare@cmla.ens-cachan.fr> — 1 commit (0.0%)
-- Niklas Rosencrantz <niklasr@pm.me> — 1 commit (0.0%)
-- Nikos Mavrogiannopoulos <nmav@gnutls.org> — 1 commit (0.0%)
-- OldWorldOrdr <joey.t.reinhart@gmail.com> — 1 commit (0.0%)
-- Per Nordlöw <PNordlow@symmetryinvestments.com> — 1 commit (0.0%)
-- Per Nordlöw <per.nordlow@gmail.com> — 1 commit (0.0%)
-- Petr Skocik <borgx.space@gmail.com> — 1 commit (0.0%)
-- Raven <citrons@mondecitronne.com> — 1 commit (0.0%)
-- Reinhard Urban <reinhard.urban@nubix.de> — 1 commit (0.0%)
-- Reini Urban <reini@spexai.com> — 1 commit (0.0%)
-- Rob Pilling <robpilling@gmail.com> — 1 commit (0.0%)
-- Robert Hoelzl <robert.hoelzl@posteo.de> — 1 commit (0.0%)
-- Romain Francoise <rfrancoise@debian.org> — 1 commit (0.0%)
-- Roy Tam <roytam@gmail.com> — 1 commit (0.0%)
-- Ryan Burns <rtburns@protonmail.com> — 1 commit (0.0%)
-- Sam Ellicott <sellicott@cedarville.edu> — 1 commit (0.0%)
-- Sam Watkins <sam@nikas.(none)> — 1 commit (0.0%)
-- Sergey Sushilin <sergeysushilin@protonmail.com> — 1 commit (0.0%)
-- Sergey Vinokurov <serg.foo@gmail.com> — 1 commit (0.0%)
-- Siddhesh Poyarekar <siddhesh@gotplt.org> — 1 commit (0.0%)
-- Sigrid Solveig Haflínudóttir <sigrid@ftrv.se> — 1 commit (0.0%)
-- Sizhe Zhao <prc.zhao@outlook.com> — 1 commit (0.0%)
-- Soloist Deng <soloist.deng-gmail.com> — 1 commit (0.0%)
-- Sylvain BERTRAND <sylvain.bertrand@legeek.net> — 1 commit (0.0%)
-- Theodore Dubois <tblodt@icloud.com> — 1 commit (0.0%)
-- Thomas Coudray <amanone@gmail.com> — 1 commit (0.0%)
-- Thomas Preud'homme <robotux@mallow.celest.fr> — 1 commit (0.0%)
-- Thomas Stalder <thomas@netsolux.ch> — 1 commit (0.0%)
-- Timo VJ Lähde <timovj.lahde@gmail.com> — 1 commit (0.0%)
-- U-UNIT1\dennis <dennis@UNIT1.(none)> — 1 commit (0.0%)
-- Urja Rannikko <urjaman@gmail.com> — 1 commit (0.0%)
-- Urs Janssen <urs@akk.org> — 1 commit (0.0%)
-- Urs Janssen <urs@niko.tin.org> — 1 commit (0.0%)
-- Vittorio Giovara <vittorio.giovara@gmail.com> — 1 commit (0.0%)
-- Vlad Vissoultchev <vlado@vis.bg> — 1 commit (0.0%)
-- Willy Tarreau <w@1wt.eu> — 1 commit (0.0%)
-- Wirtos_new <Wirtos.new@gmail.com> — 1 commit (0.0%)
-- Yao Zi <ziyao@disroot.org> — 1 commit (0.0%)
-- Zdenek Pavlas <zden3k@gmail.com> — 1 commit (0.0%)
-- Ziga Lenarcic <ziga.lenarcic@protonmail.com> — 1 commit (0.0%)
-- Ziyao <ziyao@disroot.org> — 1 commit (0.0%)
-- Zuhaitz-dev <zuhaitz.zechhub@gmail.com> — 1 commit (0.0%)
-- ayush-varshney <ayush.kumar@upc.edu> — 1 commit (0.0%)
-- bobbl <bobbl@gmx.de> — 1 commit (0.0%)
-- checkroom <checkroom@lenovos-novos.lan> — 1 commit (0.0%)
-- diannaaa <diannaaav@gmail.com> — 1 commit (0.0%)
-- emekoi <emekankurumeh@outlook.com> — 1 commit (0.0%)
-- foobar <foobar@redchan.it> — 1 commit (0.0%)
-- general <general> — 1 commit (0.0%)
-- gr <gr@gr-laptop.(none)> — 1 commit (0.0%)
-- illiliti <illiliti@dimension.sh> — 1 commit (0.0%)
-- inostensibl <inostensibl@gmail.com> — 1 commit (0.0%)
-- janus.lt <janus.lt> — 1 commit (0.0%)
-- mob <mob> — 1 commit (0.0%)
-- noneofyourbusiness <noneofyourbusiness@kolabnow.ch> — 1 commit (0.0%)
-- orbea <ovariegata@yahoo.com> — 1 commit (0.0%)
-- owenewans <owenewans@owenewans.org> — 1 commit (0.0%)
-- root <root@mallow.celest.fr> — 1 commit (0.0%)
-- tuxcrafting <tuxcrafting@proton.me> — 1 commit (0.0%)
-- unknown <TimoL@.(none)> — 1 commit (0.0%)
-- unknown <wctam@.itedn32a.localdomain> — 1 commit (0.0%)
-- wbic16 <wbic16@gmail.com> — 1 commit (0.0%)
-- yan-bin2009 <yan20095642558@163.com> — 1 commit (0.0%)
-- yuanbin <yuanbin0@gmail.com> — 1 commit (0.0%)
-- Øyvind A. Holm <sunny@sunbase.org> — 1 commit (0.0%)
+The author of record is **Will Bickford** — 99 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Theia — 46 commits
+- Emise — 32 commits
+- Alveus — 12 commits
+- Will Bickford (his own identities) — 9 commits
+
+Other authors, kept as themselves (not Exocortical cluster personas; never folded):
+
+- grischka <grischka> — 555 commits
+- Michael Matz <matz@suse.de> — 462 commits
+- bellard <bellard> — 393 commits
+- herman ten brugge <hermantenbrugge@home.nl> — 352 commits
+- Thomas Preud'homme <robotux@celest.fr> — 239 commits
+- seyko <seyko2@gmail.com> — 194 commits
+- Christian Jullien <jullien@eligis.com> — 121 commits
+- Danny Milosavljevic <dannym@scratchpost.org> — 78 commits
+- Edmund Grimley Evans <Edmund.Grimley.Evans@gmail.com> — 72 commits
+- Joe Soroka <gits@joesoroka.com> — 67 commits
+- Thomas Preud'homme <thomas.preudhomme@celest.fr> — 64 commits
+- Henry Kroll III <henry@comptune.com> — 63 commits
+- Avi Halachmi (:avih) <avihpit@yahoo.com> — 56 commits
+- jiang <30155751@qq.com> — 49 commits
+- Shinichiro Hamaji <shinichiro.hamaji _at_ gmail.com> — 48 commits
+- Daniel Glöckner <daniel-gl@gmx.net> — 42 commits
+- Detlef Riekenberg <wine.dev@web.de> — 42 commits
+- Christian Jullien <Christian Jullien> — 40 commits
+- Meng Zhuo <mengzhuo@iscas.ac.cn> — 31 commits
+- Petr Skocik <pskocik@gmail.com> — 30 commits
+- Vlad Vissoultchev <wqweto@gmail.com> — 27 commits
+- Philip <pipcet@gmail.com> — 25 commits
+- Ekaitz Zarraga <ekaitz@elenq.tech> — 20 commits
+- James Lyon <jamesly0n@hotmail.com> — 20 commits
+- noneofyourbusiness <noneofyourbusiness@danwin1210.de> — 19 commits
+- Aleksi Hannula <ahannula4+nixgit@gmail.com> — 18 commits
+- mingodad <mingodad@gmail.com> — 18 commits
+- matthias <uso.cosmo.ray@gmail.com> — 17 commits
+- Kirill Smelkov <kirr@navytux.spb.ru> — 16 commits
+- wanjochan <wanjochan@gmail.com> — 16 commits
+- Reimar Döffinger <Reimar.Doeffinger@gmx.de> — 15 commits
+- Vincent Lefevre <vincent@vinc17.net> — 15 commits
+- Dmitry Selyutin <ghostmansd@gmail.com> — 14 commits
+- Mounir IDRASSI <mounir.idrassi@amcrypto.jp> — 14 commits
+- Steffen Nurpmeso <steffen@sdaoden.eu> — 13 commits
+- gus knight <waddlesplash@gmail.com> — 13 commits
+- Matthias Gatto <uso.cosmo.ray@gmail.com> — 12 commits
+- Benjamin Oldenburg <benjamin.oldenburg@ordis.co.th> — 11 commits
+- Detlef Riekenberg <tcc.dev@web.de> — 11 commits
+- Larry Doolittle <ldoolitt@recycle.lbl.gov> — 11 commits
+- Pavlas, Zdenek <zden3k@gmail.com> — 11 commits
+- Shinichiro Hamaji <shinichiro.hamaji@gmail.com> — 11 commits
+- Stefan <stefan-guix@vodafonemail.de> — 11 commits
+- Christopher Bazley <chris.bazley.wg14@gmail.com> — 9 commits
+- minux <minux.ma@gmail.com> — 9 commits
+- noneofyourbusiness <stpavlenko@kolabnow.ch> — 9 commits
+- Akim Demaille <akim@lrde.epita.fr> — 8 commits
+- Kirill Smelkov <kirr@landau.phys.spbu.ru> — 8 commits
+- Tyge Løvset <tylo@norceresearch.no> — 8 commits
+- Urs Janssen <urs@hq.tin.org> — 8 commits
+- Carlos Montiers <carlos@thefunsouth.com> — 7 commits
+- Christian Jullien <jullien@coltrane.eligis.com> — 7 commits
+- David Mertens <dcmertens.perl@gmail.com> — 7 commits
+- Frederic Feret <tommy.planet@free.fr> — 7 commits
+- Kirill Smelkov <kirr@mns.spb.ru> — 7 commits
+- Zhang Boyang <zhangboyang.id@gmail.com> — 7 commits
+- kbkpbot <kbkpbot@sina.com> — 7 commits
+- Kyryl Melekhin <k.melekhin@gmail.com> — 6 commits
+- Lee Duhem <lee.duhem@gmail.com> — 6 commits
+- Roy <roytam@gmail.com> — 6 commits
+- Sushant Pandurangi <sushpa@alumni.ethz.ch> — 6 commits
+- Ziyao <tswuyin_st127@163.com> — 6 commits
+- Arthur Williams <taaparthur@gmail.com> — 5 commits
+- Jean-Claude Beaudoin <jean.claude.beaudoin@gmail.com> — 5 commits
+- Matteo Cypriani <mcy@lm7.fr> — 5 commits
+- Raphael Cohn <raphael.cohn@stormmq.com> — 5 commits
+- Sergei Trofimovich <st@anti-virus.by> — 5 commits
+- Udo <Udo@Udos-PC> — 5 commits
+- YX Hao <lifenjoiner@163.com> — 5 commits
+- Bernhard Reutner-Fischer <rep.dot.nop@gmail.com> — 4 commits
+- Christian Jullien <jullien@freebsd64.eligis.com> — 4 commits
+- Cyan Ogilvie <cyan.ogilvie@gmail.com> — 4 commits
+- Jonathan M. Wilbur <jonathan@wilbur.space> — 4 commits
+- Milutin Jovanović <jovanovic.milutin@gmail.com> — 4 commits
+- Pursuer <1596067968@qq.com> — 4 commits
+- Ramsay Jones <ramsay@ramsay1.demon.co.uk> — 4 commits
+- Sergey Sushilin <sushilinsergey@gmail.com> — 4 commits
+- remph <lhr@disroot.org> — 4 commits
+- yuanbin <Administrator@yuan.(none)> — 4 commits
+- Andrei Warkentin <andrey.warkentin@gmail.com> — 3 commits
+- Changming Xu <xcmhit@gmail.com> — 3 commits
+- Christian Jullien <jullien@openbsd.eligis.com> — 3 commits
+- Christian Jullien <jullien@openbsd.home> — 3 commits
+- Christian Jullien <jullien@openbsd64.eligis.com> — 3 commits
+- Dylan Fei <feidylan23@gmail.com> — 3 commits
+- Gabriel Corneanu <gabrielcorneanu@gmail.com> — 3 commits
+- Jaroslav Kysela <perex@perex.cz> — 3 commits
+- Kamil Rytarowski <n54@gmx.com> — 3 commits
+- Milutin Jovanovic <jovanovic.milutin@gmail.com> — 3 commits
+- Riccardo Schirone <sirmy15@gmail.com> — 3 commits
+- Steven G. Messervey <nuke48386@yahoo.com> — 3 commits
+- coltrane <jullien@coltrane.eligis.com> — 3 commits
+- Andrew Mulbrook <andrew262@gmail.com> — 2 commits
+- Archidemon <_dangerdl@mail.ru> — 2 commits
+- Aron BARATH <baratharon@caesar.elte.hu> — 2 commits
+- Austin English <austinenglish@gmail.com> — 2 commits
+- Brian Callahan <bcallah@openbsd.org> — 2 commits
+- Christian Jullien <jullien@sims3.eligis.com> — 2 commits
+- CodeHz <codehz@outlook.com> — 2 commits
+- Domingo Alvarez Duarte <mingodad@gmail.com> — 2 commits
+- Eric Raible <raible@gmail.com> — 2 commits
+- Giovanni Mascellani <gio@debian.org> — 2 commits
+- H-language <hydrogen.language@gmail.com> — 2 commits
+- Iavael <iavaelooeyt@gmail.com> — 2 commits
+- John Nunley <dev@notgull.net> — 2 commits
+- John Scott <jscott@posteo.net> — 2 commits
+- Marc Vertes <mvertes@free.fr> — 2 commits
+- OpenCode[AI] <opencode-ai@example.com> — 2 commits
+- Pascal Cuoq <cuoq@trust-in-soft.com> — 2 commits
+- Pursuer2 <1596067968@qq.com> — 2 commits
+- Reini Urban <reini.urban@gmail.com> — 2 commits
+- Scott Graham <scott.tinycc@h4ck3r.net> — 2 commits
+- Thomas Preud'homme <robotux@armelhome.rsr.lip6.fr> — 2 commits
+- Thomas Stalder <git@netsolux.ch> — 2 commits
+- Timo VJ Lahde <timovj.lahde@gmail.com> — 2 commits
+- Tyge <tylo@norceresearch.no> — 2 commits
+- U-NELSON\jullien <jullien@nelson.eligis.com> — 2 commits
+- kbkpbot <kbkpbot@gmail.com> — 2 commits
+- keren <keren@bluebird.(none)> — 2 commits
+- matthias gatto <uso.cosmo.ray@gmail.com> — 2 commits
+- waltje <decwiz@yahoo.com> — 2 commits
+- waterlens <waterlens@waterlens.moe> — 2 commits
+- Adam Sampson <ats@offog.org> — 1 commit
+- Alexander Egorenkov <ae@linux-pc-2.(none)> — 1 commit
+- Alexander Medvednikov <alexander@medvednikov.com> — 1 commit
+- Alexander Sosedkin <monk@unboiled.info> — 1 commit
+- Alexandre Becoulet <diaxen@ganymede.localdomain> — 1 commit
+- Ali Gholami Rudi <ali@rudi.ir> — 1 commit
+- Amine Najahi <mohaminaj@gmail.com> — 1 commit
+- Andrew Aladjev <aladjev.andrew@gmail.com> — 1 commit
+- Andrey Gursky <andrey.gursky@e-mail.ua> — 1 commit
+- Andrius Štikonas <andrius@stikonas.eu> — 1 commit
+- Anon <tsoding> — 1 commit
+- Arthur Williams <taaparthur@disroot.org> — 1 commit
+- Austin English <me@example.com> — 1 commit
+- Balazs Kezes <rlblaster@gmail.com> — 1 commit
+- Ben Bacarisse <software@bsb.me.uk> — 1 commit
+- Ben C <ben.c.dev@outlook.com> — 1 commit
+- Ben Noordhuis <info@bnoordhuis.nl> — 1 commit
+- Boian Berberov <bberberov@ieee.org> — 1 commit
+- Brian Callahan <bcallah@posteo.net> — 1 commit
+- Christian Jullien <jullien@byas.local> — 1 commit
+- Christian Jullien <jullien@debian64.eligis.com> — 1 commit
+- Christian Jullien <jullien@fedora64.eligis.com> — 1 commit
+- Christian Jullien <jullien@freebsd64.home> — 1 commit
+- Christian Jullien <jullien@sims.eligis.com> — 1 commit
+- Christian Jullien <none> — 1 commit
+- Claudio Bley <b_l_e_y@ml1.net> — 1 commit
+- DAVID <76133201+majestuoso@users.noreply.github.com> — 1 commit
+- DFP <dfp@disroot.org> — 1 commit
+- Devin Hussey <husseydevin@gmail.com> — 1 commit
+- Edmund Grimley Evans <Edmund.Grimley-Evans@arm.com> — 1 commit
+- Emil <ez@la.mine.nu> — 1 commit
+- Fabrice Bellard <bellard.org> — 1 commit
+- Feret@.(none) <Feret@.(none)> — 1 commit
+- Frédéric Féret <frederic.feret@outlook.com> — 1 commit
+- Guest0x0 <guest0x0@outlook.com> — 1 commit
+- Gynt <Gynt@users.noreply.github.com> — 1 commit
+- Haelwenn (lanodan) Monnier <contact@hacktivis.me> — 1 commit
+- Henry K <henry@desk.local> — 1 commit
+- Hitoshi Mitake <h.mitake@gmail.com> — 1 commit
+- Huang Zhaobin <zhaob1n@foxmail.com> — 1 commit
+- James Buren <ryu0@ymail.com> — 1 commit
+- Jan Boon <jan.boon@kaetemi.be> — 1 commit
+- Jonathan Newman <jonathannewman314@gmail.com> — 1 commit
+- Jookia <166291@gmail.com> — 1 commit
+- Joseph Poirier <jdpoirier@gmail.com> — 1 commit
+- Jov <amutu@amutu.com> — 1 commit
+- Keith Thompson <Keith.S.Thompson@gmail.com> — 1 commit
+- Konstantin Baltsat <baltsat2002@mail.ru> — 1 commit
+- Kurt Nalty <kurt.nalty@kurtnalty.com> — 1 commit
+- Luc Everse <luc@wukl.net> — 1 commit
+- Luigi Rizzo <rizzo> — 1 commit
+- Manuel Simoni <msimoni@gmail.com> — 1 commit
+- Marek Knápek <knapek.mar@gmail.com> — 1 commit
+- Mathias Krause <minipli@grsecurity.net> — 1 commit
+- Maxim Logaev <maxlogaev@proton.me> — 1 commit
+- Meng Zhuo <mengzhuo1203@gmail.com> — 1 commit
+- Michael Wilder <mwilder.w@gmail.com> — 1 commit
+- Nicolas Limare <nicolas.limare@cmla.ens-cachan.fr> — 1 commit
+- Niklas Rosencrantz <niklasr@pm.me> — 1 commit
+- Nikos Mavrogiannopoulos <nmav@gnutls.org> — 1 commit
+- OldWorldOrdr <joey.t.reinhart@gmail.com> — 1 commit
+- Per Nordlöw <PNordlow@symmetryinvestments.com> — 1 commit
+- Per Nordlöw <per.nordlow@gmail.com> — 1 commit
+- Petr Skocik <borgx.space@gmail.com> — 1 commit
+- Raven <citrons@mondecitronne.com> — 1 commit
+- Reinhard Urban <reinhard.urban@nubix.de> — 1 commit
+- Reini Urban <reini@spexai.com> — 1 commit
+- Rob Pilling <robpilling@gmail.com> — 1 commit
+- Robert Hoelzl <robert.hoelzl@posteo.de> — 1 commit
+- Romain Francoise <rfrancoise@debian.org> — 1 commit
+- Roy Tam <roytam@gmail.com> — 1 commit
+- Ryan Burns <rtburns@protonmail.com> — 1 commit
+- Sam Ellicott <sellicott@cedarville.edu> — 1 commit
+- Sam Watkins <sam@nikas.(none)> — 1 commit
+- Sergey Sushilin <sergeysushilin@protonmail.com> — 1 commit
+- Sergey Vinokurov <serg.foo@gmail.com> — 1 commit
+- Siddhesh Poyarekar <siddhesh@gotplt.org> — 1 commit
+- Sigrid Solveig Haflínudóttir <sigrid@ftrv.se> — 1 commit
+- Sizhe Zhao <prc.zhao@outlook.com> — 1 commit
+- Soloist Deng <soloist.deng-gmail.com> — 1 commit
+- Sylvain BERTRAND <sylvain.bertrand@legeek.net> — 1 commit
+- Theodore Dubois <tblodt@icloud.com> — 1 commit
+- Thomas Coudray <amanone@gmail.com> — 1 commit
+- Thomas Preud'homme <robotux@mallow.celest.fr> — 1 commit
+- Thomas Stalder <thomas@netsolux.ch> — 1 commit
+- Timo VJ Lähde <timovj.lahde@gmail.com> — 1 commit
+- U-UNIT1\dennis <dennis@UNIT1.(none)> — 1 commit
+- Urja Rannikko <urjaman@gmail.com> — 1 commit
+- Urs Janssen <urs@akk.org> — 1 commit
+- Urs Janssen <urs@niko.tin.org> — 1 commit
+- Vittorio Giovara <vittorio.giovara@gmail.com> — 1 commit
+- Vlad Vissoultchev <vlado@vis.bg> — 1 commit
+- Willy Tarreau <w@1wt.eu> — 1 commit
+- Wirtos_new <Wirtos.new@gmail.com> — 1 commit
+- Yao Zi <ziyao@disroot.org> — 1 commit
+- Zdenek Pavlas <zden3k@gmail.com> — 1 commit
+- Ziga Lenarcic <ziga.lenarcic@protonmail.com> — 1 commit
+- Ziyao <ziyao@disroot.org> — 1 commit
+- Zuhaitz-dev <zuhaitz.zechhub@gmail.com> — 1 commit
+- ayush-varshney <ayush.kumar@upc.edu> — 1 commit
+- bobbl <bobbl@gmx.de> — 1 commit
+- checkroom <checkroom@lenovos-novos.lan> — 1 commit
+- diannaaa <diannaaav@gmail.com> — 1 commit
+- emekoi <emekankurumeh@outlook.com> — 1 commit
+- foobar <foobar@redchan.it> — 1 commit
+- general <general> — 1 commit
+- gr <gr@gr-laptop.(none)> — 1 commit
+- illiliti <illiliti@dimension.sh> — 1 commit
+- inostensibl <inostensibl@gmail.com> — 1 commit
+- janus.lt <janus.lt> — 1 commit
+- mob <mob> — 1 commit
+- noneofyourbusiness <noneofyourbusiness@kolabnow.ch> — 1 commit
+- orbea <ovariegata@yahoo.com> — 1 commit
+- owenewans <owenewans@owenewans.org> — 1 commit
+- root <root@mallow.celest.fr> — 1 commit
+- tuxcrafting <tuxcrafting@proton.me> — 1 commit
+- unknown <TimoL@.(none)> — 1 commit
+- unknown <wctam@.itedn32a.localdomain> — 1 commit
+- yan-bin2009 <yan20095642558@163.com> — 1 commit
+- yuanbin <yuanbin0@gmail.com> — 1 commit
+- Øyvind A. Holm <sunny@sunbase.org> — 1 commit
 
 ---
 
@@ -326,7 +327,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 - Origin: /home/wbic16/github-archive/mirrors/phcc.git
 - Branch: exo
 - Head commit: 0628c00360a22aafcaf4d0bf26a4991f9d29b900
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
