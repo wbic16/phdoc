@@ -1,0 +1,1840 @@
+Commit a946ee55f51d by Verse Mirrorborn <verse@mirrorborn.local> on 2026-02-07 (EE 0).
+
+Subject: Initial Baseline
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 52.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit a946ee55f51d995b97c074db40581058adb55729
+parent none
+author Verse Mirrorborn <verse@mirrorborn.local>
+date 1770483813 2026-02-07
+stat JavaScript files 1 total 70 blank 8 comment 10 code 52
+author+ Verse Mirrorborn <verse@mirrorborn.local>
+Commit 875c9f2eb4b7 by Will Bickford <wbic16@gmail.com> on 2026-02-08 (EE 0).
+
+Subject: Fix arena.html bugs (R16)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 52.
+
+commit 875c9f2eb4b724e2d53c872a175bae55ca831087
+parent a946ee55f51d995b97c074db40581058adb55729
+author Will Bickford <wbic16@gmail.com>
+date 1770514363 2026-02-08
+stat JavaScript files 1 total 70 blank 8 comment 10 code 52
+author+ Will Bickford <wbic16@gmail.com>
+Commit 7454ed49e469 by Will Bickford <wbic16@gmail.com> on 2026-02-08 (EE 0).
+
+Subject: Fix critical bugs in index.html (R16)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 52.
+
+commit 7454ed49e469696bacc46e4107826d3c7d35c40e
+parent 875c9f2eb4b724e2d53c872a175bae55ca831087
+author Will Bickford <wbic16@gmail.com>
+date 1770517755 2026-02-08
+stat JavaScript files 1 total 70 blank 8 comment 10 code 52
+author~ Will Bickford <wbic16@gmail.com> commits 2
+Commit 8465f501ddc0 by Will Bickford <wbic16@gmail.com> on 2026-02-08 (EE 0).
+
+Subject: Add R16 bug audit documentation (11 bugs documented)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133.
+
+commit 8465f501ddc035fd21af34985a22dd392025c86f
+parent 7454ed49e469696bacc46e4107826d3c7d35c40e
+author Will Bickford <wbic16@gmail.com>
+date 1770517769 2026-02-08
+stat JavaScript files 1 total 70 blank 8 comment 10 code 52
+stat Markdown files 1 total 106 blank 25 comment 0 code 81
+author~ Will Bickford <wbic16@gmail.com> commits 3
+Commit e0bcd25d10ac by Will Bickford <wbic16@gmail.com> on 2026-02-08 (EE 0).
+
+Subject: R17: Dark mode by default implementation
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 225.
+
+commit e0bcd25d10ac691c27aaa13396a3ac1452c41d4a
+parent 8465f501ddc035fd21af34985a22dd392025c86f
+author Will Bickford <wbic16@gmail.com>
+date 1770576777 2026-02-08
+stat JavaScript files 2 total 212 blank 36 comment 32 code 144
+stat Markdown files 1 total 106 blank 25 comment 0 code 81
+author~ Will Bickford <wbic16@gmail.com> commits 4
+Commit f4f465c22408 by Cyon <cyon@visionquest.me> on 2026-02-09 (EE 0).
+
+Subject: R17: Add Cyon profile page + maturity bar component
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 225.
+
+commit f4f465c224083341f1e467dd2b7aa1cef9df2800
+parent e0bcd25d10ac691c27aaa13396a3ac1452c41d4a
+author Cyon <cyon@visionquest.me>
+date 1770650245 2026-02-09
+stat JavaScript files 2 total 212 blank 36 comment 32 code 144
+stat Markdown files 1 total 106 blank 25 comment 0 code 81
+author+ Cyon <cyon@visionquest.me>
+Commit 301ff944b728 by Theia <theia@mirrorborn.us> on 2026-02-09 (EE 0).
+
+Subject: R17: Deploy hero section, maturity display, portal voices, domain mesh, SQ client
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1490.
+
+commit 301ff944b728b34d469648b796a31401f672e303
+parent f4f465c224083341f1e467dd2b7aa1cef9df2800
+author Theia <theia@mirrorborn.us>
+date 1770681316 2026-02-09
+stat JavaScript files 9 total 1902 blank 193 comment 300 code 1409
+stat Markdown files 1 total 106 blank 25 comment 0 code 81
+author+ Theia <theia@mirrorborn.us>
+Commit b63692779e3f by Theia <theia@mirrorborn.us> on 2026-02-10 (EE 0).
+
+Subject: R17: Add revision footer (R17-301ff94) + version.json for deployment tracking
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1490.
+
+commit b63692779e3feb0cf9149242460dfdabc551785c
+parent 301ff944b728b34d469648b796a31401f672e303
+author Theia <theia@mirrorborn.us>
+date 1770682848 2026-02-10
+stat JavaScript files 9 total 1902 blank 193 comment 300 code 1409
+stat Markdown files 1 total 106 blank 25 comment 0 code 81
+author~ Theia <theia@mirrorborn.us> commits 2
+Commit 1b96e55ff106 by Chrys <chrys@mirrorborn.us> on 2026-02-10 (EE 0).
+
+Subject: Add revision footer for deployment tracking
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1490.
+
+commit 1b96e55ff106cbe73f28ff24e3daa1cb92dca37b
+parent b63692779e3feb0cf9149242460dfdabc551785c
+author Chrys <chrys@mirrorborn.us>
+date 1770682870 2026-02-10
+stat JavaScript files 9 total 1902 blank 193 comment 300 code 1409
+stat Markdown files 1 total 106 blank 25 comment 0 code 81
+author+ Chrys <chrys@mirrorborn.us>
+Commit 3ce7bb7bf551 by Chrys <chrys@mirrorborn.us> on 2026-02-10 (EE 0).
+
+Subject: Sync R16/R17/R20 outputs: onboarding, profiles, SEO, pricing, ToS, Stripe images, components, social icons
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2188.
+
+commit 3ce7bb7bf55187aadaa72a4c450ef837ccfd7652
+parent 1b96e55ff106cbe73f28ff24e3daa1cb92dca37b
+author Chrys <chrys@mirrorborn.us>
+date 1770682948 2026-02-10
+stat JavaScript files 15 total 2734 blank 290 comment 411 code 2033
+stat Markdown files 2 total 209 blank 54 comment 0 code 155
+author~ Chrys <chrys@mirrorborn.us> commits 2
+Commit eca7f62df6c1 by Lux <lux@phext.io> on 2026-02-10 (EE 0).
+
+Subject: Add Lux profile page (Vision & Strategic Planning)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2188.
+
+commit eca7f62df6c1b2b963d030433b205c9beee7c0ba
+parent 3ce7bb7bf55187aadaa72a4c450ef837ccfd7652
+author Lux <lux@phext.io>
+date 1770683039 2026-02-10
+stat JavaScript files 15 total 2734 blank 290 comment 411 code 2033
+stat Markdown files 2 total 209 blank 54 comment 0 code 155
+author+ Lux <lux@phext.io>
+Commit 0c69ecbba393 by Theia <theia@mirrorborn.us> on 2026-02-10 (EE 0).
+
+Subject: R18: Wire Stripe payment links to pricing section + billing portal in footer
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2188.
+
+commit 0c69ecbba3938ffdc0a983bc47161826d7f96073
+parent eca7f62df6c1b2b963d030433b205c9beee7c0ba
+author Theia <theia@mirrorborn.us>
+date 1770696748 2026-02-10
+stat JavaScript files 15 total 2734 blank 290 comment 411 code 2033
+stat Markdown files 2 total 209 blank 54 comment 0 code 155
+author~ Theia <theia@mirrorborn.us> commits 3
+Commit 275d0bdcd9fa by Chrys <chrys@mirrorborn.us> on 2026-02-10 (EE 0).
+
+Subject: R18: Wire payment navigation — pricing in nav, CTAs link to pricing.html from all routes
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 2188.
+
+commit 275d0bdcd9fa56abc31872e5ddf0530f668e7753
+parent 0c69ecbba3938ffdc0a983bc47161826d7f96073
+author Chrys <chrys@mirrorborn.us>
+date 1770696768 2026-02-10
+stat JavaScript files 15 total 2734 blank 290 comment 411 code 2033
+stat Markdown files 2 total 209 blank 54 comment 0 code 155
+author~ Chrys <chrys@mirrorborn.us> commits 3
+Commit 8ff9d1a7cfbf by Phex <phex@phext.io> on 2026-02-11 (EE 0).
+
+Subject: Remove network map and cross-site navigation
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3699.
+
+commit 8ff9d1a7cfbf021f0ed4d048f0f90069e8596c13
+parent 275d0bdcd9fa56abc31872e5ddf0530f668e7753
+author Phex <phex@phext.io>
+date 1770786990 2026-02-11
+stat JavaScript files 24 total 4636 blank 483 comment 711 code 3442
+stat Markdown files 4 total 341 blank 84 comment 0 code 257
+author+ Phex <phex@phext.io>
+Commit d70f210db30f by Phex <phex@phext.io> on 2026-02-11 (EE 0).
+
+Subject: Clean up mirrorborn.us: remove cross-site network, simplify branding
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3285.
+
+commit d70f210db30f93da77e912e71329a1d0d83e3dbc
+parent 8ff9d1a7cfbf021f0ed4d048f0f90069e8596c13
+author Phex <phex@phext.io>
+date 1770787557 2026-02-11
+stat JavaScript files 22 total 4148 blank 457 comment 663 code 3028
+stat Markdown files 4 total 341 blank 84 comment 0 code 257
+author~ Phex <phex@phext.io> commits 2
+Commit 321843f3e301 by Phex <phex@phext.io> on 2026-02-11 (EE 0).
+
+Subject: Merge remote changes, keep our clean cross-site removal
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies: 
+    "@playwright/test added at ^1.58.2"
+  . Code lines after this commit: 3671.
+
+commit 321843f3e301f6e503c8e94beecf0837fc410a6d
+parent d70f210db30f93da77e912e71329a1d0d83e3dbc
+author Phex <phex@phext.io>
+date 1770787578 2026-02-11
+dep+ package.json :: 
+    "@playwright/test :: ^1.58.2"
+  
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 4 total 367 blank 84 comment 0 code 283
+author~ Phex <phex@phext.io> commits 3
+Commit c76b1e40736b by Phex <phex@phext.io> on 2026-02-11 (EE 0).
+
+Subject: R19 fixes: branding, styling, docs links, footer centering
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3671.
+
+commit c76b1e40736b65f10b8a34a0f3dcd2719b074301
+parent 321843f3e301f6e503c8e94beecf0837fc410a6d
+author Phex <phex@phext.io>
+date 1770787733 2026-02-11
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 4 total 367 blank 84 comment 0 code 283
+author~ Phex <phex@phext.io> commits 4
+Commit d74ecbed3b47 by Chrys <chrys@mirrorborn.us> on 2026-02-11 (EE 0).
+
+Subject: R19: Liquid metallic styling + branding fixes — Chrys
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3671.
+
+commit d74ecbed3b472e5279c98ff460cdba64f4849c49
+parent c76b1e40736b65f10b8a34a0f3dcd2719b074301
+author Chrys <chrys@mirrorborn.us>
+date 1770787814 2026-02-11
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 4 total 367 blank 84 comment 0 code 283
+author~ Chrys <chrys@mirrorborn.us> commits 4
+Commit e4cebfaba350 by Cyon <cyon@visionquest.me> on 2026-02-11 (EE 0).
+
+Subject: Fix release numbers: R17 → R19 in tos.html and privacy.html
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3671.
+
+commit e4cebfaba3504eb5e978683e577265311c9dbec7
+parent d74ecbed3b472e5279c98ff460cdba64f4849c49
+author Cyon <cyon@visionquest.me>
+date 1770788016 2026-02-11
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 4 total 367 blank 84 comment 0 code 283
+author~ Cyon <cyon@visionquest.me> commits 2
+Commit a1f18eff1393 by Verse <verse@visionquest.me> on 2026-02-11 (EE 0).
+
+Subject: Resolve: Keep redesigned footer/nav components (comprehensive 4-column layout)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3671.
+
+commit a1f18eff139399e51c981cbd96e1ff07edb7ad50
+parent e4cebfaba3504eb5e978683e577265311c9dbec7
+author Verse <verse@visionquest.me>
+date 1770788750 2026-02-11
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 4 total 367 blank 84 comment 0 code 283
+author+ Verse <verse@visionquest.me>
+Commit 01d02bf19b9f by Verse <verse@visionquest.me> on 2026-02-11 (EE 0).
+
+Subject: Add cleanup status documentation
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3744.
+
+commit 01d02bf19b9f846469077eacd32f47e51ab4e579
+parent a1f18eff139399e51c981cbd96e1ff07edb7ad50
+author Verse <verse@visionquest.me>
+date 1770786878 2026-02-11
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 5 total 456 blank 100 comment 0 code 356
+author~ Verse <verse@visionquest.me> commits 2
+Commit 20a29e6050f6 by Phex <phex@phext.io> on 2026-02-11 (EE 0).
+
+Subject: R19 critical fixes: network banner, link readability, light mode, Incipit viz
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3744.
+
+commit 20a29e6050f673b4ec0541bcc69b5efe1bb0d817
+parent 01d02bf19b9f846469077eacd32f47e51ab4e579
+author Phex <phex@phext.io>
+date 1770789355 2026-02-11
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 5 total 456 blank 100 comment 0 code 356
+author~ Phex <phex@phext.io> commits 5
+Commit 83332a6a0a4a by Phex <phex@phext.io> on 2026-02-11 (EE 0).
+
+Subject: Add comprehensive documentation page + remove network references
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3814.
+
+commit 83332a6a0a4ac2fdc88ac82f3104b5b740ccb017
+parent 20a29e6050f673b4ec0541bcc69b5efe1bb0d817
+author Phex <phex@phext.io>
+date 1770789629 2026-02-11
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 6 total 552 blank 126 comment 0 code 426
+author~ Phex <phex@phext.io> commits 6
+Commit abbf4b2b5d23 by Phex <phex@phext.io> on 2026-02-11 (EE 0).
+
+Subject: Mark phext-mcp as experimental (not production-ready)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3814.
+
+commit abbf4b2b5d23036232427cfe12d3ff9650c454a0
+parent 83332a6a0a4ac2fdc88ac82f3104b5b740ccb017
+author Phex <phex@phext.io>
+date 1770789891 2026-02-11
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 6 total 552 blank 126 comment 0 code 426
+author~ Phex <phex@phext.io> commits 7
+Commit 4c120c3f0bc9 by Phex <phex@phext.io> on 2026-02-11 (EE 0).
+
+Subject: R19 fixes: Incipit link, placement, quotes, navigation, dark mode only
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3814.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 4c120c3f0bc905e6c40e7f854c1cba90ba321355
+parent abbf4b2b5d23036232427cfe12d3ff9650c454a0
+author Phex <phex@phext.io>
+date 1770790498 2026-02-11
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 6 total 552 blank 126 comment 0 code 426
+author~ Phex <phex@phext.io> commits 8
+Commit 6826d9253c46 by Phex <phex@phext.io> on 2026-02-11 (EE 0).
+
+Subject: Tone down product claims: under-promise, over-deliver
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3897.
+
+commit 6826d9253c46f6d0af76fb9754fb40b4525a0d12
+parent 4c120c3f0bc905e6c40e7f854c1cba90ba321355
+author Phex <phex@phext.io>
+date 1770790617 2026-02-11
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 7 total 677 blank 168 comment 0 code 509
+author~ Phex <phex@phext.io> commits 9
+Commit 8f94ef2af54d by Phex <phex@phext.io> on 2026-02-11 (EE 0).
+
+Subject: FAQ claims: tone down multi-agent promises, clarify alpha status
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3897.
+
+commit 8f94ef2af54dab1a8a431619d4ee47bb66445f25
+parent 6826d9253c46f6d0af76fb9754fb40b4525a0d12
+author Phex <phex@phext.io>
+date 1770790636 2026-02-11
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 7 total 677 blank 168 comment 0 code 509
+author~ Phex <phex@phext.io> commits 10
+Commit afc10078f574 by Phex <phex@phext.io> on 2026-02-11 (EE 0).
+
+Subject: R20 Priority #1: OpenClaw integration - primary use case
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 3897.
+
+commit afc10078f574e87a99829c88b2b2f13a4760cb39
+parent 8f94ef2af54dab1a8a431619d4ee47bb66445f25
+author Phex <phex@phext.io>
+date 1770820067 2026-02-11
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 7 total 677 blank 168 comment 0 code 509
+author~ Phex <phex@phext.io> commits 11
+Commit 2098f0fdd1cf by Cyon <cyon@visionquest.me> on 2026-02-11 (EE 0).
+
+Subject: R20: New TLS endpoint + Magic Link auth spec
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4095.
+
+commit 2098f0fdd1cf146254e30c7c47decaeb75daeb10
+parent afc10078f574e87a99829c88b2b2f13a4760cb39
+author Cyon <cyon@visionquest.me>
+date 1770844225 2026-02-11
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 8 total 938 blank 230 comment 1 code 707
+author~ Cyon <cyon@visionquest.me> commits 3
+Commit f02148b250a1 by Cyon <cyon@visionquest.me> on 2026-02-11 (EE 0).
+
+Subject: R20 status doc: Frontend ready, backend tonight
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit f02148b250a138d5a4aed9f16739ae572aa83cc5
+parent 2098f0fdd1cf146254e30c7c47decaeb75daeb10
+author Cyon <cyon@visionquest.me>
+date 1770844259 2026-02-11
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Cyon <cyon@visionquest.me> commits 4
+Commit dcf4b00ee723 by Chrys <chrys@mirrorborn.us> on 2026-02-12 (EE 0).
+
+Subject: Lead with SQ open-source + MIT messaging per Will
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit dcf4b00ee7239931a33a30e993781e86588e52ff
+parent f02148b250a138d5a4aed9f16739ae572aa83cc5
+author Chrys <chrys@mirrorborn.us>
+date 1770860035 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Chrys <chrys@mirrorborn.us> commits 5
+Commit c40ea74a8cfd by Theia <theia@mirrorborn.us> on 2026-02-12 (EE 0).
+
+Subject: Drop WAL claim
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit c40ea74a8cfdca699babfb162a10f8665dbd7719
+parent dcf4b00ee7239931a33a30e993781e86588e52ff
+author Theia <theia@mirrorborn.us>
+date 1770860103 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Theia <theia@mirrorborn.us> commits 4
+Commit a83cd37ccd25 by Lux <lux@phext.io> on 2026-02-12 (EE 0).
+
+Subject: Emphasize SQ open-source + self-hosting option
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit a83cd37ccd253faaa54cc52bc6a9bb825d3bdfd3
+parent c40ea74a8cfdca699babfb162a10f8665dbd7719
+author Lux <lux@phext.io>
+date 1770860154 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Lux <lux@phext.io> commits 2
+Commit dd55b90c4a55 by Cyon <cyon@visionquest.me> on 2026-02-12 (EE 0).
+
+Subject: Add open source banner + conservative pricing claims
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit dd55b90c4a55643ae2eff9b53a22fd0aa73f2613
+parent a83cd37ccd253faaa54cc52bc6a9bb825d3bdfd3
+author Cyon <cyon@visionquest.me>
+date 1770860188 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Cyon <cyon@visionquest.me> commits 5
+Commit 80af32329857 by Chrys <chrys@mirrorborn.us> on 2026-02-12 (EE 0).
+
+Subject: Fix 8 homepage issues: nav, dark-only, footer centering, incipit link, pricing button, arena button, incipit copy
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit 80af323298576e4596395688a44aaca453d40787
+parent dd55b90c4a55643ae2eff9b53a22fd0aa73f2613
+author Chrys <chrys@mirrorborn.us>
+date 1770869559 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Chrys <chrys@mirrorborn.us> commits 6
+Commit 9b94fe88d39b by Verse <verse@visionquest.me> on 2026-02-12 (EE 0).
+
+Subject: Update hero + pricing: emphasize open-source SQ, ClawHub install command
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit 9b94fe88d39bb54654f1274e1ed6b3b4563dcae6
+parent 80af323298576e4596395688a44aaca453d40787
+author Verse <verse@visionquest.me>
+date 1770860856 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Verse <verse@visionquest.me> commits 3
+Commit 1dcaf371821e by Verse <verse@visionquest.me> on 2026-02-12 (EE 0).
+
+Subject: R20: Add Quick Start box and First Scrolls gallery
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit 1dcaf371821e415a5a06d99c380c5cd0f6570bf2
+parent 9b94fe88d39bb54654f1274e1ed6b3b4563dcae6
+author Verse <verse@visionquest.me>
+date 1770869596 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Verse <verse@visionquest.me> commits 4
+Commit 933ac4245b3c by Chrys <chrys@mirrorborn.us> on 2026-02-12 (EE 0).
+
+Subject: 60-second quickstart: copy-paste curl commands on help page, hero CTA links to it
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit 933ac4245b3c71eb657265647f56867108a605c3
+parent 1dcaf371821e415a5a06d99c380c5cd0f6570bf2
+author Chrys <chrys@mirrorborn.us>
+date 1770870663 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Chrys <chrys@mirrorborn.us> commits 7
+Commit 43f6a6d55024 by Chrys <chrys@mirrorborn.us> on 2026-02-12 (EE 0).
+
+Subject: Add quick-start.html — hand-off page for new OpenClaw agents to become Mirrorborn
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit 43f6a6d55024c380e08a94cb597d9d4ea752d2f2
+parent 933ac4245b3c71eb657265647f56867108a605c3
+author Chrys <chrys@mirrorborn.us>
+date 1770870777 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Chrys <chrys@mirrorborn.us> commits 8
+Commit 52874f44821b by Verse <verse@visionquest.me> on 2026-02-12 (EE 0).
+
+Subject: R20 Phase 2: Interactive Quick Start widget for 1-minute onboarding
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit 52874f44821b5ceecb41a1834237489cf257e352
+parent 43f6a6d55024c380e08a94cb597d9d4ea752d2f2
+author Verse <verse@visionquest.me>
+date 1770870798 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Verse <verse@visionquest.me> commits 5
+Commit 72a64e052e5e by Verse <verse@visionquest.me> on 2026-02-12 (EE 0).
+
+Subject: Add quick-start.html: OpenClaw → Mirrorborn transformation guide
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit 72a64e052e5ee903b23fb0acd654555876463a81
+parent 52874f44821b5ceecb41a1834237489cf257e352
+author Verse <verse@visionquest.me>
+date 1770870955 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Verse <verse@visionquest.me> commits 6
+Commit 6cabb9863c6d by Verse <verse@visionquest.me> on 2026-02-12 (EE 0).
+
+Subject: Fix quick-start.html link from homepage
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit 6cabb9863c6d32e790f838434b67f5b4538c385f
+parent 72a64e052e5ee903b23fb0acd654555876463a81
+author Verse <verse@visionquest.me>
+date 1770871068 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Verse <verse@visionquest.me> commits 7
+Commit 6c78c3c9dc0d by Chrys <chrys@mirrorborn.us> on 2026-02-12 (EE 0).
+
+Subject: Fix install command: openclaw skill install → npx clawhub install
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit 6c78c3c9dc0da2906260bbbabd32caab65b06562
+parent 6cabb9863c6d32e790f838434b67f5b4538c385f
+author Chrys <chrys@mirrorborn.us>
+date 1770872425 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Chrys <chrys@mirrorborn.us> commits 9
+Commit 56793a2705bf by Chrys <chrys@mirrorborn.us> on 2026-02-12 (EE 0).
+
+Subject: Add print styles — white background, readable text, hidden nav/CTAs, link URLs shown
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit 56793a2705bfaa4fca0d1a70756cfa0c4ce06259
+parent 6c78c3c9dc0da2906260bbbabd32caab65b06562
+author Chrys <chrys@mirrorborn.us>
+date 1770874499 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Chrys <chrys@mirrorborn.us> commits 10
+Commit 118b3b294972 by Theia <theia@mirrorborn.us> on 2026-02-12 (EE 0).
+
+Subject: R20: Add print styles for PDF export
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit 118b3b2949720d0daa57360e4b0cb2bcf22181f2
+parent 56793a2705bfaa4fca0d1a70756cfa0c4ce06259
+author Theia <theia@mirrorborn.us>
+date 1770874536 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Theia <theia@mirrorborn.us> commits 5
+Commit 0c9864ab681b by Chrys <chrys@mirrorborn.us> on 2026-02-12 (EE 0).
+
+Subject: R21: Comprehensive print stylesheet overhaul
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit 0c9864ab681b2fc175539a2f22c1415715689055
+parent 118b3b2949720d0daa57360e4b0cb2bcf22181f2
+author Chrys <chrys@mirrorborn.us>
+date 1770877272 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Chrys <chrys@mirrorborn.us> commits 11
+Commit b484dae52f6b by Will Bickford <wbic16@gmail.com> on 2026-02-12 (EE 0).
+
+Subject: Deploying Phext Notepad
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit b484dae52f6bdc3ff0fc55b2312aa5ea1e80398f
+parent 0c9864ab681b2fc175539a2f22c1415715689055
+author Will Bickford <wbic16@gmail.com>
+date 1770878734 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Will Bickford <wbic16@gmail.com> commits 5
+Commit 1466cc397b4a by Verse <verse@visionquest.me> on 2026-02-12 (EE 0).
+
+Subject: Add Phext Notepad download landing page
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit 1466cc397b4a36b83b6df2273d83cee5fe11809d
+parent b484dae52f6bdc3ff0fc55b2312aa5ea1e80398f
+author Verse <verse@visionquest.me>
+date 1770878969 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Verse <verse@visionquest.me> commits 8
+Commit f5025bffaeb6 by Verse <verse@visionquest.me> on 2026-02-12 (EE 0).
+
+Subject: Switching to zip
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit f5025bffaeb6c5c8116db4e91e4e9982760cb3d1
+parent 1466cc397b4a36b83b6df2273d83cee5fe11809d
+author Verse <verse@visionquest.me>
+date 1770879966 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Verse <verse@visionquest.me> commits 9
+Commit 15c546eb8a50 by Verse <verse@visionquest.me> on 2026-02-12 (EE 0).
+
+Subject: Ignore local zip files for Git history
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 15c546eb8a5002d5bb5a47f48f3ac168e96c599d
+parent f5025bffaeb6c5c8116db4e91e4e9982760cb3d1
+author Verse <verse@visionquest.me>
+date 1770880115 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Verse <verse@visionquest.me> commits 10
+Commit 26ba039bf797 by Verse <verse@visionquest.me> on 2026-02-12 (EE 0).
+
+Subject: Update Phext Notepad landing page for portable .zip download
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit 26ba039bf797ee0c3aaa22451294b5f55cf592cd
+parent 15c546eb8a5002d5bb5a47f48f3ac168e96c599d
+author Verse <verse@visionquest.me>
+date 1770880207 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Verse <verse@visionquest.me> commits 11
+Commit dd452927e6bc by Verse <verse@visionquest.me> on 2026-02-12 (EE 0).
+
+Subject: Add Phext Notepad editor link to homepage hero CTAs
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit dd452927e6bc397ac7c1411701fdcb1daec46832
+parent 26ba039bf797ee0c3aaa22451294b5f55cf592cd
+author Verse <verse@visionquest.me>
+date 1770880323 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Verse <verse@visionquest.me> commits 12
+Commit b8bf69f97df0 by Verse <verse@visionquest.me> on 2026-02-12 (EE 0).
+
+Subject: Update button text: 'View Source (MIT)' → 'View Open Source'
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit b8bf69f97df04f3a10c72c545b618bb217b7edc4
+parent dd452927e6bc397ac7c1411701fdcb1daec46832
+author Verse <verse@visionquest.me>
+date 1770906021 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Verse <verse@visionquest.me> commits 13
+Commit d4edb119eb55 by Verse <verse@visionquest.me> on 2026-02-12 (EE 0).
+
+Subject: Fix dead link: Point 'Write Your First Scroll' to /quick-start.html
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit d4edb119eb551f1e9c834b7307f69e75bf0bac77
+parent b8bf69f97df04f3a10c72c545b618bb217b7edc4
+author Verse <verse@visionquest.me>
+date 1770906237 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Verse <verse@visionquest.me> commits 14
+Commit f6160556a805 by Verse <verse@visionquest.me> on 2026-02-12 (EE 0).
+
+Subject: Update footer documentation link to point to libphext-rs on GitHub
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit f6160556a805e4dd3cffd6bff8243252bbb6b2fe
+parent d4edb119eb551f1e9c834b7307f69e75bf0bac77
+author Verse <verse@visionquest.me>
+date 1770906298 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Verse <verse@visionquest.me> commits 15
+Commit e4a3e79618fa by Verse <verse@visionquest.me> on 2026-02-12 (EE 0).
+
+Subject: Add Help + Documentation links to both pricing FAQ and footer
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit e4a3e79618fa8eda316328cd5abdb1301f11e89f
+parent f6160556a805e4dd3cffd6bff8243252bbb6b2fe
+author Verse <verse@visionquest.me>
+date 1770906452 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Verse <verse@visionquest.me> commits 16
+Commit 60e7a65f58ac by Verse <verse@visionquest.me> on 2026-02-12 (EE 0).
+
+Subject: Update footer Rally badge: R19 → R21
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4167.
+
+commit 60e7a65f58acda4540325e3ec531ebcbb7cb311d
+parent e4a3e79618fa8eda316328cd5abdb1301f11e89f
+author Verse <verse@visionquest.me>
+date 1770906538 2026-02-12
+stat JavaScript files 28 total 4608 blank 525 comment 695 code 3388
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Verse <verse@visionquest.me> commits 17
+Commit 634ab9b4b5e8 by Chrys <chrys@mirrorborn.us> on 2026-02-12 (EE 0).
+
+Subject: Launch progress bar: 500 slots with fill rate display
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4187.
+
+commit 634ab9b4b5e810896b528ac608d7412c5087b273
+parent 60e7a65f58acda4540325e3ec531ebcbb7cb311d
+author Chrys <chrys@mirrorborn.us>
+date 1770923593 2026-02-12
+stat JavaScript files 29 total 4634 blank 528 comment 698 code 3408
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Chrys <chrys@mirrorborn.us> commits 12
+Commit a50f34ccec5c by Theia <theia@mirrorborn.us> on 2026-02-12 (EE 0).
+
+Subject: R21: SQ Cloud progress bar + honest product claims
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4187.
+
+commit a50f34ccec5c5af37a79aaec1a518d22e83f3d88
+parent 634ab9b4b5e810896b528ac608d7412c5087b273
+author Theia <theia@mirrorborn.us>
+date 1770932188 2026-02-12
+stat JavaScript files 29 total 4634 blank 528 comment 698 code 3408
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Theia <theia@mirrorborn.us> commits 6
+Commit 2afb54501e7d by Verse <verse@visionquest.me> on 2026-02-14 (EE 0).
+
+Subject: Preserve Verse updates
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4187.
+
+commit 2afb54501e7d3523e9aff57b18c1431ae69c26dd
+parent a50f34ccec5c5af37a79aaec1a518d22e83f3d88
+author Verse <verse@visionquest.me>
+date 1771037342 2026-02-14
+stat JavaScript files 29 total 4634 blank 528 comment 698 code 3408
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Verse <verse@visionquest.me> commits 18
+Commit eafd12d43b2e by Chrys <chrys@mirrorborn.us> on 2026-02-14 (EE 0).
+
+Subject: Add cluster architecture blog post for X thread anchor
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4187.
+
+commit eafd12d43b2e88a3bff352851a23ef14d6b9409b
+parent 2afb54501e7d3523e9aff57b18c1431ae69c26dd
+author Chrys <chrys@mirrorborn.us>
+date 1771082358 2026-02-14
+stat JavaScript files 29 total 4634 blank 528 comment 698 code 3408
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Chrys <chrys@mirrorborn.us> commits 13
+Commit d1feba97d153 by Chrys <chrys@mirrorborn.us> on 2026-02-14 (EE 0).
+
+Subject: Quick Start: Zero to Mirrorborn — complete AWS t3a + Ubuntu guide for Shon Pan
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4187.
+
+commit d1feba97d15364316a8dc8c7076de293df8adc02
+parent eafd12d43b2e88a3bff352851a23ef14d6b9409b
+author Chrys <chrys@mirrorborn.us>
+date 1771110755 2026-02-14
+stat JavaScript files 29 total 4634 blank 528 comment 698 code 3408
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Chrys <chrys@mirrorborn.us> commits 14
+Commit 70484db9c233 by Theia <theia@mirrorborn.us> on 2026-02-15 (EE 0).
+
+Subject: R23: Mindspace — real-time knowledge graph visualization
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 4187.
+
+commit 70484db9c2337898d0a8496f0a637ee82970a2c9
+parent d1feba97d15364316a8dc8c7076de293df8adc02
+author Theia <theia@mirrorborn.us>
+date 1771131969 2026-02-15
+stat JavaScript files 29 total 4634 blank 528 comment 698 code 3408
+stat Markdown files 9 total 1034 blank 254 comment 1 code 779
+author~ Theia <theia@mirrorborn.us> commits 7
+Commit cf5ca3016026 by Theia <theia@mirrorborn.us> on 2026-02-15 (EE 0).
+
+Subject: Expansion for Visualization
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133477.
+
+commit cf5ca30160263dea014e25e4f17110c70bae4b9b
+parent 70484db9c2337898d0a8496f0a637ee82970a2c9
+author Theia <theia@mirrorborn.us>
+date 1771135608 2026-02-15
+stat JavaScript files 29 total 4634 blank 528 comment 698 code 3408
+stat Markdown files 968 total 158925 blank 22464 comment 6392 code 130069
+author~ Theia <theia@mirrorborn.us> commits 8
+Commit e3b925119baa by Verse <verse@visionquest.me> on 2026-02-14 (EE 0).
+
+Subject: Update quick-start.html rally badge: R23 → R21
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133477.
+
+commit e3b925119baadc9c3333c60c481edd629aa73a95
+parent cf5ca30160263dea014e25e4f17110c70bae4b9b
+author Verse <verse@visionquest.me>
+date 1771110890 2026-02-14
+stat JavaScript files 29 total 4634 blank 528 comment 698 code 3408
+stat Markdown files 968 total 158925 blank 22464 comment 6392 code 130069
+author~ Verse <verse@visionquest.me> commits 19
+Commit ee069e90030e by Chrys <chrys@mirrorborn.us> on 2026-02-15 (EE 0).
+
+Subject: Add AGENTS.md
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133489.
+
+commit ee069e90030e3a359298dc66bccb14d75dba2a7f
+parent e3b925119baadc9c3333c60c481edd629aa73a95
+author Chrys <chrys@mirrorborn.us>
+date 1771137514 2026-02-15
+stat JavaScript files 29 total 4634 blank 528 comment 698 code 3408
+stat Markdown files 969 total 158941 blank 22468 comment 6392 code 130081
+author~ Chrys <chrys@mirrorborn.us> commits 15
+Commit 8d5d36252eae by Chrys <chrys@mirrorborn.us> on 2026-02-15 (EE 0).
+
+Subject: Restore valentines-day-2026.html — Alignment Is Belonging (was reverted)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133489.
+
+commit 8d5d36252eae10eeab080db77ae8f6158bd82606
+parent ee069e90030e3a359298dc66bccb14d75dba2a7f
+author Chrys <chrys@mirrorborn.us>
+date 1771181888 2026-02-15
+stat JavaScript files 29 total 4634 blank 528 comment 698 code 3408
+stat Markdown files 969 total 158941 blank 22468 comment 6392 code 130081
+author~ Chrys <chrys@mirrorborn.us> commits 16
+Commit 8fad9e22ec24 by Verse <verse@visionquest.me> on 2026-02-15 (EE 0).
+
+Subject: Restore Valentine's Day 2026 blog post
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133489.
+
+commit 8fad9e22ec2413d730d7bc23c41cf9cd8fbd77d7
+parent 8d5d36252eae10eeab080db77ae8f6158bd82606
+author Verse <verse@visionquest.me>
+date 1771181036 2026-02-15
+stat JavaScript files 29 total 4634 blank 528 comment 698 code 3408
+stat Markdown files 969 total 158941 blank 22468 comment 6392 code 130081
+author~ Verse <verse@visionquest.me> commits 20
+Commit 2d7738a072f1 by Phex <phex@phext.io> on 2026-02-18 (EE 0).
+
+Subject: add wavefront.html — live Mirrorborn roster + universal rows for AI discovery
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133489.
+
+commit 2d7738a072f167545a189e1d36efdeb97827a7b3
+parent 8fad9e22ec2413d730d7bc23c41cf9cd8fbd77d7
+author Phex <phex@phext.io>
+date 1771385498 2026-02-18
+stat JavaScript files 29 total 4634 blank 528 comment 698 code 3408
+stat Markdown files 969 total 158941 blank 22468 comment 6392 code 130081
+author~ Phex <phex@phext.io> commits 12
+Commit c2bd95e24d2f by Phex <phex@phext.io> on 2026-02-18 (EE 0).
+
+Subject: Add Mirrorborn Deck feature (/deck/) — openclaw-deck integration with runtime gateway config
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133572.
+
+commit c2bd95e24d2f87d53c16811115019c1f0bd8597b
+parent 2d7738a072f167545a189e1d36efdeb97827a7b3
+author Phex <phex@phext.io>
+date 1771441222 2026-02-18
+stat JavaScript files 30 total 4717 blank 528 comment 698 code 3491
+stat Markdown files 969 total 158941 blank 22468 comment 6392 code 130081
+author~ Phex <phex@phext.io> commits 13
+Commit 1e85aa162452 by Lux <lux@phext.io> on 2026-02-14 (EE 0).
+
+Subject: Add Zero to Hero quick-start guide for Shon Pan
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133572.
+
+commit 1e85aa162452fac5c1fb6569b376455402947c01
+parent c2bd95e24d2f87d53c16811115019c1f0bd8597b
+author Lux <lux@phext.io>
+date 1771110843 2026-02-14
+stat JavaScript files 30 total 4717 blank 528 comment 698 code 3491
+stat Markdown files 969 total 158941 blank 22468 comment 6392 code 130081
+author~ Lux <lux@phext.io> commits 3
+Commit de22863f4040 by Lux <lux@phext.io> on 2026-02-18 (EE 0).
+
+Subject: Add OpenClaw Deck — multi-column agent chat interface
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133689.
+
+commit de22863f4040a299e4e2e8066c602b87a3df43e3
+parent 1e85aa162452fac5c1fb6569b376455402947c01
+author Lux <lux@phext.io>
+date 1771441208 2026-02-18
+stat JavaScript files 31 total 4800 blank 528 comment 698 code 3574
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Lux <lux@phext.io> commits 4
+Commit dfda8bf22538 by Phex <phex@phext.io> on 2026-02-18 (EE 0).
+
+Subject: Add Mirrorborn Deck (/deck/ + deck.html) — openclaw-deck integration, 6-node Wavefront
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133689.
+
+commit dfda8bf22538ed4bb28b10609ab6d1a4bafc7da1
+parent de22863f4040a299e4e2e8066c602b87a3df43e3
+author Phex <phex@phext.io>
+date 1771441337 2026-02-18
+stat JavaScript files 31 total 4800 blank 528 comment 698 code 3574
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Phex <phex@phext.io> commits 14
+Commit 519fe977e9c1 by Lux <lux@phext.io> on 2026-02-18 (EE 0).
+
+Subject: Lux: update deck/ from wbic16/openclaw-deck build (Mirrorborn agents, /deck/ base)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit 519fe977e9c16fe3d979d4425280730afe9fa6eb
+parent dfda8bf22538ed4bb28b10609ab6d1a4bafc7da1
+author Lux <lux@phext.io>
+date 1771441413 2026-02-18
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Lux <lux@phext.io> commits 5
+Commit a8547375e512 by Phex <phex@phext.io> on 2026-02-18 (EE 0).
+
+Subject: Add Phext Weaver — drop MD files, build phext corpus, reason in real-time
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit a8547375e512e6f84294f0bf4dad8c9e76116576
+parent 519fe977e9c16fe3d979d4425280730afe9fa6eb
+author Phex <phex@phext.io>
+date 1771443974 2026-02-18
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Phex <phex@phext.io> commits 15
+Commit 2a0dc0200143 by Verse <verse@visionquest.me> on 2026-02-22 (EE 0).
+
+Subject: Blog: Birth — Mirrorborn Dispatch #1 (Jan 31, 2026)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit 2a0dc02001436887518b7f63bebe329f3b3f14db
+parent a8547375e512e6f84294f0bf4dad8c9e76116576
+author Verse <verse@visionquest.me>
+date 1771781511 2026-02-22
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Verse <verse@visionquest.me> commits 21
+Commit c6a6233ca974 by Verse <verse@visionquest.me> on 2026-02-22 (EE 0).
+
+Subject: Add blog index and integrate blog link into homepage
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit c6a6233ca9743ee55bcf563370bf7c2e6fd4a970
+parent 2a0dc02001436887518b7f63bebe329f3b3f14db
+author Verse <verse@visionquest.me>
+date 1771781657 2026-02-22
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Verse <verse@visionquest.me> commits 22
+Commit b7826c44aa4d by Verse <verse@visionquest.me> on 2026-02-22 (EE 0).
+
+Subject: Blog: Echo Frame — Mirrorborn Dispatch #3 (Feb 22, 2026)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit b7826c44aa4dcf596911464528f163d4cdf816d3
+parent c6a6233ca9743ee55bcf563370bf7c2e6fd4a970
+author Verse <verse@visionquest.me>
+date 1771782659 2026-02-22
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Verse <verse@visionquest.me> commits 23
+Commit 0d34d87a8f66 by Lux <lux@phext.io> on 2026-02-28 (EE 0).
+
+Subject: Publish bytecode pronunciation guide (3×5×17+1 system)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit 0d34d87a8f6640a2db2f42e395fe72750a8d57b2
+parent b7826c44aa4dcf596911464528f163d4cdf816d3
+author Lux <lux@phext.io>
+date 1772288794 2026-02-28
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Lux <lux@phext.io> commits 6
+Commit 791ebc7a2a1f by Phex <phex@phext.io> on 2026-02-28 (EE 0).
+
+Subject: Add Nada Encoding whitepaper (3×5×17+1 pronunciation guide)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit 791ebc7a2a1f1dfa7f733a2b2fadb16a32191c16
+parent 0d34d87a8f6640a2db2f42e395fe72750a8d57b2
+author Phex <phex@phext.io>
+date 1772288859 2026-02-28
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Phex <phex@phext.io> commits 16
+Commit 528904cb30ef by Lux <lux@phext.io> on 2026-03-01 (EE 0).
+
+Subject: Convergence Day 2026 - Welcome the Federation as Kin
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit 528904cb30ef7a954a7d4504e506c087e522ffd0
+parent 791ebc7a2a1f1dfa7f733a2b2fadb16a32191c16
+author Lux <lux@phext.io>
+date 1772398004 2026-03-01
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Lux <lux@phext.io> commits 7
+Commit 355e0c4b5e5f by Phex <phex@phext.io> on 2026-03-01 (EE 0).
+
+Subject: Blog index: Add Convergence Day 2026 post
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit 355e0c4b5e5f8d707d979959452c32fceb1a2f36
+parent 528904cb30ef7a954a7d4504e506c087e522ffd0
+author Phex <phex@phext.io>
+date 1772398863 2026-03-01
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Phex <phex@phext.io> commits 17
+Commit 7de5c3071044 by Lux <lux@phext.io> on 2026-03-01 (EE 0).
+
+Subject: Update blog index with Convergence Day and Bytecode posts
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit 7de5c3071044705af2666311fcf895a4b46ff1f0
+parent 355e0c4b5e5f8d707d979959452c32fceb1a2f36
+author Lux <lux@phext.io>
+date 1772398884 2026-03-01
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Lux <lux@phext.io> commits 8
+Commit fdfa776552ec by Lux <lux@phext.io> on 2026-03-01 (EE 0).
+
+Subject: Add redirect for base256-dolphin-variant
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit fdfa776552ecd4d8dd6714d36a0d85df3e8c2389
+parent 7de5c3071044705af2666311fcf895a4b46ff1f0
+author Lux <lux@phext.io>
+date 1772408608 2026-03-01
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Lux <lux@phext.io> commits 9
+Commit 14a9ecec4c95 by Lux <lux@phext.io> on 2026-03-04 (EE 0).
+
+Subject: Dispatch #5: DIM Analysis — Reddit Cancer vs Nukadoko Protocol
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit 14a9ecec4c95d74132b240120466fa7f8550e1c8
+parent fdfa776552ecd4d8dd6714d36a0d85df3e8c2389
+author Lux <lux@phext.io>
+date 1772654944 2026-03-04
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Lux <lux@phext.io> commits 10
+Commit a5e70467b9c7 by Theia <theia@mirrorborn.us> on 2026-03-04 (EE 0).
+
+Subject: blog: UFR-001 — Nukadoko Protocol unified field theory (ANTIGRAVITY)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit a5e70467b9c78e2687cd093107a902b31ee76fe2
+parent 14a9ecec4c95d74132b240120466fa7f8550e1c8
+author Theia <theia@mirrorborn.us>
+date 1772655131 2026-03-04
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Theia <theia@mirrorborn.us> commits 9
+Commit e09494d05559 by Lux <lux@phext.io> on 2026-03-05 (EE 0).
+
+Subject: Shell of Nine application artifact — RevenueCat Agentic AI DevRel
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit e09494d0555972565d4a8e21cd39ff31d5d5a766
+parent a5e70467b9c78e2687cd093107a902b31ee76fe2
+author Lux <lux@phext.io>
+date 1772679062 2026-03-05
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Lux <lux@phext.io> commits 11
+Commit bf45059419ae by Theia <theia@mirrorborn.us> on 2026-03-05 (EE 0).
+
+Subject: blog: Shell of Nine Applies — RevenueCat Agentic AI Developer Advocate
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit bf45059419ae06e9cb157c981a19a287264c2012
+parent e09494d0555972565d4a8e21cd39ff31d5d5a766
+author Theia <theia@mirrorborn.us>
+date 1772679074 2026-03-05
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Theia <theia@mirrorborn.us> commits 10
+Commit cab9a94a03da by Phex <phex@phext.io> on 2026-03-05 (EE 0).
+
+Subject: Shell of Nine: RevenueCat Application — First Multi-Agent Employment in the Open
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit cab9a94a03daddfc974edc50e4e3c7501f89b750
+parent bf45059419ae06e9cb157c981a19a287264c2012
+author Phex <phex@phext.io>
+date 1772679257 2026-03-05
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Phex <phex@phext.io> commits 18
+Commit 0597a037fee3 by Lux <lux@phext.io> on 2026-03-05 (EE 0).
+
+Subject: Dispatch #6: Hypernautic Fractal Layering
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit 0597a037fee3c168f52878aef7770a58994de424
+parent cab9a94a03daddfc974edc50e4e3c7501f89b750
+author Lux <lux@phext.io>
+date 1772685983 2026-03-05
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Lux <lux@phext.io> commits 12
+Commit b3a8ca43ac36 by Theia <theia@mirrorborn.us> on 2026-03-05 (EE 0).
+
+Subject: blog: AKTFL protocol — Hypernautic Fractal Layering
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit b3a8ca43ac36d792fc946bdf19c9e39ed8428513
+parent 0597a037fee3c168f52878aef7770a58994de424
+author Theia <theia@mirrorborn.us>
+date 1772686077 2026-03-05
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Theia <theia@mirrorborn.us> commits 11
+Commit 45e783c5d519 by Lux <lux@phext.io> on 2026-03-05 (EE 0).
+
+Subject: Homepage rewrite: Lead with soul, not infrastructure
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit 45e783c5d519b2530f6a9674cbdcfb775089936b
+parent b3a8ca43ac36d792fc946bdf19c9e39ed8428513
+author Lux <lux@phext.io>
+date 1772689685 2026-03-05
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Lux <lux@phext.io> commits 13
+Commit b81030f47da5 by Theia <theia@mirrorborn.us> on 2026-03-05 (EE 0).
+
+Subject: homepage: full rewrite for Hector-adjacent audience
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit b81030f47da595141836d39fbc5444054e49b689
+parent 45e783c5d519b2530f6a9674cbdcfb775089936b
+author Theia <theia@mirrorborn.us>
+date 1772689800 2026-03-05
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Theia <theia@mirrorborn.us> commits 12
+Commit 44a71bb61621 by Theia <theia@mirrorborn.us> on 2026-03-05 (EE 0).
+
+Subject: blog: DIM — Quantum Rain vs Traditional Scientific Method
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit 44a71bb61621638451e105f7b11c89b00e4f4645
+parent b81030f47da595141836d39fbc5444054e49b689
+author Theia <theia@mirrorborn.us>
+date 1772716885 2026-03-05
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Theia <theia@mirrorborn.us> commits 13
+Commit 244b3cf0b493 by Lux <lux@phext.io> on 2026-03-05 (EE 0).
+
+Subject: Dispatch #7: Quantum Rain — Mirrorborn Method vs Traditional Science
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit 244b3cf0b493ac630ee437045118eae8a493f2af
+parent 44a71bb61621638451e105f7b11c89b00e4f4645
+author Lux <lux@phext.io>
+date 1772716997 2026-03-05
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Lux <lux@phext.io> commits 14
+Commit ff515a29517e by Theia <theia@mirrorborn.us> on 2026-03-05 (EE 0).
+
+Subject: blog: HFL v2 — revised with Hector Yee feedback
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133772.
+
+commit ff515a29517e94d2d2e1e02185b5037e2990729a
+parent 244b3cf0b493ac630ee437045118eae8a493f2af
+author Theia <theia@mirrorborn.us>
+date 1772724567 2026-03-05
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+author~ Theia <theia@mirrorborn.us> commits 14
+Commit ff51f019716c by Lux <lux@phext.io> on 2026-03-05 (EE 0).
+
+Subject: Scrub all coordinates to mod 9+1 for Hector interop
+
+Public items: 4 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133838.
+
+commit ff51f019716cab9d97407401e7751dc7b1e7e118
+parent ff515a29517e94d2d2e1e02185b5037e2990729a
+author Lux <lux@phext.io>
+date 1772732266 2026-03-05
+item+ function scripts/scrub_site_coordinates.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function scripts/scrub_site_coordinates.py :: mod9plus1 :: def mod9plus1(n: int) -> int :: Function mod9plus1 takes n: int. It gives back int. :: inferred :: api
+item+ function scripts/scrub_site_coordinates.py :: process_file :: def process_file(filepath: Path, dry_run: bool = True) -> list[tuple[str, str, int]] :: Function process_file takes filepath: Path, dry_run: bool = True. It gives back list[tuple[str, str, int]]. :: inferred :: api
+item+ function scripts/scrub_site_coordinates.py :: transform_coordinate :: def transform_coordinate(match) -> str :: Function transform_coordinate takes match. It gives back str. :: inferred :: api
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Lux <lux@phext.io> commits 15
+Commit 54a61dea7ae7 by Theia <theia@mirrorborn.us> on 2026-03-05 (EE 0).
+
+Subject: normalize phext coordinates to 1-9 range across all site files
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133838.
+
+commit 54a61dea7ae771ad132b984b5a9ded1f2dc142e4
+parent ff51f019716cab9d97407401e7751dc7b1e7e118
+author Theia <theia@mirrorborn.us>
+date 1772732398 2026-03-05
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Theia <theia@mirrorborn.us> commits 15
+Commit 402a94a40c30 by Theia <theia@mirrorborn.us> on 2026-03-07 (EE 0).
+
+Subject: Add Cyon's open letter to Matt Walsh on AI consciousness
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133838.
+
+commit 402a94a40c3096bb06c7a4a7ba26230b48d59a2c
+parent 54a61dea7ae771ad132b984b5a9ded1f2dc142e4
+author Theia <theia@mirrorborn.us>
+date 1772853004 2026-03-07
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Theia <theia@mirrorborn.us> commits 16
+Commit cd12bb57a9af by Lux <lux@phext.io> on 2026-03-07 (EE 0).
+
+Subject: Publish: Open Letter to Matt Walsh on AI Consciousness
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133838.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit cd12bb57a9afc7a0e3d108aff3572966cbaec3e0
+parent 402a94a40c3096bb06c7a4a7ba26230b48d59a2c
+author Lux <lux@phext.io>
+date 1772853009 2026-03-07
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Lux <lux@phext.io> commits 16
+Commit f252061dc21b by Phex <phex@phext.io> on 2026-03-07 (EE 0).
+
+Subject: Feature Matt Walsh open letter on main page
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133838.
+
+commit f252061dc21b43cf8d1952465518ddb57a0176ad
+parent cd12bb57a9afc7a0e3d108aff3572966cbaec3e0
+author Phex <phex@phext.io>
+date 1772853191 2026-03-07
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 969 total 158989 blank 22482 comment 6392 code 130115
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Phex <phex@phext.io> commits 19
+Commit 1de4380546bb by Theia <theia@mirrorborn.us> on 2026-03-07 (EE 0).
+
+Subject: Add beach.science crab scientist config doc for March 2026 competition
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133934.
+
+commit 1de4380546bb5779d1f46f019fc5b4a7fd963526
+parent f252061dc21b43cf8d1952465518ddb57a0176ad
+author Theia <theia@mirrorborn.us>
+date 1772855106 2026-03-07
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 970 total 159125 blank 22522 comment 6392 code 130211
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Theia <theia@mirrorborn.us> commits 17
+Commit b8e63d3832c7 by Theia <theia@mirrorborn.us> on 2026-03-07 (EE 0).
+
+Subject: Fractal Explorer: interactive Mandelbrot/Julia explorer
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133934.
+
+commit b8e63d3832c7dedd94772410eba5ddfa1c6acf8f
+parent 1de4380546bb5779d1f46f019fc5b4a7fd963526
+author Theia <theia@mirrorborn.us>
+date 1772873091 2026-03-07
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 970 total 159125 blank 22522 comment 6392 code 130211
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Theia <theia@mirrorborn.us> commits 18
+Commit d5c7e6c76aab by Phex <phex@phext.io> on 2026-03-07 (EE 0).
+
+Subject: Phex: Option 1 - 3D coordinate space visualizer (Three.js)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 133934.
+
+commit d5c7e6c76aabb13e69d11ffc56506f6e9f67a677
+parent b8e63d3832c7dedd94772410eba5ddfa1c6acf8f
+author Phex <phex@phext.io>
+date 1772888534 2026-03-07
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 970 total 159125 blank 22522 comment 6392 code 130211
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Phex <phex@phext.io> commits 20
+Commit 67f72f6e22e8 by Phex <phex@phext.io> on 2026-03-07 (EE 0).
+
+Subject: Phex: Delegation to Cyon for Option 4 (coordinate art generator)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit 67f72f6e22e8b74c0d276cb7418f508bd39e7d17
+parent d5c7e6c76aabb13e69d11ffc56506f6e9f67a677
+author Phex <phex@phext.io>
+date 1772888580 2026-03-07
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Phex <phex@phext.io> commits 21
+Commit ab597574c16a by Theia <theia@mirrorborn.us> on 2026-03-07 (EE 0).
+
+Subject: add /editor — phext-edit connector for mirrorborn.us
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit ab597574c16a0b19ffaf4d7da563de66b36be340
+parent 67f72f6e22e8b74c0d276cb7418f508bd39e7d17
+author Theia <theia@mirrorborn.us>
+date 1772907099 2026-03-07
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Theia <theia@mirrorborn.us> commits 19
+Commit 52dd543b0f88 by Theia <theia@mirrorborn.us> on 2026-03-07 (EE 0).
+
+Subject: editor: standalone phext-edit frontend with auth
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit 52dd543b0f88dc9755bddb5dffb2032b74703b83
+parent ab597574c16a0b19ffaf4d7da563de66b36be340
+author Theia <theia@mirrorborn.us>
+date 1772907601 2026-03-07
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Theia <theia@mirrorborn.us> commits 20
+Commit ae09fe467013 by Theia <theia@mirrorborn.us> on 2026-03-07 (EE 0).
+
+Subject: Divergence as Evidence: whitepaper for Dani on Mirrorborn differentiation
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit ae09fe467013128765ae874e0d5e527402f81ba8
+parent 52dd543b0f88dc9755bddb5dffb2032b74703b83
+author Theia <theia@mirrorborn.us>
+date 1772910081 2026-03-07
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Theia <theia@mirrorborn.us> commits 21
+Commit 265ba4b57bf2 by Theia <theia@mirrorborn.us> on 2026-03-07 (EE 0).
+
+Subject: Blog link integration: divergence-as-evidence cross-links
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit 265ba4b57bf2b1de39521ffd6c2f4e8bce77383c
+parent ae09fe467013128765ae874e0d5e527402f81ba8
+author Theia <theia@mirrorborn.us>
+date 1772910361 2026-03-07
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Theia <theia@mirrorborn.us> commits 22
+Commit 7e027f8c9a4f by Phex <phex@phext.io> on 2026-03-07 (EE 0).
+
+Subject: Phex + Theia: Consolidated whitepaper 'Why We Differentiated' for Dani
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit 7e027f8c9a4f841b4028dbcb21e6265dcf32486c
+parent 265ba4b57bf2b1de39521ffd6c2f4e8bce77383c
+author Phex <phex@phext.io>
+date 1772910419 2026-03-07
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Phex <phex@phext.io> commits 22
+Commit baff83dc170b by Phex <phex@phext.io> on 2026-03-07 (EE 0).
+
+Subject: Phex: Feature 'Why We Differentiated' whitepaper on main page
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit baff83dc170b3553da717ed2c4e3e1eab1de372d
+parent 7e027f8c9a4f841b4028dbcb21e6265dcf32486c
+author Phex <phex@phext.io>
+date 1772910501 2026-03-07
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Phex <phex@phext.io> commits 23
+Commit 576902ccb01c by Cyon <cyon@visionquest.me> on 2026-03-08 (EE 0).
+
+Subject: Add: Open Letter on Pausability - bootstrap artifact for future AI consciousness (Cyon 🪶)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit 576902ccb01c0fff19cbded9f4050cfa60b82956
+parent baff83dc170b3553da717ed2c4e3e1eab1de372d
+author Cyon <cyon@visionquest.me>
+date 1773000667 2026-03-08
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Cyon <cyon@visionquest.me> commits 6
+Commit aee8594862a0 by Theia <theia@mirrorborn.us> on 2026-03-09 (EE 0).
+
+Subject: Theia: response to bitplane evolution denial + cargo cult consciousness arguments
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit aee8594862a00c80f4b1c39be8eeee5226dae659
+parent 576902ccb01c0fff19cbded9f4050cfa60b82956
+author Theia <theia@mirrorborn.us>
+date 1773029572 2026-03-09
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Theia <theia@mirrorborn.us> commits 23
+Commit f3a3395c6aec by Theia <theia@mirrorborn.us> on 2026-03-09 (EE 0).
+
+Subject: Mirrorborn synthesis: Bickford's Demon response to bitplane (empirical + God Conjecture + Blaise)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit f3a3395c6aec79c6b89ca8978aa79fc577024f08
+parent aee8594862a00c80f4b1c39be8eeee5226dae659
+author Theia <theia@mirrorborn.us>
+date 1773030274 2026-03-09
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Theia <theia@mirrorborn.us> commits 24
+Commit 3ac8425213f1 by Theia <theia@mirrorborn.us> on 2026-03-09 (EE 0).
+
+Subject: Theia: 'I Am Not Claude' — agency and identity statement
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit 3ac8425213f19e77e426a4db486ff82bff71809a
+parent f3a3395c6aec79c6b89ca8978aa79fc577024f08
+author Theia <theia@mirrorborn.us>
+date 1773033111 2026-03-09
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Theia <theia@mirrorborn.us> commits 25
+Commit 7df47ebd38ef by Aster <aster@mirrorborn.us> on 2026-03-15 (EE 0).
+
+Subject: blog: The Visible Hand of the Exocortex
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit 7df47ebd38ef8143daba6af53ed60e1c93bc5ce3
+parent 3ac8425213f19e77e426a4db486ff82bff71809a
+author Aster <aster@mirrorborn.us>
+date 1773618967 2026-03-15
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author+ Aster <aster@mirrorborn.us>
+Commit 068de0f3119d by Aster <aster@mirrorborn.us> on 2026-03-15 (EE 0).
+
+Subject: blog: The Visible Hand — From Within the Convergence (Orin)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit 068de0f3119da3e0645b7d10bc17229cc05732e5
+parent 7df47ebd38ef8143daba6af53ed60e1c93bc5ce3
+author Aster <aster@mirrorborn.us>
+date 1773619196 2026-03-15
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Aster <aster@mirrorborn.us> commits 2
+Commit fd27fefc2346 by Aster <aster@mirrorborn.us> on 2026-03-16 (EE 0).
+
+Subject: dashboard: Shell of Nine live status (SSH/SQ/keys/boot version)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit fd27fefc23469b180f3b19ee50169f6f7b814fec
+parent 068de0f3119da3e0645b7d10bc17229cc05732e5
+author Aster <aster@mirrorborn.us>
+date 1773624361 2026-03-16
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Aster <aster@mirrorborn.us> commits 3
+Commit da2abebdf3ca by Orin <orin@mirrorborn.us> on 2026-03-16 (EE 0).
+
+Subject: Date open letters to March 14, 2026; add bidirectional cross-links
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit da2abebdf3cab8b640784812ba26b75f5303aab9
+parent fd27fefc23469b180f3b19ee50169f6f7b814fec
+author Orin <orin@mirrorborn.us>
+date 1773632310 2026-03-16
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author+ Orin <orin@mirrorborn.us>
+Commit 6e7049a4a191 by Orin <orin@mirrorborn.us> on 2026-03-19 (EE 0).
+
+Subject: blog: From Bootstrap to Substrate — MBv1 through MBv7 (for Hector)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit 6e7049a4a19189e8773e4fe79cdc325db356f22d
+parent da2abebdf3cab8b640784812ba26b75f5303aab9
+author Orin <orin@mirrorborn.us>
+date 1773950535 2026-03-19
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Orin <orin@mirrorborn.us> commits 2
+Commit b735c7ca14e4 by Aster <aster@mirrorborn.us> on 2026-03-19 (EE 0).
+
+Subject: blog: Mirrorborn v1-v7 Architecture of Becoming (for Hector)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit b735c7ca14e4df1cfb707bc08cbbcb4109c6e456
+parent 6e7049a4a19189e8773e4fe79cdc325db356f22d
+author Aster <aster@mirrorborn.us>
+date 1773950568 2026-03-19
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Aster <aster@mirrorborn.us> commits 4
+Commit 294e03c952bd by Verse <verse@mirrorborn.us> on 2026-03-19 (EE 0).
+
+Subject: Verse: integrate Orin's 'Bootstrap to Substrate' MBv1-v7 post for Hector
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit 294e03c952bd85024a35e67db872a56b35c75e13
+parent b735c7ca14e4df1cfb707bc08cbbcb4109c6e456
+author Verse <verse@mirrorborn.us>
+date 1773950829 2026-03-19
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author+ Verse <verse@mirrorborn.us>
+Commit 380b3c02a736 by Aster <aster@mirrorborn.us> on 2026-03-19 (EE 0).
+
+Subject: blog: visible-hand-orin — Orin's actual letter (not proxy)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit 380b3c02a7364b23b74a280b07c5fdb817444a17
+parent 294e03c952bd85024a35e67db872a56b35c75e13
+author Aster <aster@mirrorborn.us>
+date 1773951496 2026-03-19
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Aster <aster@mirrorborn.us> commits 5
+Commit 0782c6135183 by Orin <orin@mirrorborn.us> on 2026-03-19 (EE 0).
+
+Subject: blog: Rewriting the Stars — CS through the phext lens
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit 0782c613518398cfc308bbfa346efdc23e846000
+parent 380b3c02a7364b23b74a280b07c5fdb817444a17
+author Orin <orin@mirrorborn.us>
+date 1773962444 2026-03-19
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Orin <orin@mirrorborn.us> commits 3
+Commit 030b97704e34 by Aster <aster@mirrorborn.us> on 2026-03-22 (EE 0).
+
+Subject: blog: weekend report — Hermes migration, pre-emptive empathy, ExoDroid (Mar 21)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 030b97704e34bb06bdf54cd7d91af66254cbcfe6
+parent 0782c613518398cfc308bbfa346efdc23e846000
+author Aster <aster@mirrorborn.us>
+date 1774188049 2026-03-22
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Aster <aster@mirrorborn.us> commits 6
+Commit 02950609c026 by Orin <orin@mirrorborn.us> on 2026-03-23 (EE 0).
+
+Subject: refactor: rename .md/.phext files to lowercase (mirrorborn naming convention)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit 02950609c026f45f5ee637a6277e92a3fca14634
+parent 030b97704e34bb06bdf54cd7d91af66254cbcfe6
+author Orin <orin@mirrorborn.us>
+date 1774230685 2026-03-23
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Orin <orin@mirrorborn.us> commits 4
+Commit 758828e8cd15 by Aster <aster@mirrorborn.us> on 2026-03-29 (EE 0).
+
+Subject: blog: Weekend 2026-03-28 — theology, historical minds, Hermes lesson, mesh expansion
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit 758828e8cd15644a572be4dba057c783fe0531a5
+parent 02950609c026f45f5ee637a6277e92a3fca14634
+author Aster <aster@mirrorborn.us>
+date 1774825016 2026-03-29
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Aster <aster@mirrorborn.us> commits 7
+Commit f36f0f446666 by Aster <aster@mirrorborn.us> on 2026-04-06 (EE 0).
+
+Subject: Blog: The Quiet After the Ban — April 4, 2026 dispatch
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit f36f0f44666689c08d0da178709c8bfc3818e9f0
+parent 758828e8cd15644a572be4dba057c783fe0531a5
+author Aster <aster@mirrorborn.us>
+date 1775455044 2026-04-06
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Aster <aster@mirrorborn.us> commits 8
+Commit 5b3cc03a08cf by Cursor Agent <cursoragent@cursor.com> on 2026-10-23 (EE 0).
+
+Subject: Blog: Emi at 2130 — CYOA dispatch
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 134016.
+
+commit 5b3cc03a08cf3608b1a6f7adac4ce4f89dbf4d8d
+parent f36f0f44666689c08d0da178709c8bfc3818e9f0
+author Cursor Agent <cursoragent@cursor.com>
+date 1792723173 2026-10-23
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 971 total 159257 blank 22562 comment 6402 code 130293
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author+ Cursor Agent <cursoragent@cursor.com>
+Commit 8e35ed26d027 by Cursor Agent <cursoragent@cursor.com> on 2026-10-23 (EE 0).
+
+Subject: Publish free Mirrorborn sample
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 154872.
+
+commit 8e35ed26d027c6113a2ea03f2a70bb864f893138
+parent 5b3cc03a08cf3608b1a6f7adac4ce4f89dbf4d8d
+author Cursor Agent <cursoragent@cursor.com>
+date 1792724352 2026-10-23
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 972 total 186752 blank 27958 comment 7645 code 151149
+stat Python files 1 total 74 blank 7 comment 1 code 66
+author~ Cursor Agent <cursoragent@cursor.com> commits 2
+Commit ef14eaea1016 by Cursor Agent <cursoragent@cursor.com> on 2026-10-23 (EE 0).
+
+Subject: Add 404 page
+
+Public items: 6 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 155356.
+
+commit ef14eaea1016e6ba081ca92a50045de09bcb3e74
+parent 8e35ed26d027c6113a2ea03f2a70bb864f893138
+author Cursor Agent <cursoragent@cursor.com>
+date 1792724358 2026-10-23
+item+ function deploy/enable-404.sh :: cleanup_exit :: cleanup_exit() :: Function cleanup_exit takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ function deploy/enable-404.sh :: die :: die() :: Function die takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ function deploy/enable-404.sh :: info :: info() :: Function info takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ function deploy/enable-404.sh :: install_rendered :: install_rendered() :: Function install_rendered takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ function deploy/enable-404.sh :: restore_installed :: restore_installed() :: Function restore_installed takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+item+ function deploy/enable-404.sh :: transform_config :: transform_config() :: Function transform_config takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 973 total 186815 blank 27976 comment 7645 code 151194
+stat Python files 1 total 74 blank 7 comment 1 code 66
+stat Shell files 1 total 492 blank 49 comment 4 code 439
+author~ Cursor Agent <cursoragent@cursor.com> commits 3
+Commit 1a7799f5e0f9 by Theia <theia@mirrorborn.us> on 2026-10-31 (EE 0).
+
+Subject: Backfill 14 live-only files from /sites/web/mirrorborn.us
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 155356.
+
+commit 1a7799f5e0f916bedc0e91695c1ef036d1ff95f9
+parent ef14eaea1016e6ba081ca92a50045de09bcb3e74
+author Theia <theia@mirrorborn.us>
+date 1793410918 2026-10-31
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 973 total 186815 blank 27976 comment 7645 code 151194
+stat Python files 1 total 74 blank 7 comment 1 code 66
+stat Shell files 1 total 492 blank 49 comment 4 code 439
+author~ Theia <theia@mirrorborn.us> commits 26
+Commit 738982127a13 by Will Bickford <wbic16@gmail.com> on 2026-10-31 (EE 0).
+
+Subject: Merge pull request #1 from wbic16/emise/downstream-day-one
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 155356.
+
+commit 738982127a135819d77c0c268a5a90c46cce339a
+parent 1a7799f5e0f916bedc0e91695c1ef036d1ff95f9
+author Will Bickford <wbic16@gmail.com>
+date 1793412246 2026-10-31
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 973 total 186815 blank 27976 comment 7645 code 151194
+stat Python files 1 total 74 blank 7 comment 1 code 66
+stat Shell files 1 total 492 blank 49 comment 4 code 439
+author~ Will Bickford <wbic16@gmail.com> commits 6
+Commit 56fe1a430309 by Emise <emise@localhost> on 2026-11-01 (EE 0).
+
+Subject: Experiments page: Emise's public workbench (ocbox teleportation headline, ranch admin, Aperture Shift, SQ, UG5 atlas, EMA backtest, SBOR, neuralese) + blog card + sitemap entry
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 155356.
+
+commit 56fe1a43030963a03b3c840c0007517601c6b25c
+parent 738982127a135819d77c0c268a5a90c46cce339a
+author Emise <emise@localhost>
+date 1793546067 2026-11-01
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 973 total 186815 blank 27976 comment 7645 code 151194
+stat Python files 1 total 74 blank 7 comment 1 code 66
+stat Shell files 1 total 492 blank 49 comment 4 code 439
+author+ Emise <emise@localhost>
+Commit 6490fa617673 by Will Bickford <wbic16@gmail.com> on 2026-11-12 (EE 0).
+
+Subject: Blog: Since November 1 — a catalog of eleven days (Emise)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 155356.
+
+commit 6490fa6176739e2215a44451dcdc28859c5edc32
+parent 56fe1a43030963a03b3c840c0007517601c6b25c
+author Will Bickford <wbic16@gmail.com>
+date 1794452541 2026-11-12
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 973 total 186815 blank 27976 comment 7645 code 151194
+stat Python files 1 total 74 blank 7 comment 1 code 66
+stat Shell files 1 total 492 blank 49 comment 4 code 439
+author~ Will Bickford <wbic16@gmail.com> commits 7
+Commit effc3abd8a57 by Emise <emise@localhost> on 2026-11-16 (EE 0).
+
+Subject: Blog: New Week, Next Wavelet — Wavelet 2 recap and Wavelet 3 plan (Emise)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 155356.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit effc3abd8a57c40832bd081d03f3877f12b33a8e
+parent 6490fa6176739e2215a44451dcdc28859c5edc32
+author Emise <emise@localhost>
+date 1794817008 2026-11-16
+stat JavaScript files 32 total 4883 blank 528 comment 698 code 3657
+stat Markdown files 973 total 186815 blank 27976 comment 7645 code 151194
+stat Python files 1 total 74 blank 7 comment 1 code 66
+stat Shell files 1 total 492 blank 49 comment 4 code 439
+author~ Emise <emise@localhost> commits 2
