@@ -1,16 +1,8 @@
 # mutable-os — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 148). Scanned at commit 48cac17ae14c2d9132d0b110162677a669dbad3e. Everything in this document was extracted from the revision named above: its manifests, its git log, and its source text. Descriptions are labeled by how they were obtained — direct (the source's own words), inferred (read off a signature), agent-supplied (written by a reviewer), verified (backed by a validated contract), or unverified — and only validated contracts are marked verified.
+Scanned by phdoc 0.1.0 on 2026-11-23 (Exocortical Epoch 195). Project root: /source/mutable-os. Scanned at commit 48cac17ae14c2d9132d0b110162677a669dbad3e. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
-
----
-
-## Summary
-
-This repository is the in-progress Solid-owned reconstruction of `speedy-ts`, following [`SOLID_RESTRUCTURE.MD`](./SOLID_RESTRUCTURE.MD). The current runnable milestone loads the original 92-Block workspace sample through the canonical model and Solid renderer. The smaller two-pane PlainText/Standoff pilot remains available as a focused view-local-state example.
-
-(The opening of the project's README, quoted as written.)
 
 ---
 
@@ -108,20 +100,13 @@ Direct dependencies: 76.
 
 ## Authors
 
-The git log holds 448 commits.
+The git log holds 448 commits. The authors, by commit count:
 
-The author of record is **Will Bickford** — 27 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
-
-Annotation, by persona (all folded into Will Bickford):
-
-- Emise — 24 commits
-- Will Bickford (his own identities) — 2 commits
-- Theia — 1 commit
-
-Other authors, kept as themselves (not Exocortical cluster personas; never folded):
-
-- Iian <iian.d.neill@gmail.com> — 420 commits
-- Iian Neill <iian.d.neill@gmail.com> — 1 commit
+- Iian <iian.d.neill@gmail.com> — 420 commits (93.8%)
+- Emise <emise@localhost> — 24 commits (5.4%)
+- Will Bickford <wbic16@gmail.com> — 2 commits (0.4%)
+- Iian Neill <iian.d.neill@gmail.com> — 1 commit (0.2%)
+- Theia <theia@mirrorborn.us> — 1 commit (0.2%)
 
 ---
 
@@ -129,21 +114,21 @@ Other authors, kept as themselves (not Exocortical cluster personas; never folde
 
 The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.
 
-- JavaScript: 124 files, 67988 lines total, 1164 blank, 2452 comment, 64372 code
+- JavaScript: 624 files, 143352 lines total, 2750 blank, 7212 comment, 133390 code
 - Markdown: 430 files, 83421 lines total, 21525 blank, 151 comment, 61745 code
 - Python: 4 files, 224 lines total, 9 blank, 0 comment, 215 code
 - Shell: 2 files, 661 lines total, 55 blank, 80 comment, 526 code
-- TypeScript: 1104 files, 108430 lines total, 3232 blank, 4887 comment, 100311 code
+- TypeScript: 1436 files, 120175 lines total, 3232 blank, 5755 comment, 111188 code
 
-All languages: 1664 files, 260724 lines total, 227169 lines of code. Functions read: 29.
+All languages: 2496 files, 347833 lines total, 307064 lines of code. Functions read: 29.
 
 Largest files:
 
 - src/library/original/components/outliner-text-block.js — 10205 lines
 - docs/development/INPUT_HANDLER_SOURCE_LEDGER.md — 9442 lines
+- dist/server/application-services/host.js — 6491 lines
 - src/library/original/modules/speedy/editor-new-2.js — 4655 lines
 - src/library/original/speedy.js — 4655 lines
-- src/library/original/modules/speedy/editor-new.js — 3347 lines
 
 Largest functions, by span in lines:
 
@@ -159,10 +144,10 @@ Largest functions, by span in lines:
 
 Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.
 
-- Tests: 0 test functions counted in the source, across 28 files whose names mark them as test files.
+- Tests: 0 test functions counted in the source, across 32 files whose names mark them as test files.
 - CI: no CI configuration was found in the project.
 - Lint and format: no lint or format configuration file was found.
-- TODO marks in the source: 28. FIXME marks: 0.
+- TODO marks in the source: 33. FIXME marks: 0.
 - Public items with a doc comment: 0 of 29 (0%).
 
 ---
@@ -176,46 +161,46 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 ## Upstream git repo
 
-- Origin: https://github.com/wbic16/mutable-os
+- Origin: https://github.com/wbic16/mutable-os.git
 - Branch: main
 - Head commit: 48cac17ae14c2d9132d0b110162677a669dbad3e
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
 ## Public methods and commands
 
-Every public method and command the scanner found, each with a plain English note. Each note is labeled with where its words came from: direct (the code's own doc comment), inferred (read off the item's signature), agent-supplied (written by the user's agent), or awaiting a summary.
+Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.
 
-- function `die` (deploy/deploy.sh:49) — Function die takes no inputs beyond the value it is called on.
-- function `usage` (deploy/deploy.sh:54) — Function usage takes no inputs beyond the value it is called on.
-- function `as_owner` (deploy/deploy.sh:75) — Function as_owner takes no inputs beyond the value it is called on.
-- function `dns_points_here` (deploy/deploy.sh:79) — Function dns_points_here takes no inputs beyond the value it is called on.
-- function `file_sha256` (deploy/deploy.sh:83) — Function file_sha256 takes no inputs beyond the value it is called on.
-- function `read_root_file` (deploy/deploy.sh:89) — Function read_root_file takes no inputs beyond the value it is called on.
-- function `nginx_template` (deploy/deploy.sh:94) — Function nginx_template takes no inputs beyond the value it is called on.
-- function `unit_template` (deploy/deploy.sh:109) — Function unit_template takes no inputs beyond the value it is called on.
-- function `render_site_body` (deploy/deploy.sh:126) — Function render_site_body takes no inputs beyond the value it is called on.
-- function `adopt_live_ssl` (deploy/deploy.sh:138) — Function adopt_live_ssl takes no inputs beyond the value it is called on.
-- function `path_exists` (deploy/deploy.sh:174) — Function path_exists takes no inputs beyond the value it is called on.
-- function `drop_missing_dhparam` (deploy/deploy.sh:182) — Function drop_missing_dhparam takes no inputs beyond the value it is called on.
-- function `stamp_managed` (deploy/deploy.sh:195) — Function stamp_managed takes no inputs beyond the value it is called on.
-- function `write_bootstrap_body` (deploy/deploy.sh:204) — Function write_bootstrap_body takes no inputs beyond the value it is called on.
-- function `nginx_disposition` (deploy/deploy.sh:235) — Function nginx_disposition takes no inputs beyond the value it is called on.
-- function `with_force` (deploy/deploy.sh:269) — Function with_force takes no inputs beyond the value it is called on.
-- function `require_hardened_body` (deploy/deploy.sh:278) — Function require_hardened_body takes no inputs beyond the value it is called on.
-- function `install_rendered_site` (deploy/deploy.sh:294) — Function install_rendered_site takes no inputs beyond the value it is called on.
-- function `apply_rendered_site` (deploy/deploy.sh:328) — Function apply_rendered_site takes no inputs beyond the value it is called on.
-- function `run_check` (deploy/deploy.sh:377) — Function run_check takes no inputs beyond the value it is called on.
-- function `main` (deploy/deploy.sh:457) — Function main takes no inputs beyond the value it is called on.
-- function `check` (docs/architecture/sqlite/check-proposed-schema.py:14) — Function check takes name, condition.
-- function `rejects` (docs/architecture/sqlite/check-proposed-schema.py:19) — Function rejects takes name, sql, values=.
-- function `resource` (docs/architecture/sqlite/check-proposed-schema.py:28) — Function resource takes guid, block.
-- function `nodes` (docs/development/evidence/dcp-scholarly-authoring/audit-case.py:20) — Function nodes takes value.
-- function `visit` (docs/development/evidence/dcp-scholarly-authoring/audit-case.py:36) — Function visit takes e.
-- function `objects` (docs/development/evidence/dcp-scholarly-authoring/review-live.py:4) — Function objects takes v.
-- function `read` (experiments/initialis/summarize.py:6) — Function read takes p.
-- function `stats` (experiments/initialis/summarize.py:7) — Function stats takes xs.
+- function `die` (deploy/deploy.sh:49) — Function die takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is gi
+- function `usage` (deploy/deploy.sh:54) — Function usage takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is 
+- function `as_owner` (deploy/deploy.sh:75) — Function as_owner takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it 
+- function `dns_points_here` (deploy/deploy.sh:79) — Function dns_points_here takes no inputs beyond the value it is called on, and gives back nothing; it does its work on w
+- function `file_sha256` (deploy/deploy.sh:83) — Function file_sha256 takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
+- function `read_root_file` (deploy/deploy.sh:89) — Function read_root_file takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wh
+- function `nginx_template` (deploy/deploy.sh:94) — Function nginx_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wh
+- function `unit_template` (deploy/deploy.sh:109) — Function unit_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wha
+- function `render_site_body` (deploy/deploy.sh:126) — Function render_site_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on 
+- function `adopt_live_ssl` (deploy/deploy.sh:138) — Function adopt_live_ssl takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wh
+- function `path_exists` (deploy/deploy.sh:174) — Function path_exists takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
+- function `drop_missing_dhparam` (deploy/deploy.sh:182) — Function drop_missing_dhparam takes no inputs beyond the value it is called on, and gives back nothing; it does its work
+- function `stamp_managed` (deploy/deploy.sh:195) — Function stamp_managed takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wha
+- function `write_bootstrap_body` (deploy/deploy.sh:204) — Function write_bootstrap_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work
+- function `nginx_disposition` (deploy/deploy.sh:235) — Function nginx_disposition takes no inputs beyond the value it is called on, and gives back nothing; it does its work on
+- function `with_force` (deploy/deploy.sh:269) — Function with_force takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
+- function `require_hardened_body` (deploy/deploy.sh:278) — Function require_hardened_body takes no inputs beyond the value it is called on, and gives back nothing; it does its wor
+- function `install_rendered_site` (deploy/deploy.sh:294) — Function install_rendered_site takes no inputs beyond the value it is called on, and gives back nothing; it does its wor
+- function `apply_rendered_site` (deploy/deploy.sh:328) — Function apply_rendered_site takes no inputs beyond the value it is called on, and gives back nothing; it does its work 
+- function `run_check` (deploy/deploy.sh:377) — Function run_check takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it
+- function `main` (deploy/deploy.sh:457) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `check` (docs/architecture/sqlite/check-proposed-schema.py:14) — Function check takes name, condition and gives back nothing; it does its work on what it is given.
+- function `rejects` (docs/architecture/sqlite/check-proposed-schema.py:19) — Function rejects takes name, sql, values= and gives back nothing; it does its work on what it is given.
+- function `resource` (docs/architecture/sqlite/check-proposed-schema.py:28) — Function resource takes guid, block and gives back nothing; it does its work on what it is given.
+- function `nodes` (docs/development/evidence/dcp-scholarly-authoring/audit-case.py:20) — Function nodes takes value and gives back nothing; it does its work on what it is given.
+- function `visit` (docs/development/evidence/dcp-scholarly-authoring/audit-case.py:36) — Function visit takes e and gives back nothing; it does its work on what it is given.
+- function `objects` (docs/development/evidence/dcp-scholarly-authoring/review-live.py:4) — Function objects takes v and gives back nothing; it does its work on what it is given.
+- function `read` (experiments/initialis/summarize.py:6) — Function read takes p and gives back nothing; it does its work on what it is given.
+- function `stats` (experiments/initialis/summarize.py:7) — Function stats takes xs and gives back nothing; it does its work on what it is given.
 
 ---
 
@@ -223,13 +208,11 @@ Every public method and command the scanner found, each with a plain English not
 
 Found in deploy/deploy.sh at line 49.
 
-Surface: public API.
-
 Signature: `die()`
 
-What it does: Function die takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function die takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -237,13 +220,11 @@ What it does: Function die takes no inputs beyond the value it is called on. Its
 
 Found in deploy/deploy.sh at line 54.
 
-Surface: public API.
-
 Signature: `usage()`
 
-What it does: Function usage takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function usage takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -251,13 +232,11 @@ What it does: Function usage takes no inputs beyond the value it is called on. I
 
 Found in deploy/deploy.sh at line 75.
 
-Surface: public API.
-
 Signature: `as_owner()`
 
-What it does: Function as_owner takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function as_owner takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -265,13 +244,11 @@ What it does: Function as_owner takes no inputs beyond the value it is called on
 
 Found in deploy/deploy.sh at line 79.
 
-Surface: public API.
-
 Signature: `dns_points_here()`
 
-What it does: Function dns_points_here takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function dns_points_here takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -279,13 +256,11 @@ What it does: Function dns_points_here takes no inputs beyond the value it is ca
 
 Found in deploy/deploy.sh at line 83.
 
-Surface: public API.
-
 Signature: `file_sha256()`
 
-What it does: Function file_sha256 takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function file_sha256 takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -293,13 +268,11 @@ What it does: Function file_sha256 takes no inputs beyond the value it is called
 
 Found in deploy/deploy.sh at line 89.
 
-Surface: public API.
-
 Signature: `read_root_file()`
 
-What it does: Function read_root_file takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function read_root_file takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -307,13 +280,11 @@ What it does: Function read_root_file takes no inputs beyond the value it is cal
 
 Found in deploy/deploy.sh at line 94.
 
-Surface: public API.
-
 Signature: `nginx_template()`
 
-What it does: Function nginx_template takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function nginx_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -321,13 +292,11 @@ What it does: Function nginx_template takes no inputs beyond the value it is cal
 
 Found in deploy/deploy.sh at line 109.
 
-Surface: public API.
-
 Signature: `unit_template()`
 
-What it does: Function unit_template takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function unit_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -335,13 +304,11 @@ What it does: Function unit_template takes no inputs beyond the value it is call
 
 Found in deploy/deploy.sh at line 126.
 
-Surface: public API.
-
 Signature: `render_site_body()`
 
-What it does: Function render_site_body takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function render_site_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -349,13 +316,11 @@ What it does: Function render_site_body takes no inputs beyond the value it is c
 
 Found in deploy/deploy.sh at line 138.
 
-Surface: public API.
-
 Signature: `adopt_live_ssl()`
 
-What it does: Function adopt_live_ssl takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function adopt_live_ssl takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -363,13 +328,11 @@ What it does: Function adopt_live_ssl takes no inputs beyond the value it is cal
 
 Found in deploy/deploy.sh at line 174.
 
-Surface: public API.
-
 Signature: `path_exists()`
 
-What it does: Function path_exists takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function path_exists takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -377,13 +340,11 @@ What it does: Function path_exists takes no inputs beyond the value it is called
 
 Found in deploy/deploy.sh at line 182.
 
-Surface: public API.
-
 Signature: `drop_missing_dhparam()`
 
-What it does: Function drop_missing_dhparam takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function drop_missing_dhparam takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -391,13 +352,11 @@ What it does: Function drop_missing_dhparam takes no inputs beyond the value it 
 
 Found in deploy/deploy.sh at line 195.
 
-Surface: public API.
-
 Signature: `stamp_managed()`
 
-What it does: Function stamp_managed takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function stamp_managed takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -405,13 +364,11 @@ What it does: Function stamp_managed takes no inputs beyond the value it is call
 
 Found in deploy/deploy.sh at line 204.
 
-Surface: public API.
-
 Signature: `write_bootstrap_body()`
 
-What it does: Function write_bootstrap_body takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function write_bootstrap_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -419,13 +376,11 @@ What it does: Function write_bootstrap_body takes no inputs beyond the value it 
 
 Found in deploy/deploy.sh at line 235.
 
-Surface: public API.
-
 Signature: `nginx_disposition()`
 
-What it does: Function nginx_disposition takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function nginx_disposition takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -433,13 +388,11 @@ What it does: Function nginx_disposition takes no inputs beyond the value it is 
 
 Found in deploy/deploy.sh at line 269.
 
-Surface: public API.
-
 Signature: `with_force()`
 
-What it does: Function with_force takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function with_force takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -447,13 +400,11 @@ What it does: Function with_force takes no inputs beyond the value it is called 
 
 Found in deploy/deploy.sh at line 278.
 
-Surface: public API.
-
 Signature: `require_hardened_body()`
 
-What it does: Function require_hardened_body takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function require_hardened_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -461,13 +412,11 @@ What it does: Function require_hardened_body takes no inputs beyond the value it
 
 Found in deploy/deploy.sh at line 294.
 
-Surface: public API.
-
 Signature: `install_rendered_site()`
 
-What it does: Function install_rendered_site takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function install_rendered_site takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -475,13 +424,11 @@ What it does: Function install_rendered_site takes no inputs beyond the value it
 
 Found in deploy/deploy.sh at line 328.
 
-Surface: public API.
-
 Signature: `apply_rendered_site()`
 
-What it does: Function apply_rendered_site takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function apply_rendered_site takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -489,13 +436,11 @@ What it does: Function apply_rendered_site takes no inputs beyond the value it i
 
 Found in deploy/deploy.sh at line 377.
 
-Surface: public API.
-
 Signature: `run_check()`
 
-What it does: Function run_check takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function run_check takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -503,13 +448,11 @@ What it does: Function run_check takes no inputs beyond the value it is called o
 
 Found in deploy/deploy.sh at line 457.
 
-Surface: public API.
-
 Signature: `main()`
 
-What it does: Function main takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -517,13 +460,11 @@ What it does: Function main takes no inputs beyond the value it is called on. It
 
 Found in docs/architecture/sqlite/check-proposed-schema.py at line 14.
 
-Surface: public API.
+Signature: `def check(name, condition):`
 
-Signature: `def check(name, condition)`
+What it does: Function check takes name, condition and gives back nothing; it does its work on what it is given.
 
-What it does: Function check takes name, condition. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -531,13 +472,11 @@ What it does: Function check takes name, condition. Its return type is unannotat
 
 Found in docs/architecture/sqlite/check-proposed-schema.py at line 19.
 
-Surface: public API.
+Signature: `def rejects(name, sql, values=()):`
 
-Signature: `def rejects(name, sql, values=())`
+What it does: Function rejects takes name, sql, values= and gives back nothing; it does its work on what it is given.
 
-What it does: Function rejects takes name, sql, values=. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -545,13 +484,11 @@ What it does: Function rejects takes name, sql, values=. Its return type is unan
 
 Found in docs/architecture/sqlite/check-proposed-schema.py at line 28.
 
-Surface: public API.
+Signature: `def resource(guid, block):`
 
-Signature: `def resource(guid, block)`
+What it does: Function resource takes guid, block and gives back nothing; it does its work on what it is given.
 
-What it does: Function resource takes guid, block. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -559,13 +496,11 @@ What it does: Function resource takes guid, block. Its return type is unannotate
 
 Found in docs/development/evidence/dcp-scholarly-authoring/audit-case.py at line 20.
 
-Surface: public API.
+Signature: `def nodes(value):`
 
-Signature: `def nodes(value)`
+What it does: Function nodes takes value and gives back nothing; it does its work on what it is given.
 
-What it does: Function nodes takes value. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -573,13 +508,11 @@ What it does: Function nodes takes value. Its return type is unannotated; no ret
 
 Found in docs/development/evidence/dcp-scholarly-authoring/audit-case.py at line 36.
 
-Surface: public API.
+Signature: `def visit(e):`
 
-Signature: `def visit(e)`
+What it does: Function visit takes e and gives back nothing; it does its work on what it is given.
 
-What it does: Function visit takes e. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -587,13 +520,11 @@ What it does: Function visit takes e. Its return type is unannotated; no return 
 
 Found in docs/development/evidence/dcp-scholarly-authoring/review-live.py at line 4.
 
-Surface: public API.
+Signature: `def objects(v):`
 
-Signature: `def objects(v)`
+What it does: Function objects takes v and gives back nothing; it does its work on what it is given.
 
-What it does: Function objects takes v. Its return type is unannotated; the code shows it returning values it yields (a generator).
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -601,13 +532,11 @@ What it does: Function objects takes v. Its return type is unannotated; the code
 
 Found in experiments/initialis/summarize.py at line 6.
 
-Surface: public API.
-
 Signature: `def read(p): return json.loads(p.read_text())`
 
-What it does: Function read takes p. Its return type is unannotated; no return statement was read in its body.
+What it does: Function read takes p and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -615,16 +544,8 @@ What it does: Function read takes p. Its return type is unannotated; no return s
 
 Found in experiments/initialis/summarize.py at line 7.
 
-Surface: public API.
+Signature: `def stats(xs):`
 
-Signature: `def stats(xs)`
+What it does: Function stats takes xs and gives back nothing; it does its work on what it is given.
 
-What it does: Function stats takes xs. Its return type is unannotated; the code shows it returning dict(n=len(s),median=s[len(s)//2],p95=s[math.cei.
-
-(Where these words came from: inferred.)
-
----
-
-## Provenance
-
-This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/mutable-os/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
+(Where these words came from: signature.)

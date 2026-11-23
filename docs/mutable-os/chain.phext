@@ -5690,3 +5690,2080 @@ stat Python files 4 total 224 blank 9 comment 0 code 215
 stat Shell files 2 total 661 blank 55 comment 71 code 535
 stat TypeScript files 1104 total 108430 blank 3232 comment 4887 code 100311
 author~ Emise <emise@localhost> commits 5
+Commit d6f8ae4f8997 by Iian Neill <iian.d.neill@gmail.com> on 2026-10-16 (EE 0).
+
+Subject: Cross platform fix plan
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 230366.
+
+commit d6f8ae4f8997e2abb24c4f059e3030accb950043
+parent 68ac29ab60020fdd8910b82bb4794784b6a35581
+author Iian Neill <iian.d.neill@gmail.com>
+date 1792142657 2026-10-16
+stat C files 0 total 0 blank 0 comment 0 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2763 code 67443
+stat Markdown files 430 total 83488 blank 21510 comment 116 code 61862
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 55 comment 71 code 535
+stat TypeScript files 1104 total 108430 blank 3232 comment 4887 code 100311
+author+ Iian Neill <iian.d.neill@gmail.com>
+Commit 35ec08c30c87 by Iian <iian.d.neill@gmail.com> on 2026-11-04 (EE 0).
+
+Subject: Prompt for TUI feature brief
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 230366.
+
+commit 35ec08c30c874b0b8fbc26ac1de3d277e207919a
+parent 705dc80cfeb3593433ec43b6b6c8516d87b5b24b
+author Iian <iian.d.neill@gmail.com>
+date 1793792774 2026-11-04
+stat C files 0 total 0 blank 0 comment 0 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2763 code 67443
+stat Markdown files 431 total 83488 blank 21510 comment 116 code 61862
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 55 comment 71 code 535
+stat TypeScript files 1104 total 108430 blank 3232 comment 4887 code 100311
+author~ Iian <iian.d.neill@gmail.com> commits 331
+Commit 2405c40d22bf by Iian <iian.d.neill@gmail.com> on 2026-11-04 (EE 0).
+
+Subject: Stage A
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 230366.
+
+commit 2405c40d22bf31b8404292aba7bf224e7dc4e681
+parent 1b4dc6e2d3be5382f5ef8d0538d25642d671b20f
+author Iian <iian.d.neill@gmail.com>
+date 1793797218 2026-11-04
+stat C files 0 total 0 blank 0 comment 0 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2763 code 67443
+stat Markdown files 440 total 83488 blank 21510 comment 116 code 61862
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 55 comment 71 code 535
+stat TypeScript files 1107 total 108430 blank 3232 comment 4887 code 100311
+author~ Iian <iian.d.neill@gmail.com> commits 332
+Commit cff7d9859fa4 by Iian <iian.d.neill@gmail.com> on 2026-11-04 (EE 0).
+
+Subject: Checkpoint
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 230366.
+
+commit cff7d9859fa4ff6489a7d5ef2af88b0ba543a872
+parent e7468088213cfb9805eeaaacc0b7d9bde95f2400
+author Iian <iian.d.neill@gmail.com>
+date 1793799030 2026-11-04
+stat C files 0 total 0 blank 0 comment 0 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2763 code 67443
+stat Markdown files 440 total 83488 blank 21510 comment 116 code 61862
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 55 comment 71 code 535
+stat TypeScript files 1110 total 108430 blank 3232 comment 4887 code 100311
+author~ Iian <iian.d.neill@gmail.com> commits 333
+Commit a21544f232cd by Iian <iian.d.neill@gmail.com> on 2026-11-04 (EE 0).
+
+Subject: Increment 2 nearly finished
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 230366.
+
+commit a21544f232cd16c3afdac365e13ba393751b15b3
+parent 4678398578a2f1a898a5c15c4596213adf2b1ccc
+author Iian <iian.d.neill@gmail.com>
+date 1793799628 2026-11-04
+stat C files 0 total 0 blank 0 comment 0 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2763 code 67443
+stat Markdown files 440 total 83488 blank 21510 comment 116 code 61862
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 55 comment 71 code 535
+stat TypeScript files 1110 total 108430 blank 3232 comment 4887 code 100311
+author~ Iian <iian.d.neill@gmail.com> commits 334
+Commit 5c9b9a6e6189 by Iian <iian.d.neill@gmail.com> on 2026-11-04 (EE 0).
+
+Subject: Textual: Stage 2 complete
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 230366.
+
+commit 5c9b9a6e6189d435f71797726c02f1760b1b8eb5
+parent b53450e3407f68cdc2a64fbc85653fa787d810b3
+author Iian <iian.d.neill@gmail.com>
+date 1793831079 2026-11-04
+stat C files 0 total 0 blank 0 comment 0 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2763 code 67443
+stat Markdown files 441 total 83488 blank 21510 comment 116 code 61862
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 55 comment 71 code 535
+stat TypeScript files 1112 total 108430 blank 3232 comment 4887 code 100311
+author~ Iian <iian.d.neill@gmail.com> commits 335
+Commit 53df461aa340 by Iian <iian.d.neill@gmail.com> on 2026-11-05 (EE 0).
+
+Subject: Textual: Increment 3 complete
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 230366.
+
+commit 53df461aa340fdb59338287cafc1bca7634c8248
+parent bde56d7de7f8799710188875c02242b9faa81bf1
+author Iian <iian.d.neill@gmail.com>
+date 1793838751 2026-11-05
+stat C files 0 total 0 blank 0 comment 0 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2763 code 67443
+stat Markdown files 442 total 83488 blank 21510 comment 116 code 61862
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 55 comment 71 code 535
+stat TypeScript files 1114 total 108430 blank 3232 comment 4887 code 100311
+author~ Iian <iian.d.neill@gmail.com> commits 336
+Commit 681cb7135afe by Iian <iian.d.neill@gmail.com> on 2026-11-05 (EE 0).
+
+Subject: Textual: Increment 4 complete
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 230366.
+
+commit 681cb7135afef2ce2ada19265e30db17114768b4
+parent c3bf7ac34247c960ae81ca5eac3207c0dad88f7f
+author Iian <iian.d.neill@gmail.com>
+date 1793841056 2026-11-05
+stat C files 0 total 0 blank 0 comment 0 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2763 code 67443
+stat Markdown files 443 total 83488 blank 21510 comment 116 code 61862
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 55 comment 71 code 535
+stat TypeScript files 1117 total 108430 blank 3232 comment 4887 code 100311
+author~ Iian <iian.d.neill@gmail.com> commits 337
+Commit 66aeb1174e6e by Iian <iian.d.neill@gmail.com> on 2026-11-05 (EE 0).
+
+Subject: Textual: visual refinement
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 230366.
+
+commit 66aeb1174e6e71f22ac5634787e131f18e840025
+parent de25c227fbae7b8e644ae23860f92027211cee6a
+author Iian <iian.d.neill@gmail.com>
+date 1793856269 2026-11-05
+stat C files 0 total 0 blank 0 comment 0 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2763 code 67443
+stat Markdown files 445 total 83488 blank 21510 comment 116 code 61862
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 55 comment 71 code 535
+stat TypeScript files 1117 total 108430 blank 3232 comment 4887 code 100311
+author~ Iian <iian.d.neill@gmail.com> commits 338
+Commit 797c069d1e30 by Iian <iian.d.neill@gmail.com> on 2026-11-05 (EE 0).
+
+Subject: Universal Application Presentation Contract complete
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 230366.
+
+commit 797c069d1e30725dc55c4fde81d94c7d5c9fb8fb
+parent 79fa45782b2645e43eaa4ba0b53da6d5df3793d2
+author Iian <iian.d.neill@gmail.com>
+date 1793861110 2026-11-05
+stat C files 0 total 0 blank 0 comment 0 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2763 code 67443
+stat Markdown files 448 total 83488 blank 21510 comment 116 code 61862
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 55 comment 71 code 535
+stat TypeScript files 1120 total 108430 blank 3232 comment 4887 code 100311
+author~ Iian <iian.d.neill@gmail.com> commits 339
+Commit 23ae1388c988 by Iian <iian.d.neill@gmail.com> on 2026-11-05 (EE 0).
+
+Subject: Font settings
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 230366.
+
+commit 23ae1388c988310d9863ab0b4b10d2e61a05da59
+parent b67b8ef8acbfe9490af96a0bb39044df980afe21
+author Iian <iian.d.neill@gmail.com>
+date 1793872840 2026-11-05
+stat C files 0 total 0 blank 0 comment 0 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2763 code 67443
+stat Markdown files 450 total 83488 blank 21510 comment 116 code 61862
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 55 comment 71 code 535
+stat TypeScript files 1124 total 108430 blank 3232 comment 4887 code 100311
+author~ Iian <iian.d.neill@gmail.com> commits 340
+Commit 3239f3958a48 by Iian <iian.d.neill@gmail.com> on 2026-11-05 (EE 0).
+
+Subject: Textual Menu styling
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 230366.
+
+commit 3239f3958a48d6605ea781fd9c257eff8130c169
+parent 10a1418ccc61615bf395fb1efa4803ce995405c4
+author Iian <iian.d.neill@gmail.com>
+date 1793877653 2026-11-05
+stat C files 0 total 0 blank 0 comment 0 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2763 code 67443
+stat Markdown files 451 total 83488 blank 21510 comment 116 code 61862
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 55 comment 71 code 535
+stat TypeScript files 1125 total 108430 blank 3232 comment 4887 code 100311
+author~ Iian <iian.d.neill@gmail.com> commits 341
+Commit bb66cb31a7eb by Iian <iian.d.neill@gmail.com> on 2026-11-05 (EE 0).
+
+Subject: Flint explorer fix
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 230366.
+
+commit bb66cb31a7eb7e74279d27cac90335351249c0c9
+parent abcbefcf7a5ef3073b75524ff3bedfc02abb1473
+author Iian <iian.d.neill@gmail.com>
+date 1793878600 2026-11-05
+stat C files 0 total 0 blank 0 comment 0 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2763 code 67443
+stat Markdown files 452 total 83488 blank 21510 comment 116 code 61862
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 55 comment 71 code 535
+stat TypeScript files 1125 total 108430 blank 3232 comment 4887 code 100311
+author~ Iian <iian.d.neill@gmail.com> commits 342
+Commit ac74e772499d by Iian <iian.d.neill@gmail.com> on 2026-11-05 (EE 0).
+
+Subject: Menu alignment issue
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 230366.
+
+commit ac74e772499d16538aec4673aa7018cff65ee101
+parent 52f59089880c6fab675be58af5f40750f771f9e3
+author Iian <iian.d.neill@gmail.com>
+date 1793879342 2026-11-05
+stat C files 0 total 0 blank 0 comment 0 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2763 code 67443
+stat Markdown files 452 total 83488 blank 21510 comment 116 code 61862
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 55 comment 71 code 535
+stat TypeScript files 1125 total 108430 blank 3232 comment 4887 code 100311
+author~ Iian <iian.d.neill@gmail.com> commits 343
+Commit be4e520f3aaa by Iian <iian.d.neill@gmail.com> on 2026-11-06 (EE 0).
+
+Subject: Added standoff-code-block
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 230366.
+
+commit be4e520f3aaa716f569fd92808522c67605aed0b
+parent fd0554a6023d5ce46d6acb8d473206c415642767
+author Iian <iian.d.neill@gmail.com>
+date 1793938043 2026-11-06
+stat C files 0 total 0 blank 0 comment 0 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2763 code 67443
+stat Markdown files 454 total 83488 blank 21510 comment 116 code 61862
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 55 comment 71 code 535
+stat TypeScript files 1126 total 108430 blank 3232 comment 4887 code 100311
+author~ Iian <iian.d.neill@gmail.com> commits 344
+Commit db3ed30064f0 by Iian <iian.d.neill@gmail.com> on 2026-11-06 (EE 0).
+
+Subject: MD highlighting and MD Input Transformation
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies: 
+    "@types/body-parser ^1.19.6 -> ^1.19.5; @atjson/offset-annotations ^0.63.0 -> ^0.55.2; @atjson/source-html ^0.46.0 -> ^0.41.2; @codemirror/lang-javascript ^6.2.5 -> ^6.2.2; @codemirror/lang-markdown ^6.5.2 -> ^6.2.5; @codemirror/language-data ^6.5.2 -> ^6.5.1; @kobalte/core ^0.13.14 -> ^0.13.9; @paper-design/shaders ^0.0.82 -> ^0.0.16; @retorquere/bibtex-parser 13.0.11 -> 12.1.9; @solid-primitives/autofocus ^0.1.5 -> ^0.0.111; @solid-primitives/scheduled ^1.5.3 -> ^1.4.4; @surrealdb/node ^3.2.0 -> ^1.0.0-beta.3; @tabler/icons-solidjs ^3.50.0 -> ^3.31.0; @types/express ^5.0.6 -> ^5.0.0; @types/multer ^2.3.0 -> ^1.4.12; @types/node ^26.6.6 -> ^22.7.4; @types/three 0.187.0 -> 0.186.0; @types/underscore ^1.13.0 -> ^1.11.15; @types/uuid ^11.0.0 -> ^9.0.8; axios ^1.21.0 -> ^1.7.3; better-sqlite3 13.0.3 -> 12.4.1; body-parser ^2.4.0 -> ^1.20.2; codemirror ^6.0.2 -> ^6.0.1; cors ^2.8.6 -> ^2.8.5; express ^5.3.0 -> ^4.19.2; jsdom ^30.1.3 -> ^25.0.1; mdast-util-gfm-table 2.0.1 -> 2.0.0; mermaid 12.3.0 -> 12.2.0; multer ^2.5.0 -> ^1.4.5-lts.1; parse5 8.1.0 -> 7.3.0; pdfjs-dist 6.5.438 -> 5.4.624; solid-devtools ^0.34.5 -> ^0.27.3; solid-js ^1.9.18 -> ^1.7.6; surrealdb ^2.2.1 -> ^1.3.2; three 0.187.0 -> 0.186.1; typescript ^6.0.0 -> ^5.6.2; underscore ^1.13.8 -> ^1.13.6; url ^0.11.4 -> ^0.11.3; uuid ^14.0.3 -> ^9.0.1; vite ^8.3.5 -> ^4.3.9; vite-plugin-solid ^2.11.15 -> ^2.7.0; vitest ^5.1.0"
+   -> ^2.1.9"
+  ; @surrealdb/node-native removed; esbuild removed. Code lines after this commit: 222424.
+
+commit db3ed30064f07ba99784a1d395ba127787274501
+parent 64f8eea2209515d5f0fcae9766c2c79a5008a227
+author Iian <iian.d.neill@gmail.com>
+date 1793954559 2026-11-06
+dep~ package.json :: 
+    "@types/body-parser :: ^1.19.6 -> ^1.19.5
+dep~ package.json :: @atjson/offset-annotations :: ^0.63.0 -> ^0.55.2
+dep~ package.json :: @atjson/source-html :: ^0.46.0 -> ^0.41.2
+dep~ package.json :: @codemirror/lang-javascript :: ^6.2.5 -> ^6.2.2
+dep~ package.json :: @codemirror/lang-markdown :: ^6.5.2 -> ^6.2.5
+dep~ package.json :: @codemirror/language-data :: ^6.5.2 -> ^6.5.1
+dep~ package.json :: @kobalte/core :: ^0.13.14 -> ^0.13.9
+dep~ package.json :: @paper-design/shaders :: ^0.0.82 -> ^0.0.16
+dep~ package.json :: @retorquere/bibtex-parser :: 13.0.11 -> 12.1.9
+dep~ package.json :: @solid-primitives/autofocus :: ^0.1.5 -> ^0.0.111
+dep~ package.json :: @solid-primitives/scheduled :: ^1.5.3 -> ^1.4.4
+dep~ package.json :: @surrealdb/node :: ^3.2.0 -> ^1.0.0-beta.3
+dep~ package.json :: @tabler/icons-solidjs :: ^3.50.0 -> ^3.31.0
+dep~ package.json :: @types/express :: ^5.0.6 -> ^5.0.0
+dep~ package.json :: @types/multer :: ^2.3.0 -> ^1.4.12
+dep~ package.json :: @types/node :: ^26.6.6 -> ^22.7.4
+dep~ package.json :: @types/three :: 0.187.0 -> 0.186.0
+dep~ package.json :: @types/underscore :: ^1.13.0 -> ^1.11.15
+dep~ package.json :: @types/uuid :: ^11.0.0 -> ^9.0.8
+dep~ package.json :: axios :: ^1.21.0 -> ^1.7.3
+dep~ package.json :: better-sqlite3 :: 13.0.3 -> 12.4.1
+dep~ package.json :: body-parser :: ^2.4.0 -> ^1.20.2
+dep~ package.json :: codemirror :: ^6.0.2 -> ^6.0.1
+dep~ package.json :: cors :: ^2.8.6 -> ^2.8.5
+dep~ package.json :: express :: ^5.3.0 -> ^4.19.2
+dep~ package.json :: jsdom :: ^30.1.3 -> ^25.0.1
+dep~ package.json :: mdast-util-gfm-table :: 2.0.1 -> 2.0.0
+dep~ package.json :: mermaid :: 12.3.0 -> 12.2.0
+dep~ package.json :: multer :: ^2.5.0 -> ^1.4.5-lts.1
+dep~ package.json :: parse5 :: 8.1.0 -> 7.3.0
+dep~ package.json :: pdfjs-dist :: 6.5.438 -> 5.4.624
+dep~ package.json :: solid-devtools :: ^0.34.5 -> ^0.27.3
+dep~ package.json :: solid-js :: ^1.9.18 -> ^1.7.6
+dep~ package.json :: surrealdb :: ^2.2.1 -> ^1.3.2
+dep~ package.json :: three :: 0.187.0 -> 0.186.1
+dep~ package.json :: typescript :: ^6.0.0 -> ^5.6.2
+dep~ package.json :: underscore :: ^1.13.8 -> ^1.13.6
+dep~ package.json :: url :: ^0.11.4 -> ^0.11.3
+dep~ package.json :: uuid :: ^14.0.3 -> ^9.0.1
+dep~ package.json :: vite :: ^8.3.5 -> ^4.3.9
+dep~ package.json :: vite-plugin-solid :: ^2.11.15 -> ^2.7.0
+dep~ package.json :: vitest :: ^5.1.0"
+   -> ^2.1.9"
+  
+dep- package.json :: @surrealdb/node-native
+dep- package.json :: esbuild
+stat C files 0 total 44 blank 0 comment 0 code 44
+stat JavaScript files 144 total 71552 blank 1346 comment 2763 code 67443
+stat Markdown files 456 total 81758 blank 21510 comment 116 code 60132
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 22 blank 55 comment 71 code 0
+stat TypeScript files 1129 total 102709 blank 3232 comment 4887 code 94590
+author~ Iian <iian.d.neill@gmail.com> commits 345
+Commit 9ee7a359bdf1 by Iian <iian.d.neill@gmail.com> on 2026-11-06 (EE 0).
+
+Subject: Dialectic - first checkin
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 192001.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 9ee7a359bdf171062dc2bdda311fe5bfff772696
+parent ffeeab689366b2a84c72bd3f9a97f92063ca0a45
+author Iian <iian.d.neill@gmail.com>
+date 1793972565 2026-11-06
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 302 total 60834 blank 15617 comment 98 code 45119
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 829 total 84317 blank 2209 comment 2815 code 79293
+author~ Iian <iian.d.neill@gmail.com> commits 346
+Commit a57671b140f6 by Iian <iian.d.neill@gmail.com> on 2026-11-06 (EE 0).
+
+Subject: Initial investigation
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 192139.
+
+commit a57671b140f6c091362f5b7fd088ba399b60ac53
+parent 9ee7a359bdf171062dc2bdda311fe5bfff772696
+author Iian <iian.d.neill@gmail.com>
+date 1793973355 2026-11-06
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 303 total 60972 blank 15617 comment 98 code 45257
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 829 total 84317 blank 2209 comment 2815 code 79293
+author~ Iian <iian.d.neill@gmail.com> commits 347
+Commit 804174e92644 by Iian <iian.d.neill@gmail.com> on 2026-11-06 (EE 0).
+
+Subject: Checkpoint
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 192295.
+
+commit 804174e92644c92b6012697e84bd8472672b0634
+parent a57671b140f6c091362f5b7fd088ba399b60ac53
+author Iian <iian.d.neill@gmail.com>
+date 1793974785 2026-11-06
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 303 total 60972 blank 15617 comment 98 code 45257
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 831 total 84473 blank 2209 comment 2815 code 79449
+author~ Iian <iian.d.neill@gmail.com> commits 348
+Commit 79e65f129f23 by Emise <emise@localhost> on 2026-11-06 (EE 0).
+
+Subject: SSO against edit.phext.io: env-gated identity gate, assertion callback, identity chip
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 192950.
+
+commit 79e65f129f232f2ff8de1032672f9647886fd788
+parent 4f5ddaf276934600d68b2c5e09ff510f2ccdd5c8
+author Emise <emise@localhost>
+date 1793976095 2026-11-06
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 303 total 61143 blank 15617 comment 98 code 45428
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 833 total 84957 blank 2209 comment 2815 code 79933
+author~ Emise <emise@localhost> commits 6
+Commit f0b1f6740962 by Iian <iian.d.neill@gmail.com> on 2026-11-07 (EE 0).
+
+Subject: Dialectic: Increments 1 and 2 complete
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 184801.
+
+commit f0b1f67409628da0a76b7a2b95d5ff56de9ab6fd
+parent 79e65f129f232f2ff8de1032672f9647886fd788
+author Iian <iian.d.neill@gmail.com>
+date 1794021446 2026-11-07
+stat C files 1 total 88 blank 0 comment 17 code 71
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 306 total 59200 blank 15617 comment 98 code 43485
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 0 blank 5 comment 14 code 0
+stat TypeScript files 836 total 78710 blank 2209 comment 2815 code 73686
+author~ Iian <iian.d.neill@gmail.com> commits 349
+Commit 142c4fe36d17 by Iian <iian.d.neill@gmail.com> on 2026-11-07 (EE 0).
+
+Subject: More planning
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 184911.
+
+commit 142c4fe36d1789e0255aa84d77e01b1aafc0305a
+parent f0b1f67409628da0a76b7a2b95d5ff56de9ab6fd
+author Iian <iian.d.neill@gmail.com>
+date 1794025192 2026-11-07
+stat C files 1 total 88 blank 0 comment 17 code 71
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 307 total 59310 blank 15617 comment 98 code 43595
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 0 blank 5 comment 14 code 0
+stat TypeScript files 836 total 78710 blank 2209 comment 2815 code 73686
+author~ Iian <iian.d.neill@gmail.com> commits 350
+Commit bbc39f36b0cb by Emise <emise@localhost> on 2026-11-07 (EE 0).
+
+Subject: SSO UX fixes from the first live night: CSRF startup race, signed-out overview, identity bar overlap
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 185023.
+
+commit bbc39f36b0cb32c5a39ebdd130ae94438967873a
+parent d46b5fd37167fb5d2d923f6784879172764d4ca3
+author Emise <emise@localhost>
+date 1794027739 2026-11-07
+stat C files 1 total 88 blank 0 comment 17 code 71
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 307 total 59380 blank 15617 comment 98 code 43665
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 0 blank 5 comment 14 code 0
+stat TypeScript files 836 total 78752 blank 2209 comment 2815 code 73728
+author~ Emise <emise@localhost> commits 7
+Commit 72ab4914c5ab by Iian <iian.d.neill@gmail.com> on 2026-11-07 (EE 0).
+
+Subject: Dialectic: Increment 3 complete
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 177119.
+
+commit 72ab4914c5ab672dfb74049e63132fd4dbe00e8f
+parent 2b9273468845a4d002c7bdd7d9266e0b211df933
+author Iian <iian.d.neill@gmail.com>
+date 1794028497 2026-11-07
+stat C files 1 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 308 total 57541 blank 15617 comment 98 code 41826
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 0 blank 5 comment 14 code 0
+stat TypeScript files 840 total 72643 blank 2209 comment 2815 code 67619
+author~ Iian <iian.d.neill@gmail.com> commits 351
+Commit c380a62bf782 by Iian <iian.d.neill@gmail.com> on 2026-11-07 (EE 0).
+
+Subject: More planning
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 177261.
+
+commit c380a62bf782ce3596e5d888dc6896dbcea0ef5a
+parent 72ab4914c5ab672dfb74049e63132fd4dbe00e8f
+author Iian <iian.d.neill@gmail.com>
+date 1794030531 2026-11-07
+stat C files 1 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 309 total 57683 blank 15617 comment 98 code 41968
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 0 blank 5 comment 14 code 0
+stat TypeScript files 840 total 72643 blank 2209 comment 2815 code 67619
+author~ Iian <iian.d.neill@gmail.com> commits 352
+Commit a1374c86e2dc by Iian <iian.d.neill@gmail.com> on 2026-11-07 (EE 0).
+
+Subject: Increment 4 plans
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 177286.
+
+commit a1374c86e2dc6b503763d4884e6ee8f4e18b8bd7
+parent c380a62bf782ce3596e5d888dc6896dbcea0ef5a
+author Iian <iian.d.neill@gmail.com>
+date 1794031345 2026-11-07
+stat C files 1 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 309 total 57708 blank 15617 comment 98 code 41993
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 0 blank 5 comment 14 code 0
+stat TypeScript files 840 total 72643 blank 2209 comment 2815 code 67619
+author~ Iian <iian.d.neill@gmail.com> commits 353
+Commit 0bc3fa2453a2 by Iian <iian.d.neill@gmail.com> on 2026-11-07 (EE 0).
+
+Subject: Stage 4A qualification
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 177683.
+
+commit 0bc3fa2453a2d4da1a472125b406737d5b3520ae
+parent a1374c86e2dc6b503763d4884e6ee8f4e18b8bd7
+author Iian <iian.d.neill@gmail.com>
+date 1794037321 2026-11-07
+stat C files 1 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 310 total 57768 blank 15617 comment 98 code 42053
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 0 blank 5 comment 14 code 0
+stat TypeScript files 844 total 72980 blank 2209 comment 2815 code 67956
+author~ Iian <iian.d.neill@gmail.com> commits 354
+Commit 30dd9b2be857 by Iian <iian.d.neill@gmail.com> on 2026-11-07 (EE 0).
+
+Subject: Stage 4B accepted.
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 177999.
+
+commit 30dd9b2be8574e6f21c5ae4c7fa7a2ac5772be19
+parent 0bc3fa2453a2d4da1a472125b406737d5b3520ae
+author Iian <iian.d.neill@gmail.com>
+date 1794041858 2026-11-07
+stat C files 1 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 311 total 57841 blank 15617 comment 98 code 42126
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 0 blank 5 comment 14 code 0
+stat TypeScript files 849 total 73223 blank 2209 comment 2815 code 68199
+author~ Iian <iian.d.neill@gmail.com> commits 355
+Commit c72ec429fb6a by Iian <iian.d.neill@gmail.com> on 2026-11-07 (EE 0).
+
+Subject: Stage 4C
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 178461.
+
+commit c72ec429fb6ab36318404b013f553a859cc143b1
+parent 30dd9b2be8574e6f21c5ae4c7fa7a2ac5772be19
+author Iian <iian.d.neill@gmail.com>
+date 1794046634 2026-11-07
+stat C files 1 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 312 total 57907 blank 15617 comment 98 code 42192
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 0 blank 5 comment 14 code 0
+stat TypeScript files 858 total 73617 blank 2209 comment 2815 code 68593
+author~ Iian <iian.d.neill@gmail.com> commits 356
+Commit baebf77e67f5 by Iian <iian.d.neill@gmail.com> on 2026-11-07 (EE 0).
+
+Subject: Debugging
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 178752.
+
+commit baebf77e67f5e3a3712b3c7e42cebb527c6cb64f
+parent c72ec429fb6ab36318404b013f553a859cc143b1
+author Iian <iian.d.neill@gmail.com>
+date 1794056218 2026-11-07
+stat C files 1 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 314 total 58076 blank 15617 comment 98 code 42361
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 0 blank 5 comment 14 code 0
+stat TypeScript files 860 total 73739 blank 2209 comment 2815 code 68715
+author~ Iian <iian.d.neill@gmail.com> commits 357
+Commit 20c479d450b3 by Iian <iian.d.neill@gmail.com> on 2026-11-08 (EE 0).
+
+Subject: Fixes
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 179604.
+
+commit 20c479d450b3587d7bd914a4524ad91a39c705c0
+parent baebf77e67f5e3a3712b3c7e42cebb527c6cb64f
+author Iian <iian.d.neill@gmail.com>
+date 1794096957 2026-11-08
+stat C files 1 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 319 total 58413 blank 15617 comment 98 code 42698
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 0 blank 5 comment 14 code 0
+stat TypeScript files 868 total 74254 blank 2209 comment 2815 code 69230
+author~ Iian <iian.d.neill@gmail.com> commits 358
+Commit 56503e6efece by Iian <iian.d.neill@gmail.com> on 2026-11-08 (EE 0).
+
+Subject: More fixes
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 179905.
+
+commit 56503e6efece97f5540e8cfdad1bb086dc175d43
+parent 20c479d450b3587d7bd914a4524ad91a39c705c0
+author Iian <iian.d.neill@gmail.com>
+date 1794118761 2026-11-08
+stat C files 1 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 322 total 58560 blank 15617 comment 98 code 42845
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 0 blank 5 comment 14 code 0
+stat TypeScript files 870 total 74408 blank 2209 comment 2815 code 69384
+author~ Iian <iian.d.neill@gmail.com> commits 359
+Commit 8f382ca056ff by Emise <emise@localhost> on 2026-11-06 (EE 0).
+
+Subject: phext: one-phext Cavern storage, phext interchange, deploy assets, dependency refresh
+
+Public items: 21 added, 0 removed, 0 changed. Dependencies: 
+    "@types/body-parser ^1.19.5 -> ^1.19.6; @atjson/offset-annotations ^0.55.2 -> ^0.63.0; @atjson/source-html ^0.41.2 -> ^0.46.0; @codemirror/lang-javascript ^6.2.2 -> ^6.2.5; @codemirror/lang-markdown ^6.2.5 -> ^6.5.2; @codemirror/language-data ^6.5.1 -> ^6.5.2; @kobalte/core ^0.13.9 -> ^0.13.14; @paper-design/shaders ^0.0.16 -> ^0.0.82; @retorquere/bibtex-parser 12.1.9 -> 13.0.11; @solid-primitives/autofocus ^0.0.111 -> ^0.1.5; @solid-primitives/scheduled ^1.4.4 -> ^1.5.3; @surrealdb/node ^1.0.0-beta.3 -> ^3.2.0; @surrealdb/node-native added at ^4.0.0; @tabler/icons-solidjs ^3.31.0 -> ^3.50.0; @types/express ^5.0.0 -> ^5.0.6; @types/multer ^1.4.12 -> ^2.3.0; @types/node ^22.7.4 -> ^26.6.6; @types/three 0.186.0 -> 0.187.0; @types/underscore ^1.11.15 -> ^1.13.0; @types/uuid ^9.0.8 -> ^11.0.0; axios ^1.7.3 -> ^1.21.0; better-sqlite3 12.4.1 -> 13.0.3; body-parser ^1.20.2 -> ^2.4.0; codemirror ^6.0.1 -> ^6.0.2; cors ^2.8.5 -> ^2.8.6; esbuild added at ^0.28.2; express ^4.19.2 -> ^5.3.0; jsdom ^25.0.1 -> ^30.1.3; mdast-util-gfm-table 2.0.0 -> 2.0.1; mermaid 12.2.0 -> 12.3.0; multer ^1.4.5-lts.1 -> ^2.5.0; parse5 7.3.0 -> 8.1.0; pdfjs-dist 5.4.624 -> 6.5.438; solid-devtools ^0.27.3 -> ^0.34.5; solid-js ^1.7.6 -> ^1.9.18; surrealdb ^1.3.2 -> ^2.2.1; three 0.186.1 -> 0.187.0; typescript ^5.6.2 -> ^6.0.0; underscore ^1.13.6 -> ^1.13.8; url ^0.11.3 -> ^0.11.4; uuid ^9.0.1 -> ^14.0.3; vite ^4.3.9 -> ^8.3.5; vite-plugin-solid ^2.7.0 -> ^2.11.15; vitest ^2.1.9"
+   -> ^5.1.0"
+  . Code lines after this commit: 184027.
+
+commit 8f382ca056ff7446c5c94e722f4ee87a3f5c1656
+parent 56503e6efece97f5540e8cfdad1bb086dc175d43
+author Emise <emise@localhost>
+date 1793943136 2026-11-06
+item+ function deploy/deploy.sh :: adopt_live_ssl :: adopt_live_ssl() :: Function adopt_live_ssl takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: apply_rendered_site :: apply_rendered_site() :: Function apply_rendered_site takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: as_owner :: as_owner() :: Function as_owner takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: die :: die() :: Function die takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: dns_points_here :: dns_points_here() :: Function dns_points_here takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: drop_missing_dhparam :: drop_missing_dhparam() :: Function drop_missing_dhparam takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: file_sha256 :: file_sha256() :: Function file_sha256 takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: install_rendered_site :: install_rendered_site() :: Function install_rendered_site takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: main :: main() :: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: nginx_disposition :: nginx_disposition() :: Function nginx_disposition takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: nginx_template :: nginx_template() :: Function nginx_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: path_exists :: path_exists() :: Function path_exists takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: read_root_file :: read_root_file() :: Function read_root_file takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: render_site_body :: render_site_body() :: Function render_site_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: require_hardened_body :: require_hardened_body() :: Function require_hardened_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: run_check :: run_check() :: Function run_check takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: stamp_managed :: stamp_managed() :: Function stamp_managed takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: unit_template :: unit_template() :: Function unit_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: usage :: usage() :: Function usage takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: with_force :: with_force() :: Function with_force takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: write_bootstrap_body :: write_bootstrap_body() :: Function write_bootstrap_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+dep~ package.json :: 
+    "@types/body-parser :: ^1.19.5 -> ^1.19.6
+dep~ package.json :: @atjson/offset-annotations :: ^0.55.2 -> ^0.63.0
+dep~ package.json :: @atjson/source-html :: ^0.41.2 -> ^0.46.0
+dep~ package.json :: @codemirror/lang-javascript :: ^6.2.2 -> ^6.2.5
+dep~ package.json :: @codemirror/lang-markdown :: ^6.2.5 -> ^6.5.2
+dep~ package.json :: @codemirror/language-data :: ^6.5.1 -> ^6.5.2
+dep~ package.json :: @kobalte/core :: ^0.13.9 -> ^0.13.14
+dep~ package.json :: @paper-design/shaders :: ^0.0.16 -> ^0.0.82
+dep~ package.json :: @retorquere/bibtex-parser :: 12.1.9 -> 13.0.11
+dep~ package.json :: @solid-primitives/autofocus :: ^0.0.111 -> ^0.1.5
+dep~ package.json :: @solid-primitives/scheduled :: ^1.4.4 -> ^1.5.3
+dep~ package.json :: @surrealdb/node :: ^1.0.0-beta.3 -> ^3.2.0
+dep+ package.json :: @surrealdb/node-native :: ^4.0.0
+dep~ package.json :: @tabler/icons-solidjs :: ^3.31.0 -> ^3.50.0
+dep~ package.json :: @types/express :: ^5.0.0 -> ^5.0.6
+dep~ package.json :: @types/multer :: ^1.4.12 -> ^2.3.0
+dep~ package.json :: @types/node :: ^22.7.4 -> ^26.6.6
+dep~ package.json :: @types/three :: 0.186.0 -> 0.187.0
+dep~ package.json :: @types/underscore :: ^1.11.15 -> ^1.13.0
+dep~ package.json :: @types/uuid :: ^9.0.8 -> ^11.0.0
+dep~ package.json :: axios :: ^1.7.3 -> ^1.21.0
+dep~ package.json :: better-sqlite3 :: 12.4.1 -> 13.0.3
+dep~ package.json :: body-parser :: ^1.20.2 -> ^2.4.0
+dep~ package.json :: codemirror :: ^6.0.1 -> ^6.0.2
+dep~ package.json :: cors :: ^2.8.5 -> ^2.8.6
+dep+ package.json :: esbuild :: ^0.28.2
+dep~ package.json :: express :: ^4.19.2 -> ^5.3.0
+dep~ package.json :: jsdom :: ^25.0.1 -> ^30.1.3
+dep~ package.json :: mdast-util-gfm-table :: 2.0.0 -> 2.0.1
+dep~ package.json :: mermaid :: 12.2.0 -> 12.3.0
+dep~ package.json :: multer :: ^1.4.5-lts.1 -> ^2.5.0
+dep~ package.json :: parse5 :: 7.3.0 -> 8.1.0
+dep~ package.json :: pdfjs-dist :: 5.4.624 -> 6.5.438
+dep~ package.json :: solid-devtools :: ^0.27.3 -> ^0.34.5
+dep~ package.json :: solid-js :: ^1.7.6 -> ^1.9.18
+dep~ package.json :: surrealdb :: ^1.3.2 -> ^2.2.1
+dep~ package.json :: three :: 0.186.1 -> 0.187.0
+dep~ package.json :: typescript :: ^5.6.2 -> ^6.0.0
+dep~ package.json :: underscore :: ^1.13.6 -> ^1.13.8
+dep~ package.json :: url :: ^0.11.3 -> ^0.11.4
+dep~ package.json :: uuid :: ^9.0.1 -> ^14.0.3
+dep~ package.json :: vite :: ^4.3.9 -> ^8.3.5
+dep~ package.json :: vite-plugin-solid :: ^2.7.0 -> ^2.11.15
+dep~ package.json :: vitest :: ^2.1.9"
+   -> ^5.1.0"
+  
+stat C files 0 total 88 blank 0 comment 17 code 71
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 325 total 58726 blank 15617 comment 98 code 43011
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 639 blank 5 comment 14 code 639
+stat TypeScript files 894 total 77771 blank 2209 comment 2815 code 72747
+author~ Emise <emise@localhost> commits 8
+Commit d68fba1f6e47 by Emise <emise@localhost> on 2026-11-06 (EE 0).
+
+Subject: Step 3: per-Cavern Native/Phext mode selection restored
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 184694.
+
+commit d68fba1f6e470e1f22ae3e5dda290f83d3b89e35
+parent 8f382ca056ff7446c5c94e722f4ee87a3f5c1656
+author Emise <emise@localhost>
+date 1793973693 2026-11-06
+stat C files 0 total 88 blank 0 comment 17 code 71
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 325 total 58954 blank 15617 comment 98 code 43239
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 639 blank 5 comment 14 code 639
+stat TypeScript files 894 total 78210 blank 2209 comment 2815 code 73186
+author~ Emise <emise@localhost> commits 9
+Commit 75d2571c14d1 by Emise <emise@localhost> on 2026-11-06 (EE 0).
+
+Subject: Step 4: capture Textual font settings as the fifth settings-bundle domain
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 184806.
+
+commit 75d2571c14d1f1ed675963bb564bda238e8b717c
+parent d68fba1f6e470e1f22ae3e5dda290f83d3b89e35
+author Emise <emise@localhost>
+date 1793970811 2026-11-06
+stat C files 0 total 88 blank 0 comment 17 code 71
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 325 total 59050 blank 15617 comment 98 code 43335
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 639 blank 5 comment 14 code 639
+stat TypeScript files 894 total 78226 blank 2209 comment 2815 code 73202
+author~ Emise <emise@localhost> commits 10
+Commit 7b0e143d01d6 by Emise <emise@localhost> on 2026-11-06 (EE 0).
+
+Subject: docs: PATCHES.md — record rebase onto upstream db3ed30
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 184895.
+
+commit 7b0e143d01d6568cb429a5a47f390f7bd57bbd42
+parent 75d2571c14d1f1ed675963bb564bda238e8b717c
+author Emise <emise@localhost>
+date 1793976002 2026-11-06
+stat C files 0 total 88 blank 0 comment 17 code 71
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 325 total 59139 blank 15617 comment 98 code 43424
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 639 blank 5 comment 14 code 639
+stat TypeScript files 894 total 78226 blank 2209 comment 2815 code 73202
+author~ Emise <emise@localhost> commits 11
+Commit 96259b1495d6 by Emise <emise@localhost> on 2026-11-06 (EE 0).
+
+Subject: SSO against edit.phext.io: env-gated identity gate, assertion callback, identity chip
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 185550.
+
+commit 96259b1495d69ca966582d8503f0c0a085b02219
+parent 7b0e143d01d6568cb429a5a47f390f7bd57bbd42
+author Emise <emise@localhost>
+date 1793976095 2026-11-06
+stat C files 0 total 88 blank 0 comment 17 code 71
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 325 total 59310 blank 15617 comment 98 code 43595
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 639 blank 5 comment 14 code 639
+stat TypeScript files 896 total 78710 blank 2209 comment 2815 code 73686
+author~ Emise <emise@localhost> commits 12
+Commit df424f3ab63a by Emise <emise@localhost> on 2026-11-07 (EE 0).
+
+Subject: SSO UX fixes from the first live night: CSRF startup race, signed-out overview, identity bar overlap
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 185662.
+
+commit df424f3ab63a90dcb5c522ab5dd8d0313636f442
+parent 96259b1495d69ca966582d8503f0c0a085b02219
+author Emise <emise@localhost>
+date 1794027739 2026-11-07
+stat C files 0 total 88 blank 0 comment 17 code 71
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 325 total 59380 blank 15617 comment 98 code 43665
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 639 blank 5 comment 14 code 639
+stat TypeScript files 896 total 78752 blank 2209 comment 2815 code 73728
+author~ Emise <emise@localhost> commits 13
+Commit 3464d026b472 by Iian <iian.d.neill@gmail.com> on 2026-11-09 (EE 0).
+
+Subject: DCP tweaks around identities
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 180465.
+
+commit 3464d026b472dfcc22c9da9d3b69d1bd93456038
+parent acb8130d32a1f80df9ea224aa59b463534db2f15
+author Iian <iian.d.neill@gmail.com>
+date 1794195886 2026-11-09
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 330 total 58866 blank 15617 comment 98 code 43151
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 899 total 74662 blank 2209 comment 2815 code 69638
+author~ Iian <iian.d.neill@gmail.com> commits 360
+Commit 33ed9a7852a2 by Iian <iian.d.neill@gmail.com> on 2026-11-09 (EE 0).
+
+Subject: DCP vocab: Stage 1
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 183777.
+
+commit 33ed9a7852a2512df4a7b7ff9825e7902cfd0189
+parent 3464d026b472dfcc22c9da9d3b69d1bd93456038
+author Iian <iian.d.neill@gmail.com>
+date 1794205851 2026-11-09
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 335 total 61358 blank 15617 comment 98 code 45643
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 906 total 75482 blank 2209 comment 2815 code 70458
+author~ Iian <iian.d.neill@gmail.com> commits 361
+Commit 80b51b6522c4 by Iian <iian.d.neill@gmail.com> on 2026-11-09 (EE 0).
+
+Subject: Stage 2A complete
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 184010.
+
+commit 80b51b6522c4b496ea6ab11d916595a65dbc45ef
+parent 33ed9a7852a2512df4a7b7ff9825e7902cfd0189
+author Iian <iian.d.neill@gmail.com>
+date 1794207146 2026-11-09
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 337 total 61444 blank 15617 comment 98 code 45729
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 907 total 75629 blank 2209 comment 2815 code 70605
+author~ Iian <iian.d.neill@gmail.com> commits 362
+Commit 08786e4e8ca1 by Iian <iian.d.neill@gmail.com> on 2026-11-09 (EE 0).
+
+Subject: stage 2B complete
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 184209.
+
+commit 08786e4e8ca1a5c4cd5ba7e5af0c3831d2e41295
+parent 80b51b6522c4b496ea6ab11d916595a65dbc45ef
+author Iian <iian.d.neill@gmail.com>
+date 1794208429 2026-11-09
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 338 total 61498 blank 15617 comment 98 code 45783
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 909 total 75774 blank 2209 comment 2815 code 70750
+author~ Iian <iian.d.neill@gmail.com> commits 363
+Commit 58ee4cd89cee by Iian <iian.d.neill@gmail.com> on 2026-11-09 (EE 0).
+
+Subject: Stage 2C complete
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 184420.
+
+commit 58ee4cd89ceebd1d31337496ed017f45b8fbb57d
+parent 08786e4e8ca1a5c4cd5ba7e5af0c3831d2e41295
+author Iian <iian.d.neill@gmail.com>
+date 1794215616 2026-11-09
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 339 total 61554 blank 15617 comment 98 code 45839
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 911 total 75929 blank 2209 comment 2815 code 70905
+author~ Iian <iian.d.neill@gmail.com> commits 364
+Commit 9e13ee4c580a by Iian <iian.d.neill@gmail.com> on 2026-11-09 (EE 0).
+
+Subject: Stage 2D complete
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 184621.
+
+commit 9e13ee4c580a83dc463084f34d97c250f26f3275
+parent 58ee4cd89ceebd1d31337496ed017f45b8fbb57d
+author Iian <iian.d.neill@gmail.com>
+date 1794217184 2026-11-09
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 340 total 61620 blank 15617 comment 98 code 45905
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 914 total 76064 blank 2209 comment 2815 code 71040
+author~ Iian <iian.d.neill@gmail.com> commits 365
+Commit a41e3c1205f8 by Iian <iian.d.neill@gmail.com> on 2026-11-09 (EE 0).
+
+Subject: Stage 3A
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 184908.
+
+commit a41e3c1205f8dfecade2f898e4436c3718ed5f54
+parent 9e13ee4c580a83dc463084f34d97c250f26f3275
+author Iian <iian.d.neill@gmail.com>
+date 1794223689 2026-11-09
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 342 total 61733 blank 15617 comment 98 code 46018
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 916 total 76238 blank 2209 comment 2815 code 71214
+author~ Iian <iian.d.neill@gmail.com> commits 366
+Commit 93879ce34bac by Iian <iian.d.neill@gmail.com> on 2026-11-09 (EE 0).
+
+Subject: Stage 3B complete
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 185106.
+
+commit 93879ce34bac1096555c4cd1ffe43d11d36803f8
+parent a41e3c1205f8dfecade2f898e4436c3718ed5f54
+author Iian <iian.d.neill@gmail.com>
+date 1794224992 2026-11-09
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 343 total 61781 blank 15617 comment 98 code 46066
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 919 total 76388 blank 2209 comment 2815 code 71364
+author~ Iian <iian.d.neill@gmail.com> commits 367
+Commit df091518863d by Iian <iian.d.neill@gmail.com> on 2026-11-09 (EE 0).
+
+Subject: Stage 3C.1 complete
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 185365.
+
+commit df091518863db605659a930e8c2d2f4127f2bf89
+parent 93879ce34bac1096555c4cd1ffe43d11d36803f8
+author Iian <iian.d.neill@gmail.com>
+date 1794226268 2026-11-09
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 344 total 61849 blank 15617 comment 98 code 46134
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 924 total 76579 blank 2209 comment 2815 code 71555
+author~ Iian <iian.d.neill@gmail.com> commits 368
+Commit b6ec30be3f1a by Iian <iian.d.neill@gmail.com> on 2026-11-09 (EE 0).
+
+Subject: Stage A of the DCP vocabulary complete
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 186106.
+
+commit b6ec30be3f1a9b5a9f548462ebe73d7c3f7f8bc4
+parent df091518863db605659a930e8c2d2f4127f2bf89
+author Iian <iian.d.neill@gmail.com>
+date 1794230994 2026-11-09
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 347 total 62304 blank 15617 comment 98 code 46589
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 929 total 76865 blank 2209 comment 2815 code 71841
+author~ Iian <iian.d.neill@gmail.com> commits 369
+Commit a13ea3b98814 by Iian <iian.d.neill@gmail.com> on 2026-11-09 (EE 0).
+
+Subject: Increment C: Contribution notification icons/panel
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 186270.
+
+commit a13ea3b988146485919e79de19f39551a36ac3d2
+parent b6ec30be3f1a9b5a9f548462ebe73d7c3f7f8bc4
+author Iian <iian.d.neill@gmail.com>
+date 1794267371 2026-11-09
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 348 total 62338 blank 15617 comment 98 code 46623
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 930 total 76995 blank 2209 comment 2815 code 71971
+author~ Iian <iian.d.neill@gmail.com> commits 370
+Commit 8535a2423e8c by Iian <iian.d.neill@gmail.com> on 2026-11-10 (EE 0).
+
+Subject: Restyling and various fixes
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies: @tanstack/solid-virtual added at 3.13.53. Code lines after this commit: 187551.
+
+commit 8535a2423e8ca9271725d17d3fb59c3756212946
+parent a13ea3b988146485919e79de19f39551a36ac3d2
+author Iian <iian.d.neill@gmail.com>
+date 1794291710 2026-11-10
+dep+ package.json :: @tanstack/solid-virtual :: 3.13.53
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 352 total 62969 blank 15617 comment 98 code 47254
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 938 total 77645 blank 2209 comment 2815 code 72621
+author~ Iian <iian.d.neill@gmail.com> commits 371
+Commit 3f59a08428c0 by Iian <iian.d.neill@gmail.com> on 2026-11-10 (EE 0).
+
+Subject: DCP compliance
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 187736.
+
+commit 3f59a08428c0d55e3161b902b04d644a7b601253
+parent 8535a2423e8ca9271725d17d3fb59c3756212946
+author Iian <iian.d.neill@gmail.com>
+date 1794349590 2026-11-10
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 353 total 63081 blank 15617 comment 98 code 47366
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 939 total 77718 blank 2209 comment 2815 code 72694
+author~ Iian <iian.d.neill@gmail.com> commits 372
+Commit b25b2fccc249 by Iian <iian.d.neill@gmail.com> on 2026-11-10 (EE 0).
+
+Subject: System prompt engineering
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 188358.
+
+commit b25b2fccc2491a6ebb069722aa9d90bf984736e4
+parent 3f59a08428c0d55e3161b902b04d644a7b601253
+author Iian <iian.d.neill@gmail.com>
+date 1794354427 2026-11-10
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 354 total 63140 blank 15617 comment 98 code 47425
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 942 total 78281 blank 2209 comment 2815 code 73257
+author~ Iian <iian.d.neill@gmail.com> commits 373
+Commit 621a9c1547e8 by Iian <iian.d.neill@gmail.com> on 2026-11-11 (EE 0).
+
+Subject: More fixes
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 189469.
+
+commit 621a9c1547e8fdadebbe9587088ee720501256cf
+parent b25b2fccc2491a6ebb069722aa9d90bf984736e4
+author Iian <iian.d.neill@gmail.com>
+date 1794369690 2026-11-11
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 356 total 63760 blank 15617 comment 98 code 48045
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 949 total 78772 blank 2209 comment 2815 code 73748
+author~ Iian <iian.d.neill@gmail.com> commits 374
+Commit f74871a7ef7b by Iian <iian.d.neill@gmail.com> on 2026-11-11 (EE 0).
+
+Subject: DCP authoring format changes
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 190170.
+
+commit f74871a7ef7b8a2fee61d10159fdeabce5682a62
+parent 621a9c1547e8fdadebbe9587088ee720501256cf
+author Iian <iian.d.neill@gmail.com>
+date 1794372796 2026-11-11
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 358 total 64204 blank 15617 comment 98 code 48489
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 954 total 79029 blank 2209 comment 2815 code 74005
+author~ Iian <iian.d.neill@gmail.com> commits 375
+Commit c451e4c8f6d1 by Iian <iian.d.neill@gmail.com> on 2026-11-11 (EE 0).
+
+Subject: More DCP work
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 190525.
+
+commit c451e4c8f6d148457496fbc2ead7f050a4a68f3c
+parent f74871a7ef7b8a2fee61d10159fdeabce5682a62
+author Iian <iian.d.neill@gmail.com>
+date 1794379209 2026-11-11
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 359 total 64334 blank 15617 comment 98 code 48619
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 956 total 79254 blank 2209 comment 2815 code 74230
+author~ Iian <iian.d.neill@gmail.com> commits 376
+Commit ed50b76f6dc5 by Iian <iian.d.neill@gmail.com> on 2026-11-11 (EE 0).
+
+Subject: DCP optimisations
+
+Public items: 3 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 191118.
+
+commit ed50b76f6dc52cc4e783196e4f947446a1bede5e
+parent c451e4c8f6d148457496fbc2ead7f050a4a68f3c
+author Iian <iian.d.neill@gmail.com>
+date 1794391071 2026-11-11
+item+ function docs/development/evidence/dcp-scholarly-authoring/audit-case.py :: nodes :: def nodes(value): :: Function nodes takes value and gives back nothing; it does its work on what it is given. :: signature
+item+ function docs/development/evidence/dcp-scholarly-authoring/audit-case.py :: visit :: def visit(e): :: Function visit takes e and gives back nothing; it does its work on what it is given. :: signature
+item+ function docs/development/evidence/dcp-scholarly-authoring/review-live.py :: objects :: def objects(v): :: Function objects takes v and gives back nothing; it does its work on what it is given. :: signature
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 362 total 64532 blank 15617 comment 98 code 48817
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 959 total 79551 blank 2209 comment 2815 code 74527
+author~ Iian <iian.d.neill@gmail.com> commits 377
+Commit 72ebce52e18e by Iian <iian.d.neill@gmail.com> on 2026-11-11 (EE 0).
+
+Subject: Redesigning the DCP in XML
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 191720.
+
+commit 72ebce52e18e737645ca4b134370f18d86986684
+parent ed50b76f6dc52cc4e783196e4f947446a1bede5e
+author Iian <iian.d.neill@gmail.com>
+date 1794395877 2026-11-11
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 366 total 64857 blank 15617 comment 98 code 49142
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 963 total 79828 blank 2209 comment 2815 code 74804
+author~ Iian <iian.d.neill@gmail.com> commits 378
+Commit fa8c4ccd393e by Iian <iian.d.neill@gmail.com> on 2026-11-11 (EE 0).
+
+Subject: More optimisation of response binding
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 191944.
+
+commit fa8c4ccd393e272fa9cd479af20ce696b6e9ba22
+parent 72ebce52e18e737645ca4b134370f18d86986684
+author Iian <iian.d.neill@gmail.com>
+date 1794404680 2026-11-11
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 366 total 64857 blank 15617 comment 98 code 49142
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 965 total 80052 blank 2209 comment 2815 code 75028
+author~ Iian <iian.d.neill@gmail.com> commits 379
+Commit 03195645fdfe by Iian <iian.d.neill@gmail.com> on 2026-11-12 (EE 0).
+
+Subject: Streaming XML fixes
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 192738.
+
+commit 03195645fdfebe8d6db4899a1a98e4e896564451
+parent fa8c4ccd393e272fa9cd479af20ce696b6e9ba22
+author Iian <iian.d.neill@gmail.com>
+date 1794459660 2026-11-12
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 368 total 65068 blank 15617 comment 98 code 49353
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 971 total 80635 blank 2209 comment 2815 code 75611
+author~ Iian <iian.d.neill@gmail.com> commits 380
+Commit cccecf5218e6 by Iian <iian.d.neill@gmail.com> on 2026-11-13 (EE 0).
+
+Subject: Image recovery through AI backchannels
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 193231.
+
+commit cccecf5218e6b0e974ee16a52e88ce3d405ec64f
+parent 03195645fdfebe8d6db4899a1a98e4e896564451
+author Iian <iian.d.neill@gmail.com>
+date 1794539062 2026-11-13
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 369 total 65148 blank 15617 comment 98 code 49433
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 977 total 81048 blank 2209 comment 2815 code 76024
+author~ Iian <iian.d.neill@gmail.com> commits 381
+Commit e126d7588007 by Iian <iian.d.neill@gmail.com> on 2026-11-13 (EE 0).
+
+Subject: RAG stage A
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 193650.
+
+commit e126d7588007970711ac14fbd56e07844afecc33
+parent cccecf5218e6b0e974ee16a52e88ce3d405ec64f
+author Iian <iian.d.neill@gmail.com>
+date 1794609949 2026-11-13
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 374 total 65567 blank 15617 comment 98 code 49852
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 977 total 81048 blank 2209 comment 2815 code 76024
+author~ Iian <iian.d.neill@gmail.com> commits 382
+Commit 81c9e865ef22 by Iian <iian.d.neill@gmail.com> on 2026-11-14 (EE 0).
+
+Subject: RAG Stage B
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies: @lezer/markdown ^1.7.2"
+   -> ^1.7.2; js-tiktoken added at 1.0.21; sqlite-vec added at 0.1.9"
+  . Code lines after this commit: 193856.
+
+commit 81c9e865ef22e3b1f3a568e1beb82e30ae71662f
+parent e126d7588007970711ac14fbd56e07844afecc33
+author Iian <iian.d.neill@gmail.com>
+date 1794620616 2026-11-14
+dep~ package.json :: @lezer/markdown :: ^1.7.2"
+   -> ^1.7.2
+dep+ package.json :: js-tiktoken :: 1.0.21
+dep+ package.json :: sqlite-vec :: 0.1.9"
+  
+stat C files 0 total 132 blank 0 comment 17 code 115
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 376 total 65727 blank 15617 comment 98 code 50012
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 0 blank 5 comment 14 code 0
+stat TypeScript files 977 total 81094 blank 2209 comment 2815 code 76070
+author~ Iian <iian.d.neill@gmail.com> commits 383
+Commit 0a2f3d8a9dda by Iian <iian.d.neill@gmail.com> on 2026-11-14 (EE 0).
+
+Subject: Implement Milestone C retrieval integration and fix partial-index searches
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 206640.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit 0a2f3d8a9ddad840cecdf96ba13c33b39b77e37a
+parent 81c9e865ef22e3b1f3a568e1beb82e30ae71662f
+author Iian <iian.d.neill@gmail.com>
+date 1794626465 2026-11-14
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71550 blank 1346 comment 2761 code 67443
+stat Markdown files 374 total 69662 blank 18390 comment 99 code 51173
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 955 total 93621 blank 2571 comment 3271 code 87779
+author~ Iian <iian.d.neill@gmail.com> commits 384
+Commit 6a92889d7fae by Iian <iian.d.neill@gmail.com> on 2026-11-14 (EE 0).
+
+Subject: fix(retrieval): repair source navigation and close RAG Milestone C
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 206784.
+
+commit 6a92889d7fae0088226d8b2a172e1fc3f2b5153f
+parent 0a2f3d8a9ddad840cecdf96ba13c33b39b77e37a
+author Iian <iian.d.neill@gmail.com>
+date 1794640404 2026-11-14
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71550 blank 1346 comment 2761 code 67443
+stat Markdown files 375 total 69767 blank 18390 comment 99 code 51278
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 955 total 93660 blank 2571 comment 3271 code 87818
+author~ Iian <iian.d.neill@gmail.com> commits 385
+Commit ee76c765d86b by Iian <iian.d.neill@gmail.com> on 2026-11-14 (EE 0).
+
+Subject: dialectic: add file attachments and agent-generated downloads
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies: @types/pdfkit added at 0.17.7; pdfkit added at 0.20.2. Code lines after this commit: 207383.
+
+commit ee76c765d86b0ce633e7df07d8b23272ab23afe7
+parent 6a92889d7fae0088226d8b2a172e1fc3f2b5153f
+author Iian <iian.d.neill@gmail.com>
+date 1794659653 2026-11-14
+dep+ package.json :: @types/pdfkit :: 0.17.7
+dep+ package.json :: pdfkit :: 0.20.2
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71550 blank 1346 comment 2761 code 67443
+stat Markdown files 377 total 69926 blank 18390 comment 99 code 51437
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 961 total 94100 blank 2571 comment 3271 code 88258
+author~ Iian <iian.d.neill@gmail.com> commits 386
+Commit 2fd60373b147 by Iian <iian.d.neill@gmail.com> on 2026-11-14 (EE 0).
+
+Subject: Image gen support
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 207524.
+
+commit 2fd60373b147d830d66803dba8afdbcf20411d3d
+parent ee76c765d86b0ce633e7df07d8b23272ab23afe7
+author Iian <iian.d.neill@gmail.com>
+date 1794660851 2026-11-14
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71550 blank 1346 comment 2761 code 67443
+stat Markdown files 377 total 69948 blank 18390 comment 99 code 51459
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 964 total 94219 blank 2571 comment 3271 code 88377
+author~ Iian <iian.d.neill@gmail.com> commits 387
+Commit 65793a2e84a3 by Iian <iian.d.neill@gmail.com> on 2026-11-14 (EE 0).
+
+Subject: Findings on multiple open Dialectic docs
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 207618.
+
+commit 65793a2e84a3e748b05022f9e64d4709fe072609
+parent 2fd60373b147d830d66803dba8afdbcf20411d3d
+author Iian <iian.d.neill@gmail.com>
+date 1794661759 2026-11-14
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71550 blank 1346 comment 2761 code 67443
+stat Markdown files 378 total 70042 blank 18390 comment 99 code 51553
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 964 total 94219 blank 2571 comment 3271 code 88377
+author~ Iian <iian.d.neill@gmail.com> commits 388
+Commit b98695245321 by Iian <iian.d.neill@gmail.com> on 2026-11-15 (EE 0).
+
+Subject: feat(dialectic): support independent conversations and concurrent background responses
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 207967.
+
+commit b98695245321a0cf85cfa724516e652a5bd1f0b9
+parent 65793a2e84a3e748b05022f9e64d4709fe072609
+author Iian <iian.d.neill@gmail.com>
+date 1794714819 2026-11-15
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71550 blank 1346 comment 2761 code 67443
+stat Markdown files 379 total 70175 blank 18390 comment 99 code 51686
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 967 total 94435 blank 2571 comment 3271 code 88593
+author~ Iian <iian.d.neill@gmail.com> commits 389
+Commit 67e46ca2134e by Iian <iian.d.neill@gmail.com> on 2026-11-15 (EE 0).
+
+Subject: - Added a **+** button after the last tab to create a conversation. - Renamed **New** to **Add Conversation**.
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 207967.
+
+commit 67e46ca2134e09b305bb9c515e6df63e8fc74288
+parent b98695245321a0cf85cfa724516e652a5bd1f0b9
+author Iian <iian.d.neill@gmail.com>
+date 1794738739 2026-11-15
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71550 blank 1346 comment 2761 code 67443
+stat Markdown files 379 total 70175 blank 18390 comment 99 code 51686
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 967 total 94435 blank 2571 comment 3271 code 88593
+author~ Iian <iian.d.neill@gmail.com> commits 390
+Commit d40d06e225cb by Iian <iian.d.neill@gmail.com> on 2026-11-15 (EE 0).
+
+Subject: Fix Scry navigation from Dialectic and add Flint slash commands
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 208122.
+
+commit d40d06e225cb48a5ac96756332992c6efaeb32de
+parent 67e46ca2134e09b305bb9c515e6df63e8fc74288
+author Iian <iian.d.neill@gmail.com>
+date 1794783060 2026-11-15
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71550 blank 1346 comment 2761 code 67443
+stat Markdown files 379 total 70183 blank 18390 comment 99 code 51694
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 969 total 94582 blank 2571 comment 3271 code 88740
+author~ Iian <iian.d.neill@gmail.com> commits 391
+Commit 84662e0cba1f by Iian <iian.d.neill@gmail.com> on 2026-11-16 (EE 0).
+
+Subject: feat(dialectic): add contribution semantic refresh
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 209776.
+
+commit 84662e0cba1f2de5050c51c36c892584412324e3
+parent d40d06e225cb48a5ac96756332992c6efaeb32de
+author Iian <iian.d.neill@gmail.com>
+date 1794795072 2026-11-16
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71550 blank 1346 comment 2761 code 67443
+stat Markdown files 383 total 71196 blank 18390 comment 99 code 52707
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 985 total 95223 blank 2571 comment 3271 code 89381
+author~ Iian <iian.d.neill@gmail.com> commits 392
+Commit e6aee3fdf1f5 by Iian <iian.d.neill@gmail.com> on 2026-11-16 (EE 0).
+
+Subject: UI fixes
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 209893.
+
+commit e6aee3fdf1f51b1547d0328c393cd615be2b8e04
+parent 84662e0cba1f2de5050c51c36c892584412324e3
+author Iian <iian.d.neill@gmail.com>
+date 1794801339 2026-11-16
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71550 blank 1346 comment 2761 code 67443
+stat Markdown files 383 total 71196 blank 18390 comment 99 code 52707
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 987 total 95340 blank 2571 comment 3271 code 89498
+author~ Iian <iian.d.neill@gmail.com> commits 393
+Commit c0f35dbba7c2 by Iian <iian.d.neill@gmail.com> on 2026-11-16 (EE 0).
+
+Subject: Graph view tweaks
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 210012.
+
+commit c0f35dbba7c2d2df71c2c970a5df905d37f09eaf
+parent e6aee3fdf1f51b1547d0328c393cd615be2b8e04
+author Iian <iian.d.neill@gmail.com>
+date 1794802347 2026-11-16
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71550 blank 1346 comment 2761 code 67443
+stat Markdown files 383 total 71196 blank 18390 comment 99 code 52707
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 991 total 95459 blank 2571 comment 3271 code 89617
+author~ Iian <iian.d.neill@gmail.com> commits 394
+Commit 93067fde493a by Iian <iian.d.neill@gmail.com> on 2026-11-16 (EE 0).
+
+Subject: The Media tab now shows a responsive image gallery with:
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 210066.
+
+commit 93067fde493a54cdf58f2a70451f2cdf880b2b5c
+parent c0f35dbba7c2d2df71c2c970a5df905d37f09eaf
+author Iian <iian.d.neill@gmail.com>
+date 1794807301 2026-11-16
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71550 blank 1346 comment 2761 code 67443
+stat Markdown files 383 total 71197 blank 18390 comment 99 code 52708
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 991 total 95512 blank 2571 comment 3271 code 89670
+author~ Iian <iian.d.neill@gmail.com> commits 395
+Commit d4e881967238 by Iian <iian.d.neill@gmail.com> on 2026-11-16 (EE 0).
+
+Subject: Pipeline Manager begins
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 210419.
+
+commit d4e881967238784d5841dab76dc261ef7579aba5
+parent 93067fde493a54cdf58f2a70451f2cdf880b2b5c
+author Iian <iian.d.neill@gmail.com>
+date 1794830246 2026-11-16
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71550 blank 1346 comment 2761 code 67443
+stat Markdown files 384 total 71391 blank 18390 comment 99 code 52902
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 995 total 95671 blank 2571 comment 3271 code 89829
+author~ Iian <iian.d.neill@gmail.com> commits 396
+Commit cc443c7202d2 by Iian <iian.d.neill@gmail.com> on 2026-11-16 (EE 0).
+
+Subject: Pipeline Manager implementation
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 210525.
+
+commit cc443c7202d2d9a1f5a289fb1ff8252fa76cbd9b
+parent d4e881967238784d5841dab76dc261ef7579aba5
+author Iian <iian.d.neill@gmail.com>
+date 1794868084 2026-11-16
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71550 blank 1346 comment 2761 code 67443
+stat Markdown files 385 total 71483 blank 18390 comment 99 code 52994
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 995 total 95685 blank 2571 comment 3271 code 89843
+author~ Iian <iian.d.neill@gmail.com> commits 397
+Commit b482f4af6701 by Iian <iian.d.neill@gmail.com> on 2026-11-16 (EE 0).
+
+Subject: Pipeline fix
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 210691.
+
+commit b482f4af6701879e38c02269f1ed70fa7170cf6d
+parent cc443c7202d2d9a1f5a289fb1ff8252fa76cbd9b
+author Iian <iian.d.neill@gmail.com>
+date 1794869749 2026-11-16
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71550 blank 1346 comment 2761 code 67443
+stat Markdown files 386 total 71631 blank 18390 comment 99 code 53142
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 995 total 95703 blank 2571 comment 3271 code 89861
+author~ Iian <iian.d.neill@gmail.com> commits 398
+Commit efef2e310557 by Iian <iian.d.neill@gmail.com> on 2026-11-17 (EE 0).
+
+Subject: AI fixed the stale Conversation-status binding and added: - A prominent green Linked to database Entity card. - The target’s name and ID, plus Open linked Entity. - A linked badge beside Bologna in the entity list. - Clear unsaved-change and verification messages.
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 210693.
+
+commit efef2e310557aee4580cf3ad6cecbac6d74760f8
+parent b482f4af6701879e38c02269f1ed70fa7170cf6d
+author Iian <iian.d.neill@gmail.com>
+date 1794877343 2026-11-17
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71550 blank 1346 comment 2761 code 67443
+stat Markdown files 386 total 71631 blank 18390 comment 99 code 53142
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 995 total 95705 blank 2571 comment 3271 code 89863
+author~ Iian <iian.d.neill@gmail.com> commits 399
+Commit 2321d5977580 by Iian <iian.d.neill@gmail.com> on 2026-11-19 (EE 0).
+
+Subject: More fixes
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 210740.
+
+commit 2321d597758043b26bd9b37453126cb23124e4fa
+parent efef2e310557aee4580cf3ad6cecbac6d74760f8
+author Iian <iian.d.neill@gmail.com>
+date 1795055208 2026-11-19
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71550 blank 1346 comment 2761 code 67443
+stat Markdown files 386 total 71631 blank 18390 comment 99 code 53142
+stat Python files 4 total 224 blank 9 comment 0 code 215
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 995 total 95752 blank 2571 comment 3271 code 89910
+author~ Iian <iian.d.neill@gmail.com> commits 400
+Commit b6b2a431ce81 by Iian <iian.d.neill@gmail.com> on 2026-11-19 (EE 0).
+
+Subject: Investigation
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 189691.
+
+commit b6b2a431ce81b058293ad7eb46969f86084671f5
+parent 2321d597758043b26bd9b37453126cb23124e4fa
+author Iian <iian.d.neill@gmail.com>
+date 1795059115 2026-11-19
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2761 code 67441
+stat Markdown files 388 total 62117 blank 18390 comment 99 code 43628
+stat Python files 4 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 995 total 84317 blank 2571 comment 3271 code 78475
+author~ Iian <iian.d.neill@gmail.com> commits 401
+Commit 4b9b672e91bb by Iian <iian.d.neill@gmail.com> on 2026-11-19 (EE 0).
+
+Subject: Standardising Block registration and discovery
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 190986.
+
+commit 4b9b672e91bbcf4e9490602ae8f899e47ddf956f
+parent b6b2a431ce81b058293ad7eb46969f86084671f5
+author Iian <iian.d.neill@gmail.com>
+date 1795067420 2026-11-19
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2761 code 67441
+stat Markdown files 391 total 63063 blank 18390 comment 99 code 44574
+stat Python files 4 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 1002 total 84666 blank 2571 comment 3271 code 78824
+author~ Iian <iian.d.neill@gmail.com> commits 402
+Commit 03865ae6fc1d by Iian <iian.d.neill@gmail.com> on 2026-11-19 (EE 0).
+
+Subject: Block modes
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 191796.
+
+commit 03865ae6fc1d26eed359ab06b9dbc907465a77d1
+parent 4b9b672e91bbcf4e9490602ae8f899e47ddf956f
+author Iian <iian.d.neill@gmail.com>
+date 1795086188 2026-11-19
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2761 code 67441
+stat Markdown files 393 total 63510 blank 18390 comment 99 code 45021
+stat Python files 4 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 1006 total 85029 blank 2571 comment 3271 code 79187
+author~ Iian <iian.d.neill@gmail.com> commits 403
+Commit 3dd15ca440dc by Iian <iian.d.neill@gmail.com> on 2026-11-19 (EE 0).
+
+Subject: More investigation into conversion types
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 194051.
+
+commit 3dd15ca440dc5c0f39eb97f5212ac25b876e01ae
+parent 03865ae6fc1d26eed359ab06b9dbc907465a77d1
+author Iian <iian.d.neill@gmail.com>
+date 1795089195 2026-11-19
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2761 code 67441
+stat Markdown files 394 total 65765 blank 18390 comment 99 code 47276
+stat Python files 4 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 1006 total 85029 blank 2571 comment 3271 code 79187
+author~ Iian <iian.d.neill@gmail.com> commits 404
+Commit 5e2f0f4776ea by Iian <iian.d.neill@gmail.com> on 2026-11-19 (EE 0).
+
+Subject: Importer
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 195616.
+
+commit 5e2f0f4776eab6e4bec9e65e843fb4cb5274aaab
+parent 3dd15ca440dc5c0f39eb97f5212ac25b876e01ae
+author Iian <iian.d.neill@gmail.com>
+date 1795094402 2026-11-19
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2761 code 67441
+stat Markdown files 398 total 66503 blank 18390 comment 99 code 48014
+stat Python files 4 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 1016 total 85856 blank 2571 comment 3271 code 80014
+author~ Iian <iian.d.neill@gmail.com> commits 405
+Commit a089fab21346 by Iian <iian.d.neill@gmail.com> on 2026-11-19 (EE 0).
+
+Subject: Performance remediation
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 196113.
+
+commit a089fab213461b882572e02b1a113842facd8cad
+parent 5e2f0f4776eab6e4bec9e65e843fb4cb5274aaab
+author Iian <iian.d.neill@gmail.com>
+date 1795128901 2026-11-19
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2761 code 67441
+stat Markdown files 400 total 66813 blank 18390 comment 99 code 48324
+stat Python files 4 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 1018 total 86043 blank 2571 comment 3271 code 80201
+author~ Iian <iian.d.neill@gmail.com> commits 406
+Commit a5ab68efd160 by Iian <iian.d.neill@gmail.com> on 2026-11-20 (EE 0).
+
+Subject: Implemented the measured local fixes and produced the [performance report](/Users/iianneill/Documents/GitHub/speedy-ts-reactive/NATIVE_DOCUMENT_ADMISSION_PERFORMANCE_REPORT.md) and [architectural qualification](/Users/iianneill/Documents/GitHub/speedy-ts-reactive/NATIVE_DOCUMENT_ADMISSION_ARCHITECTURAL_QUALIFICATION.md).
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 196599.
+
+commit a5ab68efd160c01784fb9ee60fb41335fa98a1a3
+parent a089fab213461b882572e02b1a113842facd8cad
+author Iian <iian.d.neill@gmail.com>
+date 1795133342 2026-11-20
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2761 code 67441
+stat Markdown files 402 total 67249 blank 18390 comment 99 code 48760
+stat Python files 4 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 1018 total 86093 blank 2571 comment 3271 code 80251
+author~ Iian <iian.d.neill@gmail.com> commits 407
+Commit 12f6631043de by Iian <iian.d.neill@gmail.com> on 2026-11-20 (EE 0).
+
+Subject: Start of the editor cell-based investigation
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 197151.
+
+commit 12f6631043dea99e2f2bd8da847a7bba28519d97
+parent a5ab68efd160c01784fb9ee60fb41335fa98a1a3
+author Iian <iian.d.neill@gmail.com>
+date 1795135495 2026-11-20
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2761 code 67441
+stat Markdown files 404 total 67707 blank 18390 comment 99 code 49218
+stat Python files 4 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 1021 total 86187 blank 2571 comment 3271 code 80345
+author~ Iian <iian.d.neill@gmail.com> commits 408
+Commit f3ea0565f024 by Iian <iian.d.neill@gmail.com> on 2026-11-20 (EE 0).
+
+Subject: Spike to improve document construction loading times
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 199809.
+
+This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
+
+commit f3ea0565f024cc68c7d865bb390b04dd6fd37ee8
+parent 12f6631043dea99e2f2bd8da847a7bba28519d97
+author Iian <iian.d.neill@gmail.com>
+date 1795138447 2026-11-20
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 322 total 68035 blank 17184 comment 110 code 50741
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 862 total 86696 blank 2294 comment 2923 code 81479
+author~ Iian <iian.d.neill@gmail.com> commits 409
+Commit 15211e904532 by Iian <iian.d.neill@gmail.com> on 2026-11-20 (EE 0).
+
+Subject: Compact canonical accepted
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 200330.
+
+commit 15211e904532ba525d0c85a028469c643acc6d48
+parent f3ea0565f024cc68c7d865bb390b04dd6fd37ee8
+author Iian <iian.d.neill@gmail.com>
+date 1795150561 2026-11-20
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 324 total 68272 blank 17184 comment 110 code 50978
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 865 total 86980 blank 2294 comment 2923 code 81763
+author~ Iian <iian.d.neill@gmail.com> commits 410
+Commit f164fdaf47a8 by Iian <iian.d.neill@gmail.com> on 2026-11-20 (EE 0).
+
+Subject: Final integration
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 200972.
+
+commit f164fdaf47a8a99a0c426b8aa68313107b53f213
+parent 15211e904532ba525d0c85a028469c643acc6d48
+author Iian <iian.d.neill@gmail.com>
+date 1795158141 2026-11-20
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 325 total 68486 blank 17184 comment 110 code 51192
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 870 total 87408 blank 2294 comment 2923 code 82191
+author~ Iian <iian.d.neill@gmail.com> commits 411
+Commit a7b5aaf5070b by Iian <iian.d.neill@gmail.com> on 2026-11-20 (EE 0).
+
+Subject: Milestone 2 complete
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 201504.
+
+commit a7b5aaf5070b8460c9c181cd4bcc92d770f2cf7c
+parent f164fdaf47a8a99a0c426b8aa68313107b53f213
+author Iian <iian.d.neill@gmail.com>
+date 1795161361 2026-11-20
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 326 total 68728 blank 17184 comment 110 code 51434
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 872 total 87698 blank 2294 comment 2923 code 82481
+author~ Iian <iian.d.neill@gmail.com> commits 412
+Commit 3c61245e1a4c by Iian <iian.d.neill@gmail.com> on 2026-11-20 (EE 0).
+
+Subject: Milestone 3 complete
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 201890.
+
+commit 3c61245e1a4ccd46d2ed2952d36d0d3245f2305b
+parent a7b5aaf5070b8460c9c181cd4bcc92d770f2cf7c
+author Iian <iian.d.neill@gmail.com>
+date 1795162990 2026-11-20
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 328 total 68918 blank 17184 comment 110 code 51624
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 875 total 87894 blank 2294 comment 2923 code 82677
+author~ Iian <iian.d.neill@gmail.com> commits 413
+Commit f249c722df94 by Iian <iian.d.neill@gmail.com> on 2026-11-20 (EE 0).
+
+Subject: Milestone 4 complete
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 202476.
+
+commit f249c722df94af98ce0ce384802389dfa82ab438
+parent 3c61245e1a4ccd46d2ed2952d36d0d3245f2305b
+author Iian <iian.d.neill@gmail.com>
+date 1795171572 2026-11-20
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 329 total 69034 blank 17184 comment 110 code 51740
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 880 total 88364 blank 2294 comment 2923 code 83147
+author~ Iian <iian.d.neill@gmail.com> commits 414
+Commit 8843e6a10fe5 by Iian <iian.d.neill@gmail.com> on 2026-11-20 (EE 0).
+
+Subject: Milestone 5 complete
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 203020.
+
+commit 8843e6a10fe5afd07de984341bd6b5ed409e346c
+parent f249c722df94af98ce0ce384802389dfa82ab438
+author Iian <iian.d.neill@gmail.com>
+date 1795174011 2026-11-20
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 330 total 69180 blank 17184 comment 110 code 51886
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 883 total 88762 blank 2294 comment 2923 code 83545
+author~ Iian <iian.d.neill@gmail.com> commits 415
+Commit 7cabf8444f73 by Iian <iian.d.neill@gmail.com> on 2026-11-20 (EE 0).
+
+Subject: Milestone 5 final qualification
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 203168.
+
+commit 7cabf8444f73cafd62a27cc062aba062460437f5
+parent 8843e6a10fe5afd07de984341bd6b5ed409e346c
+author Iian <iian.d.neill@gmail.com>
+date 1795175847 2026-11-20
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 331 total 69328 blank 17184 comment 110 code 52034
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 883 total 88762 blank 2294 comment 2923 code 83545
+author~ Iian <iian.d.neill@gmail.com> commits 416
+Commit 9e6edcfd11e8 by Iian <iian.d.neill@gmail.com> on 2026-11-21 (EE 0).
+
+Subject: M0 implemented
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 204306.
+
+commit 9e6edcfd11e8526f569eec816440bfe368f73c60
+parent 7cabf8444f73cafd62a27cc062aba062460437f5
+author Iian <iian.d.neill@gmail.com>
+date 1795237027 2026-11-21
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71548 blank 1346 comment 2760 code 67442
+stat Markdown files 335 total 69799 blank 17184 comment 110 code 52505
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 893 total 89429 blank 2294 comment 2923 code 84212
+author~ Iian <iian.d.neill@gmail.com> commits 417
+Commit 704ef279dade by Iian <iian.d.neill@gmail.com> on 2026-11-21 (EE 0).
+
+Subject: M1 implemented
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 204817.
+
+commit 704ef279dade428e316169551cbe042e4a7f6831
+parent 9e6edcfd11e8526f569eec816440bfe368f73c60
+author Iian <iian.d.neill@gmail.com>
+date 1795240257 2026-11-21
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 337 total 69929 blank 17184 comment 110 code 52635
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 901 total 89808 blank 2294 comment 2923 code 84591
+author~ Iian <iian.d.neill@gmail.com> commits 418
+Commit 2f65fd9c6571 by Iian <iian.d.neill@gmail.com> on 2026-11-21 (EE 0).
+
+Subject: First working draft
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 205365.
+
+commit 2f65fd9c6571597661ee5f1b757fe53803423bba
+parent 704ef279dade428e316169551cbe042e4a7f6831
+author Iian <iian.d.neill@gmail.com>
+date 1795248467 2026-11-21
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71550 blank 1346 comment 2760 code 67444
+stat Markdown files 342 total 70103 blank 17184 comment 110 code 52809
+stat Python files 2 total 126 blank 9 comment 0 code 117
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 911 total 90182 blank 2294 comment 2923 code 84965
+author~ Iian <iian.d.neill@gmail.com> commits 419
+Commit 58732c62a210 by Iian <iian.d.neill@gmail.com> on 2026-11-21 (EE 0).
+
+Subject: Merge remote-tracking branch 'origin/main' into dialectic-app
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 227819.
+
+commit 58732c62a2101f225dbc952cad25092aecb4cbf9
+parent 2f65fd9c6571597661ee5f1b757fe53803423bba
+author Iian <iian.d.neill@gmail.com>
+date 1795260638 2026-11-21
+stat C files 1 total 44 blank 0 comment 17 code 27
+stat JavaScript files 144 total 71552 blank 1346 comment 2760 code 67446
+stat Markdown files 342 total 80901 blank 17184 comment 110 code 63607
+stat Python files 2 total 224 blank 9 comment 0 code 215
+stat Shell files 1 total 22 blank 5 comment 14 code 3
+stat TypeScript files 911 total 101738 blank 2294 comment 2923 code 96521
+author~ Iian <iian.d.neill@gmail.com> commits 420
+Commit 55b7257361a1 by Emise <emise@localhost> on 2026-11-06 (EE 0).
+
+Subject: phext: one-phext Cavern storage, phext interchange, deploy assets, dependency refresh
+
+Public items: 21 added, 0 removed, 0 changed. Dependencies: 
+    "@types/body-parser ^1.19.5 -> ^1.19.6; @atjson/offset-annotations ^0.55.2 -> ^0.63.0; @atjson/source-html ^0.41.2 -> ^0.46.0; @codemirror/lang-javascript ^6.2.2 -> ^6.2.5; @codemirror/lang-markdown ^6.2.5 -> ^6.5.2; @codemirror/language-data ^6.5.1 -> ^6.5.2; @kobalte/core ^0.13.9 -> ^0.13.14; @types/express ^5.0.0 -> ^5.0.6; @types/multer ^1.4.12 -> ^2.3.0; @types/node ^22.7.4 -> ^26.6.6; codemirror ^6.0.1 -> ^6.0.2; cors ^2.8.5 -> ^2.8.6; esbuild added at ^0.28.2; express ^4.19.2 -> ^5.3.0; jsdom ^25.0.1 -> ^30.1.3; mdast-util-gfm-table 2.0.0 -> 2.0.1; mermaid 12.2.0 -> 12.3.0; multer ^1.4.5-lts.1 -> ^2.5.0; parse5 7.3.0 -> 8.1.0; solid-devtools ^0.27.3 -> ^0.34.5; solid-js ^1.7.6 -> ^1.9.18; surrealdb ^1.3.2 -> ^2.2.1; three 0.186.1 -> 0.187.0; typescript ^5.6.2 -> ^6.0.0; underscore ^1.13.6 -> ^1.13.8; url ^0.11.3 -> ^0.11.4; uuid ^9.0.1 -> ^14.0.3; vite ^4.3.9 -> ^8.3.5; vite-plugin-solid ^2.7.0 -> ^2.11.15; vitest ^2.1.9"
+   -> ^5.1.0"
+  . Code lines after this commit: 235873.
+
+commit 55b7257361a1b3d6fee67e2139d8c98dd5893f0c
+parent 58732c62a2101f225dbc952cad25092aecb4cbf9
+author Emise <emise@localhost>
+date 1793943136 2026-11-06
+item+ function deploy/deploy.sh :: adopt_live_ssl :: adopt_live_ssl() :: Function adopt_live_ssl takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: apply_rendered_site :: apply_rendered_site() :: Function apply_rendered_site takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: as_owner :: as_owner() :: Function as_owner takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: die :: die() :: Function die takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: dns_points_here :: dns_points_here() :: Function dns_points_here takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: drop_missing_dhparam :: drop_missing_dhparam() :: Function drop_missing_dhparam takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: file_sha256 :: file_sha256() :: Function file_sha256 takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: install_rendered_site :: install_rendered_site() :: Function install_rendered_site takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: main :: main() :: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: nginx_disposition :: nginx_disposition() :: Function nginx_disposition takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: nginx_template :: nginx_template() :: Function nginx_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: path_exists :: path_exists() :: Function path_exists takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: read_root_file :: read_root_file() :: Function read_root_file takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: render_site_body :: render_site_body() :: Function render_site_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: require_hardened_body :: require_hardened_body() :: Function require_hardened_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: run_check :: run_check() :: Function run_check takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: stamp_managed :: stamp_managed() :: Function stamp_managed takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: unit_template :: unit_template() :: Function unit_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: usage :: usage() :: Function usage takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: with_force :: with_force() :: Function with_force takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+item+ function deploy/deploy.sh :: write_bootstrap_body :: write_bootstrap_body() :: Function write_bootstrap_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature
+dep~ package.json :: 
+    "@types/body-parser :: ^1.19.5 -> ^1.19.6
+dep~ package.json :: @atjson/offset-annotations :: ^0.55.2 -> ^0.63.0
+dep~ package.json :: @atjson/source-html :: ^0.41.2 -> ^0.46.0
+dep~ package.json :: @codemirror/lang-javascript :: ^6.2.2 -> ^6.2.5
+dep~ package.json :: @codemirror/lang-markdown :: ^6.2.5 -> ^6.5.2
+dep~ package.json :: @codemirror/language-data :: ^6.5.1 -> ^6.5.2
+dep~ package.json :: @kobalte/core :: ^0.13.9 -> ^0.13.14
+dep~ package.json :: @types/express :: ^5.0.0 -> ^5.0.6
+dep~ package.json :: @types/multer :: ^1.4.12 -> ^2.3.0
+dep~ package.json :: @types/node :: ^22.7.4 -> ^26.6.6
+dep~ package.json :: codemirror :: ^6.0.1 -> ^6.0.2
+dep~ package.json :: cors :: ^2.8.5 -> ^2.8.6
+dep+ package.json :: esbuild :: ^0.28.2
+dep~ package.json :: express :: ^4.19.2 -> ^5.3.0
+dep~ package.json :: jsdom :: ^25.0.1 -> ^30.1.3
+dep~ package.json :: mdast-util-gfm-table :: 2.0.0 -> 2.0.1
+dep~ package.json :: mermaid :: 12.2.0 -> 12.3.0
+dep~ package.json :: multer :: ^1.4.5-lts.1 -> ^2.5.0
+dep~ package.json :: parse5 :: 7.3.0 -> 8.1.0
+dep~ package.json :: solid-devtools :: ^0.27.3 -> ^0.34.5
+dep~ package.json :: solid-js :: ^1.7.6 -> ^1.9.18
+dep~ package.json :: surrealdb :: ^1.3.2 -> ^2.2.1
+dep~ package.json :: three :: 0.186.1 -> 0.187.0
+dep~ package.json :: typescript :: ^5.6.2 -> ^6.0.0
+dep~ package.json :: underscore :: ^1.13.6 -> ^1.13.8
+dep~ package.json :: url :: ^0.11.3 -> ^0.11.4
+dep~ package.json :: uuid :: ^9.0.1 -> ^14.0.3
+dep~ package.json :: vite :: ^4.3.9 -> ^8.3.5
+dep~ package.json :: vite-plugin-solid :: ^2.7.0 -> ^2.11.15
+dep~ package.json :: vitest :: ^2.1.9"
+   -> ^5.1.0"
+  
+stat C files 0 total 0 blank 0 comment 17 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2760 code 67446
+stat Markdown files 345 total 82631 blank 17184 comment 110 code 65337
+stat Python files 2 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 5 comment 14 code 642
+stat TypeScript files 935 total 107450 blank 2294 comment 2923 code 102233
+author~ Emise <emise@localhost> commits 14
+Commit 0d23d982e593 by Emise <emise@localhost> on 2026-11-06 (EE 0).
+
+Subject: Step 3: per-Cavern Native/Phext mode selection restored
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 236539.
+
+commit 0d23d982e593d75892a7e0cbd9ec46844ca03d37
+parent 55b7257361a1b3d6fee67e2139d8c98dd5893f0c
+author Emise <emise@localhost>
+date 1793973693 2026-11-06
+stat C files 0 total 0 blank 0 comment 17 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2760 code 67446
+stat Markdown files 345 total 82859 blank 17184 comment 110 code 65565
+stat Python files 2 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 5 comment 14 code 642
+stat TypeScript files 935 total 107888 blank 2294 comment 2923 code 102671
+author~ Emise <emise@localhost> commits 15
+Commit ad7425635c3b by Emise <emise@localhost> on 2026-11-06 (EE 0).
+
+Subject: Step 4: capture Textual font settings as the fifth settings-bundle domain
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 236651.
+
+commit ad7425635c3b2ae4fa0890dcc1fc8fb1db9e5973
+parent 0d23d982e593d75892a7e0cbd9ec46844ca03d37
+author Emise <emise@localhost>
+date 1793970811 2026-11-06
+stat C files 0 total 0 blank 0 comment 17 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2760 code 67446
+stat Markdown files 345 total 82955 blank 17184 comment 110 code 65661
+stat Python files 2 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 5 comment 14 code 642
+stat TypeScript files 935 total 107904 blank 2294 comment 2923 code 102687
+author~ Emise <emise@localhost> commits 16
+Commit d7015e3b0012 by Emise <emise@localhost> on 2026-11-06 (EE 0).
+
+Subject: docs: PATCHES.md — record rebase onto upstream db3ed30
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 236740.
+
+commit d7015e3b0012a35cfb2df59e636227451bf336aa
+parent ad7425635c3b2ae4fa0890dcc1fc8fb1db9e5973
+author Emise <emise@localhost>
+date 1793976002 2026-11-06
+stat C files 0 total 0 blank 0 comment 17 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2760 code 67446
+stat Markdown files 345 total 83044 blank 17184 comment 110 code 65750
+stat Python files 2 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 5 comment 14 code 642
+stat TypeScript files 935 total 107904 blank 2294 comment 2923 code 102687
+author~ Emise <emise@localhost> commits 17
+Commit a2b4f3a1ac3c by Emise <emise@localhost> on 2026-11-21 (EE 0).
+
+Subject: docs: PATCHES.md — record rebase onto upstream 58732c6
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 236822.
+
+commit a2b4f3a1ac3c7932adbfe8da2a9139ef0ec587a5
+parent d7015e3b0012a35cfb2df59e636227451bf336aa
+author Emise <emise@localhost>
+date 1795270132 2026-11-21
+stat C files 0 total 0 blank 0 comment 17 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2760 code 67446
+stat Markdown files 345 total 83126 blank 17184 comment 110 code 65832
+stat Python files 2 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 5 comment 14 code 642
+stat TypeScript files 935 total 107904 blank 2294 comment 2923 code 102687
+author~ Emise <emise@localhost> commits 18
+Commit 16b1d307e459 by Emise <emise@localhost> on 2026-11-21 (EE 0).
+
+Subject: deps: @retorquere/bibtex-parser 13.0.11 — upstream's bibliography.ts imports its /js export, absent in the 12.1.9 pin
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies: @retorquere/bibtex-parser 12.1.9 -> 13.0.11; @surrealdb/node ^1.0.0-beta.3 -> ^3.2.0; @surrealdb/node-native added at ^4.0.0. Code lines after this commit: 236841.
+
+commit 16b1d307e45934bc0b7c28b4c496ab3c34f88464
+parent a2b4f3a1ac3c7932adbfe8da2a9139ef0ec587a5
+author Emise <emise@localhost>
+date 1795270718 2026-11-21
+dep~ package.json :: @retorquere/bibtex-parser :: 12.1.9 -> 13.0.11
+dep~ package.json :: @surrealdb/node :: ^1.0.0-beta.3 -> ^3.2.0
+dep+ package.json :: @surrealdb/node-native :: ^4.0.0
+stat C files 0 total 0 blank 0 comment 17 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2760 code 67446
+stat Markdown files 345 total 83145 blank 17184 comment 110 code 65851
+stat Python files 2 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 5 comment 14 code 642
+stat TypeScript files 935 total 107904 blank 2294 comment 2923 code 102687
+author~ Emise <emise@localhost> commits 19
+Commit c9859d74f7e8 by Emise <emise@localhost> on 2026-11-21 (EE 0).
+
+Subject: sqlite: adopt Ian's 0011/0012 in the phext layer — DocumentEntityAssociation record kind, cache op on the phext foundation replica
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 236841.
+
+commit c9859d74f7e8b5c5deb1297b9317a2ada41bad16
+parent 16b1d307e45934bc0b7c28b4c496ab3c34f88464
+author Emise <emise@localhost>
+date 1795271327 2026-11-21
+stat C files 0 total 0 blank 0 comment 17 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2760 code 67446
+stat Markdown files 345 total 83145 blank 17184 comment 110 code 65851
+stat Python files 2 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 5 comment 14 code 642
+stat TypeScript files 935 total 107904 blank 2294 comment 2923 code 102687
+author~ Emise <emise@localhost> commits 20
+Commit 4a23be0f2737 by Emise <emise@localhost> on 2026-11-21 (EE 0).
+
+Subject: sqlite: persist Ian's shared cache across phext foundation opens (control-style cache.json, replica seeded at open, write-through on mutation); disk foundation tests expect migration count 12
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 236841.
+
+commit 4a23be0f273792c30dcea0e5e4768bb082cbe99b
+parent c9859d74f7e8b5c5deb1297b9317a2ada41bad16
+author Emise <emise@localhost>
+date 1795271759 2026-11-21
+stat C files 0 total 0 blank 0 comment 17 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2760 code 67446
+stat Markdown files 345 total 83145 blank 17184 comment 110 code 65851
+stat Python files 2 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 5 comment 14 code 642
+stat TypeScript files 935 total 107904 blank 2294 comment 2923 code 102687
+author~ Emise <emise@localhost> commits 21
+Commit cd8add0fd036 by Emise <emise@localhost> on 2026-11-21 (EE 0).
+
+Subject: deps: follow upstream TypeScript pin ^5.6.2 — TS 6 breaks upstream dialectic view typecheck (PATCHES.md addendum 3)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies: sqlite-vec 0.1.9"
+   -> 0.1.9; typescript ^6.0.0 -> ^5.6.2; youtube-player ^5.6.0 -> ^5.6.0"
+  . Code lines after this commit: 236852.
+
+commit cd8add0fd03642ca94d414b31d9fa90eee812683
+parent 4a23be0f273792c30dcea0e5e4768bb082cbe99b
+author Emise <emise@localhost>
+date 1795272907 2026-11-21
+dep~ package.json :: sqlite-vec :: 0.1.9"
+   -> 0.1.9
+dep~ package.json :: typescript :: ^6.0.0 -> ^5.6.2
+dep~ package.json :: youtube-player :: ^5.6.0 -> ^5.6.0"
+  
+stat C files 0 total 0 blank 0 comment 17 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2760 code 67446
+stat Markdown files 345 total 83156 blank 17184 comment 110 code 65862
+stat Python files 2 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 5 comment 14 code 642
+stat TypeScript files 935 total 107904 blank 2294 comment 2923 code 102687
+author~ Emise <emise@localhost> commits 22
+Commit ed75a0ace985 by Emise <emise@localhost> on 2026-11-06 (EE 0).
+
+Subject: SSO against edit.phext.io: env-gated identity gate, assertion callback, identity chip
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 237507.
+
+commit ed75a0ace985f00b4ac0aaf5b485e7bdb0266d47
+parent cd8add0fd03642ca94d414b31d9fa90eee812683
+author Emise <emise@localhost>
+date 1793976095 2026-11-06
+stat C files 0 total 0 blank 0 comment 17 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2760 code 67446
+stat Markdown files 345 total 83327 blank 17184 comment 110 code 66033
+stat Python files 2 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 5 comment 14 code 642
+stat TypeScript files 937 total 108388 blank 2294 comment 2923 code 103171
+author~ Emise <emise@localhost> commits 23
+Commit 20eda55e906b by Emise <emise@localhost> on 2026-11-07 (EE 0).
+
+Subject: SSO UX fixes from the first live night: CSRF startup race, signed-out overview, identity bar overlap
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 237619.
+
+commit 20eda55e906b1073a36076ced9bbba4dc53283e2
+parent ed75a0ace985f00b4ac0aaf5b485e7bdb0266d47
+author Emise <emise@localhost>
+date 1794027739 2026-11-07
+stat C files 0 total 0 blank 0 comment 17 code 0
+stat JavaScript files 144 total 71552 blank 1346 comment 2760 code 67446
+stat Markdown files 345 total 83397 blank 17184 comment 110 code 66103
+stat Python files 2 total 224 blank 9 comment 0 code 215
+stat Shell files 2 total 661 blank 5 comment 14 code 642
+stat TypeScript files 937 total 108430 blank 2294 comment 2923 code 103213
+author~ Emise <emise@localhost> commits 24
