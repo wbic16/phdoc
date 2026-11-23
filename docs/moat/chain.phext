@@ -1,3 +1,4 @@
+delta-format 3
 Commit cd8851694289 by Will Bickford <wbic16@gmail.com> on 2026-11-16 (EE 0).
 
 Subject: Initial commit
@@ -10,12 +11,17 @@ commit cd8851694289ab8b93833820dd188590ed849f44
 parent none
 author Will Bickford <wbic16@gmail.com>
 date 1794813069 2026-11-16
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/moat.git
+branch exo
 author+ Will Bickford <wbic16@gmail.com>
 Commit fb84a7c1a3e5 by Emise <emise@localhost> on 2026-11-16 (EE 0).
 
 Subject: Consolidate MOAT code: design corpus, tluf submissions service, evaluation machinery, MVO Lean project, tracker builder (task 26.6.8)
 
-Public items: 42 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 42868.
+Public items: 42 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 42832.
 
 This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
 
@@ -23,50 +29,65 @@ commit fb84a7c1a3e52aa9f30219d3e3d1e4fd0b06e077
 parent cd8851694289ab8b93833820dd188590ed849f44
 author Emise <emise@localhost>
 date 1794813466 2026-11-16
-item+ function epistemic/extract_registry.py :: claim_of :: def claim_of(coord, text) :: Function claim_of takes coord, text. Its return type is unannotated; the code shows it returning CLAIM_TIGHTEN[coord]; ("Standoff references for its chapter: the found; "Open questions carried forward at this point of; h. :: inferred :: api
-item+ function epistemic/extract_registry.py :: classify :: def classify(coord, text) :: Return (status, basis, evidence). Kind defaults; content decides. :: direct :: api
-item+ function epistemic/extract_registry.py :: concept_source :: def concept_source(scroll_no) :: Function concept_source takes scroll_no. Its return type is unannotated; the code shows it returning "arXiv:2611.05417"; "arXiv:2611.00463"; "arXiv:2604.03136"; "arXiv:2410.19225"; "arXiv:2611.06949"; "Study S001 (MiniLean4 book and code)"; "Study S002 (Aeneas repo and its two design pape; "Study S003 (h5i repo design files)"; "arXiv:2610.38214"; "arXiv:2610.42112"; "Study S004 (Phrack 49 file 14, Aleph One, 1996); "Study S005 (Astryx repo, github.com/meta/astryx; "Study S006 (TinyTorch, mlsysbook.ai / github.co; "arXiv:2611.09694"; "arXiv:2611.08625"; "arXiv:2611.08794"; "arXiv:2611.07088"; "arXiv:2611.11959"; "arXiv:2611.14463"; "arXiv:2510.01346"; "arXiv:2611.14039"; "Study S007 (three essays of John D. Cook, johnd; "arXiv:1903.06830"; "Study S008 (Continual-ARC repo and paper, githu; "Study S009 (Terence Tao, 'Lean Grimoire', terry; "Paper 017 (Google DeepMind document 36, 'AlphaP; "Study S010 (Math, Inc., 'Abstraction considered; "arXiv:2611.17082"; "arXiv:2611.14543"; "arXiv:2611.14552"; "arXiv:2611.16759"; "Paper 022 (Bruce Sterling, 'Maneki Neko', Light; "Study S011 (the Vimalakirti Sutra in Burton Wat; "Study S012 ('Beating the frontier on NetHack', ; "Study S013 (Hexagon, hexagonmath.org)"; "Fringe F001 (Paul Crowley, 'Cardchoose', cipher; "Study S014 (Alex Miller, 'Please Implement A Qu. :: inferred :: api
-item+ function epistemic/extract_registry.py :: heading_of :: def heading_of(text) :: Function heading_of takes text. Its return type is unannotated; the code shows it returning line.lstrip("#").strip(); "(empty scroll)". :: inferred :: api
-item+ function epistemic/extract_registry.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function epistemic/extract_registry.py :: override_evidence :: def override_evidence(coord) :: Function override_evidence takes coord. Its return type is unannotated; the code shows it returning {. :: inferred :: api
-item+ function evaluation/evaluation_analysis.py :: agg :: def agg(rs, key) :: Function agg takes rs, key. Its return type is unannotated; the code shows it returning st.mean(r[key] for r in rs). :: inferred :: api
-item+ function evaluation/evaluation_analysis.py :: band :: def band(ni, axis) :: Function band takes ni, axis. Its return type is unannotated; the code shows it returning 'low'. :: inferred :: api
-item+ function evaluation/evaluation_analysis.py :: links_split :: def links_split(s) :: Function links_split takes s. Its return type is unannotated; the code shows it returning (int(m.group(1)), int(m.group(2))) if m else Non. :: inferred :: api
-item+ function evaluation/evaluation_analysis.py :: links_total :: def links_total(r, side, other=None) :: Function links_total takes r, side, other=None. Its return type is unannotated; the code shows it returning None. :: inferred :: api
-item+ function evaluation/evaluation_analysis.py :: null_oracle :: def null_oracle(op_before, ni, axis) :: Function null_oracle takes op_before, ni, axis. Its return type is unannotated; the code shows it returning pt, (max(0, pt-10), min(100, pt+10)). :: inferred :: api
-item+ function evaluation/evaluation_analysis.py :: op_pred_of :: def op_pred_of(pr, sc) :: Function op_pred_of takes pr, sc. Its return type is unannotated; the code shows it returning None. :: inferred :: api
-item+ function evaluation/evaluation_analysis.py :: op_range_pred_of :: def op_range_pred_of(pr, sc) :: Function op_range_pred_of takes pr, sc. Its return type is unannotated; the code shows it returning None. :: inferred :: api
-item+ function evaluation/evaluation_analysis.py :: rng :: def rng(v) :: Function rng takes v. Its return type is unannotated; the code shows it returning (int(m.group(1)), int(m.group(2))) if m else Non. :: inferred :: api
-item+ function evaluation/evaluation_analysis.py :: step :: def step(ni, axis, axis_step=-5) :: Function step takes ni, axis, axis_step=-5. Its return type is unannotated; the code shows it returning {'low':10, 'mid':5, 'axis':axis_step, 'gt50':0}[. :: inferred :: api
-item+ function evaluation/evaluation_analysis.py :: summary :: def summary(rs, label) :: Function summary takes rs, label. Its return type is unannotated; the code shows it returning d. :: inferred :: api
-item+ function evaluation/evaluation_analysis.py :: survives :: def survives(k) :: Function survives takes k. Its return type is unannotated; the code shows it returning band(moved, r['act_axis']) == band(r['ni_pred_se. :: inferred :: api
-item+ function evaluation/ingestion/fix_p018_words.py :: apply :: def apply(path, pairs) :: Function apply takes path, pairs. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function evaluation/ingestion/integrate_p013.py :: ins_after :: def ins_after(old, add, n=1) :: Function ins_after takes old, add, n=1. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function evaluation/ingestion/integrate_p013.py :: rep :: def rep(old, new, n=1) :: Function rep takes old, new, n=1. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function evaluation/ingestion/integrate_p018.py :: rep :: def rep(old, new, n=1) :: Function rep takes old, new, n=1. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function evaluation/ingestion/integrate_p018_phaseb.py :: rep :: def rep(old, new, n=1) :: Function rep takes old, new, n=1. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function evaluation/ingestion/integrate_p021.py :: rep :: def rep(old, new, n=1) :: Function rep takes old, new, n=1. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function evaluation/score_p020.py :: band_step :: def band_step(ni_v, axis) :: Function band_step takes ni_v, axis. Its return type is unannotated; the code shows it returning -5; 0; 5; 10. :: inferred :: api
-item+ function evaluation/score_p020.py :: cb_of :: def cb_of(pr, sc) :: Function cb_of takes pr, sc. Its return type is unannotated; the code shows it returning sc.get("concepts_before_sealed", pr.get("concept. :: inferred :: api
-item+ function evaluation/score_p020.py :: ni :: def ni(new, revised, cb) :: Function ni takes new, revised, cb. Its return type is unannotated; the code shows it returning (new + 0.5 * revised) / (cb + new). :: inferred :: api
-item+ function evaluation/score_p020.py :: score :: def score(filing) :: Function score takes filing. Its return type is unannotated; the code shows it returning dict(. :: inferred :: api
-item+ function evaluation/score_p021.py :: band_step :: def band_step(ni_v, axis) :: Function band_step takes ni_v, axis. Its return type is unannotated; the code shows it returning -5; 0; 5; 10. :: inferred :: api
-item+ function evaluation/score_p021.py :: cb_of :: def cb_of(pr, sc) :: Function cb_of takes pr, sc. Its return type is unannotated; the code shows it returning sc.get("concepts_before_sealed", pr.get("concept. :: inferred :: api
-item+ function evaluation/score_p021.py :: ni :: def ni(new, revised, cb) :: Function ni takes new, revised, cb. Its return type is unannotated; the code shows it returning (new + 0.5 * revised) / (cb + new). :: inferred :: api
-item+ function evaluation/score_p021.py :: score :: def score(filing) :: Function score takes filing. Its return type is unannotated; the code shows it returning dict(. :: inferred :: api
-item+ function evaluation/splice_registry.py :: entry_lines :: def entry_lines(path) :: Function entry_lines takes path. Its return type is unannotated; the code shows it returning lines[start + 1:end]. :: inferred :: api
-item+ function service/nginx-insert.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning 0; 3; 2. :: inferred :: api
-item+ function service/nginx-insert.py :: server_blocks :: def server_blocks(text) :: Yield (start, end) spans of each top-level `server { ... }` block. :: direct :: api
-item+ function service/tluf-submit.py :: Handler.do_GET :: def do_GET(self) :: Function Handler.do_GET takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function service/tluf-submit.py :: Handler.do_POST :: def do_POST(self) :: Function Handler.do_POST takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function service/tluf-submit.py :: Handler.log_message :: def log_message(self, fmt, *args) :: Function Handler.log_message takes self, fmt, *args. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function service/tluf-submit.py :: canonicalize :: def canonicalize(locator) :: Return (address, error): exactly one of the two is None. :: direct :: api
-item+ function service/tluf-submit.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function service/tluf-submit.py :: rep :: def rep(m) :: Function rep takes m. Its return type is unannotated; the code shows it returning ch; "%" + m.group(1).upper(). :: inferred :: api
-item+ function service/tluf-submit.py :: store_submission :: def store_submission(fields, address) :: Function store_submission takes fields, address. Its return type is unannotated; the code shows it returning seq. :: inferred :: api
-item+ function tracker/build_research_phext.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function epistemic/extract_registry.py :: claim_of :: def claim_of(coord, text): :: Function claim_of takes coord, text and gives back nothing; it does its work on what it is given. :: signature :: 1072 :: 0
+item+ function epistemic/extract_registry.py :: classify :: def classify(coord, text): :: Return (status, basis, evidence). Kind defaults; content decides. :: doc comment :: 1086 :: 1
+item+ function epistemic/extract_registry.py :: concept_source :: def concept_source(scroll_no): :: Function concept_source takes scroll_no and gives back nothing; it does its work on what it is given. :: signature :: 875 :: 0
+item+ function epistemic/extract_registry.py :: heading_of :: def heading_of(text): :: Function heading_of takes text and gives back nothing; it does its work on what it is given. :: signature :: 953 :: 0
+item+ function epistemic/extract_registry.py :: main :: def main(): :: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 1236 :: 0
+item+ function epistemic/extract_registry.py :: override_evidence :: def override_evidence(coord): :: Function override_evidence takes coord and gives back nothing; it does its work on what it is given. :: signature :: 1166 :: 0
+item+ function evaluation/evaluation_analysis.py :: agg :: def agg(rs, key): :: Function agg takes rs, key and gives back nothing; it does its work on what it is given. :: signature :: 193 :: 0
+item+ function evaluation/evaluation_analysis.py :: band :: def band(ni, axis): :: Function band takes ni, axis and gives back nothing; it does its work on what it is given. :: signature :: 117 :: 0
+item+ function evaluation/evaluation_analysis.py :: links_split :: def links_split(s): :: Function links_split takes s and gives back nothing; it does its work on what it is given. :: signature :: 53 :: 0
+item+ function evaluation/evaluation_analysis.py :: links_total :: def links_total(r, side, other=None): :: Function links_total takes r, side, other=None and gives back nothing; it does its work on what it is given. :: signature :: 29 :: 0
+item+ function evaluation/evaluation_analysis.py :: null_oracle :: def null_oracle(op_before, ni, axis): :: Function null_oracle takes op_before, ni, axis and gives back nothing; it does its work on what it is given. :: signature :: 142 :: 0
+item+ function evaluation/evaluation_analysis.py :: op_pred_of :: def op_pred_of(pr, sc): :: Function op_pred_of takes pr, sc and gives back nothing; it does its work on what it is given. :: signature :: 42 :: 0
+item+ function evaluation/evaluation_analysis.py :: op_range_pred_of :: def op_range_pred_of(pr, sc): :: Function op_range_pred_of takes pr, sc and gives back nothing; it does its work on what it is given. :: signature :: 47 :: 0
+item+ function evaluation/evaluation_analysis.py :: rng :: def rng(v): :: Function rng takes v and gives back nothing; it does its work on what it is given. :: signature :: 23 :: 0
+item+ function evaluation/evaluation_analysis.py :: step :: def step(ni, axis, axis_step=-5): :: Function step takes ni, axis, axis_step=-5 and gives back nothing; it does its work on what it is given. :: signature :: 122 :: 0
+item+ function evaluation/evaluation_analysis.py :: summary :: def summary(rs, label): :: Function summary takes rs, label and gives back nothing; it does its work on what it is given. :: signature :: 196 :: 0
+item+ function evaluation/evaluation_analysis.py :: survives :: def survives(k): :: Function survives takes k and gives back nothing; it does its work on what it is given. :: signature :: 131 :: 0
+item+ function evaluation/ingestion/fix_p018_words.py :: apply :: def apply(path, pairs): :: Function apply takes path, pairs and gives back nothing; it does its work on what it is given. :: signature :: 154 :: 0
+item+ function evaluation/ingestion/integrate_p013.py :: ins_after :: def ins_after(old, add, n=1): :: Function ins_after takes old, add, n=1 and gives back nothing; it does its work on what it is given. :: signature :: 15 :: 0
+item+ function evaluation/ingestion/integrate_p013.py :: rep :: def rep(old, new, n=1): :: Function rep takes old, new, n=1 and gives back nothing; it does its work on what it is given. :: signature :: 9 :: 0
+item+ function evaluation/ingestion/integrate_p018.py :: rep :: def rep(old, new, n=1): :: Function rep takes old, new, n=1 and gives back nothing; it does its work on what it is given. :: signature :: 17 :: 0
+item+ function evaluation/ingestion/integrate_p018_phaseb.py :: rep :: def rep(old, new, n=1): :: Function rep takes old, new, n=1 and gives back nothing; it does its work on what it is given. :: signature :: 11 :: 0
+item+ function evaluation/ingestion/integrate_p021.py :: rep :: def rep(old, new, n=1): :: Function rep takes old, new, n=1 and gives back nothing; it does its work on what it is given. :: signature :: 18 :: 0
+item+ function evaluation/score_p020.py :: band_step :: def band_step(ni_v, axis): :: Function band_step takes ni_v, axis and gives back nothing; it does its work on what it is given. :: signature :: 162 :: 0
+item+ function evaluation/score_p020.py :: cb_of :: def cb_of(pr, sc): :: Function cb_of takes pr, sc and gives back nothing; it does its work on what it is given. :: signature :: 53 :: 0
+item+ function evaluation/score_p020.py :: ni :: def ni(new, revised, cb): :: Function ni takes new, revised, cb and gives back nothing; it does its work on what it is given. :: signature :: 61 :: 0
+item+ function evaluation/score_p020.py :: score :: def score(filing): :: Function score takes filing and gives back nothing; it does its work on what it is given. :: signature :: 81 :: 0
+item+ function evaluation/score_p021.py :: band_step :: def band_step(ni_v, axis): :: Function band_step takes ni_v, axis and gives back nothing; it does its work on what it is given. :: signature :: 163 :: 0
+item+ function evaluation/score_p021.py :: cb_of :: def cb_of(pr, sc): :: Function cb_of takes pr, sc and gives back nothing; it does its work on what it is given. :: signature :: 107 :: 0
+item+ function evaluation/score_p021.py :: ni :: def ni(new, revised, cb): :: Function ni takes new, revised, cb and gives back nothing; it does its work on what it is given. :: signature :: 62 :: 0
+item+ function evaluation/score_p021.py :: score :: def score(filing): :: Function score takes filing and gives back nothing; it does its work on what it is given. :: signature :: 80 :: 0
+item+ function evaluation/splice_registry.py :: entry_lines :: def entry_lines(path): :: Function entry_lines takes path and gives back nothing; it does its work on what it is given. :: signature :: 10 :: 0
+item+ function service/nginx-insert.py :: main :: def main(): :: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 63 :: 0
+item+ function service/nginx-insert.py :: server_blocks :: def server_blocks(text): :: Yield (start, end) spans of each top-level `server { ... }` block. :: doc comment :: 41 :: 1
+item+ function service/tluf-submit.py :: canonicalize :: def canonicalize(locator): :: Return (address, error): exactly one of the two is None. :: doc comment :: 249 :: 1
+item+ function service/tluf-submit.py :: do_GET :: def do_GET(self): :: Function do_GET takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 347 :: 0
+item+ function service/tluf-submit.py :: do_POST :: def do_POST(self): :: Function do_POST takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 353 :: 0
+item+ function service/tluf-submit.py :: log_message :: def log_message(self, fmt, *args): :: Function log_message takes self, fmt, *args and gives back nothing; it does its work on what it is given. :: signature :: 410 :: 0
+item+ function service/tluf-submit.py :: main :: def main(): :: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 414 :: 0
+item+ function service/tluf-submit.py :: rep :: def rep(m): :: Function rep takes m and gives back nothing; it does its work on what it is given. :: signature :: 85 :: 0
+item+ function service/tluf-submit.py :: store_submission :: def store_submission(fields, address): :: Function store_submission takes fields, address and gives back nothing; it does its work on what it is given. :: signature :: 313 :: 0
+item+ function tracker/build_research_phext.py :: main :: def main(): :: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 35596 :: 0
+quality 0 0 0 0
+fncount 56
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/moat.git
+branch exo
+largest-file tracker/build_research_phext.py :: 35619
+largest-file epistemic/extract_registry.py :: 1297
+largest-file evaluation/ingestion/p013_texts.py :: 1162
+largest-file evaluation/ingestion/p021_chapter.py :: 538
+largest-file evaluation/ingestion/p018_chapter.py :: 484
+largest-fn rep :: evaluation/ingestion/integrate_p021.py :: 400
+largest-fn ins_after :: evaluation/ingestion/integrate_p013.py :: 382
+largest-fn rep :: evaluation/ingestion/integrate_p018.py :: 376
+largest-fn heading_of :: epistemic/extract_registry.py :: 119
+largest-fn rep :: evaluation/ingestion/integrate_p018_phaseb.py :: 103
 stat JavaScript files 1 total 283 blank 17 comment 8 code 258
-stat Markdown files 22 total 2609 blank 491 comment 0 code 2118
-stat Python files 21 total 42913 blank 2339 comment 133 code 40441
+stat Markdown files 22 total 2609 blank 491 comment 16 code 2102
+stat Python files 21 total 42913 blank 2339 comment 153 code 40421
 stat Shell files 3 total 80 blank 6 comment 23 code 51
 author+ Emise <emise@localhost>

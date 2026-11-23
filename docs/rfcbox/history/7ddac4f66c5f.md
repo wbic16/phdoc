@@ -2,15 +2,13 @@
 
 Commit 7ddac4f66c5ff80df7a59857946cce0d78067d07. 19 commits folded. Every fact here was folded from the chain's per-commit deltas.
 
-## Provenance
-
-This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/rfcbox/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
-
 ## Dependencies
 
 No dependencies recorded at this point.
 
 ## Authors
+
+Author counts over the 19 audited mainline commits folded to this point.
 
 The author of record is **Will Bickford** — 19 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
 
@@ -23,52 +21,498 @@ Annotation, by persona (all folded into Will Bickford):
 
 ## Complexity
 
-- Markdown: 15 files, 661 lines total, 210 blank, 0 comment, 451 code
-- Python: 3 files, 746 lines total, 116 blank, 32 comment, 598 code
-- Shell: 1 file, 14 lines total, 2 blank, 5 comment, 7 code
+The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.
 
-Declared RFCs at this point: none declared.
+- Markdown: 15 files, 661 lines total, 0 blank, 0 comment, 661 code
+- Python: 3 files, 746 lines total, 0 blank, 0 comment, 746 code
+- Shell: 1 files, 14 lines total, 0 blank, 0 comment, 14 code
+
+All languages: 19 files, 1421 lines total, 1421 lines of code. Functions read: 49.
+
+Largest files:
+
+
+Largest functions, by span in lines:
+
+
+## Code quality signals
+
+Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.
+
+- Tests: 6 test functions counted in the source, across 1 files in test directories or whose names mark them as test files.
+- CI: no CI configuration was found in the project.
+- Lint and format: no lint or format configuration file was found.
+- TODO marks in the source: 0. FIXME marks: 0.
+- Public items with a doc comment: 6 of 41 (15%).
+
+## Declared RFCs
+
+No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+
+
+## Upstream git repo
+
+- Origin: /home/wbic16/github-archive/mirrors/rfcbox.git
+- Branch: exo
+- Head commit: 7ddac4f66c5ff80df7a59857946cce0d78067d07
+- Working tree: the committed tree at this commit — a historical reference has no working tree
 
 ## Public methods and commands
 
-- function `check` (examples/p25-iki/demo.py) [example] — Function check takes label: str, ok: bool.
-- function `main` (examples/p25-iki/demo.py) [example] — Function main takes no inputs beyond the value it is called on.
-- function `run_demo` (examples/p25-iki/demo.py) [example] — Function run_demo takes base: Path = RUN_DIR, verbose: bool = True.
-- function `say` (examples/p25-iki/demo.py) [example] — Function say takes msg: str.
-- function `AuditLog.__init__` (examples/p25-iki/iki_server.py) [example] — Function AuditLog.__init__ takes self, path: Path, actor: str.
-- function `AuditLog.append` (examples/p25-iki/iki_server.py) [example] — Function AuditLog.append takes self, event: str, details: dict.
-- function `AuditLog.verify_chain` (examples/p25-iki/iki_server.py) [example] — Function AuditLog.verify_chain takes path: Path.
-- function `Handler.do_GET` (examples/p25-iki/iki_server.py) [example] — Function Handler.do_GET takes no inputs beyond the value it is called on.
-- function `Handler.do_POST` (examples/p25-iki/iki_server.py) [example] — Function Handler.do_POST takes no inputs beyond the value it is called on.
-- function `Handler.log_message` (examples/p25-iki/iki_server.py) [example] — Function Handler.log_message takes self, *args.
-- function `KMF.__init__` (examples/p25-iki/iki_server.py) [example] — Function KMF.__init__ takes self, name: str, workdir: Path, ca: dict.
-- function `KMF.create_key` (examples/p25-iki/iki_server.py) [example] — Function KMF.create_key takes self, key_id: int, alg_id: int = ALG_AES_256.
-- function `KMF.export_keyset` (examples/p25-iki/iki_server.py) [example] — Wrap this KMF's keys for `peer`, sign the package (CMS), send it
-- function `KMF.handle_exchange` (examples/p25-iki/iki_server.py) [example] — Function KMF.handle_exchange takes self, manifest_bytes: bytes, signature: bytes, peer_cn: str.
-- function `KMF.provision_peer` (examples/p25-iki/iki_server.py) [example] — Function KMF.provision_peer takes self, peer_name: str, root_secret: bytes.
-- function `KMF.start` (examples/p25-iki/iki_server.py) [example] — Function KMF.start takes no inputs beyond the value it is called on.
-- function `KMF.stop` (examples/p25-iki/iki_server.py) [example] — Function KMF.stop takes no inputs beyond the value it is called on.
-- function `KeyStore.__init__` (examples/p25-iki/iki_server.py) [example] — Function KeyStore.__init__ takes self, db_path: Path, master_key: bytes.
-- function `KeyStore.directional_kek` (examples/p25-iki/iki_server.py) [example] — HKDF (RFC 5869): derive the src->dst wrap key from the pairwise root.
-- function `KeyStore.get_key` (examples/p25-iki/iki_server.py) [example] — Function KeyStore.get_key takes self, owner: str, key_id: int, alg_id: int.
-- function `KeyStore.get_receipt` (examples/p25-iki/iki_server.py) [example] — Function KeyStore.get_receipt takes self, exchange_id: str.
-- function `KeyStore.list_keys` (examples/p25-iki/iki_server.py) [example] — Function KeyStore.list_keys takes self, owner: str.
-- function `KeyStore.provision_peer` (examples/p25-iki/iki_server.py) [example] — Function KeyStore.provision_peer takes self, peer: str, root_secret: bytes.
-- function `KeyStore.put_key` (examples/p25-iki/iki_server.py) [example] — Function KeyStore.put_key takes self, owner: str, key_id: int, alg_id: int, key: bytes, origin: str.
-- function `KeyStore.put_receipt` (examples/p25-iki/iki_server.py) [example] — Function KeyStore.put_receipt takes self, exchange_id: str, receipt: dict, signature: bytes.
-- function `b64d` (examples/p25-iki/iki_server.py) [example] — Function b64d takes s: str.
-- function `b64e` (examples/p25-iki/iki_server.py) [example] — Function b64e takes b: bytes.
-- function `canonical` (examples/p25-iki/iki_server.py) [example] — Deterministic JSON encoding used for everything that gets signed.
-- function `cms_sign_detached` (examples/p25-iki/iki_server.py) [example] — Detached CMS SignedData (DER) over `data`, signed by the KMF identity.
-- function `cms_verify_detached` (examples/p25-iki/iki_server.py) [example] — Verify a detached CMS signature against the test CA using OpenSSL.
-- function `make_ca` (examples/p25-iki/iki_server.py) [example] — Create a self-signed test CA.
-- function `make_kmf_identity` (examples/p25-iki/iki_server.py) [example] — Issue a KMF identity certificate (server + client + signing use).
-- function `utcnow` (examples/p25-iki/iki_server.py) [example] — Function utcnow takes no inputs beyond the value it is called on.
-- function `check` (examples/p25-iki/test_iki.py) [test] — Function check takes label: str, ok: bool, extra: str = "".
-- function `main` (examples/p25-iki/test_iki.py) [test] — Function main takes no inputs beyond the value it is called on.
-- function `test_cms_sign_verify` (examples/p25-iki/test_iki.py) [test] — Function test_cms_sign_verify takes no inputs beyond the value it is called on.
-- function `test_full_exchange` (examples/p25-iki/test_iki.py) [test] — Function test_full_exchange takes no inputs beyond the value it is called on.
-- function `test_hkdf_directions` (examples/p25-iki/test_iki.py) [test] — Function test_hkdf_directions takes no inputs beyond the value it is called on.
-- function `test_keywrap` (examples/p25-iki/test_iki.py) [test] — Function test_keywrap takes no inputs beyond the value it is called on.
-- function `test_slice_against_corpus` (examples/p25-iki/test_iki.py) [test] — Function test_slice_against_corpus takes no inputs beyond the value it is called on.
-- function `test_store_at_rest` (examples/p25-iki/test_iki.py) [test] — Function test_store_at_rest takes no inputs beyond the value it is called on.
+Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.
+
+- function `check` (examples/p25-iki/demo.py:41) — Function check takes label: str, ok: bool and gives back nothing; it does its work on what it is given.
+- function `main` (examples/p25-iki/demo.py:96) — Function main takes no inputs beyond the value it is called on, and gives back int:.
+- function `run_demo` (examples/p25-iki/demo.py:27) — Function run_demo takes base: Path = RUN_DIR, verbose: bool = True and gives back dict:.
+- function `say` (examples/p25-iki/demo.py:28) — Function say takes msg: str and gives back nothing; it does its work on what it is given.
+- function `__init__` (examples/p25-iki/iki_server.py:184) — Function __init__ takes self, path: Path, actor: str and gives back nothing; it does its work on what it is given.
+- function `__init__` (examples/p25-iki/iki_server.py:226) — Function __init__ takes self, db_path: Path, master_key: bytes and gives back nothing; it does its work on what it is gi
+- function `__init__` (examples/p25-iki/iki_server.py:315) — Function __init__ takes self, name: str, workdir: Path, ca: dict and gives back nothing; it does its work on what it is 
+- function `append` (examples/p25-iki/iki_server.py:195) — Function append takes self, event: str, details: dict and gives back dict:.
+- function `b64d` (examples/p25-iki/iki_server.py:75) — Function b64d takes s: str and gives back bytes:.
+- function `b64e` (examples/p25-iki/iki_server.py:71) — Function b64e takes b: bytes and gives back str:.
+- function `canonical` (examples/p25-iki/iki_server.py:66) — Deterministic JSON encoding used for everything that gets signed.
+- function `cms_sign_detached` (examples/p25-iki/iki_server.py:154) — Detached CMS SignedData (DER) over `data`, signed by the KMF identity.
+- function `cms_verify_detached` (examples/p25-iki/iki_server.py:165) — Verify a detached CMS signature against the test CA using OpenSSL.
+- function `create_key` (examples/p25-iki/iki_server.py:331) — Function create_key takes self, key_id: int, alg_id: int = ALG_AES_256 and gives back bytes:.
+- function `directional_kek` (examples/p25-iki/iki_server.py:283) — HKDF (RFC 5869): derive the src->dst wrap key from the pairwise root.
+- function `do_GET` (examples/p25-iki/iki_server.py:450) — Function do_GET takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is
+- function `do_POST` (examples/p25-iki/iki_server.py:456) — Function do_POST takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it i
+- function `export_keyset` (examples/p25-iki/iki_server.py:343) — Function export_keyset takes self, peer: "KMF", key_ids: list[int], and gives back nothing; it does its work on what it 
+- function `get_key` (examples/p25-iki/iki_server.py:261) — Function get_key takes self, owner: str, key_id: int, alg_id: int and gives back bytes | None:.
+- function `get_receipt` (examples/p25-iki/iki_server.py:301) — Function get_receipt takes self, exchange_id: str and gives back dict | None:.
+- function `handle_exchange` (examples/p25-iki/iki_server.py:384) — Function handle_exchange takes self, manifest_bytes: bytes, signature: bytes, and gives back nothing; it does its work o
+- function `list_keys` (examples/p25-iki/iki_server.py:269) — Function list_keys takes self, owner: str and gives back list[dict]:.
+- function `log_message` (examples/p25-iki/iki_server.py:447) — Function log_message takes self, *args and gives back nothing; it does its work on what it is given.
+- function `make_ca` (examples/p25-iki/iki_server.py:87) — Create a self-signed test CA.
+- function `make_kmf_identity` (examples/p25-iki/iki_server.py:110) — Issue a KMF identity certificate (server + client + signing use).
+- function `provision_peer` (examples/p25-iki/iki_server.py:276) — Function provision_peer takes self, peer: str, root_secret: bytes and gives back None:.
+- function `provision_peer` (examples/p25-iki/iki_server.py:338) — Function provision_peer takes self, peer_name: str, root_secret: bytes and gives back None:.
+- function `put_key` (examples/p25-iki/iki_server.py:252) — Function put_key takes self, owner: str, key_id: int, alg_id: int, and gives back nothing; it does its work on what it i
+- function `put_receipt` (examples/p25-iki/iki_server.py:294) — Function put_receipt takes self, exchange_id: str, receipt: dict, signature: bytes and gives back None:.
+- function `start` (examples/p25-iki/iki_server.py:443) — Function start takes no inputs beyond the value it is called on, and gives back None:.
+- function `stop` (examples/p25-iki/iki_server.py:488) — Function stop takes no inputs beyond the value it is called on, and gives back None:.
+- function `utcnow` (examples/p25-iki/iki_server.py:62) — Function utcnow takes no inputs beyond the value it is called on, and gives back str:.
+- function `verify_chain` (examples/p25-iki/iki_server.py:207) — Function verify_chain takes path: Path and gives back bool:.
+- function `check` (examples/p25-iki/test_iki.py:32) — Function check takes label: str, ok: bool, extra: str = "" and gives back nothing; it does its work on what it is given.
+- function `main` (examples/p25-iki/test_iki.py:126) — Function main takes no inputs beyond the value it is called on, and gives back int:.
+- function `test_cms_sign_verify` (examples/p25-iki/test_iki.py:105) — Function test_cms_sign_verify takes no inputs beyond the value it is called on, and gives back nothing; it does its work
+- function `test_full_exchange` (examples/p25-iki/test_iki.py:118) — Function test_full_exchange takes no inputs beyond the value it is called on, and gives back nothing; it does its work o
+- function `test_hkdf_directions` (examples/p25-iki/test_iki.py:79) — Function test_hkdf_directions takes no inputs beyond the value it is called on, and gives back nothing; it does its work
+- function `test_keywrap` (examples/p25-iki/test_iki.py:66) — Function test_keywrap takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what
+- function `test_slice_against_corpus` (examples/p25-iki/test_iki.py:49) — Function test_slice_against_corpus takes no inputs beyond the value it is called on, and gives back nothing; it does its
+- function `test_store_at_rest` (examples/p25-iki/test_iki.py:91) — Function test_store_at_rest takes no inputs beyond the value it is called on, and gives back nothing; it does its work o
+
+## function — check
+
+Found in examples/p25-iki/demo.py at line 41.
+
+Signature: `def check(label: str, ok: bool):`
+
+What it does: Function check takes label: str, ok: bool and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — main
+
+Found in examples/p25-iki/demo.py at line 96.
+
+Signature: `def main() -> int:`
+
+What it does: Function main takes no inputs beyond the value it is called on, and gives back int:.
+
+(Where these words came from: signature.)
+
+## function — run_demo
+
+Found in examples/p25-iki/demo.py at line 27.
+
+Signature: `def run_demo(base: Path = RUN_DIR, verbose: bool = True) -> dict:`
+
+What it does: Function run_demo takes base: Path = RUN_DIR, verbose: bool = True and gives back dict:.
+
+(Where these words came from: signature.)
+
+## function — say
+
+Found in examples/p25-iki/demo.py at line 28.
+
+Signature: `def say(msg: str):`
+
+What it does: Function say takes msg: str and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — __init__
+
+Found in examples/p25-iki/iki_server.py at line 184.
+
+Signature: `def __init__(self, path: Path, actor: str):`
+
+What it does: Function __init__ takes self, path: Path, actor: str and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — __init__
+
+Found in examples/p25-iki/iki_server.py at line 226.
+
+Signature: `def __init__(self, db_path: Path, master_key: bytes):`
+
+What it does: Function __init__ takes self, db_path: Path, master_key: bytes and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — __init__
+
+Found in examples/p25-iki/iki_server.py at line 315.
+
+Signature: `def __init__(self, name: str, workdir: Path, ca: dict):`
+
+What it does: Function __init__ takes self, name: str, workdir: Path, ca: dict and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — append
+
+Found in examples/p25-iki/iki_server.py at line 195.
+
+Signature: `def append(self, event: str, details: dict) -> dict:`
+
+What it does: Function append takes self, event: str, details: dict and gives back dict:.
+
+(Where these words came from: signature.)
+
+## function — b64d
+
+Found in examples/p25-iki/iki_server.py at line 75.
+
+Signature: `def b64d(s: str) -> bytes:`
+
+What it does: Function b64d takes s: str and gives back bytes:.
+
+(Where these words came from: signature.)
+
+## function — b64e
+
+Found in examples/p25-iki/iki_server.py at line 71.
+
+Signature: `def b64e(b: bytes) -> str:`
+
+What it does: Function b64e takes b: bytes and gives back str:.
+
+(Where these words came from: signature.)
+
+## function — canonical
+
+Found in examples/p25-iki/iki_server.py at line 66.
+
+Signature: `def canonical(obj) -> bytes:`
+
+What it does: Deterministic JSON encoding used for everything that gets signed.
+
+(Where these words came from: doc comment.)
+
+## function — cms_sign_detached
+
+Found in examples/p25-iki/iki_server.py at line 154.
+
+Signature: `def cms_sign_detached(data: bytes, identity: dict) -> bytes:`
+
+What it does: Detached CMS SignedData (DER) over `data`, signed by the KMF identity.
+
+(Where these words came from: doc comment.)
+
+## function — cms_verify_detached
+
+Found in examples/p25-iki/iki_server.py at line 165.
+
+Signature: `def cms_verify_detached(data: bytes, der_sig: bytes, ca_pem: Path) -> bool:`
+
+What it does: Verify a detached CMS signature against the test CA using OpenSSL.
+
+(Where these words came from: doc comment.)
+
+## function — create_key
+
+Found in examples/p25-iki/iki_server.py at line 331.
+
+Signature: `def create_key(self, key_id: int, alg_id: int = ALG_AES_256) -> bytes:`
+
+What it does: Function create_key takes self, key_id: int, alg_id: int = ALG_AES_256 and gives back bytes:.
+
+(Where these words came from: signature.)
+
+## function — directional_kek
+
+Found in examples/p25-iki/iki_server.py at line 283.
+
+Signature: `def directional_kek(self, peer: str, src: str, dst: str) -> bytes:`
+
+What it does: HKDF (RFC 5869): derive the src->dst wrap key from the pairwise root.
+
+(Where these words came from: doc comment.)
+
+## function — do_GET
+
+Found in examples/p25-iki/iki_server.py at line 450.
+
+Signature: `def do_GET(self):`
+
+What it does: Function do_GET takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — do_POST
+
+Found in examples/p25-iki/iki_server.py at line 456.
+
+Signature: `def do_POST(self):`
+
+What it does: Function do_POST takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — export_keyset
+
+Found in examples/p25-iki/iki_server.py at line 343.
+
+Signature: `def export_keyset(self, peer: "KMF", key_ids: list[int],`
+
+What it does: Function export_keyset takes self, peer: "KMF", key_ids: list[int], and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — get_key
+
+Found in examples/p25-iki/iki_server.py at line 261.
+
+Signature: `def get_key(self, owner: str, key_id: int, alg_id: int) -> bytes | None:`
+
+What it does: Function get_key takes self, owner: str, key_id: int, alg_id: int and gives back bytes | None:.
+
+(Where these words came from: signature.)
+
+## function — get_receipt
+
+Found in examples/p25-iki/iki_server.py at line 301.
+
+Signature: `def get_receipt(self, exchange_id: str) -> dict | None:`
+
+What it does: Function get_receipt takes self, exchange_id: str and gives back dict | None:.
+
+(Where these words came from: signature.)
+
+## function — handle_exchange
+
+Found in examples/p25-iki/iki_server.py at line 384.
+
+Signature: `def handle_exchange(self, manifest_bytes: bytes, signature: bytes,`
+
+What it does: Function handle_exchange takes self, manifest_bytes: bytes, signature: bytes, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — list_keys
+
+Found in examples/p25-iki/iki_server.py at line 269.
+
+Signature: `def list_keys(self, owner: str) -> list[dict]:`
+
+What it does: Function list_keys takes self, owner: str and gives back list[dict]:.
+
+(Where these words came from: signature.)
+
+## function — log_message
+
+Found in examples/p25-iki/iki_server.py at line 447.
+
+Signature: `def log_message(self, *args): # keep test output clean`
+
+What it does: Function log_message takes self, *args and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — make_ca
+
+Found in examples/p25-iki/iki_server.py at line 87.
+
+Signature: `def make_ca(workdir: Path, cn: str = "IKI Test CA") -> dict:`
+
+What it does: Create a self-signed test CA. Returns paths + objects.
+
+(Where these words came from: doc comment.)
+
+## function — make_kmf_identity
+
+Found in examples/p25-iki/iki_server.py at line 110.
+
+Signature: `def make_kmf_identity(workdir: Path, name: str, ca: dict) -> dict:`
+
+What it does: Issue a KMF identity certificate (server + client + signing use).
+
+(Where these words came from: doc comment.)
+
+## function — provision_peer
+
+Found in examples/p25-iki/iki_server.py at line 276.
+
+Signature: `def provision_peer(self, peer: str, root_secret: bytes) -> None:`
+
+What it does: Function provision_peer takes self, peer: str, root_secret: bytes and gives back None:.
+
+(Where these words came from: signature.)
+
+## function — provision_peer
+
+Found in examples/p25-iki/iki_server.py at line 338.
+
+Signature: `def provision_peer(self, peer_name: str, root_secret: bytes) -> None:`
+
+What it does: Function provision_peer takes self, peer_name: str, root_secret: bytes and gives back None:.
+
+(Where these words came from: signature.)
+
+## function — put_key
+
+Found in examples/p25-iki/iki_server.py at line 252.
+
+Signature: `def put_key(self, owner: str, key_id: int, alg_id: int,`
+
+What it does: Function put_key takes self, owner: str, key_id: int, alg_id: int, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — put_receipt
+
+Found in examples/p25-iki/iki_server.py at line 294.
+
+Signature: `def put_receipt(self, exchange_id: str, receipt: dict, signature: bytes) -> None:`
+
+What it does: Function put_receipt takes self, exchange_id: str, receipt: dict, signature: bytes and gives back None:.
+
+(Where these words came from: signature.)
+
+## function — start
+
+Found in examples/p25-iki/iki_server.py at line 443.
+
+Signature: `def start(self) -> None:`
+
+What it does: Function start takes no inputs beyond the value it is called on, and gives back None:.
+
+(Where these words came from: signature.)
+
+## function — stop
+
+Found in examples/p25-iki/iki_server.py at line 488.
+
+Signature: `def stop(self) -> None:`
+
+What it does: Function stop takes no inputs beyond the value it is called on, and gives back None:.
+
+(Where these words came from: signature.)
+
+## function — utcnow
+
+Found in examples/p25-iki/iki_server.py at line 62.
+
+Signature: `def utcnow() -> str:`
+
+What it does: Function utcnow takes no inputs beyond the value it is called on, and gives back str:.
+
+(Where these words came from: signature.)
+
+## function — verify_chain
+
+Found in examples/p25-iki/iki_server.py at line 207.
+
+Signature: `def verify_chain(path: Path) -> bool:`
+
+What it does: Function verify_chain takes path: Path and gives back bool:.
+
+(Where these words came from: signature.)
+
+## function — check
+
+Found in examples/p25-iki/test_iki.py at line 32.
+
+Signature: `def check(label: str, ok: bool, extra: str = ""):`
+
+What it does: Function check takes label: str, ok: bool, extra: str = "" and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — main
+
+Found in examples/p25-iki/test_iki.py at line 126.
+
+Signature: `def main() -> int:`
+
+What it does: Function main takes no inputs beyond the value it is called on, and gives back int:.
+
+(Where these words came from: signature.)
+
+## function — test_cms_sign_verify
+
+Found in examples/p25-iki/test_iki.py at line 105.
+
+Signature: `def test_cms_sign_verify():`
+
+What it does: Function test_cms_sign_verify takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_full_exchange
+
+Found in examples/p25-iki/test_iki.py at line 118.
+
+Signature: `def test_full_exchange():`
+
+What it does: Function test_full_exchange takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_hkdf_directions
+
+Found in examples/p25-iki/test_iki.py at line 79.
+
+Signature: `def test_hkdf_directions():`
+
+What it does: Function test_hkdf_directions takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_keywrap
+
+Found in examples/p25-iki/test_iki.py at line 66.
+
+Signature: `def test_keywrap():`
+
+What it does: Function test_keywrap takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_slice_against_corpus
+
+Found in examples/p25-iki/test_iki.py at line 49.
+
+Signature: `def test_slice_against_corpus():`
+
+What it does: Function test_slice_against_corpus takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_store_at_rest
+
+Found in examples/p25-iki/test_iki.py at line 91.
+
+Signature: `def test_store_at_rest():`
+
+What it does: Function test_store_at_rest takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## Provenance
+
+This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/rfcbox/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.

@@ -1,3 +1,4 @@
+delta-format 3
 Commit ee7f9577f94f by Will Bickford <wbic16@gmail.com> on 2026-11-14 (EE 0).
 
 Subject: Initial commit
@@ -10,100 +11,204 @@ commit ee7f9577f94fdff3a5143cd9f918dcef9037f68f
 parent none
 author Will Bickford <wbic16@gmail.com>
 date 1794637356 2026-11-14
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/teixml-to-mutable.git
+branch exo
 author+ Will Bickford <wbic16@gmail.com>
 Commit 3a23d1c2a379 by Will Bickford <wbic16@gmail.com> on 2026-11-14 (EE 0).
 
 Subject: Merge pull request #1 from wbic16/emise/0.1-raw-phext
 
-Public items: 41 added, 0 removed, 0 changed. Dependencies: libphext added at 0.6.0; memmap2 added at 0.9; quick-xml added at 0.38; sha2 added at 0.10. Code lines after this commit: 1256.
+Public items: 42 added, 0 removed, 0 changed. Dependencies: libphext [dependencies] added at 0.6.0; memmap2 [dependencies] added at 0.9; quick-xml [dependencies] added at 0.38; sha2 [dependencies] added at 0.10. Code lines after this commit: 1422.
 
 commit 3a23d1c2a37987f44b03c2bb961b33252e8ce916
 parent ee7f9577f94fdff3a5143cd9f918dcef9037f68f
 author Will Bickford <wbic16@gmail.com>
 date 1794640500 2026-11-14
-dep+ Cargo.toml :: libphext :: 0.6.0
-dep+ Cargo.toml :: memmap2 :: 0.9
-dep+ Cargo.toml :: quick-xml :: 0.38
-dep+ Cargo.toml :: sha2 :: 0.10
-item+ struct src/lib.rs :: ChainReader :: pub struct ChainReader { ::  :: awaiting :: api
-item+ function src/lib.rs :: ChainReader::get :: pub fn get(&self, universe: usize, coord: &phext::Coordinate) -> Option<&str> { :: Function ChainReader::get takes &self, universe: usize, coord: &phext::Coordinate. It gives back Option<&str>. :: inferred :: api
-item+ function src/lib.rs :: ChainReader::member :: pub fn member(&self, universe: usize) -> Option<&str> { :: Function ChainReader::member takes &self, universe: usize. It gives back Option<&str>. :: inferred :: api
-item+ function src/lib.rs :: ChainReader::member_count :: pub fn member_count(&self) -> usize { :: Function ChainReader::member_count takes no inputs beyond the value it is called on. It gives back usize. :: inferred :: api
-item+ function src/lib.rs :: ChainReader::open :: pub fn open(path: &Path) -> Result<ChainReader, String> { :: Function ChainReader::open takes path: &Path. It gives back Result<ChainReader, String>. :: inferred :: api
-item+ function src/lib.rs :: ChainReader::scrolls_of :: pub fn scrolls_of(&self, universe: usize) -> Vec<(usize, String)> { :: Scrolls of a universe as (scroll number, content), in scroll order. :: direct :: api
-item+ struct src/lib.rs :: ChainWriter :: pub struct ChainWriter { :: Streaming chain writer (WAL write path): members are appended in order, previously written bytes are never touched; the chain-close byte is written last. Byte layout is identical to libphext `Chain::serialize` (verified by a test). :: direct :: api
-item+ function src/lib.rs :: ChainWriter::close :: pub fn close(mut self) -> Result<(), String> { :: Function ChainWriter::close takes mut self. It gives back Result<(), String>. :: inferred :: api
-item+ function src/lib.rs :: ChainWriter::create :: pub fn create(path: &Path) -> Result<ChainWriter, String> { :: Function ChainWriter::create takes path: &Path. It gives back Result<ChainWriter, String>. :: inferred :: api
-item+ function src/lib.rs :: ChainWriter::write_member :: pub fn write_member(&mut self, member: &str) -> Result<(), String> { :: Function ChainWriter::write_member takes &mut self, member: &str. It gives back Result<(), String>. :: inferred :: api
-item+ struct src/lib.rs :: ConversionSummary :: pub struct ConversionSummary { :: A data shape named ConversionSummary. Its fields are: pub entries: Vec<FileEntry>; pub members_written: usize; pub out_bytes: u64. :: inferred :: api
-item+ struct src/lib.rs :: Element :: pub struct Element { :: A data shape named Element. Its fields are: pub ns: String; pub name: String; pub attrs: Vec<(String, String)>; pub children: Vec<Node>. :: inferred :: api
-item+ function src/lib.rs :: Element::is_container :: pub fn is_container(&self) -> bool { :: Function Element::is_container takes no inputs beyond the value it is called on. It gives back bool. :: inferred :: api
-item+ function src/lib.rs :: Element::text_nodes :: pub fn text_nodes(&self, out: &mut Vec<String>) { :: All text nodes of this element's subtree, in document order. :: direct :: api
-item+ const src/lib.rs :: FORMAT_VERSION :: pub const FORMAT_VERSION: &str = "0.1"; :: A fixed value named FORMAT_VERSION, set to "0.1". :: inferred :: api
-item+ struct src/lib.rs :: FileEntry :: pub struct FileEntry { :: A data shape named FileEntry. Its fields are: pub rel: String; pub sha256: String; pub size: usize; pub class: StorageClass; pub original_scroll: usize; pub first_universe: Option<usize>; pub error: Option<String>. :: inferred :: api
-item+ struct src/lib.rs :: IndexEntry :: pub struct IndexEntry { :: A data shape named IndexEntry. Its fields are: pub rel: String; pub sha256: String; pub size: usize; pub class: String; pub coord: phext::Coordinate; pub universe: Option<usize>. :: inferred :: api
-item+ enum src/lib.rs :: Node :: pub enum Node { :: A named choice named Node. It is one of: Text; Elem. :: inferred :: api
-item+ enum src/lib.rs :: StorageClass :: pub enum StorageClass { :: A named choice named StorageClass. It is one of: Text; Binary. :: inferred :: api
-item+ function src/lib.rs :: StorageClass::as_str :: pub fn as_str(&self) -> &'static str { :: Function StorageClass::as_str takes no inputs beyond the value it is called on. It gives back &'static str. :: inferred :: api
-item+ struct src/lib.rs :: VerifyReport :: pub struct VerifyReport { :: A data shape named VerifyReport. Its fields are: pub members: usize; pub files: usize; pub failures: usize; pub originals_verified: usize; pub refs_total: usize; pub dangling_refs: Vec<usize>; pub unreachable_universes: Vec<usize>; pub text_mismatches: Vec<String>. :: inferred :: api
-item+ function src/lib.rs :: append_member :: pub fn append_member(path: &Path, member: &str) -> Result<(), String> { :: Append one member universe to an existing closed chain (WAL append): every previously written member byte is left untouched; only the old chain-close byte is overwritten by the separator+member+close sequence. :: direct :: api
-item+ function src/lib.rs :: classify :: pub fn classify(bytes: &[u8]) -> StorageClass { :: Function classify takes bytes: &[u8]. It gives back StorageClass. :: inferred :: api
-item+ function src/lib.rs :: collect_xml_files :: pub fn collect_xml_files(dir: &Path) -> Result<Vec<PathBuf>, String> { :: Function collect_xml_files takes dir: &Path. It gives back Result<Vec<PathBuf>, String>. :: inferred :: api
-item+ function src/lib.rs :: convert_dir :: pub fn convert_dir(dir: &Path, out: &Path) -> Result<ConversionSummary, String> { :: Function convert_dir takes dir: &Path, out: &Path. It gives back Result<ConversionSummary, String>. :: inferred :: api
-item+ function src/lib.rs :: coord :: pub fn coord(scroll: usize) -> phext::Coordinate { :: Function coord takes scroll: usize. It gives back phext::Coordinate. :: inferred :: api
-item+ function src/lib.rs :: extract_original :: pub fn extract_original(reader: &ChainReader, rel: &str) -> Result<Vec<u8>, String> { :: Extract one original back out of $1, verifying its SHA-256. :: direct :: api
-item+ function src/lib.rs :: parse_index :: pub fn parse_index(scroll: &str) -> (Vec<IndexEntry>, Vec<(String, String)>) { :: Function parse_index takes scroll: &str. It gives back (Vec<IndexEntry>, Vec<(String, String)>). :: inferred :: api
-item+ function src/lib.rs :: parse_subspace :: pub fn parse_subspace(addr: &str) -> Result<(usize, phext::Coordinate), String> { :: Parse a `$N:1.1.1/1.1.1/1.1.1` subspace address. :: direct :: api
-item+ function src/lib.rs :: parse_xml :: pub fn parse_xml(bytes: &[u8]) -> Result<Element, String> { :: Parse one XML document (bytes) into an Element tree. Namespace URIs are resolved with a prefix-scope stack; attributes keep their qualified names as written. Comments, PIs, declarations and DOCTYPE are not represented (the original is preserved verbatim in $1). :: direct :: api
-item+ function src/lib.rs :: rel_of :: pub fn rel_of(base: &Path, p: &Path) -> String { :: Function rel_of takes base: &Path, p: &Path. It gives back String. :: inferred :: api
-item+ function src/lib.rs :: renumber_refs :: pub fn renumber_refs(member: &str, offset: usize) -> String { :: Rewrite every `@ref $k` scroll in a member from local to global numbering by adding `offset` (the file's first-universe number − 1). Goes through libphext explode/implode — no delimiter handling here. :: direct :: api
-item+ function src/lib.rs :: scroll_number :: pub fn scroll_number(c: &phext::Coordinate) -> usize { :: Function scroll_number takes c: &phext::Coordinate. It gives back usize. :: inferred :: api
-item+ function src/lib.rs :: sha256_hex :: pub fn sha256_hex(bytes: &[u8]) -> String { :: Function sha256_hex takes bytes: &[u8]. It gives back String. :: inferred :: api
-item+ function src/lib.rs :: universe_text_and_refs :: pub fn universe_text_and_refs(reader: &ChainReader, root_universe: usize) -> (Vec<String>, Vec<usize>) { :: Walk one converted universe subtree: collect (text nodes, refs followed). Mirrors the encoder's grammar exactly. :: direct :: api
-item+ function src/lib.rs :: verify :: pub fn verify(chain: &Path, corpus_dir: Option<&Path>) -> Result<VerifyReport, String> { :: Function verify takes chain: &Path, corpus_dir: Option<&Path>. It gives back Result<VerifyReport, String>. :: inferred :: api
-item+ command src/main.rs :: convert :: command "convert" :: A command named convert. The program runs it when the user types this word on the command line. :: inferred :: api
-item+ command src/main.rs :: extract :: command "extract" :: A command named extract. The program runs it when the user types this word on the command line. :: inferred :: api
-item+ entry-point src/main.rs :: main :: fn main() -> ExitCode { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: inferred :: api
-item+ command src/main.rs :: show :: command "show" :: A command named show. The program runs it when the user types this word on the command line. :: inferred :: api
-item+ command src/main.rs :: verify :: command "verify" :: A command named verify. The program runs it when the user types this word on the command line. :: inferred :: api
-stat Markdown files 1 total 51 blank 10 comment 0 code 41
-stat Rust files 5 total 1359 blank 65 comment 90 code 1204
-stat TOML files 1 total 12 blank 1 comment 0 code 11
+dep+ Cargo.toml :: libphext [dependencies] :: 0.6.0
+dep+ Cargo.toml :: memmap2 [dependencies] :: 0.9
+dep+ Cargo.toml :: quick-xml [dependencies] :: 0.38
+dep+ Cargo.toml :: sha2 [dependencies] :: 0.10
+depmeta Cargo.toml :: Rust (cargo) :: MIT :: 17
+item+ const src/lib.rs :: FORMAT_VERSION :: pub const FORMAT_VERSION: &str = "0.1"; :: A fixed value named FORMAT_VERSION, set to "0.1". :: signature :: 14 :: 0
+item+ enum src/lib.rs :: Node :: pub enum Node { :: A named choice named Node. It is one of: Text; Elem. :: signature :: 38 :: 0
+item+ enum src/lib.rs :: StorageClass :: pub enum StorageClass { :: A named choice named StorageClass. It is one of: Text; Binary. :: signature :: 198 :: 0
+item+ function src/lib.rs :: ChainReader::open :: pub fn open(path: &Path) -> Result<ChainReader, String> { :: Function ChainReader::open takes path: &Path and gives back Result<ChainReader, String>. :: signature :: 543 :: 0
+item+ function src/lib.rs :: ChainWriter::create :: pub fn create(path: &Path) -> Result<ChainWriter, String> { :: Function ChainWriter::create takes path: &Path and gives back Result<ChainWriter, String>. :: signature :: 294 :: 0
+item+ function src/lib.rs :: Element::is_container :: pub fn is_container(&self) -> bool { :: Function Element::is_container takes no inputs beyond the value it is called on, and gives back bool. :: signature :: 53 :: 0
+item+ function src/lib.rs :: StorageClass::as_str :: pub fn as_str(&self) -> &'static str { :: Function StorageClass::as_str takes no inputs beyond the value it is called on, and gives back &'static str. :: signature :: 203 :: 0
+item+ function src/lib.rs :: append_member :: pub fn append_member(path: &Path, member: &str) -> Result<(), String> { :: Append one member universe to an existing closed chain (WAL append): every previously written member byte is left untouched; only the old chain-close byte is overwritten by the separator+member+close sequence. :: doc comment :: 316 :: 1
+item+ function src/lib.rs :: classify :: pub fn classify(bytes: &[u8]) -> StorageClass { :: Function classify takes bytes: &[u8] and gives back StorageClass. :: signature :: 211 :: 0
+item+ function src/lib.rs :: close :: pub fn close(mut self) -> Result<(), String> { :: Function close takes mut self and gives back Result<(), String>. :: signature :: 306 :: 0
+item+ function src/lib.rs :: collect_xml_files :: pub fn collect_xml_files(dir: &Path) -> Result<Vec<PathBuf>, String> { :: Function collect_xml_files takes dir: &Path and gives back Result<Vec<PathBuf>, String>. :: signature :: 237 :: 0
+item+ function src/lib.rs :: convert_dir :: pub fn convert_dir(dir: &Path, out: &Path) -> Result<ConversionSummary, String> { :: Function convert_dir takes dir: &Path, out: &Path and gives back Result<ConversionSummary, String>. :: signature :: 390 :: 0
+item+ function src/lib.rs :: coord :: pub fn coord(scroll: usize) -> phext::Coordinate { :: Function coord takes scroll: usize and gives back phext::Coordinate. :: signature :: 30 :: 0
+item+ function src/lib.rs :: extract_original :: pub fn extract_original(reader: &ChainReader, rel: &str) -> Result<Vec<u8>, String> { :: Extract one original back out of $1, verifying its SHA-256. :: doc comment :: 723 :: 1
+item+ function src/lib.rs :: get :: pub fn get(&self, universe: usize, coord: &phext::Coordinate) -> Option<&str> { :: Function get takes &self, universe: usize, coord: &phext::Coordinate and gives back Option<&str>. :: signature :: 644 :: 0
+item+ function src/lib.rs :: member :: pub fn member(&self, universe: usize) -> Option<&str> { :: Function member takes &self, universe: usize and gives back Option<&str>. :: signature :: 640 :: 0
+item+ function src/lib.rs :: member_count :: pub fn member_count(&self) -> usize { :: Function member_count takes no inputs beyond the value it is called on, and gives back usize. :: signature :: 637 :: 0
+item+ function src/lib.rs :: parse_index :: pub fn parse_index(scroll: &str) -> (Vec<IndexEntry>, Vec<(String, String)>) { :: Function parse_index takes scroll: &str and gives back (Vec<IndexEntry>, Vec<(String, String)>). :: signature :: 692 :: 0
+item+ function src/lib.rs :: parse_subspace :: pub fn parse_subspace(addr: &str) -> Result<(usize, phext::Coordinate), String> { :: Parse a `$N:1.1.1/1.1.1/1.1.1` subspace address. :: doc comment :: 672 :: 1
+item+ function src/lib.rs :: parse_xml :: pub fn parse_xml(bytes: &[u8]) -> Result<Element, String> { :: Parse one XML document (bytes) into an Element tree. Namespace URIs are resolved with a prefix-scope stack; attributes keep their qualified names as written. Comments, PIs, declarations and DOCTYPE are not represented (the original is preserved verbatim in $1). :: doc comment :: 77 :: 1
+item+ function src/lib.rs :: rel_of :: pub fn rel_of(base: &Path, p: &Path) -> String { :: Function rel_of takes base: &Path, p: &Path and gives back String. :: signature :: 263 :: 0
+item+ function src/lib.rs :: renumber_refs :: pub fn renumber_refs(member: &str, offset: usize) -> String { :: Rewrite every `@ref $k` scroll in a member from local to global numbering by adding `offset` (the file's first-universe number − 1). Goes through libphext explode/implode — no delimiter handling here. :: doc comment :: 467 :: 1
+item+ function src/lib.rs :: scroll_number :: pub fn scroll_number(c: &phext::Coordinate) -> usize { :: Function scroll_number takes c: &phext::Coordinate and gives back usize. :: signature :: 663 :: 0
+item+ function src/lib.rs :: scrolls_of :: pub fn scrolls_of(&self, universe: usize) -> Vec<(usize, String)> { :: Scrolls of a universe as (scroll number, content), in scroll order. :: doc comment :: 649 :: 1
+item+ function src/lib.rs :: sha256_hex :: pub fn sha256_hex(bytes: &[u8]) -> String { :: Function sha256_hex takes bytes: &[u8] and gives back String. :: signature :: 21 :: 0
+item+ function src/lib.rs :: text_nodes :: pub fn text_nodes(&self, out: &mut Vec<String>) { :: All text nodes of this element's subtree, in document order. :: doc comment :: 57 :: 1
+item+ function src/lib.rs :: universe_text_and_refs :: pub fn universe_text_and_refs(reader: &ChainReader, root_universe: usize) -> (Vec<String>, Vec<usize>) { :: Walk one converted universe subtree: collect (text nodes, refs followed). Mirrors the encoder's grammar exactly. :: doc comment :: 771 :: 1
+item+ function src/lib.rs :: verify :: pub fn verify(chain: &Path, corpus_dir: Option<&Path>) -> Result<VerifyReport, String> { :: Function verify takes chain: &Path, corpus_dir: Option<&Path> and gives back Result<VerifyReport, String>. :: signature :: 846 :: 0
+item+ function src/lib.rs :: write_member :: pub fn write_member(&mut self, member: &str) -> Result<(), String> { :: Function write_member takes &mut self, member: &str and gives back Result<(), String>. :: signature :: 298 :: 0
+item+ struct src/lib.rs :: ChainReader :: pub struct ChainReader { :: A data shape named ChainReader. The scanner did not read its fields. :: signature :: 536 :: 0
+item+ struct src/lib.rs :: ChainWriter :: pub struct ChainWriter { :: Streaming chain writer (WAL write path): members are appended in order, previously written bytes are never touched; the chain-close byte is written last. Byte layout is identical to libphext `Chain::serialize` (verified by a test). :: doc comment :: 288 :: 1
+item+ struct src/lib.rs :: ConversionSummary :: pub struct ConversionSummary { :: A data shape named ConversionSummary. Its fields are: pub entries: Vec<FileEntry>; pub members_written: usize; pub out_bytes: u64. :: signature :: 231 :: 0
+item+ struct src/lib.rs :: Element :: pub struct Element { :: A data shape named Element. Its fields are: pub ns: String; pub name: String; pub attrs: Vec<(String, String)>; pub children: Vec<Node>. :: signature :: 44 :: 0
+item+ struct src/lib.rs :: FileEntry :: pub struct FileEntry { :: A data shape named FileEntry. Its fields are: pub rel: String; pub sha256: String; pub size: usize; pub class: StorageClass; pub original_scroll: usize; pub first_universe: Option<usize>; pub error: Option<String>. :: signature :: 219 :: 0
+item+ struct src/lib.rs :: IndexEntry :: pub struct IndexEntry { :: A data shape named IndexEntry. Its fields are: pub rel: String; pub sha256: String; pub size: usize; pub class: String; pub coord: phext::Coordinate; pub universe: Option<usize>. :: signature :: 683 :: 0
+item+ struct src/lib.rs :: VerifyReport :: pub struct VerifyReport { :: A data shape named VerifyReport. Its fields are: pub members: usize; pub files: usize; pub failures: usize; pub originals_verified: usize; pub refs_total: usize; pub dangling_refs: Vec<usize>; pub unreachable_universes: Vec<usize>; pub text_mismatches: Vec<String>. :: signature :: 835 :: 0
+item+ command src/main.rs :: convert :: command "convert" :: A command named convert. The program runs it when the user types this word on the command line. :: signature :: 27 :: 0
+item+ command src/main.rs :: extract :: command "extract" :: A command named extract. The program runs it when the user types this word on the command line. :: signature :: 66 :: 0
+item+ command src/main.rs :: show :: command "show" :: A command named show. The program runs it when the user types this word on the command line. :: signature :: 100 :: 0
+item+ command src/main.rs :: verify :: command "verify" :: A command named verify. The program runs it when the user types this word on the command line. :: signature :: 129 :: 0
+item+ entry-point src/main.rs :: main :: fn main() -> ExitCode { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: signature :: 21 :: 0
+item+ flag src/main.rs :: --corpus :: flag --corpus :: A command line flag, --corpus. It is read by the program when the user passes it. :: signature :: 134 :: 0
+quality 8 4 0 0
+fncount 55
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/teixml-to-mutable.git
+branch exo
+stat Markdown files 1 total 51 blank 0 comment 0 code 51
+stat Rust files 5 total 1359 blank 0 comment 0 code 1359
+stat TOML files 1 total 12 blank 0 comment 0 code 12
 author~ Will Bickford <wbic16@gmail.com> commits 2
 Commit 8a4c4b2960c9 by Will Bickford <wbic16@gmail.com> on 2026-11-14 (EE 0).
 
 Subject: Merge pull request #2 from wbic16/emise/0.2-mutable
 
-Public items: 12 added, 0 removed, 0 changed. Dependencies: rand added at 0.8; rusqlite added at 0.32; zip added at 2. Code lines after this commit: 2435.
+Public items: 54 added, 42 removed, 0 changed. Dependencies: rand [dependencies] added at 0.8; rusqlite [dependencies] added at 0.32; rusqlite [dev-dependencies] added at 0.32; zip [dependencies] added at 2; zip [dev-dependencies] added at 2. Code lines after this commit: 2813.
 
 commit 8a4c4b2960c9907392a45406b4d8f34aa3716379
 parent 3a23d1c2a37987f44b03c2bb961b33252e8ce916
 author Will Bickford <wbic16@gmail.com>
 date 1794643572 2026-11-14
-dep+ Cargo.toml :: rand :: 0.8
-dep+ Cargo.toml :: rusqlite :: 0.32
-dep+ Cargo.toml :: zip :: 2
-item+ command src/main.rs :: mutable :: command "mutable" :: A command named mutable. The program runs it when the user types this word on the command line. :: inferred :: api
-item+ const src/mutable.rs :: IMPORT_GENERATION :: pub const IMPORT_GENERATION: &str = "tei-import-1"; :: Deterministic generation id for the import save (matches Mutable's /^[a-zA-Z0-9-]+$/ generation rule). :: direct :: api
-item+ enum src/mutable.rs :: Json :: pub enum Json { :: A named choice named Json. It is one of: Null; Bool; Int; Str; Arr; Obj. :: inferred :: api
-item+ function src/mutable.rs :: Json::to_compact :: pub fn to_compact(&self) -> String { :: JSON.stringify(value): compact, key order as constructed. :: direct :: api
-item+ function src/mutable.rs :: Json::to_pretty :: pub fn to_pretty(&self) -> String { :: JSON.stringify(value, null, 2): objects/arrays expand one item per line; empty ones stay inline as {} / []. :: direct :: api
-item+ struct src/mutable.rs :: MutableDocument :: pub struct MutableDocument { :: One converted Mutable document, ready to write into the Cavern tree. :: direct :: api
-item+ struct src/mutable.rs :: MutableEntry :: pub struct MutableEntry { :: A data shape named MutableEntry. Its fields are: pub rel: String; pub error: Option<String>; pub doc_rel: Option<String>; pub resource_id: Option<String>; pub title: Option<String>; pub blocks: usize; pub annotations: usize. :: inferred :: api
-item+ struct src/mutable.rs :: MutableSummary :: pub struct MutableSummary { :: A data shape named MutableSummary. Its fields are: pub entries: Vec<MutableEntry>; pub vault_guid: String; pub documents: usize; pub out_bytes: u64. :: inferred :: api
-item+ function src/mutable.rs :: build_document :: pub fn build_document(rel: &str, root: &Element) -> MutableDocument { :: Build the Mutable document for one parsed TEI file (0.1 model element). :: direct :: api
-item+ function src/mutable.rs :: document_rel_for :: pub fn document_rel_for(rel: &str) -> String { :: The document filename for a source relative path: `MS.xml` -> `MS.mutable.json`, folders preserved. :: direct :: api
-item+ function src/mutable.rs :: export_mutable :: pub fn export_mutable(dir: &Path, out: &Path) -> Result<MutableSummary, String> { :: Export a directory of TEI-XML as a Mutable native Cavern zip. Every source file is accounted for: converted (a document), or named in the returned entries with its error — zero silent skips, as in 0.1. The original XML rides in the tree verbatim either way. :: direct :: api
-item+ function src/mutable.rs :: resource_id_for :: pub fn resource_id_for(rel: &str) -> String { :: Deterministic resourceId: a UUID-shaped digest of the source relative path (SHA-256, version/variant bits set) — stable across runs, unique per tree slot. :: direct :: api
-stat Markdown files 2 total 187 blank 33 comment 0 code 154
-stat Rust files 8 total 2604 blank 141 comment 202 code 2261
-stat TOML files 1 total 22 blank 2 comment 0 code 20
+dep+ Cargo.toml :: rand [dependencies] :: 0.8
+dep+ Cargo.toml :: rusqlite [dependencies] :: 0.32
+dep+ Cargo.toml :: rusqlite [dev-dependencies] :: 0.32
+dep+ Cargo.toml :: zip [dependencies] :: 2
+dep+ Cargo.toml :: zip [dev-dependencies] :: 2
+depmeta Cargo.toml :: Rust (cargo) :: MIT :: 60
+item+ const src/lib.rs :: FORMAT_VERSION :: pub const FORMAT_VERSION: &str = "0.1"; :: A fixed value named FORMAT_VERSION, set to "0.1". :: signature :: 17 :: 0
+item+ enum src/lib.rs :: Node :: pub enum Node { :: A named choice named Node. It is one of: Text; Elem. :: signature :: 41 :: 0
+item+ enum src/lib.rs :: StorageClass :: pub enum StorageClass { :: A named choice named StorageClass. It is one of: Text; Binary. :: signature :: 201 :: 0
+item+ function src/lib.rs :: ChainReader::open :: pub fn open(path: &Path) -> Result<ChainReader, String> { :: Function ChainReader::open takes path: &Path and gives back Result<ChainReader, String>. :: signature :: 546 :: 0
+item+ function src/lib.rs :: ChainWriter::create :: pub fn create(path: &Path) -> Result<ChainWriter, String> { :: Function ChainWriter::create takes path: &Path and gives back Result<ChainWriter, String>. :: signature :: 297 :: 0
+item+ function src/lib.rs :: Element::is_container :: pub fn is_container(&self) -> bool { :: Function Element::is_container takes no inputs beyond the value it is called on, and gives back bool. :: signature :: 56 :: 0
+item+ function src/lib.rs :: StorageClass::as_str :: pub fn as_str(&self) -> &'static str { :: Function StorageClass::as_str takes no inputs beyond the value it is called on, and gives back &'static str. :: signature :: 206 :: 0
+item+ function src/lib.rs :: append_member :: pub fn append_member(path: &Path, member: &str) -> Result<(), String> { :: Append one member universe to an existing closed chain (WAL append): every previously written member byte is left untouched; only the old chain-close byte is overwritten by the separator+member+close sequence. :: doc comment :: 319 :: 1
+item+ function src/lib.rs :: classify :: pub fn classify(bytes: &[u8]) -> StorageClass { :: Function classify takes bytes: &[u8] and gives back StorageClass. :: signature :: 214 :: 0
+item+ function src/lib.rs :: close :: pub fn close(mut self) -> Result<(), String> { :: Function close takes mut self and gives back Result<(), String>. :: signature :: 309 :: 0
+item+ function src/lib.rs :: collect_xml_files :: pub fn collect_xml_files(dir: &Path) -> Result<Vec<PathBuf>, String> { :: Function collect_xml_files takes dir: &Path and gives back Result<Vec<PathBuf>, String>. :: signature :: 240 :: 0
+item+ function src/lib.rs :: convert_dir :: pub fn convert_dir(dir: &Path, out: &Path) -> Result<ConversionSummary, String> { :: Function convert_dir takes dir: &Path, out: &Path and gives back Result<ConversionSummary, String>. :: signature :: 393 :: 0
+item+ function src/lib.rs :: coord :: pub fn coord(scroll: usize) -> phext::Coordinate { :: Function coord takes scroll: usize and gives back phext::Coordinate. :: signature :: 33 :: 0
+item+ function src/lib.rs :: extract_original :: pub fn extract_original(reader: &ChainReader, rel: &str) -> Result<Vec<u8>, String> { :: Extract one original back out of $1, verifying its SHA-256. :: doc comment :: 726 :: 1
+item+ function src/lib.rs :: get :: pub fn get(&self, universe: usize, coord: &phext::Coordinate) -> Option<&str> { :: Function get takes &self, universe: usize, coord: &phext::Coordinate and gives back Option<&str>. :: signature :: 647 :: 0
+item+ function src/lib.rs :: member :: pub fn member(&self, universe: usize) -> Option<&str> { :: Function member takes &self, universe: usize and gives back Option<&str>. :: signature :: 643 :: 0
+item+ function src/lib.rs :: member_count :: pub fn member_count(&self) -> usize { :: Function member_count takes no inputs beyond the value it is called on, and gives back usize. :: signature :: 640 :: 0
+item+ function src/lib.rs :: parse_index :: pub fn parse_index(scroll: &str) -> (Vec<IndexEntry>, Vec<(String, String)>) { :: Function parse_index takes scroll: &str and gives back (Vec<IndexEntry>, Vec<(String, String)>). :: signature :: 695 :: 0
+item+ function src/lib.rs :: parse_subspace :: pub fn parse_subspace(addr: &str) -> Result<(usize, phext::Coordinate), String> { :: Parse a `$N:1.1.1/1.1.1/1.1.1` subspace address. :: doc comment :: 675 :: 1
+item+ function src/lib.rs :: parse_xml :: pub fn parse_xml(bytes: &[u8]) -> Result<Element, String> { :: Parse one XML document (bytes) into an Element tree. Namespace URIs are resolved with a prefix-scope stack; attributes keep their qualified names as written. Comments, PIs, declarations and DOCTYPE are not represented (the original is preserved verbatim in $1). :: doc comment :: 80 :: 1
+item+ function src/lib.rs :: rel_of :: pub fn rel_of(base: &Path, p: &Path) -> String { :: Function rel_of takes base: &Path, p: &Path and gives back String. :: signature :: 266 :: 0
+item+ function src/lib.rs :: renumber_refs :: pub fn renumber_refs(member: &str, offset: usize) -> String { :: Rewrite every `@ref $k` scroll in a member from local to global numbering by adding `offset` (the file's first-universe number − 1). Goes through libphext explode/implode — no delimiter handling here. :: doc comment :: 470 :: 1
+item+ function src/lib.rs :: scroll_number :: pub fn scroll_number(c: &phext::Coordinate) -> usize { :: Function scroll_number takes c: &phext::Coordinate and gives back usize. :: signature :: 666 :: 0
+item+ function src/lib.rs :: scrolls_of :: pub fn scrolls_of(&self, universe: usize) -> Vec<(usize, String)> { :: Scrolls of a universe as (scroll number, content), in scroll order. :: doc comment :: 652 :: 1
+item+ function src/lib.rs :: sha256_hex :: pub fn sha256_hex(bytes: &[u8]) -> String { :: Function sha256_hex takes bytes: &[u8] and gives back String. :: signature :: 24 :: 0
+item+ function src/lib.rs :: text_nodes :: pub fn text_nodes(&self, out: &mut Vec<String>) { :: All text nodes of this element's subtree, in document order. :: doc comment :: 60 :: 1
+item+ function src/lib.rs :: universe_text_and_refs :: pub fn universe_text_and_refs(reader: &ChainReader, root_universe: usize) -> (Vec<String>, Vec<usize>) { :: Walk one converted universe subtree: collect (text nodes, refs followed). Mirrors the encoder's grammar exactly. :: doc comment :: 774 :: 1
+item+ function src/lib.rs :: verify :: pub fn verify(chain: &Path, corpus_dir: Option<&Path>) -> Result<VerifyReport, String> { :: Function verify takes chain: &Path, corpus_dir: Option<&Path> and gives back Result<VerifyReport, String>. :: signature :: 849 :: 0
+item+ function src/lib.rs :: write_member :: pub fn write_member(&mut self, member: &str) -> Result<(), String> { :: Function write_member takes &mut self, member: &str and gives back Result<(), String>. :: signature :: 301 :: 0
+item+ struct src/lib.rs :: ChainReader :: pub struct ChainReader { :: A data shape named ChainReader. The scanner did not read its fields. :: signature :: 539 :: 0
+item+ struct src/lib.rs :: ChainWriter :: pub struct ChainWriter { :: Streaming chain writer (WAL write path): members are appended in order, previously written bytes are never touched; the chain-close byte is written last. Byte layout is identical to libphext `Chain::serialize` (verified by a test). :: doc comment :: 291 :: 1
+item+ struct src/lib.rs :: ConversionSummary :: pub struct ConversionSummary { :: A data shape named ConversionSummary. Its fields are: pub entries: Vec<FileEntry>; pub members_written: usize; pub out_bytes: u64. :: signature :: 234 :: 0
+item+ struct src/lib.rs :: Element :: pub struct Element { :: A data shape named Element. Its fields are: pub ns: String; pub name: String; pub attrs: Vec<(String, String)>; pub children: Vec<Node>. :: signature :: 47 :: 0
+item+ struct src/lib.rs :: FileEntry :: pub struct FileEntry { :: A data shape named FileEntry. Its fields are: pub rel: String; pub sha256: String; pub size: usize; pub class: StorageClass; pub original_scroll: usize; pub first_universe: Option<usize>; pub error: Option<String>. :: signature :: 222 :: 0
+item+ struct src/lib.rs :: IndexEntry :: pub struct IndexEntry { :: A data shape named IndexEntry. Its fields are: pub rel: String; pub sha256: String; pub size: usize; pub class: String; pub coord: phext::Coordinate; pub universe: Option<usize>. :: signature :: 686 :: 0
+item+ struct src/lib.rs :: VerifyReport :: pub struct VerifyReport { :: A data shape named VerifyReport. Its fields are: pub members: usize; pub files: usize; pub failures: usize; pub originals_verified: usize; pub refs_total: usize; pub dangling_refs: Vec<usize>; pub unreachable_universes: Vec<usize>; pub text_mismatches: Vec<String>. :: signature :: 838 :: 0
+item- const src/lib.rs :: FORMAT_VERSION :: 14
+item- enum src/lib.rs :: Node :: 38
+item- enum src/lib.rs :: StorageClass :: 198
+item- function src/lib.rs :: ChainReader::open :: 543
+item- function src/lib.rs :: ChainWriter::create :: 294
+item- function src/lib.rs :: Element::is_container :: 53
+item- function src/lib.rs :: StorageClass::as_str :: 203
+item- function src/lib.rs :: append_member :: 316
+item- function src/lib.rs :: classify :: 211
+item- function src/lib.rs :: close :: 306
+item- function src/lib.rs :: collect_xml_files :: 237
+item- function src/lib.rs :: convert_dir :: 390
+item- function src/lib.rs :: coord :: 30
+item- function src/lib.rs :: extract_original :: 723
+item- function src/lib.rs :: get :: 644
+item- function src/lib.rs :: member :: 640
+item- function src/lib.rs :: member_count :: 637
+item- function src/lib.rs :: parse_index :: 692
+item- function src/lib.rs :: parse_subspace :: 672
+item- function src/lib.rs :: parse_xml :: 77
+item- function src/lib.rs :: rel_of :: 263
+item- function src/lib.rs :: renumber_refs :: 467
+item- function src/lib.rs :: scroll_number :: 663
+item- function src/lib.rs :: scrolls_of :: 649
+item- function src/lib.rs :: sha256_hex :: 21
+item- function src/lib.rs :: text_nodes :: 57
+item- function src/lib.rs :: universe_text_and_refs :: 771
+item- function src/lib.rs :: verify :: 846
+item- function src/lib.rs :: write_member :: 298
+item- struct src/lib.rs :: ChainReader :: 536
+item- struct src/lib.rs :: ChainWriter :: 288
+item- struct src/lib.rs :: ConversionSummary :: 231
+item- struct src/lib.rs :: Element :: 44
+item- struct src/lib.rs :: FileEntry :: 219
+item- struct src/lib.rs :: IndexEntry :: 683
+item- struct src/lib.rs :: VerifyReport :: 835
+item+ command src/main.rs :: convert :: command "convert" :: A command named convert. The program runs it when the user types this word on the command line. :: signature :: 29 :: 0
+item+ command src/main.rs :: extract :: command "extract" :: A command named extract. The program runs it when the user types this word on the command line. :: signature :: 107 :: 0
+item+ command src/main.rs :: mutable :: command "mutable" :: A command named mutable. The program runs it when the user types this word on the command line. :: signature :: 68 :: 0
+item+ command src/main.rs :: show :: command "show" :: A command named show. The program runs it when the user types this word on the command line. :: signature :: 141 :: 0
+item+ command src/main.rs :: verify :: command "verify" :: A command named verify. The program runs it when the user types this word on the command line. :: signature :: 170 :: 0
+item+ entry-point src/main.rs :: main :: fn main() -> ExitCode { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: signature :: 23 :: 0
+item+ flag src/main.rs :: --corpus :: flag --corpus :: A command line flag, --corpus. It is read by the program when the user passes it. :: signature :: 175 :: 0
+item- command src/main.rs :: convert :: 27
+item- command src/main.rs :: extract :: 66
+item- command src/main.rs :: show :: 100
+item- command src/main.rs :: verify :: 129
+item- entry-point src/main.rs :: main :: 21
+item- flag src/main.rs :: --corpus :: 134
+item+ const src/mutable.rs :: IMPORT_GENERATION :: pub const IMPORT_GENERATION: &str = "tei-import-1"; :: Deterministic generation id for the import save (matches Mutable's /^[a-zA-Z0-9-]+$/ generation rule). :: doc comment :: 666 :: 1
+item+ enum src/mutable.rs :: Json :: pub enum Json { :: A named choice named Json. It is one of: Null; Bool; Int; Str; Arr; Obj. :: signature :: 30 :: 0
+item+ function src/mutable.rs :: Json::to_pretty :: pub fn to_pretty(&self) -> String { :: JSON.stringify(value, null, 2): objects/arrays expand one item per line; empty ones stay inline as {} / []. :: doc comment :: 65 :: 1
+item+ function src/mutable.rs :: build_document :: pub fn build_document(rel: &str, root: &Element) -> MutableDocument { :: Build the Mutable document for one parsed TEI file (0.1 model element). :: doc comment :: 420 :: 1
+item+ function src/mutable.rs :: document_rel_for :: pub fn document_rel_for(rel: &str) -> String { :: The document filename for a source relative path: `MS.xml` -> `MS.mutable.json`, folders preserved. :: doc comment :: 399 :: 1
+item+ function src/mutable.rs :: export_mutable :: pub fn export_mutable(dir: &Path, out: &Path) -> Result<MutableSummary, String> { :: Export a directory of TEI-XML as a Mutable native Cavern zip. Every source file is accounted for: converted (a document), or named in the returned entries with its error — zero silent skips, as in 0.1. The original XML rides in the tree verbatim either way. :: doc comment :: 753 :: 1
+item+ function src/mutable.rs :: resource_id_for :: pub fn resource_id_for(rel: &str) -> String { :: Deterministic resourceId: a UUID-shaped digest of the source relative path (SHA-256, version/variant bits set) — stable across runs, unique per tree slot. :: doc comment :: 343 :: 1
+item+ function src/mutable.rs :: to_compact :: pub fn to_compact(&self) -> String { :: JSON.stringify(value): compact, key order as constructed. :: doc comment :: 115 :: 1
+item+ struct src/mutable.rs :: MutableDocument :: pub struct MutableDocument { :: One converted Mutable document, ready to write into the Cavern tree. :: doc comment :: 406 :: 1
+item+ struct src/mutable.rs :: MutableEntry :: pub struct MutableEntry { :: A data shape named MutableEntry. Its fields are: pub rel: String; pub error: Option<String>; pub doc_rel: Option<String>; pub resource_id: Option<String>; pub title: Option<String>; pub blocks: usize; pub annotations: usize. :: signature :: 711 :: 0
+item+ struct src/mutable.rs :: MutableSummary :: pub struct MutableSummary { :: A data shape named MutableSummary. Its fields are: pub entries: Vec<MutableEntry>; pub vault_guid: String; pub documents: usize; pub out_bytes: u64. :: signature :: 722 :: 0
+quality 19 6 0 0
+fncount 101
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/teixml-to-mutable.git
+branch exo
+stat Markdown files 2 total 187 blank 0 comment 0 code 187
+stat Rust files 8 total 2604 blank 0 comment 0 code 2604
+stat TOML files 1 total 22 blank 0 comment 0 code 22
 author~ Will Bickford <wbic16@gmail.com> commits 3
 Commit 57706661107e by Will Bickford <wbic16@gmail.com> on 2026-11-14 (EE 0).
 
 Subject: Merge pull request #3 from wbic16/emise/0.3-phextura
 
-Public items: 77 added, 0 removed, 2 changed. Dependencies did not change. Code lines after this commit: 6984.
+Public items: 132 added, 54 removed, 0 changed. Dependencies did not change. Code lines after this commit: 6982.
 
 This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
 
@@ -111,86 +216,208 @@ commit 57706661107e72bc322e02a66bc0972b3d409a54
 parent 8a4c4b2960c9907392a45406b4d8f34aa3716379
 author Will Bickford <wbic16@gmail.com>
 date 1794648701 2026-11-14
-item+ struct src/lib.rs :: Doctype :: pub struct Doctype { :: A document type declaration, as written (stage 0.3, ruling D3). :: direct :: api
-item~ function src/lib.rs :: Element::text_nodes :: pub fn text_nodes(&self, out: &mut Vec<String>) { :: All text nodes of this element's subtree, in document order. Comments and PIs are not text nodes and never appear here. :: direct :: api
-item+ struct src/lib.rs :: ParsedDocument :: pub struct ParsedDocument { :: The full parse of one XML document: root element tree plus the prolog and epilog material (comments, PIs) and the DOCTYPE, which live outside the root element but are part of the document (stage 0.3, ruling D3). :: direct :: api
-item+ function src/lib.rs :: collapse_ws :: pub fn collapse_ws(text: &str) -> String { :: Whitespace-collapse: runs become one space, ends trimmed. :: direct :: api
-item+ function src/lib.rs :: element_text :: pub fn element_text(el: &Element) -> String { :: All text of an element's subtree, concatenated in document order. :: direct :: api
-item+ function src/lib.rs :: extract_title :: pub fn extract_title(root: &Element, rel: &str) -> String { :: Title: teiHeader/fileDesc/titleStmt/title, fallback msIdentifier/idno, fallback the source filename stem (STAGE2-RECON.md §4.3). :: direct :: api
-item+ function src/lib.rs :: first_named :: pub fn first_named<'a>(el: &'a Element, name: &str) -> Option<&'a Element> { :: First element with this local name in pre-order (self included). :: direct :: api
-item+ function src/lib.rs :: parse_doctype :: pub fn parse_doctype(raw: &str) -> Doctype { :: Parse the inner text of a `<!DOCTYPE ...>` declaration (everything between `<!DOCTYPE` and the closing `>`). :: direct :: api
-item~ function src/lib.rs :: parse_xml :: pub fn parse_xml(bytes: &[u8]) -> Result<Element, String> { :: Parse one XML document (bytes) into an Element tree. Namespace URIs are resolved with a prefix-scope stack; attributes keep their qualified names as written. Since stage 0.3 the tree also carries comments and PIs as nodes; the 0.1/0.2 emitters skip them (their forms never represented comments/PIs — the original is preserved verbatim). :: direct :: api
-item+ function src/lib.rs :: parse_xml_full :: pub fn parse_xml_full(bytes: &[u8]) -> Result<ParsedDocument, String> { :: Parse one XML document into root tree + prolog/epilog + DOCTYPE. :: direct :: api
-item+ command src/main.rs :: phextura :: command "phextura" :: A command named phextura. The program runs it when the user types this word on the command line. :: inferred :: api
-item+ command src/main.rs :: relocate-phextura :: command "relocate-phextura" :: A command named relocate-phextura. The program runs it when the user types this word on the command line. :: inferred :: api
-item+ command src/main.rs :: verify-phextura :: command "verify-phextura" :: A command named verify-phextura. The program runs it when the user types this word on the command line. :: inferred :: api
-item+ struct src/phextura.rs :: C9 :: pub struct C9 { :: A full 9-component phext coordinate (Z/Y/X), the address currency of this module; converted to libphext coordinates only at the implode boundary. :: direct :: api
-item+ function src/phextura.rs :: C9::addr :: pub fn addr(&self) -> String { :: Function C9::addr takes no inputs beyond the value it is called on. It gives back String. :: inferred :: api
-item+ function src/phextura.rs :: C9::new :: pub fn new(z: (u32, u32, u32), y: (u32, u32, u32), x: (u32, u32, u32)) -> C9 { :: Function C9::new takes z:. It gives back C9. :: inferred :: api
-item+ function src/phextura.rs :: C9::parse :: pub fn parse(s: &str) -> Option<C9> { :: Function C9::parse takes s: &str. It gives back Option<C9>. :: inferred :: api
-item+ function src/phextura.rs :: C9::phext :: pub fn phext(&self) -> phext::Coordinate { :: Function C9::phext takes no inputs beyond the value it is called on. It gives back phext::Coordinate. :: inferred :: api
-item+ const src/phextura.rs :: CONVERTER :: pub const CONVERTER: &str = concat!("teixml-to-mutable ", env!("CARGO_PKG_VERSION")); :: A fixed value named CONVERTER, set to concat!("teixml-to-mutable ", env!("CARGO_PKG_VERSION")). :: inferred :: api
-item+ struct src/phextura.rs :: Detached :: pub struct Detached { :: A data shape named Detached. Its fields are: pub key: String; pub class: String; pub quoted: String. :: inferred :: api
-item+ struct src/phextura.rs :: EntryRec :: pub struct EntryRec { :: A data shape named EntryRec. Its fields are: pub kind: &'static str; pub form: TargetForm; pub hash: String; pub text: String; pub before: Option<String>; pub after: Option<String>; pub tei_element: Option<String>; pub tei_ns: Option<String>; pub pi_target: Option<String>; pub attrs: Vec<(String, String)>; pub refs: Vec<RefOut>; pub body: String. :: inferred :: api
-item+ const src/phextura.rs :: KIND_ORDER :: pub const KIND_ORDER: &[&str] = &["paper", "section", "bibentry", "figure", "tei-element"]; :: L2 key kinds, in object-table index order (LAYER2 §1.4 + profile extension kind `tei-element`, minted on cite only). :: direct :: api
-item+ const src/phextura.rs :: POINTING_ATTRS :: pub const POINTING_ATTRS: &[&str] = &[ "ref", "target", "corresp", "decls", "sameAs", "copyOf", "next", "prev", "ana", ]; :: Attributes whose values are treated as references (SPEC-0.3 §3.5). :: direct :: api
-item+ const src/phextura.rs :: PROFILE_VERSION :: pub const PROFILE_VERSION: &str = "0.1"; :: A fixed value named PROFILE_VERSION, set to "0.1". :: inferred :: api
-item+ struct src/phextura.rs :: ParsedEntry :: pub struct ParsedEntry { :: A data shape named ParsedEntry. Its fields are: pub coord: C9; pub kind: String; pub key_n: usize; pub target: TargetAddr; pub hash: String; pub text: String; pub before: Option<String>; pub after: Option<String>; pub tei_element: Option<String>; pub tei_ns: Option<String>; pub pi_target: Option<String>; pub attrs: Vec<(String, String)>; pub refers: Vec<String>; pub refers_unresolved: Vec<String>; pub refers_external: Vec<String>; pub body: String. :: inferred :: api
-item+ struct src/phextura.rs :: PhexturaFileEntry :: pub struct PhexturaFileEntry { :: A data shape named PhexturaFileEntry. Its fields are: pub rel: String; pub series: u32; pub error: Option<String>; pub entries: usize; pub scrolls: usize. :: inferred :: api
-item+ struct src/phextura.rs :: PhexturaSummary :: pub struct PhexturaSummary { :: A data shape named PhexturaSummary. Its fields are: pub name: String; pub slug: String; pub entries: Vec<PhexturaFileEntry>; pub documents: usize; pub base_path: PathBuf; pub standoff_path: PathBuf; pub base_bytes: u64; pub standoff_bytes: u64; pub base_scrolls: usize; pub standoff_scrolls: usize; pub total_entries: usize; pub entries_by_kind: Vec<(String, usize)>; pub refs: RefCounts; pub externals: usize; pub pin: String; pub vfs_path: Option<PathBuf>; pub vfs_bytes: u64; pub vfs_scrolls: usize. :: inferred :: api
-item+ struct src/phextura.rs :: ReconReport :: pub struct ReconReport { :: A data shape named ReconReport. Its fields are: pub ok: bool; pub mismatches: Vec<String>; pub mismatch_total: usize; pub files: usize; pub originals_verified: usize; pub segments: usize; pub elements: usize; pub attributes: usize; pub comments: usize; pub pis: usize; pub doctypes: usize; pub refs_resolved: usize; pub refs_unresolved: usize; pub refs_external: usize. :: inferred :: api
-item+ struct src/phextura.rs :: RefCounts :: pub struct RefCounts { :: A data shape named RefCounts. Its fields are: pub resolved: usize; pub unresolved: usize; pub external: usize. :: inferred :: api
-item+ enum src/phextura.rs :: RefOut :: pub enum RefOut { :: A named choice named RefOut. It is one of: Key; Unresolved; External. :: inferred :: api
-item+ struct src/phextura.rs :: RelocReport :: pub struct RelocReport { :: A data shape named RelocReport. Its fields are: pub total: usize; pub exact: usize; pub relocated_verified: usize; pub relocated_moved: usize; pub lost: Vec<Detached>; pub ambiguous: Vec<Detached>. :: inferred :: api
-item+ const src/phextura.rs :: SECTION_ELEMENTS :: pub const SECTION_ELEMENTS: &[&str] = &[ "div", "div1", "div2", "div3", "div4", "div5", "div6", "div7", "msItem", ]; :: Elements that head a LAYER2 `section` object when headed (profile §3). :: direct :: api
-item+ struct src/phextura.rs :: ScrollParts :: pub struct ScrollParts { :: A scroll split into role line, header lines, and body (text after the first blank line; header-only scrolls have an empty body). :: direct :: api
-item+ const src/phextura.rs :: TEI_NS :: pub const TEI_NS: &str = "http://www.tei-c.org/ns/1.0"; :: A fixed value named TEI_NS, set to "http://www.tei-c.org/ns/1.0". :: inferred :: api
-item+ struct src/phextura.rs :: TargetAddr :: pub struct TargetAddr { :: A data shape named TargetAddr. Its fields are: pub slug: String; pub pin: String; pub kind: Option<String>; pub key_slug: Option<String>; pub at: Option<(C9, usize, usize)>. :: inferred :: api
-item+ enum src/phextura.rs :: TargetForm :: pub enum TargetForm { :: A named choice named TargetForm. It is one of: Object; At. :: inferred :: api
-item+ struct src/phextura.rs :: ValidateReport :: pub struct ValidateReport { :: A data shape named ValidateReport. Its fields are: pub ok: bool; pub failures: Vec<String>; pub base_scrolls: usize; pub standoff_scrolls: usize; pub base_checksum_ok: bool; pub standoff_checksum_ok: bool; pub keys_indexed: usize; pub entries: usize; pub media_headers: usize; pub externals_declared: usize; pub bare_coords_in_prose: usize; pub resolvable_bare_coords: usize. :: inferred :: api
-item+ function src/phextura.rs :: canonical_bytes :: pub fn canonical_bytes(map: &HashMap<phext::Coordinate, String>) -> Vec<u8> { :: Function canonical_bytes takes map: &HashMap<phext::Coordinate, String>. It gives back Vec<u8>. :: inferred :: api
-item+ function src/phextura.rs :: check_reconstruction :: pub fn check_reconstruction( base_path: &Path, standoff_path: &Path, corpus_dir: &Path, ) -> Result<ReconReport, String> { :: Function check_reconstruction takes base_path: &Path, standoff_path: &Path, corpus_dir: &Path,. It gives back Result<ReconReport, String>. :: inferred :: api
-item+ function src/phextura.rs :: edition_checksum :: pub fn edition_checksum(map: &HashMap<phext::Coordinate, String>, manifest: C9) -> String { :: The edition checksum: libphext xxh3-128 over the canonical form of the corpus with the checksum line excluded from its manifest scroll. :: direct :: api
-item+ function src/phextura.rs :: escape_value :: pub fn escape_value(v: &str) -> String { :: Function escape_value takes v: &str. It gives back String. :: inferred :: api
-item+ function src/phextura.rs :: export_phextura :: pub fn export_phextura(dir: &Path, out_dir: &Path) -> Result<PhexturaSummary, String> { :: Function export_phextura takes dir: &Path, out_dir: &Path. It gives back Result<PhexturaSummary, String>. :: inferred :: api
-item+ function src/phextura.rs :: export_phextura_opts :: pub fn export_phextura_opts( dir: &Path, out_dir: &Path, emit_vfs: bool, ) -> Result<PhexturaSummary, String> { :: As `export_phextura`; `emit_vfs` controls the D6 PhextVFS image (`cavern.phext`), a third consumer of the assembled pair — the corpus and standoff writers are untouched either way (the D6 seam). :: direct :: api
-item+ function src/phextura.rs :: iso_from_unix :: pub fn iso_from_unix(secs: u64) -> String { :: Function iso_from_unix takes secs: u64. It gives back String. :: inferred :: api
-item+ function src/phextura.rs :: iso_now :: pub fn iso_now() -> String { :: Function iso_now takes no inputs beyond the value it is called on. It gives back String. :: inferred :: api
-item+ function src/phextura.rs :: line_of :: pub fn line_of<'a>(lines: &'a [(String, String)], name: &str) -> Option<&'a str> { :: Function line_of takes lines: &'a [. It gives back Option<&'a str>. :: inferred :: api
-item+ function src/phextura.rs :: lines_of :: pub fn lines_of<'a>(lines: &'a [(String, String)], name: &str) -> Vec<&'a str> { :: Function lines_of takes lines: &'a [. It gives back Vec<&'a str>. :: inferred :: api
-item+ function src/phextura.rs :: load_entries :: pub fn load_entries( standoff: &HashMap<C9, String>, ) -> Result<Vec<ParsedEntry>, String> { :: All standoff entries, sorted into minting order (series, then scroll). :: direct :: api
-item+ function src/phextura.rs :: load_map :: pub fn load_map(path: &Path) -> Result<HashMap<C9, String>, String> { :: Function load_map takes path: &Path. It gives back Result<HashMap<C9, String>, String>. :: inferred :: api
-item+ function src/phextura.rs :: manifest_coord :: pub fn manifest_coord() -> C9 { :: The corpus-level manifest coordinate (Series 1, Collection 6). :: direct :: api
-item+ function src/phextura.rs :: parse_entry :: pub fn parse_entry(coord: C9, text: &str) -> Result<ParsedEntry, String> { :: Function parse_entry takes coord: C9, text: &str. It gives back Result<ParsedEntry, String>. :: inferred :: api
-item+ function src/phextura.rs :: parse_target :: pub fn parse_target(addr: &str) -> Result<TargetAddr, String> { :: Function parse_target takes addr: &str. It gives back Result<TargetAddr, String>. :: inferred :: api
-item+ function src/phextura.rs :: relocate :: pub fn relocate(base_path: &Path, standoff_path: &Path) -> Result<RelocReport, String> { :: Function relocate takes base_path: &Path, standoff_path: &Path. It gives back Result<RelocReport, String>. :: inferred :: api
-item+ function src/phextura.rs :: render_attr_name :: pub fn render_attr_name(qname: &str, scope: &HashMap<String, String>) -> String { :: Render an attribute's qualified name for an `attr-` header line: namespaced names render as `{<namespace-uri>}<local>` (profile §4); the prefix resolves against the xmlns declarations in scope, with `xml` predefined. An unresolvable prefix (undeclared — malformed input) renders as written. :: direct :: api
-item+ function src/phextura.rs :: slugify :: pub fn slugify(s: &str) -> String { :: Function slugify takes s: &str. It gives back String. :: inferred :: api
-item+ function src/phextura.rs :: split_scroll :: pub fn split_scroll(text: &str) -> ScrollParts { :: Function split_scroll takes text: &str. It gives back ScrollParts. :: inferred :: api
-item+ function src/phextura.rs :: standoff_meta_coord :: pub fn standoff_meta_coord() -> C9 { :: The standoff's own metadata coordinate (its Collection 6, Series 1). :: direct :: api
-item+ function src/phextura.rs :: strip_checksum_line :: pub fn strip_checksum_line(text: &str) -> String { :: Remove any `checksum: xxh3-128:` line from a scroll's text. :: direct :: api
-item+ function src/phextura.rs :: unescape_value :: pub fn unescape_value(v: &str) -> Result<String, String> { :: Function unescape_value takes v: &str. It gives back Result<String, String>. :: inferred :: api
-item+ function src/phextura.rs :: validate_pair :: pub fn validate_pair(base_path: &Path, standoff_path: &Path) -> Result<ValidateReport, String> { :: Function validate_pair takes base_path: &Path, standoff_path: &Path. It gives back Result<ValidateReport, String>. :: inferred :: api
-item+ function src/segment.rs :: <'a> Flat<'a>::index_of :: pub fn index_of(&self, e: &Element) -> usize { :: Function <'a> Flat<'a>::index_of takes &self, e: &Element. It gives back usize. :: inferred :: api
-item+ function src/segment.rs :: <'a> Flat<'a>::is_empty :: pub fn is_empty(&self) -> bool { :: Function <'a> Flat<'a>::is_empty takes no inputs beyond the value it is called on. It gives back bool. :: inferred :: api
-item+ function src/segment.rs :: <'a> Flat<'a>::len :: pub fn len(&self) -> usize { :: Function <'a> Flat<'a>::len takes no inputs beyond the value it is called on. It gives back usize. :: inferred :: api
-item+ const src/segment.rs :: BLOCK_ELEMENTS :: pub const BLOCK_ELEMENTS: &[&str] = &[ "ab", "additions", "adminInfo", "analytic", "argument", "bibl", "biblStruct", "bindingDesc", "body", "back", "cell", "cit", "closer", "custodialHist", "decoDesc", "div", "div1", "div2", "div3", "div4", "div5", "div6", "div7", "docAuthor", "docDate", "docEdition :: TEI block-level elements: each owns text segments; any other element containing a block-level descendant acts as a container; everything else is inline. :: direct :: api
-item+ struct src/segment.rs :: Flat :: pub struct Flat<'a> { :: A pre-order flattening of one document tree: occurrence indices, parent/depth, subtree ranges, and per-element descendant text. :: direct :: api
-item+ struct src/segment.rs :: InlineOcc :: pub struct InlineOcc { :: One inline element occurrence inside a segment. :: direct :: api
-item+ struct src/segment.rs :: SegMark :: pub struct SegMark { :: A comment or PI encountered during the walk (ruling D3). :: direct :: api
-item+ struct src/segment.rs :: Segment :: pub struct Segment { :: One raw segment (pre-keep-rule). :: direct :: api
-item+ struct src/segment.rs :: Segmentation :: pub struct Segmentation { :: A data shape named Segmentation. Its fields are: pub segments: Vec<Segment>; pub marks: Vec<SegMark>. :: inferred :: api
-item+ function src/segment.rs :: flatten :: pub fn flatten(root: &Element) -> Flat<'_> { :: Function flatten takes root: &Element. It gives back Flat<'_>. :: inferred :: api
-item+ function src/segment.rs :: has_block_descendant :: pub fn has_block_descendant(el: &Element) -> bool { :: Function has_block_descendant takes el: &Element. It gives back bool. :: inferred :: api
-item+ function src/segment.rs :: is_block :: pub fn is_block(name: &str) -> bool { :: Function is_block takes name: &str. It gives back bool. :: inferred :: api
-item+ function src/segment.rs :: kept_map :: pub fn kept_map(seg: &Segmentation) -> Vec<Option<usize>> { :: The keep rule (0.2, recon §4.4): a segment survives iff its text is non-whitespace or it carries at least one inline occurrence. Returns (raw index → kept index) for kept segments. :: direct :: api
-item+ function src/segment.rs :: segment_document :: pub fn segment_document(root: &Element, flat: &Flat) -> Segmentation { :: Segment one document. Identical segmentation to the 0.2 export's Builder (same keep rule inputs, same order); the 0.2 test suite is the regression net. :: direct :: api
-item+ const src/vfs.rs :: VFS_CHUNK_SIZE :: pub const VFS_CHUNK_SIZE: usize = 65536; :: Mutable's DEFAULT_CHUNK_SIZE (vfs.ts). :: direct :: api
-item+ struct src/vfs.rs :: VfsImageInfo :: pub struct VfsImageInfo { :: A data shape named VfsImageInfo. Its fields are: pub bytes: usize; pub scrolls: usize; pub files: usize; pub chunks: usize; pub checksum_scrolls: usize. :: inferred :: api
-item+ function src/vfs.rs :: base64_encode :: pub fn base64_encode(bytes: &[u8]) -> String { :: Standard base64 (RFC 4648, padded) — the encoding Mutable's `Buffer.toString("base64")` produces and its reader decodes per chunk. :: direct :: api
-item+ function src/vfs.rs :: build_cavern_image :: pub fn build_cavern_image(files: &[(&str, &[u8])]) -> (Vec<u8>, VfsImageInfo) { :: Build the `cavern.phext` image holding `files` (name, bytes) in the given order at the documents-stratum root, in the VFS binary format. Returns the image bytes and its accounting. :: direct :: api
-item+ function src/vfs.rs :: json_escape :: pub fn json_escape(s: &str) -> String { :: JSON string escaping with JSON.stringify semantics (the index and manifest scrolls are consumed by Mutable's `JSON.parse`). :: direct :: api
-stat Markdown files 3 total 785 blank 133 comment 0 code 652
+item+ const src/lib.rs :: FORMAT_VERSION :: pub const FORMAT_VERSION: &str = "0.1"; :: A fixed value named FORMAT_VERSION, set to "0.1". :: signature :: 21 :: 0
+item+ enum src/lib.rs :: Node :: pub enum Node { :: A named choice named Node. It is one of: Text; Elem; Comment; Pi. :: signature :: 45 :: 0
+item+ enum src/lib.rs :: StorageClass :: pub enum StorageClass { :: A named choice named StorageClass. It is one of: Text; Binary. :: signature :: 558 :: 0
+item+ function src/lib.rs :: ChainReader::open :: pub fn open(path: &Path) -> Result<ChainReader, String> { :: Function ChainReader::open takes path: &Path and gives back Result<ChainReader, String>. :: signature :: 907 :: 0
+item+ function src/lib.rs :: ChainWriter::create :: pub fn create(path: &Path) -> Result<ChainWriter, String> { :: Function ChainWriter::create takes path: &Path and gives back Result<ChainWriter, String>. :: signature :: 654 :: 0
+item+ function src/lib.rs :: Element::is_container :: pub fn is_container(&self) -> bool { :: Function Element::is_container takes no inputs beyond the value it is called on, and gives back bool. :: signature :: 64 :: 0
+item+ function src/lib.rs :: StorageClass::as_str :: pub fn as_str(&self) -> &'static str { :: Function StorageClass::as_str takes no inputs beyond the value it is called on, and gives back &'static str. :: signature :: 563 :: 0
+item+ function src/lib.rs :: append_member :: pub fn append_member(path: &Path, member: &str) -> Result<(), String> { :: Append one member universe to an existing closed chain (WAL append): every previously written member byte is left untouched; only the old chain-close byte is overwritten by the separator+member+close sequence. :: doc comment :: 676 :: 1
+item+ function src/lib.rs :: classify :: pub fn classify(bytes: &[u8]) -> StorageClass { :: Function classify takes bytes: &[u8] and gives back StorageClass. :: signature :: 571 :: 0
+item+ function src/lib.rs :: close :: pub fn close(mut self) -> Result<(), String> { :: Function close takes mut self and gives back Result<(), String>. :: signature :: 666 :: 0
+item+ function src/lib.rs :: collapse_ws :: pub fn collapse_ws(text: &str) -> String { :: Whitespace-collapse: runs become one space, ends trimmed. :: doc comment :: 1310 :: 1
+item+ function src/lib.rs :: collect_xml_files :: pub fn collect_xml_files(dir: &Path) -> Result<Vec<PathBuf>, String> { :: Function collect_xml_files takes dir: &Path and gives back Result<Vec<PathBuf>, String>. :: signature :: 597 :: 0
+item+ function src/lib.rs :: convert_dir :: pub fn convert_dir(dir: &Path, out: &Path) -> Result<ConversionSummary, String> { :: Function convert_dir takes dir: &Path, out: &Path and gives back Result<ConversionSummary, String>. :: signature :: 750 :: 0
+item+ function src/lib.rs :: coord :: pub fn coord(scroll: usize) -> phext::Coordinate { :: Function coord takes scroll: usize and gives back phext::Coordinate. :: signature :: 37 :: 0
+item+ function src/lib.rs :: element_text :: pub fn element_text(el: &Element) -> String { :: All text of an element's subtree, concatenated in document order. :: doc comment :: 1303 :: 1
+item+ function src/lib.rs :: extract_original :: pub fn extract_original(reader: &ChainReader, rel: &str) -> Result<Vec<u8>, String> { :: Extract one original back out of $1, verifying its SHA-256. :: doc comment :: 1087 :: 1
+item+ function src/lib.rs :: extract_title :: pub fn extract_title(root: &Element, rel: &str) -> String { :: Title: teiHeader/fileDesc/titleStmt/title, fallback msIdentifier/idno, fallback the source filename stem (STAGE2-RECON.md §4.3). :: doc comment :: 1316 :: 1
+item+ function src/lib.rs :: first_named :: pub fn first_named<'a>(el: &'a Element, name: &str) -> Option<&'a Element> { :: First element with this local name in pre-order (self included). :: doc comment :: 1288 :: 1
+item+ function src/lib.rs :: get :: pub fn get(&self, universe: usize, coord: &phext::Coordinate) -> Option<&str> { :: Function get takes &self, universe: usize, coord: &phext::Coordinate and gives back Option<&str>. :: signature :: 1008 :: 0
+item+ function src/lib.rs :: member :: pub fn member(&self, universe: usize) -> Option<&str> { :: Function member takes &self, universe: usize and gives back Option<&str>. :: signature :: 1004 :: 0
+item+ function src/lib.rs :: member_count :: pub fn member_count(&self) -> usize { :: Function member_count takes no inputs beyond the value it is called on, and gives back usize. :: signature :: 1001 :: 0
+item+ function src/lib.rs :: parse_doctype :: pub fn parse_doctype(raw: &str) -> Doctype { :: Parse the inner text of a `<!DOCTYPE ...>` declaration (everything between `<!DOCTYPE` and the closing `>`). :: doc comment :: 285 :: 1
+item+ function src/lib.rs :: parse_index :: pub fn parse_index(scroll: &str) -> (Vec<IndexEntry>, Vec<(String, String)>) { :: Function parse_index takes scroll: &str and gives back (Vec<IndexEntry>, Vec<(String, String)>). :: signature :: 1056 :: 0
+item+ function src/lib.rs :: parse_subspace :: pub fn parse_subspace(addr: &str) -> Result<(usize, phext::Coordinate), String> { :: Parse a `$N:1.1.1/1.1.1/1.1.1` subspace address. :: doc comment :: 1036 :: 1
+item+ function src/lib.rs :: parse_xml :: pub fn parse_xml(bytes: &[u8]) -> Result<Element, String> { :: Parse one XML document (bytes) into an Element tree. Namespace URIs are resolved with a prefix-scope stack; attributes keep their qualified names as written. Since stage 0.3 the tree also carries comments and PIs as nodes; the 0.1/0.2 emitters skip them (their forms never represented comments/PIs — the original is preserved verbatim). :: doc comment :: 376 :: 1
+item+ function src/lib.rs :: parse_xml_full :: pub fn parse_xml_full(bytes: &[u8]) -> Result<ParsedDocument, String> { :: Parse one XML document into root tree + prolog/epilog + DOCTYPE. :: doc comment :: 381 :: 1
+item+ function src/lib.rs :: rel_of :: pub fn rel_of(base: &Path, p: &Path) -> String { :: Function rel_of takes base: &Path, p: &Path and gives back String. :: signature :: 623 :: 0
+item+ function src/lib.rs :: renumber_refs :: pub fn renumber_refs(member: &str, offset: usize) -> String { :: Rewrite every `@ref $k` scroll in a member from local to global numbering by adding `offset` (the file's first-universe number − 1). Goes through libphext explode/implode — no delimiter handling here. :: doc comment :: 827 :: 1
+item+ function src/lib.rs :: scroll_number :: pub fn scroll_number(c: &phext::Coordinate) -> usize { :: Function scroll_number takes c: &phext::Coordinate and gives back usize. :: signature :: 1027 :: 0
+item+ function src/lib.rs :: scrolls_of :: pub fn scrolls_of(&self, universe: usize) -> Vec<(usize, String)> { :: Scrolls of a universe as (scroll number, content), in scroll order. :: doc comment :: 1013 :: 1
+item+ function src/lib.rs :: sha256_hex :: pub fn sha256_hex(bytes: &[u8]) -> String { :: Function sha256_hex takes bytes: &[u8] and gives back String. :: signature :: 28 :: 0
+item+ function src/lib.rs :: text_nodes :: pub fn text_nodes(&self, out: &mut Vec<String>) { :: All text nodes of this element's subtree, in document order. Comments and PIs are not text nodes and never appear here. :: doc comment :: 69 :: 1
+item+ function src/lib.rs :: universe_text_and_refs :: pub fn universe_text_and_refs(reader: &ChainReader, root_universe: usize) -> (Vec<String>, Vec<usize>) { :: Walk one converted universe subtree: collect (text nodes, refs followed). Mirrors the encoder's grammar exactly. :: doc comment :: 1135 :: 1
+item+ function src/lib.rs :: verify :: pub fn verify(chain: &Path, corpus_dir: Option<&Path>) -> Result<VerifyReport, String> { :: Function verify takes chain: &Path, corpus_dir: Option<&Path> and gives back Result<VerifyReport, String>. :: signature :: 1210 :: 0
+item+ function src/lib.rs :: write_member :: pub fn write_member(&mut self, member: &str) -> Result<(), String> { :: Function write_member takes &mut self, member: &str and gives back Result<(), String>. :: signature :: 658 :: 0
+item+ struct src/lib.rs :: ChainReader :: pub struct ChainReader { :: A data shape named ChainReader. The scanner did not read its fields. :: signature :: 900 :: 0
+item+ struct src/lib.rs :: ChainWriter :: pub struct ChainWriter { :: Streaming chain writer (WAL write path): members are appended in order, previously written bytes are never touched; the chain-close byte is written last. Byte layout is identical to libphext `Chain::serialize` (verified by a test). :: doc comment :: 648 :: 1
+item+ struct src/lib.rs :: ConversionSummary :: pub struct ConversionSummary { :: A data shape named ConversionSummary. Its fields are: pub entries: Vec<FileEntry>; pub members_written: usize; pub out_bytes: u64. :: signature :: 591 :: 0
+item+ struct src/lib.rs :: Doctype :: pub struct Doctype { :: A document type declaration, as written (stage 0.3, ruling D3). :: doc comment :: 88 :: 1
+item+ struct src/lib.rs :: Element :: pub struct Element { :: A data shape named Element. Its fields are: pub ns: String; pub name: String; pub attrs: Vec<(String, String)>; pub children: Vec<Node>. :: signature :: 55 :: 0
+item+ struct src/lib.rs :: FileEntry :: pub struct FileEntry { :: A data shape named FileEntry. Its fields are: pub rel: String; pub sha256: String; pub size: usize; pub class: StorageClass; pub original_scroll: usize; pub first_universe: Option<usize>; pub error: Option<String>. :: signature :: 579 :: 0
+item+ struct src/lib.rs :: IndexEntry :: pub struct IndexEntry { :: A data shape named IndexEntry. Its fields are: pub rel: String; pub sha256: String; pub size: usize; pub class: String; pub coord: phext::Coordinate; pub universe: Option<usize>. :: signature :: 1047 :: 0
+item+ struct src/lib.rs :: ParsedDocument :: pub struct ParsedDocument { :: The full parse of one XML document: root element tree plus the prolog and epilog material (comments, PIs) and the DOCTYPE, which live outside the root element but are part of the document (stage 0.3, ruling D3). :: doc comment :: 101 :: 1
+item+ struct src/lib.rs :: VerifyReport :: pub struct VerifyReport { :: A data shape named VerifyReport. Its fields are: pub members: usize; pub files: usize; pub failures: usize; pub originals_verified: usize; pub refs_total: usize; pub dangling_refs: Vec<usize>; pub unreachable_universes: Vec<usize>; pub text_mismatches: Vec<String>. :: signature :: 1199 :: 0
+item- const src/lib.rs :: FORMAT_VERSION :: 17
+item- enum src/lib.rs :: Node :: 41
+item- enum src/lib.rs :: StorageClass :: 201
+item- function src/lib.rs :: ChainReader::open :: 546
+item- function src/lib.rs :: ChainWriter::create :: 297
+item- function src/lib.rs :: Element::is_container :: 56
+item- function src/lib.rs :: StorageClass::as_str :: 206
+item- function src/lib.rs :: append_member :: 319
+item- function src/lib.rs :: classify :: 214
+item- function src/lib.rs :: close :: 309
+item- function src/lib.rs :: collect_xml_files :: 240
+item- function src/lib.rs :: convert_dir :: 393
+item- function src/lib.rs :: coord :: 33
+item- function src/lib.rs :: extract_original :: 726
+item- function src/lib.rs :: get :: 647
+item- function src/lib.rs :: member :: 643
+item- function src/lib.rs :: member_count :: 640
+item- function src/lib.rs :: parse_index :: 695
+item- function src/lib.rs :: parse_subspace :: 675
+item- function src/lib.rs :: parse_xml :: 80
+item- function src/lib.rs :: rel_of :: 266
+item- function src/lib.rs :: renumber_refs :: 470
+item- function src/lib.rs :: scroll_number :: 666
+item- function src/lib.rs :: scrolls_of :: 652
+item- function src/lib.rs :: sha256_hex :: 24
+item- function src/lib.rs :: text_nodes :: 60
+item- function src/lib.rs :: universe_text_and_refs :: 774
+item- function src/lib.rs :: verify :: 849
+item- function src/lib.rs :: write_member :: 301
+item- struct src/lib.rs :: ChainReader :: 539
+item- struct src/lib.rs :: ChainWriter :: 291
+item- struct src/lib.rs :: ConversionSummary :: 234
+item- struct src/lib.rs :: Element :: 47
+item- struct src/lib.rs :: FileEntry :: 222
+item- struct src/lib.rs :: IndexEntry :: 686
+item- struct src/lib.rs :: VerifyReport :: 838
+item+ command src/main.rs :: convert :: command "convert" :: A command named convert. The program runs it when the user types this word on the command line. :: signature :: 35 :: 0
+item+ command src/main.rs :: extract :: command "extract" :: A command named extract. The program runs it when the user types this word on the command line. :: signature :: 164 :: 0
+item+ command src/main.rs :: mutable :: command "mutable" :: A command named mutable. The program runs it when the user types this word on the command line. :: signature :: 74 :: 0
+item+ command src/main.rs :: phextura :: command "phextura" :: A command named phextura. The program runs it when the user types this word on the command line. :: signature :: 113 :: 0
+item+ command src/main.rs :: relocate-phextura :: command "relocate-phextura" :: A command named relocate-phextura. The program runs it when the user types this word on the command line. :: signature :: 331 :: 0
+item+ command src/main.rs :: show :: command "show" :: A command named show. The program runs it when the user types this word on the command line. :: signature :: 198 :: 0
+item+ command src/main.rs :: verify :: command "verify" :: A command named verify. The program runs it when the user types this word on the command line. :: signature :: 227 :: 0
+item+ command src/main.rs :: verify-phextura :: command "verify-phextura" :: A command named verify-phextura. The program runs it when the user types this word on the command line. :: signature :: 265 :: 0
+item+ entry-point src/main.rs :: main :: fn main() -> ExitCode { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: signature :: 29 :: 0
+item+ flag src/main.rs :: --corpus :: flag --corpus :: A command line flag, --corpus. It is read by the program when the user passes it. :: signature :: 232 :: 0
+item+ flag src/main.rs :: --no-vfs :: flag --no-vfs :: A command line flag, --no-vfs. It is read by the program when the user passes it. :: signature :: 122 :: 0
+item- command src/main.rs :: convert :: 29
+item- command src/main.rs :: extract :: 107
+item- command src/main.rs :: mutable :: 68
+item- command src/main.rs :: show :: 141
+item- command src/main.rs :: verify :: 170
+item- entry-point src/main.rs :: main :: 23
+item- flag src/main.rs :: --corpus :: 175
+item+ const src/mutable.rs :: IMPORT_GENERATION :: pub const IMPORT_GENERATION: &str = "tei-import-1"; :: Deterministic generation id for the import save (matches Mutable's /^[a-zA-Z0-9-]+$/ generation rule). :: doc comment :: 528 :: 1
+item+ enum src/mutable.rs :: Json :: pub enum Json { :: A named choice named Json. It is one of: Null; Bool; Int; Str; Arr; Obj. :: signature :: 31 :: 0
+item+ function src/mutable.rs :: Json::to_pretty :: pub fn to_pretty(&self) -> String { :: JSON.stringify(value, null, 2): objects/arrays expand one item per line; empty ones stay inline as {} / []. :: doc comment :: 66 :: 1
+item+ function src/mutable.rs :: build_document :: pub fn build_document(rel: &str, root: &Element) -> MutableDocument { :: Build the Mutable document for one parsed TEI file (0.1 model element). :: doc comment :: 258 :: 1
+item+ function src/mutable.rs :: document_rel_for :: pub fn document_rel_for(rel: &str) -> String { :: The document filename for a source relative path: `MS.xml` -> `MS.mutable.json`, folders preserved. :: doc comment :: 237 :: 1
+item+ function src/mutable.rs :: export_mutable :: pub fn export_mutable(dir: &Path, out: &Path) -> Result<MutableSummary, String> { :: Export a directory of TEI-XML as a Mutable native Cavern zip. Every source file is accounted for: converted (a document), or named in the returned entries with its error — zero silent skips, as in 0.1. The original XML rides in the tree verbatim either way. :: doc comment :: 615 :: 1
+item+ function src/mutable.rs :: resource_id_for :: pub fn resource_id_for(rel: &str) -> String { :: Deterministic resourceId: a UUID-shaped digest of the source relative path (SHA-256, version/variant bits set) — stable across runs, unique per tree slot. :: doc comment :: 181 :: 1
+item+ function src/mutable.rs :: to_compact :: pub fn to_compact(&self) -> String { :: JSON.stringify(value): compact, key order as constructed. :: doc comment :: 116 :: 1
+item+ struct src/mutable.rs :: MutableDocument :: pub struct MutableDocument { :: One converted Mutable document, ready to write into the Cavern tree. :: doc comment :: 244 :: 1
+item+ struct src/mutable.rs :: MutableEntry :: pub struct MutableEntry { :: A data shape named MutableEntry. Its fields are: pub rel: String; pub error: Option<String>; pub doc_rel: Option<String>; pub resource_id: Option<String>; pub title: Option<String>; pub blocks: usize; pub annotations: usize. :: signature :: 573 :: 0
+item+ struct src/mutable.rs :: MutableSummary :: pub struct MutableSummary { :: A data shape named MutableSummary. Its fields are: pub entries: Vec<MutableEntry>; pub vault_guid: String; pub documents: usize; pub out_bytes: u64. :: signature :: 584 :: 0
+item- const src/mutable.rs :: IMPORT_GENERATION :: 666
+item- enum src/mutable.rs :: Json :: 30
+item- function src/mutable.rs :: Json::to_pretty :: 65
+item- function src/mutable.rs :: build_document :: 420
+item- function src/mutable.rs :: document_rel_for :: 399
+item- function src/mutable.rs :: export_mutable :: 753
+item- function src/mutable.rs :: resource_id_for :: 343
+item- function src/mutable.rs :: to_compact :: 115
+item- struct src/mutable.rs :: MutableDocument :: 406
+item- struct src/mutable.rs :: MutableEntry :: 711
+item- struct src/mutable.rs :: MutableSummary :: 722
+item+ const src/phextura.rs :: CONVERTER :: pub const CONVERTER: &str = concat!("teixml-to-mutable ", env!("CARGO_PKG_VERSION")); :: A fixed value named CONVERTER, set to concat!("teixml-to-mutable ", env!("CARGO_PKG_VERSION")). :: signature :: 48 :: 0
+item+ const src/phextura.rs :: KIND_ORDER :: pub const KIND_ORDER: &[&str] = &["paper", "section", "bibentry", "figure", "tei-element"]; :: L2 key kinds, in object-table index order (LAYER2 §1.4 + profile extension kind `tei-element`, minted on cite only). :: doc comment :: 52 :: 1
+item+ const src/phextura.rs :: POINTING_ATTRS :: pub const POINTING_ATTRS: &[&str] = &[ "ref", "target", "corresp", "decls", "sameAs", "copyOf", "next", "prev", "ana", ]; :: Attributes whose values are treated as references (SPEC-0.3 §3.5). :: doc comment :: 55 :: 1
+item+ const src/phextura.rs :: PROFILE_VERSION :: pub const PROFILE_VERSION: &str = "0.1"; :: A fixed value named PROFILE_VERSION, set to "0.1". :: signature :: 46 :: 0
+item+ const src/phextura.rs :: SECTION_ELEMENTS :: pub const SECTION_ELEMENTS: &[&str] = &[ "div", "div1", "div2", "div3", "div4", "div5", "div6", "div7", "msItem", ]; :: Elements that head a LAYER2 `section` object when headed (profile §3). :: doc comment :: 359 :: 1
+item+ const src/phextura.rs :: TEI_NS :: pub const TEI_NS: &str = "http://www.tei-c.org/ns/1.0"; :: A fixed value named TEI_NS, set to "http://www.tei-c.org/ns/1.0". :: signature :: 47 :: 0
+item+ enum src/phextura.rs :: RefOut :: pub enum RefOut { :: A named choice named RefOut. It is one of: Key; Unresolved; External. :: signature :: 964 :: 0
+item+ enum src/phextura.rs :: TargetForm :: pub enum TargetForm { :: A named choice named TargetForm. It is one of: Object; At. :: signature :: 971 :: 0
+item+ function src/phextura.rs :: C9::new :: pub fn new(z: (u32, u32, u32), y: (u32, u32, u32), x: (u32, u32, u32)) -> C9 { :: Function C9::new takes z: and gives back C9. :: signature :: 73 :: 0
+item+ function src/phextura.rs :: addr :: pub fn addr(&self) -> String { :: Function addr takes no inputs beyond the value it is called on, and gives back String. :: signature :: 76 :: 0
+item+ function src/phextura.rs :: canonical_bytes :: pub fn canonical_bytes(map: &HashMap<phext::Coordinate, String>) -> Vec<u8> { :: Function canonical_bytes takes map: &HashMap<phext::Coordinate, String> and gives back Vec<u8>. :: signature :: 272 :: 0
+item+ function src/phextura.rs :: check_reconstruction :: pub fn check_reconstruction( base_path: &Path, standoff_path: &Path, corpus_dir: &Path, ) -> Result<ReconReport, String> { :: Function check_reconstruction takes base_path: &Path, standoff_path: &Path, corpus_dir: &Path, and gives back Result<ReconReport, String>. :: signature :: 2375 :: 0
+item+ function src/phextura.rs :: edition_checksum :: pub fn edition_checksum(map: &HashMap<phext::Coordinate, String>, manifest: C9) -> String { :: The edition checksum: libphext xxh3-128 over the canonical form of the corpus with the checksum line excluded from its manifest scroll. :: doc comment :: 264 :: 1
+item+ function src/phextura.rs :: escape_value :: pub fn escape_value(v: &str) -> String { :: Function escape_value takes v: &str and gives back String. :: signature :: 129 :: 0
+item+ function src/phextura.rs :: export_phextura :: pub fn export_phextura(dir: &Path, out_dir: &Path) -> Result<PhexturaSummary, String> { :: Function export_phextura takes dir: &Path, out_dir: &Path and gives back Result<PhexturaSummary, String>. :: signature :: 1566 :: 0
+item+ function src/phextura.rs :: export_phextura_opts :: pub fn export_phextura_opts( dir: &Path, out_dir: &Path, emit_vfs: bool, ) -> Result<PhexturaSummary, String> { :: As `export_phextura`; `emit_vfs` controls the D6 PhextVFS image (`cavern.phext`), a third consumer of the assembled pair — the corpus and standoff writers are untouched either way (the D6 seam). :: doc comment :: 1573 :: 1
+item+ function src/phextura.rs :: iso_from_unix :: pub fn iso_from_unix(secs: u64) -> String { :: Function iso_from_unix takes secs: u64 and gives back String. :: signature :: 227 :: 0
+item+ function src/phextura.rs :: iso_now :: pub fn iso_now() -> String { :: Function iso_now takes no inputs beyond the value it is called on, and gives back String. :: signature :: 219 :: 0
+item+ function src/phextura.rs :: line_of :: pub fn line_of<'a>(lines: &'a [(String, String)], name: &str) -> Option<&'a str> { :: Function line_of takes lines: &'a [ and gives back Option<&'a str>. :: signature :: 1778 :: 0
+item+ function src/phextura.rs :: lines_of :: pub fn lines_of<'a>(lines: &'a [(String, String)], name: &str) -> Vec<&'a str> { :: Function lines_of takes lines: &'a [ and gives back Vec<&'a str>. :: signature :: 1782 :: 0
+item+ function src/phextura.rs :: load_entries :: pub fn load_entries( standoff: &HashMap<C9, String>, ) -> Result<Vec<ParsedEntry>, String> { :: All standoff entries, sorted into minting order (series, then scroll). :: doc comment :: 2009 :: 1
+item+ function src/phextura.rs :: load_map :: pub fn load_map(path: &Path) -> Result<HashMap<C9, String>, String> { :: Function load_map takes path: &Path and gives back Result<HashMap<C9, String>, String>. :: signature :: 1786 :: 0
+item+ function src/phextura.rs :: manifest_coord :: pub fn manifest_coord() -> C9 { :: The corpus-level manifest coordinate (Series 1, Collection 6). :: doc comment :: 115 :: 1
+item+ function src/phextura.rs :: parse :: pub fn parse(s: &str) -> Option<C9> { :: Function parse takes s: &str and gives back Option<C9>. :: signature :: 86 :: 0
+item+ function src/phextura.rs :: parse_entry :: pub fn parse_entry(coord: C9, text: &str) -> Result<ParsedEntry, String> { :: Function parse_entry takes coord: C9, text: &str and gives back Result<ParsedEntry, String>. :: signature :: 1946 :: 0
+item+ function src/phextura.rs :: parse_target :: pub fn parse_target(addr: &str) -> Result<TargetAddr, String> { :: Function parse_target takes addr: &str and gives back Result<TargetAddr, String>. :: signature :: 1895 :: 0
+item+ function src/phextura.rs :: phext :: pub fn phext(&self) -> phext::Coordinate { :: Function phext takes no inputs beyond the value it is called on, and gives back phext::Coordinate. :: signature :: 83 :: 0
+item+ function src/phextura.rs :: relocate :: pub fn relocate(base_path: &Path, standoff_path: &Path) -> Result<RelocReport, String> { :: Function relocate takes base_path: &Path, standoff_path: &Path and gives back Result<RelocReport, String>. :: signature :: 2835 :: 0
+item+ function src/phextura.rs :: render_attr_name :: pub fn render_attr_name(qname: &str, scope: &HashMap<String, String>) -> String { :: Render an attribute's qualified name for an `attr-` header line: namespaced names render as `{<namespace-uri>}<local>` (profile §4); the prefix resolves against the xmlns declarations in scope, with `xml` predefined. An unresolvable prefix (undeclared — malformed input) renders as written. :: doc comment :: 1032 :: 1
+item+ function src/phextura.rs :: slugify :: pub fn slugify(s: &str) -> String { :: Function slugify takes s: &str and gives back String. :: signature :: 169 :: 0
+item+ function src/phextura.rs :: split_scroll :: pub fn split_scroll(text: &str) -> ScrollParts { :: Function split_scroll takes text: &str and gives back ScrollParts. :: signature :: 1752 :: 0
+item+ function src/phextura.rs :: standoff_meta_coord :: pub fn standoff_meta_coord() -> C9 { :: The standoff's own metadata coordinate (its Collection 6, Series 1). :: doc comment :: 119 :: 1
+item+ function src/phextura.rs :: strip_checksum_line :: pub fn strip_checksum_line(text: &str) -> String { :: Remove any `checksum: xxh3-128:` line from a scroll's text. :: doc comment :: 255 :: 1
+item+ function src/phextura.rs :: unescape_value :: pub fn unescape_value(v: &str) -> Result<String, String> { :: Function unescape_value takes v: &str and gives back Result<String, String>. :: signature :: 145 :: 0
+item+ function src/phextura.rs :: validate_pair :: pub fn validate_pair(base_path: &Path, standoff_path: &Path) -> Result<ValidateReport, String> { :: Function validate_pair takes base_path: &Path, standoff_path: &Path and gives back Result<ValidateReport, String>. :: signature :: 2073 :: 0
+item+ struct src/phextura.rs :: C9 :: pub struct C9 { :: A full 9-component phext coordinate (Z/Y/X), the address currency of this module; converted to libphext coordinates only at the implode boundary. :: doc comment :: 66 :: 1
+item+ struct src/phextura.rs :: Detached :: pub struct Detached { :: A data shape named Detached. Its fields are: pub key: String; pub class: String, // span-edited | span-absent | key-retired; pub quoted: String. :: signature :: 2793 :: 0
+item+ struct src/phextura.rs :: EntryRec :: pub struct EntryRec { :: A data shape named EntryRec. Its fields are: pub kind: &'static str, // tei-element | tei-comment | tei-pi; pub form: TargetForm; pub hash: String; pub text: String; pub before: Option<String>; pub after: Option<String>; pub tei_element: Option<String>; pub tei_ns: Option<String>; pub pi_target: Option<String>; pub attrs: Vec<(String, String)>; pub refs: Vec<RefOut>; pub body: String. :: signature :: 980 :: 0
+item+ struct src/phextura.rs :: ParsedEntry :: pub struct ParsedEntry { :: A data shape named ParsedEntry. Its fields are: pub coord: C9; pub kind: String; pub key_n: usize; pub target: TargetAddr; pub hash: String; pub text: String; pub before: Option<String>; pub after: Option<String>; pub tei_element: Option<String>; pub tei_ns: Option<String>; pub pi_target: Option<String>; pub attrs: Vec<(String, String)>; pub refers: Vec<String>; pub refers_unresolved: Vec<String>; pub refers_external: Vec<String>; pub body: String. :: signature :: 1927 :: 0
+item+ struct src/phextura.rs :: PhexturaFileEntry :: pub struct PhexturaFileEntry { :: A data shape named PhexturaFileEntry. Its fields are: pub rel: String; pub series: u32; pub error: Option<String>; pub entries: usize; pub scrolls: usize. :: signature :: 1510 :: 0
+item+ struct src/phextura.rs :: PhexturaSummary :: pub struct PhexturaSummary { :: A data shape named PhexturaSummary. Its fields are: pub name: String; pub slug: String; pub entries: Vec<PhexturaFileEntry>; pub documents: usize; pub base_path: PathBuf; pub standoff_path: PathBuf; pub base_bytes: u64; pub standoff_bytes: u64; pub base_scrolls: usize; pub standoff_scrolls: usize; pub total_entries: usize; pub entries_by_kind: Vec<(String, usize)>; pub refs: RefCounts; pub externals: usize; pub pin: String; pub vfs_path: Option<PathBuf>; pub vfs_bytes: u64; pub vfs_scrolls: usize. :: signature :: 1519 :: 0
+item+ struct src/phextura.rs :: ReconReport :: pub struct ReconReport { :: A data shape named ReconReport. Its fields are: pub ok: bool; pub mismatches: Vec<String>; pub mismatch_total: usize; pub files: usize; pub originals_verified: usize; pub segments: usize; pub elements: usize; pub attributes: usize; pub comments: usize; pub pis: usize; pub doctypes: usize; pub refs_resolved: usize; pub refs_unresolved: usize; pub refs_external: usize. :: signature :: 2282 :: 0
+item+ struct src/phextura.rs :: RefCounts :: pub struct RefCounts { :: A data shape named RefCounts. Its fields are: pub resolved: usize; pub unresolved: usize; pub external: usize. :: signature :: 997 :: 0
+item+ struct src/phextura.rs :: RelocReport :: pub struct RelocReport { :: A data shape named RelocReport. Its fields are: pub total: usize; pub exact: usize; pub relocated_verified: usize; pub relocated_moved: usize; pub lost: Vec<Detached>; pub ambiguous: Vec<Detached>. :: signature :: 2800 :: 0
+item+ struct src/phextura.rs :: ScrollParts :: pub struct ScrollParts { :: A scroll split into role line, header lines, and body (text after the first blank line; header-only scrolls have an empty body). :: doc comment :: 1746 :: 1
+item+ struct src/phextura.rs :: TargetAddr :: pub struct TargetAddr { :: A data shape named TargetAddr. Its fields are: pub slug: String; pub pin: String; pub kind: Option<String>; pub key_slug: Option<String>; pub at: Option<(C9, usize, usize)>. :: signature :: 1887 :: 0
+item+ struct src/phextura.rs :: ValidateReport :: pub struct ValidateReport { :: A data shape named ValidateReport. Its fields are: pub ok: bool; pub failures: Vec<String>; pub base_scrolls: usize; pub standoff_scrolls: usize; pub base_checksum_ok: bool; pub standoff_checksum_ok: bool; pub keys_indexed: usize; pub entries: usize; pub media_headers: usize; pub externals_declared: usize; pub bare_coords_in_prose: usize; pub resolvable_bare_coords: usize. :: signature :: 2029 :: 0
+item+ const src/segment.rs :: BLOCK_ELEMENTS :: pub const BLOCK_ELEMENTS: &[&str] = &[ "ab", "additions", "adminInfo", "analytic", "argument", "bibl", "biblStruct", "bindingDesc", "body", "back", "cell", "cit", "closer", "custodialHist", "decoDesc", "div", "div1", "div2", "div3", "div4", "div5", "div6", "div7", "docAuthor", "docDate", "docEdition :: TEI block-level elements: each owns text segments; any other element containing a block-level descendant acts as a container; everything else is inline. :: doc comment :: 28 :: 1
+item+ function src/segment.rs :: <'a> Flat<'a>::index_of :: pub fn index_of(&self, e: &Element) -> usize { :: Function <'a> Flat<'a>::index_of takes &self, e: &Element and gives back usize. :: signature :: 67 :: 0
+item+ function src/segment.rs :: flatten :: pub fn flatten(root: &Element) -> Flat<'_> { :: Function flatten takes root: &Element and gives back Flat<'_>. :: signature :: 78 :: 0
+item+ function src/segment.rs :: has_block_descendant :: pub fn has_block_descendant(el: &Element) -> bool { :: Function has_block_descendant takes el: &Element and gives back bool. :: signature :: 46 :: 0
+item+ function src/segment.rs :: is_block :: pub fn is_block(name: &str) -> bool { :: Function is_block takes name: &str and gives back bool. :: signature :: 42 :: 0
+item+ function src/segment.rs :: is_empty :: pub fn is_empty(&self) -> bool { :: Function is_empty takes no inputs beyond the value it is called on, and gives back bool. :: signature :: 73 :: 0
+item+ function src/segment.rs :: kept_map :: pub fn kept_map(seg: &Segmentation) -> Vec<Option<usize>> { :: The keep rule (0.2, recon §4.4): a segment survives iff its text is non-whitespace or it carries at least one inline occurrence. Returns (raw index → kept index) for kept segments. :: doc comment :: 286 :: 1
+item+ function src/segment.rs :: len :: pub fn len(&self) -> usize { :: Function len takes no inputs beyond the value it is called on, and gives back usize. :: signature :: 70 :: 0
+item+ function src/segment.rs :: segment_document :: pub fn segment_document(root: &Element, flat: &Flat) -> Segmentation { :: Segment one document. Identical segmentation to the 0.2 export's Builder (same keep rule inputs, same order); the 0.2 test suite is the regression net. :: doc comment :: 276 :: 1
+item+ struct src/segment.rs :: Flat :: pub struct Flat<'a> { :: A pre-order flattening of one document tree: occurrence indices, parent/depth, subtree ranges, and per-element descendant text. :: doc comment :: 55 :: 1
+item+ struct src/segment.rs :: InlineOcc :: pub struct InlineOcc { :: One inline element occurrence inside a segment. :: doc comment :: 121 :: 1
+item+ struct src/segment.rs :: SegMark :: pub struct SegMark { :: A comment or PI encountered during the walk (ruling D3). :: doc comment :: 136 :: 1
+item+ struct src/segment.rs :: Segment :: pub struct Segment { :: One raw segment (pre-keep-rule). :: doc comment :: 152 :: 1
+item+ struct src/segment.rs :: Segmentation :: pub struct Segmentation { :: A data shape named Segmentation. Its fields are: pub segments: Vec<Segment>; pub marks: Vec<SegMark>. :: signature :: 163 :: 0
+item+ const src/vfs.rs :: VFS_CHUNK_SIZE :: pub const VFS_CHUNK_SIZE: usize = 65536; :: Mutable's DEFAULT_CHUNK_SIZE (vfs.ts). :: doc comment :: 41 :: 1
+item+ function src/vfs.rs :: base64_encode :: pub fn base64_encode(bytes: &[u8]) -> String { :: Standard base64 (RFC 4648, padded) — the encoding Mutable's `Buffer.toString("base64")` produces and its reader decodes per chunk. :: doc comment :: 86 :: 1
+item+ function src/vfs.rs :: build_cavern_image :: pub fn build_cavern_image(files: &[(&str, &[u8])]) -> (Vec<u8>, VfsImageInfo) { :: Build the `cavern.phext` image holding `files` (name, bytes) in the given order at the documents-stratum root, in the VFS binary format. Returns the image bytes and its accounting. :: doc comment :: 133 :: 1
+item+ function src/vfs.rs :: json_escape :: pub fn json_escape(s: &str) -> String { :: JSON string escaping with JSON.stringify semantics (the index and manifest scrolls are consumed by Mutable's `JSON.parse`). :: doc comment :: 112 :: 1
+item+ struct src/vfs.rs :: VfsImageInfo :: pub struct VfsImageInfo { :: A data shape named VfsImageInfo. Its fields are: pub bytes: usize; pub scrolls: usize; pub files: usize; pub chunks: usize; pub checksum_scrolls: usize. :: signature :: 52 :: 0
+quality 35 8 0 0
+fncount 210
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/teixml-to-mutable.git
+branch exo
+largest-file src/phextura.rs :: 2980
+largest-file src/lib.rs :: 1337
+largest-file src/mutable.rs :: 880
+largest-file TEI.md :: 553
+largest-file tests/phextura.rs :: 413
+largest-fn build_layout :: src/phextura.rs :: 464
+largest-fn check_reconstruction :: src/phextura.rs :: 434
+largest-fn main :: src/main.rs :: 339
+largest-fn validate_pair :: src/phextura.rs :: 239
+largest-fn export_phextura_opts :: src/phextura.rs :: 179
+stat Markdown files 3 total 785 blank 133 comment 2 code 650
 stat Rust files 13 total 7221 blank 317 comment 592 code 6312
 stat TOML files 1 total 22 blank 2 comment 0 code 20
 author~ Will Bickford <wbic16@gmail.com> commits 4

@@ -1,3 +1,4 @@
+delta-format 3
 Commit 5cc5bfbbd26d by Will Bickford <wbic16@gmail.com> on 2026-11-17 (EE 0).
 
 Subject: Initial commit
@@ -10,12 +11,17 @@ commit 5cc5bfbbd26d509337e427758df0e1223c9b4cb2
 parent none
 author Will Bickford <wbic16@gmail.com>
 date 1794920858 2026-11-17
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phccbox.git
+branch exo
 author+ Will Bickford <wbic16@gmail.com>
 Commit 0f1189dfda9c by Will Bickford <wbic16@gmail.com> on 2026-11-17 (EE 0).
 
 Subject: Merge pull request #1 from wbic16/emise/seed-phccbox-tree
 
-Public items: 22 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 7270.
+Public items: 22 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 7265.
 
 This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
 
@@ -23,31 +29,46 @@ commit 0f1189dfda9c6526130393f405b6733bc84c8b51
 parent 5cc5bfbbd26d509337e427758df0e1223c9b4cb2
 author Will Bickford <wbic16@gmail.com>
 date 1794925810 2026-11-17
-item+ function exo-src/gen_literals.py :: cstr :: def cstr(s) :: Function cstr takes s. Its return type is unannotated; the code shows it returning '"' + ''.join(out) + '"'. :: inferred :: api
-item+ function exo-src/gen_literals.py :: emit :: def emit(name, items) :: items: list of (cname, python-string) -> static const char * arrays :: direct :: api
-item+ function exo-src/gen_literals.py :: heredoc :: def heredoc(text, start_marker, end_marker="EOF") :: Return the raw text between the line containing start_marker's '<<' :: direct :: api
-item+ function exo-src/gen_literals.py :: read :: def read(name) :: Function read takes name. Its return type is unannotated; the code shows it returning f.read(). :: inferred :: api
-item+ function exo-src/gen_literals.py :: tmpl :: def tmpl(s) :: Convert shell ${VAR} / $VAR expansions into %%VAR%% tokens. :: direct :: api
-item+ function exo-test/proof.py :: append_check :: def append_check(name, script, needle, env, case, rel, seed) :: Function append_check takes name, script, needle, env, case, rel, seed. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function exo-test/proof.py :: cmp :: def cmp(name, a, b) :: Function cmp takes name, a, b. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function exo-test/proof.py :: expand :: def expand(tmpl, vals) :: Function expand takes tmpl, vals. Its return type is unannotated; the code shows it returning tmpl. :: inferred :: api
-item+ function exo-test/proof.py :: extract_heredoc :: def extract_heredoc(script, needle) :: Find the heredoc whose command line contains `needle`; :: direct :: api
-item+ function exo-test/proof.py :: note :: def note(s): out.append(s); print(s, flush=True) :: Function note takes s. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function exo-test/proof.py :: port_file :: def port_file(case, rel) :: Function port_file takes case, rel. Its return type is unannotated; the code shows it returning open(p).read() if os.path.exists(p) else None. :: inferred :: api
-item+ function exo-test/proof.py :: read_c_template :: def read_c_template(header, varname) :: Function read_c_template takes header, varname. Its return type is unannotated; the code shows it returning s.encode().decode("unicode_escape"). :: inferred :: api
-item+ function exo-test/proof.py :: render_bash :: def render_bash(body, env, quoted) :: Render the body the way bash would inside the original heredoc. :: direct :: api
-item+ function exo-test/ship/proof.py :: append_check :: def append_check(name, script, needle, env, case, rel, seed) :: Function append_check takes name, script, needle, env, case, rel, seed. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function exo-test/ship/proof.py :: cmp :: def cmp(name, a, b) :: Function cmp takes name, a, b. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function exo-test/ship/proof.py :: expand :: def expand(tmpl, vals) :: Function expand takes tmpl, vals. Its return type is unannotated; the code shows it returning tmpl. :: inferred :: api
-item+ function exo-test/ship/proof.py :: extract_heredoc :: def extract_heredoc(script, needle) :: Find the heredoc whose command line contains `needle`; :: direct :: api
-item+ function exo-test/ship/proof.py :: note :: def note(s): out.append(s); print(s, flush=True) :: Function note takes s. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function exo-test/ship/proof.py :: port_file :: def port_file(case, rel) :: Function port_file takes case, rel. Its return type is unannotated; the code shows it returning open(p).read() if os.path.exists(p) else None. :: inferred :: api
-item+ function exo-test/ship/proof.py :: read_c_template :: def read_c_template(header, varname) :: Function read_c_template takes header, varname. Its return type is unannotated; the code shows it returning s.encode().decode("unicode_escape"). :: inferred :: api
-item+ function exo-test/ship/proof.py :: render_bash :: def render_bash(body, env, quoted) :: Render the body the way bash would inside the original heredoc. :: direct :: api
-item+ function scripts/classify.py :: put :: def put(name, cls, src) :: Function put takes name, cls, src. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
+item+ function exo-src/gen_literals.py :: cstr :: def cstr(s): :: Function cstr takes s and gives back nothing; it does its work on what it is given. :: signature :: 14 :: 0
+item+ function exo-src/gen_literals.py :: emit :: def emit(name, items): :: items: list of (cname, python-string) -> static const char * arrays :: doc comment :: 26 :: 1
+item+ function exo-src/gen_literals.py :: heredoc :: def heredoc(text, start_marker, end_marker="EOF"): :: Return the raw text between the line containing start_marker's '<<' :: doc comment :: 34 :: 1
+item+ function exo-src/gen_literals.py :: read :: def read(name): :: Function read takes name and gives back nothing; it does its work on what it is given. :: signature :: 10 :: 0
+item+ function exo-src/gen_literals.py :: tmpl :: def tmpl(s): :: Convert shell ${VAR} / $VAR expansions into %%VAR%% tokens. :: doc comment :: 57 :: 1
+item+ function exo-test/proof.py :: append_check :: def append_check(name, script, needle, env, case, rel, seed): :: Function append_check takes name, script, needle, env, case, rel, seed and gives back nothing; it does its work on what it is given. :: signature :: 98 :: 0
+item+ function exo-test/proof.py :: cmp :: def cmp(name, a, b): :: Function cmp takes name, a, b and gives back nothing; it does its work on what it is given. :: signature :: 52 :: 0
+item+ function exo-test/proof.py :: expand :: def expand(tmpl, vals): :: Function expand takes tmpl, vals and gives back nothing; it does its work on what it is given. :: signature :: 47 :: 0
+item+ function exo-test/proof.py :: extract_heredoc :: def extract_heredoc(script, needle): :: Find the heredoc whose command line contains `needle`; :: doc comment :: 15 :: 1
+item+ function exo-test/proof.py :: note :: def note(s): out.append(s); print(s, flush=True) :: Function note takes s and gives back nothing; it does its work on what it is given. :: signature :: 13 :: 0
+item+ function exo-test/proof.py :: port_file :: def port_file(case, rel): :: Function port_file takes case, rel and gives back nothing; it does its work on what it is given. :: signature :: 61 :: 0
+item+ function exo-test/proof.py :: read_c_template :: def read_c_template(header, varname): :: Function read_c_template takes header, varname and gives back nothing; it does its work on what it is given. :: signature :: 40 :: 0
+item+ function exo-test/proof.py :: render_bash :: def render_bash(body, env, quoted): :: Render the body the way bash would inside the original heredoc. :: doc comment :: 32 :: 1
+item+ function exo-test/ship/proof.py :: append_check :: def append_check(name, script, needle, env, case, rel, seed): :: Function append_check takes name, script, needle, env, case, rel, seed and gives back nothing; it does its work on what it is given. :: signature :: 98 :: 0
+item+ function exo-test/ship/proof.py :: cmp :: def cmp(name, a, b): :: Function cmp takes name, a, b and gives back nothing; it does its work on what it is given. :: signature :: 52 :: 0
+item+ function exo-test/ship/proof.py :: expand :: def expand(tmpl, vals): :: Function expand takes tmpl, vals and gives back nothing; it does its work on what it is given. :: signature :: 47 :: 0
+item+ function exo-test/ship/proof.py :: extract_heredoc :: def extract_heredoc(script, needle): :: Find the heredoc whose command line contains `needle`; :: doc comment :: 15 :: 1
+item+ function exo-test/ship/proof.py :: note :: def note(s): out.append(s); print(s, flush=True) :: Function note takes s and gives back nothing; it does its work on what it is given. :: signature :: 13 :: 0
+item+ function exo-test/ship/proof.py :: port_file :: def port_file(case, rel): :: Function port_file takes case, rel and gives back nothing; it does its work on what it is given. :: signature :: 61 :: 0
+item+ function exo-test/ship/proof.py :: read_c_template :: def read_c_template(header, varname): :: Function read_c_template takes header, varname and gives back nothing; it does its work on what it is given. :: signature :: 40 :: 0
+item+ function exo-test/ship/proof.py :: render_bash :: def render_bash(body, env, quoted): :: Render the body the way bash would inside the original heredoc. :: doc comment :: 32 :: 1
+item+ function scripts/classify.py :: put :: def put(name, cls, src): :: Function put takes name, cls, src and gives back nothing; it does its work on what it is given. :: signature :: 100 :: 0
+quality 0 16 0 0
+fncount 22
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phccbox.git
+branch exo
+largest-file exo-src/applets_g.c :: 723
+largest-file exo-src/applets_c.c :: 716
+largest-file exo-src/applets_e.c :: 534
+largest-file exo-src/exo_util.c :: 448
+largest-file exo-src/applets_f.c :: 447
+largest-fn tmpl :: exo-src/gen_literals.py :: 131
+largest-fn append_check :: exo-test/proof.py :: 52
+largest-fn append_check :: exo-test/ship/proof.py :: 52
+largest-fn port_file :: exo-test/proof.py :: 37
+largest-fn port_file :: exo-test/ship/proof.py :: 37
 stat C files 11 total 4516 blank 160 comment 373 code 3983
 stat C header files 12 total 106 blank 7 comment 28 code 71
-stat Markdown files 3 total 1012 blank 88 comment 0 code 924
+stat Markdown files 3 total 1012 blank 88 comment 3 code 921
 stat Python files 4 total 615 blank 52 comment 34 code 529
-stat Shell files 28 total 2097 blank 117 comment 217 code 1763
+stat Shell files 28 total 2097 blank 117 comment 219 code 1761
 author~ Will Bickford <wbic16@gmail.com> commits 2

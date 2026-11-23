@@ -1,8 +1,9 @@
+delta-format 3
 Commit e071ce36dedc by Will Bickford <wbic16@gmail.com> on 2024-08-12 (EE 0).
 
 Subject: Documenting my I/O intentions for phext shell
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 27.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 26.
 
 This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
 
@@ -10,7 +11,13 @@ commit e071ce36dedcf1badf754573c95272a0f9728728
 parent none
 author Will Bickford <wbic16@gmail.com>
 date 1723433878 2024-08-12
-stat Markdown files 1 total 34 blank 7 comment 0 code 27
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+largest-file README.md :: 34
+stat Markdown files 1 total 34 blank 7 comment 1 code 26
 author+ Will Bickford <wbic16@gmail.com>
 Commit 3b3848e4924c by Will Bickford <wbic16@gmail.com> on 2024-08-13 (EE 0).
 
@@ -22,331 +29,512 @@ commit 3b3848e4924c194978d34bcbca750f820abe457d
 parent e071ce36dedcf1badf754573c95272a0f9728728
 author Will Bickford <wbic16@gmail.com>
 date 1723519298 2024-08-13
-stat Markdown files 1 total 34 blank 7 comment 0 code 27
-stat TOML files 1 total 10 blank 1 comment 0 code 9
+depmeta Cargo.toml :: Rust (cargo) :: MIT :: -
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 34 blank 7 comment 1 code 26
+stat TOML files 1 total 10 blank 0 comment 0 code 10
 author~ Will Bickford <wbic16@gmail.com> commits 2
 Commit 85cd48880452 by Will Bickford <wbic16@gmail.com> on 2024-08-14 (EE 0).
 
 Subject: Basic shell with exit and cs commands
 
-Public items: 1 added, 0 removed, 0 changed. Dependencies: hello-phext added at 0.2.5; libphext added at 0.1.1. Code lines after this commit: 73.
+Public items: 1 added, 0 removed, 0 changed. Dependencies: hello-phext [dependencies] added at 0.2.5; libphext [dependencies] added at 0.1.1. Code lines after this commit: 92.
 
 commit 85cd4888045267e319ae53fdcf37e48f255175d9
 parent 3b3848e4924c194978d34bcbca750f820abe457d
 author Will Bickford <wbic16@gmail.com>
 date 1723673739 2024-08-14
-dep+ Cargo.toml :: hello-phext :: 0.2.5
-dep+ Cargo.toml :: libphext :: 0.1.1
-item+ entry-point src/main.rs :: main :: fn main() { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: inferred :: api
-stat Markdown files 1 total 34 blank 7 comment 0 code 27
-stat Rust files 1 total 54 blank 11 comment 8 code 35
-stat TOML files 1 total 12 blank 1 comment 0 code 11
+dep+ Cargo.toml :: hello-phext [dependencies] :: 0.2.5
+dep+ Cargo.toml :: libphext [dependencies] :: 0.1.1
+item+ entry-point src/main.rs :: main :: fn main() { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: signature :: 15 :: 0
+quality 0 0 0 0
+fncount 2
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 34 blank 7 comment 1 code 26
+stat Rust files 1 total 54 blank 0 comment 0 code 54
+stat TOML files 1 total 12 blank 0 comment 0 code 12
 author~ Will Bickford <wbic16@gmail.com> commits 3
 Commit 124a74a0b946 by Will Bickford <wbic16@gmail.com> on 2024-08-15 (EE 0).
 
 Subject: v0.1.2 - added vex, quit, and vim-style exit
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies: libphext 0.1.1 -> 0.1.2; hello-phext removed. Code lines after this commit: 93.
+Public items: 1 added, 1 removed, 0 changed. Dependencies: libphext [dependencies] 0.1.1 -> 0.1.2; hello-phext [dependencies] removed. Code lines after this commit: 116.
 
 commit 124a74a0b9468f5fb90ce01742a46632dc0a2830
 parent 85cd4888045267e319ae53fdcf37e48f255175d9
 author Will Bickford <wbic16@gmail.com>
 date 1723698947 2024-08-15
-dep~ Cargo.toml :: libphext :: 0.1.1 -> 0.1.2
-dep- Cargo.toml :: hello-phext
-stat Markdown files 1 total 34 blank 7 comment 0 code 27
-stat Rust files 1 total 79 blank 12 comment 11 code 56
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+dep~ Cargo.toml :: libphext [dependencies] :: 0.1.1 -> 0.1.2
+dep- Cargo.toml :: hello-phext [dependencies]
+item+ entry-point src/main.rs :: main :: fn main() { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: signature :: 17 :: 0
+item- entry-point src/main.rs :: main :: 15
+quality 0 0 0 0
+fncount 2
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 34 blank 7 comment 1 code 26
+stat Rust files 1 total 79 blank 0 comment 0 code 79
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 4
 Commit 252dc15428bf by Will Bickford <wbic16@gmail.com> on 2024-08-16 (EE 0).
 
 Subject: Added a help menu
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 222.
+Public items: 2 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 258.
 
 commit 252dc15428bf9292f1083bf5c8d62fea0a538435
 parent 124a74a0b9468f5fb90ce01742a46632dc0a2830
 author Will Bickford <wbic16@gmail.com>
 date 1723776895 2024-08-16
-stat Markdown files 1 total 34 blank 7 comment 0 code 27
-stat Rust files 1 total 221 blank 24 comment 12 code 185
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+item+ flag src/main.rs :: -------- :: flag -------- :: A command line flag, --------. It is read by the program when the user passes it. :: signature :: 214 :: 0
+item+ flag src/main.rs :: ------------------ :: flag ------------------ :: A command line flag, ------------------. It is read by the program when the user passes it. :: signature :: 209 :: 0
+quality 0 0 0 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 34 blank 7 comment 1 code 26
+stat Rust files 1 total 221 blank 0 comment 0 code 221
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 5
 Commit 96c4e5167793 by Will Bickford <wbic16@gmail.com> on 2024-08-16 (EE 0).
 
 Subject: Packaging v0.1.3
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 222.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 258.
 
 commit 96c4e51677935cb5466b4d627d69a37f3b8b5dc4
 parent 252dc15428bf9292f1083bf5c8d62fea0a538435
 author Will Bickford <wbic16@gmail.com>
 date 1723776915 2024-08-16
-stat Markdown files 1 total 34 blank 7 comment 0 code 27
-stat Rust files 1 total 221 blank 24 comment 12 code 185
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+quality 0 0 0 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 34 blank 7 comment 1 code 26
+stat Rust files 1 total 221 blank 0 comment 0 code 221
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 6
 Commit 754cf8a90afe by Will Bickford <wbic16@gmail.com> on 2024-08-17 (EE 0).
 
 Subject: Improved the README a bit
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 219.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 257.
 
 commit 754cf8a90afe87702cf7ca7c760bfae8638e0b52
 parent 96c4e51677935cb5466b4d627d69a37f3b8b5dc4
 author Will Bickford <wbic16@gmail.com>
 date 1723859244 2024-08-17
-stat Markdown files 1 total 33 blank 9 comment 0 code 24
-stat Rust files 1 total 221 blank 24 comment 12 code 185
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+quality 0 0 0 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 33 blank 7 comment 1 code 25
+stat Rust files 1 total 221 blank 0 comment 0 code 221
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 7
 Commit 0f328028dc58 by Will Bickford <wbic16@gmail.com> on 2024-08-17 (EE 0).
 
 Subject: Added several new commands and normalized to two-character command names
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 281.
+Public items: 2 added, 2 removed, 0 changed. Dependencies did not change. Code lines after this commit: 333.
 
 commit 0f328028dc5857af28bc92fa8d41332eee21cc53
 parent 754cf8a90afe87702cf7ca7c760bfae8638e0b52
 author Will Bickford <wbic16@gmail.com>
 date 1723863503 2024-08-17
-stat Markdown files 1 total 39 blank 9 comment 0 code 30
-stat Rust files 1 total 291 blank 32 comment 18 code 241
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+item+ flag src/main.rs :: -------- :: flag -------- :: A command line flag, --------. It is read by the program when the user passes it. :: signature :: 284 :: 0
+item+ flag src/main.rs :: ------------------ :: flag ------------------ :: A command line flag, ------------------. It is read by the program when the user passes it. :: signature :: 273 :: 0
+item- flag src/main.rs :: -------- :: 214
+item- flag src/main.rs :: ------------------ :: 209
+quality 0 0 0 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 39 blank 7 comment 1 code 31
+stat Rust files 1 total 291 blank 0 comment 0 code 291
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 8
 Commit 5efc1b698a51 by Will Bickford <wbic16@gmail.com> on 2024-08-17 (EE 0).
 
 Subject: Fixed regressions with af and os commands
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 283.
+Public items: 2 added, 2 removed, 0 changed. Dependencies did not change. Code lines after this commit: 335.
 
 commit 5efc1b698a51510d7c20f4146865bd325d05c6a0
 parent 0f328028dc5857af28bc92fa8d41332eee21cc53
 author Will Bickford <wbic16@gmail.com>
 date 1723864005 2024-08-17
-stat Markdown files 1 total 39 blank 9 comment 0 code 30
-stat Rust files 1 total 293 blank 32 comment 18 code 243
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+item+ flag src/main.rs :: -------- :: flag -------- :: A command line flag, --------. It is read by the program when the user passes it. :: signature :: 286 :: 0
+item+ flag src/main.rs :: ------------------ :: flag ------------------ :: A command line flag, ------------------. It is read by the program when the user passes it. :: signature :: 275 :: 0
+item- flag src/main.rs :: -------- :: 284
+item- flag src/main.rs :: ------------------ :: 273
+quality 0 0 0 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 39 blank 7 comment 1 code 31
+stat Rust files 1 total 293 blank 0 comment 0 code 293
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 9
 Commit d8a30b8b196e by Will Bickford <wbic16@gmail.com> on 2024-08-17 (EE 0).
 
 Subject: v0.1.6 - Hierarchical History
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 296.
+Public items: 3 added, 3 removed, 0 changed. Dependencies did not change. Code lines after this commit: 351.
 
 commit d8a30b8b196eba942ec21dfc271e06cca0d65364
 parent 5efc1b698a51510d7c20f4146865bd325d05c6a0
 author Will Bickford <wbic16@gmail.com>
 date 1723866041 2024-08-17
-stat Markdown files 1 total 43 blank 10 comment 0 code 33
-stat Rust files 1 total 305 blank 34 comment 18 code 253
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+item+ entry-point src/main.rs :: main :: fn main() { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: signature :: 19 :: 0
+item+ flag src/main.rs :: -------- :: flag -------- :: A command line flag, --------. It is read by the program when the user passes it. :: signature :: 298 :: 0
+item+ flag src/main.rs :: ------------------ :: flag ------------------ :: A command line flag, ------------------. It is read by the program when the user passes it. :: signature :: 287 :: 0
+item- entry-point src/main.rs :: main :: 17
+item- flag src/main.rs :: -------- :: 286
+item- flag src/main.rs :: ------------------ :: 275
+quality 0 0 0 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 43 blank 7 comment 1 code 35
+stat Rust files 1 total 305 blank 0 comment 0 code 305
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 10
 Commit f89e7dd399ed by Will Bickford <wbic16@gmail.com> on 2024-08-17 (EE 0).
 
 Subject: v0.1.7 - added Book and Series short formats
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 300.
+Public items: 2 added, 2 removed, 0 changed. Dependencies did not change. Code lines after this commit: 355.
 
 commit f89e7dd399ed37fc230c68addb85cb7dff04b14b
 parent d8a30b8b196eba942ec21dfc271e06cca0d65364
 author Will Bickford <wbic16@gmail.com>
 date 1723928788 2024-08-17
-stat Markdown files 1 total 43 blank 10 comment 0 code 33
-stat Rust files 1 total 309 blank 34 comment 18 code 257
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+item+ flag src/main.rs :: -------- :: flag -------- :: A command line flag, --------. It is read by the program when the user passes it. :: signature :: 302 :: 0
+item+ flag src/main.rs :: ------------------ :: flag ------------------ :: A command line flag, ------------------. It is read by the program when the user passes it. :: signature :: 291 :: 0
+item- flag src/main.rs :: -------- :: 298
+item- flag src/main.rs :: ------------------ :: 287
+quality 0 0 0 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 43 blank 7 comment 1 code 35
+stat Rust files 1 total 309 blank 0 comment 0 code 309
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 11
 Commit 2616695b924b by Will Bickford <wbic16@gmail.com> on 2024-08-19 (EE 0).
 
 Subject: v0.1.8 - Run external processes and collect output to the current scroll
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 320.
+Public items: 2 added, 2 removed, 0 changed. Dependencies did not change. Code lines after this commit: 376.
 
 commit 2616695b924b2b3cf106d0a16ac766340c601969
 parent f89e7dd399ed37fc230c68addb85cb7dff04b14b
 author Will Bickford <wbic16@gmail.com>
 date 1724039061 2024-08-19
-stat Markdown files 1 total 43 blank 10 comment 0 code 33
-stat Rust files 1 total 330 blank 35 comment 18 code 277
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+item+ flag src/main.rs :: -------- :: flag -------- :: A command line flag, --------. It is read by the program when the user passes it. :: signature :: 323 :: 0
+item+ flag src/main.rs :: ------------------ :: flag ------------------ :: A command line flag, ------------------. It is read by the program when the user passes it. :: signature :: 312 :: 0
+item- flag src/main.rs :: -------- :: 302
+item- flag src/main.rs :: ------------------ :: 291
+quality 0 0 0 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 43 blank 7 comment 1 code 35
+stat Rust files 1 total 330 blank 0 comment 0 code 330
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 12
 Commit be1941a3cae9 by Will Bickford <wbic16@gmail.com> on 2024-08-19 (EE 0).
 
 Subject: Ignore sample.phext
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 320.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 376.
 
 commit be1941a3cae9faf66a475943f3308bde3c52113c
 parent 2616695b924b2b3cf106d0a16ac766340c601969
 author Will Bickford <wbic16@gmail.com>
 date 1724109616 2024-08-19
-stat Markdown files 1 total 43 blank 10 comment 0 code 33
-stat Rust files 1 total 330 blank 35 comment 18 code 277
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+quality 0 0 0 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 43 blank 7 comment 1 code 35
+stat Rust files 1 total 330 blank 0 comment 0 code 330
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 13
 Commit 75c0e0fe8a42 by Will Bickford <wbic16@gmail.com> on 2024-08-20 (EE 0).
 
 Subject: Support coordinate echo with 'cs'
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 324.
+Public items: 2 added, 2 removed, 0 changed. Dependencies did not change. Code lines after this commit: 380.
 
 commit 75c0e0fe8a426ee5be089ff6bde9a0d632369313
 parent be1941a3cae9faf66a475943f3308bde3c52113c
 author Will Bickford <wbic16@gmail.com>
 date 1724124782 2024-08-20
-stat Markdown files 1 total 43 blank 10 comment 0 code 33
-stat Rust files 1 total 334 blank 35 comment 18 code 281
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+item+ flag src/main.rs :: -------- :: flag -------- :: A command line flag, --------. It is read by the program when the user passes it. :: signature :: 327 :: 0
+item+ flag src/main.rs :: ------------------ :: flag ------------------ :: A command line flag, ------------------. It is read by the program when the user passes it. :: signature :: 316 :: 0
+item- flag src/main.rs :: -------- :: 323
+item- flag src/main.rs :: ------------------ :: 312
+quality 0 0 0 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 43 blank 7 comment 1 code 35
+stat Rust files 1 total 334 blank 0 comment 0 code 334
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 14
 Commit 7680cad04404 by Will Bickford <wbic16@gmail.com> on 2024-08-20 (EE 0).
 
 Subject: v0.1.9 - added the hp (hash phext) command
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies: libphext 0.1.2 -> 0.1.3. Code lines after this commit: 334.
+Public items: 2 added, 2 removed, 0 changed. Dependencies: libphext [dependencies] 0.1.2 -> 0.1.3. Code lines after this commit: 392.
 
 commit 7680cad0440434cdbe26faf6cda37735bc4199ae
 parent 75c0e0fe8a426ee5be089ff6bde9a0d632369313
 author Will Bickford <wbic16@gmail.com>
 date 1724129212 2024-08-20
-dep~ Cargo.toml :: libphext :: 0.1.2 -> 0.1.3
-stat Markdown files 1 total 43 blank 10 comment 0 code 33
-stat Rust files 1 total 346 blank 36 comment 19 code 291
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+dep~ Cargo.toml :: libphext [dependencies] :: 0.1.2 -> 0.1.3
+item+ flag src/main.rs :: -------- :: flag -------- :: A command line flag, --------. It is read by the program when the user passes it. :: signature :: 339 :: 0
+item+ flag src/main.rs :: ------------------ :: flag ------------------ :: A command line flag, ------------------. It is read by the program when the user passes it. :: signature :: 327 :: 0
+item- flag src/main.rs :: -------- :: 327
+item- flag src/main.rs :: ------------------ :: 316
+quality 0 0 0 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 43 blank 7 comment 1 code 35
+stat Rust files 1 total 346 blank 0 comment 0 code 346
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 15
 Commit 714c7d700b01 by Will Bickford <wbic16@gmail.com> on 2024-08-20 (EE 0).
 
 Subject: Example checksums
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 334.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 392.
 
 commit 714c7d700b01145f09c37f2d9da8307b4b90dce1
 parent 7680cad0440434cdbe26faf6cda37735bc4199ae
 author Will Bickford <wbic16@gmail.com>
 date 1724129283 2024-08-20
-stat Markdown files 1 total 43 blank 10 comment 0 code 33
-stat Rust files 1 total 346 blank 36 comment 19 code 291
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+quality 0 0 0 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 43 blank 7 comment 1 code 35
+stat Rust files 1 total 346 blank 0 comment 0 code 346
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 16
 Commit dfdf79602f92 by Will Bickford <wbic16@gmail.com> on 2024-08-23 (EE 0).
 
 Subject: v0.1.10 - added pi: phext index support
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies: libphext 0.1.3 -> 0.1.5. Code lines after this commit: 343.
+Public items: 3 added, 3 removed, 0 changed. Dependencies: libphext [dependencies] 0.1.3 -> 0.1.5. Code lines after this commit: 402.
 
 commit dfdf79602f92828609e3a46e5233aafd651d9846
 parent 714c7d700b01145f09c37f2d9da8307b4b90dce1
 author Will Bickford <wbic16@gmail.com>
 date 1724384997 2024-08-23
-dep~ Cargo.toml :: libphext :: 0.1.3 -> 0.1.5
-stat Markdown files 1 total 44 blank 10 comment 0 code 34
-stat Rust files 1 total 355 blank 36 comment 20 code 299
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+dep~ Cargo.toml :: libphext [dependencies] :: 0.1.3 -> 0.1.5
+item+ entry-point src/main.rs :: main :: fn main() { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: signature :: 18 :: 0
+item+ flag src/main.rs :: -------- :: flag -------- :: A command line flag, --------. It is read by the program when the user passes it. :: signature :: 348 :: 0
+item+ flag src/main.rs :: ------------------ :: flag ------------------ :: A command line flag, ------------------. It is read by the program when the user passes it. :: signature :: 336 :: 0
+item- entry-point src/main.rs :: main :: 19
+item- flag src/main.rs :: -------- :: 339
+item- flag src/main.rs :: ------------------ :: 327
+quality 0 0 0 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 44 blank 7 comment 1 code 36
+stat Rust files 1 total 355 blank 0 comment 0 code 355
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 17
 Commit 6f26f3d31182 by Will Bickford <wbic16@gmail.com> on 2024-08-23 (EE 0).
 
 Subject: testing a bit
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 343.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 402.
 
 commit 6f26f3d311821966319d865297d6fbbfae85cbc6
 parent dfdf79602f92828609e3a46e5233aafd651d9846
 author Will Bickford <wbic16@gmail.com>
 date 1724385291 2024-08-23
-stat Markdown files 1 total 44 blank 10 comment 0 code 34
-stat Rust files 1 total 355 blank 36 comment 20 code 299
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+quality 0 0 0 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 44 blank 7 comment 1 code 36
+stat Rust files 1 total 355 blank 0 comment 0 code 355
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 18
 Commit a2d547bc74de by Will Bickford <wbic16@gmail.com> on 2024-08-26 (EE 0).
 
 Subject: v0.1.11 - pulled in libphext v0.1.7
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies: libphext 0.1.5 -> 0.1.7. Code lines after this commit: 365.
+Public items: 2 added, 2 removed, 0 changed. Dependencies: libphext [dependencies] 0.1.5 -> 0.1.7. Code lines after this commit: 429.
 
 commit a2d547bc74deb9f2c8e1284d98bfe391388705de
 parent 6f26f3d311821966319d865297d6fbbfae85cbc6
 author Will Bickford <wbic16@gmail.com>
 date 1724645524 2024-08-26
-dep~ Cargo.toml :: libphext :: 0.1.5 -> 0.1.7
-stat Markdown files 1 total 59 blank 12 comment 0 code 47
-stat Rust files 1 total 367 blank 37 comment 22 code 308
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+dep~ Cargo.toml :: libphext [dependencies] :: 0.1.5 -> 0.1.7
+item+ flag src/main.rs :: -------- :: flag -------- :: A command line flag, --------. It is read by the program when the user passes it. :: signature :: 360 :: 0
+item+ flag src/main.rs :: ------------------ :: flag ------------------ :: A command line flag, ------------------. It is read by the program when the user passes it. :: signature :: 348 :: 0
+item- flag src/main.rs :: -------- :: 348
+item- flag src/main.rs :: ------------------ :: 336
+quality 0 0 1 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 59 blank 7 comment 1 code 51
+stat Rust files 1 total 367 blank 0 comment 0 code 367
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 19
 Commit 624b9035216c by Will Bickford <wbic16@gmail.com> on 2024-08-26 (EE 0).
 
 Subject: A couple of minor bug fixes
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 368.
+Public items: 2 added, 2 removed, 0 changed. Dependencies did not change. Code lines after this commit: 432.
 
 commit 624b9035216ca109ff8844933bc4ce8608ce82cf
 parent a2d547bc74deb9f2c8e1284d98bfe391388705de
 author Will Bickford <wbic16@gmail.com>
 date 1724713229 2024-08-26
-stat Markdown files 1 total 59 blank 12 comment 0 code 47
-stat Rust files 1 total 370 blank 37 comment 22 code 311
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+item+ flag src/main.rs :: -------- :: flag -------- :: A command line flag, --------. It is read by the program when the user passes it. :: signature :: 363 :: 0
+item+ flag src/main.rs :: ------------------ :: flag ------------------ :: A command line flag, ------------------. It is read by the program when the user passes it. :: signature :: 349 :: 0
+item- flag src/main.rs :: -------- :: 360
+item- flag src/main.rs :: ------------------ :: 348
+quality 0 0 1 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 59 blank 7 comment 1 code 51
+stat Rust files 1 total 370 blank 0 comment 0 code 370
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 20
 Commit a7280fc1519f by Will Bickford <wbic16@gmail.com> on 2024-09-11 (EE 0).
 
 Subject: Added some nix configs
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 368.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 432.
 
 commit a7280fc1519fafc2865cfed70ef109ed38e48781
 parent 624b9035216ca109ff8844933bc4ce8608ce82cf
 author Will Bickford <wbic16@gmail.com>
 date 1726026760 2024-09-11
-stat Markdown files 1 total 59 blank 12 comment 0 code 47
-stat Rust files 1 total 370 blank 37 comment 22 code 311
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+quality 0 0 1 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 59 blank 7 comment 1 code 51
+stat Rust files 1 total 370 blank 0 comment 0 code 370
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 21
 Commit f1084ed1b4a5 by Will Bickford <wbic16@gmail.com> on 2024-10-20 (EE 0).
 
 Subject: Merge pull request #1 from MortrixDev/error-handling
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 376.
+Public items: 15 added, 2 removed, 0 changed. Dependencies did not change. Code lines after this commit: 445.
 
 commit f1084ed1b4a5d8c274a832c75487cfd4bf7b9b9f
 parent a7280fc1519fafc2865cfed70ef109ed38e48781
 author Will Bickford <wbic16@gmail.com>
 date 1729463972 2024-10-20
-stat Markdown files 1 total 59 blank 12 comment 0 code 47
-stat Rust files 1 total 383 blank 41 comment 23 code 319
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+item+ command src/main.rs :: af :: command "af" :: A command named af. The program runs it when the user types this word on the command line. :: signature :: 81 :: 0
+item+ command src/main.rs :: cs :: command "cs" :: A command named cs. The program runs it when the user types this word on the command line. :: signature :: 100 :: 0
+item+ command src/main.rs :: ds :: command "ds" :: A command named ds. The program runs it when the user types this word on the command line. :: signature :: 117 :: 0
+item+ command src/main.rs :: exit :: command "exit" :: A command named exit. The program runs it when the user types this word on the command line. :: signature :: 78 :: 0
+item+ command src/main.rs :: help :: command "help" :: A command named help. The program runs it when the user types this word on the command line. :: signature :: 223 :: 0
+item+ command src/main.rs :: lp :: command "lp" :: A command named lp. The program runs it when the user types this word on the command line. :: signature :: 159 :: 0
+item+ command src/main.rs :: os :: command "os" :: A command named os. The program runs it when the user types this word on the command line. :: signature :: 185 :: 0
+item+ command src/main.rs :: ph :: command "ph" :: A command named ph. The program runs it when the user types this word on the command line. :: signature :: 145 :: 0
+item+ command src/main.rs :: pi :: command "pi" :: A command named pi. The program runs it when the user types this word on the command line. :: signature :: 123 :: 0
+item+ command src/main.rs :: ps :: command "ps" :: A command named ps. The program runs it when the user types this word on the command line. :: signature :: 134 :: 0
+item+ command src/main.rs :: rp :: command "rp" :: A command named rp. The program runs it when the user types this word on the command line. :: signature :: 196 :: 0
+item+ command src/main.rs :: rs :: command "rs" :: A command named rs. The program runs it when the user types this word on the command line. :: signature :: 203 :: 0
+item+ command src/main.rs :: sp :: command "sp" :: A command named sp. The program runs it when the user types this word on the command line. :: signature :: 210 :: 0
+item+ flag src/main.rs :: -------- :: flag -------- :: A command line flag, --------. It is read by the program when the user passes it. :: signature :: 376 :: 0
+item+ flag src/main.rs :: ------------------ :: flag ------------------ :: A command line flag, ------------------. It is read by the program when the user passes it. :: signature :: 362 :: 0
+item- flag src/main.rs :: -------- :: 363
+item- flag src/main.rs :: ------------------ :: 349
+quality 0 0 1 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 59 blank 7 comment 1 code 51
+stat Rust files 1 total 383 blank 0 comment 0 code 383
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 22
 Commit 141264da2f96 by Will Bickford <wbic16@gmail.com> on 2024-10-20 (EE 0).
 
 Subject: Packaging v0.1.12
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 376.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 445.
 
 commit 141264da2f96a388c7b31cb48c84bbac86af8868
 parent f1084ed1b4a5d8c274a832c75487cfd4bf7b9b9f
 author Will Bickford <wbic16@gmail.com>
 date 1729464120 2024-10-20
-stat Markdown files 1 total 59 blank 12 comment 0 code 47
-stat Rust files 1 total 383 blank 41 comment 23 code 319
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+quality 0 0 1 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 59 blank 7 comment 1 code 51
+stat Rust files 1 total 383 blank 0 comment 0 code 383
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 23
 Commit ebfbe9893011 by Will Bickford <wbic16@gmail.com> on 2024-12-27 (EE 0).
 
 Subject: Bumped libphext to v0.1.9
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies: libphext 0.1.7 -> 0.1.9. Code lines after this commit: 376.
+Public items: 0 added, 0 removed, 0 changed. Dependencies: libphext [dependencies] 0.1.7 -> 0.1.9. Code lines after this commit: 445.
 
 commit ebfbe98930115e564bede84cbc698509db64efeb
 parent 141264da2f96a388c7b31cb48c84bbac86af8868
 author Will Bickford <wbic16@gmail.com>
 date 1735280743 2024-12-27
-dep~ Cargo.toml :: libphext :: 0.1.7 -> 0.1.9
-stat Markdown files 1 total 59 blank 12 comment 0 code 47
-stat Rust files 1 total 383 blank 41 comment 23 code 319
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+dep~ Cargo.toml :: libphext [dependencies] :: 0.1.7 -> 0.1.9
+quality 0 0 1 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 59 blank 7 comment 1 code 51
+stat Rust files 1 total 383 blank 0 comment 0 code 383
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 24
 Commit 5404fac0b399 by Orin <orin@mirrorborn.us> on 2026-03-23 (EE 0).
 
 Subject: refactor: rename .md/.phext files to lowercase (mirrorborn naming convention)
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 376.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 370.
 
 This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
 
@@ -354,7 +542,18 @@ commit 5404fac0b399a991aef8d2e9814866c541bb0edd
 parent ebfbe98930115e564bede84cbc698509db64efeb
 author Orin <orin@mirrorborn.us>
 date 1774230677 2026-03-23
-stat Markdown files 1 total 59 blank 12 comment 0 code 47
+quality 0 0 1 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+largest-file src/main.rs :: 383
+largest-file readme.md :: 59
+largest-file Cargo.toml :: 11
+largest-fn handle_request :: src/main.rs :: 189
+largest-fn show_help :: src/main.rs :: 132
+largest-fn main :: src/main.rs :: 45
+stat Markdown files 1 total 59 blank 12 comment 6 code 41
 stat Rust files 1 total 383 blank 41 comment 23 code 319
 stat TOML files 1 total 11 blank 1 comment 0 code 10
 author+ Orin <orin@mirrorborn.us>
@@ -362,14 +561,19 @@ author+ Orin <orin@mirrorborn.us>
 
 Subject: Merge pull request #4 from wbic16/emise/v06-upgrade
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies: libphext 0.1.9 -> 0.6.0. Code lines after this commit: 376.
+Public items: 0 added, 0 removed, 0 changed. Dependencies: libphext [dependencies] 0.1.9 -> 0.6.0. Code lines after this commit: 370.
 
 commit 2654a114635ff94f2c747b79c2ddbd03bd7e7c51
 parent 5404fac0b399a991aef8d2e9814866c541bb0edd
 author Will Bickford <wbic16@gmail.com>
 date 1794603954 2026-11-13
-dep~ Cargo.toml :: libphext :: 0.1.9 -> 0.6.0
-stat Markdown files 1 total 59 blank 12 comment 0 code 47
+dep~ Cargo.toml :: libphext [dependencies] :: 0.1.9 -> 0.6.0
+quality 0 0 1 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 59 blank 12 comment 6 code 41
 stat Rust files 1 total 383 blank 41 comment 23 code 319
 stat TOML files 1 total 11 blank 1 comment 0 code 10
 author~ Will Bickford <wbic16@gmail.com> commits 25
@@ -377,13 +581,18 @@ author~ Will Bickford <wbic16@gmail.com> commits 25
 
 Subject: Merge pull request #5 from wbic16/emise/version-0.6
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 376.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 370.
 
 commit b211b969e025fe68c3b20b842f3ec89c2e3960d9
 parent 2654a114635ff94f2c747b79c2ddbd03bd7e7c51
 author Will Bickford <wbic16@gmail.com>
 date 1794610206 2026-11-13
-stat Markdown files 1 total 59 blank 12 comment 0 code 47
+quality 0 0 1 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 59 blank 12 comment 6 code 41
 stat Rust files 1 total 383 blank 41 comment 23 code 319
 stat TOML files 1 total 11 blank 1 comment 0 code 10
 author~ Will Bickford <wbic16@gmail.com> commits 26
@@ -391,21 +600,56 @@ author~ Will Bickford <wbic16@gmail.com> commits 26
 
 Subject: Merge pull request #6 from wbic16/emise/shell-corpus-scale
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 376.
+Public items: 15 added, 15 removed, 0 changed. Dependencies did not change. Code lines after this commit: 375.
 
 commit 0adb19c6387f8ce348de709d7ac838acfb39a093
 parent b211b969e025fe68c3b20b842f3ec89c2e3960d9
 author Will Bickford <wbic16@gmail.com>
 date 1794650985 2026-11-14
-stat Markdown files 1 total 59 blank 12 comment 0 code 47
-stat Rust files 1 total 388 blank 41 comment 28 code 319
+item+ command src/main.rs :: af :: command "af" :: A command named af. The program runs it when the user types this word on the command line. :: signature :: 86 :: 0
+item+ command src/main.rs :: cs :: command "cs" :: A command named cs. The program runs it when the user types this word on the command line. :: signature :: 105 :: 0
+item+ command src/main.rs :: ds :: command "ds" :: A command named ds. The program runs it when the user types this word on the command line. :: signature :: 122 :: 0
+item+ command src/main.rs :: exit :: command "exit" :: A command named exit. The program runs it when the user types this word on the command line. :: signature :: 83 :: 0
+item+ command src/main.rs :: help :: command "help" :: A command named help. The program runs it when the user types this word on the command line. :: signature :: 228 :: 0
+item+ command src/main.rs :: lp :: command "lp" :: A command named lp. The program runs it when the user types this word on the command line. :: signature :: 164 :: 0
+item+ command src/main.rs :: os :: command "os" :: A command named os. The program runs it when the user types this word on the command line. :: signature :: 190 :: 0
+item+ command src/main.rs :: ph :: command "ph" :: A command named ph. The program runs it when the user types this word on the command line. :: signature :: 150 :: 0
+item+ command src/main.rs :: pi :: command "pi" :: A command named pi. The program runs it when the user types this word on the command line. :: signature :: 128 :: 0
+item+ command src/main.rs :: ps :: command "ps" :: A command named ps. The program runs it when the user types this word on the command line. :: signature :: 139 :: 0
+item+ command src/main.rs :: rp :: command "rp" :: A command named rp. The program runs it when the user types this word on the command line. :: signature :: 201 :: 0
+item+ command src/main.rs :: rs :: command "rs" :: A command named rs. The program runs it when the user types this word on the command line. :: signature :: 208 :: 0
+item+ command src/main.rs :: sp :: command "sp" :: A command named sp. The program runs it when the user types this word on the command line. :: signature :: 215 :: 0
+item+ flag src/main.rs :: -------- :: flag -------- :: A command line flag, --------. It is read by the program when the user passes it. :: signature :: 381 :: 0
+item+ flag src/main.rs :: ------------------ :: flag ------------------ :: A command line flag, ------------------. It is read by the program when the user passes it. :: signature :: 367 :: 0
+item- command src/main.rs :: af :: 81
+item- command src/main.rs :: cs :: 100
+item- command src/main.rs :: ds :: 117
+item- command src/main.rs :: exit :: 78
+item- command src/main.rs :: help :: 223
+item- command src/main.rs :: lp :: 159
+item- command src/main.rs :: os :: 185
+item- command src/main.rs :: ph :: 145
+item- command src/main.rs :: pi :: 123
+item- command src/main.rs :: ps :: 134
+item- command src/main.rs :: rp :: 196
+item- command src/main.rs :: rs :: 203
+item- command src/main.rs :: sp :: 210
+item- flag src/main.rs :: -------- :: 376
+item- flag src/main.rs :: ------------------ :: 362
+quality 0 0 1 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+stat Markdown files 1 total 59 blank 12 comment 6 code 41
+stat Rust files 1 total 388 blank 41 comment 23 code 324
 stat TOML files 1 total 11 blank 1 comment 0 code 10
 author~ Will Bickford <wbic16@gmail.com> commits 27
 Commit 4aae9abc2611 by Theia <theia@mirrorborn.us> on 2026-11-14 (EE 0).
 
 Subject: 0.6.1: version bump for the REPL EOF fix release
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 376.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 370.
 
 This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
 
@@ -413,7 +657,18 @@ commit 4aae9abc2611110ba9d20392586cb6ddd78bfa43
 parent 0adb19c6387f8ce348de709d7ac838acfb39a093
 author Theia <theia@mirrorborn.us>
 date 1794673285 2026-11-14
-stat Markdown files 1 total 59 blank 12 comment 0 code 47
+quality 0 0 1 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/phext-shell.git
+branch main
+largest-file src/main.rs :: 388
+largest-file readme.md :: 59
+largest-file Cargo.toml :: 11
+largest-fn handle_request :: src/main.rs :: 189
+largest-fn show_help :: src/main.rs :: 132
+largest-fn main :: src/main.rs :: 50
+stat Markdown files 1 total 59 blank 12 comment 6 code 41
 stat Rust files 1 total 388 blank 41 comment 28 code 319
 stat TOML files 1 total 11 blank 1 comment 0 code 10
 author+ Theia <theia@mirrorborn.us>

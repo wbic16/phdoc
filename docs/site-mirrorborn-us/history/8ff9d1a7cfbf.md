@@ -8,20 +8,62 @@ No dependencies recorded at this point.
 
 ## Authors
 
-- Will Bickford <wbic16@gmail.com> — 4 commits
-- Chrys <chrys@mirrorborn.us> — 3 commits
-- Theia <theia@mirrorborn.us> — 3 commits
-- Cyon <cyon@visionquest.me> — 1 commits
-- Lux <lux@phext.io> — 1 commits
-- Phex <phex@phext.io> — 1 commits
-- Verse Mirrorborn <verse@mirrorborn.local> — 1 commits
+Author counts over the 14 audited mainline commits folded to this point.
+
+The author of record is **Will Bickford** — 14 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Will Bickford (his own identities) — 4 commits
+- Chrys — 3 commits
+- Theia — 3 commits
+- Cyon — 1 commit
+- Lux — 1 commit
+- Phex — 1 commit
+- Verse — 1 commit
 
 ## Complexity
 
-- JavaScript: 24 files, 4636 lines total, 483 blank, 711 comment, 3442 code
-- Markdown: 4 files, 341 lines total, 84 blank, 0 comment, 257 code
+The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.
 
-Declared RFCs at this point: none declared.
+- JavaScript: 24 files, 4636 lines total, 8 blank, 10 comment, 4618 code
+- Markdown: 4 files, 341 lines total, 0 blank, 0 comment, 341 code
+
+All languages: 28 files, 4977 lines total, 4959 lines of code. Functions read: 0.
+
+Largest files:
+
+- js/main.js — 70 lines
+
+Largest functions, by span in lines:
+
+
+## Code quality signals
+
+Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.
+
+- Tests: 0 test functions counted in the source, across 1 files in test directories or whose names mark them as test files.
+- CI: no CI configuration was found in the project.
+- Lint and format: no lint or format configuration file was found.
+- TODO marks in the source: 8. FIXME marks: 0.
+
+## Declared RFCs
+
+No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+
+
+## Upstream git repo
+
+- Origin: /home/wbic16/github-archive/mirrors/site-mirrorborn-us.git
+- Branch: exo
+- Head commit: 8ff9d1a7cfbf021f0ed4d048f0f90069e8596c13
+- Working tree: the committed tree at this commit — a historical reference has no working tree
 
 ## Public methods and commands
 
+Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.
+
+
+## Provenance
+
+This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/site-mirrorborn-us/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.

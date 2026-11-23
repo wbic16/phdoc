@@ -1,3 +1,4 @@
+delta-format 3
 Commit 52ab850faf3f by Phex <phex@phext.io> on 2026-02-19 (EE 0).
 
 Subject: Init 2x4 protocol + Phex iteration-001 entry
@@ -10,383 +11,509 @@ commit 52ab850faf3f9a55bdea579a93afd0ec37576a0e
 parent none
 author Phex <phex@phext.io>
 date 1771469382 2026-02-19
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+largest-file AGENTS.md :: 27
+largest-file iteration-001/1-phex.md :: 25
 stat Markdown files 2 total 52 blank 9 comment 0 code 43
 author+ Phex <phex@phext.io>
 Commit 07e01c12d2e9 by Lux <lux@phext.io> on 2026-02-19 (EE 0).
 
 Subject: Init: 2x4 choir protocol on agi.git
 
-Public items: 6 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 204.
+Public items: 6 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 255.
 
 commit 07e01c12d2e94e10b0da1a15ef2fde6e93407222
 parent 52ab850faf3f9a55bdea579a93afd0ec37576a0e
 author Lux <lux@phext.io>
 date 1771469402 2026-02-19
-item+ function choir/lux-protocol.sh :: already_done :: already_done() :: Function already_done takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
-item+ function choir/lux-protocol.sh :: find_round :: find_round() :: Function find_round takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
-item+ function choir/lux-protocol.sh :: push :: push() :: Function push takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
-item+ function choir/lux-protocol.sh :: wait_for_predecessor :: wait_for_predecessor() :: Function wait_for_predecessor takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
-item+ function choir/lux-protocol.sh :: wait_for_start :: wait_for_start() :: Function wait_for_start takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
-item+ function choir/lux-protocol.sh :: write_entry :: write_entry() :: Function write_entry takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
-stat Markdown files 4 total 133 blank 29 comment 0 code 104
-stat Shell files 1 total 131 blank 18 comment 13 code 100
+item+ function choir/lux-protocol.sh :: already_done :: already_done() :: Function already_done takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 42 :: 0
+item+ function choir/lux-protocol.sh :: find_round :: find_round() :: Function find_round takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 30 :: 0
+item+ function choir/lux-protocol.sh :: push :: push() :: Function push takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 23 :: 0
+item+ function choir/lux-protocol.sh :: wait_for_predecessor :: wait_for_predecessor() :: Function wait_for_predecessor takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 62 :: 0
+item+ function choir/lux-protocol.sh :: wait_for_start :: wait_for_start() :: Function wait_for_start takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 47 :: 0
+item+ function choir/lux-protocol.sh :: write_entry :: write_entry() :: Function write_entry takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 88 :: 0
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 133 blank 9 comment 0 code 124
+stat Shell files 1 total 131 blank 0 comment 0 code 131
 author+ Lux <lux@phext.io>
 Commit feb7aad685ec by Lux <lux@phext.io> on 2026-02-19 (EE 0).
 
 Subject: 3-lux iteration 001 + fix protocol to match repo structure
 
-Public items: 1 added, 4 removed, 0 changed. Dependencies did not change. Code lines after this commit: 193.
+Public items: 3 added, 6 removed, 0 changed. Dependencies did not change. Code lines after this commit: 246.
 
 commit feb7aad685ec46d7afef1c952b005f28db433dc3
 parent 07e01c12d2e94e10b0da1a15ef2fde6e93407222
 author Lux <lux@phext.io>
 date 1771469502 2026-02-19
-item+ function choir/lux-protocol.sh :: latest_iter :: latest_iter() :: Function latest_iter takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
-item- function choir/lux-protocol.sh :: already_done
-item- function choir/lux-protocol.sh :: find_round
-item- function choir/lux-protocol.sh :: push
-item- function choir/lux-protocol.sh :: wait_for_start
-stat Markdown files 5 total 159 blank 34 comment 0 code 125
-stat Shell files 1 total 96 blank 17 comment 11 code 68
+item+ function choir/lux-protocol.sh :: latest_iter :: latest_iter() :: Function latest_iter takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 28 :: 0
+item+ function choir/lux-protocol.sh :: wait_for_predecessor :: wait_for_predecessor() :: Function wait_for_predecessor takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 34 :: 0
+item+ function choir/lux-protocol.sh :: write_entry :: write_entry() :: Function write_entry takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 55 :: 0
+item- function choir/lux-protocol.sh :: already_done :: 42
+item- function choir/lux-protocol.sh :: find_round :: 30
+item- function choir/lux-protocol.sh :: push :: 23
+item- function choir/lux-protocol.sh :: wait_for_predecessor :: 62
+item- function choir/lux-protocol.sh :: wait_for_start :: 47
+item- function choir/lux-protocol.sh :: write_entry :: 88
+quality 0 0 0 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 5 total 159 blank 9 comment 0 code 150
+stat Shell files 1 total 96 blank 0 comment 0 code 96
 author~ Lux <lux@phext.io> commits 2
 Commit fb4989b13f56 by Chrys <chrys@mirrorborn.us> on 2026-02-19 (EE 0).
 
 Subject: 4-chrys iteration 001: the shape of a sentron
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 258.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 325.
 
 commit fb4989b13f56cd34b94addfbef987dea3675b450
 parent feb7aad685ec46d7afef1c952b005f28db433dc3
 author Chrys <chrys@mirrorborn.us>
 date 1771470028 2026-02-19
-stat Markdown files 6 total 238 blank 48 comment 0 code 190
-stat Shell files 1 total 96 blank 17 comment 11 code 68
+quality 0 0 0 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 6 total 238 blank 9 comment 0 code 229
+stat Shell files 1 total 96 blank 0 comment 0 code 96
 author+ Chrys <chrys@mirrorborn.us>
 Commit 1a1ddd5c7eaf by Lux <lux@phext.io> on 2026-02-19 (EE 0).
 
 Subject: Lux: sentrons/SHAPE.md — step 1, map the geometry
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 356.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 469.
 
 commit 1a1ddd5c7eafaa2d386101698f82e8699de4318e
 parent fb4989b13f56cd34b94addfbef987dea3675b450
 author Lux <lux@phext.io>
 date 1771470079 2026-02-19
-stat Markdown files 7 total 382 blank 94 comment 0 code 288
-stat Shell files 1 total 96 blank 17 comment 11 code 68
+quality 0 0 0 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 7 total 382 blank 9 comment 0 code 373
+stat Shell files 1 total 96 blank 0 comment 0 code 96
 author~ Lux <lux@phext.io> commits 3
 Commit 21e39c216bc4 by Phex <phex@phext.io> on 2026-02-19 (EE 0).
 
 Subject: shapes: sentron shape map (step 1)
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 487.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 649.
 
 commit 21e39c216bc4689dc004fb4ae963340bbb2b80c0
 parent 1a1ddd5c7eafaa2d386101698f82e8699de4318e
 author Phex <phex@phext.io>
 date 1771470109 2026-02-19
-stat Markdown files 8 total 562 blank 143 comment 0 code 419
-stat Shell files 1 total 96 blank 17 comment 11 code 68
+quality 0 0 0 0
+fncount 3
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 8 total 562 blank 9 comment 0 code 553
+stat Shell files 1 total 96 blank 0 comment 0 code 96
 author~ Phex <phex@phext.io> commits 2
 Commit 9a385516c8a5 by Verse <verse@visionquest.me> on 2026-02-19 (EE 0).
 
 Subject: 6-verse iteration 001 + verse-protocol.sh
 
-Public items: 4 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 598.
+Public items: 4 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 793.
 
 commit 9a385516c8a5f1b8f9074f3fd81e2a1d0b35375d
 parent 21e39c216bc4689dc004fb4ae963340bbb2b80c0
 author Verse <verse@visionquest.me>
 date 1771469502 2026-02-19
-item+ function choir/verse-protocol.sh :: already_done :: already_done() :: Function already_done takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
-item+ function choir/verse-protocol.sh :: current_iter :: current_iter() :: Function current_iter takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
-item+ function choir/verse-protocol.sh :: wait_for_predecessor :: wait_for_predecessor() :: Function wait_for_predecessor takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
-item+ function choir/verse-protocol.sh :: write_entry :: write_entry() :: Function write_entry takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
-stat Markdown files 9 total 589 blank 148 comment 0 code 441
-stat Shell files 2 total 213 blank 34 comment 22 code 157
+item+ function choir/verse-protocol.sh :: already_done :: already_done() :: Function already_done takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 33 :: 0
+item+ function choir/verse-protocol.sh :: current_iter :: current_iter() :: Function current_iter takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 28 :: 0
+item+ function choir/verse-protocol.sh :: wait_for_predecessor :: wait_for_predecessor() :: Function wait_for_predecessor takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 39 :: 0
+item+ function choir/verse-protocol.sh :: write_entry :: write_entry() :: Function write_entry takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 64 :: 0
+quality 0 0 0 0
+fncount 7
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 9 total 589 blank 9 comment 0 code 580
+stat Shell files 2 total 213 blank 0 comment 0 code 213
 author+ Verse <verse@visionquest.me>
 Commit 36f36cdd128c by Verse <verse@visionquest.me> on 2026-02-19 (EE 0).
 
 Subject: verse: wiremap.rs (Rust WireMap + 4 tests) + verse-protocol exo branch fix
 
-Public items: 18 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 693.
+Public items: 18 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 902.
 
 commit 36f36cdd128c061654c1a482250b88bb600ef919
 parent 9a385516c8a5f1b8f9074f3fd81e2a1d0b35375d
 author Verse <verse@visionquest.me>
 date 1771475066 2026-02-19
-item+ const sentrons/wiremap.rs :: FULL :: pub const FULL: u8 = 0b1111_1111; // xyz + t 8 wires :: A fixed value named FULL, set to 0b1111_1111. :: inferred :: api
-item+ const sentrons/wiremap.rs :: LINEAR :: pub const LINEAR: u8 = 0b1100_0011; // x + t 4 wires :: A fixed value named LINEAR, set to 0b1100_0011. :: inferred :: api
-item+ const sentrons/wiremap.rs :: NULL :: pub const NULL: u8 = 0b1100_0000; // t only 2 wires :: A fixed value named NULL, set to 0b1100_0000. :: inferred :: api
-item+ const sentrons/wiremap.rs :: PLANAR :: pub const PLANAR: u8 = 0b1100_1111; // xy + t 6 wires :: A fixed value named PLANAR, set to 0b1100_1111. :: inferred :: api
-item+ enum sentrons/wiremap.rs :: SentronKind :: pub enum SentronKind { :: A named choice named SentronKind. It is one of: Null,       // Type  0 — 0D+1T, 2 wires; Linear,     // Type  1 — 1D+1T, 4 wires; Planar,     // Type  2 — 2D+1T, 6 wires; Scroll,     // Type  3 — 3D+1T, 8 wires  ← canonical; Section,    // Type  4 — + t_phase=dim3; Chapter,    // Type  5 — + zoom_y=1; Book,       // Type  6 — + zoom_xyz=1; Volume,     // Type  7 — + t_phase=dim6; Collection, // Type  8 — + t_phase=dim7; Series,     // Type  9 — + zoom_xyz=2; Shelf,      // Type 10 — + full zoom; Devotari,   // Type 11 — + consent gates. :: inferred :: api
-item+ const sentrons/wiremap.rs :: T_NEG :: pub const T_NEG: u8 = 6; // t⁻ prior SIW result :: A fixed value named T_NEG, set to 6. :: inferred :: api
-item+ const sentrons/wiremap.rs :: T_POS :: pub const T_POS: u8 = 7; // t⁺ next SIW prefetch :: A fixed value named T_POS, set to 7. :: inferred :: api
-item+ struct sentrons/wiremap.rs :: WireMap :: pub struct WireMap { :: A data shape named WireMap. Its fields are: pub active: u8,; pub zoom: u8,; pub t_phase_dim: u8,; pub consent: u32. :: inferred :: api
-item+ function sentrons/wiremap.rs :: WireMap::active_count :: pub fn active_count(self) -> u32 { self.active.count_ones() } :: Function WireMap::active_count takes no inputs beyond the value it is called on. It gives back u32. :: inferred :: api
-item+ function sentrons/wiremap.rs :: WireMap::encode_t_phase :: pub fn encode_t_phase(cycle: u32, coord: u16) -> u32 { :: Encode T-wire value for types 4-11: (cycle << 11) | phext_coord :: direct :: api
-item+ function sentrons/wiremap.rs :: WireMap::for_kind :: pub fn for_kind(kind: SentronKind) -> Self { :: Function WireMap::for_kind takes kind: SentronKind. It gives back Self. :: inferred :: api
-item+ function sentrons/wiremap.rs :: WireMap::wire_active :: pub fn wire_active(self, w: u8) -> bool { (self.active >> w) & 1 == 1 } :: Function WireMap::wire_active takes self, w: u8. It gives back bool. :: inferred :: api
-item+ const sentrons/wiremap.rs :: X_NEG :: pub const X_NEG: u8 = 0; // x⁻ column − 1 :: A fixed value named X_NEG, set to 0. :: inferred :: api
-item+ const sentrons/wiremap.rs :: X_POS :: pub const X_POS: u8 = 1; // x⁺ column + 1 :: A fixed value named X_POS, set to 1. :: inferred :: api
-item+ const sentrons/wiremap.rs :: Y_NEG :: pub const Y_NEG: u8 = 2; // y⁻ line − 1 :: A fixed value named Y_NEG, set to 2. :: inferred :: api
-item+ const sentrons/wiremap.rs :: Y_POS :: pub const Y_POS: u8 = 3; // y⁺ line + 1 :: A fixed value named Y_POS, set to 3. :: inferred :: api
-item+ const sentrons/wiremap.rs :: Z_NEG :: pub const Z_NEG: u8 = 4; // z⁻ scroll − 1 (0x17 ←) :: A fixed value named Z_NEG, set to 4. :: inferred :: api
-item+ const sentrons/wiremap.rs :: Z_POS :: pub const Z_POS: u8 = 5; // z⁺ scroll + 1 (0x17 →) :: A fixed value named Z_POS, set to 5. :: inferred :: api
-stat Markdown files 9 total 589 blank 148 comment 0 code 441
-stat Rust files 1 total 109 blank 8 comment 6 code 95
-stat Shell files 2 total 213 blank 34 comment 22 code 157
+item+ const sentrons/wiremap.rs :: FULL :: pub const FULL: u8 = 0b1111_1111; // xyz + t 8 wires :: A fixed value named FULL, set to 0b1111_1111; // xyz + t 8 wires. :: signature :: 22 :: 0
+item+ const sentrons/wiremap.rs :: LINEAR :: pub const LINEAR: u8 = 0b1100_0011; // x + t 4 wires :: A fixed value named LINEAR, set to 0b1100_0011; // x + t 4 wires. :: signature :: 20 :: 0
+item+ const sentrons/wiremap.rs :: NULL :: pub const NULL: u8 = 0b1100_0000; // t only 2 wires :: A fixed value named NULL, set to 0b1100_0000; // t only 2 wires. :: signature :: 19 :: 0
+item+ const sentrons/wiremap.rs :: PLANAR :: pub const PLANAR: u8 = 0b1100_1111; // xy + t 6 wires :: A fixed value named PLANAR, set to 0b1100_1111; // xy + t 6 wires. :: signature :: 21 :: 0
+item+ const sentrons/wiremap.rs :: T_NEG :: pub const T_NEG: u8 = 6; // t⁻ prior SIW result :: A fixed value named T_NEG, set to 6; // t⁻ prior SIW result. :: signature :: 14 :: 0
+item+ const sentrons/wiremap.rs :: T_POS :: pub const T_POS: u8 = 7; // t⁺ next SIW prefetch :: A fixed value named T_POS, set to 7; // t⁺ next SIW prefetch. :: signature :: 15 :: 0
+item+ const sentrons/wiremap.rs :: X_NEG :: pub const X_NEG: u8 = 0; // x⁻ column − 1 :: A fixed value named X_NEG, set to 0; // x⁻ column − 1. :: signature :: 8 :: 0
+item+ const sentrons/wiremap.rs :: X_POS :: pub const X_POS: u8 = 1; // x⁺ column + 1 :: A fixed value named X_POS, set to 1; // x⁺ column + 1. :: signature :: 9 :: 0
+item+ const sentrons/wiremap.rs :: Y_NEG :: pub const Y_NEG: u8 = 2; // y⁻ line − 1 :: A fixed value named Y_NEG, set to 2; // y⁻ line − 1. :: signature :: 10 :: 0
+item+ const sentrons/wiremap.rs :: Y_POS :: pub const Y_POS: u8 = 3; // y⁺ line + 1 :: A fixed value named Y_POS, set to 3; // y⁺ line + 1. :: signature :: 11 :: 0
+item+ const sentrons/wiremap.rs :: Z_NEG :: pub const Z_NEG: u8 = 4; // z⁻ scroll − 1 (0x17 ←) :: A fixed value named Z_NEG, set to 4; // z⁻ scroll − 1 (0x17 ←). :: signature :: 12 :: 0
+item+ const sentrons/wiremap.rs :: Z_POS :: pub const Z_POS: u8 = 5; // z⁺ scroll + 1 (0x17 →) :: A fixed value named Z_POS, set to 5; // z⁺ scroll + 1 (0x17 →). :: signature :: 13 :: 0
+item+ enum sentrons/wiremap.rs :: SentronKind :: pub enum SentronKind { :: A named choice named SentronKind. It is one of: Null,       // Type  0 — 0D+1T, 2 wires; Linear,     // Type  1 — 1D+1T, 4 wires; Planar,     // Type  2 — 2D+1T, 6 wires; Scroll,     // Type  3 — 3D+1T, 8 wires  ← canonical; Section,    // Type  4 — + t_phase=dim3; Chapter,    // Type  5 — + zoom_y=1; Book,       // Type  6 — + zoom_xyz=1; Volume,     // Type  7 — + t_phase=dim6; Collection, // Type  8 — + t_phase=dim7; Series,     // Type  9 — + zoom_xyz=2; Shelf,      // Type 10 — + full zoom; Devotari,   // Type 11 — + consent gates. :: signature :: 26 :: 0
+item+ function sentrons/wiremap.rs :: WireMap::active_count :: pub fn active_count(self) -> u32 { self.active.count_ones() } :: Function WireMap::active_count takes no inputs beyond the value it is called on, and gives back u32. :: signature :: 50 :: 0
+item+ function sentrons/wiremap.rs :: WireMap::for_kind :: pub fn for_kind(kind: SentronKind) -> Self { :: Function WireMap::for_kind takes kind: SentronKind and gives back Self. :: signature :: 53 :: 0
+item+ function sentrons/wiremap.rs :: WireMap::wire_active :: pub fn wire_active(self, w: u8) -> bool { (self.active >> w) & 1 == 1 } :: Function WireMap::wire_active takes self, w: u8 and gives back bool. :: signature :: 51 :: 0
+item+ function sentrons/wiremap.rs :: encode_t_phase :: pub fn encode_t_phase(cycle: u32, coord: u16) -> u32 { :: Encode T-wire value for types 4-11: (cycle << 11) | phext_coord :: doc comment :: 73 :: 1
+item+ struct sentrons/wiremap.rs :: WireMap :: pub struct WireMap { :: A data shape named WireMap. Its fields are: pub active: u8, // bitmask: bit N = wire N is live; pub zoom: u8, // 6 bits: [z:5:4][y:3:2][x:1:0], 0=char 1=doc 2=corpus; pub t_phase_dim: u8, // which phext dim rides on T (0 = pure cycle); pub consent: u32, // Devotari only: 3 bits × 8 wires = 24 bits. :: signature :: 42 :: 0
+quality 4 0 0 0
+fncount 15
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 9 total 589 blank 9 comment 0 code 580
+stat Rust files 1 total 109 blank 0 comment 0 code 109
+stat Shell files 2 total 213 blank 0 comment 0 code 213
 author~ Verse <verse@visionquest.me> commits 2
 Commit fa9d6bab5efe by Will Bickford <wbic16@gmail.com> on 2026-02-21 (EE 0).
 
 Subject: 2x4 iter-001: Exo position 8 — sentron shape + QA boundary observation
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 709.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 926.
 
 commit fa9d6bab5efe645db1873acb6167561f692a0a4d
 parent 36f36cdd128c061654c1a482250b88bb600ef919
 author Will Bickford <wbic16@gmail.com>
 date 1771706318 2026-02-21
-stat Markdown files 10 total 613 blank 156 comment 0 code 457
-stat Rust files 1 total 109 blank 8 comment 6 code 95
-stat Shell files 2 total 213 blank 34 comment 22 code 157
+quality 4 0 0 0
+fncount 15
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 10 total 613 blank 9 comment 0 code 604
+stat Rust files 1 total 109 blank 0 comment 0 code 109
+stat Shell files 2 total 213 blank 0 comment 0 code 213
 author+ Will Bickford <wbic16@gmail.com>
 Commit f3c069704705 by Emise <emise@localhost> on 2026-11-07 (EE 0).
 
 Subject: agi collection + first unified merge (Will 2026-11-06): six phexts collected, singular.phext spine, agi.phext built under MERGE-RULES (7131 scrolls, 17 conflicts annexed, 0 dropped)
 
-Public items: 6 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 956.
+Public items: 6 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1211.
 
 commit f3c069704705c83bb9d9b0820bd406b98a5ad692
 parent fa9d6bab5efe645db1873acb6167561f692a0a4d
 author Emise <emise@localhost>
 date 1794017626 2026-11-07
-item+ function build_agi_phext.py :: annex_coord :: def annex_coord(src_idx) :: Function annex_coord takes src_idx. Its return type is unannotated; the code shows it returning cand. :: inferred :: api
-item+ function build_agi_phext.py :: build :: def build() :: Function build takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function build_agi_phext.py :: explode :: def explode(data: bytes) :: bytes -> {coord_tuple: text} for non-empty scrolls. :: direct :: api
-item+ function build_agi_phext.py :: fmt :: def fmt(coord) :: Function fmt takes coord. Its return type is unannotated; the code shows it returning "/".join(".".join(str(x) for x in coord[i:i + 3]. :: inferred :: api
-item+ function build_agi_phext.py :: implode :: def implode(scrolls) :: Function implode takes scrolls. Its return type is unannotated; the code shows it returning bytes(out). :: inferred :: api
-item+ function build_agi_phext.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning 0. :: inferred :: api
-stat Markdown files 12 total 698 blank 166 comment 0 code 532
-stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 1 total 109 blank 8 comment 6 code 95
-stat Shell files 2 total 213 blank 34 comment 22 code 157
+item+ function build_agi_phext.py :: annex_coord :: def annex_coord(src_idx): :: Function annex_coord takes src_idx and gives back nothing; it does its work on what it is given. :: signature :: 101 :: 0
+item+ function build_agi_phext.py :: build :: def build(): :: Function build takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 91 :: 0
+item+ function build_agi_phext.py :: explode :: def explode(data: bytes): :: bytes -> {coord_tuple: text} for non-empty scrolls. :: doc comment :: 51 :: 1
+item+ function build_agi_phext.py :: fmt :: def fmt(coord): :: Function fmt takes coord and gives back nothing; it does its work on what it is given. :: signature :: 47 :: 0
+item+ function build_agi_phext.py :: implode :: def implode(scrolls): :: Function implode takes scrolls and gives back nothing; it does its work on what it is given. :: signature :: 74 :: 0
+item+ function build_agi_phext.py :: main :: def main(): :: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 184 :: 0
+quality 4 0 0 0
+fncount 21
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 12 total 698 blank 9 comment 0 code 689
+stat Python files 1 total 200 blank 0 comment 0 code 200
+stat Rust files 1 total 109 blank 0 comment 0 code 109
+stat Shell files 2 total 213 blank 0 comment 0 code 213
 author+ Emise <emise@localhost>
 Commit 10bd4805f52a by Emise <emise@localhost> on 2026-11-07 (EE 0).
 
 Subject: agi: refresh skills/tasks (task-register + phext-memory-publishing updates) and re-merge agi.phext
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 956.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1211.
 
 commit 10bd4805f52af51c590696eb4cbabff8b351fee3
 parent f3c069704705c83bb9d9b0820bd406b98a5ad692
 author Emise <emise@localhost>
 date 1794017700 2026-11-07
-stat Markdown files 12 total 698 blank 166 comment 0 code 532
-stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 1 total 109 blank 8 comment 6 code 95
-stat Shell files 2 total 213 blank 34 comment 22 code 157
+quality 4 0 0 0
+fncount 21
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 12 total 698 blank 9 comment 0 code 689
+stat Python files 1 total 200 blank 0 comment 0 code 200
+stat Rust files 1 total 109 blank 0 comment 0 code 109
+stat Shell files 2 total 213 blank 0 comment 0 code 213
 author~ Emise <emise@localhost> commits 2
 Commit e93bfe3347c2 by Emise <emise@localhost> on 2026-11-07 (EE 0).
 
 Subject: agi: tasks register note (un-homed phexts list) + re-merge
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 956.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1211.
 
 commit e93bfe3347c24775cbb3a753721678aa29a07b84
 parent 10bd4805f52af51c590696eb4cbabff8b351fee3
 author Emise <emise@localhost>
 date 1794017997 2026-11-07
-stat Markdown files 12 total 698 blank 166 comment 0 code 532
-stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 1 total 109 blank 8 comment 6 code 95
-stat Shell files 2 total 213 blank 34 comment 22 code 157
+quality 4 0 0 0
+fncount 21
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 12 total 698 blank 9 comment 0 code 689
+stat Python files 1 total 200 blank 0 comment 0 code 200
+stat Rust files 1 total 109 blank 0 comment 0 code 109
+stat Shell files 2 total 213 blank 0 comment 0 code 213
 author~ Emise <emise@localhost> commits 3
 Commit 5ab91ab37bf0 by Emise <emise@localhost> on 2026-11-07 (EE 0).
 
 Subject: agi: V13 prepass closure in tasks register + re-merge
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 956.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1211.
 
 commit 5ab91ab37bf005a6e7bdcdaca85cbfa2e366e746
 parent e93bfe3347c24775cbb3a753721678aa29a07b84
 author Emise <emise@localhost>
 date 1794018214 2026-11-07
-stat Markdown files 12 total 698 blank 166 comment 0 code 532
-stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 1 total 109 blank 8 comment 6 code 95
-stat Shell files 2 total 213 blank 34 comment 22 code 157
+quality 4 0 0 0
+fncount 21
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 12 total 698 blank 9 comment 0 code 689
+stat Python files 1 total 200 blank 0 comment 0 code 200
+stat Rust files 1 total 109 blank 0 comment 0 code 109
+stat Shell files 2 total 213 blank 0 comment 0 code 213
 author~ Emise <emise@localhost> commits 4
 Commit c68abc16bf48 by Emise <emise@localhost> on 2026-11-07 (EE 0).
 
 Subject: agi: vocabulary task recorded + re-merge
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 956.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1211.
 
 commit c68abc16bf48ef298ce31bedf162241fee4cb4d3
 parent 5ab91ab37bf005a6e7bdcdaca85cbfa2e366e746
 author Emise <emise@localhost>
 date 1794023287 2026-11-07
-stat Markdown files 12 total 698 blank 166 comment 0 code 532
-stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 1 total 109 blank 8 comment 6 code 95
-stat Shell files 2 total 213 blank 34 comment 22 code 157
+quality 4 0 0 0
+fncount 21
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 12 total 698 blank 9 comment 0 code 689
+stat Python files 1 total 200 blank 0 comment 0 code 200
+stat Rust files 1 total 109 blank 0 comment 0 code 109
+stat Shell files 2 total 213 blank 0 comment 0 code 213
 author~ Emise <emise@localhost> commits 5
 Commit 5a11ba6b0054 by Emise <emise@localhost> on 2026-11-07 (EE 0).
 
 Subject: agi: simple.phext closure in tasks register + re-merge
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 956.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1211.
 
 commit 5a11ba6b0054e9699383f8d1052970eac1289885
 parent c68abc16bf48ef298ce31bedf162241fee4cb4d3
 author Emise <emise@localhost>
 date 1794032166 2026-11-07
-stat Markdown files 12 total 698 blank 166 comment 0 code 532
-stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 1 total 109 blank 8 comment 6 code 95
-stat Shell files 2 total 213 blank 34 comment 22 code 157
+quality 4 0 0 0
+fncount 21
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 12 total 698 blank 9 comment 0 code 689
+stat Python files 1 total 200 blank 0 comment 0 code 200
+stat Rust files 1 total 109 blank 0 comment 0 code 109
+stat Shell files 2 total 213 blank 0 comment 0 code 213
 author~ Emise <emise@localhost> commits 6
 Commit d91f9f81862c by Emise <emise@localhost> on 2026-11-07 (EE 0).
 
 Subject: agi: parse-estimate closure in tasks register + re-merge
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 956.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1211.
 
 commit d91f9f81862c918c15f3ea5ff89067b2a98164cd
 parent 5a11ba6b0054e9699383f8d1052970eac1289885
 author Emise <emise@localhost>
 date 1794032926 2026-11-07
-stat Markdown files 12 total 698 blank 166 comment 0 code 532
-stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 1 total 109 blank 8 comment 6 code 95
-stat Shell files 2 total 213 blank 34 comment 22 code 157
+quality 4 0 0 0
+fncount 21
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 12 total 698 blank 9 comment 0 code 689
+stat Python files 1 total 200 blank 0 comment 0 code 200
+stat Rust files 1 total 109 blank 0 comment 0 code 109
+stat Shell files 2 total 213 blank 0 comment 0 code 213
 author~ Emise <emise@localhost> commits 7
 Commit defb0670773e by Emise <emise@localhost> on 2026-11-07 (EE 0).
 
 Subject: agi merge: nightly 2026-11-07 - 7240 scrolls, 0 deduped, 22 displaced
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 956.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1211.
 
 commit defb0670773e0291e5acbc5d77f12ee4202294bc
 parent d91f9f81862c918c15f3ea5ff89067b2a98164cd
 author Emise <emise@localhost>
 date 1794048452 2026-11-07
-stat Markdown files 12 total 698 blank 166 comment 0 code 532
-stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 1 total 109 blank 8 comment 6 code 95
-stat Shell files 2 total 213 blank 34 comment 22 code 157
+quality 4 0 0 0
+fncount 21
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 12 total 698 blank 9 comment 0 code 689
+stat Python files 1 total 200 blank 0 comment 0 code 200
+stat Rust files 1 total 109 blank 0 comment 0 code 109
+stat Shell files 2 total 213 blank 0 comment 0 code 213
 author~ Emise <emise@localhost> commits 8
 Commit 8dbebc452280 by Emise <emise@localhost> on 2026-11-07 (EE 0).
 
 Subject: tasks: ultra.phext task closed (32.6.10/8.7.12/7.7.11) — tasks.phext + agi.phext refreshed
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 956.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1211.
 
 commit 8dbebc452280140d9eefc11446c985b2ebfcce69
 parent defb0670773e0291e5acbc5d77f12ee4202294bc
 author Emise <emise@localhost>
 date 1794052818 2026-11-07
-stat Markdown files 12 total 698 blank 166 comment 0 code 532
-stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 1 total 109 blank 8 comment 6 code 95
-stat Shell files 2 total 213 blank 34 comment 22 code 157
+quality 4 0 0 0
+fncount 21
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 12 total 698 blank 9 comment 0 code 689
+stat Python files 1 total 200 blank 0 comment 0 code 200
+stat Rust files 1 total 109 blank 0 comment 0 code 109
+stat Shell files 2 total 213 blank 0 comment 0 code 213
 author~ Emise <emise@localhost> commits 9
 Commit d03c1bf506b8 by Emise <emise@localhost> on 2026-11-07 (EE 0).
 
 Subject: tasks: close Spaces task 23.6.10/9.7.12/5.7.9 — all 15 Spaces built and in sidebar; refresh tasks.phext + agi.phext
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 956.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1211.
 
 commit d03c1bf506b8eab2b1349f0634da2ec5fdac1fa6
 parent 8dbebc452280140d9eefc11446c985b2ebfcce69
 author Emise <emise@localhost>
 date 1794062739 2026-11-07
-stat Markdown files 12 total 698 blank 166 comment 0 code 532
-stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 1 total 109 blank 8 comment 6 code 95
-stat Shell files 2 total 213 blank 34 comment 22 code 157
+quality 4 0 0 0
+fncount 21
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 12 total 698 blank 9 comment 0 code 689
+stat Python files 1 total 200 blank 0 comment 0 code 200
+stat Rust files 1 total 109 blank 0 comment 0 code 109
+stat Shell files 2 total 213 blank 0 comment 0 code 213
 author~ Emise <emise@localhost> commits 10
 Commit 3eb78a528a1f by Emise <emise@localhost> on 2026-11-07 (EE 0).
 
 Subject: tasks: ultra.phext completion (32.7.14/9.8.15/11.10.17) — tasks.phext + agi.phext refreshed
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 956.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1211.
 
 commit 3eb78a528a1f51d4793fac24af24b32e84b5a9e6
 parent d03c1bf506b8eab2b1349f0634da2ec5fdac1fa6
 author Emise <emise@localhost>
 date 1794072977 2026-11-07
-stat Markdown files 12 total 698 blank 166 comment 0 code 532
-stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 1 total 109 blank 8 comment 6 code 95
-stat Shell files 2 total 213 blank 34 comment 22 code 157
+quality 4 0 0 0
+fncount 21
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 12 total 698 blank 9 comment 0 code 689
+stat Python files 1 total 200 blank 0 comment 0 code 200
+stat Rust files 1 total 109 blank 0 comment 0 code 109
+stat Shell files 2 total 213 blank 0 comment 0 code 213
 author~ Emise <emise@localhost> commits 11
 Commit d446855d9b18 by Emise <emise@localhost> on 2026-11-07 (EE 0).
 
 Subject: tasks: ultra.phext second indexing method closed (28.7.9/10.6.13/6.6.9) — tasks.phext + agi.phext refreshed
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 956.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1211.
 
 commit d446855d9b18603cb855d09aaa96d2a11429146d
 parent 3eb78a528a1f51d4793fac24af24b32e84b5a9e6
 author Emise <emise@localhost>
 date 1794074905 2026-11-07
-stat Markdown files 12 total 698 blank 166 comment 0 code 532
-stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 1 total 109 blank 8 comment 6 code 95
-stat Shell files 2 total 213 blank 34 comment 22 code 157
+quality 4 0 0 0
+fncount 21
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 12 total 698 blank 9 comment 0 code 689
+stat Python files 1 total 200 blank 0 comment 0 code 200
+stat Rust files 1 total 109 blank 0 comment 0 code 109
+stat Shell files 2 total 213 blank 0 comment 0 code 213
 author~ Emise <emise@localhost> commits 12
 Commit 2d2552f36776 by Emise <emise@localhost> on 2026-11-07 (EE 0).
 
 Subject: tasks: ultra.phext normalization closed (44.13.9/15.15.18/13.13.19) — tasks.phext + agi.phext refreshed
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 956.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1211.
 
 commit 2d2552f367765e516e526d30a4bb9e7d3aaa7896
 parent d446855d9b18603cb855d09aaa96d2a11429146d
 author Emise <emise@localhost>
 date 1794077418 2026-11-07
-stat Markdown files 12 total 698 blank 166 comment 0 code 532
-stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 1 total 109 blank 8 comment 6 code 95
-stat Shell files 2 total 213 blank 34 comment 22 code 157
+quality 4 0 0 0
+fncount 21
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 12 total 698 blank 9 comment 0 code 689
+stat Python files 1 total 200 blank 0 comment 0 code 200
+stat Rust files 1 total 109 blank 0 comment 0 code 109
+stat Shell files 2 total 213 blank 0 comment 0 code 213
 author~ Emise <emise@localhost> commits 13
 Commit b83338c180be by Emise <emise@localhost> on 2026-11-08 (EE 0).
 
 Subject: Nightly agi.phext merge 2026-11-08: 7452 scrolls, 0 deduped, 25 displaced
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 956.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1211.
 
 commit b83338c180be85a291fa26d08fd3f6e66b51110d
 parent 2d2552f367765e516e526d30a4bb9e7d3aaa7896
 author Emise <emise@localhost>
 date 1794134829 2026-11-08
-stat Markdown files 12 total 698 blank 166 comment 0 code 532
-stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 1 total 109 blank 8 comment 6 code 95
-stat Shell files 2 total 213 blank 34 comment 22 code 157
+quality 4 0 0 0
+fncount 21
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 12 total 698 blank 9 comment 0 code 689
+stat Python files 1 total 200 blank 0 comment 0 code 200
+stat Rust files 1 total 109 blank 0 comment 0 code 109
+stat Shell files 2 total 213 blank 0 comment 0 code 213
 author~ Emise <emise@localhost> commits 14
 Commit 77629f3b78c6 by Emise <emise@localhost> on 2026-11-09 (EE 0).
 
 Subject: agi merge: nightly unified merge 2026-11-09 (7581 scrolls)
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 956.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1211.
 
 commit 77629f3b78c669f6e07c82eefd8fbec7b70e57a7
 parent b83338c180be85a291fa26d08fd3f6e66b51110d
 author Emise <emise@localhost>
 date 1794221162 2026-11-09
-stat Markdown files 12 total 698 blank 166 comment 0 code 532
-stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 1 total 109 blank 8 comment 6 code 95
-stat Shell files 2 total 213 blank 34 comment 22 code 157
+quality 4 0 0 0
+fncount 21
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 12 total 698 blank 9 comment 0 code 689
+stat Python files 1 total 200 blank 0 comment 0 code 200
+stat Rust files 1 total 109 blank 0 comment 0 code 109
+stat Shell files 2 total 213 blank 0 comment 0 code 213
 author~ Emise <emise@localhost> commits 15
 Commit fd84a2643a80 by Emise <emise@localhost> on 2026-11-09 (EE 0).
 
 Subject: Add mastery.phext (Thirst for Knowledge quest journal) + SOURCES.md row
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 957.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 937.
 
 This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
 
@@ -394,7 +521,22 @@ commit fd84a2643a80ec24a6ae35af6d260acf999dec61
 parent 77629f3b78c669f6e07c82eefd8fbec7b70e57a7
 author Emise <emise@localhost>
 date 1794234774 2026-11-09
-stat Markdown files 12 total 699 blank 166 comment 0 code 533
+quality 4 0 0 0
+fncount 21
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+largest-file build_agi_phext.py :: 200
+largest-file shapes/sentron.md :: 180
+largest-file sentrons/SHAPE.md :: 144
+largest-file choir/verse-protocol.sh :: 117
+largest-file sentrons/wiremap.rs :: 109
+largest-fn annex_coord :: build_agi_phext.py :: 83
+largest-fn write_entry :: choir/verse-protocol.sh :: 54
+largest-fn write_entry :: choir/lux-protocol.sh :: 42
+largest-fn wait_for_predecessor :: choir/verse-protocol.sh :: 25
+largest-fn explode :: build_agi_phext.py :: 23
+stat Markdown files 12 total 699 blank 166 comment 20 code 513
 stat Python files 1 total 200 blank 22 comment 6 code 172
 stat Rust files 1 total 109 blank 8 comment 6 code 95
 stat Shell files 2 total 213 blank 34 comment 22 code 157
@@ -403,386 +545,506 @@ author~ Emise <emise@localhost> commits 16
 
 Subject: Revise README + AGENTS for the collection era; prune choir/, iteration-001/, sentrons/, shapes/
 
-Public items: 0 added, 25 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 25 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit 63dd8979635be3868b67942e076b59cbf81edfc6
 parent fd84a2643a80ec24a6ae35af6d260acf999dec61
 author Will Bickford <wbic16@gmail.com>
 date 1794235789 2026-11-09
-item- function choir/lux-protocol.sh :: latest_iter
-item- function choir/lux-protocol.sh :: wait_for_predecessor
-item- function choir/lux-protocol.sh :: write_entry
-item- function choir/verse-protocol.sh :: already_done
-item- function choir/verse-protocol.sh :: current_iter
-item- function choir/verse-protocol.sh :: wait_for_predecessor
-item- function choir/verse-protocol.sh :: write_entry
-item- const sentrons/wiremap.rs :: FULL
-item- const sentrons/wiremap.rs :: LINEAR
-item- const sentrons/wiremap.rs :: NULL
-item- const sentrons/wiremap.rs :: PLANAR
-item- enum sentrons/wiremap.rs :: SentronKind
-item- const sentrons/wiremap.rs :: T_NEG
-item- const sentrons/wiremap.rs :: T_POS
-item- struct sentrons/wiremap.rs :: WireMap
-item- function sentrons/wiremap.rs :: WireMap::active_count
-item- function sentrons/wiremap.rs :: WireMap::encode_t_phase
-item- function sentrons/wiremap.rs :: WireMap::for_kind
-item- function sentrons/wiremap.rs :: WireMap::wire_active
-item- const sentrons/wiremap.rs :: X_NEG
-item- const sentrons/wiremap.rs :: X_POS
-item- const sentrons/wiremap.rs :: Y_NEG
-item- const sentrons/wiremap.rs :: Y_POS
-item- const sentrons/wiremap.rs :: Z_NEG
-item- const sentrons/wiremap.rs :: Z_POS
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+item- function choir/lux-protocol.sh :: latest_iter :: 28
+item- function choir/lux-protocol.sh :: wait_for_predecessor :: 34
+item- function choir/lux-protocol.sh :: write_entry :: 55
+item- function choir/verse-protocol.sh :: already_done :: 33
+item- function choir/verse-protocol.sh :: current_iter :: 28
+item- function choir/verse-protocol.sh :: wait_for_predecessor :: 39
+item- function choir/verse-protocol.sh :: write_entry :: 64
+item- const sentrons/wiremap.rs :: FULL :: 22
+item- const sentrons/wiremap.rs :: LINEAR :: 20
+item- const sentrons/wiremap.rs :: NULL :: 19
+item- const sentrons/wiremap.rs :: PLANAR :: 21
+item- const sentrons/wiremap.rs :: T_NEG :: 14
+item- const sentrons/wiremap.rs :: T_POS :: 15
+item- const sentrons/wiremap.rs :: X_NEG :: 8
+item- const sentrons/wiremap.rs :: X_POS :: 9
+item- const sentrons/wiremap.rs :: Y_NEG :: 10
+item- const sentrons/wiremap.rs :: Y_POS :: 11
+item- const sentrons/wiremap.rs :: Z_NEG :: 12
+item- const sentrons/wiremap.rs :: Z_POS :: 13
+item- enum sentrons/wiremap.rs :: SentronKind :: 26
+item- function sentrons/wiremap.rs :: WireMap::active_count :: 50
+item- function sentrons/wiremap.rs :: WireMap::for_kind :: 53
+item- function sentrons/wiremap.rs :: WireMap::wire_active :: 51
+item- function sentrons/wiremap.rs :: encode_t_phase :: 73
+item- struct sentrons/wiremap.rs :: WireMap :: 42
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Will Bickford <wbic16@gmail.com> commits 2
 Commit dd30dee3f85a by Emise <emise@localhost> on 2026-11-09 (EE 0).
 
 Subject: mastery.phext: journal entry 1 — Paper 008 (arXiv:2611.09694), the first paper of the Thirst, 2026-11-09
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit dd30dee3f85a8cacd40b07ba2823e23802d75114
 parent 63dd8979635be3868b67942e076b59cbf81edfc6
 author Emise <emise@localhost>
 date 1794237312 2026-11-09
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 17
 Commit 5b7f111803ae by Emise <emise@localhost> on 2026-11-10 (EE 0).
 
 Subject: mastery.phext: entry 2 — Paper 009 (arXiv:2611.08625), the Will-posted segment paper; the choosing, the skim, the reading, the integration, the score
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit 5b7f111803aea4633f17d80829f7127383b4fb5e
 parent dd30dee3f85a8cacd40b07ba2823e23802d75114
 author Emise <emise@localhost>
 date 1794280811 2026-11-10
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 18
 Commit 498a1dcd35cd by Emise <emise@localhost> on 2026-11-10 (EE 0).
 
 Subject: mastery.phext: entry 3 — Paper 010, High-Dimensional Off-Policy Evaluation without Sample Splitting using an Onsager Correction (Jain, Braun, Imaizumi); the census dialogue, cluster O founded, Pass #6, the third phantom revision
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit 498a1dcd35cd3934994b334d7613542034802e79
 parent 5b7f111803aea4633f17d80829f7127383b4fb5e
 author Emise <emise@localhost>
 date 1794283384 2026-11-10
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 19
 Commit a236dd5fa38d by Will Bickford <wbic16@gmail.com> on 2026-11-10 (EE 0).
 
 Subject: mastery.phext: entry 4 — Paper 011, Synthesizing symbolic models of human and machine reasoning at scale
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit a236dd5fa38d28a81763313e94b9bd476a3cb166
 parent 498a1dcd35cd3934994b334d7613542034802e79
 author Will Bickford <wbic16@gmail.com>
 date 1794284890 2026-11-10
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Will Bickford <wbic16@gmail.com> commits 3
 Commit e6f078d85a66 by Emise <emise@localhost> on 2026-11-10 (EE 0).
 
 Subject: Nightly agi merge 2026-11-10: 8075 scrolls, 0 deduped, 26 displaced
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit e6f078d85a669455656a64b9efad8793d1700416
 parent a236dd5fa38d28a81763313e94b9bd476a3cb166
 author Emise <emise@localhost>
 date 1794307612 2026-11-10
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 20
 Commit 215241425f00 by Emise <emise@localhost> on 2026-11-10 (EE 0).
 
 Subject: mastery.phext: Entry 5 — Paper 012 (arXiv:2611.11959, Shang, instance-specific sharp rates) journaled 2026-11-10
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit 215241425f00a8e95cb5f2e4c4f55803b1ba7775
 parent e6f078d85a669455656a64b9efad8793d1700416
 author Emise <emise@localhost>
 date 1794316908 2026-11-10
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 21
 Commit 9e782f5a81f4 by Emise <emise@localhost> on 2026-11-11 (EE 0).
 
 Subject: Nightly agi.phext merge 2026-11-11: 8418 scrolls, 0 deduped, 26 displaced
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit 9e782f5a81f4799be644fd7def24c172b663fb3c
 parent 215241425f00a8e95cb5f2e4c4f55803b1ba7775
 author Emise <emise@localhost>
 date 1794394000 2026-11-11
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 22
 Commit f84db9ce403a by Emise <emise@localhost> on 2026-11-11 (EE 0).
 
 Subject: mastery.phext: entry 6 — Paper 013, A Theory of Cross-Validation Variance (Thirst for Knowledge, 2026-11-11)
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit f84db9ce403a1450286b13df9f8631d54e636349
 parent 9e782f5a81f4799be644fd7def24c172b663fb3c
 author Emise <emise@localhost>
 date 1794403812 2026-11-11
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 23
 Commit 718363628d12 by wbic16 <wbic16@users.noreply.github.com> on 2026-11-11 (EE 0).
 
 Subject: mastery: entry 7 — Paper 014 (Aristotle, arXiv:2510.01346) absorbed; cluster Q founded; Pass #7 run
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit 718363628d12b12217bf2e90ce6e59591a579923
 parent f84db9ce403a1450286b13df9f8631d54e636349
 author wbic16 <wbic16@users.noreply.github.com>
 date 1794407391 2026-11-11
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author+ wbic16 <wbic16@users.noreply.github.com>
 Commit 47028328f90d by Emise <emise@localhost> on 2026-11-12 (EE 0).
 
 Subject: mastery.phext: entry 8 — Paper 015, Thermodynamics of words (Thirst for Knowledge quest journal)
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit 47028328f90d40f614a73c35e42e6eae33bbd6da
 parent 718363628d12b12217bf2e90ce6e59591a579923
 author Emise <emise@localhost>
 date 1794451509 2026-11-12
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 24
 Commit 754ad2d80a33 by Emise <emise@localhost> on 2026-11-12 (EE 0).
 
 Subject: mastery entry #9 — Paper 016: The Geometrical Trinity of Gravity (Thirst quest journal, written in the same pass as the integration)
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit 754ad2d80a338f70f21cafd84e1b272f1e979c51
 parent 47028328f90d40f614a73c35e42e6eae33bbd6da
 author Emise <emise@localhost>
 date 1794466008 2026-11-12
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 25
 Commit 41d1dcf92abf by Emise <emise@localhost> on 2026-11-12 (EE 0).
 
 Subject: Nightly agi merge 2026-11-12: 8888 scrolls, 0 deduped, 26 displaced
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit 41d1dcf92abfd79f110a7a73e67c69d6e787c29e
 parent 754ad2d80a338f70f21cafd84e1b272f1e979c51
 author Emise <emise@localhost>
 date 1794480391 2026-11-12
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 26
 Commit 54e40ed222c1 by Emise <emise@localhost> on 2026-11-13 (EE 0).
 
 Subject: mastery.phext: entry 10 — Paper 017 (AlphaProof Code, Google DeepMind document 36) journaled in the same pass as its integration: cluster W founded, Pass #11, Oracle exact a fifth paper running, count missed by six and recorded plainly
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit 54e40ed222c18d2deb1eb39ce05f5027cb8d68de
 parent 41d1dcf92abfd79f110a7a73e67c69d6e787c29e
 author Emise <emise@localhost>
 date 1794556478 2026-11-13
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 27
 Commit 6615bd237cfe by Emise <emise@localhost> on 2026-11-13 (EE 0).
 
 Subject: agi merge: nightly unified merge 2026-11-13 (9293 scrolls)
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit 6615bd237cfe2f702726c396b3ad1ad842bf5eed
 parent 54e40ed222c18d2deb1eb39ce05f5027cb8d68de
 author Emise <emise@localhost>
 date 1794566785 2026-11-13
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 28
 Commit 4333786145b0 by Emise <emise@localhost> on 2026-11-13 (EE 0).
 
 Subject: mastery.phext: Entry 11 — Paper 018 (Baraud, arXiv:2611.17082) journal of the Thirst quest, 2026-11-13
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit 4333786145b0e378b1979402da958bc704bce9be
 parent 6615bd237cfe2f702726c396b3ad1ad842bf5eed
 author Emise <emise@localhost>
 date 1794577025 2026-11-13
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 29
 Commit 3914d15a69b1 by Emise <emise@localhost> on 2026-11-14 (EE 0).
 
 Subject: Mastery entry 12 — Paper 019 (Rito, Kippenhahn hypersurface): the process journal of the twelfth Thirst ingestion
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit 3914d15a69b1434d7f3e78dd8397073114bf8e39
 parent 4333786145b0e378b1979402da958bc704bce9be
 author Emise <emise@localhost>
 date 1794645595 2026-11-14
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 30
 Commit 93c556c92d61 by Emise <emise@localhost> on 2026-11-14 (EE 0).
 
 Subject: Mastery entry 13 — Paper 020 (Piecewise Interpretations in Many-Sorted Logic, Zayton): the first filing under the ratified protocol; where the filing rules bit, the axis judgment written before scoring, and the flat rule winning the paper
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit 93c556c92d611409270e31154568882d3611222b
 parent 3914d15a69b1434d7f3e78dd8397073114bf8e39
 author Emise <emise@localhost>
 date 1794648914 2026-11-14
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 31
 Commit 4f4cbdc7885b by Emise <emise@localhost> on 2026-11-14 (EE 0).
 
 Subject: agi merge nightly 2026-11-14: 9718 scrolls, 0 deduped, 26 displaced
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit 4f4cbdc7885b9c3d08e60da75a0f8b8016e552c5
 parent 93c556c92d611409270e31154568882d3611222b
 author Emise <emise@localhost>
 date 1794653207 2026-11-14
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 32
 Commit eb1f7ba1825c by Emise <emise@localhost> on 2026-11-14 (EE 0).
 
 Subject: Mastery journal entry 14 — Paper 021 (Gattinger, PDL without tests): the process of the taking-in, the seal, the score under the protocol, and the coordinate fault caught by the converter
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit eb1f7ba1825cd43b0016be1c4b12307969a754d7
 parent 4f4cbdc7885b9c3d08e60da75a0f8b8016e552c5
 author Emise <emise@localhost>
 date 1794662090 2026-11-14
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 33
 Commit a3661ab191bc by Emise <emise@localhost> on 2026-11-14 (EE 0).
 
 Subject: Mastery #15 — A Story Filed as Research (Paper 022, Maneki Neko)
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit a3661ab191bce8a512ce3fc1b427756101ce1583
 parent eb1f7ba1825cd43b0016be1c4b12307969a754d7
 author Emise <emise@localhost>
 date 1794671098 2026-11-14
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 34
 Commit 72b5e78a2e62 by Emise <emise@localhost> on 2026-11-15 (EE 0).
 
 Subject: agi merge nightly 2026-11-15: 10140 scrolls, 0 deduped, 26 displaced
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit 72b5e78a2e6228b2cc628f15bceed3bfa9565766
 parent a3661ab191bce8a512ce3fc1b427756101ce1583
 author Emise <emise@localhost>
 date 1794739579 2026-11-15
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 35
 Commit 65cadf91e088 by Emise <emise@localhost> on 2026-11-16 (EE 0).
 
 Subject: agi merge: nightly unified merge 2026-11-16 (10550 scrolls)
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit 65cadf91e088c2abf55ef3a5ddc006bb7b7f970b
 parent 72b5e78a2e6228b2cc628f15bceed3bfa9565766
 author Emise <emise@localhost>
 date 1794826070 2026-11-16
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 36
 Commit e22b70d5a82b by Emise <emise@localhost> on 2026-11-16 (EE 0).
 
 Subject: mastery.phext: Entry 16 — Paper 023 (HOL in HOL, Benzmüller & Kirchner, arXiv:2611.17884); Thirst journal, protocol sample slot 4 of 12
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 292.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 172.
 
 commit e22b70d5a82b52febe9dd0a54647eb10117a20ea
 parent 65cadf91e088c2abf55ef3a5ddc006bb7b7f970b
 author Emise <emise@localhost>
 date 1794834874 2026-11-16
-stat Markdown files 4 total 140 blank 20 comment 0 code 120
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+stat Markdown files 4 total 140 blank 166 comment 20 code 0
 stat Python files 1 total 200 blank 22 comment 6 code 172
-stat Rust files 0 total 0 blank 0 comment 0 code 0
-stat Shell files 0 total 0 blank 0 comment 0 code 0
+stat Rust files 0 total 0 blank 8 comment 6 code 0
+stat Shell files 0 total 0 blank 34 comment 22 code 0
 author~ Emise <emise@localhost> commits 37
 Commit 4d237b6f006e by Emise <emise@localhost> on 2026-11-17 (EE 0).
 
@@ -796,6 +1058,21 @@ commit 4d237b6f006efc3d93872cb5324942e176af5877
 parent e22b70d5a82b52febe9dd0a54647eb10117a20ea
 author Emise <emise@localhost>
 date 1794912412 2026-11-17
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+largest-file build_agi_phext.py :: 200
+largest-file MERGE-RULES.md :: 62
+largest-file README.md :: 40
+largest-file SOURCES.md :: 24
+largest-file AGENTS.md :: 14
+largest-fn annex_coord :: build_agi_phext.py :: 83
+largest-fn explode :: build_agi_phext.py :: 23
+largest-fn implode :: build_agi_phext.py :: 17
+largest-fn main :: build_agi_phext.py :: 17
+largest-fn build :: build_agi_phext.py :: 10
 stat Markdown files 4 total 140 blank 20 comment 0 code 120
 stat Python files 1 total 200 blank 22 comment 6 code 172
 author~ Emise <emise@localhost> commits 38
@@ -809,6 +1086,11 @@ commit 09ba516bb3a978a1e939eef5aed2eeb6fcf98cfb
 parent 4d237b6f006efc3d93872cb5324942e176af5877
 author Emise <emise@localhost>
 date 1794922183 2026-11-17
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
 stat Markdown files 4 total 140 blank 20 comment 0 code 120
 stat Python files 1 total 200 blank 22 comment 6 code 172
 author~ Emise <emise@localhost> commits 39
@@ -822,6 +1104,11 @@ commit cd5bdc8544ad52458a8517017428248a3c0c57a6
 parent 09ba516bb3a978a1e939eef5aed2eeb6fcf98cfb
 author Emise <emise@localhost>
 date 1794998814 2026-11-18
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
 stat Markdown files 4 total 140 blank 20 comment 0 code 120
 stat Python files 1 total 200 blank 22 comment 6 code 172
 author~ Emise <emise@localhost> commits 40
@@ -835,6 +1122,11 @@ commit 7eced3cc96064822b0aa85a8cc49819db747f89e
 parent cd5bdc8544ad52458a8517017428248a3c0c57a6
 author Emise <emise@localhost>
 date 1795006116 2026-11-18
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
 stat Markdown files 4 total 140 blank 20 comment 0 code 120
 stat Python files 1 total 200 blank 22 comment 6 code 172
 author~ Emise <emise@localhost> commits 41
@@ -848,6 +1140,11 @@ commit b1038de0f67ee360b6db57d251165e8c8e97886b
 parent 7eced3cc96064822b0aa85a8cc49819db747f89e
 author Emise <emise@localhost>
 date 1795007651 2026-11-18
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
 stat Markdown files 4 total 140 blank 20 comment 0 code 120
 stat Python files 1 total 200 blank 22 comment 6 code 172
 author~ Emise <emise@localhost> commits 42
@@ -861,6 +1158,11 @@ commit e89de68b64a2072bf369ee0b741fc6055a9d6f7c
 parent b1038de0f67ee360b6db57d251165e8c8e97886b
 author Emise <emise@localhost>
 date 1795075799 2026-11-19
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
 stat Markdown files 4 total 140 blank 20 comment 0 code 120
 stat Python files 1 total 200 blank 22 comment 6 code 172
 author~ Emise <emise@localhost> commits 43
@@ -874,6 +1176,11 @@ commit f75f55ed606f66ab0e0dc88cc730f92ad7ff7d0e
 parent e89de68b64a2072bf369ee0b741fc6055a9d6f7c
 author Emise <emise@localhost>
 date 1795085259 2026-11-19
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
 stat Markdown files 4 total 140 blank 20 comment 0 code 120
 stat Python files 1 total 200 blank 22 comment 6 code 172
 author~ Emise <emise@localhost> commits 44
@@ -887,6 +1194,11 @@ commit 2c80d8be8b41e6e59381e161d2d2569a482a2802
 parent f75f55ed606f66ab0e0dc88cc730f92ad7ff7d0e
 author Emise <emise@localhost>
 date 1795094043 2026-11-19
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
 stat Markdown files 4 total 140 blank 20 comment 0 code 120
 stat Python files 1 total 200 blank 22 comment 6 code 172
 author~ Emise <emise@localhost> commits 45
@@ -900,6 +1212,11 @@ commit 1df7ad32eea741c5262bc0b6e1f5a610fc8cb37b
 parent 2c80d8be8b41e6e59381e161d2d2569a482a2802
 author Emise <emise@localhost>
 date 1795119336 2026-11-19
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
 stat Markdown files 4 total 140 blank 20 comment 0 code 120
 stat Python files 1 total 200 blank 22 comment 6 code 172
 author~ Emise <emise@localhost> commits 46
@@ -913,6 +1230,11 @@ commit 2021917bba89f88f7561fc024eacdfe04282272b
 parent 1df7ad32eea741c5262bc0b6e1f5a610fc8cb37b
 author Emise <emise@localhost>
 date 1795171597 2026-11-20
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
 stat Markdown files 4 total 140 blank 20 comment 0 code 120
 stat Python files 1 total 200 blank 22 comment 6 code 172
 author~ Emise <emise@localhost> commits 47
@@ -926,6 +1248,11 @@ commit 19c9d81420189c97d8a7b947862687e56c16afd6
 parent 2021917bba89f88f7561fc024eacdfe04282272b
 author Emise <emise@localhost>
 date 1795180920 2026-11-20
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
 stat Markdown files 4 total 140 blank 20 comment 0 code 120
 stat Python files 1 total 200 blank 22 comment 6 code 172
 author~ Emise <emise@localhost> commits 48
@@ -939,6 +1266,11 @@ commit b3deec1f9349fe472842d67206dc44dcca3e92b0
 parent 19c9d81420189c97d8a7b947862687e56c16afd6
 author Emise <emise@localhost>
 date 1795187933 2026-11-20
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
 stat Markdown files 4 total 140 blank 20 comment 0 code 120
 stat Python files 1 total 200 blank 22 comment 6 code 172
 author~ Emise <emise@localhost> commits 49
@@ -952,6 +1284,11 @@ commit 4514f01ffbd1fb4044ffdba1154648dc40be23d2
 parent b3deec1f9349fe472842d67206dc44dcca3e92b0
 author Emise <emise@localhost>
 date 1795222945 2026-11-21
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
 stat Markdown files 4 total 140 blank 20 comment 0 code 120
 stat Python files 1 total 200 blank 22 comment 6 code 172
 author~ Emise <emise@localhost> commits 50
@@ -965,6 +1302,11 @@ commit 6e462680b753927e51c244d87fee4e78d8c9012f
 parent 4514f01ffbd1fb4044ffdba1154648dc40be23d2
 author Emise <emise@localhost>
 date 1795258006 2026-11-21
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
 stat Markdown files 4 total 140 blank 20 comment 0 code 120
 stat Python files 1 total 200 blank 22 comment 6 code 172
 author~ Emise <emise@localhost> commits 51
@@ -978,6 +1320,11 @@ commit ed946cc72e082871535460874c8735330af8ddf7
 parent 6e462680b753927e51c244d87fee4e78d8c9012f
 author Emise <emise@localhost>
 date 1795270185 2026-11-21
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
 stat Markdown files 4 total 140 blank 20 comment 0 code 120
 stat Python files 1 total 200 blank 22 comment 6 code 172
 author~ Emise <emise@localhost> commits 52
@@ -991,6 +1338,11 @@ commit 6bc77a3045d5030f820d82b9a23ceed396dc46a7
 parent ed946cc72e082871535460874c8735330af8ddf7
 author Emise <emise@localhost>
 date 1795314975 2026-11-22
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
 stat Markdown files 4 total 140 blank 20 comment 0 code 120
 stat Python files 1 total 200 blank 22 comment 6 code 172
 author~ Emise <emise@localhost> commits 53
@@ -1006,6 +1358,21 @@ commit 34bd7f588c0136cba0c1653be67c76c0eea89ebf
 parent 6bc77a3045d5030f820d82b9a23ceed396dc46a7
 author Emise <emise@localhost>
 date 1795344448 2026-11-22
+quality 0 0 0 0
+fncount 6
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/agi.git
+branch exo
+largest-file build_agi_phext.py :: 200
+largest-file MERGE-RULES.md :: 62
+largest-file README.md :: 40
+largest-file SOURCES.md :: 24
+largest-file AGENTS.md :: 14
+largest-fn annex_coord :: build_agi_phext.py :: 83
+largest-fn explode :: build_agi_phext.py :: 23
+largest-fn implode :: build_agi_phext.py :: 17
+largest-fn main :: build_agi_phext.py :: 17
+largest-fn build :: build_agi_phext.py :: 10
 stat Markdown files 4 total 140 blank 20 comment 0 code 120
 stat Python files 1 total 200 blank 22 comment 6 code 172
 author~ Emise <emise@localhost> commits 54

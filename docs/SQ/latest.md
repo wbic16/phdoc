@@ -1,10 +1,8 @@
 # SQ — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 150). Scanned at commit e4c492bc4f2d52bc070f05830f3f1d9c7d0dbfe7. Everything in this document was extracted from the revision named above: its manifests, its git log, and its source text. Descriptions are labeled by how they were obtained — direct (the source's own words), inferred (read off a signature), agent-supplied (written by a reviewer), verified (backed by a validated contract), or unverified — and only validated contracts are marked verified.
+Scanned by phdoc 0.1.0 on 2026-11-23 (Exocortical Epoch 195). Project root: /home/wbic16/phdoc-sweep/proj/SQ. Scanned at commit e4c492bc4f2d52bc070f05830f3f1d9c7d0dbfe7. Package version, from its manifest: 0.6.2. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
-Description stated in the manifest: A minimal client-server for phext hosting
-
-This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
+This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, where its upstream repo lives, and a plain English note for every public method and command.
 
 ---
 
@@ -14,7 +12,7 @@ This document holds: what the project depends on, who wrote it, how large and ho
 
 License stated in the manifest: MIT.
 
-Direct dependencies: 6.
+Direct dependencies: 6 (6 default, 0 optional).
 
 - libphext [dependencies] — 0.6.0
 - percent-encoding [dependencies] — 2.3.1
@@ -28,21 +26,19 @@ Direct dependencies: 6.
 
 ## Authors
 
-The git log holds 172 commits.
+The git log holds 172 commits. phdoc audits the 166 commits on the first-parent mainline — each merge folds its branch's commits into the merge commit — and the author counts below cover that audited mainline, the same set the historical references fold.
 
-The author of record is **Will Bickford** — 172 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+The author of record is **Will Bickford** — 166 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
 
 Annotation, by persona (all folded into Will Bickford):
 
-- Will Bickford (his own identities) — 132 commits
-- Theia — 9 commits
+- Will Bickford (his own identities) — 131 commits
 - Chrys — 8 commits
+- Theia — 8 commits
 - Lux — 7 commits
 - Orin — 6 commits
 - Cyon — 4 commits
-- Emise — 3 commits
 - Phex — 2 commits
-- Claude — 1 commit
 
 ---
 
@@ -51,7 +47,7 @@ Annotation, by persona (all folded into Will Bickford):
 The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.
 
 - Markdown: 11 files, 1133 lines total, 277 blank, 15 comment, 841 code
-- Python: 1 file, 123 lines total, 26 blank, 1 comment, 96 code
+- Python: 1 files, 123 lines total, 26 blank, 1 comment, 96 code
 - Rust: 10 files, 5160 lines total, 563 blank, 702 comment, 3895 code
 - Shell: 9 files, 332 lines total, 44 blank, 38 comment, 250 code
 - TOML: 4 files, 3096 lines total, 513 blank, 9 comment, 2574 code
@@ -81,11 +77,11 @@ Largest functions, by span in lines:
 
 Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.
 
-- Tests: 78 test functions counted in the source, across 1 file whose names mark them as test files.
+- Tests: 78 test functions counted in the source, across 1 files in test directories or whose names mark them as test files.
 - CI: no CI configuration was found in the project.
 - Lint and format: no lint or format configuration file was found.
 - TODO marks in the source: 0. FIXME marks: 0.
-- Public items with a doc comment: 28 of 88 (32%).
+- Public items with a doc comment: 28 of 89 (31%).
 
 ---
 
@@ -98,7 +94,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 ## Upstream git repo
 
-- Origin: https://github.com/wbic16/SQ
+- Origin: /home/wbic16/github-archive/mirrors/SQ.git
 - Branch: exo
 - Head commit: e4c492bc4f2d52bc070f05830f3f1d9c7d0dbfe7
 - Working tree: clean
@@ -107,124 +103,109 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 ## Public methods and commands
 
-Every public method and command the scanner found, each with a plain English note. Each note is labeled with where its words came from: direct (the code's own doc comment), inferred (read off the item's signature), agent-supplied (written by the user's agent), or awaiting a summary.
+Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.
 
-- function `load_config` (gateway/sq-gateway.py:13) — Function load_config takes no inputs beyond the value it is called on.
-- function `reload_config` (gateway/sq-gateway.py:22) — Function reload_config takes signum=None, frame=None.
-- function `extract_token` (gateway/sq-gateway.py:39) — Function extract_token takes headers.
-- function `GatewayHandler.send_cors` (gateway/sq-gateway.py:47) — Function GatewayHandler.send_cors takes no inputs beyond the value it is called on.
-- function `GatewayHandler.respond` (gateway/sq-gateway.py:51) — Function GatewayHandler.respond takes self, code, body, content_type="application/json".
-- function `GatewayHandler.respond_json` (gateway/sq-gateway.py:60) — Function GatewayHandler.respond_json takes self, code, obj.
-- function `GatewayHandler.do_OPTIONS` (gateway/sq-gateway.py:63) — Function GatewayHandler.do_OPTIONS takes no inputs beyond the value it is called on.
-- function `GatewayHandler.route` (gateway/sq-gateway.py:68) — Function GatewayHandler.route takes no inputs beyond the value it is called on.
-- function `GatewayHandler.proxy_to` (gateway/sq-gateway.py:84) — Function GatewayHandler.proxy_to takes self, port.
-- function `GatewayHandler.log_message` (gateway/sq-gateway.py:111) — Function GatewayHandler.log_message takes self, fmt, *args.
-- function `next_port` (gateway/tenant-manager.sh:14) — Function next_port takes no inputs beyond the value it is called on.
-- function `cmd_add` (gateway/tenant-manager.sh:22) — Function cmd_add takes no inputs beyond the value it is called on.
-- function `cmd_remove` (gateway/tenant-manager.sh:45) — Function cmd_remove takes no inputs beyond the value it is called on.
-- function `cmd_list` (gateway/tenant-manager.sh:67) — Function cmd_list takes no inputs beyond the value it is called on.
+- function `do_OPTIONS` (gateway/sq-gateway.py:63) — Function do_OPTIONS takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
+- function `extract_token` (gateway/sq-gateway.py:39) — Function extract_token takes headers and gives back nothing; it does its work on what it is given.
+- function `load_config` (gateway/sq-gateway.py:13) — Function load_config takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
+- function `log_message` (gateway/sq-gateway.py:111) — Function log_message takes self, fmt, *args and gives back nothing; it does its work on what it is given.
+- function `proxy_to` (gateway/sq-gateway.py:84) — Function proxy_to takes self, port and gives back nothing; it does its work on what it is given.
+- function `reload_config` (gateway/sq-gateway.py:22) — Function reload_config takes signum=None, frame=None and gives back nothing; it does its work on what it is given.
+- function `respond` (gateway/sq-gateway.py:51) — Function respond takes self, code, body, content_type="application/json" and gives back nothing; it does its work on wha
+- function `respond_json` (gateway/sq-gateway.py:60) — Function respond_json takes self, code, obj and gives back nothing; it does its work on what it is given.
+- function `route` (gateway/sq-gateway.py:68) — Function route takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is 
+- function `send_cors` (gateway/sq-gateway.py:47) — Function send_cors takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it
+- function `cmd_add` (gateway/tenant-manager.sh:22) — Function cmd_add takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it i
+- function `cmd_list` (gateway/tenant-manager.sh:67) — Function cmd_list takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it 
+- function `cmd_remove` (gateway/tenant-manager.sh:45) — Function cmd_remove takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
+- function `next_port` (gateway/tenant-manager.sh:14) — Function next_port takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it
 - struct `ApiConfig` (src/api.rs:26) — A data shape named ApiConfig.
-- function `load_api_config` (src/api.rs:58) — Function load_api_config takes path: &str.
-- function `run_api` (src/api.rs:344) — Function run_api takes config_path: &str, listen_port: u16.
+- function `load_api_config` (src/api.rs:58) — Function load_api_config takes path: &str and gives back Result<ApiConfig, Box<dyn std::error::Error>>.
+- function `run_api` (src/api.rs:344) — Function run_api takes config_path: &str, listen_port: u16 and gives back Result<(), Box<dyn std::error::Error>>.
 - struct `PromptCache` (src/cache.rs:18) — SHA256-keyed prompt cache with LRU eviction and TTL expiry
-- function `PromptCache::new` (src/cache.rs:28) — Function PromptCache::new takes max_entries: usize, ttl_secs: u64.
-- function `PromptCache::get` (src/cache.rs:58) — Look up a cached response
-- function `PromptCache::set` (src/cache.rs:83) — Store a prompt-response pair
-- function `PromptCache::check_static` (src/cache.rs:105) — Check static patterns (greetings, status, ping)
-- function `PromptCache::hit_rate` (src/cache.rs:115) — Function PromptCache::hit_rate takes no inputs beyond the value it is called on.
-- function `PromptCache::stats` (src/cache.rs:120) — Function PromptCache::stats takes no inputs beyond the value it is called on.
-- struct `TenantConfig` (src/config.rs:10) — A data shape named TenantConfig.
+- function `PromptCache::new` (src/cache.rs:28) — Function PromptCache::new takes max_entries: usize, ttl_secs: u64 and gives back Self.
+- function `check_static` (src/cache.rs:105) — Check static patterns (greetings, status, ping)
+- function `get` (src/cache.rs:58) — Look up a cached response
+- function `hit_rate` (src/cache.rs:115) — Function hit_rate takes no inputs beyond the value it is called on, and gives back f64.
+- function `set` (src/cache.rs:83) — Store a prompt-response pair
+- function `stats` (src/cache.rs:120) — Function stats takes no inputs beyond the value it is called on, and gives back (u64, u64, usize).
 - struct `ServerConfig` (src/config.rs:16) — A data shape named ServerConfig.
+- struct `TenantConfig` (src/config.rs:10) — A data shape named TenantConfig.
 - function `load_config` (src/config.rs:22) — Load multi-tenant configuration from JSON file Automatically creates tenant data directories if they don't exist
-- const `MAX_BODY_SIZE` (src/main.rs:73) — A fixed value named MAX_BODY_SIZE, set to 64 * 1024 * 1024.
+- command `--cache` (src/main.rs:1178) — A command named --cache.
+- flag `--config` (src/main.rs:328) — A command line flag, --config.
+- command `--data-dir` (src/main.rs:354) — A command named --data-dir.
+- command `--key` (src/main.rs:348) — A command named --key.
+- command `--mesh-config` (src/main.rs:362) — A command named --mesh-config.
 - enum `HashAlgorithm` (src/main.rs:167) — A named choice named HashAlgorithm.
-- entry point `main` (src/main.rs:264) — The entry point: the program starts here.
 - struct `HttpRequest` (src/main.rs:608) — A data shape named HttpRequest.
-- function `read_http_request` (src/main.rs:613) — Function read_http_request takes stream: &mut TcpStream.
-- flag `--config` (src/main.rs:368) — A command line flag, --config.
-- flag `--data-dir` (src/main.rs:354) — A command line flag, --data-dir.
-- flag `--key` (src/main.rs:348) — A command line flag, --key.
-- flag `--mesh-config` (src/main.rs:362) — A command line flag, --mesh-config.
-- struct `NodeConfig` (src/mesh.rs:13) — Node identity configuration
+- const `MAX_BODY_SIZE` (src/main.rs:73) — A fixed value named MAX_BODY_SIZE, set to 64 * 1024 * 1024; // 64 MB per request body.
+- entry point `main` (src/main.rs:264) — The entry point: the program starts here.
+- function `read_http_request` (src/main.rs:613) — Function read_http_request takes stream: &mut TcpStream and gives back std::io::Result<HttpRequest>.
 - struct `InboundConfig` (src/mesh.rs:22) — Inbound server configuration
-- struct `PeerConfig` (src/mesh.rs:31) — Outbound peer connection details
-- struct `OutboundConfig` (src/mesh.rs:43) — Outbound connections configuration
-- struct `MeshSettings` (src/mesh.rs:50) — Mesh synchronization settings
 - struct `MeshConfig` (src/mesh.rs:59) — Complete mesh configuration
-- function `load_mesh_config` (src/mesh.rs:105) — Load mesh configuration from file # Arguments `path` - Path to mesh.json configuration file # Returns…
-- function `save_mesh_config` (src/mesh.rs:150) — Save mesh configuration to file # Arguments `config` - Mesh configuration to save `path` - Path to write mesh.json #…
-- function `generate_default_config` (src/mesh.rs:178) — Generate default mesh config for a node # Arguments `id` - Node identifier (e.g., "halycon-vector") `name` - Node…
+- struct `MeshSettings` (src/mesh.rs:50) — Mesh synchronization settings
+- struct `NodeConfig` (src/mesh.rs:13) — Node identity configuration
+- struct `OutboundConfig` (src/mesh.rs:43) — Outbound connections configuration
+- struct `PeerConfig` (src/mesh.rs:31) — Outbound peer connection details
+- function `generate_default_config` (src/mesh.rs:178) — Generate default mesh config for a node  # Arguments * `id` - Node identifier (e.g., "halycon-vector") * `name` - Node n
+- function `load_mesh_config` (src/mesh.rs:105) — Load mesh configuration from file  # Arguments * `path` - Path to mesh.json configuration file  # Returns * `Ok(MeshConf
 - function `print_config_summary` (src/mesh.rs:207) — Print mesh configuration summary to stdout
-- struct `TenantConfig` (src/router.rs:29) — A data shape named TenantConfig.
+- function `save_mesh_config` (src/mesh.rs:150) — Save mesh configuration to file  # Arguments * `config` - Mesh configuration to save * `path` - Path to write mesh.json 
 - struct `RouterConfig` (src/router.rs:36) — A data shape named RouterConfig.
-- function `load_router_config` (src/router.rs:43) — Function load_router_config takes path: &str.
-- function `run_router` (src/router.rs:215) — Function run_router takes config_path: &str, listen_port: u16.
-- function `scroll_hash` (src/seed.rs:56) — Function scroll_hash takes content: &str.
-- function `build_seed` (src/seed.rs:69) — Function build_seed takes phext_map: &HashMap<phext::Coordinate, String>.
-- function `parse_seed` (src/seed.rs:92) — Function parse_seed takes seed_json: &str.
+- struct `TenantConfig` (src/router.rs:29) — A data shape named TenantConfig.
+- function `load_router_config` (src/router.rs:43) — Function load_router_config takes path: &str and gives back Result<RouterConfig, Box<dyn std::error::Error>>.
+- function `run_router` (src/router.rs:215) — Function run_router takes config_path: &str, listen_port: u16 and gives back Result<(), Box<dyn std::error::Error>>.
+- struct `CacheEntry` (src/seed.rs:201) — A data shape named CacheEntry.
 - struct `FetchEntry` (src/seed.rs:111) — A data shape named FetchEntry.
 - struct `FetchRequest` (src/seed.rs:117) — A data shape named FetchRequest.
+- struct `ScrollCache` (src/seed.rs:208) — Scrolls a client has already streamed in, keyed by coordinate string.
+- function `ScrollCache::empty` (src/seed.rs:213) — Function ScrollCache::empty takes no inputs beyond the value it is called on, and gives back ScrollCache.
+- function `build_seed` (src/seed.rs:69) — Function build_seed takes phext_map: &HashMap<phext::Coordinate, String> and gives back String.
+- function `fetch_cached` (src/seed.rs:322) — Function fetch_cached takes base: &str, phext_name: &str, key: &Option<String>, coordinate: &str, cache: &mut ScrollCach
+- function `fetch_seed` (src/seed.rs:304) — Downloads the seed envelope for a phext and parses it into coordinate -> hash
+- function `get` (src/seed.rs:250) — Function get takes &self, coordinate: &str and gives back Option<&CacheEntry>.
+- function `http_get` (src/seed.rs:299) — Function http_get takes base: &str, path: &str, key: &Option<String> and gives back Result<String, String>.
+- function `load` (src/seed.rs:218) — Loads a cache file; a missing or unreadable file is simply an empty cache
 - function `parse_fetch_get` (src/seed.rs:123) — GET form: c=<coord> (strict), h=<hash> (may be empty/absent), has=<0|1|true|false>
 - function `parse_fetch_post` (src/seed.rs:138) — POST form: body is a JSON array of {"coordinate", "hash", "has_content"}
+- function `parse_seed` (src/seed.rs:92) — Function parse_seed takes seed_json: &str and gives back Result<HashMap<String, String>, String>.
+- function `put` (src/seed.rs:254) — Function put takes &mut self, coordinate: &str, hash: String, scroll: String and gives back nothing; it does its work on
 - function `run_fetch` (src/seed.rs:186) — Runs a parsed fetch request against a loaded phext map
-- struct `CacheEntry` (src/seed.rs:201) — A data shape named CacheEntry.
-- struct `ScrollCache` (src/seed.rs:208) — Scrolls a client has already streamed in, keyed by coordinate string.
-- function `ScrollCache::empty` (src/seed.rs:213) — Function ScrollCache::empty takes no inputs beyond the value it is called on.
-- function `ScrollCache::load` (src/seed.rs:218) — Loads a cache file; a missing or unreadable file is simply an empty cache
-- function `ScrollCache::save` (src/seed.rs:239) — Function ScrollCache::save takes &self, path: &str.
-- function `ScrollCache::get` (src/seed.rs:250) — Function ScrollCache::get takes &self, coordinate: &str.
-- function `ScrollCache::put` (src/seed.rs:254) — Function ScrollCache::put takes &mut self, coordinate: &str, hash: String, scroll: String.
-- function `http_get` (src/seed.rs:299) — Function http_get takes base: &str, path: &str, key: &Option<String>.
-- function `fetch_seed` (src/seed.rs:304) — Downloads the seed envelope for a phext and parses it into coordinate -> hash
-- function `fetch_cached` (src/seed.rs:322) — Function fetch_cached takes base: &str, phext_name: &str, key: &Option<String>, coordinate: &str, cache: &mut ScrollCache.
-- function `args_required` (src/sq.rs:10) — Function args_required takes command:&str.
-- function `implode_ref` (src/sq.rs:101) — Function implode_ref takes map: &HashMap<phext::Coordinate, String>.
-- function `process` (src/sq.rs:146) — Function process takes connection_id: u64, source: String, scroll: &mut String, command: String, phext_map: &mut…
+- function `save` (src/seed.rs:239) — Function save takes &self, path: &str and gives back Result<(), String>.
+- function `scroll_hash` (src/seed.rs:56) — Function scroll_hash takes content: &str and gives back String.
 - struct `QuerySpec` (src/sq.rs:385) — A data shape named QuerySpec.
-- function `parse_coordinate_strict` (src/sq.rs:392) — Strict coordinate parser: exactly 9 positive integers as a.b.c/d.e.f/g.h.i
-- function `parse_query` (src/sq.rs:409) — Function parse_query takes from: Option<&String>, to: Option<&String>, set: Option<&String>, limit: Option<&String>.
-- function `run_query` (src/sq.rs:447) — Runs a query against a loaded phext map and returns a JSON array of {coordinate, scroll}
-- enum `TocMode` (src/sq.rs:495) — awaiting a summary
+- enum `TocMode` (src/sq.rs:495) — A named choice named TocMode.
 - struct `TocSpec` (src/sq.rs:498) — A data shape named TocSpec.
-- function `parse_toc_prefix` (src/sq.rs:505) — Function parse_toc_prefix takes text: &str.
-- function `parse_toc_spec` (src/sq.rs:520) — Function parse_toc_spec takes mode: Option<&String>, at: Option<&String>, step: Option<&String>, scale: Option<&String>.
-- function `run_toc` (src/sq.rs:558) — Function run_toc takes phext_map: &HashMap<phext::Coordinate, String>, spec: &TocSpec.
-- enum `Tier` (src/triage.rs:12) — Which tier handles this prompt
-- struct `RouteDecision` (src/triage.rs:20) — Result of evaluating a prompt
-- function `evaluate` (src/triage.rs:42) — Score a prompt and decide routing tier
+- function `args_required` (src/sq.rs:10) — Function args_required takes command:&str and gives back usize.
+- function `implode_ref` (src/sq.rs:101) — Function implode_ref takes map: &HashMap<phext::Coordinate, String> and gives back String.
+- function `parse_coordinate_strict` (src/sq.rs:392) — Strict coordinate parser: exactly 9 positive integers as a.b.c/d.e.f/g.h.i
+- function `parse_query` (src/sq.rs:409) — Function parse_query takes from: Option<&String>, to: Option<&String>, set: Option<&String>, limit: Option<&String> and 
+- function `parse_toc_prefix` (src/sq.rs:505) — Function parse_toc_prefix takes text: &str and gives back Result<Vec<usize>, String>.
+- function `parse_toc_spec` (src/sq.rs:520) — Function parse_toc_spec takes mode: Option<&String>, at: Option<&String>, step: Option<&String>, scale: Option<&String> 
+- function `process` (src/sq.rs:146) — Function process takes connection_id: u64, source: String, scroll: &mut String, command: String, phext_map: &mut HashMap
+- function `run_query` (src/sq.rs:447) — Runs a query against a loaded phext map and returns a JSON array of {coordinate, scroll}
+- function `run_toc` (src/sq.rs:558) — Function run_toc takes phext_map: &HashMap<phext::Coordinate, String>, spec: &TocSpec and gives back String.
 - struct `FeedbackLoop` (src/triage.rs:85) — Feedback loop — tracks local model quality
-- function `FeedbackLoop::new` (src/triage.rs:91) — Function FeedbackLoop::new takes max_window: usize.
-- function `FeedbackLoop::record` (src/triage.rs:98) — Function FeedbackLoop::record takes &mut self, success: bool.
-- function `FeedbackLoop::should_escalate` (src/triage.rs:106) — Returns true if failure rate exceeds threshold (should escalate)
-- function `FeedbackLoop::failure_rate` (src/triage.rs:114) — Function FeedbackLoop::failure_rate takes no inputs beyond the value it is called on.
+- function `FeedbackLoop::new` (src/triage.rs:91) — Function FeedbackLoop::new takes max_window: usize and gives back Self.
+- struct `RouteDecision` (src/triage.rs:20) — Result of evaluating a prompt
+- enum `Tier` (src/triage.rs:12) — Which tier handles this prompt
+- function `evaluate` (src/triage.rs:42) — Score a prompt and decide routing tier
+- function `failure_rate` (src/triage.rs:114) — Function failure_rate takes no inputs beyond the value it is called on, and gives back f64.
+- function `record` (src/triage.rs:98) — Function record takes &mut self, success: bool and gives back nothing; it does its work on what it is given.
+- function `should_escalate` (src/triage.rs:106) — Returns true if failure rate exceeds threshold (should escalate)
 
 ---
 
-## function — load_config
+## function — do_OPTIONS
 
-Found in gateway/sq-gateway.py at line 13.
+Found in gateway/sq-gateway.py at line 63.
 
-Surface: public API.
+Signature: `def do_OPTIONS(self):`
 
-Signature: `def load_config()`
+What it does: Function do_OPTIONS takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-What it does: Function load_config takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning gw, tenants.
-
-(Where these words came from: inferred.)
-
----
-
-## function — reload_config
-
-Found in gateway/sq-gateway.py at line 22.
-
-Surface: public API.
-
-Signature: `def reload_config(signum=None, frame=None)`
-
-What it does: Function reload_config takes signum=None, frame=None. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -232,125 +213,107 @@ What it does: Function reload_config takes signum=None, frame=None. Its return t
 
 Found in gateway/sq-gateway.py at line 39.
 
-Surface: public API.
+Signature: `def extract_token(headers):`
 
-Signature: `def extract_token(headers)`
+What it does: Function extract_token takes headers and gives back nothing; it does its work on what it is given.
 
-What it does: Function extract_token takes headers. Its return type is unannotated; the code shows it returning auth[7:].strip(); "".
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
-## function — GatewayHandler.send_cors
+## function — load_config
 
-Found in gateway/sq-gateway.py at line 47.
+Found in gateway/sq-gateway.py at line 13.
 
-Surface: public API.
+Signature: `def load_config():`
 
-Signature: `def send_cors(self)`
+What it does: Function load_config takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-What it does: Function GatewayHandler.send_cors takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
-## function — GatewayHandler.respond
-
-Found in gateway/sq-gateway.py at line 51.
-
-Surface: public API.
-
-Signature: `def respond(self, code, body, content_type="application/json")`
-
-What it does: Function GatewayHandler.respond takes self, code, body, content_type="application/json". Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
-
----
-
-## function — GatewayHandler.respond_json
-
-Found in gateway/sq-gateway.py at line 60.
-
-Surface: public API.
-
-Signature: `def respond_json(self, code, obj)`
-
-What it does: Function GatewayHandler.respond_json takes self, code, obj. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
-
----
-
-## function — GatewayHandler.do_OPTIONS
-
-Found in gateway/sq-gateway.py at line 63.
-
-Surface: public API.
-
-Signature: `def do_OPTIONS(self)`
-
-What it does: Function GatewayHandler.do_OPTIONS takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
-
----
-
-## function — GatewayHandler.route
-
-Found in gateway/sq-gateway.py at line 68.
-
-Surface: public API.
-
-Signature: `def route(self)`
-
-What it does: Function GatewayHandler.route takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning self.respond_json(200, {"status": "ok", "tenants; self.respond_json(401, {"error": "unauthorized"}; self.respond_json(200, {"tenants": [t["name"] fo; self.respond_json(401, {"error": "invalid or mis.
-
-(Where these words came from: inferred.)
-
----
-
-## function — GatewayHandler.proxy_to
-
-Found in gateway/sq-gateway.py at line 84.
-
-Surface: public API.
-
-Signature: `def proxy_to(self, port)`
-
-What it does: Function GatewayHandler.proxy_to takes self, port. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
-
----
-
-## function — GatewayHandler.log_message
+## function — log_message
 
 Found in gateway/sq-gateway.py at line 111.
 
-Surface: public API.
+Signature: `def log_message(self, fmt, *args):`
 
-Signature: `def log_message(self, fmt, *args)`
+What it does: Function log_message takes self, fmt, *args and gives back nothing; it does its work on what it is given.
 
-What it does: Function GatewayHandler.log_message takes self, fmt, *args. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
-## function — next_port
+## function — proxy_to
 
-Found in gateway/tenant-manager.sh at line 14.
+Found in gateway/sq-gateway.py at line 84.
 
-Surface: public API.
+Signature: `def proxy_to(self, port):`
 
-Signature: `next_port()`
+What it does: Function proxy_to takes self, port and gives back nothing; it does its work on what it is given.
 
-What it does: Function next_port takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+(Where these words came from: signature.)
 
-(Where these words came from: inferred.)
+---
+
+## function — reload_config
+
+Found in gateway/sq-gateway.py at line 22.
+
+Signature: `def reload_config(signum=None, frame=None):`
+
+What it does: Function reload_config takes signum=None, frame=None and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — respond
+
+Found in gateway/sq-gateway.py at line 51.
+
+Signature: `def respond(self, code, body, content_type="application/json"):`
+
+What it does: Function respond takes self, code, body, content_type="application/json" and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — respond_json
+
+Found in gateway/sq-gateway.py at line 60.
+
+Signature: `def respond_json(self, code, obj):`
+
+What it does: Function respond_json takes self, code, obj and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — route
+
+Found in gateway/sq-gateway.py at line 68.
+
+Signature: `def route(self):`
+
+What it does: Function route takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — send_cors
+
+Found in gateway/sq-gateway.py at line 47.
+
+Signature: `def send_cors(self):`
+
+What it does: Function send_cors takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
 
 ---
 
@@ -358,27 +321,11 @@ What it does: Function next_port takes no inputs beyond the value it is called o
 
 Found in gateway/tenant-manager.sh at line 22.
 
-Surface: public API.
-
 Signature: `cmd_add()`
 
-What it does: Function cmd_add takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function cmd_add takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
-
----
-
-## function — cmd_remove
-
-Found in gateway/tenant-manager.sh at line 45.
-
-Surface: public API.
-
-Signature: `cmd_remove()`
-
-What it does: Function cmd_remove takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -386,13 +333,35 @@ What it does: Function cmd_remove takes no inputs beyond the value it is called 
 
 Found in gateway/tenant-manager.sh at line 67.
 
-Surface: public API.
-
 Signature: `cmd_list()`
 
-What it does: Function cmd_list takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function cmd_list takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
+
+---
+
+## function — cmd_remove
+
+Found in gateway/tenant-manager.sh at line 45.
+
+Signature: `cmd_remove()`
+
+What it does: Function cmd_remove takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — next_port
+
+Found in gateway/tenant-manager.sh at line 14.
+
+Signature: `next_port()`
+
+What it does: Function next_port takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
 
 ---
 
@@ -400,13 +369,11 @@ What it does: Function cmd_list takes no inputs beyond the value it is called on
 
 Found in src/api.rs at line 26.
 
-Surface: public API.
-
 Signature: `pub struct ApiConfig {`
 
-What it does: A data shape named ApiConfig. Its fields are: pub local_url: String,; pub local_model: String,; pub local_timeout_secs: u64; pub upstream_url: String,; pub upstream_api_key: String; pub upstream_model: String,; pub cache_max_entries: usize; pub cache_ttl_secs: u64; pub signal_threshold: usize; pub escalation_threshold: f64; pub feedback_window: usize.
+What it does: A data shape named ApiConfig. Its fields are: pub local_url: String, // e.g. "http://127.0.0.1:11434"; pub local_model: String, // e.g. "qwen3-coder-next:latest"; pub local_timeout_secs: u64; pub upstream_url: String, // e.g. "https://api.anthropic.com"; pub upstream_api_key: String; pub upstream_model: String, // e.g. "claude-opus-4-6"; pub cache_max_entries: usize; pub cache_ttl_secs: u64; pub signal_threshold: usize; pub escalation_threshold: f64; pub feedback_window: usize.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -414,13 +381,11 @@ What it does: A data shape named ApiConfig. Its fields are: pub local_url: Strin
 
 Found in src/api.rs at line 58.
 
-Surface: public API.
-
 Signature: `pub fn load_api_config(path: &str) -> Result<ApiConfig, Box<dyn std::error::Error>> {`
 
-What it does: Function load_api_config takes path: &str. It gives back Result<ApiConfig, Box<dyn std::error::Error>>.
+What it does: Function load_api_config takes path: &str and gives back Result<ApiConfig, Box<dyn std::error::Error>>.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -428,13 +393,11 @@ What it does: Function load_api_config takes path: &str. It gives back Result<Ap
 
 Found in src/api.rs at line 344.
 
-Surface: public API.
-
 Signature: `pub fn run_api(config_path: &str, listen_port: u16) -> Result<(), Box<dyn std::error::Error>> {`
 
-What it does: Function run_api takes config_path: &str, listen_port: u16. It gives back Result<(), Box<dyn std::error::Error>>.
+What it does: Function run_api takes config_path: &str, listen_port: u16 and gives back Result<(), Box<dyn std::error::Error>>.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -442,13 +405,11 @@ What it does: Function run_api takes config_path: &str, listen_port: u16. It giv
 
 Found in src/cache.rs at line 18.
 
-Surface: public API.
-
 Signature: `pub struct PromptCache {`
 
 What it does: SHA256-keyed prompt cache with LRU eviction and TTL expiry
 
-(Where these words came from: direct.)
+(Where these words came from: doc comment.)
 
 ---
 
@@ -456,97 +417,71 @@ What it does: SHA256-keyed prompt cache with LRU eviction and TTL expiry
 
 Found in src/cache.rs at line 28.
 
-Surface: public API.
-
 Signature: `pub fn new(max_entries: usize, ttl_secs: u64) -> Self {`
 
-What it does: Function PromptCache::new takes max_entries: usize, ttl_secs: u64. It gives back Self.
+What it does: Function PromptCache::new takes max_entries: usize, ttl_secs: u64 and gives back Self.
 
-(Where these words came from: inferred.)
-
----
-
-## function — PromptCache::get
-
-Found in src/cache.rs at line 58.
-
-Surface: public API.
-
-Signature: `pub fn get(&mut self, prompt: &str) -> Option<String> {`
-
-What it does: Look up a cached response
-
-(Where these words came from: direct.)
+(Where these words came from: signature.)
 
 ---
 
-## function — PromptCache::set
-
-Found in src/cache.rs at line 83.
-
-Surface: public API.
-
-Signature: `pub fn set(&mut self, prompt: &str, response: &str) {`
-
-What it does: Store a prompt-response pair
-
-(Where these words came from: direct.)
-
----
-
-## function — PromptCache::check_static
+## function — check_static
 
 Found in src/cache.rs at line 105.
-
-Surface: public API.
 
 Signature: `pub fn check_static(prompt: &str) -> Option<&'static str> {`
 
 What it does: Check static patterns (greetings, status, ping)
 
-(Where these words came from: direct.)
+(Where these words came from: doc comment.)
 
 ---
 
-## function — PromptCache::hit_rate
+## function — get
+
+Found in src/cache.rs at line 58.
+
+Signature: `pub fn get(&mut self, prompt: &str) -> Option<String> {`
+
+What it does: Look up a cached response
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — hit_rate
 
 Found in src/cache.rs at line 115.
 
-Surface: public API.
-
 Signature: `pub fn hit_rate(&self) -> f64 {`
 
-What it does: Function PromptCache::hit_rate takes no inputs beyond the value it is called on. It gives back f64.
+What it does: Function hit_rate takes no inputs beyond the value it is called on, and gives back f64.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
-## function — PromptCache::stats
+## function — set
+
+Found in src/cache.rs at line 83.
+
+Signature: `pub fn set(&mut self, prompt: &str, response: &str) {`
+
+What it does: Store a prompt-response pair
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — stats
 
 Found in src/cache.rs at line 120.
 
-Surface: public API.
-
 Signature: `pub fn stats(&self) -> (u64, u64, usize) {`
 
-What it does: Function PromptCache::stats takes no inputs beyond the value it is called on. It gives back (u64, u64, usize).
+What it does: Function stats takes no inputs beyond the value it is called on, and gives back (u64, u64, usize).
 
-(Where these words came from: inferred.)
-
----
-
-## struct — TenantConfig
-
-Found in src/config.rs at line 10.
-
-Surface: public API.
-
-Signature: `pub struct TenantConfig {`
-
-What it does: A data shape named TenantConfig. Its fields are: pub name: String; pub data_dir: String.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -554,13 +489,23 @@ What it does: A data shape named TenantConfig. Its fields are: pub name: String;
 
 Found in src/config.rs at line 16.
 
-Surface: public API.
-
 Signature: `pub struct ServerConfig {`
 
-What it does: A data shape named ServerConfig. Its fields are: pub tenants: HashMap<String, TenantConfig>.
+What it does: A data shape named ServerConfig. Its fields are: pub tenants: HashMap<String, TenantConfig>, // key = API token (e.g., "pmb-v1-xxx").
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
+
+---
+
+## struct — TenantConfig
+
+Found in src/config.rs at line 10.
+
+Signature: `pub struct TenantConfig {`
+
+What it does: A data shape named TenantConfig. Its fields are: pub name: String; pub data_dir: String.
+
+(Where these words came from: signature.)
 
 ---
 
@@ -568,27 +513,71 @@ What it does: A data shape named ServerConfig. Its fields are: pub tenants: Hash
 
 Found in src/config.rs at line 22.
 
-Surface: public API.
-
 Signature: `pub fn load_config(path: &str) -> Result<ServerConfig, Box<dyn std::error::Error>> {`
 
 What it does: Load multi-tenant configuration from JSON file Automatically creates tenant data directories if they don't exist
 
-(Where these words came from: direct.)
+(Where these words came from: doc comment.)
 
 ---
 
-## const — MAX_BODY_SIZE
+## command — --cache
 
-Found in src/main.rs at line 73.
+Found in src/main.rs at line 1178.
 
-Surface: public API.
+Signature: `command "--cache"`
 
-Signature: `pub const MAX_BODY_SIZE: usize = 64 * 1024 * 1024; // 64 MB per request body`
+What it does: A command named --cache. The program runs it when the user types this word on the command line.
 
-What it does: A fixed value named MAX_BODY_SIZE, set to 64 * 1024 * 1024.
+(Where these words came from: signature.)
 
-(Where these words came from: inferred.)
+---
+
+## flag — --config
+
+Found in src/main.rs at line 328.
+
+Signature: `flag --config`
+
+What it does: A command line flag, --config. It is read by the program when the user passes it.
+
+(Where these words came from: signature.)
+
+---
+
+## command — --data-dir
+
+Found in src/main.rs at line 354.
+
+Signature: `command "--data-dir"`
+
+What it does: A command named --data-dir. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — --key
+
+Found in src/main.rs at line 348.
+
+Signature: `command "--key"`
+
+What it does: A command named --key. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — --mesh-config
+
+Found in src/main.rs at line 362.
+
+Signature: `command "--mesh-config"`
+
+What it does: A command named --mesh-config. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
 
 ---
 
@@ -596,27 +585,11 @@ What it does: A fixed value named MAX_BODY_SIZE, set to 64 * 1024 * 1024.
 
 Found in src/main.rs at line 167.
 
-Surface: public API.
-
 Signature: `pub enum HashAlgorithm {`
 
 What it does: A named choice named HashAlgorithm. It is one of: Xor; Checksum.
 
-(Where these words came from: inferred.)
-
----
-
-## entry point — main
-
-Found in src/main.rs at line 264.
-
-Surface: public API.
-
-Signature: `fn main() -> Result<(), Box<dyn std::error::Error>> {`
-
-What it does: The entry point: the program starts here. It reads the command line and runs the command the user named.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -624,13 +597,35 @@ What it does: The entry point: the program starts here. It reads the command lin
 
 Found in src/main.rs at line 608.
 
-Surface: public API.
-
 Signature: `pub struct HttpRequest {`
 
 What it does: A data shape named HttpRequest. Its fields are: pub header: String; pub content: Vec<u8>.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
+
+---
+
+## const — MAX_BODY_SIZE
+
+Found in src/main.rs at line 73.
+
+Signature: `pub const MAX_BODY_SIZE: usize = 64 * 1024 * 1024; // 64 MB per request body`
+
+What it does: A fixed value named MAX_BODY_SIZE, set to 64 * 1024 * 1024; // 64 MB per request body.
+
+(Where these words came from: signature.)
+
+---
+
+## entry point — main
+
+Found in src/main.rs at line 264.
+
+Signature: `fn main() -> Result<(), Box<dyn std::error::Error>> {`
+
+What it does: The entry point: the program starts here. It reads the command line and runs the command the user named.
+
+(Where these words came from: signature.)
 
 ---
 
@@ -638,83 +633,11 @@ What it does: A data shape named HttpRequest. Its fields are: pub header: String
 
 Found in src/main.rs at line 613.
 
-Surface: public API.
-
 Signature: `pub fn read_http_request(stream: &mut TcpStream) -> std::io::Result<HttpRequest> {`
 
-What it does: Function read_http_request takes stream: &mut TcpStream. It gives back std::io::Result<HttpRequest>.
+What it does: Function read_http_request takes stream: &mut TcpStream and gives back std::io::Result<HttpRequest>.
 
-(Where these words came from: inferred.)
-
----
-
-## flag — --config
-
-Found in src/main.rs at line 368.
-
-Surface: public API.
-
-Signature: `flag --config`
-
-What it does: A command line flag, --config. It is read by the program when the user passes it.
-
-(Where these words came from: inferred.)
-
----
-
-## flag — --data-dir
-
-Found in src/main.rs at line 354.
-
-Surface: public API.
-
-Signature: `flag --data-dir`
-
-What it does: A command line flag, --data-dir. It is read by the program when the user passes it.
-
-(Where these words came from: inferred.)
-
----
-
-## flag — --key
-
-Found in src/main.rs at line 348.
-
-Surface: public API.
-
-Signature: `flag --key`
-
-What it does: A command line flag, --key. It is read by the program when the user passes it.
-
-(Where these words came from: inferred.)
-
----
-
-## flag — --mesh-config
-
-Found in src/main.rs at line 362.
-
-Surface: public API.
-
-Signature: `flag --mesh-config`
-
-What it does: A command line flag, --mesh-config. It is read by the program when the user passes it.
-
-(Where these words came from: inferred.)
-
----
-
-## struct — NodeConfig
-
-Found in src/mesh.rs at line 13.
-
-Surface: public API.
-
-Signature: `pub struct NodeConfig {`
-
-What it does: Node identity configuration
-
-(Where these words came from: direct.)
+(Where these words came from: signature.)
 
 ---
 
@@ -722,55 +645,11 @@ What it does: Node identity configuration
 
 Found in src/mesh.rs at line 22.
 
-Surface: public API.
-
 Signature: `pub struct InboundConfig {`
 
 What it does: Inbound server configuration
 
-(Where these words came from: direct.)
-
----
-
-## struct — PeerConfig
-
-Found in src/mesh.rs at line 31.
-
-Surface: public API.
-
-Signature: `pub struct PeerConfig {`
-
-What it does: Outbound peer connection details
-
-(Where these words came from: direct.)
-
----
-
-## struct — OutboundConfig
-
-Found in src/mesh.rs at line 43.
-
-Surface: public API.
-
-Signature: `pub struct OutboundConfig {`
-
-What it does: Outbound connections configuration
-
-(Where these words came from: direct.)
-
----
-
-## struct — MeshSettings
-
-Found in src/mesh.rs at line 50.
-
-Surface: public API.
-
-Signature: `pub struct MeshSettings {`
-
-What it does: Mesh synchronization settings
-
-(Where these words came from: direct.)
+(Where these words came from: doc comment.)
 
 ---
 
@@ -778,41 +657,59 @@ What it does: Mesh synchronization settings
 
 Found in src/mesh.rs at line 59.
 
-Surface: public API.
-
 Signature: `pub struct MeshConfig {`
 
 What it does: Complete mesh configuration
 
-(Where these words came from: direct.)
+(Where these words came from: doc comment.)
 
 ---
 
-## function — load_mesh_config
+## struct — MeshSettings
 
-Found in src/mesh.rs at line 105.
+Found in src/mesh.rs at line 50.
 
-Surface: public API.
+Signature: `pub struct MeshSettings {`
 
-Signature: `pub fn load_mesh_config<P: AsRef<Path>>(path: P) -> Result<MeshConfig, String> {`
+What it does: Mesh synchronization settings
 
-What it does: Load mesh configuration from file # Arguments `path` - Path to mesh.json configuration file # Returns `Ok(MeshConfig)` if config loaded successfully `Err(String)` with error message if loading failed
-
-(Where these words came from: direct.)
+(Where these words came from: doc comment.)
 
 ---
 
-## function — save_mesh_config
+## struct — NodeConfig
 
-Found in src/mesh.rs at line 150.
+Found in src/mesh.rs at line 13.
 
-Surface: public API.
+Signature: `pub struct NodeConfig {`
 
-Signature: `pub fn save_mesh_config<P: AsRef<Path>>(config: &MeshConfig, path: P) -> Result<(), String> {`
+What it does: Node identity configuration
 
-What it does: Save mesh configuration to file # Arguments `config` - Mesh configuration to save `path` - Path to write mesh.json # Returns `Ok(())` if config saved successfully `Err(String)` with error message if save failed
+(Where these words came from: doc comment.)
 
-(Where these words came from: direct.)
+---
+
+## struct — OutboundConfig
+
+Found in src/mesh.rs at line 43.
+
+Signature: `pub struct OutboundConfig {`
+
+What it does: Outbound connections configuration
+
+(Where these words came from: doc comment.)
+
+---
+
+## struct — PeerConfig
+
+Found in src/mesh.rs at line 31.
+
+Signature: `pub struct PeerConfig {`
+
+What it does: Outbound peer connection details
+
+(Where these words came from: doc comment.)
 
 ---
 
@@ -820,13 +717,23 @@ What it does: Save mesh configuration to file # Arguments `config` - Mesh config
 
 Found in src/mesh.rs at line 178.
 
-Surface: public API.
-
 Signature: `pub fn generate_default_config(id: &str, name: &str, emoji: &str, coordinate: &str) -> MeshConfig {`
 
-What it does: Generate default mesh config for a node # Arguments `id` - Node identifier (e.g., "halycon-vector") `name` - Node name (e.g., "Cyon") `emoji` - Node emoji (e.g., "🪶") `coordinate` - Phext coordinate (e.g., "2.7.1/8.2.8/3.1.4") # Returns `MeshConfig` with sensible defaults for the node
+What it does: Generate default mesh config for a node  # Arguments * `id` - Node identifier (e.g., "halycon-vector") * `name` - Node name (e.g., "Cyon") * `emoji` - Node emoji (e.g., "🪶") * `coordinate` - Phext coordinate (e.g., "2.7.1/8.2.8/3.1.4")  # Returns * `MeshConfig` with sensible defaults for the node
 
-(Where these words came from: direct.)
+(Where these words came from: doc comment.)
+
+---
+
+## function — load_mesh_config
+
+Found in src/mesh.rs at line 105.
+
+Signature: `pub fn load_mesh_config<P: AsRef<Path>>(path: P) -> Result<MeshConfig, String> {`
+
+What it does: Load mesh configuration from file  # Arguments * `path` - Path to mesh.json configuration file  # Returns * `Ok(MeshConfig)` if config loaded successfully * `Err(String)` with error message if loading failed
+
+(Where these words came from: doc comment.)
 
 ---
 
@@ -834,27 +741,23 @@ What it does: Generate default mesh config for a node # Arguments `id` - Node id
 
 Found in src/mesh.rs at line 207.
 
-Surface: public API.
-
 Signature: `pub fn print_config_summary(config: &MeshConfig) {`
 
 What it does: Print mesh configuration summary to stdout
 
-(Where these words came from: direct.)
+(Where these words came from: doc comment.)
 
 ---
 
-## struct — TenantConfig
+## function — save_mesh_config
 
-Found in src/router.rs at line 29.
+Found in src/mesh.rs at line 150.
 
-Surface: public API.
+Signature: `pub fn save_mesh_config<P: AsRef<Path>>(config: &MeshConfig, path: P) -> Result<(), String> {`
 
-Signature: `pub struct TenantConfig {`
+What it does: Save mesh configuration to file  # Arguments * `config` - Mesh configuration to save * `path` - Path to write mesh.json  # Returns * `Ok(())` if config saved successfully * `Err(String)` with error message if save failed
 
-What it does: A data shape named TenantConfig. Its fields are: pub token: String,; pub port: u16,; pub data_dir: String,.
-
-(Where these words came from: inferred.)
+(Where these words came from: doc comment.)
 
 ---
 
@@ -862,13 +765,23 @@ What it does: A data shape named TenantConfig. Its fields are: pub token: String
 
 Found in src/router.rs at line 36.
 
-Surface: public API.
-
 Signature: `pub struct RouterConfig {`
 
 What it does: A data shape named RouterConfig. Its fields are: pub tenants: Vec<TenantConfig>.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
+
+---
+
+## struct — TenantConfig
+
+Found in src/router.rs at line 29.
+
+Signature: `pub struct TenantConfig {`
+
+What it does: A data shape named TenantConfig. Its fields are: pub token: String, // pmb-v1-xxx auth token; pub port: u16, // backend SQ instance port; pub data_dir: String, // tenant data directory.
+
+(Where these words came from: signature.)
 
 ---
 
@@ -876,13 +789,11 @@ What it does: A data shape named RouterConfig. Its fields are: pub tenants: Vec<
 
 Found in src/router.rs at line 43.
 
-Surface: public API.
-
 Signature: `pub fn load_router_config(path: &str) -> Result<RouterConfig, Box<dyn std::error::Error>> {`
 
-What it does: Function load_router_config takes path: &str. It gives back Result<RouterConfig, Box<dyn std::error::Error>>.
+What it does: Function load_router_config takes path: &str and gives back Result<RouterConfig, Box<dyn std::error::Error>>.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -890,125 +801,11 @@ What it does: Function load_router_config takes path: &str. It gives back Result
 
 Found in src/router.rs at line 215.
 
-Surface: public API.
-
 Signature: `pub fn run_router(config_path: &str, listen_port: u16) -> Result<(), Box<dyn std::error::Error>> {`
 
-What it does: Function run_router takes config_path: &str, listen_port: u16. It gives back Result<(), Box<dyn std::error::Error>>.
+What it does: Function run_router takes config_path: &str, listen_port: u16 and gives back Result<(), Box<dyn std::error::Error>>.
 
-(Where these words came from: inferred.)
-
----
-
-## function — scroll_hash
-
-Found in src/seed.rs at line 56.
-
-Surface: public API.
-
-Signature: `pub fn scroll_hash(content: &str) -> String {`
-
-What it does: Function scroll_hash takes content: &str. It gives back String.
-
-(Where these words came from: inferred.)
-
----
-
-## function — build_seed
-
-Found in src/seed.rs at line 69.
-
-Surface: public API.
-
-Signature: `pub fn build_seed(phext_map: &HashMap<phext::Coordinate, String>) -> String {`
-
-What it does: Function build_seed takes phext_map: &HashMap<phext::Coordinate, String>. It gives back String.
-
-(Where these words came from: inferred.)
-
----
-
-## function — parse_seed
-
-Found in src/seed.rs at line 92.
-
-Surface: public API.
-
-Signature: `pub fn parse_seed(seed_json: &str) -> Result<HashMap<String, String>, String> {`
-
-What it does: Function parse_seed takes seed_json: &str. It gives back Result<HashMap<String, String>, String>.
-
-(Where these words came from: inferred.)
-
----
-
-## struct — FetchEntry
-
-Found in src/seed.rs at line 111.
-
-Surface: public API.
-
-Signature: `pub struct FetchEntry {`
-
-What it does: A data shape named FetchEntry. Its fields are: pub coordinate: phext::Coordinate; pub client_hash: Option<String>; pub has_content: bool.
-
-(Where these words came from: inferred.)
-
----
-
-## struct — FetchRequest
-
-Found in src/seed.rs at line 117.
-
-Surface: public API.
-
-Signature: `pub struct FetchRequest {`
-
-What it does: A data shape named FetchRequest. Its fields are: pub entries: Vec<FetchEntry>; pub single: bool.
-
-(Where these words came from: inferred.)
-
----
-
-## function — parse_fetch_get
-
-Found in src/seed.rs at line 123.
-
-Surface: public API.
-
-Signature: `pub fn parse_fetch_get(parsed: &HashMap<String, String>) -> Result<FetchRequest, String> {`
-
-What it does: GET form: c=<coord> (strict), h=<hash> (may be empty/absent), has=<0|1|true|false>
-
-(Where these words came from: direct.)
-
----
-
-## function — parse_fetch_post
-
-Found in src/seed.rs at line 138.
-
-Surface: public API.
-
-Signature: `pub fn parse_fetch_post(body: &str) -> Result<FetchRequest, String> {`
-
-What it does: POST form: body is a JSON array of {"coordinate", "hash", "has_content"}
-
-(Where these words came from: direct.)
-
----
-
-## function — run_fetch
-
-Found in src/seed.rs at line 186.
-
-Surface: public API.
-
-Signature: `pub fn run_fetch(phext_map: &HashMap<phext::Coordinate, String>, spec: &FetchRequest) -> String {`
-
-What it does: Runs a parsed fetch request against a loaded phext map
-
-(Where these words came from: direct.)
+(Where these words came from: signature.)
 
 ---
 
@@ -1016,13 +813,35 @@ What it does: Runs a parsed fetch request against a loaded phext map
 
 Found in src/seed.rs at line 201.
 
-Surface: public API.
-
 Signature: `pub struct CacheEntry {`
 
 What it does: A data shape named CacheEntry. Its fields are: pub hash: String; pub scroll: String.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
+
+---
+
+## struct — FetchEntry
+
+Found in src/seed.rs at line 111.
+
+Signature: `pub struct FetchEntry {`
+
+What it does: A data shape named FetchEntry. Its fields are: pub coordinate: phext::Coordinate; pub client_hash: Option<String>; pub has_content: bool.
+
+(Where these words came from: signature.)
+
+---
+
+## struct — FetchRequest
+
+Found in src/seed.rs at line 117.
+
+Signature: `pub struct FetchRequest {`
+
+What it does: A data shape named FetchRequest. Its fields are: pub entries: Vec<FetchEntry>; pub single: bool, // GET form: answer with one object; POST form: answer with an array.
+
+(Where these words came from: signature.)
 
 ---
 
@@ -1030,13 +849,11 @@ What it does: A data shape named CacheEntry. Its fields are: pub hash: String; p
 
 Found in src/seed.rs at line 208.
 
-Surface: public API.
-
 Signature: `pub struct ScrollCache {`
 
 What it does: Scrolls a client has already streamed in, keyed by coordinate string. Persisted as one JSON file: {"<coord>": {"hash": "...", "scroll": "..."}}
 
-(Where these words came from: direct.)
+(Where these words came from: doc comment.)
 
 ---
 
@@ -1044,97 +861,23 @@ What it does: Scrolls a client has already streamed in, keyed by coordinate stri
 
 Found in src/seed.rs at line 213.
 
-Surface: public API.
-
 Signature: `pub fn empty() -> ScrollCache {`
 
-What it does: Function ScrollCache::empty takes no inputs beyond the value it is called on. It gives back ScrollCache.
+What it does: Function ScrollCache::empty takes no inputs beyond the value it is called on, and gives back ScrollCache.
 
-(Where these words came from: inferred.)
-
----
-
-## function — ScrollCache::load
-
-Found in src/seed.rs at line 218.
-
-Surface: public API.
-
-Signature: `pub fn load(path: &str) -> ScrollCache {`
-
-What it does: Loads a cache file; a missing or unreadable file is simply an empty cache
-
-(Where these words came from: direct.)
+(Where these words came from: signature.)
 
 ---
 
-## function — ScrollCache::save
+## function — build_seed
 
-Found in src/seed.rs at line 239.
+Found in src/seed.rs at line 69.
 
-Surface: public API.
+Signature: `pub fn build_seed(phext_map: &HashMap<phext::Coordinate, String>) -> String {`
 
-Signature: `pub fn save(&self, path: &str) -> Result<(), String> {`
+What it does: Function build_seed takes phext_map: &HashMap<phext::Coordinate, String> and gives back String.
 
-What it does: Function ScrollCache::save takes &self, path: &str. It gives back Result<(), String>.
-
-(Where these words came from: inferred.)
-
----
-
-## function — ScrollCache::get
-
-Found in src/seed.rs at line 250.
-
-Surface: public API.
-
-Signature: `pub fn get(&self, coordinate: &str) -> Option<&CacheEntry> {`
-
-What it does: Function ScrollCache::get takes &self, coordinate: &str. It gives back Option<&CacheEntry>.
-
-(Where these words came from: inferred.)
-
----
-
-## function — ScrollCache::put
-
-Found in src/seed.rs at line 254.
-
-Surface: public API.
-
-Signature: `pub fn put(&mut self, coordinate: &str, hash: String, scroll: String) {`
-
-What it does: Function ScrollCache::put takes &mut self, coordinate: &str, hash: String, scroll: String. Its return type is the unit value, which the signature leaves unwritten.
-
-(Where these words came from: inferred.)
-
----
-
-## function — http_get
-
-Found in src/seed.rs at line 299.
-
-Surface: public API.
-
-Signature: `pub fn http_get(base: &str, path: &str, key: &Option<String>) -> Result<String, String> {`
-
-What it does: Function http_get takes base: &str, path: &str, key: &Option<String>. It gives back Result<String, String>.
-
-(Where these words came from: inferred.)
-
----
-
-## function — fetch_seed
-
-Found in src/seed.rs at line 304.
-
-Surface: public API.
-
-Signature: `pub fn fetch_seed(base: &str, phext_name: &str, key: &Option<String>) -> Result<HashMap<String, String>, String> {`
-
-What it does: Downloads the seed envelope for a phext and parses it into coordinate -> hash
-
-(Where these words came from: direct.)
+(Where these words came from: signature.)
 
 ---
 
@@ -1142,55 +885,143 @@ What it does: Downloads the seed envelope for a phext and parses it into coordin
 
 Found in src/seed.rs at line 322.
 
-Surface: public API.
-
 Signature: `pub fn fetch_cached(base: &str, phext_name: &str, key: &Option<String>, coordinate: &str, cache: &mut ScrollCache) -> Result<(String, bool), String> {`
 
-What it does: Function fetch_cached takes base: &str, phext_name: &str, key: &Option<String>, coordinate: &str, cache: &mut ScrollCache. It gives back Result<(String, bool), String>.
+What it does: Function fetch_cached takes base: &str, phext_name: &str, key: &Option<String>, coordinate: &str, cache: &mut ScrollCache and gives back Result<(String, bool), String>.
 
-(Where these words came from: inferred.)
-
----
-
-## function — args_required
-
-Found in src/sq.rs at line 10.
-
-Surface: public API.
-
-Signature: `pub fn args_required(command:&str) -> usize {`
-
-What it does: Function args_required takes command:&str. It gives back usize.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
-## function — implode_ref
+## function — fetch_seed
 
-Found in src/sq.rs at line 101.
+Found in src/seed.rs at line 304.
 
-Surface: public API.
+Signature: `pub fn fetch_seed(base: &str, phext_name: &str, key: &Option<String>) -> Result<HashMap<String, String>, String> {`
 
-Signature: `pub fn implode_ref(map: &HashMap<phext::Coordinate, String>) -> String {`
+What it does: Downloads the seed envelope for a phext and parses it into coordinate -> hash
 
-What it does: Function implode_ref takes map: &HashMap<phext::Coordinate, String>. It gives back String.
-
-(Where these words came from: inferred.)
+(Where these words came from: doc comment.)
 
 ---
 
-## function — process
+## function — get
 
-Found in src/sq.rs at line 146.
+Found in src/seed.rs at line 250.
 
-Surface: public API.
+Signature: `pub fn get(&self, coordinate: &str) -> Option<&CacheEntry> {`
 
-Signature: `pub fn process(connection_id: u64, source: String, scroll: &mut String, command: String, phext_map: &mut HashMap::<phext::Coordinate, String>, coordinate: phext::Coordinate, update: String, filename: String, algorithm: crate::HashAlgorithm, limit: usize) -> bool {`
+What it does: Function get takes &self, coordinate: &str and gives back Option<&CacheEntry>.
 
-What it does: Function process takes connection_id: u64, source: String, scroll: &mut String, command: String, phext_map: &mut HashMap::<phext::Coordinate, String>, coordinate: phext::Coordinate, update: String, filename: String, algorithm: crate::HashAlgorithm, limit: usize. It gives back bool.
+(Where these words came from: signature.)
 
-(Where these words came from: inferred.)
+---
+
+## function — http_get
+
+Found in src/seed.rs at line 299.
+
+Signature: `pub fn http_get(base: &str, path: &str, key: &Option<String>) -> Result<String, String> {`
+
+What it does: Function http_get takes base: &str, path: &str, key: &Option<String> and gives back Result<String, String>.
+
+(Where these words came from: signature.)
+
+---
+
+## function — load
+
+Found in src/seed.rs at line 218.
+
+Signature: `pub fn load(path: &str) -> ScrollCache {`
+
+What it does: Loads a cache file; a missing or unreadable file is simply an empty cache
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — parse_fetch_get
+
+Found in src/seed.rs at line 123.
+
+Signature: `pub fn parse_fetch_get(parsed: &HashMap<String, String>) -> Result<FetchRequest, String> {`
+
+What it does: GET form: c=<coord> (strict), h=<hash> (may be empty/absent), has=<0|1|true|false>
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — parse_fetch_post
+
+Found in src/seed.rs at line 138.
+
+Signature: `pub fn parse_fetch_post(body: &str) -> Result<FetchRequest, String> {`
+
+What it does: POST form: body is a JSON array of {"coordinate", "hash", "has_content"}
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — parse_seed
+
+Found in src/seed.rs at line 92.
+
+Signature: `pub fn parse_seed(seed_json: &str) -> Result<HashMap<String, String>, String> {`
+
+What it does: Function parse_seed takes seed_json: &str and gives back Result<HashMap<String, String>, String>.
+
+(Where these words came from: signature.)
+
+---
+
+## function — put
+
+Found in src/seed.rs at line 254.
+
+Signature: `pub fn put(&mut self, coordinate: &str, hash: String, scroll: String) {`
+
+What it does: Function put takes &mut self, coordinate: &str, hash: String, scroll: String and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — run_fetch
+
+Found in src/seed.rs at line 186.
+
+Signature: `pub fn run_fetch(phext_map: &HashMap<phext::Coordinate, String>, spec: &FetchRequest) -> String {`
+
+What it does: Runs a parsed fetch request against a loaded phext map
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — save
+
+Found in src/seed.rs at line 239.
+
+Signature: `pub fn save(&self, path: &str) -> Result<(), String> {`
+
+What it does: Function save takes &self, path: &str and gives back Result<(), String>.
+
+(Where these words came from: signature.)
+
+---
+
+## function — scroll_hash
+
+Found in src/seed.rs at line 56.
+
+Signature: `pub fn scroll_hash(content: &str) -> String {`
+
+What it does: Function scroll_hash takes content: &str and gives back String.
+
+(Where these words came from: signature.)
 
 ---
 
@@ -1198,55 +1029,11 @@ What it does: Function process takes connection_id: u64, source: String, scroll:
 
 Found in src/sq.rs at line 385.
 
-Surface: public API.
-
 Signature: `pub struct QuerySpec {`
 
 What it does: A data shape named QuerySpec. Its fields are: pub range: Option<(phext::Coordinate, phext::Coordinate)>; pub set: Vec<phext::Coordinate>; pub limit: Option<usize>.
 
-(Where these words came from: inferred.)
-
----
-
-## function — parse_coordinate_strict
-
-Found in src/sq.rs at line 392.
-
-Surface: public API.
-
-Signature: `pub fn parse_coordinate_strict(text: &str) -> Option<phext::Coordinate> {`
-
-What it does: Strict coordinate parser: exactly 9 positive integers as a.b.c/d.e.f/g.h.i
-
-(Where these words came from: direct.)
-
----
-
-## function — parse_query
-
-Found in src/sq.rs at line 409.
-
-Surface: public API.
-
-Signature: `pub fn parse_query(from: Option<&String>, to: Option<&String>, set: Option<&String>, limit: Option<&String>) -> Result<QuerySpec, String> {`
-
-What it does: Function parse_query takes from: Option<&String>, to: Option<&String>, set: Option<&String>, limit: Option<&String>. It gives back Result<QuerySpec, String>.
-
-(Where these words came from: inferred.)
-
----
-
-## function — run_query
-
-Found in src/sq.rs at line 447.
-
-Surface: public API.
-
-Signature: `pub fn run_query(phext_map: &HashMap<phext::Coordinate, String>, spec: &QuerySpec) -> String {`
-
-What it does: Runs a query against a loaded phext map and returns a JSON array of {coordinate, scroll}
-
-(Where these words came from: direct.)
+(Where these words came from: signature.)
 
 ---
 
@@ -1254,11 +1041,11 @@ What it does: Runs a query against a loaded phext map and returns a JSON array o
 
 Found in src/sq.rs at line 495.
 
-Surface: public API.
-
 Signature: `pub enum TocMode { Full, Children, Summary, Scrolls, Matches }`
 
-Summary: awaiting a summary. This item is named in the instruction file that came with this scan. No words were invented for it.
+What it does: A named choice named TocMode. The scanner did not read its variants.
+
+(Where these words came from: signature.)
 
 ---
 
@@ -1266,13 +1053,59 @@ Summary: awaiting a summary. This item is named in the instruction file that cam
 
 Found in src/sq.rs at line 498.
 
-Surface: public API.
-
 Signature: `pub struct TocSpec {`
 
 What it does: A data shape named TocSpec. Its fields are: pub mode: TocMode; pub prefix: Vec<usize>; pub step: usize; pub scale: Option<usize>.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
+
+---
+
+## function — args_required
+
+Found in src/sq.rs at line 10.
+
+Signature: `pub fn args_required(command:&str) -> usize {`
+
+What it does: Function args_required takes command:&str and gives back usize.
+
+(Where these words came from: signature.)
+
+---
+
+## function — implode_ref
+
+Found in src/sq.rs at line 101.
+
+Signature: `pub fn implode_ref(map: &HashMap<phext::Coordinate, String>) -> String {`
+
+What it does: Function implode_ref takes map: &HashMap<phext::Coordinate, String> and gives back String.
+
+(Where these words came from: signature.)
+
+---
+
+## function — parse_coordinate_strict
+
+Found in src/sq.rs at line 392.
+
+Signature: `pub fn parse_coordinate_strict(text: &str) -> Option<phext::Coordinate> {`
+
+What it does: Strict coordinate parser: exactly 9 positive integers as a.b.c/d.e.f/g.h.i
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — parse_query
+
+Found in src/sq.rs at line 409.
+
+Signature: `pub fn parse_query(from: Option<&String>, to: Option<&String>, set: Option<&String>, limit: Option<&String>) -> Result<QuerySpec, String> {`
+
+What it does: Function parse_query takes from: Option<&String>, to: Option<&String>, set: Option<&String>, limit: Option<&String> and gives back Result<QuerySpec, String>.
+
+(Where these words came from: signature.)
 
 ---
 
@@ -1280,13 +1113,11 @@ What it does: A data shape named TocSpec. Its fields are: pub mode: TocMode; pub
 
 Found in src/sq.rs at line 505.
 
-Surface: public API.
-
 Signature: `pub fn parse_toc_prefix(text: &str) -> Result<Vec<usize>, String> {`
 
-What it does: Function parse_toc_prefix takes text: &str. It gives back Result<Vec<usize>, String>.
+What it does: Function parse_toc_prefix takes text: &str and gives back Result<Vec<usize>, String>.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -1294,13 +1125,35 @@ What it does: Function parse_toc_prefix takes text: &str. It gives back Result<V
 
 Found in src/sq.rs at line 520.
 
-Surface: public API.
-
 Signature: `pub fn parse_toc_spec(mode: Option<&String>, at: Option<&String>, step: Option<&String>, scale: Option<&String>) -> Result<Option<TocSpec>, String> {`
 
-What it does: Function parse_toc_spec takes mode: Option<&String>, at: Option<&String>, step: Option<&String>, scale: Option<&String>. It gives back Result<Option<TocSpec>, String>.
+What it does: Function parse_toc_spec takes mode: Option<&String>, at: Option<&String>, step: Option<&String>, scale: Option<&String> and gives back Result<Option<TocSpec>, String>.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
+
+---
+
+## function — process
+
+Found in src/sq.rs at line 146.
+
+Signature: `pub fn process(connection_id: u64, source: String, scroll: &mut String, command: String, phext_map: &mut HashMap::<phext::Coordinate, String>, coordinate: phext::Coordinate, update: String, filename: String, algorithm: crate::HashAlgorithm, limit: usize) -> bool {`
+
+What it does: Function process takes connection_id: u64, source: String, scroll: &mut String, command: String, phext_map: &mut HashMap::<phext::Coordinate, String>, coordinate: phext::Coordinate, update: String, filename: String, algorithm: crate::HashAlgorithm, limit: usize and gives back bool.
+
+(Where these words came from: signature.)
+
+---
+
+## function — run_query
+
+Found in src/sq.rs at line 447.
+
+Signature: `pub fn run_query(phext_map: &HashMap<phext::Coordinate, String>, spec: &QuerySpec) -> String {`
+
+What it does: Runs a query against a loaded phext map and returns a JSON array of {coordinate, scroll}
+
+(Where these words came from: doc comment.)
 
 ---
 
@@ -1308,55 +1161,11 @@ What it does: Function parse_toc_spec takes mode: Option<&String>, at: Option<&S
 
 Found in src/sq.rs at line 558.
 
-Surface: public API.
-
 Signature: `pub fn run_toc(phext_map: &HashMap<phext::Coordinate, String>, spec: &TocSpec) -> String {`
 
-What it does: Function run_toc takes phext_map: &HashMap<phext::Coordinate, String>, spec: &TocSpec. It gives back String.
+What it does: Function run_toc takes phext_map: &HashMap<phext::Coordinate, String>, spec: &TocSpec and gives back String.
 
-(Where these words came from: inferred.)
-
----
-
-## enum — Tier
-
-Found in src/triage.rs at line 12.
-
-Surface: public API.
-
-Signature: `pub enum Tier {`
-
-What it does: Which tier handles this prompt
-
-(Where these words came from: direct.)
-
----
-
-## struct — RouteDecision
-
-Found in src/triage.rs at line 20.
-
-Surface: public API.
-
-Signature: `pub struct RouteDecision {`
-
-What it does: Result of evaluating a prompt
-
-(Where these words came from: direct.)
-
----
-
-## function — evaluate
-
-Found in src/triage.rs at line 42.
-
-Surface: public API.
-
-Signature: `pub fn evaluate(prompt: &str, upstream_threshold: usize) -> RouteDecision {`
-
-What it does: Score a prompt and decide routing tier
-
-(Where these words came from: direct.)
+(Where these words came from: signature.)
 
 ---
 
@@ -1364,13 +1173,11 @@ What it does: Score a prompt and decide routing tier
 
 Found in src/triage.rs at line 85.
 
-Surface: public API.
-
 Signature: `pub struct FeedbackLoop {`
 
 What it does: Feedback loop — tracks local model quality
 
-(Where these words came from: direct.)
+(Where these words came from: doc comment.)
 
 ---
 
@@ -1378,55 +1185,83 @@ What it does: Feedback loop — tracks local model quality
 
 Found in src/triage.rs at line 91.
 
-Surface: public API.
-
 Signature: `pub fn new(max_window: usize) -> Self {`
 
-What it does: Function FeedbackLoop::new takes max_window: usize. It gives back Self.
+What it does: Function FeedbackLoop::new takes max_window: usize and gives back Self.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
-## function — FeedbackLoop::record
+## struct — RouteDecision
+
+Found in src/triage.rs at line 20.
+
+Signature: `pub struct RouteDecision {`
+
+What it does: Result of evaluating a prompt
+
+(Where these words came from: doc comment.)
+
+---
+
+## enum — Tier
+
+Found in src/triage.rs at line 12.
+
+Signature: `pub enum Tier {`
+
+What it does: Which tier handles this prompt
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — evaluate
+
+Found in src/triage.rs at line 42.
+
+Signature: `pub fn evaluate(prompt: &str, upstream_threshold: usize) -> RouteDecision {`
+
+What it does: Score a prompt and decide routing tier
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — failure_rate
+
+Found in src/triage.rs at line 114.
+
+Signature: `pub fn failure_rate(&self) -> f64 {`
+
+What it does: Function failure_rate takes no inputs beyond the value it is called on, and gives back f64.
+
+(Where these words came from: signature.)
+
+---
+
+## function — record
 
 Found in src/triage.rs at line 98.
 
-Surface: public API.
-
 Signature: `pub fn record(&mut self, success: bool) {`
 
-What it does: Function FeedbackLoop::record takes &mut self, success: bool. Its return type is the unit value, which the signature leaves unwritten.
+What it does: Function record takes &mut self, success: bool and gives back nothing; it does its work on what it is given.
 
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
-## function — FeedbackLoop::should_escalate
+## function — should_escalate
 
 Found in src/triage.rs at line 106.
-
-Surface: public API.
 
 Signature: `pub fn should_escalate(&self, threshold: f64) -> bool {`
 
 What it does: Returns true if failure rate exceeds threshold (should escalate)
 
-(Where these words came from: direct.)
-
----
-
-## function — FeedbackLoop::failure_rate
-
-Found in src/triage.rs at line 114.
-
-Surface: public API.
-
-Signature: `pub fn failure_rate(&self) -> f64 {`
-
-What it does: Function FeedbackLoop::failure_rate takes no inputs beyond the value it is called on. It gives back f64.
-
-(Where these words came from: inferred.)
+(Where these words came from: doc comment.)
 
 ---
 

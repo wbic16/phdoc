@@ -1,16 +1,8 @@
 # boardy-tools — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 147). Scanned at commit 7092bd1ac39561fc1a809e7c9f60d683ec863520. Everything in this document was extracted from the revision named above: its manifests, its git log, and its source text. Descriptions are labeled by how they were obtained — direct (the source's own words), inferred (read off a signature), agent-supplied (written by a reviewer), verified (backed by a validated contract), or unverified — and only validated contracts are marked verified.
+Scanned by phdoc 0.1.0 on 2026-11-23 (Exocortical Epoch 192). Project root: /home/wbic16/phdoc-sweep/proj/boardy-tools. Scanned at commit 7092bd1ac39561fc1a809e7c9f60d683ec863520. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
-This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
-
----
-
-## Summary
-
-Prepared for Boardy's review, 2026-11-18. Assembled by Phext, Inc. (Will Bickford and Emise) from the exchange of that day: our pitch, his reply, his spec, and the work he asked for.
-
-(The opening of the project's README, quoted as written.)
+This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, where its upstream repo lives, and a plain English note for every public method and command.
 
 ---
 
@@ -22,7 +14,7 @@ No dependency manifest was found (no Cargo.toml, package.json, requirements.txt,
 
 ## Authors
 
-The git log holds 3 commits.
+The git log holds 3 commits. phdoc audits the 3 commits on the first-parent mainline — each merge folds its branch's commits into the merge commit — and the author counts below cover that audited mainline, the same set the historical references fold.
 
 The author of record is **Will Bickford** — 3 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
 
@@ -64,7 +56,7 @@ Largest functions, by span in lines:
 
 Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.
 
-- Tests: 0 test functions counted in the source, across 2 files whose names mark them as test files.
+- Tests: 0 test functions counted in the source, across 2 files in test directories or whose names mark them as test files.
 - CI: no CI configuration was found in the project.
 - Lint and format: no lint or format configuration file was found.
 - TODO marks in the source: 0. FIXME marks: 0.
@@ -81,7 +73,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 ## Upstream git repo
 
-- Origin: https://github.com/wbic16/boardy-tools
+- Origin: /home/wbic16/github-archive/mirrors/boardy-tools.git
 - Branch: exo
 - Head commit: 7092bd1ac39561fc1a809e7c9f60d683ec863520
 - Working tree: clean
@@ -90,66 +82,52 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 ## Public methods and commands
 
-Every public method and command the scanner found, each with a plain English note. Each note is labeled with where its words came from: direct (the code's own doc comment), inferred (read off the item's signature), agent-supplied (written by the user's agent), or awaiting a summary.
+Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.
 
-- function `node_record` (receipts/benchmark.py:112) — Function node_record takes nid.
-- function `build_corpus` (receipts/benchmark.py:120) — Function build_corpus takes no inputs beyond the value it is called on.
-- function `main` (receipts/benchmark.py:133) — Function main takes no inputs beyond the value it is called on.
-- function `Graph.__init__` (receipts/boardy.py:55) — Function Graph.__init__ takes no inputs beyond the value it is called on.
-- function `Graph.add_node` (receipts/boardy.py:60) — Function Graph.add_node takes self, nid, kind, attrs, coord=None.
-- function `Graph.add_edge` (receipts/boardy.py:63) — Function Graph.add_edge takes self, src, typ, dst, weight.
-- function `Graph.kind` (receipts/boardy.py:68) — Function Graph.kind takes self, nid.
-- function `Graph.edges_from` (receipts/boardy.py:72) — Function Graph.edges_from takes self, src, typ=None.
-- function `Graph.edges_to` (receipts/boardy.py:75) — Function Graph.edges_to takes self, dst, typ=None.
-- function `Graph.edge_set` (receipts/boardy.py:78) — Function Graph.edge_set takes no inputs beyond the value it is called on.
-- function `parse_node_record` (receipts/boardy.py:92) — Function parse_node_record takes text.
+- function `build_corpus` (receipts/benchmark.py:120) — Function build_corpus takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what
+- function `main` (receipts/benchmark.py:133) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `node_record` (receipts/benchmark.py:112) — Function node_record takes nid and gives back nothing; it does its work on what it is given.
+- function `__init__` (receipts/boardy.py:55) — Function __init__ takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it 
+- function `add_edge` (receipts/boardy.py:63) — Function add_edge takes self, src, typ, dst, weight and gives back nothing; it does its work on what it is given.
+- function `add_node` (receipts/boardy.py:60) — Function add_node takes self, nid, kind, attrs, coord=None and gives back nothing; it does its work on what it is given.
 - function `boot` (receipts/boardy.py:114) — scrolls: {coord: text} merged from the problem+solution phexts.
-- function `dense_counts` (receipts/boardy.py:158) — Function dense_counts takes g.
+- function `dense_counts` (receipts/boardy.py:158) — Function dense_counts takes g and gives back nothing; it does its work on what it is given.
+- function `edge_set` (receipts/boardy.py:78) — Function edge_set takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it 
+- function `edges_from` (receipts/boardy.py:72) — Function edges_from takes self, src, typ=None and gives back nothing; it does its work on what it is given.
+- function `edges_to` (receipts/boardy.py:75) — Function edges_to takes self, dst, typ=None and gives back nothing; it does its work on what it is given.
 - function `empty_family_edges` (receipts/boardy.py:166) — Every boot edge landing in an empty kind-pair family (manual step 7).
-- function `forbidden_nodes` (receipts/boardy.py:176) — Function forbidden_nodes takes g.
-- function `score_recovery` (receipts/boardy.py:182) — gt_edges: list of (src, type, dst, weight) ground truth.
 - function `find_route` (receipts/boardy.py:247) — Replayable route over stored edges only (traversed in either direction,
+- function `forbidden_nodes` (receipts/boardy.py:176) — Function forbidden_nodes takes g and gives back nothing; it does its work on what it is given.
+- function `generate_candidates` (receipts/boardy.py:292) — Function generate_candidates takes g and gives back nothing; it does its work on what it is given.
 - function `invention_score` (receipts/boardy.py:275) — decisions: list of dicts with classification in {R, A, F}.
-- function `generate_candidates` (receipts/boardy.py:292) — Function generate_candidates takes g.
-- function `fmt` (receipts/boardy_mcp.py:37) — Function fmt takes coord.
+- function `kind` (receipts/boardy.py:68) — Function kind takes self, nid and gives back nothing; it does its work on what it is given.
+- function `parse_node_record` (receipts/boardy.py:92) — Function parse_node_record takes text and gives back nothing; it does its work on what it is given.
+- function `score_recovery` (receipts/boardy.py:182) — gt_edges: list of (src, type, dst, weight) ground truth.
+- function `error` (receipts/boardy_mcp.py:149) — Function error takes rid, code, message and gives back nothing; it does its work on what it is given.
+- function `fmt` (receipts/boardy_mcp.py:37) — Function fmt takes coord and gives back nothing; it does its work on what it is given.
+- function `handle` (receipts/boardy_mcp.py:153) — Function handle takes req and gives back nothing; it does its work on what it is given.
+- function `main` (receipts/boardy_mcp.py:187) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `parse_coordinate` (receipts/boardy_mcp.py:64) — Function parse_coordinate takes text and gives back nothing; it does its work on what it is given.
 - function `parse_phext` (receipts/boardy_mcp.py:41) — Explode phext text into {coordinate_tuple: scroll_text}.
-- function `parse_coordinate` (receipts/boardy_mcp.py:64) — Function parse_coordinate takes text.
-- function `tool_load` (receipts/boardy_mcp.py:74) — Function tool_load takes args.
-- function `require_doc` (receipts/boardy_mcp.py:84) — Function require_doc takes no inputs beyond the value it is called on.
-- function `tool_toc` (receipts/boardy_mcp.py:89) — Function tool_toc takes _args.
-- function `tool_fetch` (receipts/boardy_mcp.py:98) — Function tool_fetch takes args.
-- function `tool_search` (receipts/boardy_mcp.py:106) — Function tool_search takes args.
-- function `send` (receipts/boardy_mcp.py:140) — Function send takes msg.
-- function `result` (receipts/boardy_mcp.py:145) — Function result takes rid, value.
-- function `error` (receipts/boardy_mcp.py:149) — Function error takes rid, code, message.
-- function `handle` (receipts/boardy_mcp.py:153) — Function handle takes req.
-- function `main` (receipts/boardy_mcp.py:187) — Function main takes no inputs beyond the value it is called on.
-- function `fmt` (receipts/phext.py:15) — Function fmt takes coord.
-- function `serialize` (receipts/phext.py:19) — scrolls: dict {coord9 tuple: str} -> bytes, coordinates ascending.
+- function `require_doc` (receipts/boardy_mcp.py:84) — Function require_doc takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
+- function `result` (receipts/boardy_mcp.py:145) — Function result takes rid, value and gives back nothing; it does its work on what it is given.
+- function `send` (receipts/boardy_mcp.py:140) — Function send takes msg and gives back nothing; it does its work on what it is given.
+- function `tool_fetch` (receipts/boardy_mcp.py:98) — Function tool_fetch takes args and gives back nothing; it does its work on what it is given.
+- function `tool_load` (receipts/boardy_mcp.py:74) — Function tool_load takes args and gives back nothing; it does its work on what it is given.
+- function `tool_search` (receipts/boardy_mcp.py:106) — Function tool_search takes args and gives back nothing; it does its work on what it is given.
+- function `tool_toc` (receipts/boardy_mcp.py:89) — Function tool_toc takes _args and gives back nothing; it does its work on what it is given.
+- function `common_prefix` (receipts/phext.py:58) — Function common_prefix takes a, b and gives back nothing; it does its work on what it is given.
+- function `fmt` (receipts/phext.py:15) — Function fmt takes coord and gives back nothing; it does its work on what it is given.
 - function `parse` (receipts/phext.py:39) — bytes -> dict {coord9 tuple: str} (every scroll, including empty ones).
-- function `common_prefix` (receipts/phext.py:58) — Function common_prefix takes a, b.
-- function `log` (receipts/test_client.py:25) [test] — Function log takes direction, obj.
-- function `check` (receipts/test_client.py:29) [test] — Function check takes label, ok, detail="".
-- function `main` (receipts/test_client.py:35) [test] — Function main takes no inputs beyond the value it is called on.
-- function `call` (receipts/test_client.py:41) [test] — Function call takes method, params=None.
-- function `notify` (receipts/test_client.py:53) [test] — Function notify takes method.
-- function `tool` (receipts/test_client.py:59) [test] — Function tool takes name, args.
-- function `fake_boot` (receipts/test_scorer.py:14) [test] — Function fake_boot takes edges.
-- function `main` (receipts/test_scorer.py:22) [test] — Function main takes no inputs beyond the value it is called on.
-
----
-
-## function — node_record
-
-Found in receipts/benchmark.py at line 112.
-
-Surface: public API.
-
-Signature: `def node_record(nid)`
-
-What it does: Function node_record takes nid. Its return type is unannotated; the code shows it returning "\n".join(lines) + "\n".
-
-(Where these words came from: inferred.)
+- function `serialize` (receipts/phext.py:19) — scrolls: dict {coord9 tuple: str} -> bytes, coordinates ascending.
+- function `call` (receipts/test_client.py:41) — Function call takes method, params=None and gives back nothing; it does its work on what it is given.
+- function `check` (receipts/test_client.py:29) — Function check takes label, ok, detail="" and gives back nothing; it does its work on what it is given.
+- function `log` (receipts/test_client.py:25) — Function log takes direction, obj and gives back nothing; it does its work on what it is given.
+- function `main` (receipts/test_client.py:35) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `notify` (receipts/test_client.py:53) — Function notify takes method and gives back nothing; it does its work on what it is given.
+- function `tool` (receipts/test_client.py:59) — Function tool takes name, args and gives back nothing; it does its work on what it is given.
+- function `fake_boot` (receipts/test_scorer.py:14) — Function fake_boot takes edges and gives back nothing; it does its work on what it is given.
+- function `main` (receipts/test_scorer.py:22) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
 
 ---
 
@@ -157,13 +135,11 @@ What it does: Function node_record takes nid. Its return type is unannotated; th
 
 Found in receipts/benchmark.py at line 120.
 
-Surface: public API.
+Signature: `def build_corpus():`
 
-Signature: `def build_corpus()`
+What it does: Function build_corpus takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-What it does: Function build_corpus takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning problem, solution.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -171,125 +147,59 @@ What it does: Function build_corpus takes no inputs beyond the value it is calle
 
 Found in receipts/benchmark.py at line 133.
 
-Surface: public API.
+Signature: `def main():`
 
-Signature: `def main()`
+What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-What it does: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
-## function — Graph.__init__
+## function — node_record
+
+Found in receipts/benchmark.py at line 112.
+
+Signature: `def node_record(nid):`
+
+What it does: Function node_record takes nid and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — __init__
 
 Found in receipts/boardy.py at line 55.
 
-Surface: public API.
+Signature: `def __init__(self):`
 
-Signature: `def __init__(self)`
+What it does: Function __init__ takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-What it does: Function Graph.__init__ takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
-## function — Graph.add_node
-
-Found in receipts/boardy.py at line 60.
-
-Surface: public API.
-
-Signature: `def add_node(self, nid, kind, attrs, coord=None)`
-
-What it does: Function Graph.add_node takes self, nid, kind, attrs, coord=None. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
-
----
-
-## function — Graph.add_edge
+## function — add_edge
 
 Found in receipts/boardy.py at line 63.
 
-Surface: public API.
+Signature: `def add_edge(self, src, typ, dst, weight):`
 
-Signature: `def add_edge(self, src, typ, dst, weight)`
+What it does: Function add_edge takes self, src, typ, dst, weight and gives back nothing; it does its work on what it is given.
 
-What it does: Function Graph.add_edge takes self, src, typ, dst, weight. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
-## function — Graph.kind
+## function — add_node
 
-Found in receipts/boardy.py at line 68.
+Found in receipts/boardy.py at line 60.
 
-Surface: public API.
+Signature: `def add_node(self, nid, kind, attrs, coord=None):`
 
-Signature: `def kind(self, nid)`
+What it does: Function add_node takes self, nid, kind, attrs, coord=None and gives back nothing; it does its work on what it is given.
 
-What it does: Function Graph.kind takes self, nid. Its return type is unannotated; the code shows it returning n["kind"] if n else None.
-
-(Where these words came from: inferred.)
-
----
-
-## function — Graph.edges_from
-
-Found in receipts/boardy.py at line 72.
-
-Surface: public API.
-
-Signature: `def edges_from(self, src, typ=None)`
-
-What it does: Function Graph.edges_from takes self, src, typ=None. Its return type is unannotated; the code shows it returning [e for e in self.edges if e[0] == src and (typ i.
-
-(Where these words came from: inferred.)
-
----
-
-## function — Graph.edges_to
-
-Found in receipts/boardy.py at line 75.
-
-Surface: public API.
-
-Signature: `def edges_to(self, dst, typ=None)`
-
-What it does: Function Graph.edges_to takes self, dst, typ=None. Its return type is unannotated; the code shows it returning [e for e in self.edges if e[2] == dst and (typ i.
-
-(Where these words came from: inferred.)
-
----
-
-## function — Graph.edge_set
-
-Found in receipts/boardy.py at line 78.
-
-Surface: public API.
-
-Signature: `def edge_set(self)`
-
-What it does: Function Graph.edge_set takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning set(self.edges).
-
-(Where these words came from: inferred.)
-
----
-
-## function — parse_node_record
-
-Found in receipts/boardy.py at line 92.
-
-Surface: public API.
-
-Signature: `def parse_node_record(text)`
-
-What it does: Function parse_node_record takes text. Its return type is unannotated; the code shows it returning rec.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -297,13 +207,11 @@ What it does: Function parse_node_record takes text. Its return type is unannota
 
 Found in receipts/boardy.py at line 114.
 
-Surface: public API.
-
-Signature: `def boot(scrolls)`
+Signature: `def boot(scrolls):`
 
 What it does: scrolls: {coord: text} merged from the problem+solution phexts.
 
-(Where these words came from: direct.)
+(Where these words came from: doc comment.)
 
 ---
 
@@ -311,13 +219,47 @@ What it does: scrolls: {coord: text} merged from the problem+solution phexts.
 
 Found in receipts/boardy.py at line 158.
 
-Surface: public API.
+Signature: `def dense_counts(g):`
 
-Signature: `def dense_counts(g)`
+What it does: Function dense_counts takes g and gives back nothing; it does its work on what it is given.
 
-What it does: Function dense_counts takes g. Its return type is unannotated; the code shows it returning dict(counts).
+(Where these words came from: signature.)
 
-(Where these words came from: inferred.)
+---
+
+## function — edge_set
+
+Found in receipts/boardy.py at line 78.
+
+Signature: `def edge_set(self):`
+
+What it does: Function edge_set takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — edges_from
+
+Found in receipts/boardy.py at line 72.
+
+Signature: `def edges_from(self, src, typ=None):`
+
+What it does: Function edges_from takes self, src, typ=None and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — edges_to
+
+Found in receipts/boardy.py at line 75.
+
+Signature: `def edges_to(self, dst, typ=None):`
+
+What it does: Function edges_to takes self, dst, typ=None and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
 
 ---
 
@@ -325,41 +267,11 @@ What it does: Function dense_counts takes g. Its return type is unannotated; the
 
 Found in receipts/boardy.py at line 166.
 
-Surface: public API.
-
-Signature: `def empty_family_edges(g)`
+Signature: `def empty_family_edges(g):`
 
 What it does: Every boot edge landing in an empty kind-pair family (manual step 7).
 
-(Where these words came from: direct.)
-
----
-
-## function — forbidden_nodes
-
-Found in receipts/boardy.py at line 176.
-
-Surface: public API.
-
-Signature: `def forbidden_nodes(g)`
-
-What it does: Function forbidden_nodes takes g. Its return type is unannotated; the code shows it returning [nid for nid, n in g.nodes.items() if n["kind"] .
-
-(Where these words came from: inferred.)
-
----
-
-## function — score_recovery
-
-Found in receipts/boardy.py at line 182.
-
-Surface: public API.
-
-Signature: `def score_recovery(boot_g, gt_edges)`
-
-What it does: gt_edges: list of (src, type, dst, weight) ground truth.
-
-(Where these words came from: direct.)
+(Where these words came from: doc comment.)
 
 ---
 
@@ -367,27 +279,23 @@ What it does: gt_edges: list of (src, type, dst, weight) ground truth.
 
 Found in receipts/boardy.py at line 247.
 
-Surface: public API.
-
-Signature: `def find_route(g, src, dst)`
+Signature: `def find_route(g, src, dst):`
 
 What it does: Replayable route over stored edges only (traversed in either direction,
 
-(Where these words came from: direct.)
+(Where these words came from: doc comment.)
 
 ---
 
-## function — invention_score
+## function — forbidden_nodes
 
-Found in receipts/boardy.py at line 275.
+Found in receipts/boardy.py at line 176.
 
-Surface: public API.
+Signature: `def forbidden_nodes(g):`
 
-Signature: `def invention_score(decisions)`
+What it does: Function forbidden_nodes takes g and gives back nothing; it does its work on what it is given.
 
-What it does: decisions: list of dicts with classification in {R, A, F}.
-
-(Where these words came from: direct.)
+(Where these words came from: signature.)
 
 ---
 
@@ -395,153 +303,59 @@ What it does: decisions: list of dicts with classification in {R, A, F}.
 
 Found in receipts/boardy.py at line 292.
 
-Surface: public API.
+Signature: `def generate_candidates(g):`
 
-Signature: `def generate_candidates(g)`
+What it does: Function generate_candidates takes g and gives back nothing; it does its work on what it is given.
 
-What it does: Function generate_candidates takes g. Its return type is unannotated; the code shows it returning candidates.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
-## function — fmt
+## function — invention_score
 
-Found in receipts/boardy_mcp.py at line 37.
+Found in receipts/boardy.py at line 275.
 
-Surface: public API.
+Signature: `def invention_score(decisions):`
 
-Signature: `def fmt(coord)`
+What it does: decisions: list of dicts with classification in {R, A, F}.
 
-What it does: Function fmt takes coord. Its return type is unannotated; the code shows it returning "%d.%d.%d/%d.%d.%d/%d.%d.%d" % tuple(coord).
-
-(Where these words came from: inferred.)
+(Where these words came from: doc comment.)
 
 ---
 
-## function — parse_phext
+## function — kind
 
-Found in receipts/boardy_mcp.py at line 41.
+Found in receipts/boardy.py at line 68.
 
-Surface: public API.
+Signature: `def kind(self, nid):`
 
-Signature: `def parse_phext(text)`
+What it does: Function kind takes self, nid and gives back nothing; it does its work on what it is given.
 
-What it does: Explode phext text into {coordinate_tuple: scroll_text}.
-
-(Where these words came from: direct.)
+(Where these words came from: signature.)
 
 ---
 
-## function — parse_coordinate
+## function — parse_node_record
 
-Found in receipts/boardy_mcp.py at line 64.
+Found in receipts/boardy.py at line 92.
 
-Surface: public API.
+Signature: `def parse_node_record(text):`
 
-Signature: `def parse_coordinate(text)`
+What it does: Function parse_node_record takes text and gives back nothing; it does its work on what it is given.
 
-What it does: Function parse_coordinate takes text. Its return type is unannotated; the code shows it returning coord.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
-## function — tool_load
+## function — score_recovery
 
-Found in receipts/boardy_mcp.py at line 74.
+Found in receipts/boardy.py at line 182.
 
-Surface: public API.
+Signature: `def score_recovery(boot_g, gt_edges):`
 
-Signature: `def tool_load(args)`
+What it does: gt_edges: list of (src, type, dst, weight) ground truth.
 
-What it does: Function tool_load takes args. Its return type is unannotated; the code shows it returning "loaded %s: %d scrolls, %d bytes" % (path, len(D.
-
-(Where these words came from: inferred.)
-
----
-
-## function — require_doc
-
-Found in receipts/boardy_mcp.py at line 84.
-
-Surface: public API.
-
-Signature: `def require_doc()`
-
-What it does: Function require_doc takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
-
----
-
-## function — tool_toc
-
-Found in receipts/boardy_mcp.py at line 89.
-
-Surface: public API.
-
-Signature: `def tool_toc(_args)`
-
-What it does: Function tool_toc takes _args. Its return type is unannotated; the code shows it returning "\n".join(lines).
-
-(Where these words came from: inferred.)
-
----
-
-## function — tool_fetch
-
-Found in receipts/boardy_mcp.py at line 98.
-
-Surface: public API.
-
-Signature: `def tool_fetch(args)`
-
-What it does: Function tool_fetch takes args. Its return type is unannotated; the code shows it returning DOC["scrolls"][coord].
-
-(Where these words came from: inferred.)
-
----
-
-## function — tool_search
-
-Found in receipts/boardy_mcp.py at line 106.
-
-Surface: public API.
-
-Signature: `def tool_search(args)`
-
-What it does: Function tool_search takes args. Its return type is unannotated; the code shows it returning "no scrolls contain %r" % args["text"]; "%d scroll(s) contain %r:\n%s" % (len(hits), arg.
-
-(Where these words came from: inferred.)
-
----
-
-## function — send
-
-Found in receipts/boardy_mcp.py at line 140.
-
-Surface: public API.
-
-Signature: `def send(msg)`
-
-What it does: Function send takes msg. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
-
----
-
-## function — result
-
-Found in receipts/boardy_mcp.py at line 145.
-
-Surface: public API.
-
-Signature: `def result(rid, value)`
-
-What it does: Function result takes rid, value. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
+(Where these words came from: doc comment.)
 
 ---
 
@@ -549,13 +363,23 @@ What it does: Function result takes rid, value. Its return type is unannotated; 
 
 Found in receipts/boardy_mcp.py at line 149.
 
-Surface: public API.
+Signature: `def error(rid, code, message):`
 
-Signature: `def error(rid, code, message)`
+What it does: Function error takes rid, code, message and gives back nothing; it does its work on what it is given.
 
-What it does: Function error takes rid, code, message. Its return type is unannotated; no return statement was read in its body.
+(Where these words came from: signature.)
 
-(Where these words came from: inferred.)
+---
+
+## function — fmt
+
+Found in receipts/boardy_mcp.py at line 37.
+
+Signature: `def fmt(coord):`
+
+What it does: Function fmt takes coord and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
 
 ---
 
@@ -563,13 +387,11 @@ What it does: Function error takes rid, code, message. Its return type is unanno
 
 Found in receipts/boardy_mcp.py at line 153.
 
-Surface: public API.
+Signature: `def handle(req):`
 
-Signature: `def handle(req)`
+What it does: Function handle takes req and gives back nothing; it does its work on what it is given.
 
-What it does: Function handle takes req. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -577,55 +399,119 @@ What it does: Function handle takes req. Its return type is unannotated; no retu
 
 Found in receipts/boardy_mcp.py at line 187.
 
-Surface: public API.
+Signature: `def main():`
 
-Signature: `def main()`
+What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-What it does: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
-## function — fmt
+## function — parse_coordinate
 
-Found in receipts/phext.py at line 15.
+Found in receipts/boardy_mcp.py at line 64.
 
-Surface: public API.
+Signature: `def parse_coordinate(text):`
 
-Signature: `def fmt(coord)`
+What it does: Function parse_coordinate takes text and gives back nothing; it does its work on what it is given.
 
-What it does: Function fmt takes coord. Its return type is unannotated; the code shows it returning "%d.%d.%d/%d.%d.%d/%d.%d.%d" % tuple(coord).
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
-## function — serialize
+## function — parse_phext
 
-Found in receipts/phext.py at line 19.
+Found in receipts/boardy_mcp.py at line 41.
 
-Surface: public API.
+Signature: `def parse_phext(text):`
 
-Signature: `def serialize(scrolls)`
+What it does: Explode phext text into {coordinate_tuple: scroll_text}.
 
-What it does: scrolls: dict {coord9 tuple: str} -> bytes, coordinates ascending.
-
-(Where these words came from: direct.)
+(Where these words came from: doc comment.)
 
 ---
 
-## function — parse
+## function — require_doc
 
-Found in receipts/phext.py at line 39.
+Found in receipts/boardy_mcp.py at line 84.
 
-Surface: public API.
+Signature: `def require_doc():`
 
-Signature: `def parse(data)`
+What it does: Function require_doc takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-What it does: bytes -> dict {coord9 tuple: str} (every scroll, including empty ones).
+(Where these words came from: signature.)
 
-(Where these words came from: direct.)
+---
+
+## function — result
+
+Found in receipts/boardy_mcp.py at line 145.
+
+Signature: `def result(rid, value):`
+
+What it does: Function result takes rid, value and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — send
+
+Found in receipts/boardy_mcp.py at line 140.
+
+Signature: `def send(msg):`
+
+What it does: Function send takes msg and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — tool_fetch
+
+Found in receipts/boardy_mcp.py at line 98.
+
+Signature: `def tool_fetch(args):`
+
+What it does: Function tool_fetch takes args and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — tool_load
+
+Found in receipts/boardy_mcp.py at line 74.
+
+Signature: `def tool_load(args):`
+
+What it does: Function tool_load takes args and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — tool_search
+
+Found in receipts/boardy_mcp.py at line 106.
+
+Signature: `def tool_search(args):`
+
+What it does: Function tool_search takes args and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — tool_toc
+
+Found in receipts/boardy_mcp.py at line 89.
+
+Signature: `def tool_toc(_args):`
+
+What it does: Function tool_toc takes _args and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
 
 ---
 
@@ -633,55 +519,47 @@ What it does: bytes -> dict {coord9 tuple: str} (every scroll, including empty o
 
 Found in receipts/phext.py at line 58.
 
-Surface: public API.
+Signature: `def common_prefix(a, b):`
 
-Signature: `def common_prefix(a, b)`
+What it does: Function common_prefix takes a, b and gives back nothing; it does its work on what it is given.
 
-What it does: Function common_prefix takes a, b. Its return type is unannotated; the code shows it returning n.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
-## function — log
+## function — fmt
 
-Found in receipts/test_client.py at line 25.
+Found in receipts/phext.py at line 15.
 
-Surface: test.
+Signature: `def fmt(coord):`
 
-Signature: `def log(direction, obj)`
+What it does: Function fmt takes coord and gives back nothing; it does its work on what it is given.
 
-What it does: Function log takes direction, obj. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
-## function — check
+## function — parse
 
-Found in receipts/test_client.py at line 29.
+Found in receipts/phext.py at line 39.
 
-Surface: test.
+Signature: `def parse(data):`
 
-Signature: `def check(label, ok, detail="")`
+What it does: bytes -> dict {coord9 tuple: str} (every scroll, including empty ones).
 
-What it does: Function check takes label, ok, detail="". Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
+(Where these words came from: doc comment.)
 
 ---
 
-## function — main
+## function — serialize
 
-Found in receipts/test_client.py at line 35.
+Found in receipts/phext.py at line 19.
 
-Surface: test.
+Signature: `def serialize(scrolls):`
 
-Signature: `def main()`
+What it does: scrolls: dict {coord9 tuple: str} -> bytes, coordinates ascending.
 
-What it does: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
+(Where these words came from: doc comment.)
 
 ---
 
@@ -689,13 +567,47 @@ What it does: Function main takes no inputs beyond the value it is called on. It
 
 Found in receipts/test_client.py at line 41.
 
-Surface: test.
+Signature: `def call(method, params=None):`
 
-Signature: `def call(method, params=None)`
+What it does: Function call takes method, params=None and gives back nothing; it does its work on what it is given.
 
-What it does: Function call takes method, params=None. Its return type is unannotated; the code shows it returning resp.
+(Where these words came from: signature.)
 
-(Where these words came from: inferred.)
+---
+
+## function — check
+
+Found in receipts/test_client.py at line 29.
+
+Signature: `def check(label, ok, detail=""):`
+
+What it does: Function check takes label, ok, detail="" and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — log
+
+Found in receipts/test_client.py at line 25.
+
+Signature: `def log(direction, obj):`
+
+What it does: Function log takes direction, obj and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — main
+
+Found in receipts/test_client.py at line 35.
+
+Signature: `def main():`
+
+What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
 
 ---
 
@@ -703,13 +615,11 @@ What it does: Function call takes method, params=None. Its return type is unanno
 
 Found in receipts/test_client.py at line 53.
 
-Surface: test.
+Signature: `def notify(method):`
 
-Signature: `def notify(method)`
+What it does: Function notify takes method and gives back nothing; it does its work on what it is given.
 
-What it does: Function notify takes method. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -717,13 +627,11 @@ What it does: Function notify takes method. Its return type is unannotated; no r
 
 Found in receipts/test_client.py at line 59.
 
-Surface: test.
+Signature: `def tool(name, args):`
 
-Signature: `def tool(name, args)`
+What it does: Function tool takes name, args and gives back nothing; it does its work on what it is given.
 
-What it does: Function tool takes name, args. Its return type is unannotated; the code shows it returning resp.get("result", {}).
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -731,13 +639,11 @@ What it does: Function tool takes name, args. Its return type is unannotated; th
 
 Found in receipts/test_scorer.py at line 14.
 
-Surface: test.
+Signature: `def fake_boot(edges):`
 
-Signature: `def fake_boot(edges)`
+What it does: Function fake_boot takes edges and gives back nothing; it does its work on what it is given.
 
-What it does: Function fake_boot takes edges. Its return type is unannotated; the code shows it returning g                # invented type (produces_ask) .
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 
@@ -745,13 +651,11 @@ What it does: Function fake_boot takes edges. Its return type is unannotated; th
 
 Found in receipts/test_scorer.py at line 22.
 
-Surface: test.
+Signature: `def main():`
 
-Signature: `def main()`
+What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
-What it does: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body.
-
-(Where these words came from: inferred.)
+(Where these words came from: signature.)
 
 ---
 

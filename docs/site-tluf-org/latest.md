@@ -1,16 +1,8 @@
 # site-tluf-org — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-22 (Exocortical Epoch 150). Scanned at commit 11b094bb6eeeca52471401c6dbed09a126f1abfb. Everything in this document was extracted from the revision named above: its manifests, its git log, and its source text. Descriptions are labeled by how they were obtained — direct (the source's own words), inferred (read off a signature), agent-supplied (written by a reviewer), verified (backed by a validated contract), or unverified — and only validated contracts are marked verified.
+Scanned by phdoc 0.1.0 on 2026-11-23 (Exocortical Epoch 195). Project root: /home/wbic16/phdoc-sweep/proj/site-tluf-org. Scanned at commit 11b094bb6eeeca52471401c6dbed09a126f1abfb. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
-This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
-
----
-
-## Summary
-
-The live site for [tluf.org](https://tluf.org): Assay's front door. TLUF = Truth · Lies · Uncertainty · Fiction — the four bins every assessed claim is filed under.
-
-(The opening of the project's README, quoted as written.)
+This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, where its upstream repo lives, and a plain English note for every public method and command.
 
 ---
 
@@ -22,7 +14,7 @@ No dependency manifest was found (no Cargo.toml, package.json, requirements.txt,
 
 ## Authors
 
-The git log holds 2 commits.
+The git log holds 2 commits. phdoc audits the 2 commits on the first-parent mainline — each merge folds its branch's commits into the merge commit — and the author counts below cover that audited mainline, the same set the historical references fold.
 
 The author of record is **Will Bickford** — 2 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
 
@@ -37,9 +29,9 @@ Annotation, by persona (all folded into Will Bickford):
 
 The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.
 
-- Markdown: 1 file, 17 lines total, 3 blank, 0 comment, 14 code
+- Markdown: 1 files, 17 lines total, 3 blank, 0 comment, 14 code
 
-All languages: 1 file, 17 lines total, 14 lines of code. Functions read: 0.
+All languages: 1 files, 17 lines total, 14 lines of code. Functions read: 0.
 
 Largest files:
 
@@ -54,7 +46,7 @@ Largest functions, by span in lines:
 
 Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.
 
-- Tests: 0 test functions counted in the source, across 0 files whose names mark them as test files.
+- Tests: 0 test functions counted in the source, across 0 files in test directories or whose names mark them as test files.
 - CI: no CI configuration was found in the project.
 - Lint and format: no lint or format configuration file was found.
 - TODO marks in the source: 0. FIXME marks: 0.
@@ -70,7 +62,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 ## Upstream git repo
 
-- Origin: https://github.com/wbic16/site-tluf-org
+- Origin: /home/wbic16/github-archive/mirrors/site-tluf-org.git
 - Branch: exo
 - Head commit: 11b094bb6eeeca52471401c6dbed09a126f1abfb
 - Working tree: clean
@@ -79,7 +71,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 ## Public methods and commands
 
-Every public method and command the scanner found, each with a plain English note. Each note is labeled with where its words came from: direct (the code's own doc comment), inferred (read off the item's signature), agent-supplied (written by the user's agent), or awaiting a summary.
+Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.
 
 
 ---

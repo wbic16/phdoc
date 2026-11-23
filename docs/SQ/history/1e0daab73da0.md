@@ -2,19 +2,19 @@
 
 Commit 1e0daab73da04d3cfd988dfe818f4a3517fa8b8f. 3 commits folded. Every fact here was folded from the chain's per-commit deltas.
 
-## Provenance
-
-This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/SQ/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
-
 ## Dependencies
 
-### Cargo.toml
+### Rust (cargo) — Cargo.toml
 
-- libphext — 0.1.7
-- raw_sync — 0.1.5
-- shared_memory — 0.12.4
+Direct dependencies: 3 (3 default, 0 optional).
+
+- libphext [dependencies] — 0.1.7
+- raw_sync [dependencies] — 0.1.5
+- shared_memory [dependencies] — 0.12.4
 
 ## Authors
+
+Author counts over the 3 audited mainline commits folded to this point.
 
 The author of record is **Will Bickford** — 3 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
 
@@ -24,12 +24,70 @@ Annotation, by persona (all folded into Will Bickford):
 
 ## Complexity
 
-- Markdown: 1 file, 12 lines total, 3 blank, 0 comment, 9 code
-- Rust: 1 file, 77 lines total, 12 blank, 2 comment, 63 code
-- TOML: 1 file, 9 lines total, 1 blank, 0 comment, 8 code
+The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.
 
-Declared RFCs at this point: none declared.
+- Markdown: 1 files, 12 lines total, 3 blank, 2 comment, 7 code
+- Rust: 1 files, 77 lines total, 0 blank, 0 comment, 77 code
+- TOML: 1 files, 9 lines total, 0 blank, 0 comment, 9 code
+
+All languages: 3 files, 98 lines total, 93 lines of code. Functions read: 2.
+
+Largest files:
+
+- README.md — 12 lines
+
+Largest functions, by span in lines:
+
+
+## Code quality signals
+
+Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.
+
+- Tests: 0 test functions counted in the source, across 0 files in test directories or whose names mark them as test files.
+- CI: no CI configuration was found in the project.
+- Lint and format: no lint or format configuration file was found.
+- TODO marks in the source: 0. FIXME marks: 0.
+- Public items with a doc comment: 0 of 2 (0%).
+
+## Declared RFCs
+
+No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+
+
+## Upstream git repo
+
+- Origin: /home/wbic16/github-archive/mirrors/SQ.git
+- Branch: exo
+- Head commit: 1e0daab73da04d3cfd988dfe818f4a3517fa8b8f
+- Working tree: the committed tree at this commit — a historical reference has no working tree
 
 ## Public methods and commands
 
-- entry point `main` (src/main.rs) — The entry point: the program starts here.
+Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.
+
+- entry point `main` (src/main.rs:19) — The entry point: the program starts here.
+- command `phext_link` (src/main.rs:23) — A command named phext_link.
+
+## entry point — main
+
+Found in src/main.rs at line 19.
+
+Signature: `fn main() -> Result<(), Box<dyn std::error::Error>> {`
+
+What it does: The entry point: the program starts here. It reads the command line and runs the command the user named.
+
+(Where these words came from: signature.)
+
+## command — phext_link
+
+Found in src/main.rs at line 23.
+
+Signature: `command "phext_link"`
+
+What it does: A command named phext_link. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+## Provenance
+
+This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/SQ/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.

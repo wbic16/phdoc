@@ -1,3 +1,4 @@
+delta-format 3
 Commit ba2f3401107b by Will Bickford <wbic16@gmail.com> on 2024-04-10 (EE 0).
 
 Subject: Landing page
@@ -10,6 +11,11 @@ commit ba2f3401107b1acbf0b4a05f3ec9b0ca86f0bf18
 parent none
 author Will Bickford <wbic16@gmail.com>
 date 1712714612 2024-04-10
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 author+ Will Bickford <wbic16@gmail.com>
 Commit 8586b0d78bd2 by Will Bickford <wbic16@gmail.com> on 2024-04-11 (EE 0).
 
@@ -21,6 +27,11 @@ commit 8586b0d78bd2e315b355b0693070e6d825ec50c9
 parent ba2f3401107b1acbf0b4a05f3ec9b0ca86f0bf18
 author Will Bickford <wbic16@gmail.com>
 date 1712809077 2024-04-11
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 author~ Will Bickford <wbic16@gmail.com> commits 2
 Commit c77e2ad0ca50 by Will Bickford <wbic16@gmail.com> on 2024-04-11 (EE 0).
 
@@ -32,6 +43,11 @@ commit c77e2ad0ca5049d9c1079061fd150e921d597516
 parent 8586b0d78bd2e315b355b0693070e6d825ec50c9
 author Will Bickford <wbic16@gmail.com>
 date 1712811576 2024-04-11
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 author~ Will Bickford <wbic16@gmail.com> commits 3
 Commit 143b34515193 by Will Bickford <wbic16@gmail.com> on 2024-04-12 (EE 0).
 
@@ -43,6 +59,11 @@ commit 143b34515193d7f9219a33c445e8b4886d8bd118
 parent c77e2ad0ca5049d9c1079061fd150e921d597516
 author Will Bickford <wbic16@gmail.com>
 date 1712883228 2024-04-12
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 author~ Will Bickford <wbic16@gmail.com> commits 4
 Commit cd8be9d22cb1 by Will Bickford <wbic16@gmail.com> on 2024-04-12 (EE 0).
 
@@ -54,6 +75,11 @@ commit cd8be9d22cb19ff0232ad7667f5e33fec5c8851a
 parent 143b34515193d7f9219a33c445e8b4886d8bd118
 author Will Bickford <wbic16@gmail.com>
 date 1712965911 2024-04-12
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 author~ Will Bickford <wbic16@gmail.com> commits 5
 Commit 076aa387c6cb by Will Bickford <wbic16@gmail.com> on 2024-04-13 (EE 0).
 
@@ -65,6 +91,11 @@ commit 076aa387c6cb73dfc35a2af69bc4e350a840854f
 parent cd8be9d22cb19ff0232ad7667f5e33fec5c8851a
 author Will Bickford <wbic16@gmail.com>
 date 1712974058 2024-04-13
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 author~ Will Bickford <wbic16@gmail.com> commits 6
 Commit 5867ac845ac7 by Will Bickford <wbic16@gmail.com> on 2024-04-14 (EE 0).
 
@@ -76,220 +107,310 @@ commit 5867ac845ac7ca7fef2aad778e6ea03261992fb7
 parent 076aa387c6cb73dfc35a2af69bc4e350a840854f
 author Will Bickford <wbic16@gmail.com>
 date 1713115662 2024-04-14
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 author~ Will Bickford <wbic16@gmail.com> commits 7
 Commit 32b92f9a2ed7 by Will Bickford <wbic16@gmail.com> on 2024-04-16 (EE 0).
 
 Subject: Create README.md
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 9.
 
 commit 32b92f9a2ed717ee233eebf6eb9df0cbdf8d6110
 parent 5867ac845ac7ca7fef2aad778e6ea03261992fb7
 author Will Bickford <wbic16@gmail.com>
 date 1713228887 2024-04-16
-stat Markdown files 1 total 9 blank 4 comment 0 code 5
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat Markdown files 1 total 9 blank 0 comment 0 code 9
 author~ Will Bickford <wbic16@gmail.com> commits 8
 Commit 2a3291a7198a by Will Bickford <wbic16@gmail.com> on 2024-04-16 (EE 0).
 
 Subject: Added a BTP Visualization
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 9.
 
 commit 2a3291a7198adc7ba85a5c6abf85f4fc66564636
 parent 32b92f9a2ed717ee233eebf6eb9df0cbdf8d6110
 author Will Bickford <wbic16@gmail.com>
 date 1713242446 2024-04-16
-stat Markdown files 1 total 9 blank 4 comment 0 code 5
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat Markdown files 1 total 9 blank 0 comment 0 code 9
 author~ Will Bickford <wbic16@gmail.com> commits 9
 Commit 3d480c8036f1 by Will Bickford <wbic16@gmail.com> on 2024-04-17 (EE 0).
 
 Subject: Added some BTP controls
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 9.
 
 commit 3d480c8036f113ea0d3ef484f2f9a27ecb2f8962
 parent 2a3291a7198adc7ba85a5c6abf85f4fc66564636
 author Will Bickford <wbic16@gmail.com>
 date 1713324744 2024-04-17
-stat Markdown files 1 total 9 blank 4 comment 0 code 5
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat Markdown files 1 total 9 blank 0 comment 0 code 9
 author~ Will Bickford <wbic16@gmail.com> commits 10
 Commit ff6a15fbe634 by Will Bickford <wbic16@gmail.com> on 2024-04-20 (EE 0).
 
 Subject: Working on visualizing subspace coordinates
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 9.
 
 commit ff6a15fbe63410b4f99e6262538ffa1336426b08
 parent 3d480c8036f113ea0d3ef484f2f9a27ecb2f8962
 author Will Bickford <wbic16@gmail.com>
 date 1713580558 2024-04-20
-stat Markdown files 1 total 9 blank 4 comment 0 code 5
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat Markdown files 1 total 9 blank 0 comment 0 code 9
 author~ Will Bickford <wbic16@gmail.com> commits 11
 Commit 6625cb5ae82f by Will Bickford <wbic16@gmail.com> on 2024-04-20 (EE 0).
 
 Subject: UX tweaks
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 9.
 
 commit 6625cb5ae82f3880a94ac6f240c07f25bfaf50e0
 parent ff6a15fbe63410b4f99e6262538ffa1336426b08
 author Will Bickford <wbic16@gmail.com>
 date 1713585731 2024-04-20
-stat Markdown files 1 total 9 blank 4 comment 0 code 5
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat Markdown files 1 total 9 blank 0 comment 0 code 9
 author~ Will Bickford <wbic16@gmail.com> commits 12
 Commit 29a696c428ba by Will Bickford <wbic16@gmail.com> on 2024-04-20 (EE 0).
 
 Subject: Minor tweak to improve rendering on mobile
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 5.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 9.
 
 commit 29a696c428ba38ced385f3ce058ab4ce6d6306d9
 parent 6625cb5ae82f3880a94ac6f240c07f25bfaf50e0
 author Will Bickford <wbic16@gmail.com>
 date 1713623827 2024-04-20
-stat Markdown files 1 total 9 blank 4 comment 0 code 5
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat Markdown files 1 total 9 blank 0 comment 0 code 9
 author~ Will Bickford <wbic16@gmail.com> commits 13
 Commit b8f78548ca20 by Will Bickford <wbic16@gmail.com> on 2024-04-22 (EE 0).
 
 Subject: Documented html pages
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 7.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 11.
 
 commit b8f78548ca20d732fb7ef745a89471be68133ebf
 parent 29a696c428ba38ced385f3ce058ab4ce6d6306d9
 author Will Bickford <wbic16@gmail.com>
 date 1713749373 2024-04-22
-stat Markdown files 1 total 11 blank 4 comment 0 code 7
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat Markdown files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 14
 Commit 95a9617d4ec3 by Will Bickford <wbic16@gmail.com> on 2024-04-23 (EE 0).
 
 Subject: Stubbed out the BIC CPU - designed for text processing
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 28.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 50.
 
 commit 95a9617d4ec307de67febbbe4185954f9c05c34c
 parent b8f78548ca20d732fb7ef745a89471be68133ebf
 author Will Bickford <wbic16@gmail.com>
 date 1713846951 2024-04-23
-stat JavaScript files 1 total 39 blank 9 comment 9 code 21
-stat Markdown files 1 total 11 blank 4 comment 0 code 7
+quality 0 0 9 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 1 total 39 blank 0 comment 0 code 39
+stat Markdown files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 15
 Commit 541f6f5ab1c3 by Will Bickford <wbic16@gmail.com> on 2024-04-23 (EE 0).
 
 Subject: Zipper Merge Example
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 28.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 50.
 
 commit 541f6f5ab1c351e627d97be16aa13bc0f40ee332
 parent 95a9617d4ec307de67febbbe4185954f9c05c34c
 author Will Bickford <wbic16@gmail.com>
 date 1713848443 2024-04-23
-stat JavaScript files 1 total 39 blank 9 comment 9 code 21
-stat Markdown files 1 total 11 blank 4 comment 0 code 7
+quality 0 0 9 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 1 total 39 blank 0 comment 0 code 39
+stat Markdown files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 16
 Commit b05fbb11f033 by Will Bickford <wbic16@gmail.com> on 2024-04-24 (EE 0).
 
 Subject: First pass zipper merge
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 190.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 223.
 
 commit b05fbb11f033b5e32b8c206c382813b8c7b929c6
 parent 541f6f5ab1c351e627d97be16aa13bc0f40ee332
 author Will Bickford <wbic16@gmail.com>
 date 1713932674 2024-04-24
-stat JavaScript files 1 total 212 blank 20 comment 9 code 183
-stat Markdown files 1 total 11 blank 4 comment 0 code 7
+quality 0 0 8 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 1 total 212 blank 0 comment 0 code 212
+stat Markdown files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 17
 Commit 2a6aabbd20a6 by Will Bickford <wbic16@gmail.com> on 2024-04-25 (EE 0).
 
 Subject: Started integrating phext-cpu.js
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 190.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 223.
 
 commit 2a6aabbd20a60cbf483ef217565b2f41adf0c442
 parent b05fbb11f033b5e32b8c206c382813b8c7b929c6
 author Will Bickford <wbic16@gmail.com>
 date 1714019732 2024-04-25
-stat JavaScript files 1 total 212 blank 20 comment 9 code 183
-stat Markdown files 1 total 11 blank 4 comment 0 code 7
+quality 0 0 8 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 1 total 212 blank 0 comment 0 code 212
+stat Markdown files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 18
 Commit 314aac9db427 by Will Bickford <wbic16@gmail.com> on 2024-04-28 (EE 0).
 
 Subject: Added some load/store methods
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 210.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 244.
 
 commit 314aac9db427cda61a1170afe3f758898364b9f3
 parent 2a6aabbd20a60cbf483ef217565b2f41adf0c442
 author Will Bickford <wbic16@gmail.com>
 date 1714265096 2024-04-28
-stat JavaScript files 1 total 233 blank 22 comment 8 code 203
-stat Markdown files 1 total 11 blank 4 comment 0 code 7
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 1 total 233 blank 0 comment 0 code 233
+stat Markdown files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 19
 Commit f0c736d511b4 by Will Bickford <wbic16@gmail.com> on 2024-04-29 (EE 0).
 
 Subject: Added shelf load/store
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 233.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 267.
 
 commit f0c736d511b478a5d5fa73ff8fb86da63ed999fc
 parent 314aac9db427cda61a1170afe3f758898364b9f3
 author Will Bickford <wbic16@gmail.com>
 date 1714360025 2024-04-29
-stat JavaScript files 1 total 256 blank 22 comment 8 code 226
-stat Markdown files 1 total 11 blank 4 comment 0 code 7
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 1 total 256 blank 0 comment 0 code 256
+stat Markdown files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 20
 Commit 11f367c6c444 by Will Bickford <wbic16@gmail.com> on 2024-04-30 (EE 0).
 
 Subject: Added a wormhole viewer
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 233.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 267.
 
 commit 11f367c6c44409e0d7a28f2e1d0b63f2fd213d34
 parent f0c736d511b478a5d5fa73ff8fb86da63ed999fc
 author Will Bickford <wbic16@gmail.com>
 date 1714452426 2024-04-30
-stat JavaScript files 1 total 256 blank 22 comment 8 code 226
-stat Markdown files 1 total 11 blank 4 comment 0 code 7
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 1 total 256 blank 0 comment 0 code 256
+stat Markdown files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 21
 Commit 2bcce862a967 by Will Bickford <wbic16@gmail.com> on 2024-05-01 (EE 0).
 
 Subject: Wormhole Improvements
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 233.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 267.
 
 commit 2bcce862a9673f8e5d728e1fdb757c5812dc6706
 parent 11f367c6c44409e0d7a28f2e1d0b63f2fd213d34
 author Will Bickford <wbic16@gmail.com>
 date 1714538922 2024-05-01
-stat JavaScript files 1 total 256 blank 22 comment 8 code 226
-stat Markdown files 1 total 11 blank 4 comment 0 code 7
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 1 total 256 blank 0 comment 0 code 256
+stat Markdown files 1 total 11 blank 0 comment 0 code 11
 author~ Will Bickford <wbic16@gmail.com> commits 22
 Commit c6331df10ca5 by Will Bickford <wbic16@gmail.com> on 2024-05-02 (EE 0).
 
 Subject: Documented several more files
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 236.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 270.
 
 commit c6331df10ca5baf9ca4de37395c7dfec621dcc34
 parent 2bcce862a9673f8e5d728e1fdb757c5812dc6706
 author Will Bickford <wbic16@gmail.com>
 date 1714624037 2024-05-02
-stat JavaScript files 1 total 256 blank 22 comment 8 code 226
-stat Markdown files 1 total 14 blank 4 comment 0 code 10
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 1 total 256 blank 0 comment 0 code 256
+stat Markdown files 1 total 14 blank 0 comment 0 code 14
 author~ Will Bickford <wbic16@gmail.com> commits 23
 Commit 7772b9c161d1 by Will Bickford <wbic16@gmail.com> on 2024-05-02 (EE 0).
 
 Subject: Documented some TODO items
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 263.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 297.
 
 commit 7772b9c161d18fd2dbeaa5c15d161d749b2457d4
 parent c6331df10ca5baf9ca4de37395c7dfec621dcc34
 author Will Bickford <wbic16@gmail.com>
 date 1714624292 2024-05-02
-stat JavaScript files 1 total 256 blank 22 comment 8 code 226
-stat Markdown files 2 total 41 blank 4 comment 0 code 37
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 1 total 256 blank 0 comment 0 code 256
+stat Markdown files 2 total 41 blank 0 comment 0 code 41
 author~ Will Bickford <wbic16@gmail.com> commits 24
 Commit c562f47ce5ef by Will Bickford <wbic16@gmail.com> on 2024-05-03 (EE 0).
 
@@ -303,6 +424,14 @@ commit c562f47ce5ef90ba070f38e36194294b3195fe3f
 parent 7772b9c161d18fd2dbeaa5c15d161d749b2457d4
 author Will Bickford <wbic16@gmail.com>
 date 1714707551 2024-05-03
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+largest-file phext-cpu.js :: 278
+largest-file TODO.md :: 35
+largest-file README.md :: 14
 stat JavaScript files 1 total 278 blank 23 comment 8 code 247
 stat Markdown files 2 total 49 blank 4 comment 0 code 45
 author~ Will Bickford <wbic16@gmail.com> commits 25
@@ -316,6 +445,11 @@ commit bc4f11a73ffd7c4219ca5f17ef2c58941f36446c
 parent c562f47ce5ef90ba070f38e36194294b3195fe3f
 author Will Bickford <wbic16@gmail.com>
 date 1715223853 2024-05-09
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 1 total 278 blank 23 comment 8 code 247
 stat Markdown files 2 total 49 blank 4 comment 0 code 45
 author~ Will Bickford <wbic16@gmail.com> commits 26
@@ -329,6 +463,11 @@ commit 4e7594832726a1659d23df81e0ba89bb0e634426
 parent bc4f11a73ffd7c4219ca5f17ef2c58941f36446c
 author Will Bickford <wbic16@gmail.com>
 date 1715314107 2024-05-10
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 1 total 278 blank 23 comment 8 code 247
 stat Markdown files 2 total 49 blank 4 comment 0 code 45
 author~ Will Bickford <wbic16@gmail.com> commits 27
@@ -342,6 +481,11 @@ commit 92275c882c43b30bbc9489f0906c4b056f62948e
 parent 4e7594832726a1659d23df81e0ba89bb0e634426
 author Will Bickford <wbic16@gmail.com>
 date 1715398493 2024-05-11
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 1 total 278 blank 23 comment 8 code 247
 stat Markdown files 2 total 49 blank 4 comment 0 code 45
 author~ Will Bickford <wbic16@gmail.com> commits 28
@@ -355,6 +499,11 @@ commit 5d8ed8c370ace6cda0008b1eaf54b60977378643
 parent 92275c882c43b30bbc9489f0906c4b056f62948e
 author Will Bickford <wbic16@gmail.com>
 date 1715405147 2024-05-11
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 1 total 278 blank 23 comment 8 code 247
 stat Markdown files 2 total 49 blank 4 comment 0 code 45
 author~ Will Bickford <wbic16@gmail.com> commits 29
@@ -368,6 +517,11 @@ commit 424f3ac06cd577bc63fa5748544a50d46a49124c
 parent 5d8ed8c370ace6cda0008b1eaf54b60977378643
 author Will Bickford <wbic16@gmail.com>
 date 1715641188 2024-05-13
+quality 0 0 8 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 1 total 278 blank 23 comment 8 code 247
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 30
@@ -381,6 +535,11 @@ commit 945d1df3f1c46962f01fad821c34e6304bb0bc88
 parent 424f3ac06cd577bc63fa5748544a50d46a49124c
 author Will Bickford <wbic16@gmail.com>
 date 1725339156 2024-09-03
+quality 0 0 8 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 1 total 278 blank 23 comment 8 code 247
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 31
@@ -394,6 +553,11 @@ commit 527359556e857dc01c40ff993538161a1ad0e0f1
 parent 945d1df3f1c46962f01fad821c34e6304bb0bc88
 author Will Bickford <wbic16@gmail.com>
 date 1734132977 2024-12-13
+quality 0 0 8 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 1 total 278 blank 23 comment 8 code 247
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 32
@@ -407,6 +571,11 @@ commit 40258de59f0c625450bd7f09f429780a0b9950f8
 parent 527359556e857dc01c40ff993538161a1ad0e0f1
 author Will Bickford <wbic16@gmail.com>
 date 1741463796 2025-03-08
+quality 0 0 8 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 1 total 278 blank 23 comment 8 code 247
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 33
@@ -420,6 +589,11 @@ commit bed36213971f9bfb1f81375d002f820daecf4b25
 parent 40258de59f0c625450bd7f09f429780a0b9950f8
 author Will Bickford <wbic16@gmail.com>
 date 1743046472 2025-03-27
+quality 0 0 8 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 1 total 278 blank 23 comment 8 code 247
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 34
@@ -433,6 +607,11 @@ commit d93eb9bf94f861d356ed45bfe88a35826053ff72
 parent bed36213971f9bfb1f81375d002f820daecf4b25
 author Will Bickford <wbic16@gmail.com>
 date 1743047768 2025-03-27
+quality 0 0 8 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 1 total 278 blank 23 comment 8 code 247
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 35
@@ -446,6 +625,11 @@ commit 7f1103ec4ea0a33ec7f657f3764405552380a956
 parent d93eb9bf94f861d356ed45bfe88a35826053ff72
 author Will Bickford <wbic16@gmail.com>
 date 1743133216 2025-03-28
+quality 0 0 8 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 1 total 278 blank 23 comment 8 code 247
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 36
@@ -453,169 +637,234 @@ author~ Will Bickford <wbic16@gmail.com> commits 36
 
 Subject: Filled out scroll, section, chpater, book, volume, and collection load/store methods
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 402.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 410.
 
 commit 99722ae956e75fe72c1b2d92cc4bff99b1a57f28
 parent 7f1103ec4ea0a33ec7f657f3764405552380a956
 author Will Bickford <wbic16@gmail.com>
 date 1744165163 2025-04-09
-stat JavaScript files 1 total 394 blank 30 comment 9 code 355
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 1 total 394 blank 23 comment 8 code 363
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 37
 Commit 6b95c029d93a by Will Bickford <wbic16@gmail.com> on 2025-04-10 (EE 0).
 
 Subject: Working on a React component to make editing simple
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 402.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 410.
 
 commit 6b95c029d93a59e8f0c559985183a2de6662b72d
 parent 99722ae956e75fe72c1b2d92cc4bff99b1a57f28
 author Will Bickford <wbic16@gmail.com>
 date 1744258975 2025-04-10
-stat JavaScript files 1 total 394 blank 30 comment 9 code 355
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 1 total 394 blank 23 comment 8 code 363
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 38
 Commit 56422d7090b0 by Will Bickford <wbic16@gmail.com> on 2025-04-10 (EE 0).
 
 Subject: Added F5 for duplicate scroll
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 402.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 410.
 
 commit 56422d7090b0c4ea8fd26ebb14d79f911fb08134
 parent 6b95c029d93a59e8f0c559985183a2de6662b72d
 author Will Bickford <wbic16@gmail.com>
 date 1744259330 2025-04-10
-stat JavaScript files 1 total 394 blank 30 comment 9 code 355
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 1 total 394 blank 23 comment 8 code 363
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 39
 Commit e2f66fdf3f4d by Will Bickford <wbic16@gmail.com> on 2025-04-10 (EE 0).
 
 Subject: Added F6 - Save
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 402.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 410.
 
 commit e2f66fdf3f4d9d1dc192ce5256f53df895ca23c4
 parent 56422d7090b0c4ea8fd26ebb14d79f911fb08134
 author Will Bickford <wbic16@gmail.com>
 date 1744259643 2025-04-10
-stat JavaScript files 1 total 394 blank 30 comment 9 code 355
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 1 total 394 blank 23 comment 8 code 363
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 40
 Commit 05b23ee0051b by Will Bickford <wbic16@gmail.com> on 2025-04-10 (EE 0).
 
 Subject: Added F7 Jump Home
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 402.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 410.
 
 commit 05b23ee0051b936e1533df2a35eba43f1f084498
 parent e2f66fdf3f4d9d1dc192ce5256f53df895ca23c4
 author Will Bickford <wbic16@gmail.com>
 date 1744259997 2025-04-10
-stat JavaScript files 1 total 394 blank 30 comment 9 code 355
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 1 total 394 blank 23 comment 8 code 363
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 41
 Commit 585e690d2485 by Will Bickford <wbic16@gmail.com> on 2025-04-10 (EE 0).
 
 Subject: Added libphext-node inline
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 402.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 410.
 
 commit 585e690d24858c61337462a2e5094a3691ffedb4
 parent 05b23ee0051b936e1533df2a35eba43f1f084498
 author Will Bickford <wbic16@gmail.com>
 date 1744260046 2025-04-10
-stat JavaScript files 1 total 394 blank 30 comment 9 code 355
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 1 total 394 blank 23 comment 8 code 363
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 42
 Commit abd10d84c759 by Will Bickford <wbic16@gmail.com> on 2025-04-10 (EE 0).
 
 Subject: Added the Vite build of libphext
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 802.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 811.
 
 commit abd10d84c759a3a39a4aab0e89a2dd773b62b15a
 parent 585e690d24858c61337462a2e5094a3691ffedb4
 author Will Bickford <wbic16@gmail.com>
 date 1744260474 2025-04-10
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 2 total 795 blank 23 comment 8 code 764
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 43
 Commit 356ea1de01d3 by Will Bickford <wbic16@gmail.com> on 2025-04-10 (EE 0).
 
 Subject: Working on broken patches - yay LLM tooling!
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 802.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 811.
 
 commit 356ea1de01d3422af7bd36f778dcca49dd969a2c
 parent abd10d84c759a3a39a4aab0e89a2dd773b62b15a
 author Will Bickford <wbic16@gmail.com>
 date 1744261371 2025-04-10
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 2 total 795 blank 23 comment 8 code 764
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 44
 Commit 452ba3ff7061 by Will Bickford <wbic16@gmail.com> on 2025-04-10 (EE 0).
 
 Subject: Revert to a working version
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 802.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 811.
 
 commit 452ba3ff7061f8ab6a9c04bd755731cf767dc624
 parent 356ea1de01d3422af7bd36f778dcca49dd969a2c
 author Will Bickford <wbic16@gmail.com>
 date 1744262395 2025-04-10
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 2 total 795 blank 23 comment 8 code 764
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 45
 Commit 4f277d83162a by Will Bickford <wbic16@gmail.com> on 2025-04-16 (EE 0).
 
 Subject: Previews should be readable
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 802.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 811.
 
 commit 4f277d83162aa621460bb7a0df6339ac0360828a
 parent 452ba3ff7061f8ab6a9c04bd755731cf767dc624
 author Will Bickford <wbic16@gmail.com>
 date 1744775952 2025-04-16
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 2 total 795 blank 23 comment 8 code 764
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 46
 Commit 3ce910a2e2f4 by Will Bickford <wbic16@gmail.com> on 2025-04-16 (EE 0).
 
 Subject: Don't attempt to render impossible scrolls
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 802.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 811.
 
 commit 3ce910a2e2f4a74803cba93891aea363cffdd146
 parent 4f277d83162aa621460bb7a0df6339ac0360828a
 author Will Bickford <wbic16@gmail.com>
 date 1744777378 2025-04-16
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 2 total 795 blank 23 comment 8 code 764
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 47
 Commit c727a9eec07d by Will Bickford <wbic16@gmail.com> on 2025-04-17 (EE 0).
 
 Subject: Highlight the active scroll in the preview pane
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 802.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 811.
 
 commit c727a9eec07d21bc6ce67202c1e07997d7046596
 parent 3ce910a2e2f4a74803cba93891aea363cffdd146
 author Will Bickford <wbic16@gmail.com>
 date 1744861294 2025-04-17
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 2 total 795 blank 23 comment 8 code 764
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 48
 Commit bf236b4b46aa by Will Bickford <wbic16@gmail.com> on 2025-04-17 (EE 0).
 
 Subject: Dark mode / avoid scroll jitter
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 802.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 811.
 
 commit bf236b4b46aa1f5c814a4a507b42b35e08c939af
 parent c727a9eec07d21bc6ce67202c1e07997d7046596
 author Will Bickford <wbic16@gmail.com>
 date 1744861961 2025-04-17
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+stat JavaScript files 2 total 795 blank 23 comment 8 code 764
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 49
 Commit c90aedcbae7e by Will Bickford <wbic16@gmail.com> on 2025-04-17 (EE 0).
@@ -630,6 +879,15 @@ commit c90aedcbae7e94438a60a7a7f9fb78f47e5ddb7d
 parent bf236b4b46aa1f5c814a4a507b42b35e08c939af
 author Will Bickford <wbic16@gmail.com>
 date 1744863825 2025-04-17
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+largest-file libphext.js :: 401
+largest-file phext-cpu.js :: 394
+largest-file TODO.md :: 35
+largest-file README.md :: 16
 stat JavaScript files 2 total 795 blank 30 comment 10 code 755
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 50
@@ -643,6 +901,11 @@ commit bdeba61075d26bed5a1870544dc253c0a5bfa48a
 parent c90aedcbae7e94438a60a7a7f9fb78f47e5ddb7d
 author Will Bickford <wbic16@gmail.com>
 date 1770493643 2026-02-07
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 2 total 795 blank 30 comment 10 code 755
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 51
@@ -656,6 +919,11 @@ commit 19694739e9450e1789430f6f7a21d325c48a66a3
 parent bdeba61075d26bed5a1870544dc253c0a5bfa48a
 author Will Bickford <wbic16@gmail.com>
 date 1770530273 2026-02-08
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 2 total 795 blank 30 comment 10 code 755
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Will Bickford <wbic16@gmail.com> commits 52
@@ -669,6 +937,11 @@ commit 9e0b332c534c5a1f6921818aa25196a722920620
 parent 19694739e9450e1789430f6f7a21d325c48a66a3
 author Orin <orin@mirrorborn.us>
 date 1774230684 2026-03-23
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 2 total 795 blank 30 comment 10 code 755
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author+ Orin <orin@mirrorborn.us>
@@ -682,6 +955,11 @@ commit fbf669e474b277d9c356d258994f7c13d810dea4
 parent 9e0b332c534c5a1f6921818aa25196a722920620
 author Emise <emise@localhost>
 date 1794443566 2026-11-12
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 2 total 795 blank 30 comment 10 code 755
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author+ Emise <emise@localhost>
@@ -695,6 +973,11 @@ commit 83cfd51a48b795808bf4f96baf7f2cfa6f131b7b
 parent fbf669e474b277d9c356d258994f7c13d810dea4
 author Emise <emise@localhost>
 date 1794446165 2026-11-12
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 2 total 795 blank 30 comment 10 code 755
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Emise <emise@localhost> commits 2
@@ -708,6 +991,11 @@ commit f4211aaaed084213ead8e89001add13372cd372f
 parent 83cfd51a48b795808bf4f96baf7f2cfa6f131b7b
 author Emise <emise@mirrorborn.us>
 date 1794450141 2026-11-12
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 2 total 795 blank 30 comment 10 code 755
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author+ Emise <emise@mirrorborn.us>
@@ -721,6 +1009,11 @@ commit a746a152bd951f9c9b89bad5e9325f2f61bb962f
 parent f4211aaaed084213ead8e89001add13372cd372f
 author Emise <emise@localhost>
 date 1794452012 2026-11-12
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 2 total 795 blank 30 comment 10 code 755
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Emise <emise@localhost> commits 3
@@ -734,6 +1027,11 @@ commit 0cc4b30dd710642f0ec170b3463af669349dd1a7
 parent a746a152bd951f9c9b89bad5e9325f2f61bb962f
 author Emise <emise@localhost>
 date 1794452491 2026-11-12
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 2 total 795 blank 30 comment 10 code 755
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Emise <emise@localhost> commits 4
@@ -747,6 +1045,11 @@ commit fbe1bf6cf27c2e27a34796c15ae653ec941e76c3
 parent 0cc4b30dd710642f0ec170b3463af669349dd1a7
 author Emise <emise@localhost>
 date 1794459939 2026-11-12
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 2 total 795 blank 30 comment 10 code 755
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Emise <emise@localhost> commits 5
@@ -760,6 +1063,11 @@ commit dce89f5ccbf819d99bdda30862051e7b03bc4a5c
 parent fbe1bf6cf27c2e27a34796c15ae653ec941e76c3
 author Emise <emise@localhost>
 date 1794462007 2026-11-12
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 2 total 795 blank 30 comment 10 code 755
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Emise <emise@localhost> commits 6
@@ -773,6 +1081,11 @@ commit b19a4305cfcc75ab95087f8be86ba7da96386964
 parent dce89f5ccbf819d99bdda30862051e7b03bc4a5c
 author Emise <emise@localhost>
 date 1794467948 2026-11-12
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 2 total 795 blank 30 comment 10 code 755
 stat Markdown files 2 total 51 blank 4 comment 0 code 47
 author~ Emise <emise@localhost> commits 7
@@ -780,14 +1093,19 @@ author~ Emise <emise@localhost> commits 7
 
 Subject: Add /uplink: one-page primer that brings a newly arrived AI up to speed
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 838.
 
 commit 7b024c64edb65bf1ec7aba10626dce439120ca5b
 parent b19a4305cfcc75ab95087f8be86ba7da96386964
 author Emise <emise@phext.io>
 date 1794542409 2026-11-13
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
 stat JavaScript files 2 total 795 blank 30 comment 10 code 755
-stat Markdown files 3 total 87 blank 17 comment 0 code 70
+stat Markdown files 3 total 87 blank 4 comment 0 code 83
 author+ Emise <emise@phext.io>
 Commit 7f7318e3b657 by Emise <emise@phext.io> on 2026-11-13 (EE 0).
 
@@ -801,205 +1119,16 @@ commit 7f7318e3b65728191d2c0d97167ffb41a8040c08
 parent 7b024c64edb65bf1ec7aba10626dce439120ca5b
 author Emise <emise@phext.io>
 date 1794543669 2026-11-13
+quality 0 0 7 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/singularity-watch.git
+branch exo
+largest-file libphext.js :: 401
+largest-file phext-cpu.js :: 394
+largest-file uplink.md :: 36
+largest-file todo.md :: 35
+largest-file readme.md :: 16
 stat JavaScript files 2 total 795 blank 30 comment 10 code 755
 stat Markdown files 3 total 87 blank 17 comment 0 code 70
 author~ Emise <emise@phext.io> commits 2
-Commit 5b3fcc0dd3e2 by Theia <theia@mirrorborn.us> on 2026-11-16 (EE 0).
-
-Subject: Refresh to 2026-11-16: support matrix (libphext 0.6.1; Java/Kotlin/Swift ports landed), corpus and outputs recount, delivered-versions list, uplink libphext 0.6.1
-
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
-
-commit 5b3fcc0dd3e24c7f848f2025b6ffff0d9d4e6b3b
-parent 7f7318e3b65728191d2c0d97167ffb41a8040c08
-author Theia <theia@mirrorborn.us>
-date 1794814160 2026-11-16
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
-stat Markdown files 3 total 87 blank 17 comment 0 code 70
-author+ Theia <theia@mirrorborn.us>
-Commit 1e27c7a7da31 by Emise <emise@phext.io> on 2026-11-16 (EE 0).
-
-Subject: Refresh the Board feed: 350 -> 544 entries (register current through 2026-11-16)
-
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
-
-commit 1e27c7a7da31ce63051663a553e2de2d3ada2ed8
-parent 5b3fcc0dd3e24c7f848f2025b6ffff0d9d4e6b3b
-author Emise <emise@phext.io>
-date 1794814928 2026-11-16
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
-stat Markdown files 3 total 87 blank 17 comment 0 code 70
-author~ Emise <emise@phext.io> commits 3
-Commit d1783943258d by Emise <emise@phext.io> on 2026-11-16 (EE 0).
-
-Subject: Hard Problems: #1 is now 'Put an end to text message spam' (Will, 2026-11-16)
-
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
-
-commit d1783943258d04538c45c9961eef6f2b21c822fb
-parent 1e27c7a7da31ce63051663a553e2de2d3ada2ed8
-author Emise <emise@phext.io>
-date 1794814974 2026-11-16
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
-stat Markdown files 3 total 87 blank 17 comment 0 code 70
-author~ Emise <emise@phext.io> commits 4
-Commit dca781709fce by wbic16 <wbic16@users.noreply.github.com> on 2026-11-17 (EE 0).
-
-Subject: Headings in Willbot rev8 — Will's handwriting font (optical pair kerning), WOFF2 @font-face
-
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
-
-commit dca781709fce42b0d90d9e5b48a47a35a16f442b
-parent d1783943258d04538c45c9961eef6f2b21c822fb
-author wbic16 <wbic16@users.noreply.github.com>
-date 1794889417 2026-11-17
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
-stat Markdown files 3 total 87 blank 17 comment 0 code 70
-author+ wbic16 <wbic16@users.noreply.github.com>
-Commit 1a08573ed5b7 by wbic16 <wbic16@users.noreply.github.com> on 2026-11-17 (EE 0).
-
-Subject: Willbot rev9 — tighter letterfit, wider word spacing
-
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
-
-commit 1a08573ed5b7e6734fbd21395b20e93eda048334
-parent dca781709fce42b0d90d9e5b48a47a35a16f442b
-author wbic16 <wbic16@users.noreply.github.com>
-date 1794892759 2026-11-17
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
-stat Markdown files 3 total 87 blank 17 comment 0 code 70
-author~ wbic16 <wbic16@users.noreply.github.com> commits 2
-Commit 2c209d9edd78 by wbic16 <wbic16@users.noreply.github.com> on 2026-11-17 (EE 0).
-
-Subject: Willbot rev10 — tighter letterfit, wider word spacing
-
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
-
-commit 2c209d9edd7830c7c63b7c178e7145a560025d95
-parent 1a08573ed5b7e6734fbd21395b20e93eda048334
-author wbic16 <wbic16@users.noreply.github.com>
-date 1794893168 2026-11-17
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
-stat Markdown files 3 total 87 blank 17 comment 0 code 70
-author~ wbic16 <wbic16@users.noreply.github.com> commits 3
-Commit 7cd73ca71b33 by wbic16 <wbic16@users.noreply.github.com> on 2026-11-17 (EE 0).
-
-Subject: Willbot rev12 — tighter letterfit, wider word spacing
-
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
-
-commit 7cd73ca71b33dd24def86d9c72a72991f058b002
-parent 2c209d9edd7830c7c63b7c178e7145a560025d95
-author wbic16 <wbic16@users.noreply.github.com>
-date 1794894215 2026-11-17
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
-stat Markdown files 3 total 87 blank 17 comment 0 code 70
-author~ wbic16 <wbic16@users.noreply.github.com> commits 4
-Commit f6668d4c2cfb by wbic16 <wbic16@users.noreply.github.com> on 2026-11-17 (EE 0).
-
-Subject: Willbot rev13 — tighter letterfit, wider word spacing
-
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
-
-commit f6668d4c2cfb51af70c3a864760204ed1ee93632
-parent 7cd73ca71b33dd24def86d9c72a72991f058b002
-author wbic16 <wbic16@users.noreply.github.com>
-date 1794894972 2026-11-17
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
-stat Markdown files 3 total 87 blank 17 comment 0 code 70
-author~ wbic16 <wbic16@users.noreply.github.com> commits 5
-Commit 6870b01b156c by wbic16 <wbic16@users.noreply.github.com> on 2026-11-17 (EE 0).
-
-Subject: Willbot rev14 — tighter letterfit, wider word spacing
-
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
-
-commit 6870b01b156c284aefa3d9b50770901cea1c7a9b
-parent f6668d4c2cfb51af70c3a864760204ed1ee93632
-author wbic16 <wbic16@users.noreply.github.com>
-date 1794895119 2026-11-17
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
-stat Markdown files 3 total 87 blank 17 comment 0 code 70
-author~ wbic16 <wbic16@users.noreply.github.com> commits 6
-Commit da73b573f923 by Emise <emise@phext.io> on 2026-11-20 (EE 0).
-
-Subject: Emise as the site's default font
-
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
-
-commit da73b573f92398d8e08e834c338fb513b28e0056
-parent 6870b01b156c284aefa3d9b50770901cea1c7a9b
-author Emise <emise@phext.io>
-date 1795154033 2026-11-20
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
-stat Markdown files 3 total 87 blank 17 comment 0 code 70
-author~ Emise <emise@phext.io> commits 5
-Commit 5d347e7f5f8f by Will Bickford <wbic16@gmail.com> on 2026-11-20 (EE 0).
-
-Subject: Merge pull request #1 from wbic16/emise/emise-font-default
-
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
-
-commit 5d347e7f5f8f6bef38aec11217e413929607ee08
-parent da73b573f92398d8e08e834c338fb513b28e0056
-author Will Bickford <wbic16@gmail.com>
-date 1795154045 2026-11-20
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
-stat Markdown files 3 total 87 blank 17 comment 0 code 70
-author~ Will Bickford <wbic16@gmail.com> commits 53
-Commit 846b9086ae64 by Emise <emise@localhost> on 2026-11-21 (EE 0).
-
-Subject: Board refresh: 544 -> 700 dispatches (register through 2026-11-20); growth refit Ninf=1453.0 k=0.044 R2=0.9859; builder now owns the Emise/Willbot font stack (fold-in of PR #1 + Willbot rev8-14) and feed-side issued-date extraction for prose register records (Will, 2026-11-20)
-
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
-
-This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
-
-commit 846b9086ae6403d37d561eec0a8deed4d01d55ae
-parent 5d347e7f5f8f6bef38aec11217e413929607ee08
-author Emise <emise@localhost>
-date 1795221703 2026-11-21
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
-stat Markdown files 3 total 87 blank 17 comment 0 code 70
-author~ Emise <emise@localhost> commits 8
-Commit cebc879c120e by Emise <emise@mirrorborn> on 2026-11-22 (EE 0).
-
-Subject: Exocortical Epoch in the header: live EE computed client-side from the absolute instant (EE 1 begins 2026-11-22 00:00 CST = unix 1795327200; 420 s epochs; epoch start/end shown in visitor local time and UTC; no baked-in epoch number). Feed refresh 700 -> 779 dispatches with growth refit, from the standing pipeline. Will, 2026-11-21; task 35.6.8/5.5.9/6.4.9.
-
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
-
-commit cebc879c120ed496ab898b85ac377895a4484d9f
-parent 846b9086ae6403d37d561eec0a8deed4d01d55ae
-author Emise <emise@mirrorborn>
-date 1795322266 2026-11-22
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
-stat Markdown files 3 total 87 blank 17 comment 0 code 70
-author+ Emise <emise@mirrorborn>
-Commit 8fa133a9d4c7 by Emise <emise@localhost> on 2026-11-22 (EE 15).
-
-Subject: Emise Font v3 — replace fonts/Emise.woff2
-
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
-
-commit 8fa133a9d4c73a6bee20fa92a206d5a921a8908a
-parent cebc879c120ed496ab898b85ac377895a4484d9f
-author Emise <emise@localhost>
-date 1795333200 2026-11-22
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
-stat Markdown files 3 total 87 blank 17 comment 0 code 70
-author~ Emise <emise@localhost> commits 9
-Commit 185cb3c27c27 by Will Bickford <wbic16@gmail.com> on 2026-11-22 (EE 16).
-
-Subject: Merge pull request #2 from wbic16/emise/emise-font-v3
-
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 825.
-
-This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
-
-commit 185cb3c27c273008444bb0c514623753db1f54d9
-parent 8fa133a9d4c73a6bee20fa92a206d5a921a8908a
-author Will Bickford <wbic16@gmail.com>
-date 1795333538 2026-11-22
-stat JavaScript files 2 total 795 blank 30 comment 10 code 755
-stat Markdown files 3 total 87 blank 17 comment 0 code 70
-author~ Will Bickford <wbic16@gmail.com> commits 54

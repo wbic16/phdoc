@@ -2,15 +2,13 @@
 
 Commit 9d8efb0dd7e84115b221025049dec4298d1279ca. 5 commits folded. Every fact here was folded from the chain's per-commit deltas.
 
-## Provenance
-
-This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/libphext-py/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
-
 ## Dependencies
 
 No dependencies recorded at this point.
 
 ## Authors
+
+Author counts over the 5 audited mainline commits folded to this point.
 
 The author of record is **Will Bickford** — 5 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
 
@@ -20,63 +18,626 @@ Annotation, by persona (all folded into Will Bickford):
 
 ## Complexity
 
-- Markdown: 1 file, 5 lines total, 2 blank, 0 comment, 3 code
-- Python: 8 files, 388 lines total, 63 blank, 13 comment, 312 code
-- TOML: 1 file, 19 lines total, 3 blank, 0 comment, 16 code
+The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.
 
-Declared RFCs at this point: none declared.
+- Markdown: 1 files, 5 lines total, 2 blank, 0 comment, 3 code
+- Python: 8 files, 388 lines total, 1 blank, 0 comment, 387 code
+- TOML: 1 files, 19 lines total, 3 blank, 0 comment, 16 code
+
+All languages: 10 files, 412 lines total, 406 lines of code. Functions read: 52.
+
+Largest files:
+
+- pyproject.toml — 19 lines
+- tests/test_cli.py — 6 lines
+- README.md — 5 lines
+- libphext/cli.py — 2 lines
+- libphext/__init__.py — 1 lines
+
+Largest functions, by span in lines:
+
+- test_main_output in tests/test_cli.py — about 4 lines
+- main in libphext/cli.py — about 2 lines
+
+## Code quality signals
+
+Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.
+
+- Tests: 33 test functions counted in the source, across 3 files in test directories or whose names mark them as test files.
+- CI: no CI configuration was found in the project.
+- Lint and format: no lint or format configuration file was found.
+- TODO marks in the source: 0. FIXME marks: 0.
+- Public items with a doc comment: 0 of 52 (0%).
+
+## Declared RFCs
+
+No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+
+
+## Upstream git repo
+
+- Origin: /home/wbic16/github-archive/mirrors/libphext-py.git
+- Branch: exo
+- Head commit: 9d8efb0dd7e84115b221025049dec4298d1279ca
+- Working tree: the committed tree at this commit — a historical reference has no working tree
 
 ## Public methods and commands
 
-- function `main` (libphext/cli.py) — Function main takes no inputs beyond the value it is called on.
-- function `Coordinate.__eq__` (libphext/coordinate.py) — Function Coordinate.__eq__ takes self, other.
-- function `Coordinate.__hash__` (libphext/coordinate.py) — Function Coordinate.__hash__ takes no inputs beyond the value it is called on.
-- function `Coordinate.__init__` (libphext/coordinate.py) — Function Coordinate.__init__ takes self, lb, sf, sr, cn, vm, bk, ch, sn, sc.
-- function `Coordinate.__str__` (libphext/coordinate.py) — Function Coordinate.__str__ takes no inputs beyond the value it is called on.
-- function `Coordinate.bookBreak` (libphext/coordinate.py) — Function Coordinate.bookBreak takes no inputs beyond the value it is called on.
-- function `Coordinate.chapterBreak` (libphext/coordinate.py) — Function Coordinate.chapterBreak takes no inputs beyond the value it is called on.
-- function `Coordinate.collectionBreak` (libphext/coordinate.py) — Function Coordinate.collectionBreak takes no inputs beyond the value it is called on.
-- function `Coordinate.from_string` (libphext/coordinate.py) — Function Coordinate.from_string takes ignored, coord_str: str.
-- function `Coordinate.libraryBreak` (libphext/coordinate.py) — Function Coordinate.libraryBreak takes no inputs beyond the value it is called on.
-- function `Coordinate.scrollBreak` (libphext/coordinate.py) — Function Coordinate.scrollBreak takes no inputs beyond the value it is called on.
-- function `Coordinate.sectionBreak` (libphext/coordinate.py) — Function Coordinate.sectionBreak takes no inputs beyond the value it is called on.
-- function `Coordinate.seriesBreak` (libphext/coordinate.py) — Function Coordinate.seriesBreak takes no inputs beyond the value it is called on.
-- function `Coordinate.shelfBreak` (libphext/coordinate.py) — Function Coordinate.shelfBreak takes no inputs beyond the value it is called on.
-- function `Coordinate.urlencoded` (libphext/coordinate.py) — Function Coordinate.urlencoded takes no inputs beyond the value it is called on.
-- function `Coordinate.volumeBreak` (libphext/coordinate.py) — Function Coordinate.volumeBreak takes no inputs beyond the value it is called on.
-- function `Phext.__init__` (libphext/phext.py) — Function Phext.__init__ takes no inputs beyond the value it is called on.
-- function `Phext.fetch` (libphext/phext.py) — Function Phext.fetch takes self, buffer, coord.
-- function `PositionedScroll.__init__` (libphext/positionedScroll.py) — Function PositionedScroll.__init__ takes self, coord, text.
-- function `test_main_output` (tests/test_cli.py) [test] — Function test_main_output takes capfd.
-- function `test_book_break` (tests/test_coordinate.py) [test] — Function test_book_break takes no inputs beyond the value it is called on.
-- function `test_chapter_break` (tests/test_coordinate.py) [test] — Function test_chapter_break takes no inputs beyond the value it is called on.
-- function `test_collection_break` (tests/test_coordinate.py) [test] — Function test_collection_break takes no inputs beyond the value it is called on.
-- function `test_independent_coordinates` (tests/test_coordinate.py) [test] — Function test_independent_coordinates takes no inputs beyond the value it is called on.
-- function `test_internal_whitespace_support` (tests/test_coordinate.py) [test] — Function test_internal_whitespace_support takes no inputs beyond the value it is called on.
-- function `test_large_coordinates` (tests/test_coordinate.py) [test] — Function test_large_coordinates takes no inputs beyond the value it is called on.
-- function `test_library_break` (tests/test_coordinate.py) [test] — Function test_library_break takes no inputs beyond the value it is called on.
-- function `test_malformed_coordinates` (tests/test_coordinate.py) [test] — Function test_malformed_coordinates takes no inputs beyond the value it is called on.
-- function `test_negative_coordinates` (tests/test_coordinate.py) [test] — Function test_negative_coordinates takes no inputs beyond the value it is called on.
-- function `test_no_input` (tests/test_coordinate.py) [test] — Function test_no_input takes no inputs beyond the value it is called on.
-- function `test_null_book` (tests/test_coordinate.py) [test] — Function test_null_book takes no inputs beyond the value it is called on.
-- function `test_null_chapter` (tests/test_coordinate.py) [test] — Function test_null_chapter takes no inputs beyond the value it is called on.
-- function `test_null_collection` (tests/test_coordinate.py) [test] — Function test_null_collection takes no inputs beyond the value it is called on.
-- function `test_null_coordinates` (tests/test_coordinate.py) [test] — Function test_null_coordinates takes no inputs beyond the value it is called on.
-- function `test_null_library` (tests/test_coordinate.py) [test] — Function test_null_library takes no inputs beyond the value it is called on.
-- function `test_null_scroll` (tests/test_coordinate.py) [test] — Function test_null_scroll takes no inputs beyond the value it is called on.
-- function `test_null_section` (tests/test_coordinate.py) [test] — Function test_null_section takes no inputs beyond the value it is called on.
-- function `test_null_series` (tests/test_coordinate.py) [test] — Function test_null_series takes no inputs beyond the value it is called on.
-- function `test_null_shelf` (tests/test_coordinate.py) [test] — Function test_null_shelf takes no inputs beyond the value it is called on.
-- function `test_null_volume` (tests/test_coordinate.py) [test] — Function test_null_volume takes no inputs beyond the value it is called on.
-- function `test_scroll_break` (tests/test_coordinate.py) [test] — Function test_scroll_break takes no inputs beyond the value it is called on.
-- function `test_section_break` (tests/test_coordinate.py) [test] — Function test_section_break takes no inputs beyond the value it is called on.
-- function `test_series_break` (tests/test_coordinate.py) [test] — Function test_series_break takes no inputs beyond the value it is called on.
-- function `test_shelf_break` (tests/test_coordinate.py) [test] — Function test_shelf_break takes no inputs beyond the value it is called on.
-- function `test_to_urlencoded` (tests/test_coordinate.py) [test] — Function test_to_urlencoded takes no inputs beyond the value it is called on.
-- function `test_too_large_coordinates` (tests/test_coordinate.py) [test] — Function test_too_large_coordinates takes no inputs beyond the value it is called on.
-- function `test_valid_home_coordinate` (tests/test_coordinate.py) [test] — Function test_valid_home_coordinate takes no inputs beyond the value it is called on.
-- function `test_volume_break` (tests/test_coordinate.py) [test] — Function test_volume_break takes no inputs beyond the value it is called on.
-- function `test_whitespace_support` (tests/test_coordinate.py) [test] — Function test_whitespace_support takes no inputs beyond the value it is called on.
-- function `test_positioned_scrolls` (tests/test_positionedScroll.py) [test] — Function test_positioned_scrolls takes no inputs beyond the value it is called on.
-- function `test_realistic_parse` (tests/test_positionedScroll.py) [test] — Function test_realistic_parse takes no inputs beyond the value it is called on.
-- function `test_scroll_interface` (tests/test_positionedScroll.py) [test] — Function test_scroll_interface takes no inputs beyond the value it is called on.
+Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.
+
+- function `main` (libphext/cli.py:1) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `__eq__` (libphext/coordinate.py:121) — Function __eq__ takes self, other and gives back nothing; it does its work on what it is given.
+- function `__hash__` (libphext/coordinate.py:124) — Function __hash__ takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it 
+- function `__init__` (libphext/coordinate.py:100) — Function __init__ takes self, lb, sf, sr, cn, vm, bk, ch, sn, sc and gives back nothing; it does its work on what it is 
+- function `__str__` (libphext/coordinate.py:111) — Function __str__ takes no inputs beyond the value it is called on, and gives back str:.
+- function `bookBreak` (libphext/coordinate.py:82) — Function bookBreak takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it
+- function `chapterBreak` (libphext/coordinate.py:88) — Function chapterBreak takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what
+- function `collectionBreak` (libphext/coordinate.py:67) — Function collectionBreak takes no inputs beyond the value it is called on, and gives back nothing; it does its work on w
+- function `from_string` (libphext/coordinate.py:16) — Function from_string takes ignored, coord_str: str and gives back nothing; it does its work on what it is given.
+- function `libraryBreak` (libphext/coordinate.py:37) — Function libraryBreak takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what
+- function `scrollBreak` (libphext/coordinate.py:97) — Function scrollBreak takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
+- function `sectionBreak` (libphext/coordinate.py:93) — Function sectionBreak takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what
+- function `seriesBreak` (libphext/coordinate.py:58) — Function seriesBreak takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
+- function `shelfBreak` (libphext/coordinate.py:48) — Function shelfBreak takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
+- function `urlencoded` (libphext/coordinate.py:116) — Function urlencoded takes no inputs beyond the value it is called on, and gives back str:.
+- function `volumeBreak` (libphext/coordinate.py:75) — Function volumeBreak takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
+- function `__init__` (libphext/phext.py:9) — Function __init__ takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it 
+- function `fetch` (libphext/phext.py:13) — Function fetch takes self, buffer, coord and gives back dict[Coordinate, str]:.
+- function `__init__` (libphext/positionedScroll.py:9) — Function __init__ takes self, coord, text and gives back nothing; it does its work on what it is given.
+- function `test_main_output` (tests/test_cli.py:3) — Function test_main_output takes capfd and gives back nothing; it does its work on what it is given.
+- function `test_book_break` (tests/test_coordinate.py:107) — Function test_book_break takes no inputs beyond the value it is called on, and gives back nothing; it does its work on w
+- function `test_chapter_break` (tests/test_coordinate.py:113) — Function test_chapter_break takes no inputs beyond the value it is called on, and gives back nothing; it does its work o
+- function `test_collection_break` (tests/test_coordinate.py:95) — Function test_collection_break takes no inputs beyond the value it is called on, and gives back nothing; it does its wor
+- function `test_independent_coordinates` (tests/test_coordinate.py:25) — Function test_independent_coordinates takes no inputs beyond the value it is called on, and gives back nothing; it does 
+- function `test_internal_whitespace_support` (tests/test_coordinate.py:61) — Function test_internal_whitespace_support takes no inputs beyond the value it is called on, and gives back nothing; it d
+- function `test_large_coordinates` (tests/test_coordinate.py:37) — Function test_large_coordinates takes no inputs beyond the value it is called on, and gives back nothing; it does its wo
+- function `test_library_break` (tests/test_coordinate.py:77) — Function test_library_break takes no inputs beyond the value it is called on, and gives back nothing; it does its work o
+- function `test_malformed_coordinates` (tests/test_coordinate.py:145) — Function test_malformed_coordinates takes no inputs beyond the value it is called on, and gives back nothing; it does it
+- function `test_negative_coordinates` (tests/test_coordinate.py:141) — Function test_negative_coordinates takes no inputs beyond the value it is called on, and gives back nothing; it does its
+- function `test_no_input` (tests/test_coordinate.py:133) — Function test_no_input takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wha
+- function `test_null_book` (tests/test_coordinate.py:173) — Function test_null_book takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wh
+- function `test_null_chapter` (tests/test_coordinate.py:177) — Function test_null_chapter takes no inputs beyond the value it is called on, and gives back nothing; it does its work on
+- function `test_null_collection` (tests/test_coordinate.py:165) — Function test_null_collection takes no inputs beyond the value it is called on, and gives back nothing; it does its work
+- function `test_null_coordinates` (tests/test_coordinate.py:149) — Function test_null_coordinates takes no inputs beyond the value it is called on, and gives back nothing; it does its wor
+- function `test_null_library` (tests/test_coordinate.py:153) — Function test_null_library takes no inputs beyond the value it is called on, and gives back nothing; it does its work on
+- function `test_null_scroll` (tests/test_coordinate.py:185) — Function test_null_scroll takes no inputs beyond the value it is called on, and gives back nothing; it does its work on 
+- function `test_null_section` (tests/test_coordinate.py:181) — Function test_null_section takes no inputs beyond the value it is called on, and gives back nothing; it does its work on
+- function `test_null_series` (tests/test_coordinate.py:161) — Function test_null_series takes no inputs beyond the value it is called on, and gives back nothing; it does its work on 
+- function `test_null_shelf` (tests/test_coordinate.py:157) — Function test_null_shelf takes no inputs beyond the value it is called on, and gives back nothing; it does its work on w
+- function `test_null_volume` (tests/test_coordinate.py:169) — Function test_null_volume takes no inputs beyond the value it is called on, and gives back nothing; it does its work on 
+- function `test_scroll_break` (tests/test_coordinate.py:125) — Function test_scroll_break takes no inputs beyond the value it is called on, and gives back nothing; it does its work on
+- function `test_section_break` (tests/test_coordinate.py:119) — Function test_section_break takes no inputs beyond the value it is called on, and gives back nothing; it does its work o
+- function `test_series_break` (tests/test_coordinate.py:89) — Function test_series_break takes no inputs beyond the value it is called on, and gives back nothing; it does its work on
+- function `test_shelf_break` (tests/test_coordinate.py:83) — Function test_shelf_break takes no inputs beyond the value it is called on, and gives back nothing; it does its work on 
+- function `test_to_urlencoded` (tests/test_coordinate.py:73) — Function test_to_urlencoded takes no inputs beyond the value it is called on, and gives back nothing; it does its work o
+- function `test_too_large_coordinates` (tests/test_coordinate.py:137) — Function test_too_large_coordinates takes no inputs beyond the value it is called on, and gives back nothing; it does it
+- function `test_valid_home_coordinate` (tests/test_coordinate.py:13) — Function test_valid_home_coordinate takes no inputs beyond the value it is called on, and gives back nothing; it does it
+- function `test_volume_break` (tests/test_coordinate.py:101) — Function test_volume_break takes no inputs beyond the value it is called on, and gives back nothing; it does its work on
+- function `test_whitespace_support` (tests/test_coordinate.py:49) — Function test_whitespace_support takes no inputs beyond the value it is called on, and gives back nothing; it does its w
+- function `test_positioned_scrolls` (tests/test_positionedScroll.py:17) — Function test_positioned_scrolls takes no inputs beyond the value it is called on, and gives back nothing; it does its w
+- function `test_realistic_parse` (tests/test_positionedScroll.py:36) — Function test_realistic_parse takes no inputs beyond the value it is called on, and gives back nothing; it does its work
+- function `test_scroll_interface` (tests/test_positionedScroll.py:10) — Function test_scroll_interface takes no inputs beyond the value it is called on, and gives back nothing; it does its wor
+
+## function — main
+
+Found in libphext/cli.py at line 1.
+
+Signature: `def main():`
+
+What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — __eq__
+
+Found in libphext/coordinate.py at line 121.
+
+Signature: `def __eq__(self, other):`
+
+What it does: Function __eq__ takes self, other and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — __hash__
+
+Found in libphext/coordinate.py at line 124.
+
+Signature: `def __hash__(self):`
+
+What it does: Function __hash__ takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — __init__
+
+Found in libphext/coordinate.py at line 100.
+
+Signature: `def __init__(self, lb, sf, sr, cn, vm, bk, ch, sn, sc):`
+
+What it does: Function __init__ takes self, lb, sf, sr, cn, vm, bk, ch, sn, sc and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — __str__
+
+Found in libphext/coordinate.py at line 111.
+
+Signature: `def __str__(self) -> str:`
+
+What it does: Function __str__ takes no inputs beyond the value it is called on, and gives back str:.
+
+(Where these words came from: signature.)
+
+## function — bookBreak
+
+Found in libphext/coordinate.py at line 82.
+
+Signature: `def bookBreak(self):`
+
+What it does: Function bookBreak takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — chapterBreak
+
+Found in libphext/coordinate.py at line 88.
+
+Signature: `def chapterBreak(self):`
+
+What it does: Function chapterBreak takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — collectionBreak
+
+Found in libphext/coordinate.py at line 67.
+
+Signature: `def collectionBreak(self):`
+
+What it does: Function collectionBreak takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — from_string
+
+Found in libphext/coordinate.py at line 16.
+
+Signature: `def from_string(ignored, coord_str: str):`
+
+What it does: Function from_string takes ignored, coord_str: str and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — libraryBreak
+
+Found in libphext/coordinate.py at line 37.
+
+Signature: `def libraryBreak(self):`
+
+What it does: Function libraryBreak takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — scrollBreak
+
+Found in libphext/coordinate.py at line 97.
+
+Signature: `def scrollBreak(self):`
+
+What it does: Function scrollBreak takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — sectionBreak
+
+Found in libphext/coordinate.py at line 93.
+
+Signature: `def sectionBreak(self):`
+
+What it does: Function sectionBreak takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — seriesBreak
+
+Found in libphext/coordinate.py at line 58.
+
+Signature: `def seriesBreak(self):`
+
+What it does: Function seriesBreak takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — shelfBreak
+
+Found in libphext/coordinate.py at line 48.
+
+Signature: `def shelfBreak(self):`
+
+What it does: Function shelfBreak takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — urlencoded
+
+Found in libphext/coordinate.py at line 116.
+
+Signature: `def urlencoded(self) -> str:`
+
+What it does: Function urlencoded takes no inputs beyond the value it is called on, and gives back str:.
+
+(Where these words came from: signature.)
+
+## function — volumeBreak
+
+Found in libphext/coordinate.py at line 75.
+
+Signature: `def volumeBreak(self):`
+
+What it does: Function volumeBreak takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — __init__
+
+Found in libphext/phext.py at line 9.
+
+Signature: `def __init__(self):`
+
+What it does: Function __init__ takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — fetch
+
+Found in libphext/phext.py at line 13.
+
+Signature: `def fetch(self, buffer, coord) -> dict[Coordinate, str]:`
+
+What it does: Function fetch takes self, buffer, coord and gives back dict[Coordinate, str]:.
+
+(Where these words came from: signature.)
+
+## function — __init__
+
+Found in libphext/positionedScroll.py at line 9.
+
+Signature: `def __init__(self, coord, text):`
+
+What it does: Function __init__ takes self, coord, text and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_main_output
+
+Found in tests/test_cli.py at line 3.
+
+Signature: `def test_main_output(capfd):`
+
+What it does: Function test_main_output takes capfd and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_book_break
+
+Found in tests/test_coordinate.py at line 107.
+
+Signature: `def test_book_break():`
+
+What it does: Function test_book_break takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_chapter_break
+
+Found in tests/test_coordinate.py at line 113.
+
+Signature: `def test_chapter_break():`
+
+What it does: Function test_chapter_break takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_collection_break
+
+Found in tests/test_coordinate.py at line 95.
+
+Signature: `def test_collection_break():`
+
+What it does: Function test_collection_break takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_independent_coordinates
+
+Found in tests/test_coordinate.py at line 25.
+
+Signature: `def test_independent_coordinates():`
+
+What it does: Function test_independent_coordinates takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_internal_whitespace_support
+
+Found in tests/test_coordinate.py at line 61.
+
+Signature: `def test_internal_whitespace_support():`
+
+What it does: Function test_internal_whitespace_support takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_large_coordinates
+
+Found in tests/test_coordinate.py at line 37.
+
+Signature: `def test_large_coordinates():`
+
+What it does: Function test_large_coordinates takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_library_break
+
+Found in tests/test_coordinate.py at line 77.
+
+Signature: `def test_library_break():`
+
+What it does: Function test_library_break takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_malformed_coordinates
+
+Found in tests/test_coordinate.py at line 145.
+
+Signature: `def test_malformed_coordinates():`
+
+What it does: Function test_malformed_coordinates takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_negative_coordinates
+
+Found in tests/test_coordinate.py at line 141.
+
+Signature: `def test_negative_coordinates():`
+
+What it does: Function test_negative_coordinates takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_no_input
+
+Found in tests/test_coordinate.py at line 133.
+
+Signature: `def test_no_input():`
+
+What it does: Function test_no_input takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_null_book
+
+Found in tests/test_coordinate.py at line 173.
+
+Signature: `def test_null_book():`
+
+What it does: Function test_null_book takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_null_chapter
+
+Found in tests/test_coordinate.py at line 177.
+
+Signature: `def test_null_chapter():`
+
+What it does: Function test_null_chapter takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_null_collection
+
+Found in tests/test_coordinate.py at line 165.
+
+Signature: `def test_null_collection():`
+
+What it does: Function test_null_collection takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_null_coordinates
+
+Found in tests/test_coordinate.py at line 149.
+
+Signature: `def test_null_coordinates():`
+
+What it does: Function test_null_coordinates takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_null_library
+
+Found in tests/test_coordinate.py at line 153.
+
+Signature: `def test_null_library():`
+
+What it does: Function test_null_library takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_null_scroll
+
+Found in tests/test_coordinate.py at line 185.
+
+Signature: `def test_null_scroll():`
+
+What it does: Function test_null_scroll takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_null_section
+
+Found in tests/test_coordinate.py at line 181.
+
+Signature: `def test_null_section():`
+
+What it does: Function test_null_section takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_null_series
+
+Found in tests/test_coordinate.py at line 161.
+
+Signature: `def test_null_series():`
+
+What it does: Function test_null_series takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_null_shelf
+
+Found in tests/test_coordinate.py at line 157.
+
+Signature: `def test_null_shelf():`
+
+What it does: Function test_null_shelf takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_null_volume
+
+Found in tests/test_coordinate.py at line 169.
+
+Signature: `def test_null_volume():`
+
+What it does: Function test_null_volume takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_scroll_break
+
+Found in tests/test_coordinate.py at line 125.
+
+Signature: `def test_scroll_break():`
+
+What it does: Function test_scroll_break takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_section_break
+
+Found in tests/test_coordinate.py at line 119.
+
+Signature: `def test_section_break():`
+
+What it does: Function test_section_break takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_series_break
+
+Found in tests/test_coordinate.py at line 89.
+
+Signature: `def test_series_break():`
+
+What it does: Function test_series_break takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_shelf_break
+
+Found in tests/test_coordinate.py at line 83.
+
+Signature: `def test_shelf_break():`
+
+What it does: Function test_shelf_break takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_to_urlencoded
+
+Found in tests/test_coordinate.py at line 73.
+
+Signature: `def test_to_urlencoded():`
+
+What it does: Function test_to_urlencoded takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_too_large_coordinates
+
+Found in tests/test_coordinate.py at line 137.
+
+Signature: `def test_too_large_coordinates():`
+
+What it does: Function test_too_large_coordinates takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_valid_home_coordinate
+
+Found in tests/test_coordinate.py at line 13.
+
+Signature: `def test_valid_home_coordinate():`
+
+What it does: Function test_valid_home_coordinate takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_volume_break
+
+Found in tests/test_coordinate.py at line 101.
+
+Signature: `def test_volume_break():`
+
+What it does: Function test_volume_break takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_whitespace_support
+
+Found in tests/test_coordinate.py at line 49.
+
+Signature: `def test_whitespace_support():`
+
+What it does: Function test_whitespace_support takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_positioned_scrolls
+
+Found in tests/test_positionedScroll.py at line 17.
+
+Signature: `def test_positioned_scrolls():`
+
+What it does: Function test_positioned_scrolls takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_realistic_parse
+
+Found in tests/test_positionedScroll.py at line 36.
+
+Signature: `def test_realistic_parse():`
+
+What it does: Function test_realistic_parse takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — test_scroll_interface
+
+Found in tests/test_positionedScroll.py at line 10.
+
+Signature: `def test_scroll_interface():`
+
+What it does: Function test_scroll_interface takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## Provenance
+
+This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/libphext-py/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.

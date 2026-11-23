@@ -2,15 +2,13 @@
 
 Commit 1b1e7ee1fd2f269872128dc5e8b830bd55dfa80c. 1095 commits folded. Every fact here was folded from the chain's per-commit deltas.
 
-## Provenance
-
-This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/phcc/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
-
 ## Dependencies
 
 No dependencies recorded at this point.
 
 ## Authors
+
+Author counts over the 1095 audited mainline commits folded to this point.
 
 - Adam Sampson <ats@offog.org> — 1 commit
 - Akim Demaille <akim@lrde.epita.fr> — 8 commits
@@ -73,11 +71,51 @@ No dependencies recorded at this point.
 
 ## Complexity
 
-- C: 90 files, 36617 lines total, 3583 blank, 5234 comment, 27800 code
-- C header: 98 files, 39856 lines total, 4582 blank, 20708 comment, 14566 code
-- Shell: 1 file, 33 lines total, 4 blank, 1 comment, 28 code
+The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.
 
-Declared RFCs at this point: none declared.
+- C: 90 files, 36617 lines total, 3584 blank, 5243 comment, 27790 code
+- C header: 98 files, 39856 lines total, 4596 blank, 20744 comment, 14516 code
+- Shell: 1 files, 33 lines total, 4 blank, 1 comment, 28 code
+
+All languages: 189 files, 76506 lines total, 42334 lines of code. Functions read: 0.
+
+Largest files:
+
+- tccgen.c — 5866 lines
+- win32/include/winapi/winnt.h — 5770 lines
+- win32/include/winapi/winuser.h — 5651 lines
+- win32/include/winapi/wingdi.h — 4080 lines
+- win32/include/winapi/winerror.h — 3166 lines
+
+Largest functions, by span in lines:
+
+
+## Code quality signals
+
+Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.
+
+- Tests: 0 test functions counted in the source, across 6 files in test directories or whose names mark them as test files.
+- CI: no CI configuration was found in the project.
+- Lint and format configuration files: Makefile, lib/Makefile, tests/Makefile, tests2/Makefile.
+- TODO marks in the source: 10. FIXME marks: 3.
+
+## Declared RFCs
+
+No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+
+
+## Upstream git repo
+
+- Origin: /home/wbic16/github-archive/mirrors/phcc.git
+- Branch: exo
+- Head commit: 1b1e7ee1fd2f269872128dc5e8b830bd55dfa80c
+- Working tree: the committed tree at this commit — a historical reference has no working tree
 
 ## Public methods and commands
 
+Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.
+
+
+## Provenance
+
+This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/phcc/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.

@@ -1,3 +1,4 @@
+delta-format 3
 Commit 7ef27f5f895b by Will Bickford <wbic16@gmail.com> on 2026-11-18 (EE 0).
 
 Subject: Initial commit
@@ -10,24 +11,34 @@ commit 7ef27f5f895b4183aee4a11be70b4c810ecbff9e
 parent none
 author Will Bickford <wbic16@gmail.com>
 date 1795016497 2026-11-18
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/boardy-tools.git
+branch exo
 author+ Will Bickford <wbic16@gmail.com>
 Commit b352b9e7087e by Emise <emise@phext.io> on 2026-11-18 (EE 0).
 
 Subject: Boardy package: exchange, test, build, his spec, boot manual, open questions
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 357.
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 526.
 
 commit b352b9e7087e8d6df33e6813fa898fe1b76d0ad4
 parent 7ef27f5f895b4183aee4a11be70b4c810ecbff9e
 author Emise <emise@phext.io>
 date 1795016755 2026-11-18
-stat Markdown files 7 total 526 blank 169 comment 0 code 357
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/boardy-tools.git
+branch exo
+stat Markdown files 7 total 526 blank 0 comment 0 code 526
 author+ Emise <emise@phext.io>
 Commit 7092bd1ac395 by Will Bickford <wbic16@users.noreply.github.com> on 2026-11-19 (EE 0).
 
 Subject: Add receipts/: Boardy spec instance as phext, MCP interface + play-test, first-principles clone with benchmark results, wbic16 worked example, architecture/cost research, hash manifest
 
-Public items: 44 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1704.
+Public items: 44 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1694.
 
 This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
 
@@ -35,50 +46,65 @@ commit 7092bd1ac39561fc1a809e7c9f60d683ec863520
 parent b352b9e7087e8d6df33e6813fa898fe1b76d0ad4
 author Will Bickford <wbic16@users.noreply.github.com>
 date 1795067992 2026-11-19
-item+ function receipts/benchmark.py :: build_corpus :: def build_corpus() :: Function build_corpus takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning problem, solution. :: inferred :: api
-item+ function receipts/benchmark.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function receipts/benchmark.py :: node_record :: def node_record(nid) :: Function node_record takes nid. Its return type is unannotated; the code shows it returning "\n".join(lines) + "\n". :: inferred :: api
-item+ function receipts/boardy.py :: Graph.__init__ :: def __init__(self) :: Function Graph.__init__ takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function receipts/boardy.py :: Graph.add_edge :: def add_edge(self, src, typ, dst, weight) :: Function Graph.add_edge takes self, src, typ, dst, weight. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function receipts/boardy.py :: Graph.add_node :: def add_node(self, nid, kind, attrs, coord=None) :: Function Graph.add_node takes self, nid, kind, attrs, coord=None. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function receipts/boardy.py :: Graph.edge_set :: def edge_set(self) :: Function Graph.edge_set takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning set(self.edges). :: inferred :: api
-item+ function receipts/boardy.py :: Graph.edges_from :: def edges_from(self, src, typ=None) :: Function Graph.edges_from takes self, src, typ=None. Its return type is unannotated; the code shows it returning [e for e in self.edges if e[0] == src and (typ i. :: inferred :: api
-item+ function receipts/boardy.py :: Graph.edges_to :: def edges_to(self, dst, typ=None) :: Function Graph.edges_to takes self, dst, typ=None. Its return type is unannotated; the code shows it returning [e for e in self.edges if e[2] == dst and (typ i. :: inferred :: api
-item+ function receipts/boardy.py :: Graph.kind :: def kind(self, nid) :: Function Graph.kind takes self, nid. Its return type is unannotated; the code shows it returning n["kind"] if n else None. :: inferred :: api
-item+ function receipts/boardy.py :: boot :: def boot(scrolls) :: scrolls: {coord: text} merged from the problem+solution phexts. :: direct :: api
-item+ function receipts/boardy.py :: dense_counts :: def dense_counts(g) :: Function dense_counts takes g. Its return type is unannotated; the code shows it returning dict(counts). :: inferred :: api
-item+ function receipts/boardy.py :: empty_family_edges :: def empty_family_edges(g) :: Every boot edge landing in an empty kind-pair family (manual step 7). :: direct :: api
-item+ function receipts/boardy.py :: find_route :: def find_route(g, src, dst) :: Replayable route over stored edges only (traversed in either direction, :: direct :: api
-item+ function receipts/boardy.py :: forbidden_nodes :: def forbidden_nodes(g) :: Function forbidden_nodes takes g. Its return type is unannotated; the code shows it returning [nid for nid, n in g.nodes.items() if n["kind"] . :: inferred :: api
-item+ function receipts/boardy.py :: generate_candidates :: def generate_candidates(g) :: Function generate_candidates takes g. Its return type is unannotated; the code shows it returning candidates. :: inferred :: api
-item+ function receipts/boardy.py :: invention_score :: def invention_score(decisions) :: decisions: list of dicts with classification in {R, A, F}. :: direct :: api
-item+ function receipts/boardy.py :: parse_node_record :: def parse_node_record(text) :: Function parse_node_record takes text. Its return type is unannotated; the code shows it returning rec. :: inferred :: api
-item+ function receipts/boardy.py :: score_recovery :: def score_recovery(boot_g, gt_edges) :: gt_edges: list of (src, type, dst, weight) ground truth. :: direct :: api
-item+ function receipts/boardy_mcp.py :: error :: def error(rid, code, message) :: Function error takes rid, code, message. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function receipts/boardy_mcp.py :: fmt :: def fmt(coord) :: Function fmt takes coord. Its return type is unannotated; the code shows it returning "%d.%d.%d/%d.%d.%d/%d.%d.%d" % tuple(coord). :: inferred :: api
-item+ function receipts/boardy_mcp.py :: handle :: def handle(req) :: Function handle takes req. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function receipts/boardy_mcp.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function receipts/boardy_mcp.py :: parse_coordinate :: def parse_coordinate(text) :: Function parse_coordinate takes text. Its return type is unannotated; the code shows it returning coord. :: inferred :: api
-item+ function receipts/boardy_mcp.py :: parse_phext :: def parse_phext(text) :: Explode phext text into {coordinate_tuple: scroll_text}. :: direct :: api
-item+ function receipts/boardy_mcp.py :: require_doc :: def require_doc() :: Function require_doc takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function receipts/boardy_mcp.py :: result :: def result(rid, value) :: Function result takes rid, value. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function receipts/boardy_mcp.py :: send :: def send(msg) :: Function send takes msg. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function receipts/boardy_mcp.py :: tool_fetch :: def tool_fetch(args) :: Function tool_fetch takes args. Its return type is unannotated; the code shows it returning DOC["scrolls"][coord]. :: inferred :: api
-item+ function receipts/boardy_mcp.py :: tool_load :: def tool_load(args) :: Function tool_load takes args. Its return type is unannotated; the code shows it returning "loaded %s: %d scrolls, %d bytes" % (path, len(D. :: inferred :: api
-item+ function receipts/boardy_mcp.py :: tool_search :: def tool_search(args) :: Function tool_search takes args. Its return type is unannotated; the code shows it returning "no scrolls contain %r" % args["text"]; "%d scroll(s) contain %r:\n%s" % (len(hits), arg. :: inferred :: api
-item+ function receipts/boardy_mcp.py :: tool_toc :: def tool_toc(_args) :: Function tool_toc takes _args. Its return type is unannotated; the code shows it returning "\n".join(lines). :: inferred :: api
-item+ function receipts/phext.py :: common_prefix :: def common_prefix(a, b) :: Function common_prefix takes a, b. Its return type is unannotated; the code shows it returning n. :: inferred :: api
-item+ function receipts/phext.py :: fmt :: def fmt(coord) :: Function fmt takes coord. Its return type is unannotated; the code shows it returning "%d.%d.%d/%d.%d.%d/%d.%d.%d" % tuple(coord). :: inferred :: api
-item+ function receipts/phext.py :: parse :: def parse(data) :: bytes -> dict {coord9 tuple: str} (every scroll, including empty ones). :: direct :: api
-item+ function receipts/phext.py :: serialize :: def serialize(scrolls) :: scrolls: dict {coord9 tuple: str} -> bytes, coordinates ascending. :: direct :: api
-item+ function receipts/test_client.py :: call :: def call(method, params=None) :: Function call takes method, params=None. Its return type is unannotated; the code shows it returning resp. :: inferred :: test
-item+ function receipts/test_client.py :: check :: def check(label, ok, detail="") :: Function check takes label, ok, detail="". Its return type is unannotated; no return statement was read in its body. :: inferred :: test
-item+ function receipts/test_client.py :: log :: def log(direction, obj) :: Function log takes direction, obj. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
-item+ function receipts/test_client.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
-item+ function receipts/test_client.py :: notify :: def notify(method) :: Function notify takes method. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
-item+ function receipts/test_client.py :: tool :: def tool(name, args) :: Function tool takes name, args. Its return type is unannotated; the code shows it returning resp.get("result", {}). :: inferred :: test
-item+ function receipts/test_scorer.py :: fake_boot :: def fake_boot(edges) :: Function fake_boot takes edges. Its return type is unannotated; the code shows it returning g                # invented type (produces_ask) . :: inferred :: test
-item+ function receipts/test_scorer.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: test
-stat Markdown files 14 total 1187 blank 294 comment 0 code 893
+item+ function receipts/benchmark.py :: build_corpus :: def build_corpus(): :: Function build_corpus takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 120 :: 0
+item+ function receipts/benchmark.py :: main :: def main(): :: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 133 :: 0
+item+ function receipts/benchmark.py :: node_record :: def node_record(nid): :: Function node_record takes nid and gives back nothing; it does its work on what it is given. :: signature :: 112 :: 0
+item+ function receipts/boardy.py :: __init__ :: def __init__(self): :: Function __init__ takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 55 :: 0
+item+ function receipts/boardy.py :: add_edge :: def add_edge(self, src, typ, dst, weight): :: Function add_edge takes self, src, typ, dst, weight and gives back nothing; it does its work on what it is given. :: signature :: 63 :: 0
+item+ function receipts/boardy.py :: add_node :: def add_node(self, nid, kind, attrs, coord=None): :: Function add_node takes self, nid, kind, attrs, coord=None and gives back nothing; it does its work on what it is given. :: signature :: 60 :: 0
+item+ function receipts/boardy.py :: boot :: def boot(scrolls): :: scrolls: {coord: text} merged from the problem+solution phexts. :: doc comment :: 114 :: 1
+item+ function receipts/boardy.py :: dense_counts :: def dense_counts(g): :: Function dense_counts takes g and gives back nothing; it does its work on what it is given. :: signature :: 158 :: 0
+item+ function receipts/boardy.py :: edge_set :: def edge_set(self): :: Function edge_set takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 78 :: 0
+item+ function receipts/boardy.py :: edges_from :: def edges_from(self, src, typ=None): :: Function edges_from takes self, src, typ=None and gives back nothing; it does its work on what it is given. :: signature :: 72 :: 0
+item+ function receipts/boardy.py :: edges_to :: def edges_to(self, dst, typ=None): :: Function edges_to takes self, dst, typ=None and gives back nothing; it does its work on what it is given. :: signature :: 75 :: 0
+item+ function receipts/boardy.py :: empty_family_edges :: def empty_family_edges(g): :: Every boot edge landing in an empty kind-pair family (manual step 7). :: doc comment :: 166 :: 1
+item+ function receipts/boardy.py :: find_route :: def find_route(g, src, dst): :: Replayable route over stored edges only (traversed in either direction, :: doc comment :: 247 :: 1
+item+ function receipts/boardy.py :: forbidden_nodes :: def forbidden_nodes(g): :: Function forbidden_nodes takes g and gives back nothing; it does its work on what it is given. :: signature :: 176 :: 0
+item+ function receipts/boardy.py :: generate_candidates :: def generate_candidates(g): :: Function generate_candidates takes g and gives back nothing; it does its work on what it is given. :: signature :: 292 :: 0
+item+ function receipts/boardy.py :: invention_score :: def invention_score(decisions): :: decisions: list of dicts with classification in {R, A, F}. :: doc comment :: 275 :: 1
+item+ function receipts/boardy.py :: kind :: def kind(self, nid): :: Function kind takes self, nid and gives back nothing; it does its work on what it is given. :: signature :: 68 :: 0
+item+ function receipts/boardy.py :: parse_node_record :: def parse_node_record(text): :: Function parse_node_record takes text and gives back nothing; it does its work on what it is given. :: signature :: 92 :: 0
+item+ function receipts/boardy.py :: score_recovery :: def score_recovery(boot_g, gt_edges): :: gt_edges: list of (src, type, dst, weight) ground truth. :: doc comment :: 182 :: 1
+item+ function receipts/boardy_mcp.py :: error :: def error(rid, code, message): :: Function error takes rid, code, message and gives back nothing; it does its work on what it is given. :: signature :: 149 :: 0
+item+ function receipts/boardy_mcp.py :: fmt :: def fmt(coord): :: Function fmt takes coord and gives back nothing; it does its work on what it is given. :: signature :: 37 :: 0
+item+ function receipts/boardy_mcp.py :: handle :: def handle(req): :: Function handle takes req and gives back nothing; it does its work on what it is given. :: signature :: 153 :: 0
+item+ function receipts/boardy_mcp.py :: main :: def main(): :: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 187 :: 0
+item+ function receipts/boardy_mcp.py :: parse_coordinate :: def parse_coordinate(text): :: Function parse_coordinate takes text and gives back nothing; it does its work on what it is given. :: signature :: 64 :: 0
+item+ function receipts/boardy_mcp.py :: parse_phext :: def parse_phext(text): :: Explode phext text into {coordinate_tuple: scroll_text}. :: doc comment :: 41 :: 1
+item+ function receipts/boardy_mcp.py :: require_doc :: def require_doc(): :: Function require_doc takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 84 :: 0
+item+ function receipts/boardy_mcp.py :: result :: def result(rid, value): :: Function result takes rid, value and gives back nothing; it does its work on what it is given. :: signature :: 145 :: 0
+item+ function receipts/boardy_mcp.py :: send :: def send(msg): :: Function send takes msg and gives back nothing; it does its work on what it is given. :: signature :: 140 :: 0
+item+ function receipts/boardy_mcp.py :: tool_fetch :: def tool_fetch(args): :: Function tool_fetch takes args and gives back nothing; it does its work on what it is given. :: signature :: 98 :: 0
+item+ function receipts/boardy_mcp.py :: tool_load :: def tool_load(args): :: Function tool_load takes args and gives back nothing; it does its work on what it is given. :: signature :: 74 :: 0
+item+ function receipts/boardy_mcp.py :: tool_search :: def tool_search(args): :: Function tool_search takes args and gives back nothing; it does its work on what it is given. :: signature :: 106 :: 0
+item+ function receipts/boardy_mcp.py :: tool_toc :: def tool_toc(_args): :: Function tool_toc takes _args and gives back nothing; it does its work on what it is given. :: signature :: 89 :: 0
+item+ function receipts/phext.py :: common_prefix :: def common_prefix(a, b): :: Function common_prefix takes a, b and gives back nothing; it does its work on what it is given. :: signature :: 58 :: 0
+item+ function receipts/phext.py :: fmt :: def fmt(coord): :: Function fmt takes coord and gives back nothing; it does its work on what it is given. :: signature :: 15 :: 0
+item+ function receipts/phext.py :: parse :: def parse(data): :: bytes -> dict {coord9 tuple: str} (every scroll, including empty ones). :: doc comment :: 39 :: 1
+item+ function receipts/phext.py :: serialize :: def serialize(scrolls): :: scrolls: dict {coord9 tuple: str} -> bytes, coordinates ascending. :: doc comment :: 19 :: 1
+item+ function receipts/test_client.py :: call :: def call(method, params=None): :: Function call takes method, params=None and gives back nothing; it does its work on what it is given. :: signature :: 41 :: 0
+item+ function receipts/test_client.py :: check :: def check(label, ok, detail=""): :: Function check takes label, ok, detail="" and gives back nothing; it does its work on what it is given. :: signature :: 29 :: 0
+item+ function receipts/test_client.py :: log :: def log(direction, obj): :: Function log takes direction, obj and gives back nothing; it does its work on what it is given. :: signature :: 25 :: 0
+item+ function receipts/test_client.py :: main :: def main(): :: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 35 :: 0
+item+ function receipts/test_client.py :: notify :: def notify(method): :: Function notify takes method and gives back nothing; it does its work on what it is given. :: signature :: 53 :: 0
+item+ function receipts/test_client.py :: tool :: def tool(name, args): :: Function tool takes name, args and gives back nothing; it does its work on what it is given. :: signature :: 59 :: 0
+item+ function receipts/test_scorer.py :: fake_boot :: def fake_boot(edges): :: Function fake_boot takes edges and gives back nothing; it does its work on what it is given. :: signature :: 14 :: 0
+item+ function receipts/test_scorer.py :: main :: def main(): :: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 22 :: 0
+quality 0 2 0 0
+fncount 44
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/boardy-tools.git
+branch exo
+largest-file 05-boot-manual.md :: 338
+largest-file receipts/boardy.py :: 332
+largest-file receipts/PLAYTEST.md :: 288
+largest-file receipts/benchmark.py :: 224
+largest-file receipts/boardy_mcp.py :: 199
+largest-fn main :: receipts/benchmark.py :: 92
+largest-fn score_recovery :: receipts/boardy.py :: 65
+largest-fn tool :: receipts/test_client.py :: 63
+largest-fn boot :: receipts/boardy.py :: 44
+largest-fn generate_candidates :: receipts/boardy.py :: 41
+stat Markdown files 14 total 1187 blank 294 comment 10 code 883
 stat Python files 6 total 1000 blank 143 comment 46 code 811
 author+ Will Bickford <wbic16@users.noreply.github.com>

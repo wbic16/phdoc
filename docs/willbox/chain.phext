@@ -1,3 +1,4 @@
+delta-format 3
 Commit 479af2260ffd by Velum <velum@mirrorborn.us> on 2026-11-21 (EE 0).
 
 Subject: willbox: rfcbox + wikibox + phccbox held as phext priors in one phext
@@ -10,16 +11,31 @@ commit 479af2260ffd41d52e0bfcdffdae76b1b8609e78
 parent none
 author Velum <velum@mirrorborn.us>
 date 1795270605 2026-11-21
-item+ function build_willbox.py :: count_byte :: def count_byte(path, byte) :: Function count_byte takes path, byte. Its return type is unannotated; the code shows it returning n. :: inferred :: api
-item+ function build_willbox.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function build_willbox.py :: sha256_of :: def sha256_of(path) :: Function sha256_of takes path. Its return type is unannotated; the code shows it returning h.hexdigest(). :: inferred :: api
-item+ function build_willbox.py :: stream_copy :: def stream_copy(src, dst) :: Function stream_copy takes src, dst. Its return type is unannotated; no return statement was read in its body. :: inferred :: api
-item+ function phextlib.py :: fmt :: def fmt(coord) :: Function fmt takes coord. Its return type is unannotated; the code shows it returning "%d.%d.%d/%d.%d.%d/%d.%d.%d" % tuple(coord). :: inferred :: api
-item+ function phextlib.py :: implode :: def implode(scrolls) :: scrolls: ordered list of (coord_tuple, content_bytes) with :: direct :: api
-item+ function phextlib.py :: parse_bytes :: def parse_bytes(data) :: Yield (coord_tuple, content_bytes) for each scroll slot, in order. :: direct :: api
-item+ function phextlib.py :: parse_file :: def parse_file(path, chunk_hint=None) :: Function parse_file takes path, chunk_hint=None. Its return type is unannotated; the code shows it returning parse_bytes(f.read()). :: inferred :: api
-item+ function rebuild_from_willbox.py :: main :: def main() :: Function main takes no inputs beyond the value it is called on. Its return type is unannotated; the code shows it returning 0 if ok else 1. :: inferred :: api
-item+ function rebuild_from_willbox.py :: sha256_of :: def sha256_of(path) :: Function sha256_of takes path. Its return type is unannotated; the code shows it returning h.hexdigest(). :: inferred :: api
+item+ function build_willbox.py :: count_byte :: def count_byte(path, byte): :: Function count_byte takes path, byte and gives back nothing; it does its work on what it is given. :: signature :: 50 :: 0
+item+ function build_willbox.py :: main :: def main(): :: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 70 :: 0
+item+ function build_willbox.py :: sha256_of :: def sha256_of(path): :: Function sha256_of takes path and gives back nothing; it does its work on what it is given. :: signature :: 39 :: 0
+item+ function build_willbox.py :: stream_copy :: def stream_copy(src, dst): :: Function stream_copy takes src, dst and gives back nothing; it does its work on what it is given. :: signature :: 61 :: 0
+item+ function phextlib.py :: fmt :: def fmt(coord): :: Function fmt takes coord and gives back nothing; it does its work on what it is given. :: signature :: 20 :: 0
+item+ function phextlib.py :: implode :: def implode(scrolls): :: scrolls: ordered list of (coord_tuple, content_bytes) with :: doc comment :: 49 :: 1
+item+ function phextlib.py :: parse_bytes :: def parse_bytes(data): :: Yield (coord_tuple, content_bytes) for each scroll slot, in order. :: doc comment :: 24 :: 1
+item+ function phextlib.py :: parse_file :: def parse_file(path, chunk_hint=None): :: Function parse_file takes path, chunk_hint=None and gives back nothing; it does its work on what it is given. :: signature :: 44 :: 0
+item+ function rebuild_from_willbox.py :: main :: def main(): :: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 26 :: 0
+item+ function rebuild_from_willbox.py :: sha256_of :: def sha256_of(path): :: Function sha256_of takes path and gives back nothing; it does its work on what it is given. :: signature :: 15 :: 0
+quality 0 0 0 0
+fncount 10
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/willbox.git
+branch exo
+largest-file build_willbox.py :: 163
+largest-file REPORT.md :: 126
+largest-file rebuild_from_willbox.py :: 75
+largest-file README.md :: 69
+largest-file phextlib.py :: 65
+largest-fn main :: build_willbox.py :: 94
+largest-fn main :: rebuild_from_willbox.py :: 50
+largest-fn parse_bytes :: phextlib.py :: 20
+largest-fn implode :: phextlib.py :: 17
+largest-fn sha256_of :: build_willbox.py :: 11
 stat Markdown files 2 total 195 blank 38 comment 0 code 157
 stat Python files 3 total 303 blank 40 comment 5 code 258
 stat Shell files 1 total 13 blank 2 comment 6 code 5

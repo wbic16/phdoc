@@ -4,7 +4,11 @@ Commit b67b8ef8acbfe9490af96a0bb39044df980afe21. 325 commits folded. Every fact 
 
 ## Dependencies
 
-### package.json
+### JavaScript (npm) — package.json
+
+License stated in the manifest: MIT.
+
+Direct dependencies: 64.
 
 - @atjson/source-html — ^0.41.2
 - @codemirror/lang-javascript — ^6.2.2
@@ -73,23 +77,121 @@ Commit b67b8ef8acbfe9490af96a0bb39044df980afe21. 325 commits folded. Every fact 
 
 ## Authors
 
+Author counts over the 325 audited mainline commits folded to this point.
+
 - Iian <iian.d.neill@gmail.com> — 325 commits
 
 ## Complexity
 
+The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.
+
 - C: 1 files, 44 lines total, 0 blank, 17 comment, 27 code
 - JavaScript: 144 files, 71548 lines total, 1346 blank, 2760 comment, 67442 code
-- Markdown: 296 files, 60420 lines total, 15465 blank, 98 comment, 44857 code
+- Markdown: 296 files, 60420 lines total, 15465 blank, 122 comment, 44833 code
 - Python: 2 files, 126 lines total, 9 blank, 0 comment, 117 code
 - Shell: 1 files, 22 lines total, 5 blank, 14 comment, 3 code
 - TypeScript: 824 files, 83828 lines total, 2198 blank, 2797 comment, 78833 code
 
-Declared RFCs at this point: none declared.
+All languages: 1268 files, 215988 lines total, 191255 lines of code. Functions read: 5.
+
+Largest files:
+
+- src/library/original/components/outliner-text-block.js — 10205 lines
+- docs/development/INPUT_HANDLER_SOURCE_LEDGER.md — 9442 lines
+- src/library/original/modules/speedy/editor-new-2.js — 4655 lines
+- src/library/original/speedy.js — 4655 lines
+- src/library/original/modules/speedy/editor-new.js — 3347 lines
+
+Largest functions, by span in lines:
+
+- resource in docs/architecture/sqlite/check-proposed-schema.py — about 72 lines
+- stats in experiments/initialis/summarize.py — about 21 lines
+- rejects in docs/architecture/sqlite/check-proposed-schema.py — about 9 lines
+- check in docs/architecture/sqlite/check-proposed-schema.py — about 5 lines
+- read in experiments/initialis/summarize.py — about 1 lines
+
+## Code quality signals
+
+Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.
+
+- Tests: 0 test functions counted in the source, across 21 files in test directories or whose names mark them as test files.
+- CI: no CI configuration was found in the project.
+- Lint and format: no lint or format configuration file was found.
+- TODO marks in the source: 28. FIXME marks: 0.
+- Public items with a doc comment: 0 of 5 (0%).
+
+## Declared RFCs
+
+No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+
+
+## Upstream git repo
+
+- Origin: /home/wbic16/github-archive/mirrors/mutable-os.git
+- Branch: main
+- Head commit: b67b8ef8acbfe9490af96a0bb39044df980afe21
+- Working tree: the committed tree at this commit — a historical reference has no working tree
 
 ## Public methods and commands
 
-- function `check` (docs/architecture/sqlite/check-proposed-schema.py) — Function check takes name, condition.
-- function `rejects` (docs/architecture/sqlite/check-proposed-schema.py) — Function rejects takes name, sql, values=.
-- function `resource` (docs/architecture/sqlite/check-proposed-schema.py) — Function resource takes guid, block.
-- function `read` (experiments/initialis/summarize.py) — Function read takes p.
-- function `stats` (experiments/initialis/summarize.py) — Function stats takes xs.
+Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.
+
+- function `check` (docs/architecture/sqlite/check-proposed-schema.py:14) — Function check takes name, condition and gives back nothing; it does its work on what it is given.
+- function `rejects` (docs/architecture/sqlite/check-proposed-schema.py:19) — Function rejects takes name, sql, values= and gives back nothing; it does its work on what it is given.
+- function `resource` (docs/architecture/sqlite/check-proposed-schema.py:28) — Function resource takes guid, block and gives back nothing; it does its work on what it is given.
+- function `read` (experiments/initialis/summarize.py:6) — Function read takes p and gives back nothing; it does its work on what it is given.
+- function `stats` (experiments/initialis/summarize.py:7) — Function stats takes xs and gives back nothing; it does its work on what it is given.
+
+## function — check
+
+Found in docs/architecture/sqlite/check-proposed-schema.py at line 14.
+
+Signature: `def check(name, condition):`
+
+What it does: Function check takes name, condition and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — rejects
+
+Found in docs/architecture/sqlite/check-proposed-schema.py at line 19.
+
+Signature: `def rejects(name, sql, values=()):`
+
+What it does: Function rejects takes name, sql, values= and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — resource
+
+Found in docs/architecture/sqlite/check-proposed-schema.py at line 28.
+
+Signature: `def resource(guid, block):`
+
+What it does: Function resource takes guid, block and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — read
+
+Found in experiments/initialis/summarize.py at line 6.
+
+Signature: `def read(p): return json.loads(p.read_text())`
+
+What it does: Function read takes p and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## function — stats
+
+Found in experiments/initialis/summarize.py at line 7.
+
+Signature: `def stats(xs):`
+
+What it does: Function stats takes xs and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+## Provenance
+
+This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/mutable-os/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.

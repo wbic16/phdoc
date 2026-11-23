@@ -1,8 +1,8 @@
 # phext-lattice — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-23 (Exocortical Epoch 195). Project root: /source/phext-lattice. Scanned at commit 6ffc18b162bdcd531bdbaae72e2216f4871395e4. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-23 (Exocortical Epoch 194). Project root: /home/wbic16/phdoc-sweep/proj/phext-lattice. Scanned at commit 6ffc18b162bdcd531bdbaae72e2216f4871395e4. Package version, from its manifest: 1.3.1. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
-This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
+This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, where its upstream repo lives, and a plain English note for every public method and command.
 
 ---
 
@@ -12,24 +12,24 @@ This document holds: what the project depends on, who wrote it, how large and ho
 
 License stated in the manifest: MIT.
 
-Direct dependencies: 19.
+Direct dependencies: 19 (9 default, 10 optional).
 
 - libphext [dependencies] — 0.6.6
 - holo-phext [dependencies] — (path or git)
-- teixml-to-mutable [dependencies] — 0.3.0
+- teixml-to-mutable [dependencies · optional] — 0.3.0
 - memmap2 [dependencies] — 0.9
 - xxhash-rust [dependencies] — 0.8
 - rayon [dependencies] — 1.10
 - tempfile [dependencies] — 3
-- serde [dependencies] — 1
-- serde_json [dependencies] — 1
-- hmac [dependencies] — 0.12
-- sha2 [dependencies] — 0.10
-- getrandom [dependencies] — 0.4
-- ureq [dependencies] — 2
-- ring [dependencies] — 0.17
-- ratatui [dependencies] — 0.29
-- crossterm [dependencies] — 0.28
+- serde [dependencies · optional] — 1
+- serde_json [dependencies · optional] — 1
+- hmac [dependencies · optional] — 0.12
+- sha2 [dependencies · optional] — 0.10
+- getrandom [dependencies · optional] — 0.4
+- ureq [dependencies · optional] — 2
+- ring [dependencies · optional] — 0.17
+- ratatui [dependencies · optional] — 0.29
+- crossterm [dependencies · optional] — 0.28
 - criterion [dev-dependencies] — 0.5
 - rusqlite [dev-dependencies] — 0.32
 - serde_json [dev-dependencies] — 1
@@ -41,19 +41,17 @@ Total packages in the lock file, this one included: 218.
 
 ## Authors
 
-The git log holds 285 commits. The authors, by commit count:
+The git log holds 285 commits. phdoc audits the 133 commits on the first-parent mainline — each merge folds its branch's commits into the merge commit — and the author counts below cover that audited mainline, the same set the historical references fold.
 
-- Will Bickford <wbic16@gmail.com> — 107 commits (37.5%)
-- Emise <emise@localhost> — 63 commits (22.1%)
-- Theia <theia@mirrorborn.us> — 51 commits (17.9%)
-- Cursor Agent <cursoragent@cursor.com> — 24 commits (8.4%)
-- Emise <emise@phext.io> — 21 commits (7.4%)
-- Emise <emise@mirrorborn.us> — 10 commits (3.5%)
-- Lux <lux@phext.io> — 3 commits (1.1%)
-- Claude <noreply@anthropic.com> — 2 commits (0.7%)
-- Orin <orin@mirrorborn.us> — 2 commits (0.7%)
-- Lux <lux@mirrorborn.us> — 1 commit (0.4%)
-- Velum <velum@mirrorborn.us> — 1 commit (0.4%)
+The author of record is **Will Bickford** — 133 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Will Bickford (his own identities) — 100 commits
+- Theia — 23 commits
+- Emise — 4 commits
+- Lux — 4 commits
+- Orin — 2 commits
 
 ---
 
@@ -92,7 +90,7 @@ Largest functions, by span in lines:
 
 Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.
 
-- Tests: 332 test functions counted in the source, across 0 files whose names mark them as test files.
+- Tests: 332 test functions counted in the source, across 3 files in test directories or whose names mark them as test files.
 - CI: no CI configuration was found in the project.
 - Lint and format: no lint or format configuration file was found.
 - TODO marks in the source: 1. FIXME marks: 0.
@@ -109,10 +107,10 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 ## Upstream git repo
 
-- Origin: https://github.com/wbic16/phext-lattice.git
+- Origin: /home/wbic16/github-archive/mirrors/phext-lattice.git
 - Branch: exo
 - Head commit: 6ffc18b162bdcd531bdbaae72e2216f4871395e4
-- Working tree: 1 changed paths
+- Working tree: clean
 
 ---
 
@@ -121,246 +119,246 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.
 
 - function `__init__` (bench/wiki/extract_zim.py:27) — Function __init__ takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it 
-- function `handle_starttag` (bench/wiki/extract_zim.py:31) — Function handle_starttag takes self, tag, attrs and gives back nothing; it does its work on what it is given.
-- function `handle_endtag` (bench/wiki/extract_zim.py:41) — Function handle_endtag takes self, tag and gives back nothing; it does its work on what it is given.
 - function `handle_data` (bench/wiki/extract_zim.py:47) — Function handle_data takes self, data and gives back nothing; it does its work on what it is given.
-- function `text` (bench/wiki/extract_zim.py:51) — Function text takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `handle_endtag` (bench/wiki/extract_zim.py:41) — Function handle_endtag takes self, tag and gives back nothing; it does its work on what it is given.
+- function `handle_starttag` (bench/wiki/extract_zim.py:31) — Function handle_starttag takes self, tag, attrs and gives back nothing; it does its work on what it is given.
 - function `main` (bench/wiki/extract_zim.py:58) — Function main takes zim_path, out_dir and gives back nothing; it does its work on what it is given.
+- function `text` (bench/wiki/extract_zim.py:51) — Function text takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
 - function `main` (bench/wiki/make_queries.py:22) — Function main takes d, n=500 and gives back nothing; it does its work on what it is given.
-- function `load` (bench/wiki/report.py:6) — Function load takes work, s, name and gives back nothing; it does its work on what it is given.
 - function `lat` (bench/wiki/report.py:11) — Function lat takes v, key="p50_us" and gives back nothing; it does its work on what it is given.
+- function `load` (bench/wiki/report.py:6) — Function load takes work, s, name and gives back nothing; it does its work on what it is given.
+- function `main` (bench/wiki/report.py:28) — Function main takes work, *scales and gives back nothing; it does its work on what it is given.
 - function `mb` (bench/wiki/report.py:18) — Function mb takes b and gives back nothing; it does its work on what it is given.
 - function `table` (bench/wiki/report.py:22) — Function table takes head, rows and gives back nothing; it does its work on what it is given.
-- function `main` (bench/wiki/report.py:28) — Function main takes work, *scales and gives back nothing; it does its work on what it is given.
-- function `tree` (bench/wiki/storage.py:16) — Function tree takes p and gives back nothing; it does its work on what it is given.
-- function `one` (bench/wiki/storage.py:25) — Function one takes p and gives back nothing; it does its work on what it is given.
 - function `main` (bench/wiki/storage.py:30) — Function main takes out and gives back nothing; it does its work on what it is given.
-- function `load_corpus` (bench/wiki/zim_bench.py:20) — Function load_corpus takes d, scale and gives back nothing; it does its work on what it is given.
+- function `one` (bench/wiki/storage.py:25) — Function one takes p and gives back nothing; it does its work on what it is given.
+- function `tree` (bench/wiki/storage.py:16) — Function tree takes p and gives back nothing; it does its work on what it is given.
 - function `__init__` (bench/wiki/zim_bench.py:39) — Function __init__ takes self, title, text and gives back nothing; it does its work on what it is given.
-- function `has_indexdata` (bench/wiki/zim_bench.py:42) — Function has_indexdata takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wha
-- function `get_title` (bench/wiki/zim_bench.py:43) — Function get_title takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it
-- function `get_content` (bench/wiki/zim_bench.py:44) — Function get_content takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
-- function `get_keywords` (bench/wiki/zim_bench.py:45) — Function get_keywords takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what
-- function `get_wordcount` (bench/wiki/zim_bench.py:46) — Function get_wordcount takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wha
 - function `__init__` (bench/wiki/zim_bench.py:50) — Function __init__ takes self, path, title, text, front, index and gives back nothing; it does its work on what it is giv
-- function `get_path` (bench/wiki/zim_bench.py:53) — Function get_path takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it 
-- function `get_title` (bench/wiki/zim_bench.py:54) — Function get_title takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it
-- function `get_mimetype` (bench/wiki/zim_bench.py:55) — Function get_mimetype takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what
+- function `__init__` (bench/wiki/zim_bench.py:106) — Function __init__ takes self, s and gives back nothing; it does its work on what it is given.
+- function `backlinks` (bench/wiki/zim_bench.py:166) — Function backlinks takes t and gives back nothing; it does its work on what it is given.
+- function `below` (bench/wiki/zim_bench.py:107) — Function below takes self, n and gives back nothing; it does its work on what it is given.
+- function `bfs` (bench/wiki/zim_bench.py:152) — Function bfs takes seed and gives back nothing; it does its work on what it is given.
+- function `build_zim` (bench/wiki/zim_bench.py:61) — Function build_zim takes arts, path, fulltext=True and gives back nothing; it does its work on what it is given.
+- function `drop_caches` (bench/wiki/zim_bench.py:97) — Function drop_caches takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
+- function `exact` (bench/wiki/zim_bench.py:176) — Function exact takes x and gives back nothing; it does its work on what it is given.
+- function `fname` (bench/wiki/zim_bench.py:113) — Function fname takes t and gives back nothing; it does its work on what it is given.
+- function `ft` (bench/wiki/zim_bench.py:204) — Function ft takes x and gives back nothing; it does its work on what it is given.
+- function `fulltext_top1` (bench/wiki/zim_bench.py:195) — Function fulltext_top1 takes x and gives back nothing; it does its work on what it is given.
+- function `get_content` (bench/wiki/zim_bench.py:44) — Function get_content takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
 - function `get_contentprovider` (bench/wiki/zim_bench.py:56) — Function get_contentprovider takes no inputs beyond the value it is called on, and gives back nothing; it does its work 
 - function `get_hints` (bench/wiki/zim_bench.py:57) — Function get_hints takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it
 - function `get_indexdata` (bench/wiki/zim_bench.py:58) — Function get_indexdata takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wha
-- function `build_zim` (bench/wiki/zim_bench.py:61) — Function build_zim takes arts, path, fulltext=True and gives back nothing; it does its work on what it is given.
-- function `stats` (bench/wiki/zim_bench.py:83) — Function stats takes ds and gives back nothing; it does its work on what it is given.
-- function `time_each` (bench/wiki/zim_bench.py:90) — Function time_each takes items, f and gives back nothing; it does its work on what it is given.
-- function `drop_caches` (bench/wiki/zim_bench.py:97) — Function drop_caches takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
-- function `__init__` (bench/wiki/zim_bench.py:106) — Function __init__ takes self, s and gives back nothing; it does its work on what it is given.
-- function `below` (bench/wiki/zim_bench.py:107) — Function below takes self, n and gives back nothing; it does its work on what it is given.
-- function `fname` (bench/wiki/zim_bench.py:113) — Function fname takes t and gives back nothing; it does its work on what it is given.
+- function `get_keywords` (bench/wiki/zim_bench.py:45) — Function get_keywords takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what
+- function `get_mimetype` (bench/wiki/zim_bench.py:55) — Function get_mimetype takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what
+- function `get_path` (bench/wiki/zim_bench.py:53) — Function get_path takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it 
+- function `get_title` (bench/wiki/zim_bench.py:43) — Function get_title takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it
+- function `get_title` (bench/wiki/zim_bench.py:54) — Function get_title takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it
+- function `get_wordcount` (bench/wiki/zim_bench.py:46) — Function get_wordcount takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wha
+- function `has_indexdata` (bench/wiki/zim_bench.py:42) — Function has_indexdata takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wha
+- function `load_corpus` (bench/wiki/zim_bench.py:20) — Function load_corpus takes d, scale and gives back nothing; it does its work on what it is given.
 - function `main` (bench/wiki/zim_bench.py:118) — Function main takes corpus, out, scale=1, original=None and gives back nothing; it does its work on what it is given.
-- function `bfs` (bench/wiki/zim_bench.py:152) — Function bfs takes seed and gives back nothing; it does its work on what it is given.
-- function `backlinks` (bench/wiki/zim_bench.py:166) — Function backlinks takes t and gives back nothing; it does its work on what it is given.
-- function `exact` (bench/wiki/zim_bench.py:176) — Function exact takes x and gives back nothing; it does its work on what it is given.
+- function `stats` (bench/wiki/zim_bench.py:83) — Function stats takes ds and gives back nothing; it does its work on what it is given.
 - function `suggest` (bench/wiki/zim_bench.py:185) — Function suggest takes x and gives back nothing; it does its work on what it is given.
-- function `fulltext_top1` (bench/wiki/zim_bench.py:195) — Function fulltext_top1 takes x and gives back nothing; it does its work on what it is given.
-- function `ft` (bench/wiki/zim_bench.py:204) — Function ft takes x and gives back nothing; it does its work on what it is given.
+- function `time_each` (bench/wiki/zim_bench.py:90) — Function time_each takes items, f and gives back nothing; it does its work on what it is given.
 - entry point `main` (build.rs:50) — The entry point: the program starts here.
-- function `die` (deploy/deploy.sh:59) — Function die takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is gi
-- function `usage` (deploy/deploy.sh:64) — Function usage takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is 
-- function `random_hex` (deploy/deploy.sh:85) — Function random_hex takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
-- function `install_secret` (deploy/deploy.sh:90) — Function install_secret takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wh
-- function `as_owner` (deploy/deploy.sh:101) — Function as_owner takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it 
-- function `sponsor_url_ok` (deploy/deploy.sh:108) — Function sponsor_url_ok takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wh
-- function `validate_sponsor_url` (deploy/deploy.sh:134) — Function validate_sponsor_url takes no inputs beyond the value it is called on, and gives back nothing; it does its work
-- function `resolve_sponsor_url` (deploy/deploy.sh:141) — Function resolve_sponsor_url takes no inputs beyond the value it is called on, and gives back nothing; it does its work 
-- function `write_sponsor_env` (deploy/deploy.sh:150) — Function write_sponsor_env takes no inputs beyond the value it is called on, and gives back nothing; it does its work on
-- function `apply_sponsor_env` (deploy/deploy.sh:183) — Function apply_sponsor_env takes no inputs beyond the value it is called on, and gives back nothing; it does its work on
-- function `dns_points_here` (deploy/deploy.sh:208) — Function dns_points_here takes no inputs beyond the value it is called on, and gives back nothing; it does its work on w
-- function `file_sha256` (deploy/deploy.sh:212) — Function file_sha256 takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
-- function `read_root_file` (deploy/deploy.sh:218) — Function read_root_file takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wh
-- function `nginx_template` (deploy/deploy.sh:223) — Function nginx_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wh
-- function `render_site_body` (deploy/deploy.sh:240) — Function render_site_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on 
 - function `adopt_live_ssl` (deploy/deploy.sh:252) — Function adopt_live_ssl takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wh
-- function `path_exists` (deploy/deploy.sh:288) — Function path_exists takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
-- function `drop_missing_dhparam` (deploy/deploy.sh:296) — Function drop_missing_dhparam takes no inputs beyond the value it is called on, and gives back nothing; it does its work
-- function `stamp_managed` (deploy/deploy.sh:309) — Function stamp_managed takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wha
-- function `write_bootstrap_body` (deploy/deploy.sh:318) — Function write_bootstrap_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work
-- function `nginx_disposition` (deploy/deploy.sh:349) — Function nginx_disposition takes no inputs beyond the value it is called on, and gives back nothing; it does its work on
-- function `with_force` (deploy/deploy.sh:383) — Function with_force takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
-- function `require_hardened_body` (deploy/deploy.sh:392) — Function require_hardened_body takes no inputs beyond the value it is called on, and gives back nothing; it does its wor
-- function `install_rendered_site` (deploy/deploy.sh:409) — Function install_rendered_site takes no inputs beyond the value it is called on, and gives back nothing; it does its wor
 - function `apply_rendered_site` (deploy/deploy.sh:443) — Function apply_rendered_site takes no inputs beyond the value it is called on, and gives back nothing; it does its work 
-- function `run_check` (deploy/deploy.sh:492) — Function run_check takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it
+- function `apply_sponsor_env` (deploy/deploy.sh:183) — Function apply_sponsor_env takes no inputs beyond the value it is called on, and gives back nothing; it does its work on
+- function `as_owner` (deploy/deploy.sh:101) — Function as_owner takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it 
+- function `die` (deploy/deploy.sh:59) — Function die takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is gi
+- function `dns_points_here` (deploy/deploy.sh:208) — Function dns_points_here takes no inputs beyond the value it is called on, and gives back nothing; it does its work on w
+- function `drop_missing_dhparam` (deploy/deploy.sh:296) — Function drop_missing_dhparam takes no inputs beyond the value it is called on, and gives back nothing; it does its work
+- function `file_sha256` (deploy/deploy.sh:212) — Function file_sha256 takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
+- function `install_rendered_site` (deploy/deploy.sh:409) — Function install_rendered_site takes no inputs beyond the value it is called on, and gives back nothing; it does its wor
+- function `install_secret` (deploy/deploy.sh:90) — Function install_secret takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wh
 - function `main` (deploy/deploy.sh:611) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `nginx_disposition` (deploy/deploy.sh:349) — Function nginx_disposition takes no inputs beyond the value it is called on, and gives back nothing; it does its work on
+- function `nginx_template` (deploy/deploy.sh:223) — Function nginx_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wh
+- function `path_exists` (deploy/deploy.sh:288) — Function path_exists takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
+- function `random_hex` (deploy/deploy.sh:85) — Function random_hex takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
+- function `read_root_file` (deploy/deploy.sh:218) — Function read_root_file takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wh
+- function `render_site_body` (deploy/deploy.sh:240) — Function render_site_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on 
+- function `require_hardened_body` (deploy/deploy.sh:392) — Function require_hardened_body takes no inputs beyond the value it is called on, and gives back nothing; it does its wor
+- function `resolve_sponsor_url` (deploy/deploy.sh:141) — Function resolve_sponsor_url takes no inputs beyond the value it is called on, and gives back nothing; it does its work 
+- function `run_check` (deploy/deploy.sh:492) — Function run_check takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it
+- function `sponsor_url_ok` (deploy/deploy.sh:108) — Function sponsor_url_ok takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wh
+- function `stamp_managed` (deploy/deploy.sh:309) — Function stamp_managed takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wha
+- function `usage` (deploy/deploy.sh:64) — Function usage takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is 
+- function `validate_sponsor_url` (deploy/deploy.sh:134) — Function validate_sponsor_url takes no inputs beyond the value it is called on, and gives back nothing; it does its work
+- function `with_force` (deploy/deploy.sh:383) — Function with_force takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
+- function `write_bootstrap_body` (deploy/deploy.sh:318) — Function write_bootstrap_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work
+- function `write_sponsor_env` (deploy/deploy.sh:150) — Function write_sponsor_env takes no inputs beyond the value it is called on, and gives back nothing; it does its work on
 - entry point `main` (examples/wikibench.rs:831) — The entry point: the program starts here.
+- function `entries_of` (scripts/build_wavefront_explorer.py:73) — Yield (heading, body) per entry in a person scroll.
 - function `fmt` (scripts/build_wavefront_explorer.py:30) — Function fmt takes coord and gives back nothing; it does its work on what it is given.
+- function `handle_of` (scripts/build_wavefront_explorer.py:91) — Function handle_of takes heading and gives back nothing; it does its work on what it is given.
+- function `main` (scripts/build_wavefront_explorer.py:100) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
 - function `parse_phext` (scripts/build_wavefront_explorer.py:36) — Function parse_phext takes data and gives back nothing; it does its work on what it is given.
 - function `region_of` (scripts/build_wavefront_explorer.py:56) — Function region_of takes values and gives back nothing; it does its work on what it is given.
 - function `summarize` (scripts/build_wavefront_explorer.py:65) — Function summarize takes evidence and gives back nothing; it does its work on what it is given.
-- function `entries_of` (scripts/build_wavefront_explorer.py:73) — Yield (heading, body) per entry in a person scroll.
-- function `handle_of` (scripts/build_wavefront_explorer.py:91) — Function handle_of takes heading and gives back nothing; it does its work on what it is given.
-- function `main` (scripts/build_wavefront_explorer.py:100) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
 - function `fmt` (scripts/build_wavefront_snapshot.py:42) — Function fmt takes coord and gives back nothing; it does its work on what it is given.
-- function `parse_phext` (scripts/build_wavefront_snapshot.py:48) — Dead-reckoning parse: walk bytes, split on delimiters, map to coords.
 - function `handle_of` (scripts/build_wavefront_snapshot.py:69) — Function handle_of takes name_part and gives back nothing; it does its work on what it is given.
 - function `main` (scripts/build_wavefront_snapshot.py:78) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
-- function `check` (scripts/mcp-e2e/mcp_e2e.py:45) — Function check takes ok, label, detail="" and gives back nothing; it does its work on what it is given.
-- function `skip` (scripts/mcp-e2e/mcp_e2e.py:50) — Function skip takes label, why and gives back nothing; it does its work on what it is given.
-- function `req` (scripts/mcp-e2e/mcp_e2e.py:55) — Function req takes method, path, body=None, headers=None, budget_ms=None, label=None and gives back nothing; it does its
-- function `b64url` (scripts/mcp-e2e/mcp_e2e.py:73) — Function b64url takes data: bytes and gives back str:.
-- function `pkce` (scripts/mcp-e2e/mcp_e2e.py:77) — Function pkce takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
-- function `consent_fields` (scripts/mcp-e2e/mcp_e2e.py:82) — Function consent_fields takes page: str and gives back nothing; it does its work on what it is given.
-- function `authorize_and_consent` (scripts/mcp-e2e/mcp_e2e.py:92) — GET authorize (expect the consent page), POST approve, return the
-- function `token_exchange` (scripts/mcp-e2e/mcp_e2e.py:111) — Function token_exchange takes form, label, extra_headers=None and gives back nothing; it does its work on what it is giv
-- function `rpc` (scripts/mcp-e2e/mcp_e2e.py:119) — Function rpc takes token, method, params=None, req_id=1, headers_extra=None, path="/mcp", label=None, budget_ms=None and
-- function `tool` (scripts/mcp-e2e/mcp_e2e.py:134) — Function tool takes token, name, args, label=None, budget_ms=None and gives back nothing; it does its work on what it is
-- function `flow_code_and_token` (scripts/mcp-e2e/mcp_e2e.py:141) — Function flow_code_and_token takes *, label, client_id, redirect_uri, state, verifier, and gives back nothing; it does i
-- function `pkce_pair` (scripts/mcp-e2e/mcp_e2e.py:170) — Function pkce_pair takes verifier and gives back nothing; it does its work on what it is given.
+- function `parse_phext` (scripts/build_wavefront_snapshot.py:48) — Dead-reckoning parse: walk bytes, split on delimiters, map to coords.
 - function `assertion` (scripts/mcp-e2e/mcp_e2e.py:384) — Function assertion takes jti and gives back nothing; it does its work on what it is given.
+- function `authorize_and_consent` (scripts/mcp-e2e/mcp_e2e.py:92) — GET authorize (expect the consent page), POST approve, return the
+- function `b64url` (scripts/mcp-e2e/mcp_e2e.py:73) — Function b64url takes data: bytes and gives back str:.
+- function `check` (scripts/mcp-e2e/mcp_e2e.py:45) — Function check takes ok, label, detail="" and gives back nothing; it does its work on what it is given.
+- function `consent_fields` (scripts/mcp-e2e/mcp_e2e.py:82) — Function consent_fields takes page: str and gives back nothing; it does its work on what it is given.
+- function `flow_code_and_token` (scripts/mcp-e2e/mcp_e2e.py:141) — Function flow_code_and_token takes *, label, client_id, redirect_uri, state, verifier, and gives back nothing; it does i
+- function `pkce` (scripts/mcp-e2e/mcp_e2e.py:77) — Function pkce takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `pkce_pair` (scripts/mcp-e2e/mcp_e2e.py:170) — Function pkce_pair takes verifier and gives back nothing; it does its work on what it is given.
+- function `req` (scripts/mcp-e2e/mcp_e2e.py:55) — Function req takes method, path, body=None, headers=None, budget_ms=None, label=None and gives back nothing; it does its
+- function `rpc` (scripts/mcp-e2e/mcp_e2e.py:119) — Function rpc takes token, method, params=None, req_id=1, headers_extra=None, path="/mcp", label=None, budget_ms=None and
+- function `skip` (scripts/mcp-e2e/mcp_e2e.py:50) — Function skip takes label, why and gives back nothing; it does its work on what it is given.
+- function `token_exchange` (scripts/mcp-e2e/mcp_e2e.py:111) — Function token_exchange takes form, label, extra_headers=None and gives back nothing; it does its work on what it is giv
+- function `tool` (scripts/mcp-e2e/mcp_e2e.py:134) — Function tool takes token, name, args, label=None, budget_ms=None and gives back nothing; it does its work on what it is
 - function `cleanup` (scripts/mcp-e2e/run.sh:15) — Function cleanup takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it i
-- function `stamp` (scripts/mcp-e2e/sdk_flow.py:31) — Function stamp takes msg and gives back nothing; it does its work on what it is given.
 - function `__init__` (scripts/mcp-e2e/sdk_flow.py:36) — Function __init__ takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it 
-- entry point `main` (src/bin/phext_edit.rs:7879) — The entry point: the program starts here.
-- command `dim` (src/bin/phext_edit.rs:941) — A command named dim.
-- command `forward` (src/bin/phext_edit.rs:946) — A command named forward.
-- command `backward` (src/bin/phext_edit.rs:947) — A command named backward.
-- command `next` (src/bin/phext_edit.rs:948) — A command named next.
-- command `prev` (src/bin/phext_edit.rs:949) — A command named prev.
-- command `goto` (src/bin/phext_edit.rs:950) — A command named goto.
-- command `home` (src/bin/phext_edit.rs:955) — A command named home.
-- command `base` (src/bin/phext_edit.rs:962) — A command named base.
-- command `full` (src/bin/phext_edit.rs:1158) — A command named full.
-- command `summary` (src/bin/phext_edit.rs:1159) — A command named summary.
-- command `children` (src/bin/phext_edit.rs:1164) — A command named children.
-- command `scrolls` (src/bin/phext_edit.rs:1189) — A command named scrolls.
-- command `matches` (src/bin/phext_edit.rs:1197) — A command named matches.
-- command `no-store` (src/bin/phext_edit.rs:1545) — A command named no-store.
-- command `saved` (src/bin/phext_edit.rs:2333) — A command named saved.
-- command `write_scroll` (src/bin/phext_edit.rs:2479) — A command named write_scroll.
-- command `list_phexts` (src/bin/phext_edit.rs:2480) — A command named list_phexts.
-- command `initialize` (src/bin/phext_edit.rs:2486) — A command named initialize.
-- command `ping` (src/bin/phext_edit.rs:2680) — A command named ping.
-- command `jsonrpc` (src/bin/phext_edit.rs:2686) — A command named jsonrpc.
-- command `https` (src/bin/phext_edit.rs:3417) — A command named https.
-- command `http` (src/bin/phext_edit.rs:3418) — A command named http.
-- command `authorization_code` (src/bin/phext_edit.rs:3573) — A command named authorization_code.
-- command `code` (src/bin/phext_edit.rs:3592) — A command named code.
-- command `private_key_jwt` (src/bin/phext_edit.rs:3672) — A command named private_key_jwt.
-- command `none` (src/bin/phext_edit.rs:4628) — A command named none.
-- command `client_secret_basic` (src/bin/phext_edit.rs:4640) — A command named client_secret_basic.
-- command `client_secret_post` (src/bin/phext_edit.rs:4649) — A command named client_secret_post.
-- command `refresh_token` (src/bin/phext_edit.rs:4850) — A command named refresh_token.
-- command `replay` (src/bin/phext_edit.rs:4937) — A command named replay.
-- command `phext_toc` (src/bin/phext_edit.rs:5305) — A command named phext_toc.
-- command `read_scroll` (src/bin/phext_edit.rs:5331) — A command named read_scroll.
-- command `search_scrolls` (src/bin/phext_edit.rs:5347) — A command named search_scrolls.
-- command `claims` (src/bin/phext_edit.rs:5420) — A command named claims.
-- command `joins` (src/bin/phext_edit.rs:5433) — A command named joins.
-- command `ok` (src/bin/phext_edit.rs:5610) — A command named ok.
-- command `submissions` (src/bin/phext_edit.rs:5833) — A command named submissions.
-- command `traversals` (src/bin/phext_edit.rs:5984) — A command named traversals.
-- flag `--token` (src/bin/phext_edit.rs:6482) — A command line flag, --token.
-- flag `--port` (src/bin/phext_edit.rs:6486) — A command line flag, --port.
-- flag `--host` (src/bin/phext_edit.rs:6486) — A command line flag, --host.
-- flag `--dir` (src/bin/phext_edit.rs:6486) — A command line flag, --dir.
-- flag `--home` (src/bin/phext_edit.rs:6486) — A command line flag, --home.
-- flag `--home-coord` (src/bin/phext_edit.rs:6486) — A command line flag, --home-coord.
-- flag `--local` (src/bin/phext_edit.rs:6495) — A command line flag, --local.
-- flag `--help` (src/bin/phext_edit.rs:6495) — A command line flag, --help.
-- command `phext` (src/bin/phext_edit.rs:6536) — A command named phext.
-- command `xml` (src/bin/phext_edit.rs:6544) — A command named xml.
-- flag `--local opens the editor` (src/bin/phext_edit.rs:6795) — A command line flag, --local opens the editor.
-- command `found` (src/bin/phext_edit.rs:8227) — A command named found.
-- command `bought` (src/bin/phext_edit.rs:8228) — A command named bought.
-- command `patron` (src/bin/phext_edit.rs:8229) — A command named patron.
-- command `new` (src/bin/phext_edit.rs:8230) — A command named new.
-- command `lookup-form` (src/bin/phext_edit.rs:8466) — A command named lookup-form.
-- command `logout` (src/bin/phext_edit.rs:8494) — A command named logout.
-- command `claim-button` (src/bin/phext_edit.rs:8522) — A command named claim-button.
-- command `pending` (src/bin/phext_edit.rs:8642) — A command named pending.
-- command `upload-form` (src/bin/phext_edit.rs:8668) — A command named upload-form.
-- command `coord-link` (src/bin/phext_edit.rs:10631) — A command named coord-link.
-- flag `--font-text: 'Emise'` (src/bin/phext_edit.rs:12275) — A command line flag, --font-text: 'Emise'.
+- function `stamp` (scripts/mcp-e2e/sdk_flow.py:31) — Function stamp takes msg and gives back nothing; it does its work on what it is given.
 - flag `--dim: #808080` (src/bin/phext_edit.rs:13328) — A command line flag, --dim: #808080.
 - flag `--dim: #9a9a9a` (src/bin/phext_edit.rs:13329) — A command line flag, --dim: #9a9a9a.
+- flag `--dir` (src/bin/phext_edit.rs:6486) — A command line flag, --dir.
 - flag `--field-border: #767676` (src/bin/phext_edit.rs:13330) — A command line flag, --field-border: #767676.
+- flag `--font-text: 'Emise'` (src/bin/phext_edit.rs:12275) — A command line flag, --font-text: 'Emise'.
+- flag `--help` (src/bin/phext_edit.rs:6495) — A command line flag, --help.
+- flag `--home` (src/bin/phext_edit.rs:6486) — A command line flag, --home.
+- flag `--home-coord` (src/bin/phext_edit.rs:6486) — A command line flag, --home-coord.
+- flag `--host` (src/bin/phext_edit.rs:6486) — A command line flag, --host.
+- flag `--local` (src/bin/phext_edit.rs:6495) — A command line flag, --local.
+- flag `--local opens the editor` (src/bin/phext_edit.rs:6795) — A command line flag, --local opens the editor.
+- flag `--port` (src/bin/phext_edit.rs:6486) — A command line flag, --port.
+- flag `--token` (src/bin/phext_edit.rs:6482) — A command line flag, --token.
+- command `authorization_code` (src/bin/phext_edit.rs:3573) — A command named authorization_code.
+- command `backward` (src/bin/phext_edit.rs:947) — A command named backward.
+- command `base` (src/bin/phext_edit.rs:962) — A command named base.
+- command `bought` (src/bin/phext_edit.rs:8228) — A command named bought.
+- command `children` (src/bin/phext_edit.rs:1164) — A command named children.
+- command `claim-button` (src/bin/phext_edit.rs:8522) — A command named claim-button.
+- command `claims` (src/bin/phext_edit.rs:5420) — A command named claims.
+- command `client_secret_basic` (src/bin/phext_edit.rs:4640) — A command named client_secret_basic.
+- command `client_secret_post` (src/bin/phext_edit.rs:4649) — A command named client_secret_post.
+- command `code` (src/bin/phext_edit.rs:3592) — A command named code.
+- command `coord-link` (src/bin/phext_edit.rs:10631) — A command named coord-link.
+- command `dim` (src/bin/phext_edit.rs:941) — A command named dim.
+- command `forward` (src/bin/phext_edit.rs:946) — A command named forward.
+- command `found` (src/bin/phext_edit.rs:8227) — A command named found.
+- command `full` (src/bin/phext_edit.rs:1158) — A command named full.
+- command `goto` (src/bin/phext_edit.rs:950) — A command named goto.
+- command `home` (src/bin/phext_edit.rs:955) — A command named home.
+- command `http` (src/bin/phext_edit.rs:3418) — A command named http.
+- command `https` (src/bin/phext_edit.rs:3417) — A command named https.
+- command `initialize` (src/bin/phext_edit.rs:2486) — A command named initialize.
+- command `joins` (src/bin/phext_edit.rs:5433) — A command named joins.
+- command `jsonrpc` (src/bin/phext_edit.rs:2686) — A command named jsonrpc.
+- command `list_phexts` (src/bin/phext_edit.rs:2480) — A command named list_phexts.
+- command `logout` (src/bin/phext_edit.rs:8494) — A command named logout.
+- command `lookup-form` (src/bin/phext_edit.rs:8466) — A command named lookup-form.
+- entry point `main` (src/bin/phext_edit.rs:7879) — The entry point: the program starts here.
+- command `matches` (src/bin/phext_edit.rs:1197) — A command named matches.
+- command `new` (src/bin/phext_edit.rs:8230) — A command named new.
+- command `next` (src/bin/phext_edit.rs:948) — A command named next.
+- command `no-store` (src/bin/phext_edit.rs:1545) — A command named no-store.
+- command `none` (src/bin/phext_edit.rs:4628) — A command named none.
+- command `ok` (src/bin/phext_edit.rs:5610) — A command named ok.
+- command `patron` (src/bin/phext_edit.rs:8229) — A command named patron.
+- command `pending` (src/bin/phext_edit.rs:8642) — A command named pending.
+- command `phext` (src/bin/phext_edit.rs:6536) — A command named phext.
+- command `phext_toc` (src/bin/phext_edit.rs:5305) — A command named phext_toc.
+- command `ping` (src/bin/phext_edit.rs:2680) — A command named ping.
+- command `prev` (src/bin/phext_edit.rs:949) — A command named prev.
+- command `private_key_jwt` (src/bin/phext_edit.rs:3672) — A command named private_key_jwt.
+- command `read_scroll` (src/bin/phext_edit.rs:5331) — A command named read_scroll.
+- command `refresh_token` (src/bin/phext_edit.rs:4850) — A command named refresh_token.
+- command `replay` (src/bin/phext_edit.rs:4937) — A command named replay.
+- command `saved` (src/bin/phext_edit.rs:2333) — A command named saved.
+- command `scrolls` (src/bin/phext_edit.rs:1189) — A command named scrolls.
+- command `search_scrolls` (src/bin/phext_edit.rs:5347) — A command named search_scrolls.
+- command `submissions` (src/bin/phext_edit.rs:5833) — A command named submissions.
+- command `summary` (src/bin/phext_edit.rs:1159) — A command named summary.
+- command `traversals` (src/bin/phext_edit.rs:5984) — A command named traversals.
+- command `upload-form` (src/bin/phext_edit.rs:8668) — A command named upload-form.
+- command `write_scroll` (src/bin/phext_edit.rs:2479) — A command named write_scroll.
+- command `xml` (src/bin/phext_edit.rs:6544) — A command named xml.
 - entry point `main` (src/bin/phext_nav.rs:179) — The entry point: the program starts here.
-- entry point `main` (src/bin/phext_tts.rs:17) — The entry point: the program starts here.
-- command `coord` (src/bin/phext_tts.rs:26) — A command named coord.
-- command `ssml` (src/bin/phext_tts.rs:33) — A command named ssml.
-- command `special` (src/bin/phext_tts.rs:41) — A command named special.
-- command `table` (src/bin/phext_tts.rs:48) — A command named table.
+- flag `--help` (src/bin/phext_tts.rs:75) — A command line flag, --help.
 - command `batch` (src/bin/phext_tts.rs:61) — A command named batch.
+- command `coord` (src/bin/phext_tts.rs:26) — A command named coord.
 - command `extract` (src/bin/phext_tts.rs:68) — A command named extract.
 - command `help` (src/bin/phext_tts.rs:75) — A command named help.
-- flag `--help` (src/bin/phext_tts.rs:75) — A command line flag, --help.
+- entry point `main` (src/bin/phext_tts.rs:17) — The entry point: the program starts here.
+- command `special` (src/bin/phext_tts.rs:41) — A command named special.
+- command `ssml` (src/bin/phext_tts.rs:33) — A command named ssml.
+- command `table` (src/bin/phext_tts.rs:48) — A command named table.
+- flag `--dir` (src/bin/uml6d_edit.rs:674) — A command line flag, --dir.
+- flag `--host` (src/bin/uml6d_edit.rs:673) — A command line flag, --host.
+- flag `--port` (src/bin/uml6d_edit.rs:672) — A command line flag, --port.
+- command `coord-link` (src/bin/uml6d_edit.rs:1429) — A command named coord-link.
 - entry point `main` (src/bin/uml6d_edit.rs:653) — The entry point: the program starts here.
 - command `saved` (src/bin/uml6d_edit.rs:586) — A command named saved.
-- flag `--port` (src/bin/uml6d_edit.rs:672) — A command line flag, --port.
-- flag `--host` (src/bin/uml6d_edit.rs:673) — A command line flag, --host.
-- flag `--dir` (src/bin/uml6d_edit.rs:674) — A command line flag, --dir.
-- command `coord-link` (src/bin/uml6d_edit.rs:1429) — A command named coord-link.
+- struct `Claim` (src/claims.rs:78) — A data shape named Claim.
+- struct `Grant` (src/claims.rs:70) — A data shape named Grant.
 - enum `Tier` (src/claims.rs:36) — A named choice named Tier.
 - function `Tier::grant` (src/claims.rs:44) — Function Tier::grant takes no inputs beyond the value it is called on, and gives back Grant.
-- struct `Grant` (src/claims.rs:70) — A data shape named Grant.
-- struct `Claim` (src/claims.rs:78) — A data shape named Claim.
 - function `get` (src/claims.rs:115) — The claim an account already holds, if any.
-- function `record` (src/claims.rs:128) — Record a claim, or return the one the account already holds — claiming twice changes nothing (a later buy-in updates the
 - function `list` (src/claims.rs:153) — Every recorded claim, oldest first.
+- function `record` (src/claims.rs:128) — Record a claim, or return the one the account already holds — claiming twice changes nothing (a later buy-in updates the
 - function `set_tier` (src/claims.rs:173) — Move an existing claim to a new tier (a buy-in landing, or a map republication finding the account).
+- trait `CoordinateNav` (src/coordinate_ext.rs:123) — -------------------------------------------------------------------------------------------------------- [UPSTREAM] Navigation trait: move forward/backward in a specific dimension.
 - enum `Dimension` (src/coordinate_ext.rs:34) — -------------------------------------------------------------------------------------------------------- Dimension enum for editor navigation.
 - function `Dimension::from_index` (src/coordinate_ext.rs:67) — Convert 1-9 key index to dimension.
-- function `name` (src/coordinate_ext.rs:82) — Function name takes no inputs beyond the value it is called on, and gives back &'static str.
 - function `delimiter` (src/coordinate_ext.rs:97) — The delimiter byte for this dimension.
-- trait `CoordinateNav` (src/coordinate_ext.rs:123) — -------------------------------------------------------------------------------------------------------- [UPSTREAM] Navigation trait: move forward/backward in a specific dimension.
+- function `name` (src/coordinate_ext.rs:82) — Function name takes no inputs beyond the value it is called on, and gives back &'static str.
 - struct `Position` (src/cursor.rs:12) — Position within a scroll's text.
 - function `Position::new` (src/cursor.rs:20) — Function Position::new takes line: usize, col: usize and gives back Position.
-- function `origin` (src/cursor.rs:24) — Function origin takes no inputs beyond the value it is called on, and gives back Position.
-- function `from_offset` (src/cursor.rs:29) — Convert a byte offset in text to a Position.
-- function `to_offset` (src/cursor.rs:46) — Convert this Position to a byte offset in text.
-- struct `Selection` (src/cursor.rs:76) — A selection range within a scroll.
-- function `Selection::cursor` (src/cursor.rs:85) — A zero-width selection (cursor) at a position.
-- function `is_cursor` (src/cursor.rs:90) — Whether this is a zero-width selection (just a cursor).
-- function `start` (src/cursor.rs:95) — The start of the selection (earlier position).
-- function `end` (src/cursor.rs:106) — The end of the selection (later position).
 - struct `ScrollCursor` (src/cursor.rs:119) — The cursor state within a scroll.
 - function `ScrollCursor::new` (src/cursor.rs:131) — New cursor at the origin (0,0).
+- struct `Selection` (src/cursor.rs:76) — A selection range within a scroll.
+- function `Selection::cursor` (src/cursor.rs:85) — A zero-width selection (cursor) at a position.
 - function `at` (src/cursor.rs:140) — New cursor at a specific position.
-- function `position` (src/cursor.rs:149) — Current cursor position (selection head).
-- function `move_to` (src/cursor.rs:154) — Move cursor to a position, collapsing any selection.
-- function `select_to` (src/cursor.rs:160) — Extend selection to a position (keep anchor, move head).
+- function `end` (src/cursor.rs:106) — The end of the selection (later position).
+- function `from_offset` (src/cursor.rs:29) — Convert a byte offset in text to a Position.
+- function `is_cursor` (src/cursor.rs:90) — Whether this is a zero-width selection (just a cursor).
+- function `move_bottom` (src/cursor.rs:225) — Move to end of text.
+- function `move_down` (src/cursor.rs:194) — Move cursor down by n lines, preserving column.
+- function `move_end` (src/cursor.rs:214) — Move to end of current line.
+- function `move_home` (src/cursor.rs:209) — Move to beginning of current line.
 - function `move_left` (src/cursor.rs:166) — Move cursor left by n characters within text.
 - function `move_right` (src/cursor.rs:173) — Move cursor right by n characters within text.
-- function `move_up` (src/cursor.rs:180) — Move cursor up by n lines, preserving column.
-- function `move_down` (src/cursor.rs:194) — Move cursor down by n lines, preserving column.
-- function `move_home` (src/cursor.rs:209) — Move to beginning of current line.
-- function `move_end` (src/cursor.rs:214) — Move to end of current line.
+- function `move_to` (src/cursor.rs:154) — Move cursor to a position, collapsing any selection.
 - function `move_top` (src/cursor.rs:220) — Move to start of text.
-- function `move_bottom` (src/cursor.rs:225) — Move to end of text.
-- function `move_word_forward` (src/cursor.rs:232) — Move to the next word boundary.
+- function `move_up` (src/cursor.rs:180) — Move cursor up by n lines, preserving column.
 - function `move_word_backward` (src/cursor.rs:247) — Move to the previous word boundary.
-- enum `EditResult` (src/editor.rs:16) — What happened after processing a key.
-- enum `CursorStyle` (src/editor.rs:31) — Cursor rendering style.
-- struct `EditKey` (src/editor.rs:42) — A key event abstraction (decoupled from any TUI/GUI framework).
-- enum `EditKeyCode` (src/editor.rs:50) — A named choice named EditKeyCode.
-- function `EditKey::char` (src/editor.rs:68) — Function EditKey::char takes c: char and gives back EditKey.
-- function `ctrl` (src/editor.rs:72) — Function ctrl takes c: char and gives back EditKey.
-- function `special` (src/editor.rs:76) — Function special takes code: EditKeyCode and gives back EditKey.
-- struct `EditContext` (src/editor.rs:83) — The editing context passed to modes.
+- function `move_word_forward` (src/cursor.rs:232) — Move to the next word boundary.
+- function `origin` (src/cursor.rs:24) — Function origin takes no inputs beyond the value it is called on, and gives back Position.
+- function `position` (src/cursor.rs:149) — Current cursor position (selection head).
+- function `select_to` (src/cursor.rs:160) — Extend selection to a position (keep anchor, move head).
+- function `start` (src/cursor.rs:95) — The start of the selection (earlier position).
+- function `to_offset` (src/cursor.rs:46) — Convert this Position to a byte offset in text.
 - function `<'a> EditContext<'a>::new` (src/editor.rs:95) — Function <'a> EditContext<'a>::new takes coordinate: Coordinate, text: &'a mut String, cursor: &'a mut ScrollCursor, und
-- function `insert` (src/editor.rs:105) — Insert text at the cursor position.
-- function `insert_newline` (src/editor.rs:116) — Insert a newline at the cursor position.
+- enum `CursorStyle` (src/editor.rs:31) — Cursor rendering style.
+- struct `EditContext` (src/editor.rs:83) — The editing context passed to modes.
+- struct `EditKey` (src/editor.rs:42) — A key event abstraction (decoupled from any TUI/GUI framework).
+- function `EditKey::char` (src/editor.rs:68) — Function EditKey::char takes c: char and gives back EditKey.
+- enum `EditKeyCode` (src/editor.rs:50) — A named choice named EditKeyCode.
+- enum `EditResult` (src/editor.rs:16) — What happened after processing a key.
+- trait `EditorMode` (src/editor.rs:221) — The trait that all editor modes implement.
+- function `ctrl` (src/editor.rs:72) — Function ctrl takes c: char and gives back EditKey.
 - function `delete_backward` (src/editor.rs:121) — Delete n characters before the cursor (backspace).
 - function `delete_forward` (src/editor.rs:135) — Delete n characters at the cursor position (delete key).
 - function `delete_line` (src/editor.rs:148) — Delete the current line.
-- function `replace_selection` (src/editor.rs:173) — Replace the selected text with new text.
-- function `undo` (src/editor.rs:195) — Undo the last edit.
+- function `insert` (src/editor.rs:105) — Insert text at the cursor position.
+- function `insert_newline` (src/editor.rs:116) — Insert a newline at the cursor position.
 - function `redo` (src/editor.rs:206) — Redo the next edit.
-- trait `EditorMode` (src/editor.rs:221) — The trait that all editor modes implement.
+- function `replace_selection` (src/editor.rs:173) — Replace the selected text with new text.
+- function `special` (src/editor.rs:76) — Function special takes code: EditKeyCode and gives back EditKey.
+- function `undo` (src/editor.rs:195) — Undo the last edit.
 - re-export `holo_phext::index::{LatticeIndex, ScrollSpan}` (src/index.rs:14) — A re-export: holo_phext::index::{LatticeIndex, ScrollSpan} is made reachable through this module, so other code can use 
 - struct `Join` (src/joins.rs:23) — A data shape named Join.
 - function `get` (src/joins.rs:56) — The join an account already holds, if any.
-- function `record` (src/joins.rs:68) — Record a join, or return the one the account already holds — the first arrival is the join, and joining twice changes no
 - function `list` (src/joins.rs:86) — Every recorded join, oldest first.
+- function `record` (src/joins.rs:68) — Record a join, or return the one the account already holds — the first arrival is the join, and joining twice changes no
 - re-export `coordinate_ext::{Dimension, CoordinateNav}` (src/lib.rs:53) — A re-export: coordinate_ext::{Dimension, CoordinateNav} is made reachable through this module, so other code can use it 
 - re-export `cursor::{ScrollCursor, Position, Selection}` (src/lib.rs:54) — A re-export: cursor::{ScrollCursor, Position, Selection} is made reachable through this module, so other code can use it
 - re-export `editor::{EditorMode, EditContext, EditKey, EditKeyCode, EditResult, CursorStyle}` (src/lib.rs:55) — A re-export: editor::{EditorMode, EditContext, EditKey, EditKeyCode, EditResult, CursorStyle} is made reachable through 
@@ -370,331 +368,331 @@ Every public method and command the scanner found, each with a plain English not
 - re-export `names::{NameIndex, fold}` (src/lib.rs:59) — A re-export: names::{NameIndex, fold} is made reachable through this module, so other code can use it from here.
 - re-export `navigator::Navigator` (src/lib.rs:60) — A re-export: navigator::Navigator is made reachable through this module, so other code can use it from here.
 - re-export `search::{search_lattice, search_lattice_parallel, search_lattice_auto, search_coordinates, SearchHit}` (src/lib.rs:61) — A re-export: search::{search_lattice, search_lattice_parallel, search_lattice_auto, search_coordinates, SearchHit} is ma
-- re-export `sidecar::{IndexedLattice, IndexSpec, OpenMode, SyncReport, sidecar_dir}` (src/lib.rs:62) — A re-export: sidecar::{IndexedLattice, IndexSpec, OpenMode, SyncReport, sidecar_dir} is made reachable through this modu
 - re-export `sentron::{Sentron, Neuron, Axon, AxisGroup, SENTRON_CAPACITY}` (src/lib.rs:63) — A re-export: sentron::{Sentron, Neuron, Axon, AxisGroup, SENTRON_CAPACITY} is made reachable through this module, so oth
+- re-export `sidecar::{IndexedLattice, IndexSpec, OpenMode, SyncReport, sidecar_dir}` (src/lib.rs:62) — A re-export: sidecar::{IndexedLattice, IndexSpec, OpenMode, SyncReport, sidecar_dir} is made reachable through this modu
 - re-export `stats::{ScrollStats, DimensionDensity, LatticeOverview, Neighborhood}` (src/lib.rs:64) — A re-export: stats::{ScrollStats, DimensionDensity, LatticeOverview, Neighborhood} is made reachable through this module
 - re-export `term_index::{TermIndex, TermHit, Bm25Params, tokenize}` (src/lib.rs:65) — A re-export: term_index::{TermIndex, TermHit, Bm25Params, tokenize} is made reachable through this module, so other code
-- re-export `undo::{UndoEngine, EditOp, UndoRecord}` (src/lib.rs:66) — A re-export: undo::{UndoEngine, EditOp, UndoRecord} is made reachable through this module, so other code can use it from
 - re-export `tts::{CoordPronunciation, byte_to_syllable, dim_to_syllables, to_ssml, generate_pronunciation_doc, special_coords}` (src/lib.rs:67) — A re-export: tts::{CoordPronunciation, byte_to_syllable, dim_to_syllables, to_ssml, generate_pronunciation_doc, special_
 - re-export `uml6d::{Phase, ArtifactAddr, UmlContext, trace_artifact, artifacts_in_phase}` (src/lib.rs:68) — A re-export: uml6d::{Phase, ArtifactAddr, UmlContext, trace_artifact, artifacts_in_phase} is made reachable through this
-- function `media_payload_coord` (src/media.rs:32) — Where slot `slot`'s image payload (a binary scroll) lives: 9.9.9/9.9.9/1.1.n.
-- function `media_metadata_coord` (src/media.rs:38) — Where slot `slot`'s metadata scroll (JSON text) lives: 9.9.9/9.9.9/1.2.n.
-- function `media_slot_of` (src/media.rs:44) — The media slot a coordinate belongs to, if it is a media payload coordinate (9.9.9/9.9.9/1.1.n).
-- function `is_well_formed_binary_scroll` (src/media.rs:68) — True when `stored` is a well-formed binary scroll: it carries the canonical header and its body is strict base64 (an empty payload — header plus newline, nothing after — is well-formed).
-- struct `ImageKind` (src/media.rs:74) — A raster image format the editor accepts, identified by magic bytes.
-- const `PNG` (src/media.rs:81) — A fixed value named PNG, set to ImageKind { content_type: "image/png", extension: "png" }.
-- const `JPEG` (src/media.rs:82) — A fixed value named JPEG, set to ImageKind { content_type: "image/jpeg", extension: "jpg" }.
-- const `GIF` (src/media.rs:83) — A fixed value named GIF, set to ImageKind { content_type: "image/gif", extension: "gif" }.
-- const `WEBP` (src/media.rs:84) — A fixed value named WEBP, set to ImageKind { content_type: "image/webp", extension: "webp" }.
+- re-export `undo::{UndoEngine, EditOp, UndoRecord}` (src/lib.rs:66) — A re-export: undo::{UndoEngine, EditOp, UndoRecord} is made reachable through this module, so other code can use it from
 - const `AVIF` (src/media.rs:85) — A fixed value named AVIF, set to ImageKind { content_type: "image/avif", extension: "avif" }.
+- const `GIF` (src/media.rs:83) — A fixed value named GIF, set to ImageKind { content_type: "image/gif", extension: "gif" }.
+- struct `ImageKind` (src/media.rs:74) — A raster image format the editor accepts, identified by magic bytes.
+- const `JPEG` (src/media.rs:82) — A fixed value named JPEG, set to ImageKind { content_type: "image/jpeg", extension: "jpg" }.
+- const `PNG` (src/media.rs:81) — A fixed value named PNG, set to ImageKind { content_type: "image/png", extension: "png" }.
+- const `WEBP` (src/media.rs:84) — A fixed value named WEBP, set to ImageKind { content_type: "image/webp", extension: "webp" }.
+- function `is_well_formed_binary_scroll` (src/media.rs:68) — True when `stored` is a well-formed binary scroll: it carries the canonical header and its body is strict base64 (an empty payload — header plus newline, nothing after — is well-formed).
+- function `media_metadata_coord` (src/media.rs:38) — Where slot `slot`'s metadata scroll (JSON text) lives: 9.9.9/9.9.9/1.2.n.
+- function `media_payload_coord` (src/media.rs:32) — Where slot `slot`'s image payload (a binary scroll) lives: 9.9.9/9.9.9/1.1.n.
+- function `media_slot_of` (src/media.rs:44) — The media slot a coordinate belongs to, if it is a media payload coordinate (9.9.9/9.9.9/1.1.n).
 - function `sniff_image` (src/media.rs:91) — Identify an image payload by its magic bytes — never by a file name or a client-claimed type.
 - struct `MappedLattice` (src/mmap.rs:144) — A phext document with copy-on-write editing.
 - function `MappedLattice::open` (src/mmap.rs:186) — Open a phext file and build the lattice index.
-- function `open_with_index` (src/mmap.rs:233) — Open a phext file with an index built elsewhere (e.g.
-- function `from_bytes` (src/mmap.rs:267) — Create a MappedLattice from raw bytes (for testing or in-memory use).
-- function `read_scroll` (src/mmap.rs:316) — Read the content of a scroll at the given coordinate.
-- function `read_scroll_bytes` (src/mmap.rs:342) — The scroll's exact stored bytes: the overlay version if edited, otherwise the mmap span, uninterpreted.
-- function `fetch_binary` (src/mmap.rs:367) — The payload a fetch of this scroll returns, mirroring `libphext::binary::fetch_binary` exactly: a well-formed binary scroll decodes to its payload; any other scroll (plain text, malformed binary, unoccupied) yields its own stored bytes verbatim — empty when the coordinate holds no scroll.
-- function `is_chain` (src/mmap.rs:381) — True when this file is a chain: more structure than a plain phext's single unclosed member.
-- function `universe_count` (src/mmap.rs:387) — How many universes (member phexts) this file holds.
-- function `universe` (src/mmap.rs:392) — The active universe, numbered from 1.
-- function `member_stats` (src/mmap.rs:397) — Per-universe (scroll count, content bytes), in universe order.
-- function `set_universe` (src/mmap.rs:408) — Make `universe` (numbered from 1) the active universe.
-- function `read_scroll_bytes_in` (src/mmap.rs:434) — A scroll's exact stored bytes in `universe` (numbered from 1), without switching the active universe.
-- function `read_scroll_in` (src/mmap.rs:445) — A scroll's content in `universe` (numbered from 1), without switching the active universe.
-- function `write_scroll` (src/mmap.rs:461) — Write content to a scroll at the given coordinate.
-- function `write_scroll_raw` (src/mmap.rs:476) — Store a scroll's stored form verbatim, with no binary guard.
-- function `write_binary` (src/mmap.rs:496) — Store `payload` at `coord` as a canonical binary scroll (header + base64 of the exact bytes), whatever the payload holds
-- function `write_bytes` (src/mmap.rs:505) — Store `payload` at `coord` under the format's ingestion rule (libphext's `stored_form`, behind `insert_bytes`/`replace_bytes`): valid UTF-8 is stored as ordinary text; anything else becomes a binary scroll holding the exact bytes.
 - function `delete_scroll` (src/mmap.rs:513) — Delete a scroll at the given coordinate.
+- function `fetch_binary` (src/mmap.rs:367) — The payload a fetch of this scroll returns, mirroring `libphext::binary::fetch_binary` exactly: a well-formed binary scroll decodes to its payload; any other scroll (plain text, malformed binary, unoccupied) yields its own stored bytes verbatim — empty when the coordinate holds no scroll.
+- function `from_bytes` (src/mmap.rs:267) — Create a MappedLattice from raw bytes (for testing or in-memory use).
 - function `has_scroll` (src/mmap.rs:529) — Check if a coordinate has content (considering overlay).
-- function `populated_coordinates` (src/mmap.rs:543) — Get all populated coordinates, including overlay insertions, excluding overlay deletions.
-- function `scroll_count` (src/mmap.rs:568) — Number of populated scrolls (considering overlay).
+- function `index` (src/mmap.rs:813) — Access the underlying index for navigation queries.
+- function `is_chain` (src/mmap.rs:381) — True when this file is a chain: more structure than a plain phext's single unclosed member.
 - function `is_dirty` (src/mmap.rs:573) — Check if there are unsaved modifications.
+- function `member_stats` (src/mmap.rs:397) — Per-universe (scroll count, content bytes), in universe order.
+- function `open_with_index` (src/mmap.rs:233) — Open a phext file with an index built elsewhere (e.g.
+- function `path` (src/mmap.rs:818) — Get the file path.
 - function `pending_changes` (src/mmap.rs:583) — Number of modified/inserted/deleted scrolls.
 - function `pending_coordinates` (src/mmap.rs:591) — Coordinates with unsaved edits (modified, inserted, or deleted), sorted.
+- function `populated_coordinates` (src/mmap.rs:543) — Get all populated coordinates, including overlay insertions, excluding overlay deletions.
+- function `raw_buffer` (src/mmap.rs:791) — Access the raw mmap buffer for search operations.
+- function `read_scroll` (src/mmap.rs:316) — Read the content of a scroll at the given coordinate.
+- function `read_scroll_bytes` (src/mmap.rs:342) — The scroll's exact stored bytes: the overlay version if edited, otherwise the mmap span, uninterpreted.
+- function `read_scroll_bytes_in` (src/mmap.rs:434) — A scroll's exact stored bytes in `universe` (numbered from 1), without switching the active universe.
+- function `read_scroll_in` (src/mmap.rs:445) — A scroll's content in `universe` (numbered from 1), without switching the active universe.
+- function `revert` (src/mmap.rs:823) — Discard all unsaved changes, reverting to the mmap state.
 - function `save` (src/mmap.rs:610) — Save to the backing file.
 - function `save_as` (src/mmap.rs:657) — Save to a specific path.
+- function `scroll_count` (src/mmap.rs:568) — Number of populated scrolls (considering overlay).
+- function `set_universe` (src/mmap.rs:408) — Make `universe` (numbered from 1) the active universe.
 - function `to_phext_bytes` (src/mmap.rs:707) — Reconstruct the full phext as bytes from mmap + overlay.
-- function `raw_buffer` (src/mmap.rs:791) — Access the raw mmap buffer for search operations.
-- function `index` (src/mmap.rs:813) — Access the underlying index for navigation queries.
-- function `path` (src/mmap.rs:818) — Get the file path.
-- function `revert` (src/mmap.rs:823) — Discard all unsaved changes, reverting to the mmap state.
+- function `universe` (src/mmap.rs:392) — The active universe, numbered from 1.
+- function `universe_count` (src/mmap.rs:387) — How many universes (member phexts) this file holds.
+- function `write_binary` (src/mmap.rs:496) — Store `payload` at `coord` as a canonical binary scroll (header + base64 of the exact bytes), whatever the payload holds
+- function `write_bytes` (src/mmap.rs:505) — Store `payload` at `coord` under the format's ingestion rule (libphext's `stored_form`, behind `insert_bytes`/`replace_bytes`): valid UTF-8 is stored as ordinary text; anything else becomes a binary scroll holding the exact bytes.
+- function `write_scroll` (src/mmap.rs:461) — Write content to a scroll at the given coordinate.
+- function `write_scroll_raw` (src/mmap.rs:476) — Store a scroll's stored form verbatim, with no binary guard.
 - re-export `vim::VimMode` (src/modes/mod.rs:8) — A re-export: vim::VimMode is made reachable through this module, so other code can use it from here.
 - struct `VimMode` (src/modes/vim.rs:20) — Vim-style editor mode with Normal/Insert/Visual/Command sub-modes.
 - function `VimMode::new` (src/modes/vim.rs:33) — Function VimMode::new takes no inputs beyond the value it is called on, and gives back VimMode.
-- function `fold` (src/names.rs:17) — Case-fold a name for lookup: Unicode lowercase with runs of whitespace collapsed to one space and the ends trimmed.
 - struct `NameIndex` (src/names.rs:69) — Exact and folded name → coordinate maps.
 - function `NameIndex::new` (src/names.rs:77) — Function NameIndex::new takes no inputs beyond the value it is called on, and gives back NameIndex.
+- function `ambiguous` (src/names.rs:159) — How many inserts hit a folded key already owned by a different coordinate.
+- function `fold` (src/names.rs:17) — Case-fold a name for lookup: Unicode lowercase with runs of whitespace collapsed to one space and the ends trimmed.
 - function `from_scrolls` (src/names.rs:84) — Build from the lattice: every non-empty line of each scroll that `select` maps to `Some(target)` becomes a name for `target`.
-- function `insert` (src/names.rs:116) — Register `name` for `coord`.
 - function `get` (src/names.rs:134) — Exact (case-sensitive) lookup.
 - function `get_folded` (src/names.rs:139) — Case-insensitive lookup through the folded map.
-- function `resolve` (src/names.rs:144) — Exact match first, then folded: what an agent's "open <name>" should call.
-- function `len` (src/names.rs:149) — Distinct exact names.
+- function `insert` (src/names.rs:116) — Register `name` for `coord`.
 - function `is_empty` (src/names.rs:153) — Function is_empty takes no inputs beyond the value it is called on, and gives back bool.
-- function `ambiguous` (src/names.rs:159) — How many inserts hit a folded key already owned by a different coordinate.
+- function `len` (src/names.rs:149) — Distinct exact names.
+- function `resolve` (src/names.rs:144) — Exact match first, then folded: what an agent's "open <name>" should call.
 - struct `Navigator` (src/navigator.rs:13) — The navigator state for one cursor in the lattice.
 - function `Navigator::new` (src/navigator.rs:27) — Function Navigator::new takes no inputs beyond the value it is called on, and gives back Navigator.
-- function `at` (src/navigator.rs:38) — Create a navigator starting at a specific coordinate.
-- function `position` (src/navigator.rs:49) — Current position in the lattice.
+- function `Navigator::summarize` (src/navigator.rs:198) — Build a summary of the current neighborhood for UI rendering.
+- struct `NeighborhoodSummary` (src/navigator.rs:179) — Summary of the lattice neighborhood around a coordinate, for rendering the coordinate bar and lattice navigator panel.
 - function `active_dimension` (src/navigator.rs:54) — Currently selected dimension.
-- function `select_dimension` (src/navigator.rs:59) — Select a dimension by index (1-9).
-- function `move_forward` (src/navigator.rs:69) — Move forward in the active dimension (resets lower dims).
-- function `move_backward` (src/navigator.rs:78) — Move backward in the active dimension (resets lower dims).
+- function `at` (src/navigator.rs:38) — Create a navigator starting at a specific coordinate.
+- function `dimension_neighbors` (src/navigator.rs:154) — Get neighbors in the active dimension: (prev_value, current_value, next_value).
 - function `goto` (src/navigator.rs:87) — Jump directly to a coordinate.
-- function `next_populated` (src/navigator.rs:93) — Jump to the next populated coordinate (any dimension).
-- function `prev_populated` (src/navigator.rs:104) — Jump to the previous populated coordinate (any dimension).
-- function `set_mark` (src/navigator.rs:115) — Set a mark at the current position.
-- function `jump_to_mark` (src/navigator.rs:120) — Jump to the most recent mark (and remove it).
 - function `history_back` (src/navigator.rs:131) — Navigate back in history.
 - function `history_forward` (src/navigator.rs:142) — Navigate forward in history.
-- function `dimension_neighbors` (src/navigator.rs:154) — Get neighbors in the active dimension: (prev_value, current_value, next_value).
-- struct `NeighborhoodSummary` (src/navigator.rs:179) — Summary of the lattice neighborhood around a coordinate, for rendering the coordinate bar and lattice navigator panel.
-- function `Navigator::summarize` (src/navigator.rs:198) — Build a summary of the current neighborhood for UI rendering.
-- const `TEST_CSRF` (src/oauth.rs:53) — A fixed value named TEST_CSRF, set to "csrf-test-token".
-- struct `Identity` (src/oauth.rs:60) — A data shape named Identity.
-- trait `IdentitySource` (src/oauth.rs:67) — A trait named IdentitySource: a set of methods that a type can promise to give.
-- struct `Oauth` (src/oauth.rs:171) — A data shape named Oauth.
-- struct `Session` (src/oauth.rs:218) — A data shape named Session.
-- struct `SsoAssertionBody` (src/oauth.rs:269) — The SSO assertion: a sealed, single-use statement that an edit session exists, carried to an audience's callback in a redirect and verified there under the SSO secret.
-- function `Oauth::from_env` (src/oauth.rs:292) — Function Oauth::from_env takes no inputs beyond the value it is called on, and gives back Self.
-- function `test_ready` (src/oauth.rs:312) — Function test_ready takes no inputs beyond the value it is called on, and gives back Self.
-- function `closed` (src/oauth.rs:332) — Function closed takes no inputs beyond the value it is called on, and gives back Self.
-- function `ready` (src/oauth.rs:400) — Function ready takes no inputs beyond the value it is called on, and gives back bool.
-- function `sso_ready` (src/oauth.rs:410) — True when the Mutable SSO handoff is configured: a real SSO secret and a valid Mutable target.
-- function `sso_ready_for` (src/oauth.rs:419) — True when the SSO handoff is configured for one audience: the shared SSO secret is real and that audience has a target.
-- function `sso_desktop_ready` (src/oauth.rs:427) — True when the desktop audience is armed: a real SSO secret and the operator's explicit `PHEXT_SSO_DESKTOP=1`.
-- function `base` (src/oauth.rs:431) — Function base takes no inputs beyond the value it is called on, and gives back &str.
-- function `sso_target` (src/oauth.rs:435) — Function sso_target takes no inputs beyond the value it is called on, and gives back &str.
-- function `sso_target_for` (src/oauth.rs:450) — The callback origin for an audience, or None when the audience is not allowlisted or is allowlisted but unconfigured.
-- function `providers` (src/oauth.rs:463) — Function providers takes no inputs beyond the value it is called on, and gives back Vec<&'static str>.
-- function `cookie_secure` (src/oauth.rs:480) — Function cookie_secure takes no inputs beyond the value it is called on, and gives back bool.
-- function `authorize_url` (src/oauth.rs:485) — Returns the provider URL to redirect to and the sealed pending cookie.
-- function `finish` (src/oauth.rs:535) — Completes the flow.
-- function `issue_session` (src/oauth.rs:576) — Seal a fresh session for an identity that has already been established — by the provider exchange in `finish`, or by a verified desktop SSO assertion at the exchange endpoint.
-- function `read_session` (src/oauth.rs:595) — Function read_session takes &self, cookie_header: &str and gives back Option<Session>.
-- function `csrf_matches` (src/oauth.rs:621) — Function csrf_matches takes &self, session: &Session, header: &str and gives back bool.
-- function `mcp_oauth_hash` (src/oauth.rs:634) — A domain-separated, keyed digest for the MCP OAuth 2.1 store.
-- function `test_session_cookie` (src/oauth.rs:651) — Function test_session_cookie takes no inputs beyond the value it is called on, and gives back String.
-- function `sso_assertion` (src/oauth.rs:701) — Mint the assertion an audience's callback verifies: who this session is, whether it is an editor, and the return path on the audience's site — sealed under the shared SSO secret, alive for `SSO_TTL` seconds, with a fresh `jti` the audience burns on first sight.
-- function `sso_assertion_desktop` (src/oauth.rs:740) — Mint the desktop audience's assertion.
-- function `open_sso_assertion` (src/oauth.rs:778) — Open an SSO assertion under the SSO secret — the exchange endpoint is the one place this server ever takes an assertion back, and only the desktop audience's.
+- function `jump_to_mark` (src/navigator.rs:120) — Jump to the most recent mark (and remove it).
+- function `move_backward` (src/navigator.rs:78) — Move backward in the active dimension (resets lower dims).
+- function `move_forward` (src/navigator.rs:69) — Move forward in the active dimension (resets lower dims).
+- function `next_populated` (src/navigator.rs:93) — Jump to the next populated coordinate (any dimension).
+- function `position` (src/navigator.rs:49) — Current position in the lattice.
+- function `prev_populated` (src/navigator.rs:104) — Jump to the previous populated coordinate (any dimension).
+- function `select_dimension` (src/navigator.rs:59) — Select a dimension by index (1-9).
+- function `set_mark` (src/navigator.rs:115) — Set a mark at the current position.
+- const `CONTENT_SECURITY_POLICY` (src/oauth.rs:1092) — Policy for the embedded editor and the public pages.
 - struct `Editors` (src/oauth.rs:843) — Accounts allowed to use the editor once signed in.
 - function `Editors::from_env` (src/oauth.rs:876) — Function Editors::from_env takes no inputs beyond the value it is called on, and gives back Self.
-- function `parse` (src/oauth.rs:880) — Function parse takes raw: &str and gives back Self.
-- function `len` (src/oauth.rs:887) — Function len takes no inputs beyond the value it is called on, and gives back usize.
-- function `is_empty` (src/oauth.rs:891) — Function is_empty takes no inputs beyond the value it is called on, and gives back bool.
-- function `matches` (src/oauth.rs:895) — Function matches takes &self, who: &str, email: &str and gives back bool.
-- function `allows` (src/oauth.rs:904) — An empty list admits every signed-in account.
-- function `load_file` (src/oauth.rs:912) — Point the list at its backing file and load any entries already in it (one per line; blank lines and `#` comments are ignored, and a line may still carry several comma-separated entries).
-- function `admit` (src/oauth.rs:940) — Admit an account: add its account id (when valid) and its email (when usable), unless each is already covered, and append the new entries to the backing file when one is configured.
-- struct `Limiter` (src/oauth.rs:977) — In-memory cap on sign-in attempts per client address, per ten minutes.
-- function `Limiter::standard` (src/oauth.rs:983) — Function Limiter::standard takes no inputs beyond the value it is called on, and gives back Self.
-- function `with_cap` (src/oauth.rs:987) — Function with_cap takes cap: usize and gives back Self.
-- function `hit` (src/oauth.rs:991) — Function hit takes &self, key: &str and gives back Result<(), ()>.
-- struct `Reply` (src/oauth.rs:1006) — A complete HTTP response for the hand-rolled servers to write out.
-- function `Reply::json` (src/oauth.rs:1015) — Function Reply::json takes status: u16, value: serde_json::Value and gives back Self.
-- function `write_to` (src/oauth.rs:1058) — Serialize as an HTTP/1.1 response with `Connection: close`.
-- const `HSTS_VALUE` (src/oauth.rs:1080) — One year.
-- const `CONTENT_SECURITY_POLICY` (src/oauth.rs:1092) — Policy for the embedded editor and the public pages.
-- function `forwarded_https` (src/oauth.rs:1106) — Function forwarded_https takes headers: &HashMap<String, String> and gives back bool.
-- function `security_header_block_csp` (src/oauth.rs:1114) — Function security_header_block_csp takes https: bool, csp_override: Option<&str> and gives back String.
-- function `security_header_block` (src/oauth.rs:1132) — Function security_header_block takes https: bool and gives back String.
-- function `status_text` (src/oauth.rs:1136) — Function status_text takes status: u16 and gives back &'static str.
 - struct `Gate` (src/oauth.rs:1191) — Access control for the editor servers: an OAuth session, or open when sign-in is not configured.
 - function `Gate::new` (src/oauth.rs:1209) — Function Gate::new takes oauth: Oauth, editors: Editors and gives back Self.
-- function `from_env` (src/oauth.rs:1235) — Function from_env takes no inputs beyond the value it is called on, and gives back Self.
-- function `enable_local` (src/oauth.rs:1256) — Admit every direct request as a local developer.
-- function `is_local` (src/oauth.rs:1260) — Function is_local takes no inputs beyond the value it is called on, and gives back bool.
-- function `enable_claims` (src/oauth.rs:1267) — Open claim mode: `/api/claim` accepts claims (the lookup stays public either way).
-- function `claims_open` (src/oauth.rs:1271) — Function claims_open takes no inputs beyond the value it is called on, and gives back bool.
-- function `locked` (src/oauth.rs:1276) — True when some credential is required for the API.
-- function `oauth` (src/oauth.rs:1280) — Function oauth takes no inputs beyond the value it is called on, and gives back &Oauth.
-- function `editors` (src/oauth.rs:1284) — Function editors takes no inputs beyond the value it is called on, and gives back &Editors.
-- function `session` (src/oauth.rs:1291) — The signed-in session for a request, if any.
-- function `is_editor` (src/oauth.rs:1308) — Whether a session belongs to an approved editor.
-- function `admit_account` (src/oauth.rs:1315) — Admit an account as an editor, effective immediately and persisted to the editors file when one is configured.
-- function `load_editors_file` (src/oauth.rs:1323) — Load additional editor entries from a file (one per line) and make it the backing file for future admissions.
-- function `describe` (src/oauth.rs:1328) — Startup lines describing how the API is protected.
-- function `route` (src/oauth.rs:1352) — Handles `/api/session` and `/api/auth/*`.
+- const `HSTS_VALUE` (src/oauth.rs:1080) — One year.
+- struct `Identity` (src/oauth.rs:60) — A data shape named Identity.
+- trait `IdentitySource` (src/oauth.rs:67) — A trait named IdentitySource: a set of methods that a type can promise to give.
+- struct `Limiter` (src/oauth.rs:977) — In-memory cap on sign-in attempts per client address, per ten minutes.
+- function `Limiter::standard` (src/oauth.rs:983) — Function Limiter::standard takes no inputs beyond the value it is called on, and gives back Self.
+- struct `Oauth` (src/oauth.rs:171) — A data shape named Oauth.
+- function `Oauth::from_env` (src/oauth.rs:292) — Function Oauth::from_env takes no inputs beyond the value it is called on, and gives back Self.
+- struct `Reply` (src/oauth.rs:1006) — A complete HTTP response for the hand-rolled servers to write out.
+- function `Reply::json` (src/oauth.rs:1015) — Function Reply::json takes status: u16, value: serde_json::Value and gives back Self.
+- struct `Session` (src/oauth.rs:218) — A data shape named Session.
+- struct `SsoAssertionBody` (src/oauth.rs:269) — The SSO assertion: a sealed, single-use statement that an edit session exists, carried to an audience's callback in a redirect and verified there under the SSO secret.
+- const `TEST_CSRF` (src/oauth.rs:53) — A fixed value named TEST_CSRF, set to "csrf-test-token".
+- function `admit` (src/oauth.rs:940) — Admit an account: add its account id (when valid) and its email (when usable), unless each is already covered, and append the new entries to the backing file when one is configured.
 - function `admit` (src/oauth.rs:1396) — Decides whether a non-auth request may proceed.
-- function `sso` (src/oauth.rs:1545) — `GET /api/auth/sso/<aud>` — the cross-site handoff to one allowlisted audience (`mutable`, `exocortexia`, `wishnode`).
-- function `cookie_header` (src/oauth.rs:1743) — Function cookie_header takes name: &str, value: &str, max_age: i64, secure: bool and gives back String.
-- function `safe_next` (src/oauth.rs:1850) — Keeps the post-sign-in redirect on this site: a path, optionally with a `#coordinate` fragment.
-- function `loopback_return` (src/oauth.rs:1888) — Admit a desktop return URL: the address of the listener the app opened for this one sign-in attempt.
-- function `valid_state_nonce` (src/oauth.rs:1930) — The desktop attempt's state nonce: long enough to be unguessable, plain enough to travel in URLs and assertions unchanged.
-- function `valid_who` (src/oauth.rs:1937) — Function valid_who takes who: &str and gives back bool.
-- function `display_name` (src/oauth.rs:1955) — Function display_name takes raw: &str, fallback: &str and gives back String.
+- function `admit_account` (src/oauth.rs:1315) — Admit an account as an editor, effective immediately and persisted to the editors file when one is configured.
+- function `allows` (src/oauth.rs:904) — An empty list admits every signed-in account.
+- function `authorize_url` (src/oauth.rs:485) — Returns the provider URL to redirect to and the sealed pending cookie.
+- function `base` (src/oauth.rs:431) — Function base takes no inputs beyond the value it is called on, and gives back &str.
+- function `claims_open` (src/oauth.rs:1271) — Function claims_open takes no inputs beyond the value it is called on, and gives back bool.
 - function `clean_email` (src/oauth.rs:1970) — Function clean_email takes raw: &str and gives back String.
 - function `clean_handle` (src/oauth.rs:1991) — Function clean_handle takes raw: &str and gives back String.
 - function `clean_twitter_handle` (src/oauth.rs:2004) — An X username verbatim: `[A-Za-z0-9_]{1,15}`, case preserved.
-- function `token_eq` (src/oauth.rs:2016) — Constant-time comparison; an empty expected value never matches.
+- function `closed` (src/oauth.rs:332) — Function closed takes no inputs beyond the value it is called on, and gives back Self.
+- function `cookie_header` (src/oauth.rs:1743) — Function cookie_header takes name: &str, value: &str, max_age: i64, secure: bool and gives back String.
+- function `cookie_secure` (src/oauth.rs:480) — Function cookie_secure takes no inputs beyond the value it is called on, and gives back bool.
+- function `csrf_matches` (src/oauth.rs:621) — Function csrf_matches takes &self, session: &Session, header: &str and gives back bool.
+- function `describe` (src/oauth.rs:1328) — Startup lines describing how the API is protected.
+- function `display_name` (src/oauth.rs:1955) — Function display_name takes raw: &str, fallback: &str and gives back String.
+- function `editors` (src/oauth.rs:1284) — Function editors takes no inputs beyond the value it is called on, and gives back &Editors.
+- function `enable_claims` (src/oauth.rs:1267) — Open claim mode: `/api/claim` accepts claims (the lookup stays public either way).
+- function `enable_local` (src/oauth.rs:1256) — Admit every direct request as a local developer.
+- function `finish` (src/oauth.rs:535) — Completes the flow.
+- function `forwarded_https` (src/oauth.rs:1106) — Function forwarded_https takes headers: &HashMap<String, String> and gives back bool.
+- function `from_env` (src/oauth.rs:1235) — Function from_env takes no inputs beyond the value it is called on, and gives back Self.
+- function `hit` (src/oauth.rs:991) — Function hit takes &self, key: &str and gives back Result<(), ()>.
+- function `is_editor` (src/oauth.rs:1308) — Whether a session belongs to an approved editor.
+- function `is_empty` (src/oauth.rs:891) — Function is_empty takes no inputs beyond the value it is called on, and gives back bool.
+- function `is_local` (src/oauth.rs:1260) — Function is_local takes no inputs beyond the value it is called on, and gives back bool.
 - function `is_loopback_bind` (src/oauth.rs:2285) — True when `host` is a loopback listen address: 127.0.0.0/8, `::1`, or `localhost`.
+- function `issue_session` (src/oauth.rs:576) — Seal a fresh session for an identity that has already been established — by the provider exchange in `finish`, or by a verified desktop SSO assertion at the exchange endpoint.
+- function `len` (src/oauth.rs:887) — Function len takes no inputs beyond the value it is called on, and gives back usize.
+- function `load_editors_file` (src/oauth.rs:1323) — Load additional editor entries from a file (one per line) and make it the backing file for future admissions.
+- function `load_file` (src/oauth.rs:912) — Point the list at its backing file and load any entries already in it (one per line; blank lines and `#` comments are ignored, and a line may still carry several comma-separated entries).
+- function `locked` (src/oauth.rs:1276) — True when some credential is required for the API.
+- function `loopback_return` (src/oauth.rs:1888) — Admit a desktop return URL: the address of the listener the app opened for this one sign-in attempt.
+- function `matches` (src/oauth.rs:895) — Function matches takes &self, who: &str, email: &str and gives back bool.
+- function `mcp_oauth_hash` (src/oauth.rs:634) — A domain-separated, keyed digest for the MCP OAuth 2.1 store.
+- function `oauth` (src/oauth.rs:1280) — Function oauth takes no inputs beyond the value it is called on, and gives back &Oauth.
+- function `open_sso_assertion` (src/oauth.rs:778) — Open an SSO assertion under the SSO secret — the exchange endpoint is the one place this server ever takes an assertion back, and only the desktop audience's.
+- function `parse` (src/oauth.rs:880) — Function parse takes raw: &str and gives back Self.
+- function `providers` (src/oauth.rs:463) — Function providers takes no inputs beyond the value it is called on, and gives back Vec<&'static str>.
+- function `read_session` (src/oauth.rs:595) — Function read_session takes &self, cookie_header: &str and gives back Option<Session>.
+- function `ready` (src/oauth.rs:400) — Function ready takes no inputs beyond the value it is called on, and gives back bool.
+- function `route` (src/oauth.rs:1352) — Handles `/api/session` and `/api/auth/*`.
+- function `safe_next` (src/oauth.rs:1850) — Keeps the post-sign-in redirect on this site: a path, optionally with a `#coordinate` fragment.
+- function `security_header_block` (src/oauth.rs:1132) — Function security_header_block takes https: bool and gives back String.
+- function `security_header_block_csp` (src/oauth.rs:1114) — Function security_header_block_csp takes https: bool, csp_override: Option<&str> and gives back String.
+- function `session` (src/oauth.rs:1291) — The signed-in session for a request, if any.
+- function `sso` (src/oauth.rs:1545) — `GET /api/auth/sso/<aud>` — the cross-site handoff to one allowlisted audience (`mutable`, `exocortexia`, `wishnode`).
+- function `sso_assertion` (src/oauth.rs:701) — Mint the assertion an audience's callback verifies: who this session is, whether it is an editor, and the return path on the audience's site — sealed under the shared SSO secret, alive for `SSO_TTL` seconds, with a fresh `jti` the audience burns on first sight.
+- function `sso_assertion_desktop` (src/oauth.rs:740) — Mint the desktop audience's assertion.
+- function `sso_desktop_ready` (src/oauth.rs:427) — True when the desktop audience is armed: a real SSO secret and the operator's explicit `PHEXT_SSO_DESKTOP=1`.
+- function `sso_ready` (src/oauth.rs:410) — True when the Mutable SSO handoff is configured: a real SSO secret and a valid Mutable target.
+- function `sso_ready_for` (src/oauth.rs:419) — True when the SSO handoff is configured for one audience: the shared SSO secret is real and that audience has a target.
+- function `sso_target` (src/oauth.rs:435) — Function sso_target takes no inputs beyond the value it is called on, and gives back &str.
+- function `sso_target_for` (src/oauth.rs:450) — The callback origin for an audience, or None when the audience is not allowlisted or is allowlisted but unconfigured.
+- function `status_text` (src/oauth.rs:1136) — Function status_text takes status: u16 and gives back &'static str.
+- function `test_ready` (src/oauth.rs:312) — Function test_ready takes no inputs beyond the value it is called on, and gives back Self.
+- function `test_session_cookie` (src/oauth.rs:651) — Function test_session_cookie takes no inputs beyond the value it is called on, and gives back String.
+- function `token_eq` (src/oauth.rs:2016) — Constant-time comparison; an empty expected value never matches.
+- function `valid_state_nonce` (src/oauth.rs:1930) — The desktop attempt's state nonce: long enough to be unguessable, plain enough to travel in URLs and assertions unchanged.
+- function `valid_who` (src/oauth.rs:1937) — Function valid_who takes who: &str and gives back bool.
+- function `with_cap` (src/oauth.rs:987) — Function with_cap takes cap: usize and gives back Self.
+- function `write_to` (src/oauth.rs:1058) — Serialize as an HTTP/1.1 response with `Connection: close`.
 - struct `SearchHit` (src/search.rs:19) — A search hit: coordinate + context around the match.
-- function `search_lattice` (src/search.rs:132) — Search the lattice for a text pattern (single-threaded).
-- function `search_lattice_parallel` (src/search.rs:177) — Search the lattice for a text pattern across all available cores.
-- function `search_lattice_auto` (src/search.rs:261) — Auto-selecting search: picks serial or parallel based on data characteristics.
-- function `search_coordinates` (src/search.rs:274) — Search for coordinates matching a coordinate pattern string.
 - function `build_index_parallel` (src/search.rs:292) — Parallel index build — partition the buffer into chunks, scan each for delimiter boundaries, then merge.
+- function `search_coordinates` (src/search.rs:274) — Search for coordinates matching a coordinate pattern string.
+- function `search_lattice` (src/search.rs:132) — Search the lattice for a text pattern (single-threaded).
+- function `search_lattice_auto` (src/search.rs:261) — Auto-selecting search: picks serial or parallel based on data characteristics.
+- function `search_lattice_parallel` (src/search.rs:177) — Search the lattice for a text pattern across all available cores.
 - enum `AxisGroup` (src/sentron.rs:36) — The two fundamental axis groups in the sentron topology.
 - function `AxisGroup::name` (src/sentron.rs:44) — Function AxisGroup::name takes no inputs beyond the value it is called on, and gives back &'static str.
-- function `dimensions` (src/sentron.rs:52) — The 4 dimensions in this axis group.
 - struct `Axon` (src/sentron.rs:72) — One connection axis: a dimension with backward/forward reach.
 - function `Axon::total` (src/sentron.rs:87) — Total reachable coordinates along this axis.
-- function `weight` (src/sentron.rs:92) — Visual weight: how "thick" this connection is (0.0 to 1.0).
-- struct `Neuron` (src/sentron.rs:100) — A neuron in the sentron: a populated coordinate with its 8 axons.
-- struct `Sentron` (src/sentron.rs:110) — The sentron: 40 nearest populated coordinates to the cursor, with full 8-way connectivity analysis.
-- const `SENTRON_CAPACITY` (src/sentron.rs:126) — The maximum number of neurons in a sentron.
 - const `CONNECTIONS_PER_NEURON` (src/sentron.rs:129) — The number of connections per neuron.
+- struct `Neuron` (src/sentron.rs:100) — A neuron in the sentron: a populated coordinate with its 8 axons.
+- const `SENTRON_CAPACITY` (src/sentron.rs:126) — The maximum number of neurons in a sentron.
+- struct `Sentron` (src/sentron.rs:110) — The sentron: 40 nearest populated coordinates to the cursor, with full 8-way connectivity analysis.
 - function `Sentron::build` (src/sentron.rs:136) — Build a sentron centered on a coordinate.
+- function `dimensions` (src/sentron.rs:52) — The 4 dimensions in this axis group.
+- function `sequential_axons` (src/sentron.rs:185) — The sequential (temporal) axons: Volume, Book, Chapter, Section.
 - function `size` (src/sentron.rs:175) — How many neurons are in this sentron.
 - function `structural_axons` (src/sentron.rs:180) — The structural (spatial) axons: Library, Shelf, Series, Collection.
-- function `sequential_axons` (src/sentron.rs:185) — The sequential (temporal) axons: Volume, Book, Chapter, Section.
 - function `topology_string` (src/sentron.rs:191) — Render the sentron as a compact topology string.
-- function `is_break` (src/sidecar.rs:83) — Whether `b` is a phext dimension break.
-- type `Selector` (src/sidecar.rs:89) — Maps a source scroll to the coordinate an index entry should point at, or `None` to leave the scroll out of that index.
+- function `weight` (src/sentron.rs:92) — Visual weight: how "thick" this connection is (0.0 to 1.0).
 - struct `IndexSpec` (src/sidecar.rs:94) — Which scrolls feed which index.
 - function `IndexSpec::new` (src/sidecar.rs:103) — Function IndexSpec::new takes label: &str, names: Selector, terms: Selector and gives back IndexSpec.
-- function `scrolls` (src/sidecar.rs:108) — Every scroll is its own term document; no names.
-- enum `OpenMode` (src/sidecar.rs:115) — How `IndexedLattice::open` got its indexes.
-- struct `SyncReport` (src/sidecar.rs:127) — What a `save()` or sync did.
-- function `sidecar_dir` (src/sidecar.rs:137) — The sidecar directory for a phext path: `wiki.phext` → `wiki.phext.idx`.
 - struct `IndexedLattice` (src/sidecar.rs:733) — A `MappedLattice` whose span, name, and term indexes persist in a sidecar.
 - function `IndexedLattice::open` (src/sidecar.rs:746) — Open `path` with indexes from its sidecar: load them if they match the source, patch them if the source changed, or buil
-- function `rebuild` (src/sidecar.rs:793) — Discard the sidecar and index every scroll again.
+- enum `OpenMode` (src/sidecar.rs:115) — How `IndexedLattice::open` got its indexes.
+- type `Selector` (src/sidecar.rs:89) — Maps a source scroll to the coordinate an index entry should point at, or `None` to leave the scroll out of that index.
+- struct `SyncReport` (src/sidecar.rs:127) — What a `save()` or sync did.
+- function `compact` (src/sidecar.rs:837) — Fold the delta into a new base now.
+- function `delta_len` (src/sidecar.rs:815) — Scrolls changed since the base (entries in the delta).
+- function `doc_count` (src/sidecar.rs:929) — Live term documents.
+- function `is_break` (src/sidecar.rs:83) — Whether `b` is a phext dimension break.
 - function `lattice` (src/sidecar.rs:800) — Function lattice takes no inputs beyond the value it is called on, and gives back &MappedLattice.
 - function `lattice_mut` (src/sidecar.rs:805) — Edit through the lattice, then `save()` to persist and re-sync the indexes.
-- function `sidecar` (src/sidecar.rs:810) — The sidecar directory.
-- function `delta_len` (src/sidecar.rs:815) — Scrolls changed since the base (entries in the delta).
-- function `set_compact_threshold` (src/sidecar.rs:821) — Fold the delta into the base once it holds more than `n` scrolls.
-- function `save` (src/sidecar.rs:827) — Save pending edits to the source, then record exactly the edited scrolls in the delta (or compact, past the threshold).
-- function `compact` (src/sidecar.rs:837) — Fold the delta into a new base now.
 - function `name` (src/sidecar.rs:845) — Exact name lookup (first owner in document order wins).
+- function `rebuild` (src/sidecar.rs:793) — Discard the sidecar and index every scroll again.
 - function `resolve` (src/sidecar.rs:851) — Exact lookup, then case-folded.
+- function `save` (src/sidecar.rs:827) — Save pending edits to the source, then record exactly the edited scrolls in the delta (or compact, past the threshold).
+- function `scrolls` (src/sidecar.rs:108) — Every scroll is its own term document; no names.
 - function `search` (src/sidecar.rs:882) — BM25-ranked documents for a free-text query (terms OR'ed), best first.
-- function `doc_count` (src/sidecar.rs:929) — Live term documents.
+- function `set_compact_threshold` (src/sidecar.rs:821) — Fold the delta into the base once it holds more than `n` scrolls.
+- function `sidecar` (src/sidecar.rs:810) — The sidecar directory.
+- function `sidecar_dir` (src/sidecar.rs:137) — The sidecar directory for a phext path: `wiki.phext` → `wiki.phext.idx`.
 - const `ENV_NAME` (src/sponsor.rs:10) — Environment variable deploy.sh writes into the phext-edit service environment.
 - const `SLOT` (src/sponsor.rs:13) — Placeholder in the public HTML.
 - struct `SponsorOffer` (src/sponsor.rs:19) — A configured donation URL, or nothing.
 - function `SponsorOffer::hidden` (src/sponsor.rs:24) — Function SponsorOffer::hidden takes no inputs beyond the value it is called on, and gives back Self.
+- function `apply_slot` (src/sponsor.rs:76) — Replace every [`SLOT`] in `html`.
 - function `from_env` (src/sponsor.rs:31) — Read [`ENV_NAME`].
+- function `markup` (src/sponsor.rs:61) — The visible control, or an empty string when the link is hidden.
 - function `parse` (src/sponsor.rs:49) — Accept a Stripe Payment Link (or any https URL safe to place in an href).
 - function `url` (src/sponsor.rs:56) — Function url takes no inputs beyond the value it is called on, and gives back Option<&str>.
-- function `markup` (src/sponsor.rs:61) — The visible control, or an empty string when the link is hidden.
-- function `apply_slot` (src/sponsor.rs:76) — Replace every [`SLOT`] in `html`.
-- struct `ScrollStats` (src/stats.rs:13) — Per-scroll statistics for the status bar and info panel.
-- function `ScrollStats::from_bytes` (src/stats.rs:22) — Compute stats from raw scroll bytes.
-- function `size_display` (src/stats.rs:33) — Human-readable size.
 - struct `DimensionDensity` (src/stats.rs:47) — Density profile for one dimension: how many populated scrolls exist at each value along that dimension.
 - function `DimensionDensity::build` (src/stats.rs:59) — Build the density profile for one dimension across all populated coordinates.
-- function `sparkline` (src/stats.rs:77) — Render a sparkline string showing relative density.
-- function `distinct_values` (src/stats.rs:120) — How many distinct values exist in this dimension.
-- function `range` (src/stats.rs:125) — The range of populated values.
-- struct `Neighborhood` (src/stats.rs:139) — Neighborhood context: what's near the current coordinate.
-- function `Neighborhood::build` (src/stats.rs:152) — Build neighborhood context for a coordinate.
 - struct `LatticeOverview` (src/stats.rs:195) — Global lattice overview stats.
 - function `LatticeOverview::build` (src/stats.rs:206) — Build a complete overview of the lattice.
-- enum `SubmissionStatus` (src/submissions.rs:20) — A named choice named SubmissionStatus.
+- struct `Neighborhood` (src/stats.rs:139) — Neighborhood context: what's near the current coordinate.
+- function `Neighborhood::build` (src/stats.rs:152) — Build neighborhood context for a coordinate.
+- struct `ScrollStats` (src/stats.rs:13) — Per-scroll statistics for the status bar and info panel.
+- function `ScrollStats::from_bytes` (src/stats.rs:22) — Compute stats from raw scroll bytes.
+- function `distinct_values` (src/stats.rs:120) — How many distinct values exist in this dimension.
+- function `range` (src/stats.rs:125) — The range of populated values.
+- function `size_display` (src/stats.rs:33) — Human-readable size.
+- function `sparkline` (src/stats.rs:77) — Render a sparkline string showing relative density.
 - struct `Submission` (src/submissions.rs:27) — A data shape named Submission.
-- function `sanitize_filename` (src/submissions.rs:65) — Reduce an offered file name to a bare, safe `*.phext` name, or None when nothing usable remains.
+- enum `SubmissionStatus` (src/submissions.rs:20) — A named choice named SubmissionStatus.
+- function `content` (src/submissions.rs:194) — The uploaded phext bytes for a submission.
 - function `count_scrolls` (src/submissions.rs:86) — Count the populated scrolls in a phext text.
 - function `create` (src/submissions.rs:116) — Store a new pending submission.
-- function `list` (src/submissions.rs:159) — Every submission in the directory, oldest first.
 - function `get` (src/submissions.rs:181) — One submission by id, or None.
-- function `content` (src/submissions.rs:194) — The uploaded phext bytes for a submission.
+- function `list` (src/submissions.rs:159) — Every submission in the directory, oldest first.
+- function `sanitize_filename` (src/submissions.rs:65) — Reduce an offered file name to a bare, safe `*.phext` name, or None when nothing usable remains.
 - function `set_decision` (src/submissions.rs:203) — Record an accept or decline.
 - struct `Bm25Params` (src/term_index.rs:22) — BM25 tuning.
 - struct `TermHit` (src/term_index.rs:37) — A ranked hit: the document coordinate and its BM25 score.
 - struct `TermIndex` (src/term_index.rs:50) — Inverted index over lattice documents with BM25 ranking.
-- function `tokenize` (src/term_index.rs:67) — Split text into index terms: lowercased runs of letters/digits, at least 2 chars.
 - function `TermIndex::new` (src/term_index.rs:91) — An empty index.
 - function `build` (src/term_index.rs:106) — Index every populated scroll as its own document (overlay edits included).
 - function `build_grouped` (src/term_index.rs:113) — Index scrolls grouped into documents: `group` maps a scroll coordinate to the coordinate of the document it belongs to, or `None` to leave it out.
-- function `upsert` (src/term_index.rs:177) — Add or replace the document at `coord` with `text`.
-- function `remove` (src/term_index.rs:184) — Remove the document at `coord`.
-- function `search` (src/term_index.rs:200) — Rank documents against a free-text query (terms are OR'ed).
 - function `doc_count` (src/term_index.rs:240) — Number of live documents.
-- function `term_count` (src/term_index.rs:245) — Number of distinct terms.
-- function `retired` (src/term_index.rs:250) — Documents replaced or removed since the last build.
 - function `document_frequency` (src/term_index.rs:255) — How many documents (including retired ones) contain `term`.
 - function `heap_bytes` (src/term_index.rs:260) — Approximate heap footprint in bytes.
+- function `remove` (src/term_index.rs:184) — Remove the document at `coord`.
+- function `retired` (src/term_index.rs:250) — Documents replaced or removed since the last build.
+- function `search` (src/term_index.rs:200) — Rank documents against a free-text query (terms are OR'ed).
+- function `term_count` (src/term_index.rs:245) — Number of distinct terms.
+- function `tokenize` (src/term_index.rs:67) — Split text into index terms: lowercased runs of letters/digits, at least 2 chars.
+- function `upsert` (src/term_index.rs:177) — Add or replace the document at `coord` with `text`.
 - const `MAX_Q_BYTES` (src/traversals.rs:23) — The largest `q` string a record may carry (64 KiB).
 - struct `Traversal` (src/traversals.rs:26) — A data shape named Traversal.
-- function `valid_name` (src/traversals.rs:66) — A name is usable when, trimmed, it holds 1..=120 chars.
 - function `count_steps` (src/traversals.rs:107) — How many steps of a `q` string parse under the tour grammar.
-- function `valid_q` (src/traversals.rs:113) — A `q` string is storable when it is non-empty, within the storage bound, and at least one of its steps parses.
 - function `create` (src/traversals.rs:126) — Store a new traversal for `who`.
-- function `list` (src/traversals.rs:152) — Every traversal in the directory, oldest first.
 - function `get` (src/traversals.rs:174) — One traversal by id, or None.
-- function `update` (src/traversals.rs:188) — Replace a record's name and `q` (ownership is the caller's check, as in `submissions::set_decision`).
+- function `list` (src/traversals.rs:152) — Every traversal in the directory, oldest first.
 - function `remove` (src/traversals.rs:200) — Delete a record.
+- function `update` (src/traversals.rs:188) — Replace a record's name and `q` (ownership is the caller's check, as in `submissions::set_decision`).
+- function `valid_name` (src/traversals.rs:66) — A name is usable when, trimmed, it holds 1..=120 chars.
+- function `valid_q` (src/traversals.rs:113) — A `q` string is storable when it is non-empty, within the storage bound, and at least one of its steps parses.
+- struct `CoordPronunciation` (src/tts.rs:113) — Full 9D coordinate pronunciation
+- function `CoordPronunciation::from_coordinate` (src/tts.rs:121) — Create from a libphext Coordinate
+- struct `SubCoord` (src/tts.rs:82) — A 3D subcoordinate (e.g., 1.1.1)
+- function `SubCoord::new` (src/tts.rs:89) — Function SubCoord::new takes a: u32, b: u32, c: u32 and gives back Self.
 - const `ZERO_SOUND` (src/tts.rs:14) — Zero = "om" — the nada sound, silence between words
 - function `byte_to_syllable` (src/tts.rs:47) — Convert a single byte value (0-255) to a syllable
 - function `dim_to_syllables` (src/tts.rs:62) — Convert a coordinate dimension value (e.g., 1, 5, 9) to a syllable sequence
-- struct `SubCoord` (src/tts.rs:82) — A 3D subcoordinate (e.g., 1.1.1)
-- function `SubCoord::new` (src/tts.rs:89) — Function SubCoord::new takes a: u32, b: u32, c: u32 and gives back Self.
-- function `pronounce` (src/tts.rs:94) — Pronounce as "a b c" syllables
-- function `pronounce_verbose` (src/tts.rs:103) — Pronounce with element names
-- struct `CoordPronunciation` (src/tts.rs:113) — Full 9D coordinate pronunciation
-- function `CoordPronunciation::from_coordinate` (src/tts.rs:121) — Create from a libphext Coordinate
+- function `generate_pronunciation_doc` (src/tts.rs:225) — Generate a batch pronunciation document
+- function `ipa_hint` (src/tts.rs:195) — Get IPA-style phonetic hint
 - function `parse` (src/tts.rs:142) — Parse from string "1.1.1/1.1.1/1.1.1"
+- function `pronounce` (src/tts.rs:94) — Pronounce as "a b c" syllables
 - function `pronounce` (src/tts.rs:167) — Full pronunciation with om boundaries
 - function `pronounce_compact` (src/tts.rs:176) — Compact pronunciation (no om boundaries)
+- function `pronounce_verbose` (src/tts.rs:103) — Pronounce with element names
 - function `pronounce_verbose` (src/tts.rs:185) — Verbose with dimension labels
-- function `ipa_hint` (src/tts.rs:195) — Get IPA-style phonetic hint
-- function `to_ssml` (src/tts.rs:205) — Generate SSML for TTS engines (Google, Amazon Polly, etc.)
-- function `generate_pronunciation_doc` (src/tts.rs:225) — Generate a batch pronunciation document
 - function `special_coords` (src/tts.rs:257) — Special coordinates with meaning
-- enum `Phase` (src/uml6d.rs:27) — The 10 SDLC phases mapped to collection values.
-- function `Phase::from_collection` (src/uml6d.rs:41) — Function Phase::from_collection takes c: usize and gives back Option<Phase>.
-- function `name` (src/uml6d.rs:57) — Function name takes no inputs beyond the value it is called on, and gives back &'static str.
-- function `short` (src/uml6d.rs:72) — Function short takes no inputs beyond the value it is called on, and gives back &'static str.
-- function `color` (src/uml6d.rs:88) — CSS color for this phase.
-- function `all` (src/uml6d.rs:104) — All phases in order.
+- function `to_ssml` (src/tts.rs:205) — Generate SSML for TTS engines (Google, Amazon Polly, etc.)
 - struct `ArtifactAddr` (src/uml6d.rs:116) — A 5D artifact address — stable across SDLC phases.
 - function `ArtifactAddr::from_coordinate` (src/uml6d.rs:126) — Extract the 5D artifact address from a full coordinate.
-- function `to_coordinate` (src/uml6d.rs:138) — Build a full coordinate by combining this address with an SDLC phase and outer dimensions (defaulting outer to 1.1.1).
-- function `to_coordinate_with_outer` (src/uml6d.rs:143) — Build a full coordinate with explicit outer dimensions.
-- function `display` (src/uml6d.rs:166) — Display as volume.book.chapter/section.scroll
+- enum `Phase` (src/uml6d.rs:27) — The 10 SDLC phases mapped to collection values.
+- function `Phase::from_collection` (src/uml6d.rs:41) — Function Phase::from_collection takes c: usize and gives back Option<Phase>.
 - struct `UmlContext` (src/uml6d.rs:179) — Full 6D UML context for a coordinate.
 - function `UmlContext::from_coordinate` (src/uml6d.rs:187) — Function UmlContext::from_coordinate takes c: &Coordinate and gives back Self.
-- function `trace_artifact` (src/uml6d.rs:202) — Trace an artifact across all SDLC phases.
+- function `all` (src/uml6d.rs:104) — All phases in order.
 - function `artifacts_in_phase` (src/uml6d.rs:217) — Find all populated 5D addresses within a given phase.
-- struct `DNode` (src/uml6d_diagram.rs:54) — A node in a 6D UML diagram: one artifact, drawn in one phase lane.
+- function `color` (src/uml6d.rs:88) — CSS color for this phase.
+- function `display` (src/uml6d.rs:166) — Display as volume.book.chapter/section.scroll
+- function `name` (src/uml6d.rs:57) — Function name takes no inputs beyond the value it is called on, and gives back &'static str.
+- function `short` (src/uml6d.rs:72) — Function short takes no inputs beyond the value it is called on, and gives back &'static str.
+- function `to_coordinate` (src/uml6d.rs:138) — Build a full coordinate by combining this address with an SDLC phase and outer dimensions (defaulting outer to 1.1.1).
+- function `to_coordinate_with_outer` (src/uml6d.rs:143) — Build a full coordinate with explicit outer dimensions.
+- function `trace_artifact` (src/uml6d.rs:202) — Trace an artifact across all SDLC phases.
 - struct `DEdge` (src/uml6d_diagram.rs:64) — A typed relation between two artifacts.
+- struct `DNode` (src/uml6d_diagram.rs:54) — A node in a 6D UML diagram: one artifact, drawn in one phase lane.
 - struct `Diagram` (src/uml6d_diagram.rs:73) — A 6D UML diagram: nodes + edges under one projection phase.
 - struct `ParseError` (src/uml6d_diagram.rs:85) — A data shape named ParseError.
 - function `parse_addr` (src/uml6d_diagram.rs:134) — Parse a 5D artifact address in display form: volume.book.chapter/section.scroll
 - function `parse_diagram` (src/uml6d_diagram.rs:224) — Parse the diagram notation.
-- function `to_notation` (src/uml6d_diagram.rs:384) — Emit the canonical notation for this diagram.
 - function `project` (src/uml6d_diagram.rs:427) — Project the diagram into another phase: node lanes are re-read in the new phase, but every artifact address is unchanged.
-- function `to_text` (src/uml6d_diagram.rs:446) — Plain-text rendering: lanes grouped in phase order, edges listed.
+- function `to_notation` (src/uml6d_diagram.rs:384) — Emit the canonical notation for this diagram.
 - function `to_svg` (src/uml6d_diagram.rs:491) — SVG rendering.
+- function `to_text` (src/uml6d_diagram.rs:446) — Plain-text rendering: lanes grouped in phase order, edges listed.
 - enum `EditOp` (src/undo.rs:33) — An edit operation that can be undone/redone.
 - function `EditOp::apply` (src/undo.rs:54) — Apply this operation to text, returning the new text.
-- function `inverse` (src/undo.rs:85) — Compute the inverse operation (for undo).
-- function `to_scroll` (src/undo.rs:104) — Serialize to the phext scroll format.
-- function `from_scroll` (src/undo.rs:130) — Deserialize from a phext scroll.
-- struct `UndoRecord` (src/undo.rs:180) — An undo record: operation + cursor state.
 - struct `UndoEngine` (src/undo.rs:258) — The undo engine: manages edit history across all scrolls.
 - function `UndoEngine::new` (src/undo.rs:266) — Function UndoEngine::new takes no inputs beyond the value it is called on, and gives back UndoEngine.
-- function `record` (src/undo.rs:274) — Record an edit operation.
-- function `undo` (src/undo.rs:295) — Undo the last edit on a scroll.
-- function `redo` (src/undo.rs:302) — Redo the next edit on a scroll.
-- function `can_undo` (src/undo.rs:309) — Can we undo on this scroll?
+- struct `UndoRecord` (src/undo.rs:180) — An undo record: operation + cursor state.
 - function `can_redo` (src/undo.rs:314) — Can we redo on this scroll?
+- function `can_undo` (src/undo.rs:309) — Can we undo on this scroll?
 - function `depth` (src/undo.rs:319) — Undo depth for a scroll.
-- function `total_edits` (src/undo.rs:324) — Total edits recorded globally.
 - function `dirty_scrolls` (src/undo.rs:329) — Which scrolls have been modified.
-- function `to_work_phext` (src/undo.rs:343) — Serialize the full undo history to a phext byte vector.
+- function `from_scroll` (src/undo.rs:130) — Deserialize from a phext scroll.
 - function `from_work_phext` (src/undo.rs:377) — Load undo history from a work phext.
+- function `inverse` (src/undo.rs:85) — Compute the inverse operation (for undo).
+- function `record` (src/undo.rs:274) — Record an edit operation.
+- function `redo` (src/undo.rs:302) — Redo the next edit on a scroll.
+- function `to_scroll` (src/undo.rs:104) — Serialize to the phext scroll format.
+- function `to_work_phext` (src/undo.rs:343) — Serialize the full undo history to a phext byte vector.
+- function `total_edits` (src/undo.rs:324) — Total edits recorded globally.
+- function `undo` (src/undo.rs:295) — Undo the last edit on a scroll.
+- struct `Person` (src/wavefront.rs:59) — A data shape named Person.
+- struct `Placement` (src/wavefront.rs:50) — A data shape named Placement.
 - enum `Region` (src/wavefront.rs:23) — A named choice named Region.
 - function `Region::label` (src/wavefront.rs:31) — Display label, exactly as the phext's index words it.
-- struct `Placement` (src/wavefront.rs:50) — A data shape named Placement.
-- struct `Person` (src/wavefront.rs:59) — A data shape named Person.
-- function `normalize_handle` (src/wavefront.rs:118) — Reduce a user-typed handle to its lookup key: trimmed, one leading `@` dropped, lowercased, underscores kept.
 - function `lookup` (src/wavefront.rs:130) — The map's entry for a handle, however the visitor typed it.
+- function `normalize_handle` (src/wavefront.rs:118) — Reduce a user-typed handle to its lookup key: trimmed, one leading `@` dropped, lowercased, underscores kept.
 - function `snapshot_handles` (src/wavefront.rs:136) — How many distinct accounts the snapshot holds.
 - function `snapshot_placements` (src/wavefront.rs:141) — Total placements across all accounts (trails count twice).
 
@@ -712,13 +710,13 @@ What it does: Function __init__ takes no inputs beyond the value it is called on
 
 ---
 
-## function — handle_starttag
+## function — handle_data
 
-Found in bench/wiki/extract_zim.py at line 31.
+Found in bench/wiki/extract_zim.py at line 47.
 
-Signature: `def handle_starttag(self, tag, attrs):`
+Signature: `def handle_data(self, data):`
 
-What it does: Function handle_starttag takes self, tag, attrs and gives back nothing; it does its work on what it is given.
+What it does: Function handle_data takes self, data and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -736,13 +734,25 @@ What it does: Function handle_endtag takes self, tag and gives back nothing; it 
 
 ---
 
-## function — handle_data
+## function — handle_starttag
 
-Found in bench/wiki/extract_zim.py at line 47.
+Found in bench/wiki/extract_zim.py at line 31.
 
-Signature: `def handle_data(self, data):`
+Signature: `def handle_starttag(self, tag, attrs):`
 
-What it does: Function handle_data takes self, data and gives back nothing; it does its work on what it is given.
+What it does: Function handle_starttag takes self, tag, attrs and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — main
+
+Found in bench/wiki/extract_zim.py at line 58.
+
+Signature: `def main(zim_path, out_dir):`
+
+What it does: Function main takes zim_path, out_dir and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -762,23 +772,23 @@ What it does: Function text takes no inputs beyond the value it is called on, an
 
 ## function — main
 
-Found in bench/wiki/extract_zim.py at line 58.
-
-Signature: `def main(zim_path, out_dir):`
-
-What it does: Function main takes zim_path, out_dir and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — main
-
 Found in bench/wiki/make_queries.py at line 22.
 
 Signature: `def main(d, n=500):`
 
 What it does: Function main takes d, n=500 and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — lat
+
+Found in bench/wiki/report.py at line 11.
+
+Signature: `def lat(v, key="p50_us"):`
+
+What it does: Function lat takes v, key="p50_us" and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -796,13 +806,13 @@ What it does: Function load takes work, s, name and gives back nothing; it does 
 
 ---
 
-## function — lat
+## function — main
 
-Found in bench/wiki/report.py at line 11.
+Found in bench/wiki/report.py at line 28.
 
-Signature: `def lat(v, key="p50_us"):`
+Signature: `def main(work, *scales):`
 
-What it does: Function lat takes v, key="p50_us" and gives back nothing; it does its work on what it is given.
+What it does: Function main takes work, *scales and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -834,23 +844,11 @@ What it does: Function table takes head, rows and gives back nothing; it does it
 
 ## function — main
 
-Found in bench/wiki/report.py at line 28.
+Found in bench/wiki/storage.py at line 30.
 
-Signature: `def main(work, *scales):`
+Signature: `def main(out):`
 
-What it does: Function main takes work, *scales and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — tree
-
-Found in bench/wiki/storage.py at line 16.
-
-Signature: `def tree(p):`
-
-What it does: Function tree takes p and gives back nothing; it does its work on what it is given.
+What it does: Function main takes out and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -868,25 +866,13 @@ What it does: Function one takes p and gives back nothing; it does its work on w
 
 ---
 
-## function — main
+## function — tree
 
-Found in bench/wiki/storage.py at line 30.
+Found in bench/wiki/storage.py at line 16.
 
-Signature: `def main(out):`
+Signature: `def tree(p):`
 
-What it does: Function main takes out and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — load_corpus
-
-Found in bench/wiki/zim_bench.py at line 20.
-
-Signature: `def load_corpus(d, scale):`
-
-What it does: Function load_corpus takes d, scale and gives back nothing; it does its work on what it is given.
+What it does: Function tree takes p and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -904,66 +890,6 @@ What it does: Function __init__ takes self, title, text and gives back nothing; 
 
 ---
 
-## function — has_indexdata
-
-Found in bench/wiki/zim_bench.py at line 42.
-
-Signature: `def has_indexdata(self): return True`
-
-What it does: Function has_indexdata takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — get_title
-
-Found in bench/wiki/zim_bench.py at line 43.
-
-Signature: `def get_title(self): return self.t`
-
-What it does: Function get_title takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — get_content
-
-Found in bench/wiki/zim_bench.py at line 44.
-
-Signature: `def get_content(self): return self.x`
-
-What it does: Function get_content takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — get_keywords
-
-Found in bench/wiki/zim_bench.py at line 45.
-
-Signature: `def get_keywords(self): return ""`
-
-What it does: Function get_keywords takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — get_wordcount
-
-Found in bench/wiki/zim_bench.py at line 46.
-
-Signature: `def get_wordcount(self): return len(self.x.split())`
-
-What it does: Function get_wordcount takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
 ## function — __init__
 
 Found in bench/wiki/zim_bench.py at line 50.
@@ -976,37 +902,133 @@ What it does: Function __init__ takes self, path, title, text, front, index and 
 
 ---
 
-## function — get_path
+## function — __init__
 
-Found in bench/wiki/zim_bench.py at line 53.
+Found in bench/wiki/zim_bench.py at line 106.
 
-Signature: `def get_path(self): return self.p`
+Signature: `def __init__(self, s): self.s = s`
 
-What it does: Function get_path takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — get_title
-
-Found in bench/wiki/zim_bench.py at line 54.
-
-Signature: `def get_title(self): return self.t`
-
-What it does: Function get_title takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+What it does: Function __init__ takes self, s and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
 ---
 
-## function — get_mimetype
+## function — backlinks
 
-Found in bench/wiki/zim_bench.py at line 55.
+Found in bench/wiki/zim_bench.py at line 166.
 
-Signature: `def get_mimetype(self): return "text/plain"`
+Signature: `def backlinks(t):`
 
-What it does: Function get_mimetype takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+What it does: Function backlinks takes t and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — below
+
+Found in bench/wiki/zim_bench.py at line 107.
+
+Signature: `def below(self, n):`
+
+What it does: Function below takes self, n and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — bfs
+
+Found in bench/wiki/zim_bench.py at line 152.
+
+Signature: `def bfs(seed):`
+
+What it does: Function bfs takes seed and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — build_zim
+
+Found in bench/wiki/zim_bench.py at line 61.
+
+Signature: `def build_zim(arts, path, fulltext=True):`
+
+What it does: Function build_zim takes arts, path, fulltext=True and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — drop_caches
+
+Found in bench/wiki/zim_bench.py at line 97.
+
+Signature: `def drop_caches():`
+
+What it does: Function drop_caches takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — exact
+
+Found in bench/wiki/zim_bench.py at line 176.
+
+Signature: `def exact(x):`
+
+What it does: Function exact takes x and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — fname
+
+Found in bench/wiki/zim_bench.py at line 113.
+
+Signature: `def fname(t):`
+
+What it does: Function fname takes t and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — ft
+
+Found in bench/wiki/zim_bench.py at line 204.
+
+Signature: `def ft(x):`
+
+What it does: Function ft takes x and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — fulltext_top1
+
+Found in bench/wiki/zim_bench.py at line 195.
+
+Signature: `def fulltext_top1(x):`
+
+What it does: Function fulltext_top1 takes x and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — get_content
+
+Found in bench/wiki/zim_bench.py at line 44.
+
+Signature: `def get_content(self): return self.x`
+
+What it does: Function get_content takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -1048,85 +1070,97 @@ What it does: Function get_indexdata takes no inputs beyond the value it is call
 
 ---
 
-## function — build_zim
+## function — get_keywords
 
-Found in bench/wiki/zim_bench.py at line 61.
+Found in bench/wiki/zim_bench.py at line 45.
 
-Signature: `def build_zim(arts, path, fulltext=True):`
+Signature: `def get_keywords(self): return ""`
 
-What it does: Function build_zim takes arts, path, fulltext=True and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — stats
-
-Found in bench/wiki/zim_bench.py at line 83.
-
-Signature: `def stats(ds):`
-
-What it does: Function stats takes ds and gives back nothing; it does its work on what it is given.
+What it does: Function get_keywords takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
 ---
 
-## function — time_each
+## function — get_mimetype
 
-Found in bench/wiki/zim_bench.py at line 90.
+Found in bench/wiki/zim_bench.py at line 55.
 
-Signature: `def time_each(items, f):`
+Signature: `def get_mimetype(self): return "text/plain"`
 
-What it does: Function time_each takes items, f and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — drop_caches
-
-Found in bench/wiki/zim_bench.py at line 97.
-
-Signature: `def drop_caches():`
-
-What it does: Function drop_caches takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+What it does: Function get_mimetype takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
 ---
 
-## function — __init__
+## function — get_path
 
-Found in bench/wiki/zim_bench.py at line 106.
+Found in bench/wiki/zim_bench.py at line 53.
 
-Signature: `def __init__(self, s): self.s = s`
+Signature: `def get_path(self): return self.p`
 
-What it does: Function __init__ takes self, s and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — below
-
-Found in bench/wiki/zim_bench.py at line 107.
-
-Signature: `def below(self, n):`
-
-What it does: Function below takes self, n and gives back nothing; it does its work on what it is given.
+What it does: Function get_path takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
 ---
 
-## function — fname
+## function — get_title
 
-Found in bench/wiki/zim_bench.py at line 113.
+Found in bench/wiki/zim_bench.py at line 43.
 
-Signature: `def fname(t):`
+Signature: `def get_title(self): return self.t`
 
-What it does: Function fname takes t and gives back nothing; it does its work on what it is given.
+What it does: Function get_title takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — get_title
+
+Found in bench/wiki/zim_bench.py at line 54.
+
+Signature: `def get_title(self): return self.t`
+
+What it does: Function get_title takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — get_wordcount
+
+Found in bench/wiki/zim_bench.py at line 46.
+
+Signature: `def get_wordcount(self): return len(self.x.split())`
+
+What it does: Function get_wordcount takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — has_indexdata
+
+Found in bench/wiki/zim_bench.py at line 42.
+
+Signature: `def has_indexdata(self): return True`
+
+What it does: Function has_indexdata takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — load_corpus
+
+Found in bench/wiki/zim_bench.py at line 20.
+
+Signature: `def load_corpus(d, scale):`
+
+What it does: Function load_corpus takes d, scale and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -1144,37 +1178,13 @@ What it does: Function main takes corpus, out, scale=1, original=None and gives 
 
 ---
 
-## function — bfs
+## function — stats
 
-Found in bench/wiki/zim_bench.py at line 152.
+Found in bench/wiki/zim_bench.py at line 83.
 
-Signature: `def bfs(seed):`
+Signature: `def stats(ds):`
 
-What it does: Function bfs takes seed and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — backlinks
-
-Found in bench/wiki/zim_bench.py at line 166.
-
-Signature: `def backlinks(t):`
-
-What it does: Function backlinks takes t and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — exact
-
-Found in bench/wiki/zim_bench.py at line 176.
-
-Signature: `def exact(x):`
-
-What it does: Function exact takes x and gives back nothing; it does its work on what it is given.
+What it does: Function stats takes ds and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -1192,25 +1202,13 @@ What it does: Function suggest takes x and gives back nothing; it does its work 
 
 ---
 
-## function — fulltext_top1
+## function — time_each
 
-Found in bench/wiki/zim_bench.py at line 195.
+Found in bench/wiki/zim_bench.py at line 90.
 
-Signature: `def fulltext_top1(x):`
+Signature: `def time_each(items, f):`
 
-What it does: Function fulltext_top1 takes x and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — ft
-
-Found in bench/wiki/zim_bench.py at line 204.
-
-Signature: `def ft(x):`
-
-What it does: Function ft takes x and gives back nothing; it does its work on what it is given.
+What it does: Function time_each takes items, f and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -1228,186 +1226,6 @@ What it does: The entry point: the program starts here. It reads the command lin
 
 ---
 
-## function — die
-
-Found in deploy/deploy.sh at line 59.
-
-Signature: `die()`
-
-What it does: Function die takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — usage
-
-Found in deploy/deploy.sh at line 64.
-
-Signature: `usage()`
-
-What it does: Function usage takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — random_hex
-
-Found in deploy/deploy.sh at line 85.
-
-Signature: `random_hex()`
-
-What it does: Function random_hex takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — install_secret
-
-Found in deploy/deploy.sh at line 90.
-
-Signature: `install_secret()`
-
-What it does: Function install_secret takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — as_owner
-
-Found in deploy/deploy.sh at line 101.
-
-Signature: `as_owner()`
-
-What it does: Function as_owner takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — sponsor_url_ok
-
-Found in deploy/deploy.sh at line 108.
-
-Signature: `sponsor_url_ok()`
-
-What it does: Function sponsor_url_ok takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — validate_sponsor_url
-
-Found in deploy/deploy.sh at line 134.
-
-Signature: `validate_sponsor_url()`
-
-What it does: Function validate_sponsor_url takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — resolve_sponsor_url
-
-Found in deploy/deploy.sh at line 141.
-
-Signature: `resolve_sponsor_url()`
-
-What it does: Function resolve_sponsor_url takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — write_sponsor_env
-
-Found in deploy/deploy.sh at line 150.
-
-Signature: `write_sponsor_env()`
-
-What it does: Function write_sponsor_env takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — apply_sponsor_env
-
-Found in deploy/deploy.sh at line 183.
-
-Signature: `apply_sponsor_env()`
-
-What it does: Function apply_sponsor_env takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — dns_points_here
-
-Found in deploy/deploy.sh at line 208.
-
-Signature: `dns_points_here()`
-
-What it does: Function dns_points_here takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — file_sha256
-
-Found in deploy/deploy.sh at line 212.
-
-Signature: `file_sha256()`
-
-What it does: Function file_sha256 takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — read_root_file
-
-Found in deploy/deploy.sh at line 218.
-
-Signature: `read_root_file()`
-
-What it does: Function read_root_file takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — nginx_template
-
-Found in deploy/deploy.sh at line 223.
-
-Signature: `nginx_template()`
-
-What it does: Function nginx_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — render_site_body
-
-Found in deploy/deploy.sh at line 240.
-
-Signature: `render_site_body()`
-
-What it does: Function render_site_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
 ## function — adopt_live_ssl
 
 Found in deploy/deploy.sh at line 252.
@@ -1415,102 +1233,6 @@ Found in deploy/deploy.sh at line 252.
 Signature: `adopt_live_ssl()`
 
 What it does: Function adopt_live_ssl takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — path_exists
-
-Found in deploy/deploy.sh at line 288.
-
-Signature: `path_exists()`
-
-What it does: Function path_exists takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — drop_missing_dhparam
-
-Found in deploy/deploy.sh at line 296.
-
-Signature: `drop_missing_dhparam()`
-
-What it does: Function drop_missing_dhparam takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — stamp_managed
-
-Found in deploy/deploy.sh at line 309.
-
-Signature: `stamp_managed()`
-
-What it does: Function stamp_managed takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — write_bootstrap_body
-
-Found in deploy/deploy.sh at line 318.
-
-Signature: `write_bootstrap_body()`
-
-What it does: Function write_bootstrap_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — nginx_disposition
-
-Found in deploy/deploy.sh at line 349.
-
-Signature: `nginx_disposition()`
-
-What it does: Function nginx_disposition takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — with_force
-
-Found in deploy/deploy.sh at line 383.
-
-Signature: `with_force()`
-
-What it does: Function with_force takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — require_hardened_body
-
-Found in deploy/deploy.sh at line 392.
-
-Signature: `require_hardened_body()`
-
-What it does: Function require_hardened_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — install_rendered_site
-
-Found in deploy/deploy.sh at line 409.
-
-Signature: `install_rendered_site()`
-
-What it does: Function install_rendered_site takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -1528,13 +1250,97 @@ What it does: Function apply_rendered_site takes no inputs beyond the value it i
 
 ---
 
-## function — run_check
+## function — apply_sponsor_env
 
-Found in deploy/deploy.sh at line 492.
+Found in deploy/deploy.sh at line 183.
 
-Signature: `run_check()`
+Signature: `apply_sponsor_env()`
 
-What it does: Function run_check takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+What it does: Function apply_sponsor_env takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — as_owner
+
+Found in deploy/deploy.sh at line 101.
+
+Signature: `as_owner()`
+
+What it does: Function as_owner takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — die
+
+Found in deploy/deploy.sh at line 59.
+
+Signature: `die()`
+
+What it does: Function die takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — dns_points_here
+
+Found in deploy/deploy.sh at line 208.
+
+Signature: `dns_points_here()`
+
+What it does: Function dns_points_here takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — drop_missing_dhparam
+
+Found in deploy/deploy.sh at line 296.
+
+Signature: `drop_missing_dhparam()`
+
+What it does: Function drop_missing_dhparam takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — file_sha256
+
+Found in deploy/deploy.sh at line 212.
+
+Signature: `file_sha256()`
+
+What it does: Function file_sha256 takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — install_rendered_site
+
+Found in deploy/deploy.sh at line 409.
+
+Signature: `install_rendered_site()`
+
+What it does: Function install_rendered_site takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — install_secret
+
+Found in deploy/deploy.sh at line 90.
+
+Signature: `install_secret()`
+
+What it does: Function install_secret takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -1552,6 +1358,198 @@ What it does: Function main takes no inputs beyond the value it is called on, an
 
 ---
 
+## function — nginx_disposition
+
+Found in deploy/deploy.sh at line 349.
+
+Signature: `nginx_disposition()`
+
+What it does: Function nginx_disposition takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — nginx_template
+
+Found in deploy/deploy.sh at line 223.
+
+Signature: `nginx_template()`
+
+What it does: Function nginx_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — path_exists
+
+Found in deploy/deploy.sh at line 288.
+
+Signature: `path_exists()`
+
+What it does: Function path_exists takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — random_hex
+
+Found in deploy/deploy.sh at line 85.
+
+Signature: `random_hex()`
+
+What it does: Function random_hex takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — read_root_file
+
+Found in deploy/deploy.sh at line 218.
+
+Signature: `read_root_file()`
+
+What it does: Function read_root_file takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — render_site_body
+
+Found in deploy/deploy.sh at line 240.
+
+Signature: `render_site_body()`
+
+What it does: Function render_site_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — require_hardened_body
+
+Found in deploy/deploy.sh at line 392.
+
+Signature: `require_hardened_body()`
+
+What it does: Function require_hardened_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — resolve_sponsor_url
+
+Found in deploy/deploy.sh at line 141.
+
+Signature: `resolve_sponsor_url()`
+
+What it does: Function resolve_sponsor_url takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — run_check
+
+Found in deploy/deploy.sh at line 492.
+
+Signature: `run_check()`
+
+What it does: Function run_check takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — sponsor_url_ok
+
+Found in deploy/deploy.sh at line 108.
+
+Signature: `sponsor_url_ok()`
+
+What it does: Function sponsor_url_ok takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — stamp_managed
+
+Found in deploy/deploy.sh at line 309.
+
+Signature: `stamp_managed()`
+
+What it does: Function stamp_managed takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — usage
+
+Found in deploy/deploy.sh at line 64.
+
+Signature: `usage()`
+
+What it does: Function usage takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — validate_sponsor_url
+
+Found in deploy/deploy.sh at line 134.
+
+Signature: `validate_sponsor_url()`
+
+What it does: Function validate_sponsor_url takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — with_force
+
+Found in deploy/deploy.sh at line 383.
+
+Signature: `with_force()`
+
+What it does: Function with_force takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — write_bootstrap_body
+
+Found in deploy/deploy.sh at line 318.
+
+Signature: `write_bootstrap_body()`
+
+What it does: Function write_bootstrap_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — write_sponsor_env
+
+Found in deploy/deploy.sh at line 150.
+
+Signature: `write_sponsor_env()`
+
+What it does: Function write_sponsor_env takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
 ## entry point — main
 
 Found in examples/wikibench.rs at line 831.
@@ -1564,6 +1562,18 @@ What it does: The entry point: the program starts here. It reads the command lin
 
 ---
 
+## function — entries_of
+
+Found in scripts/build_wavefront_explorer.py at line 73.
+
+Signature: `def entries_of(scroll_text):`
+
+What it does: Yield (heading, body) per entry in a person scroll. Shared scrolls
+
+(Where these words came from: doc comment.)
+
+---
+
 ## function — fmt
 
 Found in scripts/build_wavefront_explorer.py at line 30.
@@ -1571,6 +1581,30 @@ Found in scripts/build_wavefront_explorer.py at line 30.
 Signature: `def fmt(coord):`
 
 What it does: Function fmt takes coord and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — handle_of
+
+Found in scripts/build_wavefront_explorer.py at line 91.
+
+Signature: `def handle_of(heading):`
+
+What it does: Function handle_of takes heading and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — main
+
+Found in scripts/build_wavefront_explorer.py at line 100.
+
+Signature: `def main():`
+
+What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -1612,42 +1646,6 @@ What it does: Function summarize takes evidence and gives back nothing; it does 
 
 ---
 
-## function — entries_of
-
-Found in scripts/build_wavefront_explorer.py at line 73.
-
-Signature: `def entries_of(scroll_text):`
-
-What it does: Yield (heading, body) per entry in a person scroll. Shared scrolls
-
-(Where these words came from: doc comment.)
-
----
-
-## function — handle_of
-
-Found in scripts/build_wavefront_explorer.py at line 91.
-
-Signature: `def handle_of(heading):`
-
-What it does: Function handle_of takes heading and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — main
-
-Found in scripts/build_wavefront_explorer.py at line 100.
-
-Signature: `def main():`
-
-What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
 ## function — fmt
 
 Found in scripts/build_wavefront_snapshot.py at line 42.
@@ -1657,18 +1655,6 @@ Signature: `def fmt(coord):`
 What it does: Function fmt takes coord and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
-
----
-
-## function — parse_phext
-
-Found in scripts/build_wavefront_snapshot.py at line 48.
-
-Signature: `def parse_phext(data):`
-
-What it does: Dead-reckoning parse: walk bytes, split on delimiters, map to coords.
-
-(Where these words came from: doc comment.)
 
 ---
 
@@ -1696,73 +1682,25 @@ What it does: Function main takes no inputs beyond the value it is called on, an
 
 ---
 
-## function — check
+## function — parse_phext
 
-Found in scripts/mcp-e2e/mcp_e2e.py at line 45.
+Found in scripts/build_wavefront_snapshot.py at line 48.
 
-Signature: `def check(ok, label, detail=""):`
+Signature: `def parse_phext(data):`
 
-What it does: Function check takes ok, label, detail="" and gives back nothing; it does its work on what it is given.
+What it does: Dead-reckoning parse: walk bytes, split on delimiters, map to coords.
 
-(Where these words came from: signature.)
-
----
-
-## function — skip
-
-Found in scripts/mcp-e2e/mcp_e2e.py at line 50.
-
-Signature: `def skip(label, why):`
-
-What it does: Function skip takes label, why and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
+(Where these words came from: doc comment.)
 
 ---
 
-## function — req
+## function — assertion
 
-Found in scripts/mcp-e2e/mcp_e2e.py at line 55.
+Found in scripts/mcp-e2e/mcp_e2e.py at line 384.
 
-Signature: `def req(method, path, body=None, headers=None, budget_ms=None, label=None):`
+Signature: `def assertion(jti):`
 
-What it does: Function req takes method, path, body=None, headers=None, budget_ms=None, label=None and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — b64url
-
-Found in scripts/mcp-e2e/mcp_e2e.py at line 73.
-
-Signature: `def b64url(data: bytes) -> str:`
-
-What it does: Function b64url takes data: bytes and gives back str:.
-
-(Where these words came from: signature.)
-
----
-
-## function — pkce
-
-Found in scripts/mcp-e2e/mcp_e2e.py at line 77.
-
-Signature: `def pkce():`
-
-What it does: Function pkce takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — consent_fields
-
-Found in scripts/mcp-e2e/mcp_e2e.py at line 82.
-
-Signature: `def consent_fields(page: str):`
-
-What it does: Function consent_fields takes page: str and gives back nothing; it does its work on what it is given.
+What it does: Function assertion takes jti and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -1780,37 +1718,37 @@ What it does: GET authorize (expect the consent page), POST approve, return the
 
 ---
 
-## function — token_exchange
+## function — b64url
 
-Found in scripts/mcp-e2e/mcp_e2e.py at line 111.
+Found in scripts/mcp-e2e/mcp_e2e.py at line 73.
 
-Signature: `def token_exchange(form, label, extra_headers=None):`
+Signature: `def b64url(data: bytes) -> str:`
 
-What it does: Function token_exchange takes form, label, extra_headers=None and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — rpc
-
-Found in scripts/mcp-e2e/mcp_e2e.py at line 119.
-
-Signature: `def rpc(token, method, params=None, req_id=1, headers_extra=None, path="/mcp", label=None, budget_ms=None):`
-
-What it does: Function rpc takes token, method, params=None, req_id=1, headers_extra=None, path="/mcp", label=None, budget_ms=None and gives back nothing; it does its work on what it is given.
+What it does: Function b64url takes data: bytes and gives back str:.
 
 (Where these words came from: signature.)
 
 ---
 
-## function — tool
+## function — check
 
-Found in scripts/mcp-e2e/mcp_e2e.py at line 134.
+Found in scripts/mcp-e2e/mcp_e2e.py at line 45.
 
-Signature: `def tool(token, name, args, label=None, budget_ms=None):`
+Signature: `def check(ok, label, detail=""):`
 
-What it does: Function tool takes token, name, args, label=None, budget_ms=None and gives back nothing; it does its work on what it is given.
+What it does: Function check takes ok, label, detail="" and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — consent_fields
+
+Found in scripts/mcp-e2e/mcp_e2e.py at line 82.
+
+Signature: `def consent_fields(page: str):`
+
+What it does: Function consent_fields takes page: str and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -1828,6 +1766,18 @@ What it does: Function flow_code_and_token takes *, label, client_id, redirect_u
 
 ---
 
+## function — pkce
+
+Found in scripts/mcp-e2e/mcp_e2e.py at line 77.
+
+Signature: `def pkce():`
+
+What it does: Function pkce takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
 ## function — pkce_pair
 
 Found in scripts/mcp-e2e/mcp_e2e.py at line 170.
@@ -1840,13 +1790,61 @@ What it does: Function pkce_pair takes verifier and gives back nothing; it does 
 
 ---
 
-## function — assertion
+## function — req
 
-Found in scripts/mcp-e2e/mcp_e2e.py at line 384.
+Found in scripts/mcp-e2e/mcp_e2e.py at line 55.
 
-Signature: `def assertion(jti):`
+Signature: `def req(method, path, body=None, headers=None, budget_ms=None, label=None):`
 
-What it does: Function assertion takes jti and gives back nothing; it does its work on what it is given.
+What it does: Function req takes method, path, body=None, headers=None, budget_ms=None, label=None and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — rpc
+
+Found in scripts/mcp-e2e/mcp_e2e.py at line 119.
+
+Signature: `def rpc(token, method, params=None, req_id=1, headers_extra=None, path="/mcp", label=None, budget_ms=None):`
+
+What it does: Function rpc takes token, method, params=None, req_id=1, headers_extra=None, path="/mcp", label=None, budget_ms=None and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — skip
+
+Found in scripts/mcp-e2e/mcp_e2e.py at line 50.
+
+Signature: `def skip(label, why):`
+
+What it does: Function skip takes label, why and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — token_exchange
+
+Found in scripts/mcp-e2e/mcp_e2e.py at line 111.
+
+Signature: `def token_exchange(form, label, extra_headers=None):`
+
+What it does: Function token_exchange takes form, label, extra_headers=None and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — tool
+
+Found in scripts/mcp-e2e/mcp_e2e.py at line 134.
+
+Signature: `def tool(token, name, args, label=None, budget_ms=None):`
+
+What it does: Function tool takes token, name, args, label=None, budget_ms=None and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -1864,18 +1862,6 @@ What it does: Function cleanup takes no inputs beyond the value it is called on,
 
 ---
 
-## function — stamp
-
-Found in scripts/mcp-e2e/sdk_flow.py at line 31.
-
-Signature: `def stamp(msg):`
-
-What it does: Function stamp takes msg and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
 ## function — __init__
 
 Found in scripts/mcp-e2e/sdk_flow.py at line 36.
@@ -1888,733 +1874,13 @@ What it does: Function __init__ takes no inputs beyond the value it is called on
 
 ---
 
-## entry point — main
+## function — stamp
 
-Found in src/bin/phext_edit.rs at line 7879.
+Found in scripts/mcp-e2e/sdk_flow.py at line 31.
 
-Signature: `fn main() {`
+Signature: `def stamp(msg):`
 
-What it does: The entry point: the program starts here. It reads the command line and runs the command the user named.
-
-(Where these words came from: signature.)
-
----
-
-## command — dim
-
-Found in src/bin/phext_edit.rs at line 941.
-
-Signature: `command "dim"`
-
-What it does: A command named dim. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — forward
-
-Found in src/bin/phext_edit.rs at line 946.
-
-Signature: `command "forward"`
-
-What it does: A command named forward. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — backward
-
-Found in src/bin/phext_edit.rs at line 947.
-
-Signature: `command "backward"`
-
-What it does: A command named backward. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — next
-
-Found in src/bin/phext_edit.rs at line 948.
-
-Signature: `command "next"`
-
-What it does: A command named next. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — prev
-
-Found in src/bin/phext_edit.rs at line 949.
-
-Signature: `command "prev"`
-
-What it does: A command named prev. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — goto
-
-Found in src/bin/phext_edit.rs at line 950.
-
-Signature: `command "goto"`
-
-What it does: A command named goto. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — home
-
-Found in src/bin/phext_edit.rs at line 955.
-
-Signature: `command "home"`
-
-What it does: A command named home. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — base
-
-Found in src/bin/phext_edit.rs at line 962.
-
-Signature: `command "base"`
-
-What it does: A command named base. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — full
-
-Found in src/bin/phext_edit.rs at line 1158.
-
-Signature: `command "full"`
-
-What it does: A command named full. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — summary
-
-Found in src/bin/phext_edit.rs at line 1159.
-
-Signature: `command "summary"`
-
-What it does: A command named summary. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — children
-
-Found in src/bin/phext_edit.rs at line 1164.
-
-Signature: `command "children"`
-
-What it does: A command named children. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — scrolls
-
-Found in src/bin/phext_edit.rs at line 1189.
-
-Signature: `command "scrolls"`
-
-What it does: A command named scrolls. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — matches
-
-Found in src/bin/phext_edit.rs at line 1197.
-
-Signature: `command "matches"`
-
-What it does: A command named matches. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — no-store
-
-Found in src/bin/phext_edit.rs at line 1545.
-
-Signature: `command "no-store"`
-
-What it does: A command named no-store. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — saved
-
-Found in src/bin/phext_edit.rs at line 2333.
-
-Signature: `command "saved"`
-
-What it does: A command named saved. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — write_scroll
-
-Found in src/bin/phext_edit.rs at line 2479.
-
-Signature: `command "write_scroll"`
-
-What it does: A command named write_scroll. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — list_phexts
-
-Found in src/bin/phext_edit.rs at line 2480.
-
-Signature: `command "list_phexts"`
-
-What it does: A command named list_phexts. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — initialize
-
-Found in src/bin/phext_edit.rs at line 2486.
-
-Signature: `command "initialize"`
-
-What it does: A command named initialize. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — ping
-
-Found in src/bin/phext_edit.rs at line 2680.
-
-Signature: `command "ping"`
-
-What it does: A command named ping. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — jsonrpc
-
-Found in src/bin/phext_edit.rs at line 2686.
-
-Signature: `command "jsonrpc"`
-
-What it does: A command named jsonrpc. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — https
-
-Found in src/bin/phext_edit.rs at line 3417.
-
-Signature: `command "https"`
-
-What it does: A command named https. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — http
-
-Found in src/bin/phext_edit.rs at line 3418.
-
-Signature: `command "http"`
-
-What it does: A command named http. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — authorization_code
-
-Found in src/bin/phext_edit.rs at line 3573.
-
-Signature: `command "authorization_code"`
-
-What it does: A command named authorization_code. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — code
-
-Found in src/bin/phext_edit.rs at line 3592.
-
-Signature: `command "code"`
-
-What it does: A command named code. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — private_key_jwt
-
-Found in src/bin/phext_edit.rs at line 3672.
-
-Signature: `command "private_key_jwt"`
-
-What it does: A command named private_key_jwt. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — none
-
-Found in src/bin/phext_edit.rs at line 4628.
-
-Signature: `command "none"`
-
-What it does: A command named none. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — client_secret_basic
-
-Found in src/bin/phext_edit.rs at line 4640.
-
-Signature: `command "client_secret_basic"`
-
-What it does: A command named client_secret_basic. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — client_secret_post
-
-Found in src/bin/phext_edit.rs at line 4649.
-
-Signature: `command "client_secret_post"`
-
-What it does: A command named client_secret_post. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — refresh_token
-
-Found in src/bin/phext_edit.rs at line 4850.
-
-Signature: `command "refresh_token"`
-
-What it does: A command named refresh_token. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — replay
-
-Found in src/bin/phext_edit.rs at line 4937.
-
-Signature: `command "replay"`
-
-What it does: A command named replay. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — phext_toc
-
-Found in src/bin/phext_edit.rs at line 5305.
-
-Signature: `command "phext_toc"`
-
-What it does: A command named phext_toc. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — read_scroll
-
-Found in src/bin/phext_edit.rs at line 5331.
-
-Signature: `command "read_scroll"`
-
-What it does: A command named read_scroll. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — search_scrolls
-
-Found in src/bin/phext_edit.rs at line 5347.
-
-Signature: `command "search_scrolls"`
-
-What it does: A command named search_scrolls. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — claims
-
-Found in src/bin/phext_edit.rs at line 5420.
-
-Signature: `command "claims"`
-
-What it does: A command named claims. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — joins
-
-Found in src/bin/phext_edit.rs at line 5433.
-
-Signature: `command "joins"`
-
-What it does: A command named joins. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — ok
-
-Found in src/bin/phext_edit.rs at line 5610.
-
-Signature: `command "ok"`
-
-What it does: A command named ok. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — submissions
-
-Found in src/bin/phext_edit.rs at line 5833.
-
-Signature: `command "submissions"`
-
-What it does: A command named submissions. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — traversals
-
-Found in src/bin/phext_edit.rs at line 5984.
-
-Signature: `command "traversals"`
-
-What it does: A command named traversals. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## flag — --token
-
-Found in src/bin/phext_edit.rs at line 6482.
-
-Signature: `flag --token`
-
-What it does: A command line flag, --token. It is read by the program when the user passes it.
-
-(Where these words came from: signature.)
-
----
-
-## flag — --port
-
-Found in src/bin/phext_edit.rs at line 6486.
-
-Signature: `flag --port`
-
-What it does: A command line flag, --port. It is read by the program when the user passes it.
-
-(Where these words came from: signature.)
-
----
-
-## flag — --host
-
-Found in src/bin/phext_edit.rs at line 6486.
-
-Signature: `flag --host`
-
-What it does: A command line flag, --host. It is read by the program when the user passes it.
-
-(Where these words came from: signature.)
-
----
-
-## flag — --dir
-
-Found in src/bin/phext_edit.rs at line 6486.
-
-Signature: `flag --dir`
-
-What it does: A command line flag, --dir. It is read by the program when the user passes it.
-
-(Where these words came from: signature.)
-
----
-
-## flag — --home
-
-Found in src/bin/phext_edit.rs at line 6486.
-
-Signature: `flag --home`
-
-What it does: A command line flag, --home. It is read by the program when the user passes it.
-
-(Where these words came from: signature.)
-
----
-
-## flag — --home-coord
-
-Found in src/bin/phext_edit.rs at line 6486.
-
-Signature: `flag --home-coord`
-
-What it does: A command line flag, --home-coord. It is read by the program when the user passes it.
-
-(Where these words came from: signature.)
-
----
-
-## flag — --local
-
-Found in src/bin/phext_edit.rs at line 6495.
-
-Signature: `flag --local`
-
-What it does: A command line flag, --local. It is read by the program when the user passes it.
-
-(Where these words came from: signature.)
-
----
-
-## flag — --help
-
-Found in src/bin/phext_edit.rs at line 6495.
-
-Signature: `flag --help`
-
-What it does: A command line flag, --help. It is read by the program when the user passes it.
-
-(Where these words came from: signature.)
-
----
-
-## command — phext
-
-Found in src/bin/phext_edit.rs at line 6536.
-
-Signature: `command "phext"`
-
-What it does: A command named phext. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — xml
-
-Found in src/bin/phext_edit.rs at line 6544.
-
-Signature: `command "xml"`
-
-What it does: A command named xml. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## flag — --local opens the editor
-
-Found in src/bin/phext_edit.rs at line 6795.
-
-Signature: `flag --local opens the editor`
-
-What it does: A command line flag, --local opens the editor. It is read by the program when the user passes it.
-
-(Where these words came from: signature.)
-
----
-
-## command — found
-
-Found in src/bin/phext_edit.rs at line 8227.
-
-Signature: `command "found"`
-
-What it does: A command named found. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — bought
-
-Found in src/bin/phext_edit.rs at line 8228.
-
-Signature: `command "bought"`
-
-What it does: A command named bought. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — patron
-
-Found in src/bin/phext_edit.rs at line 8229.
-
-Signature: `command "patron"`
-
-What it does: A command named patron. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — new
-
-Found in src/bin/phext_edit.rs at line 8230.
-
-Signature: `command "new"`
-
-What it does: A command named new. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — lookup-form
-
-Found in src/bin/phext_edit.rs at line 8466.
-
-Signature: `command "lookup-form"`
-
-What it does: A command named lookup-form. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — logout
-
-Found in src/bin/phext_edit.rs at line 8494.
-
-Signature: `command "logout"`
-
-What it does: A command named logout. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — claim-button
-
-Found in src/bin/phext_edit.rs at line 8522.
-
-Signature: `command "claim-button"`
-
-What it does: A command named claim-button. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — pending
-
-Found in src/bin/phext_edit.rs at line 8642.
-
-Signature: `command "pending"`
-
-What it does: A command named pending. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — upload-form
-
-Found in src/bin/phext_edit.rs at line 8668.
-
-Signature: `command "upload-form"`
-
-What it does: A command named upload-form. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — coord-link
-
-Found in src/bin/phext_edit.rs at line 10631.
-
-Signature: `command "coord-link"`
-
-What it does: A command named coord-link. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## flag — --font-text: 'Emise'
-
-Found in src/bin/phext_edit.rs at line 12275.
-
-Signature: `flag --font-text: 'Emise'`
-
-What it does: A command line flag, --font-text: 'Emise'. It is read by the program when the user passes it.
+What it does: Function stamp takes msg and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -2644,6 +1910,18 @@ What it does: A command line flag, --dim: #9a9a9a. It is read by the program whe
 
 ---
 
+## flag — --dir
+
+Found in src/bin/phext_edit.rs at line 6486.
+
+Signature: `flag --dir`
+
+What it does: A command line flag, --dir. It is read by the program when the user passes it.
+
+(Where these words came from: signature.)
+
+---
+
 ## flag — --field-border: #767676
 
 Found in src/bin/phext_edit.rs at line 13330.
@@ -2651,6 +1929,726 @@ Found in src/bin/phext_edit.rs at line 13330.
 Signature: `flag --field-border: #767676`
 
 What it does: A command line flag, --field-border: #767676. It is read by the program when the user passes it.
+
+(Where these words came from: signature.)
+
+---
+
+## flag — --font-text: 'Emise'
+
+Found in src/bin/phext_edit.rs at line 12275.
+
+Signature: `flag --font-text: 'Emise'`
+
+What it does: A command line flag, --font-text: 'Emise'. It is read by the program when the user passes it.
+
+(Where these words came from: signature.)
+
+---
+
+## flag — --help
+
+Found in src/bin/phext_edit.rs at line 6495.
+
+Signature: `flag --help`
+
+What it does: A command line flag, --help. It is read by the program when the user passes it.
+
+(Where these words came from: signature.)
+
+---
+
+## flag — --home
+
+Found in src/bin/phext_edit.rs at line 6486.
+
+Signature: `flag --home`
+
+What it does: A command line flag, --home. It is read by the program when the user passes it.
+
+(Where these words came from: signature.)
+
+---
+
+## flag — --home-coord
+
+Found in src/bin/phext_edit.rs at line 6486.
+
+Signature: `flag --home-coord`
+
+What it does: A command line flag, --home-coord. It is read by the program when the user passes it.
+
+(Where these words came from: signature.)
+
+---
+
+## flag — --host
+
+Found in src/bin/phext_edit.rs at line 6486.
+
+Signature: `flag --host`
+
+What it does: A command line flag, --host. It is read by the program when the user passes it.
+
+(Where these words came from: signature.)
+
+---
+
+## flag — --local
+
+Found in src/bin/phext_edit.rs at line 6495.
+
+Signature: `flag --local`
+
+What it does: A command line flag, --local. It is read by the program when the user passes it.
+
+(Where these words came from: signature.)
+
+---
+
+## flag — --local opens the editor
+
+Found in src/bin/phext_edit.rs at line 6795.
+
+Signature: `flag --local opens the editor`
+
+What it does: A command line flag, --local opens the editor. It is read by the program when the user passes it.
+
+(Where these words came from: signature.)
+
+---
+
+## flag — --port
+
+Found in src/bin/phext_edit.rs at line 6486.
+
+Signature: `flag --port`
+
+What it does: A command line flag, --port. It is read by the program when the user passes it.
+
+(Where these words came from: signature.)
+
+---
+
+## flag — --token
+
+Found in src/bin/phext_edit.rs at line 6482.
+
+Signature: `flag --token`
+
+What it does: A command line flag, --token. It is read by the program when the user passes it.
+
+(Where these words came from: signature.)
+
+---
+
+## command — authorization_code
+
+Found in src/bin/phext_edit.rs at line 3573.
+
+Signature: `command "authorization_code"`
+
+What it does: A command named authorization_code. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — backward
+
+Found in src/bin/phext_edit.rs at line 947.
+
+Signature: `command "backward"`
+
+What it does: A command named backward. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — base
+
+Found in src/bin/phext_edit.rs at line 962.
+
+Signature: `command "base"`
+
+What it does: A command named base. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — bought
+
+Found in src/bin/phext_edit.rs at line 8228.
+
+Signature: `command "bought"`
+
+What it does: A command named bought. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — children
+
+Found in src/bin/phext_edit.rs at line 1164.
+
+Signature: `command "children"`
+
+What it does: A command named children. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — claim-button
+
+Found in src/bin/phext_edit.rs at line 8522.
+
+Signature: `command "claim-button"`
+
+What it does: A command named claim-button. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — claims
+
+Found in src/bin/phext_edit.rs at line 5420.
+
+Signature: `command "claims"`
+
+What it does: A command named claims. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — client_secret_basic
+
+Found in src/bin/phext_edit.rs at line 4640.
+
+Signature: `command "client_secret_basic"`
+
+What it does: A command named client_secret_basic. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — client_secret_post
+
+Found in src/bin/phext_edit.rs at line 4649.
+
+Signature: `command "client_secret_post"`
+
+What it does: A command named client_secret_post. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — code
+
+Found in src/bin/phext_edit.rs at line 3592.
+
+Signature: `command "code"`
+
+What it does: A command named code. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — coord-link
+
+Found in src/bin/phext_edit.rs at line 10631.
+
+Signature: `command "coord-link"`
+
+What it does: A command named coord-link. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — dim
+
+Found in src/bin/phext_edit.rs at line 941.
+
+Signature: `command "dim"`
+
+What it does: A command named dim. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — forward
+
+Found in src/bin/phext_edit.rs at line 946.
+
+Signature: `command "forward"`
+
+What it does: A command named forward. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — found
+
+Found in src/bin/phext_edit.rs at line 8227.
+
+Signature: `command "found"`
+
+What it does: A command named found. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — full
+
+Found in src/bin/phext_edit.rs at line 1158.
+
+Signature: `command "full"`
+
+What it does: A command named full. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — goto
+
+Found in src/bin/phext_edit.rs at line 950.
+
+Signature: `command "goto"`
+
+What it does: A command named goto. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — home
+
+Found in src/bin/phext_edit.rs at line 955.
+
+Signature: `command "home"`
+
+What it does: A command named home. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — http
+
+Found in src/bin/phext_edit.rs at line 3418.
+
+Signature: `command "http"`
+
+What it does: A command named http. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — https
+
+Found in src/bin/phext_edit.rs at line 3417.
+
+Signature: `command "https"`
+
+What it does: A command named https. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — initialize
+
+Found in src/bin/phext_edit.rs at line 2486.
+
+Signature: `command "initialize"`
+
+What it does: A command named initialize. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — joins
+
+Found in src/bin/phext_edit.rs at line 5433.
+
+Signature: `command "joins"`
+
+What it does: A command named joins. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — jsonrpc
+
+Found in src/bin/phext_edit.rs at line 2686.
+
+Signature: `command "jsonrpc"`
+
+What it does: A command named jsonrpc. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — list_phexts
+
+Found in src/bin/phext_edit.rs at line 2480.
+
+Signature: `command "list_phexts"`
+
+What it does: A command named list_phexts. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — logout
+
+Found in src/bin/phext_edit.rs at line 8494.
+
+Signature: `command "logout"`
+
+What it does: A command named logout. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — lookup-form
+
+Found in src/bin/phext_edit.rs at line 8466.
+
+Signature: `command "lookup-form"`
+
+What it does: A command named lookup-form. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## entry point — main
+
+Found in src/bin/phext_edit.rs at line 7879.
+
+Signature: `fn main() {`
+
+What it does: The entry point: the program starts here. It reads the command line and runs the command the user named.
+
+(Where these words came from: signature.)
+
+---
+
+## command — matches
+
+Found in src/bin/phext_edit.rs at line 1197.
+
+Signature: `command "matches"`
+
+What it does: A command named matches. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — new
+
+Found in src/bin/phext_edit.rs at line 8230.
+
+Signature: `command "new"`
+
+What it does: A command named new. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — next
+
+Found in src/bin/phext_edit.rs at line 948.
+
+Signature: `command "next"`
+
+What it does: A command named next. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — no-store
+
+Found in src/bin/phext_edit.rs at line 1545.
+
+Signature: `command "no-store"`
+
+What it does: A command named no-store. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — none
+
+Found in src/bin/phext_edit.rs at line 4628.
+
+Signature: `command "none"`
+
+What it does: A command named none. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — ok
+
+Found in src/bin/phext_edit.rs at line 5610.
+
+Signature: `command "ok"`
+
+What it does: A command named ok. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — patron
+
+Found in src/bin/phext_edit.rs at line 8229.
+
+Signature: `command "patron"`
+
+What it does: A command named patron. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — pending
+
+Found in src/bin/phext_edit.rs at line 8642.
+
+Signature: `command "pending"`
+
+What it does: A command named pending. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — phext
+
+Found in src/bin/phext_edit.rs at line 6536.
+
+Signature: `command "phext"`
+
+What it does: A command named phext. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — phext_toc
+
+Found in src/bin/phext_edit.rs at line 5305.
+
+Signature: `command "phext_toc"`
+
+What it does: A command named phext_toc. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — ping
+
+Found in src/bin/phext_edit.rs at line 2680.
+
+Signature: `command "ping"`
+
+What it does: A command named ping. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — prev
+
+Found in src/bin/phext_edit.rs at line 949.
+
+Signature: `command "prev"`
+
+What it does: A command named prev. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — private_key_jwt
+
+Found in src/bin/phext_edit.rs at line 3672.
+
+Signature: `command "private_key_jwt"`
+
+What it does: A command named private_key_jwt. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — read_scroll
+
+Found in src/bin/phext_edit.rs at line 5331.
+
+Signature: `command "read_scroll"`
+
+What it does: A command named read_scroll. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — refresh_token
+
+Found in src/bin/phext_edit.rs at line 4850.
+
+Signature: `command "refresh_token"`
+
+What it does: A command named refresh_token. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — replay
+
+Found in src/bin/phext_edit.rs at line 4937.
+
+Signature: `command "replay"`
+
+What it does: A command named replay. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — saved
+
+Found in src/bin/phext_edit.rs at line 2333.
+
+Signature: `command "saved"`
+
+What it does: A command named saved. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — scrolls
+
+Found in src/bin/phext_edit.rs at line 1189.
+
+Signature: `command "scrolls"`
+
+What it does: A command named scrolls. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — search_scrolls
+
+Found in src/bin/phext_edit.rs at line 5347.
+
+Signature: `command "search_scrolls"`
+
+What it does: A command named search_scrolls. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — submissions
+
+Found in src/bin/phext_edit.rs at line 5833.
+
+Signature: `command "submissions"`
+
+What it does: A command named submissions. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — summary
+
+Found in src/bin/phext_edit.rs at line 1159.
+
+Signature: `command "summary"`
+
+What it does: A command named summary. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — traversals
+
+Found in src/bin/phext_edit.rs at line 5984.
+
+Signature: `command "traversals"`
+
+What it does: A command named traversals. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — upload-form
+
+Found in src/bin/phext_edit.rs at line 8668.
+
+Signature: `command "upload-form"`
+
+What it does: A command named upload-form. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — write_scroll
+
+Found in src/bin/phext_edit.rs at line 2479.
+
+Signature: `command "write_scroll"`
+
+What it does: A command named write_scroll. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — xml
+
+Found in src/bin/phext_edit.rs at line 6544.
+
+Signature: `command "xml"`
+
+What it does: A command named xml. The program runs it when the user types this word on the command line.
 
 (Where these words came from: signature.)
 
@@ -2668,61 +2666,13 @@ What it does: The entry point: the program starts here. It reads the command lin
 
 ---
 
-## entry point — main
+## flag — --help
 
-Found in src/bin/phext_tts.rs at line 17.
+Found in src/bin/phext_tts.rs at line 75.
 
-Signature: `fn main() {`
+Signature: `flag --help`
 
-What it does: The entry point: the program starts here. It reads the command line and runs the command the user named.
-
-(Where these words came from: signature.)
-
----
-
-## command — coord
-
-Found in src/bin/phext_tts.rs at line 26.
-
-Signature: `command "coord"`
-
-What it does: A command named coord. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — ssml
-
-Found in src/bin/phext_tts.rs at line 33.
-
-Signature: `command "ssml"`
-
-What it does: A command named ssml. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — special
-
-Found in src/bin/phext_tts.rs at line 41.
-
-Signature: `command "special"`
-
-What it does: A command named special. The program runs it when the user types this word on the command line.
-
-(Where these words came from: signature.)
-
----
-
-## command — table
-
-Found in src/bin/phext_tts.rs at line 48.
-
-Signature: `command "table"`
-
-What it does: A command named table. The program runs it when the user types this word on the command line.
+What it does: A command line flag, --help. It is read by the program when the user passes it.
 
 (Where these words came from: signature.)
 
@@ -2735,6 +2685,18 @@ Found in src/bin/phext_tts.rs at line 61.
 Signature: `command "batch"`
 
 What it does: A command named batch. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — coord
+
+Found in src/bin/phext_tts.rs at line 26.
+
+Signature: `command "coord"`
+
+What it does: A command named coord. The program runs it when the user types this word on the command line.
 
 (Where these words came from: signature.)
 
@@ -2764,13 +2726,97 @@ What it does: A command named help. The program runs it when the user types this
 
 ---
 
-## flag — --help
+## entry point — main
 
-Found in src/bin/phext_tts.rs at line 75.
+Found in src/bin/phext_tts.rs at line 17.
 
-Signature: `flag --help`
+Signature: `fn main() {`
 
-What it does: A command line flag, --help. It is read by the program when the user passes it.
+What it does: The entry point: the program starts here. It reads the command line and runs the command the user named.
+
+(Where these words came from: signature.)
+
+---
+
+## command — special
+
+Found in src/bin/phext_tts.rs at line 41.
+
+Signature: `command "special"`
+
+What it does: A command named special. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — ssml
+
+Found in src/bin/phext_tts.rs at line 33.
+
+Signature: `command "ssml"`
+
+What it does: A command named ssml. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## command — table
+
+Found in src/bin/phext_tts.rs at line 48.
+
+Signature: `command "table"`
+
+What it does: A command named table. The program runs it when the user types this word on the command line.
+
+(Where these words came from: signature.)
+
+---
+
+## flag — --dir
+
+Found in src/bin/uml6d_edit.rs at line 674.
+
+Signature: `flag --dir`
+
+What it does: A command line flag, --dir. It is read by the program when the user passes it.
+
+(Where these words came from: signature.)
+
+---
+
+## flag — --host
+
+Found in src/bin/uml6d_edit.rs at line 673.
+
+Signature: `flag --host`
+
+What it does: A command line flag, --host. It is read by the program when the user passes it.
+
+(Where these words came from: signature.)
+
+---
+
+## flag — --port
+
+Found in src/bin/uml6d_edit.rs at line 672.
+
+Signature: `flag --port`
+
+What it does: A command line flag, --port. It is read by the program when the user passes it.
+
+(Where these words came from: signature.)
+
+---
+
+## command — coord-link
+
+Found in src/bin/uml6d_edit.rs at line 1429.
+
+Signature: `command "coord-link"`
+
+What it does: A command named coord-link. The program runs it when the user types this word on the command line.
 
 (Where these words came from: signature.)
 
@@ -2800,49 +2846,25 @@ What it does: A command named saved. The program runs it when the user types thi
 
 ---
 
-## flag — --port
+## struct — Claim
 
-Found in src/bin/uml6d_edit.rs at line 672.
+Found in src/claims.rs at line 78.
 
-Signature: `flag --port`
+Signature: `pub struct Claim {`
 
-What it does: A command line flag, --port. It is read by the program when the user passes it.
-
-(Where these words came from: signature.)
-
----
-
-## flag — --host
-
-Found in src/bin/uml6d_edit.rs at line 673.
-
-Signature: `flag --host`
-
-What it does: A command line flag, --host. It is read by the program when the user passes it.
+What it does: A data shape named Claim. Its fields are: pub who: String; pub handle: String; pub tier: Tier; pub placements: Vec<String>; pub claimed_at: i64.
 
 (Where these words came from: signature.)
 
 ---
 
-## flag — --dir
+## struct — Grant
 
-Found in src/bin/uml6d_edit.rs at line 674.
+Found in src/claims.rs at line 70.
 
-Signature: `flag --dir`
+Signature: `pub struct Grant {`
 
-What it does: A command line flag, --dir. It is read by the program when the user passes it.
-
-(Where these words came from: signature.)
-
----
-
-## command — coord-link
-
-Found in src/bin/uml6d_edit.rs at line 1429.
-
-Signature: `command "coord-link"`
-
-What it does: A command named coord-link. The program runs it when the user types this word on the command line.
+What it does: A data shape named Grant. Its fields are: pub storage_bytes: usize; pub max_phexts: usize; pub max_phext_bytes: usize; pub max_delegates: usize.
 
 (Where these words came from: signature.)
 
@@ -2872,30 +2894,6 @@ What it does: Function Tier::grant takes no inputs beyond the value it is called
 
 ---
 
-## struct — Grant
-
-Found in src/claims.rs at line 70.
-
-Signature: `pub struct Grant {`
-
-What it does: A data shape named Grant. Its fields are: pub storage_bytes: usize; pub max_phexts: usize; pub max_phext_bytes: usize; pub max_delegates: usize.
-
-(Where these words came from: signature.)
-
----
-
-## struct — Claim
-
-Found in src/claims.rs at line 78.
-
-Signature: `pub struct Claim {`
-
-What it does: A data shape named Claim. Its fields are: pub who: String; pub handle: String; pub tier: Tier; pub placements: Vec<String>; pub claimed_at: i64.
-
-(Where these words came from: signature.)
-
----
-
 ## function — get
 
 Found in src/claims.rs at line 115.
@@ -2903,18 +2901,6 @@ Found in src/claims.rs at line 115.
 Signature: `pub fn get(dir: &Path, who: &str) -> Option<Claim> {`
 
 What it does: The claim an account already holds, if any.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — record
-
-Found in src/claims.rs at line 128.
-
-Signature: `pub fn record( dir: &Path, who: &str, handle: &str, tier: Tier, placements: &[String], ) -> Result<Claim, String> {`
-
-What it does: Record a claim, or return the one the account already holds — claiming twice changes nothing (a later buy-in updates the tier through `set_tier`, never by re-claiming).
 
 (Where these words came from: doc comment.)
 
@@ -2932,6 +2918,18 @@ What it does: Every recorded claim, oldest first. Unreadable files are skipped.
 
 ---
 
+## function — record
+
+Found in src/claims.rs at line 128.
+
+Signature: `pub fn record( dir: &Path, who: &str, handle: &str, tier: Tier, placements: &[String], ) -> Result<Claim, String> {`
+
+What it does: Record a claim, or return the one the account already holds — claiming twice changes nothing (a later buy-in updates the tier through `set_tier`, never by re-claiming).
+
+(Where these words came from: doc comment.)
+
+---
+
 ## function — set_tier
 
 Found in src/claims.rs at line 173.
@@ -2939,6 +2937,18 @@ Found in src/claims.rs at line 173.
 Signature: `pub fn set_tier(dir: &Path, who: &str, tier: Tier, placements: &[String]) -> Result<Claim, String> {`
 
 What it does: Move an existing claim to a new tier (a buy-in landing, or a map republication finding the account). Returns the updated claim.
+
+(Where these words came from: doc comment.)
+
+---
+
+## trait — CoordinateNav
+
+Found in src/coordinate_ext.rs at line 123.
+
+Signature: `pub trait CoordinateNav {`
+
+What it does: -------------------------------------------------------------------------------------------------------- [UPSTREAM] Navigation trait: move forward/backward in a specific dimension.  The existing break methods (scroll_break, section_break, etc.) advance AND reset lower dimensions. That's correct for parsing delimiters, but an editor also needs "move to the next book without resetting chapter/section/scroll" for lattice navigation, AND "move backward" which libphext doesn't support at all.  `navigate` moves in a dimension, resetting lower dims (like the delimiter does). `peek` moves in a dimension WITHOUT resetting lower dims (for UI preview). --------------------------------------------------------------------------------------------------------
 
 (Where these words came from: doc comment.)
 
@@ -2968,18 +2978,6 @@ What it does: Convert 1-9 key index to dimension. Returns None for out of range.
 
 ---
 
-## function — name
-
-Found in src/coordinate_ext.rs at line 82.
-
-Signature: `pub fn name(&self) -> &'static str {`
-
-What it does: Function name takes no inputs beyond the value it is called on, and gives back &'static str.
-
-(Where these words came from: signature.)
-
----
-
 ## function — delimiter
 
 Found in src/coordinate_ext.rs at line 97.
@@ -2992,15 +2990,15 @@ What it does: The delimiter byte for this dimension.
 
 ---
 
-## trait — CoordinateNav
+## function — name
 
-Found in src/coordinate_ext.rs at line 123.
+Found in src/coordinate_ext.rs at line 82.
 
-Signature: `pub trait CoordinateNav {`
+Signature: `pub fn name(&self) -> &'static str {`
 
-What it does: -------------------------------------------------------------------------------------------------------- [UPSTREAM] Navigation trait: move forward/backward in a specific dimension.  The existing break methods (scroll_break, section_break, etc.) advance AND reset lower dimensions. That's correct for parsing delimiters, but an editor also needs "move to the next book without resetting chapter/section/scroll" for lattice navigation, AND "move backward" which libphext doesn't support at all.  `navigate` moves in a dimension, resetting lower dims (like the delimiter does). `peek` moves in a dimension WITHOUT resetting lower dims (for UI preview). --------------------------------------------------------------------------------------------------------
+What it does: Function name takes no inputs beyond the value it is called on, and gives back &'static str.
 
-(Where these words came from: doc comment.)
+(Where these words came from: signature.)
 
 ---
 
@@ -3028,37 +3026,25 @@ What it does: Function Position::new takes line: usize, col: usize and gives bac
 
 ---
 
-## function — origin
+## struct — ScrollCursor
 
-Found in src/cursor.rs at line 24.
+Found in src/cursor.rs at line 119.
 
-Signature: `pub fn origin() -> Position {`
+Signature: `pub struct ScrollCursor {`
 
-What it does: Function origin takes no inputs beyond the value it is called on, and gives back Position.
-
-(Where these words came from: signature.)
-
----
-
-## function — from_offset
-
-Found in src/cursor.rs at line 29.
-
-Signature: `pub fn from_offset(text: &str, offset: usize) -> Position {`
-
-What it does: Convert a byte offset in text to a Position.
+What it does: The cursor state within a scroll.
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — to_offset
+## function — ScrollCursor::new
 
-Found in src/cursor.rs at line 46.
+Found in src/cursor.rs at line 131.
 
-Signature: `pub fn to_offset(&self, text: &str) -> usize {`
+Signature: `pub fn new() -> ScrollCursor {`
 
-What it does: Convert this Position to a byte offset in text.
+What it does: New cursor at the origin (0,0).
 
 (Where these words came from: doc comment.)
 
@@ -3088,25 +3074,13 @@ What it does: A zero-width selection (cursor) at a position.
 
 ---
 
-## function — is_cursor
+## function — at
 
-Found in src/cursor.rs at line 90.
+Found in src/cursor.rs at line 140.
 
-Signature: `pub fn is_cursor(&self) -> bool {`
+Signature: `pub fn at(pos: Position) -> ScrollCursor {`
 
-What it does: Whether this is a zero-width selection (just a cursor).
-
-(Where these words came from: doc comment.)
-
----
-
-## function — start
-
-Found in src/cursor.rs at line 95.
-
-Signature: `pub fn start(&self) -> Position {`
-
-What it does: The start of the selection (earlier position).
+What it does: New cursor at a specific position.
 
 (Where these words came from: doc comment.)
 
@@ -3124,73 +3098,73 @@ What it does: The end of the selection (later position).
 
 ---
 
-## struct — ScrollCursor
+## function — from_offset
 
-Found in src/cursor.rs at line 119.
+Found in src/cursor.rs at line 29.
 
-Signature: `pub struct ScrollCursor {`
+Signature: `pub fn from_offset(text: &str, offset: usize) -> Position {`
 
-What it does: The cursor state within a scroll.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — ScrollCursor::new
-
-Found in src/cursor.rs at line 131.
-
-Signature: `pub fn new() -> ScrollCursor {`
-
-What it does: New cursor at the origin (0,0).
+What it does: Convert a byte offset in text to a Position.
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — at
+## function — is_cursor
 
-Found in src/cursor.rs at line 140.
+Found in src/cursor.rs at line 90.
 
-Signature: `pub fn at(pos: Position) -> ScrollCursor {`
+Signature: `pub fn is_cursor(&self) -> bool {`
 
-What it does: New cursor at a specific position.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — position
-
-Found in src/cursor.rs at line 149.
-
-Signature: `pub fn position(&self) -> Position {`
-
-What it does: Current cursor position (selection head).
+What it does: Whether this is a zero-width selection (just a cursor).
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — move_to
+## function — move_bottom
 
-Found in src/cursor.rs at line 154.
+Found in src/cursor.rs at line 225.
 
-Signature: `pub fn move_to(&mut self, pos: Position) {`
+Signature: `pub fn move_bottom(&mut self, text: &str) {`
 
-What it does: Move cursor to a position, collapsing any selection.
+What it does: Move to end of text.
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — select_to
+## function — move_down
 
-Found in src/cursor.rs at line 160.
+Found in src/cursor.rs at line 194.
 
-Signature: `pub fn select_to(&mut self, pos: Position) {`
+Signature: `pub fn move_down(&mut self, text: &str, n: usize) {`
 
-What it does: Extend selection to a position (keep anchor, move head).
+What it does: Move cursor down by n lines, preserving column.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — move_end
+
+Found in src/cursor.rs at line 214.
+
+Signature: `pub fn move_end(&mut self, text: &str) {`
+
+What it does: Move to end of current line.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — move_home
+
+Found in src/cursor.rs at line 209.
+
+Signature: `pub fn move_home(&mut self) {`
+
+What it does: Move to beginning of current line.
 
 (Where these words came from: doc comment.)
 
@@ -3220,49 +3194,13 @@ What it does: Move cursor right by n characters within text.
 
 ---
 
-## function — move_up
+## function — move_to
 
-Found in src/cursor.rs at line 180.
+Found in src/cursor.rs at line 154.
 
-Signature: `pub fn move_up(&mut self, text: &str, n: usize) {`
+Signature: `pub fn move_to(&mut self, pos: Position) {`
 
-What it does: Move cursor up by n lines, preserving column.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — move_down
-
-Found in src/cursor.rs at line 194.
-
-Signature: `pub fn move_down(&mut self, text: &str, n: usize) {`
-
-What it does: Move cursor down by n lines, preserving column.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — move_home
-
-Found in src/cursor.rs at line 209.
-
-Signature: `pub fn move_home(&mut self) {`
-
-What it does: Move to beginning of current line.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — move_end
-
-Found in src/cursor.rs at line 214.
-
-Signature: `pub fn move_end(&mut self, text: &str) {`
-
-What it does: Move to end of current line.
+What it does: Move cursor to a position, collapsing any selection.
 
 (Where these words came from: doc comment.)
 
@@ -3280,25 +3218,13 @@ What it does: Move to start of text.
 
 ---
 
-## function — move_bottom
+## function — move_up
 
-Found in src/cursor.rs at line 225.
+Found in src/cursor.rs at line 180.
 
-Signature: `pub fn move_bottom(&mut self, text: &str) {`
+Signature: `pub fn move_up(&mut self, text: &str, n: usize) {`
 
-What it does: Move to end of text.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — move_word_forward
-
-Found in src/cursor.rs at line 232.
-
-Signature: `pub fn move_word_forward(&mut self, text: &str) {`
-
-What it does: Move to the next word boundary.
+What it does: Move cursor up by n lines, preserving column.
 
 (Where these words came from: doc comment.)
 
@@ -3316,97 +3242,73 @@ What it does: Move to the previous word boundary.
 
 ---
 
-## enum — EditResult
+## function — move_word_forward
 
-Found in src/editor.rs at line 16.
+Found in src/cursor.rs at line 232.
 
-Signature: `pub enum EditResult {`
+Signature: `pub fn move_word_forward(&mut self, text: &str) {`
 
-What it does: What happened after processing a key.
-
-(Where these words came from: doc comment.)
-
----
-
-## enum — CursorStyle
-
-Found in src/editor.rs at line 31.
-
-Signature: `pub enum CursorStyle {`
-
-What it does: Cursor rendering style.
+What it does: Move to the next word boundary.
 
 (Where these words came from: doc comment.)
 
 ---
 
-## struct — EditKey
+## function — origin
 
-Found in src/editor.rs at line 42.
+Found in src/cursor.rs at line 24.
 
-Signature: `pub struct EditKey {`
+Signature: `pub fn origin() -> Position {`
 
-What it does: A key event abstraction (decoupled from any TUI/GUI framework).
+What it does: Function origin takes no inputs beyond the value it is called on, and gives back Position.
+
+(Where these words came from: signature.)
+
+---
+
+## function — position
+
+Found in src/cursor.rs at line 149.
+
+Signature: `pub fn position(&self) -> Position {`
+
+What it does: Current cursor position (selection head).
 
 (Where these words came from: doc comment.)
 
 ---
 
-## enum — EditKeyCode
+## function — select_to
 
-Found in src/editor.rs at line 50.
+Found in src/cursor.rs at line 160.
 
-Signature: `pub enum EditKeyCode {`
+Signature: `pub fn select_to(&mut self, pos: Position) {`
 
-What it does: A named choice named EditKeyCode. It is one of: Char; Enter; Backspace; Delete; Escape; Left; Right; Up; Down; Home; End; PageUp; PageDown; Tab.
+What it does: Extend selection to a position (keep anchor, move head).
 
-(Where these words came from: signature.)
-
----
-
-## function — EditKey::char
-
-Found in src/editor.rs at line 68.
-
-Signature: `pub fn char(c: char) -> EditKey {`
-
-What it does: Function EditKey::char takes c: char and gives back EditKey.
-
-(Where these words came from: signature.)
+(Where these words came from: doc comment.)
 
 ---
 
-## function — ctrl
+## function — start
 
-Found in src/editor.rs at line 72.
+Found in src/cursor.rs at line 95.
 
-Signature: `pub fn ctrl(c: char) -> EditKey {`
+Signature: `pub fn start(&self) -> Position {`
 
-What it does: Function ctrl takes c: char and gives back EditKey.
+What it does: The start of the selection (earlier position).
 
-(Where these words came from: signature.)
-
----
-
-## function — special
-
-Found in src/editor.rs at line 76.
-
-Signature: `pub fn special(code: EditKeyCode) -> EditKey {`
-
-What it does: Function special takes code: EditKeyCode and gives back EditKey.
-
-(Where these words came from: signature.)
+(Where these words came from: doc comment.)
 
 ---
 
-## struct — EditContext
+## function — to_offset
 
-Found in src/editor.rs at line 83.
+Found in src/cursor.rs at line 46.
 
-Signature: `pub struct EditContext<'a> {`
+Signature: `pub fn to_offset(&self, text: &str) -> usize {`
 
-What it does: The editing context passed to modes. Provides access to text content, cursor, and edit operations.
+What it does: Convert this Position to a byte offset in text.
 
 (Where these words came from: doc comment.)
 
@@ -3424,27 +3326,99 @@ What it does: Function <'a> EditContext<'a>::new takes coordinate: Coordinate, t
 
 ---
 
-## function — insert
+## enum — CursorStyle
 
-Found in src/editor.rs at line 105.
+Found in src/editor.rs at line 31.
 
-Signature: `pub fn insert(&mut self, s: &str) {`
+Signature: `pub enum CursorStyle {`
 
-What it does: Insert text at the cursor position.
+What it does: Cursor rendering style.
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — insert_newline
+## struct — EditContext
 
-Found in src/editor.rs at line 116.
+Found in src/editor.rs at line 83.
 
-Signature: `pub fn insert_newline(&mut self) {`
+Signature: `pub struct EditContext<'a> {`
 
-What it does: Insert a newline at the cursor position.
+What it does: The editing context passed to modes. Provides access to text content, cursor, and edit operations.
 
 (Where these words came from: doc comment.)
+
+---
+
+## struct — EditKey
+
+Found in src/editor.rs at line 42.
+
+Signature: `pub struct EditKey {`
+
+What it does: A key event abstraction (decoupled from any TUI/GUI framework).
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — EditKey::char
+
+Found in src/editor.rs at line 68.
+
+Signature: `pub fn char(c: char) -> EditKey {`
+
+What it does: Function EditKey::char takes c: char and gives back EditKey.
+
+(Where these words came from: signature.)
+
+---
+
+## enum — EditKeyCode
+
+Found in src/editor.rs at line 50.
+
+Signature: `pub enum EditKeyCode {`
+
+What it does: A named choice named EditKeyCode. It is one of: Char; Enter; Backspace; Delete; Escape; Left; Right; Up; Down; Home; End; PageUp; PageDown; Tab.
+
+(Where these words came from: signature.)
+
+---
+
+## enum — EditResult
+
+Found in src/editor.rs at line 16.
+
+Signature: `pub enum EditResult {`
+
+What it does: What happened after processing a key.
+
+(Where these words came from: doc comment.)
+
+---
+
+## trait — EditorMode
+
+Found in src/editor.rs at line 221.
+
+Signature: `pub trait EditorMode: std::fmt::Debug {`
+
+What it does: The trait that all editor modes implement.  A mode handles keystrokes and manipulates the editing context. It can return a different mode to transition to (e.g., Normal → Insert).
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — ctrl
+
+Found in src/editor.rs at line 72.
+
+Signature: `pub fn ctrl(c: char) -> EditKey {`
+
+What it does: Function ctrl takes c: char and gives back EditKey.
+
+(Where these words came from: signature.)
 
 ---
 
@@ -3484,25 +3458,25 @@ What it does: Delete the current line.
 
 ---
 
-## function — replace_selection
+## function — insert
 
-Found in src/editor.rs at line 173.
+Found in src/editor.rs at line 105.
 
-Signature: `pub fn replace_selection(&mut self, new_text: &str) {`
+Signature: `pub fn insert(&mut self, s: &str) {`
 
-What it does: Replace the selected text with new text.
+What it does: Insert text at the cursor position.
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — undo
+## function — insert_newline
 
-Found in src/editor.rs at line 195.
+Found in src/editor.rs at line 116.
 
-Signature: `pub fn undo(&mut self) -> bool {`
+Signature: `pub fn insert_newline(&mut self) {`
 
-What it does: Undo the last edit.
+What it does: Insert a newline at the cursor position.
 
 (Where these words came from: doc comment.)
 
@@ -3520,13 +3494,37 @@ What it does: Redo the next edit.
 
 ---
 
-## trait — EditorMode
+## function — replace_selection
 
-Found in src/editor.rs at line 221.
+Found in src/editor.rs at line 173.
 
-Signature: `pub trait EditorMode: std::fmt::Debug {`
+Signature: `pub fn replace_selection(&mut self, new_text: &str) {`
 
-What it does: The trait that all editor modes implement.  A mode handles keystrokes and manipulates the editing context. It can return a different mode to transition to (e.g., Normal → Insert).
+What it does: Replace the selected text with new text.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — special
+
+Found in src/editor.rs at line 76.
+
+Signature: `pub fn special(code: EditKeyCode) -> EditKey {`
+
+What it does: Function special takes code: EditKeyCode and gives back EditKey.
+
+(Where these words came from: signature.)
+
+---
+
+## function — undo
+
+Found in src/editor.rs at line 195.
+
+Signature: `pub fn undo(&mut self) -> bool {`
+
+What it does: Undo the last edit.
 
 (Where these words came from: doc comment.)
 
@@ -3568,18 +3566,6 @@ What it does: The join an account already holds, if any.
 
 ---
 
-## function — record
-
-Found in src/joins.rs at line 68.
-
-Signature: `pub fn record(dir: &Path, who: &str, handle: &str, via: &str) -> Result<Join, String> {`
-
-What it does: Record a join, or return the one the account already holds — the first arrival is the join, and joining twice changes nothing.
-
-(Where these words came from: doc comment.)
-
----
-
 ## function — list
 
 Found in src/joins.rs at line 86.
@@ -3587,6 +3573,18 @@ Found in src/joins.rs at line 86.
 Signature: `pub fn list(dir: &Path) -> Vec<Join> {`
 
 What it does: Every recorded join, oldest first. Unreadable files are skipped.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — record
+
+Found in src/joins.rs at line 68.
+
+Signature: `pub fn record(dir: &Path, who: &str, handle: &str, via: &str) -> Result<Join, String> {`
+
+What it does: Record a join, or return the one the account already holds — the first arrival is the join, and joining twice changes nothing.
 
 (Where these words came from: doc comment.)
 
@@ -3700,18 +3698,6 @@ What it does: A re-export: search::{search_lattice, search_lattice_parallel, sea
 
 ---
 
-## re-export — sidecar::{IndexedLattice, IndexSpec, OpenMode, SyncReport, sidecar_dir}
-
-Found in src/lib.rs at line 62.
-
-Signature: `pub use sidecar::{IndexedLattice, IndexSpec, OpenMode, SyncReport, sidecar_dir};`
-
-What it does: A re-export: sidecar::{IndexedLattice, IndexSpec, OpenMode, SyncReport, sidecar_dir} is made reachable through this module, so other code can use it from here.
-
-(Where these words came from: signature.)
-
----
-
 ## re-export — sentron::{Sentron, Neuron, Axon, AxisGroup, SENTRON_CAPACITY}
 
 Found in src/lib.rs at line 63.
@@ -3719,6 +3705,18 @@ Found in src/lib.rs at line 63.
 Signature: `pub use sentron::{Sentron, Neuron, Axon, AxisGroup, SENTRON_CAPACITY};`
 
 What it does: A re-export: sentron::{Sentron, Neuron, Axon, AxisGroup, SENTRON_CAPACITY} is made reachable through this module, so other code can use it from here.
+
+(Where these words came from: signature.)
+
+---
+
+## re-export — sidecar::{IndexedLattice, IndexSpec, OpenMode, SyncReport, sidecar_dir}
+
+Found in src/lib.rs at line 62.
+
+Signature: `pub use sidecar::{IndexedLattice, IndexSpec, OpenMode, SyncReport, sidecar_dir};`
+
+What it does: A re-export: sidecar::{IndexedLattice, IndexSpec, OpenMode, SyncReport, sidecar_dir} is made reachable through this module, so other code can use it from here.
 
 (Where these words came from: signature.)
 
@@ -3748,18 +3746,6 @@ What it does: A re-export: term_index::{TermIndex, TermHit, Bm25Params, tokenize
 
 ---
 
-## re-export — undo::{UndoEngine, EditOp, UndoRecord}
-
-Found in src/lib.rs at line 66.
-
-Signature: `pub use undo::{UndoEngine, EditOp, UndoRecord};`
-
-What it does: A re-export: undo::{UndoEngine, EditOp, UndoRecord} is made reachable through this module, so other code can use it from here.
-
-(Where these words came from: signature.)
-
----
-
 ## re-export — tts::{CoordPronunciation, byte_to_syllable, dim_to_syllables, to_ssml, generate_pronunciation_doc, special_coords}
 
 Found in src/lib.rs at line 67.
@@ -3784,85 +3770,25 @@ What it does: A re-export: uml6d::{Phase, ArtifactAddr, UmlContext, trace_artifa
 
 ---
 
-## function — media_payload_coord
+## re-export — undo::{UndoEngine, EditOp, UndoRecord}
 
-Found in src/media.rs at line 32.
+Found in src/lib.rs at line 66.
 
-Signature: `pub fn media_payload_coord(slot: usize) -> Coordinate {`
+Signature: `pub use undo::{UndoEngine, EditOp, UndoRecord};`
 
-What it does: Where slot `slot`'s image payload (a binary scroll) lives: 9.9.9/9.9.9/1.1.n.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — media_metadata_coord
-
-Found in src/media.rs at line 38.
-
-Signature: `pub fn media_metadata_coord(slot: usize) -> Coordinate {`
-
-What it does: Where slot `slot`'s metadata scroll (JSON text) lives: 9.9.9/9.9.9/1.2.n.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — media_slot_of
-
-Found in src/media.rs at line 44.
-
-Signature: `pub fn media_slot_of(coord: &Coordinate) -> Option<usize> {`
-
-What it does: The media slot a coordinate belongs to, if it is a media payload coordinate (9.9.9/9.9.9/1.1.n).
-
-(Where these words came from: doc comment.)
-
----
-
-## function — is_well_formed_binary_scroll
-
-Found in src/media.rs at line 68.
-
-Signature: `pub fn is_well_formed_binary_scroll(stored: &str) -> bool {`
-
-What it does: True when `stored` is a well-formed binary scroll: it carries the canonical header and its body is strict base64 (an empty payload — header plus newline, nothing after — is well-formed). A header-prefixed scroll whose body is not strict base64 is malformed: by the format's fetch rule it is text, fetched verbatim, and the text write path may still edit it. Only well-formed binary scrolls are protected from text writes.
-
-(Where these words came from: doc comment.)
-
----
-
-## struct — ImageKind
-
-Found in src/media.rs at line 74.
-
-Signature: `pub struct ImageKind {`
-
-What it does: A raster image format the editor accepts, identified by magic bytes.
-
-(Where these words came from: doc comment.)
-
----
-
-## const — PNG
-
-Found in src/media.rs at line 81.
-
-Signature: `pub const PNG: ImageKind = ImageKind { content_type: "image/png", extension: "png" };`
-
-What it does: A fixed value named PNG, set to ImageKind { content_type: "image/png", extension: "png" }.
+What it does: A re-export: undo::{UndoEngine, EditOp, UndoRecord} is made reachable through this module, so other code can use it from here.
 
 (Where these words came from: signature.)
 
 ---
 
-## const — JPEG
+## const — AVIF
 
-Found in src/media.rs at line 82.
+Found in src/media.rs at line 85.
 
-Signature: `pub const JPEG: ImageKind = ImageKind { content_type: "image/jpeg", extension: "jpg" };`
+Signature: `pub const AVIF: ImageKind = ImageKind { content_type: "image/avif", extension: "avif" };`
 
-What it does: A fixed value named JPEG, set to ImageKind { content_type: "image/jpeg", extension: "jpg" }.
+What it does: A fixed value named AVIF, set to ImageKind { content_type: "image/avif", extension: "avif" }.
 
 (Where these words came from: signature.)
 
@@ -3880,6 +3806,42 @@ What it does: A fixed value named GIF, set to ImageKind { content_type: "image/g
 
 ---
 
+## struct — ImageKind
+
+Found in src/media.rs at line 74.
+
+Signature: `pub struct ImageKind {`
+
+What it does: A raster image format the editor accepts, identified by magic bytes.
+
+(Where these words came from: doc comment.)
+
+---
+
+## const — JPEG
+
+Found in src/media.rs at line 82.
+
+Signature: `pub const JPEG: ImageKind = ImageKind { content_type: "image/jpeg", extension: "jpg" };`
+
+What it does: A fixed value named JPEG, set to ImageKind { content_type: "image/jpeg", extension: "jpg" }.
+
+(Where these words came from: signature.)
+
+---
+
+## const — PNG
+
+Found in src/media.rs at line 81.
+
+Signature: `pub const PNG: ImageKind = ImageKind { content_type: "image/png", extension: "png" };`
+
+What it does: A fixed value named PNG, set to ImageKind { content_type: "image/png", extension: "png" }.
+
+(Where these words came from: signature.)
+
+---
+
 ## const — WEBP
 
 Found in src/media.rs at line 84.
@@ -3892,15 +3854,51 @@ What it does: A fixed value named WEBP, set to ImageKind { content_type: "image/
 
 ---
 
-## const — AVIF
+## function — is_well_formed_binary_scroll
 
-Found in src/media.rs at line 85.
+Found in src/media.rs at line 68.
 
-Signature: `pub const AVIF: ImageKind = ImageKind { content_type: "image/avif", extension: "avif" };`
+Signature: `pub fn is_well_formed_binary_scroll(stored: &str) -> bool {`
 
-What it does: A fixed value named AVIF, set to ImageKind { content_type: "image/avif", extension: "avif" }.
+What it does: True when `stored` is a well-formed binary scroll: it carries the canonical header and its body is strict base64 (an empty payload — header plus newline, nothing after — is well-formed). A header-prefixed scroll whose body is not strict base64 is malformed: by the format's fetch rule it is text, fetched verbatim, and the text write path may still edit it. Only well-formed binary scrolls are protected from text writes.
 
-(Where these words came from: signature.)
+(Where these words came from: doc comment.)
+
+---
+
+## function — media_metadata_coord
+
+Found in src/media.rs at line 38.
+
+Signature: `pub fn media_metadata_coord(slot: usize) -> Coordinate {`
+
+What it does: Where slot `slot`'s metadata scroll (JSON text) lives: 9.9.9/9.9.9/1.2.n.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — media_payload_coord
+
+Found in src/media.rs at line 32.
+
+Signature: `pub fn media_payload_coord(slot: usize) -> Coordinate {`
+
+What it does: Where slot `slot`'s image payload (a binary scroll) lives: 9.9.9/9.9.9/1.1.n.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — media_slot_of
+
+Found in src/media.rs at line 44.
+
+Signature: `pub fn media_slot_of(coord: &Coordinate) -> Option<usize> {`
+
+What it does: The media slot a coordinate belongs to, if it is a media payload coordinate (9.9.9/9.9.9/1.1.n).
+
+(Where these words came from: doc comment.)
 
 ---
 
@@ -3940,49 +3938,13 @@ What it does: Open a phext file and build the lattice index.
 
 ---
 
-## function — open_with_index
+## function — delete_scroll
 
-Found in src/mmap.rs at line 233.
+Found in src/mmap.rs at line 513.
 
-Signature: `pub fn open_with_index<P: AsRef<Path>>(path: P, index: LatticeIndex) -> io::Result<MappedLattice> {`
+Signature: `pub fn delete_scroll(&mut self, coord: Coordinate) {`
 
-What it does: Open a phext file with an index built elsewhere (e.g. loaded from a `sidecar`), skipping the O(n) scan. Fails if the index was built for a buffer of a different length. A chain-class file ignores the supplied index — a persisted span table describes one universe, not a chain — and is opened with a fresh scan instead.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — from_bytes
-
-Found in src/mmap.rs at line 267.
-
-Signature: `pub fn from_bytes(bytes: &[u8]) -> MappedLattice {`
-
-What it does: Create a MappedLattice from raw bytes (for testing or in-memory use).  The bytes are written under `std::env::temp_dir()` (never a hard-coded `/tmp`) and mapped from that same file handle. The temp directory is created if it is missing.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — read_scroll
-
-Found in src/mmap.rs at line 316.
-
-Signature: `pub fn read_scroll(&self, coord: &Coordinate) -> Option<String> {`
-
-What it does: Read the content of a scroll at the given coordinate. Returns the overlay version if edited, otherwise reads from mmap.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — read_scroll_bytes
-
-Found in src/mmap.rs at line 342.
-
-Signature: `pub fn read_scroll_bytes(&self, coord: &Coordinate) -> Option<Vec<u8>> {`
-
-What it does: The scroll's exact stored bytes: the overlay version if edited, otherwise the mmap span, uninterpreted. This is the raw layer the binary-scroll support is built on — a binary scroll's stored form is text (header + base64), but payloads are recovered from these bytes without any lossy conversion.
+What it does: Delete a scroll at the given coordinate.
 
 (Where these words came from: doc comment.)
 
@@ -4000,145 +3962,13 @@ What it does: The payload a fetch of this scroll returns, mirroring `libphext::b
 
 ---
 
-## function — is_chain
+## function — from_bytes
 
-Found in src/mmap.rs at line 381.
+Found in src/mmap.rs at line 267.
 
-Signature: `pub fn is_chain(&self) -> bool {`
+Signature: `pub fn from_bytes(bytes: &[u8]) -> MappedLattice {`
 
-What it does: True when this file is a chain: more structure than a plain phext's single unclosed member.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — universe_count
-
-Found in src/mmap.rs at line 387.
-
-Signature: `pub fn universe_count(&self) -> usize {`
-
-What it does: How many universes (member phexts) this file holds. A plain phext holds exactly one.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — universe
-
-Found in src/mmap.rs at line 392.
-
-Signature: `pub fn universe(&self) -> usize {`
-
-What it does: The active universe, numbered from 1.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — member_stats
-
-Found in src/mmap.rs at line 397.
-
-Signature: `pub fn member_stats(&self) -> Vec<(usize, usize)> {`
-
-What it does: Per-universe (scroll count, content bytes), in universe order.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — set_universe
-
-Found in src/mmap.rs at line 408.
-
-Signature: `pub fn set_universe(&mut self, universe: usize) -> io::Result<()> {`
-
-What it does: Make `universe` (numbered from 1) the active universe. Refused while the overlay holds unsaved edits — an edit never straddles a switch — and when the universe is out of range.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — read_scroll_bytes_in
-
-Found in src/mmap.rs at line 434.
-
-Signature: `pub fn read_scroll_bytes_in(&self, universe: usize, coord: &Coordinate) -> Option<Vec<u8>> {`
-
-What it does: A scroll's exact stored bytes in `universe` (numbered from 1), without switching the active universe. The overlay applies only when `universe` is the active one.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — read_scroll_in
-
-Found in src/mmap.rs at line 445.
-
-Signature: `pub fn read_scroll_in(&self, universe: usize, coord: &Coordinate) -> Option<String> {`
-
-What it does: A scroll's content in `universe` (numbered from 1), without switching the active universe.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — write_scroll
-
-Found in src/mmap.rs at line 461.
-
-Signature: `pub fn write_scroll(&mut self, coord: Coordinate, content: String) -> bool {`
-
-What it does: Write content to a scroll at the given coordinate. If the coordinate already exists (in mmap or overlay), it's modified. If it's new, it's inserted.  Binary-scroll guard: a well-formed binary scroll (an image, say) cannot be replaced through the text path — its stored form is a header plus base64, and a text edit would corrupt the payload silently. Returns false when the write is refused for that reason; the scroll is left exactly as it was. Writing the identical stored form back is a no-op success. Byte payloads go through `write_binary` / `write_bytes` instead.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — write_scroll_raw
-
-Found in src/mmap.rs at line 476.
-
-Signature: `pub fn write_scroll_raw(&mut self, coord: Coordinate, content: String) {`
-
-What it does: Store a scroll's stored form verbatim, with no binary guard. This is the byte path: callers pass either canonical binary scrolls (from `libphext::binary::encode_scroll`) or stored forms they have already validated. Prefer `write_scroll` for text and `write_binary` / `write_bytes` for payloads.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — write_binary
-
-Found in src/mmap.rs at line 496.
-
-Signature: `pub fn write_binary(&mut self, coord: Coordinate, payload: &[u8]) {`
-
-What it does: Store `payload` at `coord` as a canonical binary scroll (header + base64 of the exact bytes), whatever the payload holds.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — write_bytes
-
-Found in src/mmap.rs at line 505.
-
-Signature: `pub fn write_bytes(&mut self, coord: Coordinate, payload: &[u8]) {`
-
-What it does: Store `payload` at `coord` under the format's ingestion rule (libphext's `stored_form`, behind `insert_bytes`/`replace_bytes`): valid UTF-8 is stored as ordinary text; anything else becomes a binary scroll holding the exact bytes. Ingestion never rejects a payload.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — delete_scroll
-
-Found in src/mmap.rs at line 513.
-
-Signature: `pub fn delete_scroll(&mut self, coord: Coordinate) {`
-
-What it does: Delete a scroll at the given coordinate.
+What it does: Create a MappedLattice from raw bytes (for testing or in-memory use).  The bytes are written under `std::env::temp_dir()` (never a hard-coded `/tmp`) and mapped from that same file handle. The temp directory is created if it is missing.
 
 (Where these words came from: doc comment.)
 
@@ -4156,25 +3986,25 @@ What it does: Check if a coordinate has content (considering overlay).
 
 ---
 
-## function — populated_coordinates
+## function — index
 
-Found in src/mmap.rs at line 543.
+Found in src/mmap.rs at line 813.
 
-Signature: `pub fn populated_coordinates(&self) -> Vec<Coordinate> {`
+Signature: `pub fn index(&self) -> &LatticeIndex {`
 
-What it does: Get all populated coordinates, including overlay insertions, excluding overlay deletions. Returned in sorted order.
+What it does: Access the underlying index for navigation queries.
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — scroll_count
+## function — is_chain
 
-Found in src/mmap.rs at line 568.
+Found in src/mmap.rs at line 381.
 
-Signature: `pub fn scroll_count(&self) -> usize {`
+Signature: `pub fn is_chain(&self) -> bool {`
 
-What it does: Number of populated scrolls (considering overlay).
+What it does: True when this file is a chain: more structure than a plain phext's single unclosed member.
 
 (Where these words came from: doc comment.)
 
@@ -4187,6 +4017,42 @@ Found in src/mmap.rs at line 573.
 Signature: `pub fn is_dirty(&self) -> bool {`
 
 What it does: Check if there are unsaved modifications.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — member_stats
+
+Found in src/mmap.rs at line 397.
+
+Signature: `pub fn member_stats(&self) -> Vec<(usize, usize)> {`
+
+What it does: Per-universe (scroll count, content bytes), in universe order.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — open_with_index
+
+Found in src/mmap.rs at line 233.
+
+Signature: `pub fn open_with_index<P: AsRef<Path>>(path: P, index: LatticeIndex) -> io::Result<MappedLattice> {`
+
+What it does: Open a phext file with an index built elsewhere (e.g. loaded from a `sidecar`), skipping the O(n) scan. Fails if the index was built for a buffer of a different length. A chain-class file ignores the supplied index — a persisted span table describes one universe, not a chain — and is opened with a fresh scan instead.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — path
+
+Found in src/mmap.rs at line 818.
+
+Signature: `pub fn path(&self) -> &Path {`
+
+What it does: Get the file path.
 
 (Where these words came from: doc comment.)
 
@@ -4216,6 +4082,90 @@ What it does: Coordinates with unsaved edits (modified, inserted, or deleted), s
 
 ---
 
+## function — populated_coordinates
+
+Found in src/mmap.rs at line 543.
+
+Signature: `pub fn populated_coordinates(&self) -> Vec<Coordinate> {`
+
+What it does: Get all populated coordinates, including overlay insertions, excluding overlay deletions. Returned in sorted order.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — raw_buffer
+
+Found in src/mmap.rs at line 791.
+
+Signature: `pub fn raw_buffer(&self) -> Option<&[u8]> {`
+
+What it does: Access the raw mmap buffer for search operations. Returns None if overlay has modifications (use to_phext_bytes instead).
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — read_scroll
+
+Found in src/mmap.rs at line 316.
+
+Signature: `pub fn read_scroll(&self, coord: &Coordinate) -> Option<String> {`
+
+What it does: Read the content of a scroll at the given coordinate. Returns the overlay version if edited, otherwise reads from mmap.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — read_scroll_bytes
+
+Found in src/mmap.rs at line 342.
+
+Signature: `pub fn read_scroll_bytes(&self, coord: &Coordinate) -> Option<Vec<u8>> {`
+
+What it does: The scroll's exact stored bytes: the overlay version if edited, otherwise the mmap span, uninterpreted. This is the raw layer the binary-scroll support is built on — a binary scroll's stored form is text (header + base64), but payloads are recovered from these bytes without any lossy conversion.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — read_scroll_bytes_in
+
+Found in src/mmap.rs at line 434.
+
+Signature: `pub fn read_scroll_bytes_in(&self, universe: usize, coord: &Coordinate) -> Option<Vec<u8>> {`
+
+What it does: A scroll's exact stored bytes in `universe` (numbered from 1), without switching the active universe. The overlay applies only when `universe` is the active one.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — read_scroll_in
+
+Found in src/mmap.rs at line 445.
+
+Signature: `pub fn read_scroll_in(&self, universe: usize, coord: &Coordinate) -> Option<String> {`
+
+What it does: A scroll's content in `universe` (numbered from 1), without switching the active universe.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — revert
+
+Found in src/mmap.rs at line 823.
+
+Signature: `pub fn revert(&mut self) {`
+
+What it does: Discard all unsaved changes, reverting to the mmap state.
+
+(Where these words came from: doc comment.)
+
+---
+
 ## function — save
 
 Found in src/mmap.rs at line 610.
@@ -4240,6 +4190,30 @@ What it does: Save to a specific path.
 
 ---
 
+## function — scroll_count
+
+Found in src/mmap.rs at line 568.
+
+Signature: `pub fn scroll_count(&self) -> usize {`
+
+What it does: Number of populated scrolls (considering overlay).
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — set_universe
+
+Found in src/mmap.rs at line 408.
+
+Signature: `pub fn set_universe(&mut self, universe: usize) -> io::Result<()> {`
+
+What it does: Make `universe` (numbered from 1) the active universe. Refused while the overlay holds unsaved edits — an edit never straddles a switch — and when the universe is out of range.
+
+(Where these words came from: doc comment.)
+
+---
+
 ## function — to_phext_bytes
 
 Found in src/mmap.rs at line 707.
@@ -4252,49 +4226,73 @@ What it does: Reconstruct the full phext as bytes from mmap + overlay.
 
 ---
 
-## function — raw_buffer
+## function — universe
 
-Found in src/mmap.rs at line 791.
+Found in src/mmap.rs at line 392.
 
-Signature: `pub fn raw_buffer(&self) -> Option<&[u8]> {`
+Signature: `pub fn universe(&self) -> usize {`
 
-What it does: Access the raw mmap buffer for search operations. Returns None if overlay has modifications (use to_phext_bytes instead).
-
-(Where these words came from: doc comment.)
-
----
-
-## function — index
-
-Found in src/mmap.rs at line 813.
-
-Signature: `pub fn index(&self) -> &LatticeIndex {`
-
-What it does: Access the underlying index for navigation queries.
+What it does: The active universe, numbered from 1.
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — path
+## function — universe_count
 
-Found in src/mmap.rs at line 818.
+Found in src/mmap.rs at line 387.
 
-Signature: `pub fn path(&self) -> &Path {`
+Signature: `pub fn universe_count(&self) -> usize {`
 
-What it does: Get the file path.
+What it does: How many universes (member phexts) this file holds. A plain phext holds exactly one.
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — revert
+## function — write_binary
 
-Found in src/mmap.rs at line 823.
+Found in src/mmap.rs at line 496.
 
-Signature: `pub fn revert(&mut self) {`
+Signature: `pub fn write_binary(&mut self, coord: Coordinate, payload: &[u8]) {`
 
-What it does: Discard all unsaved changes, reverting to the mmap state.
+What it does: Store `payload` at `coord` as a canonical binary scroll (header + base64 of the exact bytes), whatever the payload holds.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — write_bytes
+
+Found in src/mmap.rs at line 505.
+
+Signature: `pub fn write_bytes(&mut self, coord: Coordinate, payload: &[u8]) {`
+
+What it does: Store `payload` at `coord` under the format's ingestion rule (libphext's `stored_form`, behind `insert_bytes`/`replace_bytes`): valid UTF-8 is stored as ordinary text; anything else becomes a binary scroll holding the exact bytes. Ingestion never rejects a payload.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — write_scroll
+
+Found in src/mmap.rs at line 461.
+
+Signature: `pub fn write_scroll(&mut self, coord: Coordinate, content: String) -> bool {`
+
+What it does: Write content to a scroll at the given coordinate. If the coordinate already exists (in mmap or overlay), it's modified. If it's new, it's inserted.  Binary-scroll guard: a well-formed binary scroll (an image, say) cannot be replaced through the text path — its stored form is a header plus base64, and a text edit would corrupt the payload silently. Returns false when the write is refused for that reason; the scroll is left exactly as it was. Writing the identical stored form back is a no-op success. Byte payloads go through `write_binary` / `write_bytes` instead.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — write_scroll_raw
+
+Found in src/mmap.rs at line 476.
+
+Signature: `pub fn write_scroll_raw(&mut self, coord: Coordinate, content: String) {`
+
+What it does: Store a scroll's stored form verbatim, with no binary guard. This is the byte path: callers pass either canonical binary scrolls (from `libphext::binary::encode_scroll`) or stored forms they have already validated. Prefer `write_scroll` for text and `write_binary` / `write_bytes` for payloads.
 
 (Where these words came from: doc comment.)
 
@@ -4336,18 +4334,6 @@ What it does: Function VimMode::new takes no inputs beyond the value it is calle
 
 ---
 
-## function — fold
-
-Found in src/names.rs at line 17.
-
-Signature: `pub fn fold(name: &str) -> String {`
-
-What it does: Case-fold a name for lookup: Unicode lowercase with runs of whitespace collapsed to one space and the ends trimmed.
-
-(Where these words came from: doc comment.)
-
----
-
 ## struct — NameIndex
 
 Found in src/names.rs at line 69.
@@ -4372,6 +4358,30 @@ What it does: Function NameIndex::new takes no inputs beyond the value it is cal
 
 ---
 
+## function — ambiguous
+
+Found in src/names.rs at line 159.
+
+Signature: `pub fn ambiguous(&self) -> usize {`
+
+What it does: How many inserts hit a folded key already owned by a different coordinate. Those names resolve exactly but fold to the first owner.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — fold
+
+Found in src/names.rs at line 17.
+
+Signature: `pub fn fold(name: &str) -> String {`
+
+What it does: Case-fold a name for lookup: Unicode lowercase with runs of whitespace collapsed to one space and the ends trimmed.
+
+(Where these words came from: doc comment.)
+
+---
+
 ## function — from_scrolls
 
 Found in src/names.rs at line 84.
@@ -4379,18 +4389,6 @@ Found in src/names.rs at line 84.
 Signature: `pub fn from_scrolls<F>(lattice: &MappedLattice, select: F) -> NameIndex where F: Fn(&Coordinate) -> Option<Coordinate>, {`
 
 What it does: Build from the lattice: every non-empty line of each scroll that `select` maps to `Some(target)` becomes a name for `target`. Return the scroll's own coordinate to name it, or another one (e.g. a record's body) to point there.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — insert
-
-Found in src/names.rs at line 116.
-
-Signature: `pub fn insert(&mut self, name: &str, coord: Coordinate) -> bool {`
-
-What it does: Register `name` for `coord`. Blank names are ignored. Returns false if the exact name was already taken (the earlier coordinate is kept).
 
 (Where these words came from: doc comment.)
 
@@ -4420,25 +4418,13 @@ What it does: Case-insensitive lookup through the folded map.
 
 ---
 
-## function — resolve
+## function — insert
 
-Found in src/names.rs at line 144.
+Found in src/names.rs at line 116.
 
-Signature: `pub fn resolve(&self, name: &str) -> Option<Coordinate> {`
+Signature: `pub fn insert(&mut self, name: &str, coord: Coordinate) -> bool {`
 
-What it does: Exact match first, then folded: what an agent's "open <name>" should call.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — len
-
-Found in src/names.rs at line 149.
-
-Signature: `pub fn len(&self) -> usize {`
-
-What it does: Distinct exact names.
+What it does: Register `name` for `coord`. Blank names are ignored. Returns false if the exact name was already taken (the earlier coordinate is kept).
 
 (Where these words came from: doc comment.)
 
@@ -4456,13 +4442,25 @@ What it does: Function is_empty takes no inputs beyond the value it is called on
 
 ---
 
-## function — ambiguous
+## function — len
 
-Found in src/names.rs at line 159.
+Found in src/names.rs at line 149.
 
-Signature: `pub fn ambiguous(&self) -> usize {`
+Signature: `pub fn len(&self) -> usize {`
 
-What it does: How many inserts hit a folded key already owned by a different coordinate. Those names resolve exactly but fold to the first owner.
+What it does: Distinct exact names.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — resolve
+
+Found in src/names.rs at line 144.
+
+Signature: `pub fn resolve(&self, name: &str) -> Option<Coordinate> {`
+
+What it does: Exact match first, then folded: what an agent's "open <name>" should call.
 
 (Where these words came from: doc comment.)
 
@@ -4492,25 +4490,25 @@ What it does: Function Navigator::new takes no inputs beyond the value it is cal
 
 ---
 
-## function — at
+## function — Navigator::summarize
 
-Found in src/navigator.rs at line 38.
+Found in src/navigator.rs at line 198.
 
-Signature: `pub fn at(coord: Coordinate) -> Navigator {`
+Signature: `pub fn summarize(&self, index: &LatticeIndex) -> NeighborhoodSummary {`
 
-What it does: Create a navigator starting at a specific coordinate.
+What it does: Build a summary of the current neighborhood for UI rendering.
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — position
+## struct — NeighborhoodSummary
 
-Found in src/navigator.rs at line 49.
+Found in src/navigator.rs at line 179.
 
-Signature: `pub fn position(&self) -> Coordinate {`
+Signature: `pub struct NeighborhoodSummary {`
 
-What it does: Current position in the lattice.
+What it does: Summary of the lattice neighborhood around a coordinate, for rendering the coordinate bar and lattice navigator panel.
 
 (Where these words came from: doc comment.)
 
@@ -4528,37 +4526,25 @@ What it does: Currently selected dimension.
 
 ---
 
-## function — select_dimension
+## function — at
 
-Found in src/navigator.rs at line 59.
+Found in src/navigator.rs at line 38.
 
-Signature: `pub fn select_dimension(&mut self, index: u8) -> bool {`
+Signature: `pub fn at(coord: Coordinate) -> Navigator {`
 
-What it does: Select a dimension by index (1-9).
-
-(Where these words came from: doc comment.)
-
----
-
-## function — move_forward
-
-Found in src/navigator.rs at line 69.
-
-Signature: `pub fn move_forward(&mut self) -> bool {`
-
-What it does: Move forward in the active dimension (resets lower dims).
+What it does: Create a navigator starting at a specific coordinate.
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — move_backward
+## function — dimension_neighbors
 
-Found in src/navigator.rs at line 78.
+Found in src/navigator.rs at line 154.
 
-Signature: `pub fn move_backward(&mut self) -> bool {`
+Signature: `pub fn dimension_neighbors(&self) -> (Option<usize>, usize, Option<usize>) {`
 
-What it does: Move backward in the active dimension (resets lower dims).
+What it does: Get neighbors in the active dimension: (prev_value, current_value, next_value). Values are None if at the boundary.
 
 (Where these words came from: doc comment.)
 
@@ -4571,54 +4557,6 @@ Found in src/navigator.rs at line 87.
 Signature: `pub fn goto(&mut self, coord: Coordinate) {`
 
 What it does: Jump directly to a coordinate.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — next_populated
-
-Found in src/navigator.rs at line 93.
-
-Signature: `pub fn next_populated(&mut self, index: &LatticeIndex) -> bool {`
-
-What it does: Jump to the next populated coordinate (any dimension).
-
-(Where these words came from: doc comment.)
-
----
-
-## function — prev_populated
-
-Found in src/navigator.rs at line 104.
-
-Signature: `pub fn prev_populated(&mut self, index: &LatticeIndex) -> bool {`
-
-What it does: Jump to the previous populated coordinate (any dimension).
-
-(Where these words came from: doc comment.)
-
----
-
-## function — set_mark
-
-Found in src/navigator.rs at line 115.
-
-Signature: `pub fn set_mark(&mut self) {`
-
-What it does: Set a mark at the current position.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — jump_to_mark
-
-Found in src/navigator.rs at line 120.
-
-Signature: `pub fn jump_to_mark(&mut self) -> bool {`
-
-What it does: Jump to the most recent mark (and remove it).
 
 (Where these words came from: doc comment.)
 
@@ -4648,373 +4586,109 @@ What it does: Navigate forward in history.
 
 ---
 
-## function — dimension_neighbors
+## function — jump_to_mark
 
-Found in src/navigator.rs at line 154.
+Found in src/navigator.rs at line 120.
 
-Signature: `pub fn dimension_neighbors(&self) -> (Option<usize>, usize, Option<usize>) {`
+Signature: `pub fn jump_to_mark(&mut self) -> bool {`
 
-What it does: Get neighbors in the active dimension: (prev_value, current_value, next_value). Values are None if at the boundary.
-
-(Where these words came from: doc comment.)
-
----
-
-## struct — NeighborhoodSummary
-
-Found in src/navigator.rs at line 179.
-
-Signature: `pub struct NeighborhoodSummary {`
-
-What it does: Summary of the lattice neighborhood around a coordinate, for rendering the coordinate bar and lattice navigator panel.
+What it does: Jump to the most recent mark (and remove it).
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — Navigator::summarize
+## function — move_backward
 
-Found in src/navigator.rs at line 198.
+Found in src/navigator.rs at line 78.
 
-Signature: `pub fn summarize(&self, index: &LatticeIndex) -> NeighborhoodSummary {`
+Signature: `pub fn move_backward(&mut self) -> bool {`
 
-What it does: Build a summary of the current neighborhood for UI rendering.
-
-(Where these words came from: doc comment.)
-
----
-
-## const — TEST_CSRF
-
-Found in src/oauth.rs at line 53.
-
-Signature: `pub const TEST_CSRF: &str = "csrf-test-token";`
-
-What it does: A fixed value named TEST_CSRF, set to "csrf-test-token".
-
-(Where these words came from: signature.)
-
----
-
-## struct — Identity
-
-Found in src/oauth.rs at line 60.
-
-Signature: `pub struct Identity {`
-
-What it does: A data shape named Identity. Its fields are: pub who: String; pub handle: String; pub name: String; pub email: String.
-
-(Where these words came from: signature.)
-
----
-
-## trait — IdentitySource
-
-Found in src/oauth.rs at line 67.
-
-Signature: `pub trait IdentitySource: Send + Sync {`
-
-What it does: A trait named IdentitySource: a set of methods that a type can promise to give.
-
-(Where these words came from: signature.)
-
----
-
-## struct — Oauth
-
-Found in src/oauth.rs at line 171.
-
-Signature: `pub struct Oauth {`
-
-What it does: A data shape named Oauth. The scanner did not read its fields.
-
-(Where these words came from: signature.)
-
----
-
-## struct — Session
-
-Found in src/oauth.rs at line 218.
-
-Signature: `pub struct Session {`
-
-What it does: A data shape named Session. Its fields are: pub who: String; pub handle: String; pub name: String; pub email: String; pub csrf: String.
-
-(Where these words came from: signature.)
-
----
-
-## struct — SsoAssertionBody
-
-Found in src/oauth.rs at line 269.
-
-Signature: `pub struct SsoAssertionBody {`
-
-What it does: The SSO assertion: a sealed, single-use statement that an edit session exists, carried to an audience's callback in a redirect and verified there under the SSO secret. It is not a session — the audience mints its own from it, and this server never accepts one back. `aud` names the one audience it was minted for (`mutable`, `exocortexia`, `wishnode`); a consumer must reject any other value, including an assertion minted for a different audience. `ret` is a path on the audience's site, clamped by `safe_next` before sealing; `jti` is the single-use id the audience burns on first sight.  The one exception to "never accepts one back" is the `desktop` audience (Phext Notepad): a shipped app cannot hold the SSO secret, so its assertions come back here to `POST /api/auth/desktop/exchange`, which verifies them under the secret and burns the `jti` server-side. For that audience `ret` is the app's validated loopback return URL (see `loopback_return`), and `st` carries the app's per-attempt state nonce, sealed at mint and demanded back at the exchange. Web audiences never carry `st` — the field is simply absent from their assertions.
+What it does: Move backward in the active dimension (resets lower dims).
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — Oauth::from_env
+## function — move_forward
 
-Found in src/oauth.rs at line 292.
+Found in src/navigator.rs at line 69.
 
-Signature: `pub fn from_env() -> Self {`
+Signature: `pub fn move_forward(&mut self) -> bool {`
 
-What it does: Function Oauth::from_env takes no inputs beyond the value it is called on, and gives back Self.
-
-(Where these words came from: signature.)
-
----
-
-## function — test_ready
-
-Found in src/oauth.rs at line 312.
-
-Signature: `pub fn test_ready() -> Self {`
-
-What it does: Function test_ready takes no inputs beyond the value it is called on, and gives back Self.
-
-(Where these words came from: signature.)
-
----
-
-## function — closed
-
-Found in src/oauth.rs at line 332.
-
-Signature: `pub fn closed() -> Self {`
-
-What it does: Function closed takes no inputs beyond the value it is called on, and gives back Self.
-
-(Where these words came from: signature.)
-
----
-
-## function — ready
-
-Found in src/oauth.rs at line 400.
-
-Signature: `pub fn ready(&self) -> bool {`
-
-What it does: Function ready takes no inputs beyond the value it is called on, and gives back bool.
-
-(Where these words came from: signature.)
-
----
-
-## function — sso_ready
-
-Found in src/oauth.rs at line 410.
-
-Signature: `pub fn sso_ready(&self) -> bool {`
-
-What it does: True when the Mutable SSO handoff is configured: a real SSO secret and a valid Mutable target. Independent of `ready()` — the handoff mints nothing of its own; it rides the session the providers already made, so it needs no provider keys here.
+What it does: Move forward in the active dimension (resets lower dims).
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — sso_ready_for
+## function — next_populated
 
-Found in src/oauth.rs at line 419.
+Found in src/navigator.rs at line 93.
 
-Signature: `pub fn sso_ready_for(&self, aud: &str) -> bool {`
+Signature: `pub fn next_populated(&mut self, index: &LatticeIndex) -> bool {`
 
-What it does: True when the SSO handoff is configured for one audience: the shared SSO secret is real and that audience has a target. Every allowlisted audience rides the same secret and the same sealed assertion format; only the `aud` claim and the callback origin differ.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — sso_desktop_ready
-
-Found in src/oauth.rs at line 427.
-
-Signature: `pub fn sso_desktop_ready(&self) -> bool {`
-
-What it does: True when the desktop audience is armed: a real SSO secret and the operator's explicit `PHEXT_SSO_DESKTOP=1`. There is no target to consult — the app's callback is a per-attempt loopback listener — so readiness is the secret plus the flag.
+What it does: Jump to the next populated coordinate (any dimension).
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — base
+## function — position
 
-Found in src/oauth.rs at line 431.
+Found in src/navigator.rs at line 49.
 
-Signature: `pub fn base(&self) -> &str {`
+Signature: `pub fn position(&self) -> Coordinate {`
 
-What it does: Function base takes no inputs beyond the value it is called on, and gives back &str.
-
-(Where these words came from: signature.)
-
----
-
-## function — sso_target
-
-Found in src/oauth.rs at line 435.
-
-Signature: `pub fn sso_target(&self) -> &str {`
-
-What it does: Function sso_target takes no inputs beyond the value it is called on, and gives back &str.
-
-(Where these words came from: signature.)
-
----
-
-## function — sso_target_for
-
-Found in src/oauth.rs at line 450.
-
-Signature: `pub fn sso_target_for(&self, aud: &str) -> Option<&str> {`
-
-What it does: The callback origin for an audience, or None when the audience is not allowlisted or is allowlisted but unconfigured. Mutable always has a target (its production origin is the default); Exocortexia has one only once `PHEXT_SSO_EXOCORTEXIA_URL` is set, and Wishnode only once `PHEXT_SSO_WISHNODE_URL` is. This match is the audience allowlist — an audience that is not named here can never be minted for. The desktop audience is deliberately absent: it has no fixed origin (its callback is the app's per-attempt loopback listener), so it is armed and minted on its own path (`sso_desktop_ready`, `sso_assertion_desktop`).
+What it does: Current position in the lattice.
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — providers
+## function — prev_populated
 
-Found in src/oauth.rs at line 463.
+Found in src/navigator.rs at line 104.
 
-Signature: `pub fn providers(&self) -> Vec<&'static str> {`
+Signature: `pub fn prev_populated(&mut self, index: &LatticeIndex) -> bool {`
 
-What it does: Function providers takes no inputs beyond the value it is called on, and gives back Vec<&'static str>.
-
-(Where these words came from: signature.)
-
----
-
-## function — cookie_secure
-
-Found in src/oauth.rs at line 480.
-
-Signature: `pub fn cookie_secure(&self) -> bool {`
-
-What it does: Function cookie_secure takes no inputs beyond the value it is called on, and gives back bool.
-
-(Where these words came from: signature.)
-
----
-
-## function — authorize_url
-
-Found in src/oauth.rs at line 485.
-
-Signature: `pub fn authorize_url(&self, provider_name: &str, next: &str) -> Result<(String, String), String> {`
-
-What it does: Returns the provider URL to redirect to and the sealed pending cookie.
+What it does: Jump to the previous populated coordinate (any dimension).
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — finish
+## function — select_dimension
 
-Found in src/oauth.rs at line 535.
+Found in src/navigator.rs at line 59.
 
-Signature: `pub fn finish( &self, provider_name: &str, code: &str, state: &str, pending_cookie: &str, ) -> Result<(Identity, String, String), String> {`
+Signature: `pub fn select_dimension(&mut self, index: u8) -> bool {`
 
-What it does: Completes the flow. Returns the identity, the sealed session cookie, and the absolute URL to send the browser back to.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — issue_session
-
-Found in src/oauth.rs at line 576.
-
-Signature: `pub fn issue_session( &self, who: &str, handle: &str, name: &str, email: &str, ) -> Result<(String, String), String> {`
-
-What it does: Seal a fresh session for an identity that has already been established — by the provider exchange in `finish`, or by a verified desktop SSO assertion at the exchange endpoint. This is the one place session values are made: a fresh CSRF token and a `SESSION_TTL` seal under the session secret. Returns the sealed cookie value and the CSRF token inside it (the desktop exchange hands both to the app; the browser flow learns the CSRF from `/api/session` instead).
+What it does: Select a dimension by index (1-9).
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — read_session
+## function — set_mark
 
-Found in src/oauth.rs at line 595.
+Found in src/navigator.rs at line 115.
 
-Signature: `pub fn read_session(&self, cookie_header: &str) -> Option<Session> {`
+Signature: `pub fn set_mark(&mut self) {`
 
-What it does: Function read_session takes &self, cookie_header: &str and gives back Option<Session>.
-
-(Where these words came from: signature.)
-
----
-
-## function — csrf_matches
-
-Found in src/oauth.rs at line 621.
-
-Signature: `pub fn csrf_matches(&self, session: &Session, header: &str) -> bool {`
-
-What it does: Function csrf_matches takes &self, session: &Session, header: &str and gives back bool.
-
-(Where these words came from: signature.)
-
----
-
-## function — mcp_oauth_hash
-
-Found in src/oauth.rs at line 634.
-
-Signature: `pub fn mcp_oauth_hash(&self, domain: &str, value: &str) -> Option<String> {`
-
-What it does: A domain-separated, keyed digest for the MCP OAuth 2.1 store.  Authorization codes, access tokens, refresh tokens, and client secrets are never stored in the clear. Each value is represented by HMAC-SHA256 under the existing session secret, with the caller's domain label mixed in before the value, so a digest minted for one kind of credential cannot be replayed as another. No separate OAuth secret is required: rotating the session secret intentionally invalidates the stored OAuth credentials along with sessions.
+What it does: Set a mark at the current position.
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — test_session_cookie
+## const — CONTENT_SECURITY_POLICY
 
-Found in src/oauth.rs at line 651.
+Found in src/oauth.rs at line 1092.
 
-Signature: `pub fn test_session_cookie() -> String {`
+Signature: `pub const CONTENT_SECURITY_POLICY: &str = concat!( "default-src 'self'; ",`
 
-What it does: Function test_session_cookie takes no inputs beyond the value it is called on, and gives back String.
-
-(Where these words came from: signature.)
-
----
-
-## function — sso_assertion
-
-Found in src/oauth.rs at line 701.
-
-Signature: `pub fn sso_assertion( &self, aud: &str, session: &Session, editor: bool, ret: &str, ) -> Result<String, String> {`
-
-What it does: Mint the assertion an audience's callback verifies: who this session is, whether it is an editor, and the return path on the audience's site — sealed under the shared SSO secret, alive for `SSO_TTL` seconds, with a fresh `jti` the audience burns on first sight. The format is identical for every audience; only the `aud` claim differs, and an audience outside the allowlist in `sso_target_for` can never be minted for. The return path is clamped by `safe_next` here, at the moment of sealing, so no unsigned return input ever crosses.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — sso_assertion_desktop
-
-Found in src/oauth.rs at line 740.
-
-Signature: `pub fn sso_assertion_desktop( &self, session: &Session, editor: bool, ret: &str, state: &str, ) -> Result<String, String> {`
-
-What it does: Mint the desktop audience's assertion. Same sealed format as every audience, with the two differences that audience exists for: `ret` is the app's loopback return URL, validated by `loopback_return` here at the moment of sealing (anything else is refused, so no unvalidated return ever crosses), and the app's per-attempt `state` nonce rides sealed as `st`, to be demanded back at the exchange — an assertion that arrives anywhere without its attempt's state is not that attempt's assertion. The caller (`Gate::sso_desktop`) has already validated the state's shape.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — open_sso_assertion
-
-Found in src/oauth.rs at line 778.
-
-Signature: `pub fn open_sso_assertion(&self, token: &str) -> Result<SsoAssertionBody, String> {`
-
-What it does: Open an SSO assertion under the SSO secret — the exchange endpoint is the one place this server ever takes an assertion back, and only the desktop audience's. Expiry is checked here; audience, state, and single-use are the caller's to enforce (the burn lives on the `Gate`, which owns request state). Every failure is the same error: the exchange must not say which check a forged assertion failed.
+What it does: Policy for the embedded editor and the public pages.  The shell is one HTML document: an inline script, an inline stylesheet, `onclick` attributes, and `style` attributes. A nonce or a hash does not cover event-handler or style attributes, so those would mean rewriting the shell. `unsafe-inline` stays for that reason. There is no `unsafe-eval`. Sign-in is a same-origin link to `/api/auth/...`, which 302s to Google or GitHub; top-level navigations are not restricted. `upgrade-insecure-requests` is added only when the browser connection is HTTPS, so a local `http://127.0.0.1` session keeps working.
 
 (Where these words came from: doc comment.)
 
@@ -5044,87 +4718,63 @@ What it does: Function Editors::from_env takes no inputs beyond the value it is 
 
 ---
 
-## function — parse
+## struct — Gate
 
-Found in src/oauth.rs at line 880.
+Found in src/oauth.rs at line 1191.
 
-Signature: `pub fn parse(raw: &str) -> Self {`
+Signature: `pub struct Gate {`
 
-What it does: Function parse takes raw: &str and gives back Self.
-
-(Where these words came from: signature.)
-
----
-
-## function — len
-
-Found in src/oauth.rs at line 887.
-
-Signature: `pub fn len(&self) -> usize {`
-
-What it does: Function len takes no inputs beyond the value it is called on, and gives back usize.
-
-(Where these words came from: signature.)
-
----
-
-## function — is_empty
-
-Found in src/oauth.rs at line 891.
-
-Signature: `pub fn is_empty(&self) -> bool {`
-
-What it does: Function is_empty takes no inputs beyond the value it is called on, and gives back bool.
-
-(Where these words came from: signature.)
-
----
-
-## function — matches
-
-Found in src/oauth.rs at line 895.
-
-Signature: `pub fn matches(&self, who: &str, email: &str) -> bool {`
-
-What it does: Function matches takes &self, who: &str, email: &str and gives back bool.
-
-(Where these words came from: signature.)
-
----
-
-## function — allows
-
-Found in src/oauth.rs at line 904.
-
-Signature: `pub fn allows(&self, who: &str, email: &str) -> bool {`
-
-What it does: An empty list admits every signed-in account.
+What it does: Access control for the editor servers: an OAuth session, or open when sign-in is not configured.
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — load_file
+## function — Gate::new
 
-Found in src/oauth.rs at line 912.
+Found in src/oauth.rs at line 1209.
 
-Signature: `pub fn load_file(&self, path: &std::path::Path) -> usize {`
+Signature: `pub fn new(oauth: Oauth, editors: Editors) -> Self {`
 
-What it does: Point the list at its backing file and load any entries already in it (one per line; blank lines and `#` comments are ignored, and a line may still carry several comma-separated entries). Entries the list already has are not duplicated. Returns how many were loaded.
+What it does: Function Gate::new takes oauth: Oauth, editors: Editors and gives back Self.
+
+(Where these words came from: signature.)
+
+---
+
+## const — HSTS_VALUE
+
+Found in src/oauth.rs at line 1080.
+
+Signature: `pub const HSTS_VALUE: &str = "max-age=31536000";`
+
+What it does: One year. Matches `deploy/nginx-edit.phext.io.conf`. No `includeSubDomains`: this host is `edit.phext.io`, and a future sibling name under that host should not be pinned by accident.
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — admit
+## struct — Identity
 
-Found in src/oauth.rs at line 940.
+Found in src/oauth.rs at line 60.
 
-Signature: `pub fn admit(&self, who: &str, email: &str) -> bool {`
+Signature: `pub struct Identity {`
 
-What it does: Admit an account: add its account id (when valid) and its email (when usable), unless each is already covered, and append the new entries to the backing file when one is configured. Takes effect immediately. Returns true when the account is an editor afterwards.
+What it does: A data shape named Identity. Its fields are: pub who: String; pub handle: String; pub name: String; pub email: String.
 
-(Where these words came from: doc comment.)
+(Where these words came from: signature.)
+
+---
+
+## trait — IdentitySource
+
+Found in src/oauth.rs at line 67.
+
+Signature: `pub trait IdentitySource: Send + Sync {`
+
+What it does: A trait named IdentitySource: a set of methods that a type can promise to give.
+
+(Where these words came from: signature.)
 
 ---
 
@@ -5152,25 +4802,25 @@ What it does: Function Limiter::standard takes no inputs beyond the value it is 
 
 ---
 
-## function — with_cap
+## struct — Oauth
 
-Found in src/oauth.rs at line 987.
+Found in src/oauth.rs at line 171.
 
-Signature: `pub fn with_cap(cap: usize) -> Self {`
+Signature: `pub struct Oauth {`
 
-What it does: Function with_cap takes cap: usize and gives back Self.
+What it does: A data shape named Oauth. The scanner did not read its fields.
 
 (Where these words came from: signature.)
 
 ---
 
-## function — hit
+## function — Oauth::from_env
 
-Found in src/oauth.rs at line 991.
+Found in src/oauth.rs at line 292.
 
-Signature: `pub fn hit(&self, key: &str) -> Result<(), ()> {`
+Signature: `pub fn from_env() -> Self {`
 
-What it does: Function hit takes &self, key: &str and gives back Result<(), ()>.
+What it does: Function Oauth::from_env takes no inputs beyond the value it is called on, and gives back Self.
 
 (Where these words came from: signature.)
 
@@ -5200,277 +4850,49 @@ What it does: Function Reply::json takes status: u16, value: serde_json::Value a
 
 ---
 
-## function — write_to
+## struct — Session
 
-Found in src/oauth.rs at line 1058.
+Found in src/oauth.rs at line 218.
 
-Signature: `pub fn write_to(&self, out: &mut impl std::io::Write) {`
+Signature: `pub struct Session {`
 
-What it does: Serialize as an HTTP/1.1 response with `Connection: close`.  Auth and session bodies stay `Cache-Control: no-store`. There is no `Access-Control-Allow-Origin`: the editor is same-origin only.
-
-(Where these words came from: doc comment.)
-
----
-
-## const — HSTS_VALUE
-
-Found in src/oauth.rs at line 1080.
-
-Signature: `pub const HSTS_VALUE: &str = "max-age=31536000";`
-
-What it does: One year. Matches `deploy/nginx-edit.phext.io.conf`. No `includeSubDomains`: this host is `edit.phext.io`, and a future sibling name under that host should not be pinned by accident.
-
-(Where these words came from: doc comment.)
-
----
-
-## const — CONTENT_SECURITY_POLICY
-
-Found in src/oauth.rs at line 1092.
-
-Signature: `pub const CONTENT_SECURITY_POLICY: &str = concat!( "default-src 'self'; ",`
-
-What it does: Policy for the embedded editor and the public pages.  The shell is one HTML document: an inline script, an inline stylesheet, `onclick` attributes, and `style` attributes. A nonce or a hash does not cover event-handler or style attributes, so those would mean rewriting the shell. `unsafe-inline` stays for that reason. There is no `unsafe-eval`. Sign-in is a same-origin link to `/api/auth/...`, which 302s to Google or GitHub; top-level navigations are not restricted. `upgrade-insecure-requests` is added only when the browser connection is HTTPS, so a local `http://127.0.0.1` session keeps working.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — forwarded_https
-
-Found in src/oauth.rs at line 1106.
-
-Signature: `pub fn forwarded_https(headers: &HashMap<String, String>) -> bool {`
-
-What it does: Function forwarded_https takes headers: &HashMap<String, String> and gives back bool.
+What it does: A data shape named Session. Its fields are: pub who: String; pub handle: String; pub name: String; pub email: String; pub csrf: String.
 
 (Where these words came from: signature.)
 
 ---
 
-## function — security_header_block_csp
+## struct — SsoAssertionBody
 
-Found in src/oauth.rs at line 1114.
+Found in src/oauth.rs at line 269.
 
-Signature: `pub fn security_header_block_csp(https: bool, csp_override: Option<&str>) -> String {`
+Signature: `pub struct SsoAssertionBody {`
 
-What it does: Function security_header_block_csp takes https: bool, csp_override: Option<&str> and gives back String.
-
-(Where these words came from: signature.)
-
----
-
-## function — security_header_block
-
-Found in src/oauth.rs at line 1132.
-
-Signature: `pub fn security_header_block(https: bool) -> String {`
-
-What it does: Function security_header_block takes https: bool and gives back String.
-
-(Where these words came from: signature.)
-
----
-
-## function — status_text
-
-Found in src/oauth.rs at line 1136.
-
-Signature: `pub fn status_text(status: u16) -> &'static str {`
-
-What it does: Function status_text takes status: u16 and gives back &'static str.
-
-(Where these words came from: signature.)
-
----
-
-## struct — Gate
-
-Found in src/oauth.rs at line 1191.
-
-Signature: `pub struct Gate {`
-
-What it does: Access control for the editor servers: an OAuth session, or open when sign-in is not configured.
+What it does: The SSO assertion: a sealed, single-use statement that an edit session exists, carried to an audience's callback in a redirect and verified there under the SSO secret. It is not a session — the audience mints its own from it, and this server never accepts one back. `aud` names the one audience it was minted for (`mutable`, `exocortexia`, `wishnode`); a consumer must reject any other value, including an assertion minted for a different audience. `ret` is a path on the audience's site, clamped by `safe_next` before sealing; `jti` is the single-use id the audience burns on first sight.  The one exception to "never accepts one back" is the `desktop` audience (Phext Notepad): a shipped app cannot hold the SSO secret, so its assertions come back here to `POST /api/auth/desktop/exchange`, which verifies them under the secret and burns the `jti` server-side. For that audience `ret` is the app's validated loopback return URL (see `loopback_return`), and `st` carries the app's per-attempt state nonce, sealed at mint and demanded back at the exchange. Web audiences never carry `st` — the field is simply absent from their assertions.
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — Gate::new
+## const — TEST_CSRF
 
-Found in src/oauth.rs at line 1209.
+Found in src/oauth.rs at line 53.
 
-Signature: `pub fn new(oauth: Oauth, editors: Editors) -> Self {`
+Signature: `pub const TEST_CSRF: &str = "csrf-test-token";`
 
-What it does: Function Gate::new takes oauth: Oauth, editors: Editors and gives back Self.
-
-(Where these words came from: signature.)
-
----
-
-## function — from_env
-
-Found in src/oauth.rs at line 1235.
-
-Signature: `pub fn from_env() -> Self {`
-
-What it does: Function from_env takes no inputs beyond the value it is called on, and gives back Self.
+What it does: A fixed value named TEST_CSRF, set to "csrf-test-token".
 
 (Where these words came from: signature.)
 
 ---
 
-## function — enable_local
+## function — admit
 
-Found in src/oauth.rs at line 1256.
+Found in src/oauth.rs at line 940.
 
-Signature: `pub fn enable_local(&self) {`
+Signature: `pub fn admit(&self, who: &str, email: &str) -> bool {`
 
-What it does: Admit every direct request as a local developer.  The phext-edit CLI calls this only after it has refused to bind anything but loopback. Nothing in the environment or in a request header calls it.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — is_local
-
-Found in src/oauth.rs at line 1260.
-
-Signature: `pub fn is_local(&self) -> bool {`
-
-What it does: Function is_local takes no inputs beyond the value it is called on, and gives back bool.
-
-(Where these words came from: signature.)
-
----
-
-## function — enable_claims
-
-Found in src/oauth.rs at line 1267.
-
-Signature: `pub fn enable_claims(&self) {`
-
-What it does: Open claim mode: `/api/claim` accepts claims (the lookup stays public either way). The operator turns this on once the X app credentials are in place; tests call it directly.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — claims_open
-
-Found in src/oauth.rs at line 1271.
-
-Signature: `pub fn claims_open(&self) -> bool {`
-
-What it does: Function claims_open takes no inputs beyond the value it is called on, and gives back bool.
-
-(Where these words came from: signature.)
-
----
-
-## function — locked
-
-Found in src/oauth.rs at line 1276.
-
-Signature: `pub fn locked(&self) -> bool {`
-
-What it does: True when some credential is required for the API.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — oauth
-
-Found in src/oauth.rs at line 1280.
-
-Signature: `pub fn oauth(&self) -> &Oauth {`
-
-What it does: Function oauth takes no inputs beyond the value it is called on, and gives back &Oauth.
-
-(Where these words came from: signature.)
-
----
-
-## function — editors
-
-Found in src/oauth.rs at line 1284.
-
-Signature: `pub fn editors(&self) -> &Editors {`
-
-What it does: Function editors takes no inputs beyond the value it is called on, and gives back &Editors.
-
-(Where these words came from: signature.)
-
----
-
-## function — session
-
-Found in src/oauth.rs at line 1291.
-
-Signature: `pub fn session(&self, headers: &HashMap<String, String>) -> Option<Session> {`
-
-What it does: The signed-in session for a request, if any. In `--local` mode this is the synthetic local developer (never for a forwarded request), mirroring `session_view`; otherwise it is the cookie session.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — is_editor
-
-Found in src/oauth.rs at line 1308.
-
-Signature: `pub fn is_editor(&self, session: &Session) -> bool {`
-
-What it does: Whether a session belongs to an approved editor.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — admit_account
-
-Found in src/oauth.rs at line 1315.
-
-Signature: `pub fn admit_account(&self, who: &str, email: &str) -> bool {`
-
-What it does: Admit an account as an editor, effective immediately and persisted to the editors file when one is configured. Used when an editor accepts a submission: the originator joins the editors.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — load_editors_file
-
-Found in src/oauth.rs at line 1323.
-
-Signature: `pub fn load_editors_file(&self, path: &std::path::Path) {`
-
-What it does: Load additional editor entries from a file (one per line) and make it the backing file for future admissions. The phext-edit server calls this with its default admitted-editors file when `PHEXT_EDITORS_FILE` is not set.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — describe
-
-Found in src/oauth.rs at line 1328.
-
-Signature: `pub fn describe(&self) -> Vec<String> {`
-
-What it does: Startup lines describing how the API is protected.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — route
-
-Found in src/oauth.rs at line 1352.
-
-Signature: `pub fn route(&self, method: &str, path: &str, headers: &HashMap<String, String>) -> Option<Reply> {`
-
-What it does: Handles `/api/session` and `/api/auth/*`. Returns None for other paths.
+What it does: Admit an account: add its account id (when valid) and its email (when usable), unless each is already covered, and append the new entries to the backing file when one is configured. Takes effect immediately. Returns true when the account is an editor afterwards.
 
 (Where these words came from: doc comment.)
 
@@ -5488,85 +4910,61 @@ What it does: Decides whether a non-auth request may proceed.  The gate is by op
 
 ---
 
-## function — sso
+## function — admit_account
 
-Found in src/oauth.rs at line 1545.
+Found in src/oauth.rs at line 1315.
 
-Signature: `pub fn sso( &self, aud: &str, headers: &HashMap<String, String>, query: &HashMap<String, String>, ) -> Reply {`
+Signature: `pub fn admit_account(&self, who: &str, email: &str) -> bool {`
 
-What it does: `GET /api/auth/sso/<aud>` — the cross-site handoff to one allowlisted audience (`mutable`, `exocortexia`, `wishnode`).  Layering follows the claims/submissions precedent in the servers: a signed-in account is enough; an editor's place is not required (`sso_admits` is the single predicate that decides). With a session, the reply 302s to the audience's callback with a freshly sealed assertion. Without one, it 302s to this site's own root with this endpoint as the `next`, so the ordinary provider sign-in returns the browser here and the handoff completes — the OAuth `next` itself stays same-site throughout. An audience outside the allowlist, or one not configured (no SSO secret, or no target for that audience), simply does not exist: 404 — checked before any session handling, so an unknown audience never enters the sign-in return flow.
+What it does: Admit an account as an editor, effective immediately and persisted to the editors file when one is configured. Used when an editor accepts a submission: the originator joins the editors.
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — cookie_header
+## function — allows
 
-Found in src/oauth.rs at line 1743.
+Found in src/oauth.rs at line 904.
 
-Signature: `pub fn cookie_header(name: &str, value: &str, max_age: i64, secure: bool) -> String {`
+Signature: `pub fn allows(&self, who: &str, email: &str) -> bool {`
 
-What it does: Function cookie_header takes name: &str, value: &str, max_age: i64, secure: bool and gives back String.
+What it does: An empty list admits every signed-in account.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — authorize_url
+
+Found in src/oauth.rs at line 485.
+
+Signature: `pub fn authorize_url(&self, provider_name: &str, next: &str) -> Result<(String, String), String> {`
+
+What it does: Returns the provider URL to redirect to and the sealed pending cookie.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — base
+
+Found in src/oauth.rs at line 431.
+
+Signature: `pub fn base(&self) -> &str {`
+
+What it does: Function base takes no inputs beyond the value it is called on, and gives back &str.
 
 (Where these words came from: signature.)
 
 ---
 
-## function — safe_next
+## function — claims_open
 
-Found in src/oauth.rs at line 1850.
+Found in src/oauth.rs at line 1271.
 
-Signature: `pub fn safe_next(next: &str) -> String {`
+Signature: `pub fn claims_open(&self) -> bool {`
 
-What it does: Keeps the post-sign-in redirect on this site: a path, optionally with a `#coordinate` fragment.  A `:` is refused in the path portion only. Past the `?`, a query may legitimately carry URLs of its own — an OAuth authorization request returning from sign-in names https redirect URIs and, for CIMD clients, an https client_id — and a colon there cannot move the destination off this site, because the value still begins with a single `/` and browsers resolve it as a path on this origin. The length cap admits those same authorization requests (a full `/oauth/authorize?...` round trip runs several hundred characters); the sealed pending cookie that carries `next` through a provider sign-in holds it comfortably.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — loopback_return
-
-Found in src/oauth.rs at line 1888.
-
-Signature: `pub fn loopback_return(raw: &str) -> Option<String> {`
-
-What it does: Admit a desktop return URL: the address of the listener the app opened for this one sign-in attempt. The bar is the loopback literal itself, checked character by character — not a URL parse that a hostname or userinfo could slip through:  * scheme `http` exactly. Loopback has a real origin but no CA issues certificates for it; RFC 8252's native-app practice is plain http on the loopback interface, which never leaves the machine. * host the literal `127.0.0.1` or `[::1]` — not `localhost`, not any other name, not another loopback address. A name is whatever the resolver says it is (hosts files are editable), and the app binds the numeric loopback anyway. * an explicit port, 1–65535 — the app always listens on an ephemeral port it was given, never a default. * then only a path/query tail of plain URL characters: no `#` (a fragment never reaches a server anyway, and its presence means the value was not a listener address), no whitespace, controls, or non-ASCII.  The result is capped short enough to ride the sign-in bounce — this endpoint travels as the `next` of a `/?next=` redirect, well inside the length `safe_next` admits there.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — valid_state_nonce
-
-Found in src/oauth.rs at line 1930.
-
-Signature: `pub fn valid_state_nonce(state: &str) -> bool {`
-
-What it does: The desktop attempt's state nonce: long enough to be unguessable, plain enough to travel in URLs and assertions unchanged. The app generates it (32 random hex/letters in practice); this only checks the shape.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — valid_who
-
-Found in src/oauth.rs at line 1937.
-
-Signature: `pub fn valid_who(who: &str) -> bool {`
-
-What it does: Function valid_who takes who: &str and gives back bool.
-
-(Where these words came from: signature.)
-
----
-
-## function — display_name
-
-Found in src/oauth.rs at line 1955.
-
-Signature: `pub fn display_name(raw: &str, fallback: &str) -> String {`
-
-What it does: Function display_name takes raw: &str, fallback: &str and gives back String.
+What it does: Function claims_open takes no inputs beyond the value it is called on, and gives back bool.
 
 (Where these words came from: signature.)
 
@@ -5608,6 +5006,570 @@ What it does: An X username verbatim: `[A-Za-z0-9_]{1,15}`, case preserved. Unli
 
 ---
 
+## function — closed
+
+Found in src/oauth.rs at line 332.
+
+Signature: `pub fn closed() -> Self {`
+
+What it does: Function closed takes no inputs beyond the value it is called on, and gives back Self.
+
+(Where these words came from: signature.)
+
+---
+
+## function — cookie_header
+
+Found in src/oauth.rs at line 1743.
+
+Signature: `pub fn cookie_header(name: &str, value: &str, max_age: i64, secure: bool) -> String {`
+
+What it does: Function cookie_header takes name: &str, value: &str, max_age: i64, secure: bool and gives back String.
+
+(Where these words came from: signature.)
+
+---
+
+## function — cookie_secure
+
+Found in src/oauth.rs at line 480.
+
+Signature: `pub fn cookie_secure(&self) -> bool {`
+
+What it does: Function cookie_secure takes no inputs beyond the value it is called on, and gives back bool.
+
+(Where these words came from: signature.)
+
+---
+
+## function — csrf_matches
+
+Found in src/oauth.rs at line 621.
+
+Signature: `pub fn csrf_matches(&self, session: &Session, header: &str) -> bool {`
+
+What it does: Function csrf_matches takes &self, session: &Session, header: &str and gives back bool.
+
+(Where these words came from: signature.)
+
+---
+
+## function — describe
+
+Found in src/oauth.rs at line 1328.
+
+Signature: `pub fn describe(&self) -> Vec<String> {`
+
+What it does: Startup lines describing how the API is protected.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — display_name
+
+Found in src/oauth.rs at line 1955.
+
+Signature: `pub fn display_name(raw: &str, fallback: &str) -> String {`
+
+What it does: Function display_name takes raw: &str, fallback: &str and gives back String.
+
+(Where these words came from: signature.)
+
+---
+
+## function — editors
+
+Found in src/oauth.rs at line 1284.
+
+Signature: `pub fn editors(&self) -> &Editors {`
+
+What it does: Function editors takes no inputs beyond the value it is called on, and gives back &Editors.
+
+(Where these words came from: signature.)
+
+---
+
+## function — enable_claims
+
+Found in src/oauth.rs at line 1267.
+
+Signature: `pub fn enable_claims(&self) {`
+
+What it does: Open claim mode: `/api/claim` accepts claims (the lookup stays public either way). The operator turns this on once the X app credentials are in place; tests call it directly.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — enable_local
+
+Found in src/oauth.rs at line 1256.
+
+Signature: `pub fn enable_local(&self) {`
+
+What it does: Admit every direct request as a local developer.  The phext-edit CLI calls this only after it has refused to bind anything but loopback. Nothing in the environment or in a request header calls it.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — finish
+
+Found in src/oauth.rs at line 535.
+
+Signature: `pub fn finish( &self, provider_name: &str, code: &str, state: &str, pending_cookie: &str, ) -> Result<(Identity, String, String), String> {`
+
+What it does: Completes the flow. Returns the identity, the sealed session cookie, and the absolute URL to send the browser back to.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — forwarded_https
+
+Found in src/oauth.rs at line 1106.
+
+Signature: `pub fn forwarded_https(headers: &HashMap<String, String>) -> bool {`
+
+What it does: Function forwarded_https takes headers: &HashMap<String, String> and gives back bool.
+
+(Where these words came from: signature.)
+
+---
+
+## function — from_env
+
+Found in src/oauth.rs at line 1235.
+
+Signature: `pub fn from_env() -> Self {`
+
+What it does: Function from_env takes no inputs beyond the value it is called on, and gives back Self.
+
+(Where these words came from: signature.)
+
+---
+
+## function — hit
+
+Found in src/oauth.rs at line 991.
+
+Signature: `pub fn hit(&self, key: &str) -> Result<(), ()> {`
+
+What it does: Function hit takes &self, key: &str and gives back Result<(), ()>.
+
+(Where these words came from: signature.)
+
+---
+
+## function — is_editor
+
+Found in src/oauth.rs at line 1308.
+
+Signature: `pub fn is_editor(&self, session: &Session) -> bool {`
+
+What it does: Whether a session belongs to an approved editor.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — is_empty
+
+Found in src/oauth.rs at line 891.
+
+Signature: `pub fn is_empty(&self) -> bool {`
+
+What it does: Function is_empty takes no inputs beyond the value it is called on, and gives back bool.
+
+(Where these words came from: signature.)
+
+---
+
+## function — is_local
+
+Found in src/oauth.rs at line 1260.
+
+Signature: `pub fn is_local(&self) -> bool {`
+
+What it does: Function is_local takes no inputs beyond the value it is called on, and gives back bool.
+
+(Where these words came from: signature.)
+
+---
+
+## function — is_loopback_bind
+
+Found in src/oauth.rs at line 2285.
+
+Signature: `pub fn is_loopback_bind(host: &str) -> bool {`
+
+What it does: True when `host` is a loopback listen address: 127.0.0.0/8, `::1`, or `localhost`.  `0.0.0.0` and `::` are not loopback — they accept remote connections.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — issue_session
+
+Found in src/oauth.rs at line 576.
+
+Signature: `pub fn issue_session( &self, who: &str, handle: &str, name: &str, email: &str, ) -> Result<(String, String), String> {`
+
+What it does: Seal a fresh session for an identity that has already been established — by the provider exchange in `finish`, or by a verified desktop SSO assertion at the exchange endpoint. This is the one place session values are made: a fresh CSRF token and a `SESSION_TTL` seal under the session secret. Returns the sealed cookie value and the CSRF token inside it (the desktop exchange hands both to the app; the browser flow learns the CSRF from `/api/session` instead).
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — len
+
+Found in src/oauth.rs at line 887.
+
+Signature: `pub fn len(&self) -> usize {`
+
+What it does: Function len takes no inputs beyond the value it is called on, and gives back usize.
+
+(Where these words came from: signature.)
+
+---
+
+## function — load_editors_file
+
+Found in src/oauth.rs at line 1323.
+
+Signature: `pub fn load_editors_file(&self, path: &std::path::Path) {`
+
+What it does: Load additional editor entries from a file (one per line) and make it the backing file for future admissions. The phext-edit server calls this with its default admitted-editors file when `PHEXT_EDITORS_FILE` is not set.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — load_file
+
+Found in src/oauth.rs at line 912.
+
+Signature: `pub fn load_file(&self, path: &std::path::Path) -> usize {`
+
+What it does: Point the list at its backing file and load any entries already in it (one per line; blank lines and `#` comments are ignored, and a line may still carry several comma-separated entries). Entries the list already has are not duplicated. Returns how many were loaded.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — locked
+
+Found in src/oauth.rs at line 1276.
+
+Signature: `pub fn locked(&self) -> bool {`
+
+What it does: True when some credential is required for the API.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — loopback_return
+
+Found in src/oauth.rs at line 1888.
+
+Signature: `pub fn loopback_return(raw: &str) -> Option<String> {`
+
+What it does: Admit a desktop return URL: the address of the listener the app opened for this one sign-in attempt. The bar is the loopback literal itself, checked character by character — not a URL parse that a hostname or userinfo could slip through:  * scheme `http` exactly. Loopback has a real origin but no CA issues certificates for it; RFC 8252's native-app practice is plain http on the loopback interface, which never leaves the machine. * host the literal `127.0.0.1` or `[::1]` — not `localhost`, not any other name, not another loopback address. A name is whatever the resolver says it is (hosts files are editable), and the app binds the numeric loopback anyway. * an explicit port, 1–65535 — the app always listens on an ephemeral port it was given, never a default. * then only a path/query tail of plain URL characters: no `#` (a fragment never reaches a server anyway, and its presence means the value was not a listener address), no whitespace, controls, or non-ASCII.  The result is capped short enough to ride the sign-in bounce — this endpoint travels as the `next` of a `/?next=` redirect, well inside the length `safe_next` admits there.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — matches
+
+Found in src/oauth.rs at line 895.
+
+Signature: `pub fn matches(&self, who: &str, email: &str) -> bool {`
+
+What it does: Function matches takes &self, who: &str, email: &str and gives back bool.
+
+(Where these words came from: signature.)
+
+---
+
+## function — mcp_oauth_hash
+
+Found in src/oauth.rs at line 634.
+
+Signature: `pub fn mcp_oauth_hash(&self, domain: &str, value: &str) -> Option<String> {`
+
+What it does: A domain-separated, keyed digest for the MCP OAuth 2.1 store.  Authorization codes, access tokens, refresh tokens, and client secrets are never stored in the clear. Each value is represented by HMAC-SHA256 under the existing session secret, with the caller's domain label mixed in before the value, so a digest minted for one kind of credential cannot be replayed as another. No separate OAuth secret is required: rotating the session secret intentionally invalidates the stored OAuth credentials along with sessions.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — oauth
+
+Found in src/oauth.rs at line 1280.
+
+Signature: `pub fn oauth(&self) -> &Oauth {`
+
+What it does: Function oauth takes no inputs beyond the value it is called on, and gives back &Oauth.
+
+(Where these words came from: signature.)
+
+---
+
+## function — open_sso_assertion
+
+Found in src/oauth.rs at line 778.
+
+Signature: `pub fn open_sso_assertion(&self, token: &str) -> Result<SsoAssertionBody, String> {`
+
+What it does: Open an SSO assertion under the SSO secret — the exchange endpoint is the one place this server ever takes an assertion back, and only the desktop audience's. Expiry is checked here; audience, state, and single-use are the caller's to enforce (the burn lives on the `Gate`, which owns request state). Every failure is the same error: the exchange must not say which check a forged assertion failed.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — parse
+
+Found in src/oauth.rs at line 880.
+
+Signature: `pub fn parse(raw: &str) -> Self {`
+
+What it does: Function parse takes raw: &str and gives back Self.
+
+(Where these words came from: signature.)
+
+---
+
+## function — providers
+
+Found in src/oauth.rs at line 463.
+
+Signature: `pub fn providers(&self) -> Vec<&'static str> {`
+
+What it does: Function providers takes no inputs beyond the value it is called on, and gives back Vec<&'static str>.
+
+(Where these words came from: signature.)
+
+---
+
+## function — read_session
+
+Found in src/oauth.rs at line 595.
+
+Signature: `pub fn read_session(&self, cookie_header: &str) -> Option<Session> {`
+
+What it does: Function read_session takes &self, cookie_header: &str and gives back Option<Session>.
+
+(Where these words came from: signature.)
+
+---
+
+## function — ready
+
+Found in src/oauth.rs at line 400.
+
+Signature: `pub fn ready(&self) -> bool {`
+
+What it does: Function ready takes no inputs beyond the value it is called on, and gives back bool.
+
+(Where these words came from: signature.)
+
+---
+
+## function — route
+
+Found in src/oauth.rs at line 1352.
+
+Signature: `pub fn route(&self, method: &str, path: &str, headers: &HashMap<String, String>) -> Option<Reply> {`
+
+What it does: Handles `/api/session` and `/api/auth/*`. Returns None for other paths.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — safe_next
+
+Found in src/oauth.rs at line 1850.
+
+Signature: `pub fn safe_next(next: &str) -> String {`
+
+What it does: Keeps the post-sign-in redirect on this site: a path, optionally with a `#coordinate` fragment.  A `:` is refused in the path portion only. Past the `?`, a query may legitimately carry URLs of its own — an OAuth authorization request returning from sign-in names https redirect URIs and, for CIMD clients, an https client_id — and a colon there cannot move the destination off this site, because the value still begins with a single `/` and browsers resolve it as a path on this origin. The length cap admits those same authorization requests (a full `/oauth/authorize?...` round trip runs several hundred characters); the sealed pending cookie that carries `next` through a provider sign-in holds it comfortably.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — security_header_block
+
+Found in src/oauth.rs at line 1132.
+
+Signature: `pub fn security_header_block(https: bool) -> String {`
+
+What it does: Function security_header_block takes https: bool and gives back String.
+
+(Where these words came from: signature.)
+
+---
+
+## function — security_header_block_csp
+
+Found in src/oauth.rs at line 1114.
+
+Signature: `pub fn security_header_block_csp(https: bool, csp_override: Option<&str>) -> String {`
+
+What it does: Function security_header_block_csp takes https: bool, csp_override: Option<&str> and gives back String.
+
+(Where these words came from: signature.)
+
+---
+
+## function — session
+
+Found in src/oauth.rs at line 1291.
+
+Signature: `pub fn session(&self, headers: &HashMap<String, String>) -> Option<Session> {`
+
+What it does: The signed-in session for a request, if any. In `--local` mode this is the synthetic local developer (never for a forwarded request), mirroring `session_view`; otherwise it is the cookie session.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — sso
+
+Found in src/oauth.rs at line 1545.
+
+Signature: `pub fn sso( &self, aud: &str, headers: &HashMap<String, String>, query: &HashMap<String, String>, ) -> Reply {`
+
+What it does: `GET /api/auth/sso/<aud>` — the cross-site handoff to one allowlisted audience (`mutable`, `exocortexia`, `wishnode`).  Layering follows the claims/submissions precedent in the servers: a signed-in account is enough; an editor's place is not required (`sso_admits` is the single predicate that decides). With a session, the reply 302s to the audience's callback with a freshly sealed assertion. Without one, it 302s to this site's own root with this endpoint as the `next`, so the ordinary provider sign-in returns the browser here and the handoff completes — the OAuth `next` itself stays same-site throughout. An audience outside the allowlist, or one not configured (no SSO secret, or no target for that audience), simply does not exist: 404 — checked before any session handling, so an unknown audience never enters the sign-in return flow.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — sso_assertion
+
+Found in src/oauth.rs at line 701.
+
+Signature: `pub fn sso_assertion( &self, aud: &str, session: &Session, editor: bool, ret: &str, ) -> Result<String, String> {`
+
+What it does: Mint the assertion an audience's callback verifies: who this session is, whether it is an editor, and the return path on the audience's site — sealed under the shared SSO secret, alive for `SSO_TTL` seconds, with a fresh `jti` the audience burns on first sight. The format is identical for every audience; only the `aud` claim differs, and an audience outside the allowlist in `sso_target_for` can never be minted for. The return path is clamped by `safe_next` here, at the moment of sealing, so no unsigned return input ever crosses.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — sso_assertion_desktop
+
+Found in src/oauth.rs at line 740.
+
+Signature: `pub fn sso_assertion_desktop( &self, session: &Session, editor: bool, ret: &str, state: &str, ) -> Result<String, String> {`
+
+What it does: Mint the desktop audience's assertion. Same sealed format as every audience, with the two differences that audience exists for: `ret` is the app's loopback return URL, validated by `loopback_return` here at the moment of sealing (anything else is refused, so no unvalidated return ever crosses), and the app's per-attempt `state` nonce rides sealed as `st`, to be demanded back at the exchange — an assertion that arrives anywhere without its attempt's state is not that attempt's assertion. The caller (`Gate::sso_desktop`) has already validated the state's shape.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — sso_desktop_ready
+
+Found in src/oauth.rs at line 427.
+
+Signature: `pub fn sso_desktop_ready(&self) -> bool {`
+
+What it does: True when the desktop audience is armed: a real SSO secret and the operator's explicit `PHEXT_SSO_DESKTOP=1`. There is no target to consult — the app's callback is a per-attempt loopback listener — so readiness is the secret plus the flag.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — sso_ready
+
+Found in src/oauth.rs at line 410.
+
+Signature: `pub fn sso_ready(&self) -> bool {`
+
+What it does: True when the Mutable SSO handoff is configured: a real SSO secret and a valid Mutable target. Independent of `ready()` — the handoff mints nothing of its own; it rides the session the providers already made, so it needs no provider keys here.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — sso_ready_for
+
+Found in src/oauth.rs at line 419.
+
+Signature: `pub fn sso_ready_for(&self, aud: &str) -> bool {`
+
+What it does: True when the SSO handoff is configured for one audience: the shared SSO secret is real and that audience has a target. Every allowlisted audience rides the same secret and the same sealed assertion format; only the `aud` claim and the callback origin differ.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — sso_target
+
+Found in src/oauth.rs at line 435.
+
+Signature: `pub fn sso_target(&self) -> &str {`
+
+What it does: Function sso_target takes no inputs beyond the value it is called on, and gives back &str.
+
+(Where these words came from: signature.)
+
+---
+
+## function — sso_target_for
+
+Found in src/oauth.rs at line 450.
+
+Signature: `pub fn sso_target_for(&self, aud: &str) -> Option<&str> {`
+
+What it does: The callback origin for an audience, or None when the audience is not allowlisted or is allowlisted but unconfigured. Mutable always has a target (its production origin is the default); Exocortexia has one only once `PHEXT_SSO_EXOCORTEXIA_URL` is set, and Wishnode only once `PHEXT_SSO_WISHNODE_URL` is. This match is the audience allowlist — an audience that is not named here can never be minted for. The desktop audience is deliberately absent: it has no fixed origin (its callback is the app's per-attempt loopback listener), so it is armed and minted on its own path (`sso_desktop_ready`, `sso_assertion_desktop`).
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — status_text
+
+Found in src/oauth.rs at line 1136.
+
+Signature: `pub fn status_text(status: u16) -> &'static str {`
+
+What it does: Function status_text takes status: u16 and gives back &'static str.
+
+(Where these words came from: signature.)
+
+---
+
+## function — test_ready
+
+Found in src/oauth.rs at line 312.
+
+Signature: `pub fn test_ready() -> Self {`
+
+What it does: Function test_ready takes no inputs beyond the value it is called on, and gives back Self.
+
+(Where these words came from: signature.)
+
+---
+
+## function — test_session_cookie
+
+Found in src/oauth.rs at line 651.
+
+Signature: `pub fn test_session_cookie() -> String {`
+
+What it does: Function test_session_cookie takes no inputs beyond the value it is called on, and gives back String.
+
+(Where these words came from: signature.)
+
+---
+
 ## function — token_eq
 
 Found in src/oauth.rs at line 2016.
@@ -5620,13 +5582,49 @@ What it does: Constant-time comparison; an empty expected value never matches.
 
 ---
 
-## function — is_loopback_bind
+## function — valid_state_nonce
 
-Found in src/oauth.rs at line 2285.
+Found in src/oauth.rs at line 1930.
 
-Signature: `pub fn is_loopback_bind(host: &str) -> bool {`
+Signature: `pub fn valid_state_nonce(state: &str) -> bool {`
 
-What it does: True when `host` is a loopback listen address: 127.0.0.0/8, `::1`, or `localhost`.  `0.0.0.0` and `::` are not loopback — they accept remote connections.
+What it does: The desktop attempt's state nonce: long enough to be unguessable, plain enough to travel in URLs and assertions unchanged. The app generates it (32 random hex/letters in practice); this only checks the shape.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — valid_who
+
+Found in src/oauth.rs at line 1937.
+
+Signature: `pub fn valid_who(who: &str) -> bool {`
+
+What it does: Function valid_who takes who: &str and gives back bool.
+
+(Where these words came from: signature.)
+
+---
+
+## function — with_cap
+
+Found in src/oauth.rs at line 987.
+
+Signature: `pub fn with_cap(cap: usize) -> Self {`
+
+What it does: Function with_cap takes cap: usize and gives back Self.
+
+(Where these words came from: signature.)
+
+---
+
+## function — write_to
+
+Found in src/oauth.rs at line 1058.
+
+Signature: `pub fn write_to(&self, out: &mut impl std::io::Write) {`
+
+What it does: Serialize as an HTTP/1.1 response with `Connection: close`.  Auth and session bodies stay `Cache-Control: no-store`. There is no `Access-Control-Allow-Origin`: the editor is same-origin only.
 
 (Where these words came from: doc comment.)
 
@@ -5644,37 +5642,13 @@ What it does: A search hit: coordinate + context around the match.
 
 ---
 
-## function — search_lattice
+## function — build_index_parallel
 
-Found in src/search.rs at line 132.
+Found in src/search.rs at line 292.
 
-Signature: `pub fn search_lattice( buffer: &[u8], index: &LatticeIndex, pattern: &str, case_sensitive: bool, max_results: usize, ) -> Vec<SearchHit> {`
+Signature: `pub fn build_index_parallel(buffer: &[u8], chunk_size: usize) -> LatticeIndex {`
 
-What it does: Search the lattice for a text pattern (single-threaded). Returns hits in document order (by coordinate).
-
-(Where these words came from: doc comment.)
-
----
-
-## function — search_lattice_parallel
-
-Found in src/search.rs at line 177.
-
-Signature: `pub fn search_lattice_parallel( buffer: &[u8], index: &LatticeIndex, pattern: &str, case_sensitive: bool, max_results: usize, ) -> Vec<SearchHit> {`
-
-What it does: Search the lattice for a text pattern across all available cores.  Uses rayon's work-stealing thread pool. Each scroll is a work unit — scrolls are independent so there's zero contention. Results are collected per-thread then merged in coordinate order.  Falls back to serial for small lattices (< PARALLEL_THRESHOLD scrolls) where thread synchronization cost exceeds the parallelism benefit.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — search_lattice_auto
-
-Found in src/search.rs at line 261.
-
-Signature: `pub fn search_lattice_auto( buffer: &[u8], index: &LatticeIndex, pattern: &str, case_sensitive: bool, max_results: usize, ) -> Vec<SearchHit> {`
-
-What it does: Auto-selecting search: picks serial or parallel based on data characteristics. This is what the editor should call.
+What it does: Parallel index build — partition the buffer into chunks, scan each for delimiter boundaries, then merge. For very large phexts (>100MB) where the O(n) sequential scan becomes noticeable.  Currently unused — sequential build is ~30ms for 4.26 MB which is already below perceptual threshold. Included for future scaling.
 
 (Where these words came from: doc comment.)
 
@@ -5692,13 +5666,37 @@ What it does: Search for coordinates matching a coordinate pattern string. Suppo
 
 ---
 
-## function — build_index_parallel
+## function — search_lattice
 
-Found in src/search.rs at line 292.
+Found in src/search.rs at line 132.
 
-Signature: `pub fn build_index_parallel(buffer: &[u8], chunk_size: usize) -> LatticeIndex {`
+Signature: `pub fn search_lattice( buffer: &[u8], index: &LatticeIndex, pattern: &str, case_sensitive: bool, max_results: usize, ) -> Vec<SearchHit> {`
 
-What it does: Parallel index build — partition the buffer into chunks, scan each for delimiter boundaries, then merge. For very large phexts (>100MB) where the O(n) sequential scan becomes noticeable.  Currently unused — sequential build is ~30ms for 4.26 MB which is already below perceptual threshold. Included for future scaling.
+What it does: Search the lattice for a text pattern (single-threaded). Returns hits in document order (by coordinate).
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — search_lattice_auto
+
+Found in src/search.rs at line 261.
+
+Signature: `pub fn search_lattice_auto( buffer: &[u8], index: &LatticeIndex, pattern: &str, case_sensitive: bool, max_results: usize, ) -> Vec<SearchHit> {`
+
+What it does: Auto-selecting search: picks serial or parallel based on data characteristics. This is what the editor should call.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — search_lattice_parallel
+
+Found in src/search.rs at line 177.
+
+Signature: `pub fn search_lattice_parallel( buffer: &[u8], index: &LatticeIndex, pattern: &str, case_sensitive: bool, max_results: usize, ) -> Vec<SearchHit> {`
+
+What it does: Search the lattice for a text pattern across all available cores.  Uses rayon's work-stealing thread pool. Each scroll is a work unit — scrolls are independent so there's zero contention. Results are collected per-thread then merged in coordinate order.  Falls back to serial for small lattices (< PARALLEL_THRESHOLD scrolls) where thread synchronization cost exceeds the parallelism benefit.
 
 (Where these words came from: doc comment.)
 
@@ -5728,18 +5726,6 @@ What it does: Function AxisGroup::name takes no inputs beyond the value it is ca
 
 ---
 
-## function — dimensions
-
-Found in src/sentron.rs at line 52.
-
-Signature: `pub fn dimensions(&self) -> [Dimension; 4] {`
-
-What it does: The 4 dimensions in this axis group.
-
-(Where these words came from: doc comment.)
-
----
-
 ## struct — Axon
 
 Found in src/sentron.rs at line 72.
@@ -5764,13 +5750,13 @@ What it does: Total reachable coordinates along this axis.
 
 ---
 
-## function — weight
+## const — CONNECTIONS_PER_NEURON
 
-Found in src/sentron.rs at line 92.
+Found in src/sentron.rs at line 129.
 
-Signature: `pub fn weight(&self, max_total: usize) -> f64 {`
+Signature: `pub const CONNECTIONS_PER_NEURON: usize = 8;`
 
-What it does: Visual weight: how "thick" this connection is (0.0 to 1.0).
+What it does: The number of connections per neuron.
 
 (Where these words came from: doc comment.)
 
@@ -5788,18 +5774,6 @@ What it does: A neuron in the sentron: a populated coordinate with its 8 axons.
 
 ---
 
-## struct — Sentron
-
-Found in src/sentron.rs at line 110.
-
-Signature: `pub struct Sentron {`
-
-What it does: The sentron: 40 nearest populated coordinates to the cursor, with full 8-way connectivity analysis.
-
-(Where these words came from: doc comment.)
-
----
-
 ## const — SENTRON_CAPACITY
 
 Found in src/sentron.rs at line 126.
@@ -5812,13 +5786,13 @@ What it does: The maximum number of neurons in a sentron.
 
 ---
 
-## const — CONNECTIONS_PER_NEURON
+## struct — Sentron
 
-Found in src/sentron.rs at line 129.
+Found in src/sentron.rs at line 110.
 
-Signature: `pub const CONNECTIONS_PER_NEURON: usize = 8;`
+Signature: `pub struct Sentron {`
 
-What it does: The number of connections per neuron.
+What it does: The sentron: 40 nearest populated coordinates to the cursor, with full 8-way connectivity analysis.
 
 (Where these words came from: doc comment.)
 
@@ -5831,6 +5805,30 @@ Found in src/sentron.rs at line 136.
 Signature: `pub fn build(center: &Coordinate, index: &LatticeIndex) -> Sentron {`
 
 What it does: Build a sentron centered on a coordinate.  Finds the 40 nearest populated coordinates and analyzes their 8-way connectivity along structural/sequential axes.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — dimensions
+
+Found in src/sentron.rs at line 52.
+
+Signature: `pub fn dimensions(&self) -> [Dimension; 4] {`
+
+What it does: The 4 dimensions in this axis group.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — sequential_axons
+
+Found in src/sentron.rs at line 185.
+
+Signature: `pub fn sequential_axons(&self) -> &[Axon] {`
+
+What it does: The sequential (temporal) axons: Volume, Book, Chapter, Section.
 
 (Where these words came from: doc comment.)
 
@@ -5860,18 +5858,6 @@ What it does: The structural (spatial) axons: Library, Shelf, Series, Collection
 
 ---
 
-## function — sequential_axons
-
-Found in src/sentron.rs at line 185.
-
-Signature: `pub fn sequential_axons(&self) -> &[Axon] {`
-
-What it does: The sequential (temporal) axons: Volume, Book, Chapter, Section.
-
-(Where these words came from: doc comment.)
-
----
-
 ## function — topology_string
 
 Found in src/sentron.rs at line 191.
@@ -5884,25 +5870,13 @@ What it does: Render the sentron as a compact topology string. Shows connection 
 
 ---
 
-## function — is_break
+## function — weight
 
-Found in src/sidecar.rs at line 83.
+Found in src/sentron.rs at line 92.
 
-Signature: `pub fn is_break(b: u8) -> bool {`
+Signature: `pub fn weight(&self, max_total: usize) -> f64 {`
 
-What it does: Whether `b` is a phext dimension break.
-
-(Where these words came from: doc comment.)
-
----
-
-## type — Selector
-
-Found in src/sidecar.rs at line 89.
-
-Signature: `pub type Selector = Box<dyn Fn(&Coordinate) -> Option<Coordinate> + Send + Sync>;`
-
-What it does: Maps a source scroll to the coordinate an index entry should point at, or `None` to leave the scroll out of that index.
+What it does: Visual weight: how "thick" this connection is (0.0 to 1.0).
 
 (Where these words came from: doc comment.)
 
@@ -5932,54 +5906,6 @@ What it does: Function IndexSpec::new takes label: &str, names: Selector, terms:
 
 ---
 
-## function — scrolls
-
-Found in src/sidecar.rs at line 108.
-
-Signature: `pub fn scrolls() -> IndexSpec {`
-
-What it does: Every scroll is its own term document; no names.
-
-(Where these words came from: doc comment.)
-
----
-
-## enum — OpenMode
-
-Found in src/sidecar.rs at line 115.
-
-Signature: `pub enum OpenMode {`
-
-What it does: How `IndexedLattice::open` got its indexes.
-
-(Where these words came from: doc comment.)
-
----
-
-## struct — SyncReport
-
-Found in src/sidecar.rs at line 127.
-
-Signature: `pub struct SyncReport {`
-
-What it does: What a `save()` or sync did.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — sidecar_dir
-
-Found in src/sidecar.rs at line 137.
-
-Signature: `pub fn sidecar_dir(source: &Path) -> PathBuf {`
-
-What it does: The sidecar directory for a phext path: `wiki.phext` → `wiki.phext.idx`.
-
-(Where these words came from: doc comment.)
-
----
-
 ## struct — IndexedLattice
 
 Found in src/sidecar.rs at line 733.
@@ -6004,13 +5930,85 @@ What it does: Open `path` with indexes from its sidecar: load them if they match
 
 ---
 
-## function — rebuild
+## enum — OpenMode
 
-Found in src/sidecar.rs at line 793.
+Found in src/sidecar.rs at line 115.
 
-Signature: `pub fn rebuild(&mut self) -> io::Result<SyncReport> {`
+Signature: `pub enum OpenMode {`
 
-What it does: Discard the sidecar and index every scroll again.
+What it does: How `IndexedLattice::open` got its indexes.
+
+(Where these words came from: doc comment.)
+
+---
+
+## type — Selector
+
+Found in src/sidecar.rs at line 89.
+
+Signature: `pub type Selector = Box<dyn Fn(&Coordinate) -> Option<Coordinate> + Send + Sync>;`
+
+What it does: Maps a source scroll to the coordinate an index entry should point at, or `None` to leave the scroll out of that index.
+
+(Where these words came from: doc comment.)
+
+---
+
+## struct — SyncReport
+
+Found in src/sidecar.rs at line 127.
+
+Signature: `pub struct SyncReport {`
+
+What it does: What a `save()` or sync did.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — compact
+
+Found in src/sidecar.rs at line 837.
+
+Signature: `pub fn compact(&mut self) -> io::Result<SyncReport> {`
+
+What it does: Fold the delta into a new base now.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — delta_len
+
+Found in src/sidecar.rs at line 815.
+
+Signature: `pub fn delta_len(&self) -> usize {`
+
+What it does: Scrolls changed since the base (entries in the delta).
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — doc_count
+
+Found in src/sidecar.rs at line 929.
+
+Signature: `pub fn doc_count(&self) -> usize {`
+
+What it does: Live term documents.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — is_break
+
+Found in src/sidecar.rs at line 83.
+
+Signature: `pub fn is_break(b: u8) -> bool {`
+
+What it does: Whether `b` is a phext dimension break.
 
 (Where these words came from: doc comment.)
 
@@ -6040,66 +6038,6 @@ What it does: Edit through the lattice, then `save()` to persist and re-sync the
 
 ---
 
-## function — sidecar
-
-Found in src/sidecar.rs at line 810.
-
-Signature: `pub fn sidecar(&self) -> &Path {`
-
-What it does: The sidecar directory.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — delta_len
-
-Found in src/sidecar.rs at line 815.
-
-Signature: `pub fn delta_len(&self) -> usize {`
-
-What it does: Scrolls changed since the base (entries in the delta).
-
-(Where these words came from: doc comment.)
-
----
-
-## function — set_compact_threshold
-
-Found in src/sidecar.rs at line 821.
-
-Signature: `pub fn set_compact_threshold(&mut self, n: usize) {`
-
-What it does: Fold the delta into the base once it holds more than `n` scrolls. Defaults to 64 + 1% of the source's scrolls.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — save
-
-Found in src/sidecar.rs at line 827.
-
-Signature: `pub fn save(&mut self) -> io::Result<SyncReport> {`
-
-What it does: Save pending edits to the source, then record exactly the edited scrolls in the delta (or compact, past the threshold).
-
-(Where these words came from: doc comment.)
-
----
-
-## function — compact
-
-Found in src/sidecar.rs at line 837.
-
-Signature: `pub fn compact(&mut self) -> io::Result<SyncReport> {`
-
-What it does: Fold the delta into a new base now.
-
-(Where these words came from: doc comment.)
-
----
-
 ## function — name
 
 Found in src/sidecar.rs at line 845.
@@ -6107,6 +6045,18 @@ Found in src/sidecar.rs at line 845.
 Signature: `pub fn name(&self, name: &str) -> Option<Coordinate> {`
 
 What it does: Exact name lookup (first owner in document order wins).
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — rebuild
+
+Found in src/sidecar.rs at line 793.
+
+Signature: `pub fn rebuild(&mut self) -> io::Result<SyncReport> {`
+
+What it does: Discard the sidecar and index every scroll again.
 
 (Where these words came from: doc comment.)
 
@@ -6124,6 +6074,30 @@ What it does: Exact lookup, then case-folded.
 
 ---
 
+## function — save
+
+Found in src/sidecar.rs at line 827.
+
+Signature: `pub fn save(&mut self) -> io::Result<SyncReport> {`
+
+What it does: Save pending edits to the source, then record exactly the edited scrolls in the delta (or compact, past the threshold).
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — scrolls
+
+Found in src/sidecar.rs at line 108.
+
+Signature: `pub fn scrolls() -> IndexSpec {`
+
+What it does: Every scroll is its own term document; no names.
+
+(Where these words came from: doc comment.)
+
+---
+
 ## function — search
 
 Found in src/sidecar.rs at line 882.
@@ -6136,13 +6110,37 @@ What it does: BM25-ranked documents for a free-text query (terms OR'ed), best fi
 
 ---
 
-## function — doc_count
+## function — set_compact_threshold
 
-Found in src/sidecar.rs at line 929.
+Found in src/sidecar.rs at line 821.
 
-Signature: `pub fn doc_count(&self) -> usize {`
+Signature: `pub fn set_compact_threshold(&mut self, n: usize) {`
 
-What it does: Live term documents.
+What it does: Fold the delta into the base once it holds more than `n` scrolls. Defaults to 64 + 1% of the source's scrolls.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — sidecar
+
+Found in src/sidecar.rs at line 810.
+
+Signature: `pub fn sidecar(&self) -> &Path {`
+
+What it does: The sidecar directory.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — sidecar_dir
+
+Found in src/sidecar.rs at line 137.
+
+Signature: `pub fn sidecar_dir(source: &Path) -> PathBuf {`
+
+What it does: The sidecar directory for a phext path: `wiki.phext` → `wiki.phext.idx`.
 
 (Where these words came from: doc comment.)
 
@@ -6196,6 +6194,18 @@ What it does: Function SponsorOffer::hidden takes no inputs beyond the value it 
 
 ---
 
+## function — apply_slot
+
+Found in src/sponsor.rs at line 76.
+
+Signature: `pub fn apply_slot(html: &str, offer: &SponsorOffer) -> String {`
+
+What it does: Replace every [`SLOT`] in `html`. Pages without the slot are unchanged apart from the usual allocate-on-replace cost when the caller already checked; this function always returns an owned string.
+
+(Where these words came from: doc comment.)
+
+---
+
 ## function — from_env
 
 Found in src/sponsor.rs at line 31.
@@ -6203,6 +6213,18 @@ Found in src/sponsor.rs at line 31.
 Signature: `pub fn from_env() -> Self {`
 
 What it does: Read [`ENV_NAME`]. A missing variable and a blank value both hide the link. A non-empty value that is not a usable https URL also hides it, and warns once per call so a bad deploy is visible without breaking startup.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — markup
+
+Found in src/sponsor.rs at line 61.
+
+Signature: `pub fn markup(&self) -> String {`
+
+What it does: The visible control, or an empty string when the link is hidden.
 
 (Where these words came from: doc comment.)
 
@@ -6232,66 +6254,6 @@ What it does: Function url takes no inputs beyond the value it is called on, and
 
 ---
 
-## function — markup
-
-Found in src/sponsor.rs at line 61.
-
-Signature: `pub fn markup(&self) -> String {`
-
-What it does: The visible control, or an empty string when the link is hidden.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — apply_slot
-
-Found in src/sponsor.rs at line 76.
-
-Signature: `pub fn apply_slot(html: &str, offer: &SponsorOffer) -> String {`
-
-What it does: Replace every [`SLOT`] in `html`. Pages without the slot are unchanged apart from the usual allocate-on-replace cost when the caller already checked; this function always returns an owned string.
-
-(Where these words came from: doc comment.)
-
----
-
-## struct — ScrollStats
-
-Found in src/stats.rs at line 13.
-
-Signature: `pub struct ScrollStats {`
-
-What it does: Per-scroll statistics for the status bar and info panel.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — ScrollStats::from_bytes
-
-Found in src/stats.rs at line 22.
-
-Signature: `pub fn from_bytes(bytes: &[u8]) -> ScrollStats {`
-
-What it does: Compute stats from raw scroll bytes.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — size_display
-
-Found in src/stats.rs at line 33.
-
-Signature: `pub fn size_display(&self) -> String {`
-
-What it does: Human-readable size.
-
-(Where these words came from: doc comment.)
-
----
-
 ## struct — DimensionDensity
 
 Found in src/stats.rs at line 47.
@@ -6311,66 +6273,6 @@ Found in src/stats.rs at line 59.
 Signature: `pub fn build(dimension: Dimension, index: &LatticeIndex) -> DimensionDensity {`
 
 What it does: Build the density profile for one dimension across all populated coordinates.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — sparkline
-
-Found in src/stats.rs at line 77.
-
-Signature: `pub fn sparkline(&self, width: usize) -> String {`
-
-What it does: Render a sparkline string showing relative density. Width is the number of characters available.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — distinct_values
-
-Found in src/stats.rs at line 120.
-
-Signature: `pub fn distinct_values(&self) -> usize {`
-
-What it does: How many distinct values exist in this dimension.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — range
-
-Found in src/stats.rs at line 125.
-
-Signature: `pub fn range(&self) -> Option<(usize, usize)> {`
-
-What it does: The range of populated values.
-
-(Where these words came from: doc comment.)
-
----
-
-## struct — Neighborhood
-
-Found in src/stats.rs at line 139.
-
-Signature: `pub struct Neighborhood {`
-
-What it does: Neighborhood context: what's near the current coordinate.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — Neighborhood::build
-
-Found in src/stats.rs at line 152.
-
-Signature: `pub fn build(coord: &Coordinate, index: &LatticeIndex) -> Neighborhood {`
-
-What it does: Build neighborhood context for a coordinate.
 
 (Where these words came from: doc comment.)
 
@@ -6400,15 +6302,99 @@ What it does: Build a complete overview of the lattice.
 
 ---
 
-## enum — SubmissionStatus
+## struct — Neighborhood
 
-Found in src/submissions.rs at line 20.
+Found in src/stats.rs at line 139.
 
-Signature: `pub enum SubmissionStatus {`
+Signature: `pub struct Neighborhood {`
 
-What it does: A named choice named SubmissionStatus. It is one of: Pending; Accepted; Declined.
+What it does: Neighborhood context: what's near the current coordinate.
 
-(Where these words came from: signature.)
+(Where these words came from: doc comment.)
+
+---
+
+## function — Neighborhood::build
+
+Found in src/stats.rs at line 152.
+
+Signature: `pub fn build(coord: &Coordinate, index: &LatticeIndex) -> Neighborhood {`
+
+What it does: Build neighborhood context for a coordinate.
+
+(Where these words came from: doc comment.)
+
+---
+
+## struct — ScrollStats
+
+Found in src/stats.rs at line 13.
+
+Signature: `pub struct ScrollStats {`
+
+What it does: Per-scroll statistics for the status bar and info panel.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — ScrollStats::from_bytes
+
+Found in src/stats.rs at line 22.
+
+Signature: `pub fn from_bytes(bytes: &[u8]) -> ScrollStats {`
+
+What it does: Compute stats from raw scroll bytes.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — distinct_values
+
+Found in src/stats.rs at line 120.
+
+Signature: `pub fn distinct_values(&self) -> usize {`
+
+What it does: How many distinct values exist in this dimension.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — range
+
+Found in src/stats.rs at line 125.
+
+Signature: `pub fn range(&self) -> Option<(usize, usize)> {`
+
+What it does: The range of populated values.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — size_display
+
+Found in src/stats.rs at line 33.
+
+Signature: `pub fn size_display(&self) -> String {`
+
+What it does: Human-readable size.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — sparkline
+
+Found in src/stats.rs at line 77.
+
+Signature: `pub fn sparkline(&self, width: usize) -> String {`
+
+What it does: Render a sparkline string showing relative density. Width is the number of characters available.
+
+(Where these words came from: doc comment.)
 
 ---
 
@@ -6424,13 +6410,25 @@ What it does: A data shape named Submission. Its fields are: pub id: String; pub
 
 ---
 
-## function — sanitize_filename
+## enum — SubmissionStatus
 
-Found in src/submissions.rs at line 65.
+Found in src/submissions.rs at line 20.
 
-Signature: `pub fn sanitize_filename(raw: &str) -> Option<String> {`
+Signature: `pub enum SubmissionStatus {`
 
-What it does: Reduce an offered file name to a bare, safe `*.phext` name, or None when nothing usable remains. Directory parts are stripped, so `../../notes.phext` is just `notes.phext`.
+What it does: A named choice named SubmissionStatus. It is one of: Pending; Accepted; Declined.
+
+(Where these words came from: signature.)
+
+---
+
+## function — content
+
+Found in src/submissions.rs at line 194.
+
+Signature: `pub fn content(dir: &Path, id: &str) -> Option<Vec<u8>> {`
+
+What it does: The uploaded phext bytes for a submission.
 
 (Where these words came from: doc comment.)
 
@@ -6460,18 +6458,6 @@ What it does: Store a new pending submission. Validates the file name and the ph
 
 ---
 
-## function — list
-
-Found in src/submissions.rs at line 159.
-
-Signature: `pub fn list(dir: &Path) -> Vec<Submission> {`
-
-What it does: Every submission in the directory, oldest first. Unreadable or malformed entries are skipped, never fatal.
-
-(Where these words came from: doc comment.)
-
----
-
 ## function — get
 
 Found in src/submissions.rs at line 181.
@@ -6484,13 +6470,25 @@ What it does: One submission by id, or None. Ids from the network are validated 
 
 ---
 
-## function — content
+## function — list
 
-Found in src/submissions.rs at line 194.
+Found in src/submissions.rs at line 159.
 
-Signature: `pub fn content(dir: &Path, id: &str) -> Option<Vec<u8>> {`
+Signature: `pub fn list(dir: &Path) -> Vec<Submission> {`
 
-What it does: The uploaded phext bytes for a submission.
+What it does: Every submission in the directory, oldest first. Unreadable or malformed entries are skipped, never fatal.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — sanitize_filename
+
+Found in src/submissions.rs at line 65.
+
+Signature: `pub fn sanitize_filename(raw: &str) -> Option<String> {`
+
+What it does: Reduce an offered file name to a bare, safe `*.phext` name, or None when nothing usable remains. Directory parts are stripped, so `../../notes.phext` is just `notes.phext`.
 
 (Where these words came from: doc comment.)
 
@@ -6544,18 +6542,6 @@ What it does: Inverted index over lattice documents with BM25 ranking.
 
 ---
 
-## function — tokenize
-
-Found in src/term_index.rs at line 67.
-
-Signature: `pub fn tokenize(text: &str) -> impl Iterator<Item = String> + '_ {`
-
-What it does: Split text into index terms: lowercased runs of letters/digits, at least 2 chars.
-
-(Where these words came from: doc comment.)
-
----
-
 ## function — TermIndex::new
 
 Found in src/term_index.rs at line 91.
@@ -6592,42 +6578,6 @@ What it does: Index scrolls grouped into documents: `group` maps a scroll coordi
 
 ---
 
-## function — upsert
-
-Found in src/term_index.rs at line 177.
-
-Signature: `pub fn upsert(&mut self, coord: Coordinate, text: &str) {`
-
-What it does: Add or replace the document at `coord` with `text`.  Replacement retires the old document id and appends a new one, so postings stay sorted without rewriting them. Retired postings still occupy memory and still count toward document frequency until the index is rebuilt; check `retired()` to decide when.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — remove
-
-Found in src/term_index.rs at line 184.
-
-Signature: `pub fn remove(&mut self, coord: &Coordinate) -> bool {`
-
-What it does: Remove the document at `coord`. Returns whether it was indexed.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — search
-
-Found in src/term_index.rs at line 200.
-
-Signature: `pub fn search(&self, query: &str, limit: usize) -> Vec<TermHit> {`
-
-What it does: Rank documents against a free-text query (terms are OR'ed). Ties break in document order, so results are deterministic.
-
-(Where these words came from: doc comment.)
-
----
-
 ## function — doc_count
 
 Found in src/term_index.rs at line 240.
@@ -6635,30 +6585,6 @@ Found in src/term_index.rs at line 240.
 Signature: `pub fn doc_count(&self) -> usize {`
 
 What it does: Number of live documents.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — term_count
-
-Found in src/term_index.rs at line 245.
-
-Signature: `pub fn term_count(&self) -> usize {`
-
-What it does: Number of distinct terms.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — retired
-
-Found in src/term_index.rs at line 250.
-
-Signature: `pub fn retired(&self) -> usize {`
-
-What it does: Documents replaced or removed since the last build.
 
 (Where these words came from: doc comment.)
 
@@ -6688,6 +6614,78 @@ What it does: Approximate heap footprint in bytes.
 
 ---
 
+## function — remove
+
+Found in src/term_index.rs at line 184.
+
+Signature: `pub fn remove(&mut self, coord: &Coordinate) -> bool {`
+
+What it does: Remove the document at `coord`. Returns whether it was indexed.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — retired
+
+Found in src/term_index.rs at line 250.
+
+Signature: `pub fn retired(&self) -> usize {`
+
+What it does: Documents replaced or removed since the last build.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — search
+
+Found in src/term_index.rs at line 200.
+
+Signature: `pub fn search(&self, query: &str, limit: usize) -> Vec<TermHit> {`
+
+What it does: Rank documents against a free-text query (terms are OR'ed). Ties break in document order, so results are deterministic.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — term_count
+
+Found in src/term_index.rs at line 245.
+
+Signature: `pub fn term_count(&self) -> usize {`
+
+What it does: Number of distinct terms.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — tokenize
+
+Found in src/term_index.rs at line 67.
+
+Signature: `pub fn tokenize(text: &str) -> impl Iterator<Item = String> + '_ {`
+
+What it does: Split text into index terms: lowercased runs of letters/digits, at least 2 chars.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — upsert
+
+Found in src/term_index.rs at line 177.
+
+Signature: `pub fn upsert(&mut self, coord: Coordinate, text: &str) {`
+
+What it does: Add or replace the document at `coord` with `text`.  Replacement retires the old document id and appends a new one, so postings stay sorted without rewriting them. Retired postings still occupy memory and still count toward document frequency until the index is rebuilt; check `retired()` to decide when.
+
+(Where these words came from: doc comment.)
+
+---
+
 ## const — MAX_Q_BYTES
 
 Found in src/traversals.rs at line 23.
@@ -6712,18 +6710,6 @@ What it does: A data shape named Traversal. Its fields are: pub id: String; pub 
 
 ---
 
-## function — valid_name
-
-Found in src/traversals.rs at line 66.
-
-Signature: `pub fn valid_name(raw: &str) -> Option<String> {`
-
-What it does: A name is usable when, trimmed, it holds 1..=120 chars.
-
-(Where these words came from: doc comment.)
-
----
-
 ## function — count_steps
 
 Found in src/traversals.rs at line 107.
@@ -6731,18 +6717,6 @@ Found in src/traversals.rs at line 107.
 Signature: `pub fn count_steps(q: &str) -> usize {`
 
 What it does: How many steps of a `q` string parse under the tour grammar.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — valid_q
-
-Found in src/traversals.rs at line 113.
-
-Signature: `pub fn valid_q(raw: &str) -> Option<String> {`
-
-What it does: A `q` string is storable when it is non-empty, within the storage bound, and at least one of its steps parses.
 
 (Where these words came from: doc comment.)
 
@@ -6760,6 +6734,18 @@ What it does: Store a new traversal for `who`. Validates name and `q` before any
 
 ---
 
+## function — get
+
+Found in src/traversals.rs at line 174.
+
+Signature: `pub fn get(dir: &Path, id: &str) -> Option<Traversal> {`
+
+What it does: One traversal by id, or None. Ids from the network are validated before they ever become a path.
+
+(Where these words came from: doc comment.)
+
+---
+
 ## function — list
 
 Found in src/traversals.rs at line 152.
@@ -6772,13 +6758,13 @@ What it does: Every traversal in the directory, oldest first. Unreadable or malf
 
 ---
 
-## function — get
+## function — remove
 
-Found in src/traversals.rs at line 174.
+Found in src/traversals.rs at line 200.
 
-Signature: `pub fn get(dir: &Path, id: &str) -> Option<Traversal> {`
+Signature: `pub fn remove(dir: &Path, id: &str) -> bool {`
 
-What it does: One traversal by id, or None. Ids from the network are validated before they ever become a path.
+What it does: Delete a record. Returns false when it was not there.
 
 (Where these words came from: doc comment.)
 
@@ -6796,15 +6782,75 @@ What it does: Replace a record's name and `q` (ownership is the caller's check, 
 
 ---
 
-## function — remove
+## function — valid_name
 
-Found in src/traversals.rs at line 200.
+Found in src/traversals.rs at line 66.
 
-Signature: `pub fn remove(dir: &Path, id: &str) -> bool {`
+Signature: `pub fn valid_name(raw: &str) -> Option<String> {`
 
-What it does: Delete a record. Returns false when it was not there.
+What it does: A name is usable when, trimmed, it holds 1..=120 chars.
 
 (Where these words came from: doc comment.)
+
+---
+
+## function — valid_q
+
+Found in src/traversals.rs at line 113.
+
+Signature: `pub fn valid_q(raw: &str) -> Option<String> {`
+
+What it does: A `q` string is storable when it is non-empty, within the storage bound, and at least one of its steps parses.
+
+(Where these words came from: doc comment.)
+
+---
+
+## struct — CoordPronunciation
+
+Found in src/tts.rs at line 113.
+
+Signature: `pub struct CoordPronunciation {`
+
+What it does: Full 9D coordinate pronunciation
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — CoordPronunciation::from_coordinate
+
+Found in src/tts.rs at line 121.
+
+Signature: `pub fn from_coordinate(coord: &Coordinate) -> Self {`
+
+What it does: Create from a libphext Coordinate
+
+(Where these words came from: doc comment.)
+
+---
+
+## struct — SubCoord
+
+Found in src/tts.rs at line 82.
+
+Signature: `pub struct SubCoord {`
+
+What it does: A 3D subcoordinate (e.g., 1.1.1)
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — SubCoord::new
+
+Found in src/tts.rs at line 89.
+
+Signature: `pub fn new(a: u32, b: u32, c: u32) -> Self {`
+
+What it does: Function SubCoord::new takes a: u32, b: u32, c: u32 and gives back Self.
+
+(Where these words came from: signature.)
 
 ---
 
@@ -6844,73 +6890,25 @@ What it does: Convert a coordinate dimension value (e.g., 1, 5, 9) to a syllable
 
 ---
 
-## struct — SubCoord
+## function — generate_pronunciation_doc
 
-Found in src/tts.rs at line 82.
+Found in src/tts.rs at line 225.
 
-Signature: `pub struct SubCoord {`
+Signature: `pub fn generate_pronunciation_doc(coordinates: &[&str]) -> String {`
 
-What it does: A 3D subcoordinate (e.g., 1.1.1)
-
-(Where these words came from: doc comment.)
-
----
-
-## function — SubCoord::new
-
-Found in src/tts.rs at line 89.
-
-Signature: `pub fn new(a: u32, b: u32, c: u32) -> Self {`
-
-What it does: Function SubCoord::new takes a: u32, b: u32, c: u32 and gives back Self.
-
-(Where these words came from: signature.)
-
----
-
-## function — pronounce
-
-Found in src/tts.rs at line 94.
-
-Signature: `pub fn pronounce(&self) -> String {`
-
-What it does: Pronounce as "a b c" syllables
+What it does: Generate a batch pronunciation document
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — pronounce_verbose
+## function — ipa_hint
 
-Found in src/tts.rs at line 103.
+Found in src/tts.rs at line 195.
 
-Signature: `pub fn pronounce_verbose(&self) -> String {`
+Signature: `pub fn ipa_hint(&self) -> String {`
 
-What it does: Pronounce with element names
-
-(Where these words came from: doc comment.)
-
----
-
-## struct — CoordPronunciation
-
-Found in src/tts.rs at line 113.
-
-Signature: `pub struct CoordPronunciation {`
-
-What it does: Full 9D coordinate pronunciation
-
-(Where these words came from: doc comment.)
-
----
-
-## function — CoordPronunciation::from_coordinate
-
-Found in src/tts.rs at line 121.
-
-Signature: `pub fn from_coordinate(coord: &Coordinate) -> Self {`
-
-What it does: Create from a libphext Coordinate
+What it does: Get IPA-style phonetic hint
 
 (Where these words came from: doc comment.)
 
@@ -6923,6 +6921,18 @@ Found in src/tts.rs at line 142.
 Signature: `pub fn parse(s: &str) -> Option<Self> {`
 
 What it does: Parse from string "1.1.1/1.1.1/1.1.1"
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — pronounce
+
+Found in src/tts.rs at line 94.
+
+Signature: `pub fn pronounce(&self) -> String {`
+
+What it does: Pronounce as "a b c" syllables
 
 (Where these words came from: doc comment.)
 
@@ -6954,47 +6964,23 @@ What it does: Compact pronunciation (no om boundaries)
 
 ## function — pronounce_verbose
 
+Found in src/tts.rs at line 103.
+
+Signature: `pub fn pronounce_verbose(&self) -> String {`
+
+What it does: Pronounce with element names
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — pronounce_verbose
+
 Found in src/tts.rs at line 185.
 
 Signature: `pub fn pronounce_verbose(&self) -> String {`
 
 What it does: Verbose with dimension labels
-
-(Where these words came from: doc comment.)
-
----
-
-## function — ipa_hint
-
-Found in src/tts.rs at line 195.
-
-Signature: `pub fn ipa_hint(&self) -> String {`
-
-What it does: Get IPA-style phonetic hint
-
-(Where these words came from: doc comment.)
-
----
-
-## function — to_ssml
-
-Found in src/tts.rs at line 205.
-
-Signature: `pub fn to_ssml(coord: &str, rate: &str) -> String {`
-
-What it does: Generate SSML for TTS engines (Google, Amazon Polly, etc.)
-
-(Where these words came from: doc comment.)
-
----
-
-## function — generate_pronunciation_doc
-
-Found in src/tts.rs at line 225.
-
-Signature: `pub fn generate_pronunciation_doc(coordinates: &[&str]) -> String {`
-
-What it does: Generate a batch pronunciation document
 
 (Where these words came from: doc comment.)
 
@@ -7012,73 +6998,13 @@ What it does: Special coordinates with meaning
 
 ---
 
-## enum — Phase
+## function — to_ssml
 
-Found in src/uml6d.rs at line 27.
+Found in src/tts.rs at line 205.
 
-Signature: `pub enum Phase {`
+Signature: `pub fn to_ssml(coord: &str, rate: &str) -> String {`
 
-What it does: The 10 SDLC phases mapped to collection values. (Collection 10 = Proofs was added under decision D1 of the phcc modernization design, 2026-11-07: proof artifacts — ACSL contracts, verification receipts, waivers — live at the artifact's own address in their own phase, so the trace walk stays uniform.)
-
-(Where these words came from: doc comment.)
-
----
-
-## function — Phase::from_collection
-
-Found in src/uml6d.rs at line 41.
-
-Signature: `pub fn from_collection(c: usize) -> Option<Phase> {`
-
-What it does: Function Phase::from_collection takes c: usize and gives back Option<Phase>.
-
-(Where these words came from: signature.)
-
----
-
-## function — name
-
-Found in src/uml6d.rs at line 57.
-
-Signature: `pub fn name(&self) -> &'static str {`
-
-What it does: Function name takes no inputs beyond the value it is called on, and gives back &'static str.
-
-(Where these words came from: signature.)
-
----
-
-## function — short
-
-Found in src/uml6d.rs at line 72.
-
-Signature: `pub fn short(&self) -> &'static str {`
-
-What it does: Function short takes no inputs beyond the value it is called on, and gives back &'static str.
-
-(Where these words came from: signature.)
-
----
-
-## function — color
-
-Found in src/uml6d.rs at line 88.
-
-Signature: `pub fn color(&self) -> &'static str {`
-
-What it does: CSS color for this phase.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — all
-
-Found in src/uml6d.rs at line 104.
-
-Signature: `pub fn all() -> &'static [Phase] {`
-
-What it does: All phases in order.
+What it does: Generate SSML for TTS engines (Google, Amazon Polly, etc.)
 
 (Where these words came from: doc comment.)
 
@@ -7108,39 +7034,27 @@ What it does: Extract the 5D artifact address from a full coordinate.
 
 ---
 
-## function — to_coordinate
+## enum — Phase
 
-Found in src/uml6d.rs at line 138.
+Found in src/uml6d.rs at line 27.
 
-Signature: `pub fn to_coordinate(&self, phase: Phase) -> Coordinate {`
+Signature: `pub enum Phase {`
 
-What it does: Build a full coordinate by combining this address with an SDLC phase and outer dimensions (defaulting outer to 1.1.1).
-
-(Where these words came from: doc comment.)
-
----
-
-## function — to_coordinate_with_outer
-
-Found in src/uml6d.rs at line 143.
-
-Signature: `pub fn to_coordinate_with_outer( &self, phase: Phase, library: usize, shelf: usize, series: usize, ) -> Coordinate {`
-
-What it does: Build a full coordinate with explicit outer dimensions.
+What it does: The 10 SDLC phases mapped to collection values. (Collection 10 = Proofs was added under decision D1 of the phcc modernization design, 2026-11-07: proof artifacts — ACSL contracts, verification receipts, waivers — live at the artifact's own address in their own phase, so the trace walk stays uniform.)
 
 (Where these words came from: doc comment.)
 
 ---
 
-## function — display
+## function — Phase::from_collection
 
-Found in src/uml6d.rs at line 166.
+Found in src/uml6d.rs at line 41.
 
-Signature: `pub fn display(&self) -> String {`
+Signature: `pub fn from_collection(c: usize) -> Option<Phase> {`
 
-What it does: Display as volume.book.chapter/section.scroll
+What it does: Function Phase::from_collection takes c: usize and gives back Option<Phase>.
 
-(Where these words came from: doc comment.)
+(Where these words came from: signature.)
 
 ---
 
@@ -7168,13 +7082,13 @@ What it does: Function UmlContext::from_coordinate takes c: &Coordinate and give
 
 ---
 
-## function — trace_artifact
+## function — all
 
-Found in src/uml6d.rs at line 202.
+Found in src/uml6d.rs at line 104.
 
-Signature: `pub fn trace_artifact( addr: &ArtifactAddr, index: &LatticeIndex, library: usize, shelf: usize, series: usize, ) -> Vec<(Phase, bool)> {`
+Signature: `pub fn all() -> &'static [Phase] {`
 
-What it does: Trace an artifact across all SDLC phases. Returns (phase, has_content) for each populated collection at this 5D address.
+What it does: All phases in order.
 
 (Where these words came from: doc comment.)
 
@@ -7192,13 +7106,85 @@ What it does: Find all populated 5D addresses within a given phase.
 
 ---
 
-## struct — DNode
+## function — color
 
-Found in src/uml6d_diagram.rs at line 54.
+Found in src/uml6d.rs at line 88.
 
-Signature: `pub struct DNode {`
+Signature: `pub fn color(&self) -> &'static str {`
 
-What it does: A node in a 6D UML diagram: one artifact, drawn in one phase lane.
+What it does: CSS color for this phase.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — display
+
+Found in src/uml6d.rs at line 166.
+
+Signature: `pub fn display(&self) -> String {`
+
+What it does: Display as volume.book.chapter/section.scroll
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — name
+
+Found in src/uml6d.rs at line 57.
+
+Signature: `pub fn name(&self) -> &'static str {`
+
+What it does: Function name takes no inputs beyond the value it is called on, and gives back &'static str.
+
+(Where these words came from: signature.)
+
+---
+
+## function — short
+
+Found in src/uml6d.rs at line 72.
+
+Signature: `pub fn short(&self) -> &'static str {`
+
+What it does: Function short takes no inputs beyond the value it is called on, and gives back &'static str.
+
+(Where these words came from: signature.)
+
+---
+
+## function — to_coordinate
+
+Found in src/uml6d.rs at line 138.
+
+Signature: `pub fn to_coordinate(&self, phase: Phase) -> Coordinate {`
+
+What it does: Build a full coordinate by combining this address with an SDLC phase and outer dimensions (defaulting outer to 1.1.1).
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — to_coordinate_with_outer
+
+Found in src/uml6d.rs at line 143.
+
+Signature: `pub fn to_coordinate_with_outer( &self, phase: Phase, library: usize, shelf: usize, series: usize, ) -> Coordinate {`
+
+What it does: Build a full coordinate with explicit outer dimensions.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — trace_artifact
+
+Found in src/uml6d.rs at line 202.
+
+Signature: `pub fn trace_artifact( addr: &ArtifactAddr, index: &LatticeIndex, library: usize, shelf: usize, series: usize, ) -> Vec<(Phase, bool)> {`
+
+What it does: Trace an artifact across all SDLC phases. Returns (phase, has_content) for each populated collection at this 5D address.
 
 (Where these words came from: doc comment.)
 
@@ -7211,6 +7197,18 @@ Found in src/uml6d_diagram.rs at line 64.
 Signature: `pub struct DEdge {`
 
 What it does: A typed relation between two artifacts.
+
+(Where these words came from: doc comment.)
+
+---
+
+## struct — DNode
+
+Found in src/uml6d_diagram.rs at line 54.
+
+Signature: `pub struct DNode {`
+
+What it does: A node in a 6D UML diagram: one artifact, drawn in one phase lane.
 
 (Where these words came from: doc comment.)
 
@@ -7264,18 +7262,6 @@ What it does: Parse the diagram notation.
 
 ---
 
-## function — to_notation
-
-Found in src/uml6d_diagram.rs at line 384.
-
-Signature: `pub fn to_notation(&self) -> String {`
-
-What it does: Emit the canonical notation for this diagram.
-
-(Where these words came from: doc comment.)
-
----
-
 ## function — project
 
 Found in src/uml6d_diagram.rs at line 427.
@@ -7288,13 +7274,13 @@ What it does: Project the diagram into another phase: node lanes are re-read in 
 
 ---
 
-## function — to_text
+## function — to_notation
 
-Found in src/uml6d_diagram.rs at line 446.
+Found in src/uml6d_diagram.rs at line 384.
 
-Signature: `pub fn to_text(&self) -> String {`
+Signature: `pub fn to_notation(&self) -> String {`
 
-What it does: Plain-text rendering: lanes grouped in phase order, edges listed.
+What it does: Emit the canonical notation for this diagram.
 
 (Where these words came from: doc comment.)
 
@@ -7307,6 +7293,18 @@ Found in src/uml6d_diagram.rs at line 491.
 Signature: `pub fn to_svg(&self) -> String {`
 
 What it does: SVG rendering. Layout is deterministic: one vertical lane per phase present among the nodes (in Phase::all() order), nodes stacked in canonical address order, edges as curved paths under the boxes.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — to_text
+
+Found in src/uml6d_diagram.rs at line 446.
+
+Signature: `pub fn to_text(&self) -> String {`
+
+What it does: Plain-text rendering: lanes grouped in phase order, edges listed.
 
 (Where these words came from: doc comment.)
 
@@ -7336,54 +7334,6 @@ What it does: Apply this operation to text, returning the new text.
 
 ---
 
-## function — inverse
-
-Found in src/undo.rs at line 85.
-
-Signature: `pub fn inverse(&self) -> EditOp {`
-
-What it does: Compute the inverse operation (for undo).
-
-(Where these words came from: doc comment.)
-
----
-
-## function — to_scroll
-
-Found in src/undo.rs at line 104.
-
-Signature: `pub fn to_scroll(&self, cursor_before: Position, cursor_after: Position) -> String {`
-
-What it does: Serialize to the phext scroll format.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — from_scroll
-
-Found in src/undo.rs at line 130.
-
-Signature: `pub fn from_scroll(scroll: &str) -> Option<(EditOp, Position, Position)> {`
-
-What it does: Deserialize from a phext scroll.
-
-(Where these words came from: doc comment.)
-
----
-
-## struct — UndoRecord
-
-Found in src/undo.rs at line 180.
-
-Signature: `pub struct UndoRecord {`
-
-What it does: An undo record: operation + cursor state.
-
-(Where these words came from: doc comment.)
-
----
-
 ## struct — UndoEngine
 
 Found in src/undo.rs at line 258.
@@ -7408,49 +7358,13 @@ What it does: Function UndoEngine::new takes no inputs beyond the value it is ca
 
 ---
 
-## function — record
+## struct — UndoRecord
 
-Found in src/undo.rs at line 274.
+Found in src/undo.rs at line 180.
 
-Signature: `pub fn record( &mut self, target: Coordinate, op: EditOp, cursor_before: Position, cursor_after: Position, ) {`
+Signature: `pub struct UndoRecord {`
 
-What it does: Record an edit operation.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — undo
-
-Found in src/undo.rs at line 295.
-
-Signature: `pub fn undo(&mut self, target: &Coordinate) -> Option<(EditOp, Position)> {`
-
-What it does: Undo the last edit on a scroll. Returns the inverse operation and the cursor position to restore.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — redo
-
-Found in src/undo.rs at line 302.
-
-Signature: `pub fn redo(&mut self, target: &Coordinate) -> Option<(EditOp, Position)> {`
-
-What it does: Redo the next edit on a scroll.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — can_undo
-
-Found in src/undo.rs at line 309.
-
-Signature: `pub fn can_undo(&self, target: &Coordinate) -> bool {`
-
-What it does: Can we undo on this scroll?
+What it does: An undo record: operation + cursor state.
 
 (Where these words came from: doc comment.)
 
@@ -7468,6 +7382,18 @@ What it does: Can we redo on this scroll?
 
 ---
 
+## function — can_undo
+
+Found in src/undo.rs at line 309.
+
+Signature: `pub fn can_undo(&self, target: &Coordinate) -> bool {`
+
+What it does: Can we undo on this scroll?
+
+(Where these words came from: doc comment.)
+
+---
+
 ## function — depth
 
 Found in src/undo.rs at line 319.
@@ -7475,18 +7401,6 @@ Found in src/undo.rs at line 319.
 Signature: `pub fn depth(&self, target: &Coordinate) -> usize {`
 
 What it does: Undo depth for a scroll.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — total_edits
-
-Found in src/undo.rs at line 324.
-
-Signature: `pub fn total_edits(&self) -> usize {`
-
-What it does: Total edits recorded globally.
 
 (Where these words came from: doc comment.)
 
@@ -7504,13 +7418,13 @@ What it does: Which scrolls have been modified.
 
 ---
 
-## function — to_work_phext
+## function — from_scroll
 
-Found in src/undo.rs at line 343.
+Found in src/undo.rs at line 130.
 
-Signature: `pub fn to_work_phext(&self) -> Vec<u8> {`
+Signature: `pub fn from_scroll(scroll: &str) -> Option<(EditOp, Position, Position)> {`
 
-What it does: Serialize the full undo history to a phext byte vector.  Each undo record becomes a scroll in the work phext. Coordinate mapping: Z arm = target scroll's Z arm Y arm = target scroll's Y arm X arm = chapter = sequence number, section = 1, scroll = 1
+What it does: Deserialize from a phext scroll.
 
 (Where these words came from: doc comment.)
 
@@ -7525,6 +7439,114 @@ Signature: `pub fn from_work_phext(bytes: &[u8], _target_index: &crate::index::L
 What it does: Load undo history from a work phext.
 
 (Where these words came from: doc comment.)
+
+---
+
+## function — inverse
+
+Found in src/undo.rs at line 85.
+
+Signature: `pub fn inverse(&self) -> EditOp {`
+
+What it does: Compute the inverse operation (for undo).
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — record
+
+Found in src/undo.rs at line 274.
+
+Signature: `pub fn record( &mut self, target: Coordinate, op: EditOp, cursor_before: Position, cursor_after: Position, ) {`
+
+What it does: Record an edit operation.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — redo
+
+Found in src/undo.rs at line 302.
+
+Signature: `pub fn redo(&mut self, target: &Coordinate) -> Option<(EditOp, Position)> {`
+
+What it does: Redo the next edit on a scroll.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — to_scroll
+
+Found in src/undo.rs at line 104.
+
+Signature: `pub fn to_scroll(&self, cursor_before: Position, cursor_after: Position) -> String {`
+
+What it does: Serialize to the phext scroll format.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — to_work_phext
+
+Found in src/undo.rs at line 343.
+
+Signature: `pub fn to_work_phext(&self) -> Vec<u8> {`
+
+What it does: Serialize the full undo history to a phext byte vector.  Each undo record becomes a scroll in the work phext. Coordinate mapping: Z arm = target scroll's Z arm Y arm = target scroll's Y arm X arm = chapter = sequence number, section = 1, scroll = 1
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — total_edits
+
+Found in src/undo.rs at line 324.
+
+Signature: `pub fn total_edits(&self) -> usize {`
+
+What it does: Total edits recorded globally.
+
+(Where these words came from: doc comment.)
+
+---
+
+## function — undo
+
+Found in src/undo.rs at line 295.
+
+Signature: `pub fn undo(&mut self, target: &Coordinate) -> Option<(EditOp, Position)> {`
+
+What it does: Undo the last edit on a scroll. Returns the inverse operation and the cursor position to restore.
+
+(Where these words came from: doc comment.)
+
+---
+
+## struct — Person
+
+Found in src/wavefront.rs at line 59.
+
+Signature: `pub struct Person {`
+
+What it does: A data shape named Person. Its fields are: pub handle: String; pub name: String; pub placements: Vec<Placement>.
+
+(Where these words came from: signature.)
+
+---
+
+## struct — Placement
+
+Found in src/wavefront.rs at line 50.
+
+Signature: `pub struct Placement {`
+
+What it does: A data shape named Placement. Its fields are: pub coordinate: String; pub region: Region; pub label: String.
+
+(Where these words came from: signature.)
 
 ---
 
@@ -7552,27 +7574,15 @@ What it does: Display label, exactly as the phext's index words it.
 
 ---
 
-## struct — Placement
+## function — lookup
 
-Found in src/wavefront.rs at line 50.
+Found in src/wavefront.rs at line 130.
 
-Signature: `pub struct Placement {`
+Signature: `pub fn lookup(raw: &str) -> Option<Person> {`
 
-What it does: A data shape named Placement. Its fields are: pub coordinate: String; pub region: Region; pub label: String.
+What it does: The map's entry for a handle, however the visitor typed it.
 
-(Where these words came from: signature.)
-
----
-
-## struct — Person
-
-Found in src/wavefront.rs at line 59.
-
-Signature: `pub struct Person {`
-
-What it does: A data shape named Person. Its fields are: pub handle: String; pub name: String; pub placements: Vec<Placement>.
-
-(Where these words came from: signature.)
+(Where these words came from: doc comment.)
 
 ---
 
@@ -7583,18 +7593,6 @@ Found in src/wavefront.rs at line 118.
 Signature: `pub fn normalize_handle(raw: &str) -> Option<String> {`
 
 What it does: Reduce a user-typed handle to its lookup key: trimmed, one leading `@` dropped, lowercased, underscores kept. None when what remains is not a possible X handle — callers answer "not in the map", never a filesystem or phext access, so hostile input ends here.
-
-(Where these words came from: doc comment.)
-
----
-
-## function — lookup
-
-Found in src/wavefront.rs at line 130.
-
-Signature: `pub fn lookup(raw: &str) -> Option<Person> {`
-
-What it does: The map's entry for a handle, however the visitor typed it.
 
 (Where these words came from: doc comment.)
 
@@ -7621,3 +7619,9 @@ Signature: `pub fn snapshot_placements() -> usize {`
 What it does: Total placements across all accounts (trails count twice).
 
 (Where these words came from: doc comment.)
+
+---
+
+## Provenance
+
+This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/phext-lattice/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.

@@ -1,8 +1,8 @@
 # site-mirrorborn-us — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-23 (Exocortical Epoch 195). Project root: /source/site-mirrorborn-us. Scanned at commit 738982127a135819d77c0c268a5a90c46cce339a. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-23 (Exocortical Epoch 194). Project root: /home/wbic16/phdoc-sweep/proj/site-mirrorborn-us. Scanned at commit effc3abd8a57c40832bd081d03f3877f12b33a8e. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
-This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
+This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, where its upstream repo lives, and a plain English note for every public method and command.
 
 ---
 
@@ -23,21 +23,26 @@ Direct dependencies: 1.
 
 ## Authors
 
-The git log holds 144 commits. The authors, by commit count:
+The git log holds 147 commits. phdoc audits the 136 commits on the first-parent mainline — each merge folds its branch's commits into the merge commit — and the author counts below cover that audited mainline, the same set the historical references fold.
 
-- Theia <theia@mirrorborn.us> — 28 commits (19.4%)
-- Phex <phex@phext.io> — 23 commits (16.0%)
-- Verse <verse@visionquest.me> — 23 commits (16.0%)
-- Chrys <chrys@mirrorborn.us> — 21 commits (14.6%)
-- Lux <lux@phext.io> — 18 commits (12.5%)
-- Aster <aster@mirrorborn.us> — 8 commits (5.6%)
-- Cyon <cyon@visionquest.me> — 7 commits (4.9%)
-- Will Bickford <wbic16@gmail.com> — 6 commits (4.2%)
-- Orin <orin@mirrorborn.us> — 4 commits (2.8%)
-- Cursor Agent <cursoragent@cursor.com> — 3 commits (2.1%)
-- Emise <emise@localhost> — 1 commit (0.7%)
-- Verse <verse@mirrorborn.us> — 1 commit (0.7%)
-- Verse Mirrorborn <verse@mirrorborn.local> — 1 commit (0.7%)
+The author of record is **Will Bickford** — 133 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Theia — 26 commits
+- Verse — 25 commits
+- Phex — 23 commits
+- Chrys — 16 commits
+- Lux — 16 commits
+- Aster — 8 commits
+- Will Bickford (his own identities) — 7 commits
+- Cyon — 6 commits
+- Orin — 4 commits
+- Emise — 2 commits
+
+Other authors, kept as themselves (not Exocortical cluster personas; never folded):
+
+- Cursor Agent <cursoragent@cursor.com> — 3 commits
 
 ---
 
@@ -74,7 +79,7 @@ Largest functions, by span in lines:
 
 Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.
 
-- Tests: 218 test functions counted in the source, across 1 files whose names mark them as test files.
+- Tests: 218 test functions counted in the source, across 5 files in test directories or whose names mark them as test files.
 - CI: no CI configuration was found in the project.
 - Lint and format: no lint or format configuration file was found.
 - TODO marks in the source: 77. FIXME marks: 4.
@@ -91,10 +96,10 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 ## Upstream git repo
 
-- Origin: git@github.com:wbic16/site-mirrorborn-us.git
+- Origin: /home/wbic16/github-archive/mirrors/site-mirrorborn-us.git
 - Branch: exo
-- Head commit: 738982127a135819d77c0c268a5a90c46cce339a
-- Working tree: 1 changed paths
+- Head commit: effc3abd8a57c40832bd081d03f3877f12b33a8e
+- Working tree: clean
 
 ---
 
@@ -102,16 +107,28 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.
 
+- function `cleanup_exit` (deploy/enable-404.sh:62) — Function cleanup_exit takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what
 - function `die` (deploy/enable-404.sh:11) — Function die takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is gi
 - function `info` (deploy/enable-404.sh:16) — Function info takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
-- function `restore_installed` (deploy/enable-404.sh:50) — Function restore_installed takes no inputs beyond the value it is called on, and gives back nothing; it does its work on
-- function `cleanup_exit` (deploy/enable-404.sh:62) — Function cleanup_exit takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what
-- function `transform_config` (deploy/enable-404.sh:71) — Function transform_config takes no inputs beyond the value it is called on, and gives back nothing; it does its work on 
 - function `install_rendered` (deploy/enable-404.sh:460) — Function install_rendered takes no inputs beyond the value it is called on, and gives back nothing; it does its work on 
-- function `mod9plus1` (scripts/scrub_site_coordinates.py:12) — Function mod9plus1 takes n: int and gives back int:.
-- function `transform_coordinate` (scripts/scrub_site_coordinates.py:19) — Function transform_coordinate takes match and gives back str:.
-- function `process_file` (scripts/scrub_site_coordinates.py:28) — Function process_file takes filepath: Path, dry_run: bool = True and gives back list[tuple[str, str, int]]:.
+- function `restore_installed` (deploy/enable-404.sh:50) — Function restore_installed takes no inputs beyond the value it is called on, and gives back nothing; it does its work on
+- function `transform_config` (deploy/enable-404.sh:71) — Function transform_config takes no inputs beyond the value it is called on, and gives back nothing; it does its work on 
 - function `main` (scripts/scrub_site_coordinates.py:46) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `mod9plus1` (scripts/scrub_site_coordinates.py:12) — Function mod9plus1 takes n: int and gives back int:.
+- function `process_file` (scripts/scrub_site_coordinates.py:28) — Function process_file takes filepath: Path, dry_run: bool = True and gives back list[tuple[str, str, int]]:.
+- function `transform_coordinate` (scripts/scrub_site_coordinates.py:19) — Function transform_coordinate takes match and gives back str:.
+
+---
+
+## function — cleanup_exit
+
+Found in deploy/enable-404.sh at line 62.
+
+Signature: `cleanup_exit()`
+
+What it does: Function cleanup_exit takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
 
 ---
 
@@ -139,6 +156,18 @@ What it does: Function info takes no inputs beyond the value it is called on, an
 
 ---
 
+## function — install_rendered
+
+Found in deploy/enable-404.sh at line 460.
+
+Signature: `install_rendered()`
+
+What it does: Function install_rendered takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
 ## function — restore_installed
 
 Found in deploy/enable-404.sh at line 50.
@@ -146,18 +175,6 @@ Found in deploy/enable-404.sh at line 50.
 Signature: `restore_installed()`
 
 What it does: Function restore_installed takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — cleanup_exit
-
-Found in deploy/enable-404.sh at line 62.
-
-Signature: `cleanup_exit()`
-
-What it does: Function cleanup_exit takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -175,13 +192,13 @@ What it does: Function transform_config takes no inputs beyond the value it is c
 
 ---
 
-## function — install_rendered
+## function — main
 
-Found in deploy/enable-404.sh at line 460.
+Found in scripts/scrub_site_coordinates.py at line 46.
 
-Signature: `install_rendered()`
+Signature: `def main():`
 
-What it does: Function install_rendered takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -199,18 +216,6 @@ What it does: Function mod9plus1 takes n: int and gives back int:.
 
 ---
 
-## function — transform_coordinate
-
-Found in scripts/scrub_site_coordinates.py at line 19.
-
-Signature: `def transform_coordinate(match) -> str:`
-
-What it does: Function transform_coordinate takes match and gives back str:.
-
-(Where these words came from: signature.)
-
----
-
 ## function — process_file
 
 Found in scripts/scrub_site_coordinates.py at line 28.
@@ -223,12 +228,18 @@ What it does: Function process_file takes filepath: Path, dry_run: bool = True a
 
 ---
 
-## function — main
+## function — transform_coordinate
 
-Found in scripts/scrub_site_coordinates.py at line 46.
+Found in scripts/scrub_site_coordinates.py at line 19.
 
-Signature: `def main():`
+Signature: `def transform_coordinate(match) -> str:`
 
-What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+What it does: Function transform_coordinate takes match and gives back str:.
 
 (Where these words came from: signature.)
+
+---
+
+## Provenance
+
+This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/site-mirrorborn-us/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.

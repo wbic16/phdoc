@@ -1,8 +1,9 @@
+delta-format 3
 Commit b57d6d21c792 by Theia <theia@mirrorborn.us> on 2026-11-15 (EE 0).
 
 Subject: HoloPhext 0.1.0: layer2 over phext — mmap lattice, async I/O, update dispatch, ACID multi-scroll transactions
 
-Public items: 66 added, 0 removed, 0 changed. Dependencies: # tree; then this becomes `libphext added at 0.6.2"`.; libphext added at (path or git); memmap2 added at 0.9; tokio added at 1. Code lines after this commit: 1032.
+Public items: 66 added, 0 removed, 0 changed. Dependencies: libphext [dependencies] added at (path or git); memmap2 [dependencies] added at 0.9; tokio [dependencies] added at 1. Code lines after this commit: 1032.
 
 This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
 
@@ -10,76 +11,91 @@ commit b57d6d21c7925c6d0a59a90b54982fc90a2e2cff
 parent none
 author Theia <theia@mirrorborn.us>
 date 1794781359 2026-11-15
-dep+ Cargo.toml :: # tree; then this becomes `libphext :: 0.6.2"`.
-dep+ Cargo.toml :: libphext :: (path or git)
-dep+ Cargo.toml :: memmap2 :: 0.9
-dep+ Cargo.toml :: tokio :: 1
-item+ struct src/compat.rs :: LatticeStore :: pub struct LatticeStore { ::  :: awaiting :: api
-item+ function src/compat.rs :: LatticeStore::core :: pub fn core(&mut self) -> &mut Core { :: Access to the underlying core, for servers that want the transactional interface alongside the lattice surface. :: direct :: api
-item+ function src/compat.rs :: LatticeStore::delete_scroll :: pub fn delete_scroll(&mut self, coord: Coordinate) { :: Function LatticeStore::delete_scroll takes &mut self, coord: Coordinate. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
-item+ function src/compat.rs :: LatticeStore::has_scroll :: pub fn has_scroll(&self, coord: &Coordinate) -> bool { :: Function LatticeStore::has_scroll takes &self, coord: &Coordinate. It gives back bool. :: inferred :: api
-item+ function src/compat.rs :: LatticeStore::is_dirty :: pub fn is_dirty(&self) -> bool { :: Function LatticeStore::is_dirty takes no inputs beyond the value it is called on. It gives back bool. :: inferred :: api
-item+ function src/compat.rs :: LatticeStore::open :: pub fn open<P: AsRef<Path>>(path: P) -> io::Result<LatticeStore> { :: Function LatticeStore::open takes path: P. It gives back io::Result<LatticeStore>. :: inferred :: api
-item+ function src/compat.rs :: LatticeStore::path :: pub fn path(&self) -> &Path { :: Function LatticeStore::path takes no inputs beyond the value it is called on. It gives back &Path. :: inferred :: api
-item+ function src/compat.rs :: LatticeStore::pending_changes :: pub fn pending_changes(&self) -> usize { :: Function LatticeStore::pending_changes takes no inputs beyond the value it is called on. It gives back usize. :: inferred :: api
-item+ function src/compat.rs :: LatticeStore::populated_coordinates :: pub fn populated_coordinates(&self) -> Vec<Coordinate> { :: Function LatticeStore::populated_coordinates takes no inputs beyond the value it is called on. It gives back Vec<Coordinate>. :: inferred :: api
-item+ function src/compat.rs :: LatticeStore::read_scroll :: pub fn read_scroll(&self, coord: &Coordinate) -> Option<String> { :: Function LatticeStore::read_scroll takes &self, coord: &Coordinate. It gives back Option<String>. :: inferred :: api
-item+ function src/compat.rs :: LatticeStore::revert :: pub fn revert(&mut self) { :: Function LatticeStore::revert takes no inputs beyond the value it is called on. Its return type is the unit value, which the signature leaves unwritten. :: inferred :: api
-item+ function src/compat.rs :: LatticeStore::save :: pub fn save(&mut self) -> io::Result<()> { :: Commits the staged changes as one transaction, then checkpoints — after `save`, the base file at `path()` is the complete merged document, as with `MappedLattice::save`. :: direct :: api
-item+ function src/compat.rs :: LatticeStore::scroll_count :: pub fn scroll_count(&self) -> usize { :: Function LatticeStore::scroll_count takes no inputs beyond the value it is called on. It gives back usize. :: inferred :: api
-item+ function src/compat.rs :: LatticeStore::to_phext_bytes :: pub fn to_phext_bytes(&self) -> Vec<u8> { :: The merged document (base + committed overlay + staged), serialized — `MappedLattice::to_phext_bytes`. :: direct :: api
-item+ function src/compat.rs :: LatticeStore::write_scroll :: pub fn write_scroll(&mut self, coord: Coordinate, content: String) -> bool { :: Function LatticeStore::write_scroll takes &mut self, coord: Coordinate, content: String. It gives back bool. :: inferred :: api
-item+ struct src/core.rs :: BaseLattice :: pub struct BaseLattice { :: The read-only memory-mapped base lattice. :: direct :: api
-item+ function src/core.rs :: BaseLattice::bytes :: pub fn bytes(&self) -> &[u8] { :: Function BaseLattice::bytes takes no inputs beyond the value it is called on. It gives back &[u8]. :: inferred :: api
-item+ function src/core.rs :: BaseLattice::coordinates :: pub fn coordinates(&self) -> &[Coordinate] { :: Function BaseLattice::coordinates takes no inputs beyond the value it is called on. It gives back &[Coordinate]. :: inferred :: api
-item+ function src/core.rs :: BaseLattice::open :: pub fn open(path: &Path) -> io::Result<BaseLattice> { :: Function BaseLattice::open takes path: &Path. It gives back io::Result<BaseLattice>. :: inferred :: api
-item+ function src/core.rs :: BaseLattice::read_scroll :: pub fn read_scroll(&self, coord: &Coordinate) -> Option<String> { :: Function BaseLattice::read_scroll takes &self, coord: &Coordinate. It gives back Option<String>. :: inferred :: api
-item+ struct src/core.rs :: Core :: pub struct Core { :: The synchronous engine. The async interface drives one `Core` from a single writer task; the compat facade drives it directly. :: direct :: api
-item+ function src/core.rs :: Core::base_path :: pub fn base_path(&self) -> &Path { :: Function Core::base_path takes no inputs beyond the value it is called on. It gives back &Path. :: inferred :: api
-item+ function src/core.rs :: Core::checkpoint :: pub fn checkpoint(&mut self) -> io::Result<()> { :: Folds the overlay into the base file (temp + sync + rename + directory sync), remaps the base, and restarts the WAL with only its meta scroll. Crash between the rename and the WAL rewrite is safe: replaying already-folded transactions onto the new base is idempotent, because ops are absolute. :: direct :: api
-item+ function src/core.rs :: Core::checkpoint_seq :: pub fn checkpoint_seq(&self) -> u64 { :: Function Core::checkpoint_seq takes no inputs beyond the value it is called on. It gives back u64. :: inferred :: api
-item+ function src/core.rs :: Core::commit_batch :: pub fn commit_batch(&mut self, txns: Vec<Txn>) -> io::Result<Vec<u64>> { :: Commits a batch of transactions: all of them are serialized into the WAL, written as one suffix, and synced ONCE; only then is each transaction applied, in order, one overlay swap per transaction. Returns the sequence of each transaction. This is the group-commit point the async writer drives. :: direct :: api
-item+ function src/core.rs :: Core::open :: pub fn open(base_path: &Path) -> io::Result<Core> { :: Function Core::open takes base_path: &Path. It gives back io::Result<Core>. :: inferred :: api
-item+ function src/core.rs :: Core::seq :: pub fn seq(&self) -> u64 { :: Function Core::seq takes no inputs beyond the value it is called on. It gives back u64. :: inferred :: api
-item+ function src/core.rs :: Core::wal_path :: pub fn wal_path(&self) -> &Path { :: Function Core::wal_path takes no inputs beyond the value it is called on. It gives back &Path. :: inferred :: api
-item+ enum src/core.rs :: Op :: pub enum Op { :: One write inside a transaction. :: direct :: api
-item+ struct src/core.rs :: Shared :: pub struct Shared { :: Shared, snapshot-able read state. Writers swap Arcs; readers clone them into a `Snapshot` and are thereafter immune to new commits. :: direct :: api
-item+ function src/core.rs :: Shared::seq :: pub fn seq(&self) -> u64 { :: Function Shared::seq takes no inputs beyond the value it is called on. It gives back u64. :: inferred :: api
-item+ function src/core.rs :: Shared::snapshot :: pub fn snapshot(&self) -> Snapshot { :: Function Shared::snapshot takes no inputs beyond the value it is called on. It gives back Snapshot. :: inferred :: api
-item+ struct src/core.rs :: Snapshot :: pub struct Snapshot { :: A frozen read view at one sequence number. :: direct :: api
-item+ function src/core.rs :: Snapshot::base_bytes :: pub fn base_bytes(&self) -> &[u8] { :: The raw bytes of the base document under this snapshot. :: direct :: api
-item+ function src/core.rs :: Snapshot::contains :: pub fn contains(&self, coord: &Coordinate) -> bool { :: Function Snapshot::contains takes &self, coord: &Coordinate. It gives back bool. :: inferred :: api
-item+ function src/core.rs :: Snapshot::coordinates :: pub fn coordinates(&self) -> Vec<Coordinate> { :: Every populated coordinate in this snapshot, ascending. :: direct :: api
-item+ function src/core.rs :: Snapshot::get :: pub fn get(&self, coord: &Coordinate) -> Option<String> { :: Function Snapshot::get takes &self, coord: &Coordinate. It gives back Option<String>. :: inferred :: api
-item+ function src/core.rs :: Snapshot::seq :: pub fn seq(&self) -> u64 { :: Function Snapshot::seq takes no inputs beyond the value it is called on. It gives back u64. :: inferred :: api
-item+ struct src/core.rs :: Txn :: pub struct Txn { :: A multi-scroll transaction: a set of ops applied atomically or not at all. :: direct :: api
-item+ function src/core.rs :: Txn::delete :: pub fn delete(mut self, coord: Coordinate) -> Txn { :: Function Txn::delete takes mut self, coord: Coordinate. It gives back Txn. :: inferred :: api
-item+ function src/core.rs :: Txn::is_empty :: pub fn is_empty(&self) -> bool { :: Function Txn::is_empty takes no inputs beyond the value it is called on. It gives back bool. :: inferred :: api
-item+ function src/core.rs :: Txn::new :: pub fn new() -> Txn { :: Function Txn::new takes no inputs beyond the value it is called on. It gives back Txn. :: inferred :: api
-item+ function src/core.rs :: Txn::set :: pub fn set(mut self, coord: Coordinate, content: &str) -> Txn { :: Function Txn::set takes mut self, coord: Coordinate, content: &str. It gives back Txn. :: inferred :: api
-item+ struct src/index.rs :: LatticeIndex :: pub struct LatticeIndex { :: Coordinate → span index over one immutable phext buffer, plus the coordinates in ascending order for range walks. :: direct :: api
-item+ function src/index.rs :: LatticeIndex::build :: pub fn build(buffer: &[u8]) -> LatticeIndex { :: One pass over `buffer`. Empty runs between delimiter bytes are addressing, not scrolls, and get no span (a scroll exists iff it holds at least one byte — the phext definition). :: direct :: api
-item+ function src/index.rs :: LatticeIndex::contains :: pub fn contains(&self, coord: &Coordinate) -> bool { :: Function LatticeIndex::contains takes &self, coord: &Coordinate. It gives back bool. :: inferred :: api
-item+ function src/index.rs :: LatticeIndex::coordinates :: pub fn coordinates(&self) -> &[Coordinate] { :: Function LatticeIndex::coordinates takes no inputs beyond the value it is called on. It gives back &[Coordinate]. :: inferred :: api
-item+ function src/index.rs :: LatticeIndex::get :: pub fn get(&self, coord: &Coordinate) -> Option<&ScrollSpan> { :: Function LatticeIndex::get takes &self, coord: &Coordinate. It gives back Option<&ScrollSpan>. :: inferred :: api
-item+ function src/index.rs :: LatticeIndex::next_populated :: pub fn next_populated(&self, coord: &Coordinate) -> Option<Coordinate> { :: The first populated coordinate strictly after `coord`. :: direct :: api
-item+ function src/index.rs :: LatticeIndex::scroll_count :: pub fn scroll_count(&self) -> usize { :: Function LatticeIndex::scroll_count takes no inputs beyond the value it is called on. It gives back usize. :: inferred :: api
-item+ struct src/index.rs :: ScrollSpan :: pub struct ScrollSpan { :: A byte range inside the mapped buffer holding one scroll's text. :: direct :: api
-item+ function src/index.rs :: ScrollSpan::is_empty :: pub fn is_empty(&self) -> bool { :: Function ScrollSpan::is_empty takes no inputs beyond the value it is called on. It gives back bool. :: inferred :: api
-item+ function src/index.rs :: ScrollSpan::len :: pub fn len(&self) -> usize { :: Function ScrollSpan::len takes no inputs beyond the value it is called on. It gives back usize. :: inferred :: api
-item+ enum src/lib.rs :: Error :: pub enum Error { :: Errors from the async interface. :: direct :: api
-item+ struct src/lib.rs :: HoloPhext :: pub struct HoloPhext { :: An open HoloPhext store: an async handle over one `Core`. :: direct :: api
-item+ function src/lib.rs :: HoloPhext::checkpoint :: pub async fn checkpoint(&self) -> Result<()> { :: Folds all committed state into the base document and restarts the WAL (see `Core::checkpoint`). :: direct :: api
-item+ function src/lib.rs :: HoloPhext::commit :: pub async fn commit(&self, txn: Txn) -> Result<u64> { :: Commits one transaction atomically; resolves with its sequence number once the WAL write is synced and the transaction is visible to new snapshots. :: direct :: api
-item+ function src/lib.rs :: HoloPhext::open :: pub async fn open(base_path: &Path) -> Result<HoloPhext> { :: Opens (creating if needed) the store whose base document is at `base_path`; the WAL lives beside it. Recovery runs here: valid committed transactions replay, a torn tail is truncated. :: direct :: api
-item+ function src/lib.rs :: HoloPhext::read :: pub fn read(&self, coord: &Coordinate) -> Option<String> { :: Reads one scroll from a fresh snapshot. :: direct :: api
-item+ function src/lib.rs :: HoloPhext::seq :: pub fn seq(&self) -> u64 { :: The latest committed sequence. :: direct :: api
-item+ function src/lib.rs :: HoloPhext::snapshot :: pub fn snapshot(&self) -> Snapshot { :: A frozen read view at the current sequence. Cheap: two Arc clones. The snapshot never observes a partial transaction. :: direct :: api
-item+ function src/lib.rs :: HoloPhext::subscribe :: pub fn subscribe(&self) -> broadcast::Receiver<Update> { :: Subscribes to committed updates, in commit order. Lagging receivers skip (broadcast semantics) — a subscriber that must not miss changes should re-snapshot on `Lagged`. :: direct :: api
-item+ type src/lib.rs :: Result :: pub type Result<T> = std::result::Result<T, Error>; :: A type name, Result, that stands for std::result::Result<T, Error>. :: inferred :: api
-item+ struct src/lib.rs :: Update :: pub struct Update { :: One committed transaction, dispatched to subscribers in order. :: direct :: api
-item+ re-export src/lib.rs :: core::{Core, Op, Snapshot, Txn} :: pub use core::{Core, Op, Snapshot, Txn}; :: A re-export: core::{Core, Op, Snapshot, Txn} is made reachable through this module, so other code can use it from here. :: inferred :: api
-item+ re-export src/lib.rs :: index::LatticeIndex :: pub use index::LatticeIndex; :: A re-export: index::LatticeIndex is made reachable through this module, so other code can use it from here. :: inferred :: api
+dep+ Cargo.toml :: libphext [dependencies] :: (path or git)
+dep+ Cargo.toml :: memmap2 [dependencies] :: 0.9
+dep+ Cargo.toml :: tokio [dependencies] :: 1
+depmeta Cargo.toml :: Rust (cargo) :: MIT :: 13
+item+ function src/compat.rs :: LatticeStore::open :: pub fn open<P: AsRef<Path>>(path: P) -> io::Result<LatticeStore> { :: Function LatticeStore::open takes path: P and gives back io::Result<LatticeStore>. :: signature :: 42 :: 0
+item+ function src/compat.rs :: core :: pub fn core(&mut self) -> &mut Core { :: Access to the underlying core, for servers that want the transactional interface alongside the lattice surface. :: doc comment :: 149 :: 1
+item+ function src/compat.rs :: delete_scroll :: pub fn delete_scroll(&mut self, coord: Coordinate) { :: Function delete_scroll takes &mut self, coord: Coordinate and gives back nothing; it does its work on what it is given. :: signature :: 63 :: 0
+item+ function src/compat.rs :: has_scroll :: pub fn has_scroll(&self, coord: &Coordinate) -> bool { :: Function has_scroll takes &self, coord: &Coordinate and gives back bool. :: signature :: 67 :: 0
+item+ function src/compat.rs :: is_dirty :: pub fn is_dirty(&self) -> bool { :: Function is_dirty takes no inputs beyond the value it is called on, and gives back bool. :: signature :: 93 :: 0
+item+ function src/compat.rs :: path :: pub fn path(&self) -> &Path { :: Function path takes no inputs beyond the value it is called on, and gives back &Path. :: signature :: 143 :: 0
+item+ function src/compat.rs :: pending_changes :: pub fn pending_changes(&self) -> usize { :: Function pending_changes takes no inputs beyond the value it is called on, and gives back usize. :: signature :: 97 :: 0
+item+ function src/compat.rs :: populated_coordinates :: pub fn populated_coordinates(&self) -> Vec<Coordinate> { :: Function populated_coordinates takes no inputs beyond the value it is called on, and gives back Vec<Coordinate>. :: signature :: 71 :: 0
+item+ function src/compat.rs :: read_scroll :: pub fn read_scroll(&self, coord: &Coordinate) -> Option<String> { :: Function read_scroll takes &self, coord: &Coordinate and gives back Option<String>. :: signature :: 47 :: 0
+item+ function src/compat.rs :: revert :: pub fn revert(&mut self) { :: Function revert takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given. :: signature :: 101 :: 0
+item+ function src/compat.rs :: save :: pub fn save(&mut self) -> io::Result<()> { :: Commits the staged changes as one transaction, then checkpoints — after `save`, the base file at `path()` is the complete merged document, as with `MappedLattice::save`. :: doc comment :: 108 :: 1
+item+ function src/compat.rs :: scroll_count :: pub fn scroll_count(&self) -> usize { :: Function scroll_count takes no inputs beyond the value it is called on, and gives back usize. :: signature :: 89 :: 0
+item+ function src/compat.rs :: to_phext_bytes :: pub fn to_phext_bytes(&self) -> Vec<u8> { :: The merged document (base + committed overlay + staged), serialized — `MappedLattice::to_phext_bytes`. :: doc comment :: 121 :: 1
+item+ function src/compat.rs :: write_scroll :: pub fn write_scroll(&mut self, coord: Coordinate, content: String) -> bool { :: Function write_scroll takes &mut self, coord: Coordinate, content: String and gives back bool. :: signature :: 54 :: 0
+item+ struct src/compat.rs :: LatticeStore :: pub struct LatticeStore { :: A data shape named LatticeStore. The scanner did not read its fields. :: signature :: 35 :: 0
+item+ enum src/core.rs :: Op :: pub enum Op { :: One write inside a transaction. :: doc comment :: 38 :: 1
+item+ function src/core.rs :: BaseLattice::open :: pub fn open(path: &Path) -> io::Result<BaseLattice> { :: Function BaseLattice::open takes path: &Path and gives back io::Result<BaseLattice>. :: signature :: 74 :: 0
+item+ function src/core.rs :: Core::open :: pub fn open(base_path: &Path) -> io::Result<Core> { :: Function Core::open takes base_path: &Path and gives back io::Result<Core>. :: signature :: 222 :: 0
+item+ function src/core.rs :: Core::seq :: pub fn seq(&self) -> u64 { :: Function Core::seq takes no inputs beyond the value it is called on, and gives back u64. :: signature :: 346 :: 0
+item+ function src/core.rs :: Shared::snapshot :: pub fn snapshot(&self) -> Snapshot { :: Function Shared::snapshot takes no inputs beyond the value it is called on, and gives back Snapshot. :: signature :: 112 :: 0
+item+ function src/core.rs :: Snapshot::seq :: pub fn seq(&self) -> u64 { :: Function Snapshot::seq takes no inputs beyond the value it is called on, and gives back u64. :: signature :: 133 :: 0
+item+ function src/core.rs :: Txn::new :: pub fn new() -> Txn { :: Function Txn::new takes no inputs beyond the value it is called on, and gives back Txn. :: signature :: 51 :: 0
+item+ function src/core.rs :: base_bytes :: pub fn base_bytes(&self) -> &[u8] { :: The raw bytes of the base document under this snapshot. :: doc comment :: 138 :: 1
+item+ function src/core.rs :: base_path :: pub fn base_path(&self) -> &Path { :: Function base_path takes no inputs beyond the value it is called on, and gives back &Path. :: signature :: 358 :: 0
+item+ function src/core.rs :: bytes :: pub fn bytes(&self) -> &[u8] { :: Function bytes takes no inputs beyond the value it is called on, and gives back &[u8]. :: signature :: 94 :: 0
+item+ function src/core.rs :: checkpoint :: pub fn checkpoint(&mut self) -> io::Result<()> { :: Folds the overlay into the base file (temp + sync + rename + directory sync), remaps the base, and restarts the WAL with only its meta scroll. Crash between the rename and the WAL rewrite is safe: replaying already-folded transactions onto the new base is idempotent, because ops are absolute. :: doc comment :: 439 :: 1
+item+ function src/core.rs :: checkpoint_seq :: pub fn checkpoint_seq(&self) -> u64 { :: Function checkpoint_seq takes no inputs beyond the value it is called on, and gives back u64. :: signature :: 350 :: 0
+item+ function src/core.rs :: commit_batch :: pub fn commit_batch(&mut self, txns: Vec<Txn>) -> io::Result<Vec<u64>> { :: Commits a batch of transactions: all of them are serialized into the WAL, written as one suffix, and synced ONCE; only then is each transaction applied, in order, one overlay swap per transaction. Returns the sequence of each transaction. This is the group-commit point the async writer drives. :: doc comment :: 367 :: 1
+item+ function src/core.rs :: contains :: pub fn contains(&self, coord: &Coordinate) -> bool { :: Function contains takes &self, coord: &Coordinate and gives back bool. :: signature :: 149 :: 0
+item+ function src/core.rs :: coordinates :: pub fn coordinates(&self) -> Vec<Coordinate> { :: Every populated coordinate in this snapshot, ascending. :: doc comment :: 154 :: 1
+item+ function src/core.rs :: coordinates :: pub fn coordinates(&self) -> &[Coordinate] { :: Function coordinates takes no inputs beyond the value it is called on, and gives back &[Coordinate]. :: signature :: 98 :: 0
+item+ function src/core.rs :: delete :: pub fn delete(mut self, coord: Coordinate) -> Txn { :: Function delete takes mut self, coord: Coordinate and gives back Txn. :: signature :: 58 :: 0
+item+ function src/core.rs :: get :: pub fn get(&self, coord: &Coordinate) -> Option<String> { :: Function get takes &self, coord: &Coordinate and gives back Option<String>. :: signature :: 142 :: 0
+item+ function src/core.rs :: is_empty :: pub fn is_empty(&self) -> bool { :: Function is_empty takes no inputs beyond the value it is called on, and gives back bool. :: signature :: 62 :: 0
+item+ function src/core.rs :: read_scroll :: pub fn read_scroll(&self, coord: &Coordinate) -> Option<String> { :: Function read_scroll takes &self, coord: &Coordinate and gives back Option<String>. :: signature :: 88 :: 0
+item+ function src/core.rs :: seq :: pub fn seq(&self) -> u64 { :: Function seq takes no inputs beyond the value it is called on, and gives back u64. :: signature :: 120 :: 0
+item+ function src/core.rs :: set :: pub fn set(mut self, coord: Coordinate, content: &str) -> Txn { :: Function set takes mut self, coord: Coordinate, content: &str and gives back Txn. :: signature :: 54 :: 0
+item+ function src/core.rs :: wal_path :: pub fn wal_path(&self) -> &Path { :: Function wal_path takes no inputs beyond the value it is called on, and gives back &Path. :: signature :: 354 :: 0
+item+ struct src/core.rs :: BaseLattice :: pub struct BaseLattice { :: The read-only memory-mapped base lattice. :: doc comment :: 68 :: 1
+item+ struct src/core.rs :: Core :: pub struct Core { :: The synchronous engine. The async interface drives one `Core` from a single writer task; the compat facade drives it directly. :: doc comment :: 211 :: 1
+item+ struct src/core.rs :: Shared :: pub struct Shared { :: Shared, snapshot-able read state. Writers swap Arcs; readers clone them into a `Snapshot` and are thereafter immune to new commits. :: doc comment :: 105 :: 1
+item+ struct src/core.rs :: Snapshot :: pub struct Snapshot { :: A frozen read view at one sequence number. :: doc comment :: 126 :: 1
+item+ struct src/core.rs :: Txn :: pub struct Txn { :: A multi-scroll transaction: a set of ops applied atomically or not at all. :: doc comment :: 46 :: 1
+item+ function src/index.rs :: LatticeIndex::build :: pub fn build(buffer: &[u8]) -> LatticeIndex { :: One pass over `buffer`. Empty runs between delimiter bytes are addressing, not scrolls, and get no span (a scroll exists iff it holds at least one byte — the phext definition). :: doc comment :: 57 :: 1
+item+ function src/index.rs :: ScrollSpan::len :: pub fn len(&self) -> usize { :: Function ScrollSpan::len takes no inputs beyond the value it is called on, and gives back usize. :: signature :: 18 :: 0
+item+ function src/index.rs :: contains :: pub fn contains(&self, coord: &Coordinate) -> bool { :: Function contains takes &self, coord: &Coordinate and gives back bool. :: signature :: 86 :: 0
+item+ function src/index.rs :: coordinates :: pub fn coordinates(&self) -> &[Coordinate] { :: Function coordinates takes no inputs beyond the value it is called on, and gives back &[Coordinate]. :: signature :: 94 :: 0
+item+ function src/index.rs :: get :: pub fn get(&self, coord: &Coordinate) -> Option<&ScrollSpan> { :: Function get takes &self, coord: &Coordinate and gives back Option<&ScrollSpan>. :: signature :: 82 :: 0
+item+ function src/index.rs :: is_empty :: pub fn is_empty(&self) -> bool { :: Function is_empty takes no inputs beyond the value it is called on, and gives back bool. :: signature :: 21 :: 0
+item+ function src/index.rs :: next_populated :: pub fn next_populated(&self, coord: &Coordinate) -> Option<Coordinate> { :: The first populated coordinate strictly after `coord`. :: doc comment :: 99 :: 1
+item+ function src/index.rs :: scroll_count :: pub fn scroll_count(&self) -> usize { :: Function scroll_count takes no inputs beyond the value it is called on, and gives back usize. :: signature :: 90 :: 0
+item+ struct src/index.rs :: LatticeIndex :: pub struct LatticeIndex { :: Coordinate → span index over one immutable phext buffer, plus the coordinates in ascending order for range walks. :: doc comment :: 29 :: 1
+item+ struct src/index.rs :: ScrollSpan :: pub struct ScrollSpan { :: A byte range inside the mapped buffer holding one scroll's text. :: doc comment :: 12 :: 1
+item+ enum src/lib.rs :: Error :: pub enum Error { :: Errors from the async interface. :: doc comment :: 44 :: 1
+item+ function src/lib.rs :: HoloPhext::open :: pub async fn open(base_path: &Path) -> Result<HoloPhext> { :: Opens (creating if needed) the store whose base document is at `base_path`; the WAL lives beside it. Recovery runs here: valid committed transactions replay, a torn tail is truncated. :: doc comment :: 92 :: 1
+item+ function src/lib.rs :: checkpoint :: pub async fn checkpoint(&self) -> Result<()> { :: Folds all committed state into the base document and restarts the WAL (see `Core::checkpoint`). :: doc comment :: 163 :: 1
+item+ function src/lib.rs :: commit :: pub async fn commit(&self, txn: Txn) -> Result<u64> { :: Commits one transaction atomically; resolves with its sequence number once the WAL write is synced and the transaction is visible to new snapshots. :: doc comment :: 155 :: 1
+item+ function src/lib.rs :: read :: pub fn read(&self, coord: &Coordinate) -> Option<String> { :: Reads one scroll from a fresh snapshot. :: doc comment :: 176 :: 1
+item+ function src/lib.rs :: seq :: pub fn seq(&self) -> u64 { :: The latest committed sequence. :: doc comment :: 181 :: 1
+item+ function src/lib.rs :: snapshot :: pub fn snapshot(&self) -> Snapshot { :: A frozen read view at the current sequence. Cheap: two Arc clones. The snapshot never observes a partial transaction. :: doc comment :: 171 :: 1
+item+ function src/lib.rs :: subscribe :: pub fn subscribe(&self) -> broadcast::Receiver<Update> { :: Subscribes to committed updates, in commit order. Lagging receivers skip (broadcast semantics) — a subscriber that must not miss changes should re-snapshot on `Lagged`. :: doc comment :: 188 :: 1
+item+ re-export src/lib.rs :: core::{Core, Op, Snapshot, Txn} :: pub use core::{Core, Op, Snapshot, Txn}; :: A re-export: core::{Core, Op, Snapshot, Txn} is made reachable through this module, so other code can use it from here. :: signature :: 34 :: 0
+item+ re-export src/lib.rs :: index::LatticeIndex :: pub use index::LatticeIndex; :: A re-export: index::LatticeIndex is made reachable through this module, so other code can use it from here. :: signature :: 35 :: 0
+item+ struct src/lib.rs :: HoloPhext :: pub struct HoloPhext { :: An open HoloPhext store: an async handle over one `Core`. :: doc comment :: 82 :: 1
+item+ struct src/lib.rs :: Update :: pub struct Update { :: One committed transaction, dispatched to subscribers in order. :: doc comment :: 71 :: 1
+item+ type src/lib.rs :: Result :: pub type Result<T> = std::result::Result<T, Error>; :: A type name, Result, that stands for another type. :: signature :: 67 :: 0
+quality 8 2 0 0
+fncount 77
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/holo-phext.git
+branch main
+largest-file src/core.rs :: 477
+largest-file src/lib.rs :: 191
+largest-file tests/acid.rs :: 174
+largest-file src/compat.rs :: 152
+largest-file DESIGN.md :: 116
+largest-fn open :: src/core.rs :: 94
+largest-fn commit_batch :: src/core.rs :: 72
+largest-fn open :: src/lib.rs :: 63
+largest-fn lattice_store_mirrors_mapped_lattice :: tests/compat.rs :: 44
+largest-fn checkpoint :: src/core.rs :: 39
 stat Markdown files 2 total 151 blank 22 comment 0 code 129
 stat Rust files 6 total 1163 blank 107 comment 164 code 892
 stat TOML files 1 total 16 blank 1 comment 4 code 11
@@ -88,39 +104,56 @@ author+ Theia <theia@mirrorborn.us>
 
 Subject: Merge pull request #1 from wbic16/emise/index-parity
 
-Public items: 9 added, 1 removed, 8 changed. Dependencies did not change. Code lines after this commit: 1198.
+Public items: 19 added, 11 removed, 0 changed. Dependencies did not change. Code lines after this commit: 1250.
 
 commit d7d30d055109db53f7a612a56bec9d7c539530d7
 parent b57d6d21c7925c6d0a59a90b54982fc90a2e2cff
 author Will Bickford <wbic16@gmail.com>
 date 1794801944 2026-11-16
-item+ enum src/index.rs :: Dimension :: pub enum Dimension { :: The nine phext dimensions, in address order. :: direct :: api
-item~ struct src/index.rs :: LatticeIndex :: pub struct LatticeIndex { :: The lattice index: maps every populated coordinate to its byte span. :: direct :: api
-item+ function src/index.rs :: LatticeIndex::buffer_len :: pub fn buffer_len(&self) -> usize { :: Total buffer size. :: direct :: api
-item~ function src/index.rs :: LatticeIndex::build :: pub fn build(buffer: &[u8]) -> LatticeIndex { :: Build an index by scanning the raw phext bytes once. Time: O(n) in buffer length. Space: O(k) in populated scrolls. Empty runs between delimiter bytes are addressing, not scrolls, and get no span (a scroll exists iff it holds at least one byte — the phext definition). :: direct :: api
-item~ function src/index.rs :: LatticeIndex::contains :: pub fn contains(&self, coord: &Coordinate) -> bool { :: Check if a coordinate has content. :: direct :: api
-item~ function src/index.rs :: LatticeIndex::coordinates :: pub fn coordinates(&self) -> &[Coordinate] { :: All populated coordinates in document order. :: direct :: api
-item+ function src/index.rs :: LatticeIndex::coordinates_matching :: pub fn coordinates_matching<F>(&self, predicate: F) -> Vec<Coordinate> where F: Fn(&Coordinate) -> bool, { :: All populated coordinates matching a predicate — the lattice navigator's workhorse. :: direct :: api
-item+ function src/index.rs :: LatticeIndex::dimension_extent :: pub fn dimension_extent(&self, dim: Dimension) -> Vec<usize> { :: The distinct values a dimension takes across all populated coordinates, sorted. :: direct :: api
-item+ function src/index.rs :: LatticeIndex::from_entries :: pub fn from_entries(mut entries: Vec<(Coordinate, ScrollSpan)>, buffer_len: usize) -> LatticeIndex { :: Build from (coordinate, span) pairs, e.g. a persisted span table or spans recorded while serializing. Pairs are normally already in document order; otherwise they are sorted. A repeated coordinate keeps its last span. :: direct :: api
-item~ function src/index.rs :: LatticeIndex::get :: pub fn get(&self, coord: &Coordinate) -> Option<&ScrollSpan> { :: Look up the byte span for a coordinate. O(log n). :: direct :: api
-item~ function src/index.rs :: LatticeIndex::next_populated :: pub fn next_populated(&self, coord: &Coordinate) -> Option<Coordinate> { :: The next populated coordinate after `coord`, if any. :: direct :: api
-item+ function src/index.rs :: LatticeIndex::prev_populated :: pub fn prev_populated(&self, coord: &Coordinate) -> Option<Coordinate> { :: The previous populated coordinate before `coord`, if any. :: direct :: api
-item~ function src/index.rs :: LatticeIndex::scroll_count :: pub fn scroll_count(&self) -> usize { :: Number of populated scrolls. :: direct :: api
-item+ function src/index.rs :: LatticeIndex::spans :: pub fn spans(&self) -> &[ScrollSpan] { :: Spans in document order, parallel to `coordinates()`. :: direct :: api
-item~ struct src/index.rs :: ScrollSpan :: pub struct ScrollSpan { :: A scroll's location within the raw phext byte buffer. :: direct :: api
-item+ function src/index.rs :: dimension_value :: pub fn dimension_value(coord: &Coordinate, dim: Dimension) -> usize { :: The value of one dimension of a coordinate. :: direct :: api
-item+ re-export src/lib.rs :: index::{Dimension, LatticeIndex, ScrollSpan} :: pub use index::{Dimension, LatticeIndex, ScrollSpan}; :: A re-export: index::{Dimension, LatticeIndex, ScrollSpan} is made reachable through this module, so other code can use it from here. :: inferred :: api
-item- re-export src/lib.rs :: index::LatticeIndex
+item+ enum src/index.rs :: Dimension :: pub enum Dimension { :: The nine phext dimensions, in address order. :: doc comment :: 38 :: 1
+item+ function src/index.rs :: LatticeIndex::build :: pub fn build(buffer: &[u8]) -> LatticeIndex { :: Build an index by scanning the raw phext bytes once. Time: O(n) in buffer length. Space: O(k) in populated scrolls. Empty runs between delimiter bytes are addressing, not scrolls, and get no span (a scroll exists iff it holds at least one byte — the phext definition). :: doc comment :: 110 :: 1
+item+ function src/index.rs :: ScrollSpan::len :: pub fn len(&self) -> usize { :: Function ScrollSpan::len takes no inputs beyond the value it is called on, and gives back usize. :: signature :: 27 :: 0
+item+ function src/index.rs :: buffer_len :: pub fn buffer_len(&self) -> usize { :: Total buffer size. :: doc comment :: 188 :: 1
+item+ function src/index.rs :: contains :: pub fn contains(&self, coord: &Coordinate) -> bool { :: Check if a coordinate has content. :: doc comment :: 173 :: 1
+item+ function src/index.rs :: coordinates :: pub fn coordinates(&self) -> &[Coordinate] { :: All populated coordinates in document order. :: doc comment :: 193 :: 1
+item+ function src/index.rs :: coordinates_matching :: pub fn coordinates_matching<F>(&self, predicate: F) -> Vec<Coordinate> where F: Fn(&Coordinate) -> bool, { :: All populated coordinates matching a predicate — the lattice navigator's workhorse. :: doc comment :: 220 :: 1
+item+ function src/index.rs :: dimension_extent :: pub fn dimension_extent(&self, dim: Dimension) -> Vec<usize> { :: The distinct values a dimension takes across all populated coordinates, sorted. :: doc comment :: 229 :: 1
+item+ function src/index.rs :: dimension_value :: pub fn dimension_value(coord: &Coordinate, dim: Dimension) -> usize { :: The value of one dimension of a coordinate. :: doc comment :: 51 :: 1
+item+ function src/index.rs :: from_entries :: pub fn from_entries(mut entries: Vec<(Coordinate, ScrollSpan)>, buffer_len: usize) -> LatticeIndex { :: Build from (coordinate, span) pairs, e.g. a persisted span table or spans recorded while serializing. Pairs are normally already in document order; otherwise they are sorted. A repeated coordinate keeps its last span. :: doc comment :: 151 :: 1
+item+ function src/index.rs :: get :: pub fn get(&self, coord: &Coordinate) -> Option<&ScrollSpan> { :: Look up the byte span for a coordinate. O(log n). :: doc comment :: 168 :: 1
+item+ function src/index.rs :: is_empty :: pub fn is_empty(&self) -> bool { :: Function is_empty takes no inputs beyond the value it is called on, and gives back bool. :: signature :: 31 :: 0
+item+ function src/index.rs :: next_populated :: pub fn next_populated(&self, coord: &Coordinate) -> Option<Coordinate> { :: The next populated coordinate after `coord`, if any. :: doc comment :: 198 :: 1
+item+ function src/index.rs :: prev_populated :: pub fn prev_populated(&self, coord: &Coordinate) -> Option<Coordinate> { :: The previous populated coordinate before `coord`, if any. :: doc comment :: 206 :: 1
+item+ function src/index.rs :: scroll_count :: pub fn scroll_count(&self) -> usize { :: Number of populated scrolls. :: doc comment :: 178 :: 1
+item+ function src/index.rs :: spans :: pub fn spans(&self) -> &[ScrollSpan] { :: Spans in document order, parallel to `coordinates()`. :: doc comment :: 183 :: 1
+item+ struct src/index.rs :: LatticeIndex :: pub struct LatticeIndex { :: The lattice index: maps every populated coordinate to its byte span. :: doc comment :: 67 :: 1
+item+ struct src/index.rs :: ScrollSpan :: pub struct ScrollSpan { :: A scroll's location within the raw phext byte buffer. :: doc comment :: 19 :: 1
+item- function src/index.rs :: LatticeIndex::build :: 57
+item- function src/index.rs :: ScrollSpan::len :: 18
+item- function src/index.rs :: contains :: 86
+item- function src/index.rs :: coordinates :: 94
+item- function src/index.rs :: get :: 82
+item- function src/index.rs :: is_empty :: 21
+item- function src/index.rs :: next_populated :: 99
+item- function src/index.rs :: scroll_count :: 90
+item- struct src/index.rs :: LatticeIndex :: 29
+item- struct src/index.rs :: ScrollSpan :: 12
+item+ re-export src/lib.rs :: index::{Dimension, LatticeIndex, ScrollSpan} :: pub use index::{Dimension, LatticeIndex, ScrollSpan}; :: A re-export: index::{Dimension, LatticeIndex, ScrollSpan} is made reachable through this module, so other code can use it from here. :: signature :: 35 :: 0
+item- re-export src/lib.rs :: index::LatticeIndex :: 35
+quality 14 2 0 0
+fncount 90
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/holo-phext.git
+branch main
 stat Markdown files 2 total 151 blank 22 comment 0 code 129
-stat Rust files 6 total 1381 blank 127 comment 196 code 1058
+stat Rust files 6 total 1381 blank 107 comment 164 code 1110
 stat TOML files 1 total 16 blank 1 comment 4 code 11
 author+ Will Bickford <wbic16@gmail.com>
 Commit 50accbe7b15c by Will Bickford <wbic16@gmail.com> on 2026-11-16 (EE 0).
 
 Subject: Merge pull request #3 from wbic16/emise/holo-edit-bin
 
-Public items: 4 added, 0 removed, 0 changed. Dependencies: holo-phext added at (path or git); libphext added at (path or git); sha2 added at 0.10; tokio added at 1. Code lines after this commit: 1653.
+Public items: 4 added, 0 removed, 0 changed. Dependencies: holo-phext [dependencies] added at (path or git); libphext [dependencies] added at (path or git); sha2 [dependencies] added at 0.10; tokio [dev-dependencies] added at 1. Code lines after this commit: 1653.
 
 This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
 
@@ -128,14 +161,31 @@ commit 50accbe7b15cafc2816846c4c1d6441d1d573a56
 parent d7d30d055109db53f7a612a56bec9d7c539530d7
 author Will Bickford <wbic16@gmail.com>
 date 1794802007 2026-11-16
-dep+ holo-edit/Cargo.toml :: holo-phext :: (path or git)
-dep+ holo-edit/Cargo.toml :: libphext :: (path or git)
-dep+ holo-edit/Cargo.toml :: sha2 :: 0.10
-dep+ holo-edit/Cargo.toml :: tokio :: 1
-item+ entry-point holo-edit/src/bin/holo-dump.rs :: main :: fn main() { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: inferred :: api
-item+ flag holo-edit/src/bin/holo-edit.rs :: --local :: flag --local :: A command line flag, --local. It is read by the program when the user passes it. :: inferred :: api
-item+ flag holo-edit/src/bin/holo-edit.rs :: --port :: flag --port :: A command line flag, --port. It is read by the program when the user passes it. :: inferred :: api
-item+ entry-point holo-edit/src/bin/holo-edit.rs :: main :: fn main() { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: inferred :: api
+depmeta Cargo.toml :: Rust (cargo) :: MIT :: 23
+dep+ holo-edit/Cargo.toml :: holo-phext [dependencies] :: (path or git)
+dep+ holo-edit/Cargo.toml :: libphext [dependencies] :: (path or git)
+dep+ holo-edit/Cargo.toml :: sha2 [dependencies] :: 0.10
+dep+ holo-edit/Cargo.toml :: tokio [dev-dependencies] :: 1
+depmeta holo-edit/Cargo.toml :: Rust (cargo) :: MIT :: -
+item+ entry-point holo-edit/src/bin/holo-dump.rs :: main :: fn main() { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: signature :: 19 :: 0
+item+ command holo-edit/src/bin/holo-edit.rs :: --local :: command "--local" :: A command named --local. The program runs it when the user types this word on the command line. :: signature :: 344 :: 0
+item+ command holo-edit/src/bin/holo-edit.rs :: --port :: command "--port" :: A command named --port. The program runs it when the user types this word on the command line. :: signature :: 347 :: 0
+item+ entry-point holo-edit/src/bin/holo-edit.rs :: main :: fn main() { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: signature :: 337 :: 0
+quality 14 3 0 0
+fncount 104
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/holo-phext.git
+branch main
+largest-file src/core.rs :: 477
+largest-file holo-edit/src/bin/holo-edit.rs :: 388
+largest-file src/index.rs :: 323
+largest-file src/lib.rs :: 191
+largest-file tests/acid.rs :: 174
+largest-fn route :: holo-edit/src/bin/holo-edit.rs :: 145
+largest-fn open :: src/core.rs :: 94
+largest-fn paired_commits_are_never_seen_half_applied :: holo-edit/tests/isolation.rs :: 87
+largest-fn commit_batch :: src/core.rs :: 72
+largest-fn open :: src/lib.rs :: 63
 stat Markdown files 2 total 151 blank 22 comment 0 code 129
 stat Rust files 9 total 1919 blank 155 comment 267 code 1497
 stat TOML files 2 total 35 blank 4 comment 4 code 27

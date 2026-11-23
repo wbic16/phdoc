@@ -2,24 +2,62 @@
 
 Commit acba7d10a28ef8ff2b65b48687ec5b128794bc15. 141 commits folded. Every fact here was folded from the chain's per-commit deltas.
 
-## Provenance
-
-This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/phcc/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
-
 ## Dependencies
 
 No dependencies recorded at this point.
 
 ## Authors
 
+Author counts over the 141 audited mainline commits folded to this point.
+
 - bellard <bellard> — 141 commits
 
 ## Complexity
 
-- C: 9 files, 15300 lines total, 1301 blank, 2126 comment, 11873 code
-- C header: 8 files, 550 lines total, 52 blank, 146 comment, 352 code
+The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.
 
-Declared RFCs at this point: none declared.
+- C: 9 files, 15300 lines total, 1107 blank, 1860 comment, 12333 code
+- C header: 8 files, 550 lines total, 50 blank, 138 comment, 362 code
+
+All languages: 17 files, 15850 lines total, 12695 lines of code. Functions read: 0.
+
+Largest files:
+
+- tcc.c — 8546 lines
+- tcctest.c — 1327 lines
+- bcheck.c — 888 lines
+- i386-gen.c — 888 lines
+- il-gen.c — 667 lines
+
+Largest functions, by span in lines:
+
+
+## Code quality signals
+
+Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.
+
+- Tests: 0 test functions counted in the source, across 1 files in test directories or whose names mark them as test files.
+- CI: no CI configuration was found in the project.
+- Lint and format configuration files: Makefile.
+- TODO marks in the source: 0. FIXME marks: 0.
+
+## Declared RFCs
+
+No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+
+
+## Upstream git repo
+
+- Origin: /home/wbic16/github-archive/mirrors/phcc.git
+- Branch: exo
+- Head commit: acba7d10a28ef8ff2b65b48687ec5b128794bc15
+- Working tree: the committed tree at this commit — a historical reference has no working tree
 
 ## Public methods and commands
 
+Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.
+
+
+## Provenance
+
+This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/phcc/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.

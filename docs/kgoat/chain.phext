@@ -1,3 +1,4 @@
+delta-format 3
 Commit 0ab55ae73c41 by Will Bickford <wbic16@gmail.com> on 2026-11-21 (EE 0).
 
 Subject: Initial commit
@@ -10,60 +11,71 @@ commit 0ab55ae73c414e11c871f4fd7f3da7267ad4e53e
 parent none
 author Will Bickford <wbic16@gmail.com>
 date 1795295765 2026-11-21
+quality 0 0 0 0
+fncount 0
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/kgoat.git
+branch exo
 author+ Will Bickford <wbic16@gmail.com>
 Commit caa81e669ba1 by Emise <emise@phext.io> on 2026-11-21 (EE 0).
 
 Subject: KGOAT initial tooling: ruled spec, schema, node-scroll parser, index builder
 
-Public items: 33 added, 0 removed, 0 changed. Dependencies: libphext added at 0.6.4. Code lines after this commit: 1636.
+Public items: 33 added, 0 removed, 0 changed. Dependencies: libphext [dependencies] added at 0.6.4. Code lines after this commit: 1970.
 
 commit caa81e669ba114570f845fea796dc19ebf0644b1
 parent 0ab55ae73c414e11c871f4fd7f3da7267ad4e53e
 author Emise <emise@phext.io>
 date 1795299215 2026-11-21
-dep+ Cargo.toml :: libphext :: 0.6.4
-item+ struct src/builder.rs :: Graph :: pub struct Graph { :: The folded graph: parsed nodes, schema violations, and the derived surfaces, all calculated from the scrolls. :: direct :: api
-item+ struct src/builder.rs :: HomeInfo :: pub struct HomeInfo { :: Per-home input facts, carried into the generated Home scroll. :: direct :: api
-item+ type src/builder.rs :: NodeId :: pub type NodeId = (String, String); :: A node's identity: (home phext, coordinate) — nothing else (SPEC §2.1). :: direct :: api
-item+ struct src/builder.rs :: RegistryEntry :: pub struct RegistryEntry { :: One assay-registry entry (SPEC §5.1): one per claim-bearing unit. :: direct :: api
-item+ function src/builder.rs :: build :: pub fn build(homes: &[(String, String)]) -> Graph { :: Fold a federation of phexts into a graph. `homes` is (home name, phext text) pairs. A scroll is a node scroll iff its first content line opens with `node · `; every other scroll is material the graph sits beside (SPEC §2.5), counted but not parsed. :: direct :: api
-item+ function src/builder.rs :: render_index :: pub fn render_index(g: &Graph, stamp: &str) -> String { :: Render the generated index as a phext (SPEC §2.3): a Home scroll with the rollup and the builder's stamp, and one scroll per derived surface. `stamp` is the build's hop stamp (an ISO datetime string). :: direct :: api
-item+ flag src/main.rs :: --out :: flag --out :: A command line flag, --out. It is read by the program when the user passes it. :: inferred :: api
-item+ flag src/main.rs :: --stamp :: flag --stamp :: A command line flag, --stamp. It is read by the program when the user passes it. :: inferred :: api
-item+ entry-point src/main.rs :: main :: fn main() -> ExitCode { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: inferred :: api
-item+ enum src/schema.rs :: Basis :: pub enum Basis { :: Claim bases (SPEC §5.1). The basis constrains which statuses a claim-bearing unit may take — see [`status_legal_for_basis`]. :: direct :: api
-item+ function src/schema.rs :: Basis::name :: pub fn name(&self) -> &'static str { :: Function Basis::name takes no inputs beyond the value it is called on. It gives back &'static str. :: inferred :: api
-item+ function src/schema.rs :: Basis::parse :: pub fn parse(s: &str) -> Option<Basis> { :: Function Basis::parse takes s: &str. It gives back Option<Basis>. :: inferred :: api
-item+ const src/schema.rs :: CLAIM_BEARING_ALLOWED :: pub const CLAIM_BEARING_ALLOWED: [&str; 1] = ["derived_from"]; :: A fixed value named CLAIM_BEARING_ALLOWED, set to ["derived_from"]. :: inferred :: api
-item+ const src/schema.rs :: CLAIM_BEARING_REQUIRED :: pub const CLAIM_BEARING_REQUIRED: [&str; 2] = ["asserts", "contradicts"]; :: Edge types whose existence asserts something about the world (SPEC §5.1). A claim-bearing edge MUST carry exactly one status/basis pair and a real evidence pointer. `derived_from` MAY carry the pair (a claim's provenance is assayable); all other types MUST NOT carry it — a structural edge omits the pair rather than decorating itself with an assay it does not need (SPEC §2.2). :: direct :: api
-item+ const src/schema.rs :: EDGE_TYPES :: pub const EDGE_TYPES: [&str; 9] = [ :: Edge types (SPEC §1.3). Every type below already exists in a seed corpus. `made` is NOT an edge type: it is attribution recorded on a work's scroll (SPEC §1.2), because there is no person node for the edge to leave from. :: direct :: api
-item+ const src/schema.rs :: NODE_KINDS :: pub const NODE_KINDS: [&str; 8] = [ :: Node kinds (SPEC §1.2). Eight kinds, each supplied by a seed corpus. There is deliberately no `person` kind: KGOAT is for ideas, not people (D6, SPEC §5.2). A scroll claiming kind `person` is non-conformant. :: direct :: api
-item+ enum src/schema.rs :: Status :: pub enum Status { :: Claim statuses (SPEC §5.1), inherited from the Minimum Viable Oracle discipline whole. :: direct :: api
-item+ function src/schema.rs :: Status::name :: pub fn name(&self) -> &'static str { :: Function Status::name takes no inputs beyond the value it is called on. It gives back &'static str. :: inferred :: api
-item+ function src/schema.rs :: Status::parse :: pub fn parse(s: &str) -> Option<Status> { :: Function Status::parse takes s: &str. It gives back Option<Status>. :: inferred :: api
-item+ function src/schema.rs :: assay_permitted :: pub fn assay_permitted(ty: &str) -> bool { :: May an edge of type `ty` carry a status/basis pair at all? :: direct :: api
-item+ function src/schema.rs :: assay_required :: pub fn assay_required(ty: &str) -> bool { :: Does an edge of type `ty` require a status/basis pair? :: direct :: api
-item+ function src/schema.rs :: coordinate_well_formed :: pub fn coordinate_well_formed(s: &str) -> bool { :: Is `s` a well-formed phext coordinate string (`a.b.c/d.e.f/g.h.i`, each component ≥ 1)? Coordinates are content, not keys (SPEC §2.1); this checks form only. :: direct :: api
-item+ function src/schema.rs :: hop_stamp_well_formed :: pub fn hop_stamp_well_formed(s: &str) -> bool { :: Is `s` a well-formed hop stamp (SPEC §2.2): an ISO date `YYYY-MM-DD`, optionally followed by `T` and a time. The graph records when *it* learned a thing; hop stamps are the graph's own history (SPEC §5.2). :: direct :: api
-item+ function src/schema.rs :: is_edge_type :: pub fn is_edge_type(ty: &str) -> bool { :: Is `ty` a v1 edge type? :: direct :: api
-item+ function src/schema.rs :: is_node_kind :: pub fn is_node_kind(kind: &str) -> bool { :: Is `kind` a v1 node kind? :: direct :: api
-item+ function src/schema.rs :: max_weight :: pub fn max_weight(ty: &str) -> u8 { :: Maximum weight for an edge type. Weights are ordinal 0–3 (SPEC §1.3); `mentions` — the weakest form — is capped at 1. :: direct :: api
-item+ function src/schema.rs :: status_legal_for_basis :: pub fn status_legal_for_basis(status: Status, basis: Basis) -> bool { :: The basis→status legality table (SPEC §5.1, MVO discipline): no VERIFIED receipt, no True; a refuted claim is False/REFUTED; attributed and open material is believed by no one yet (Unknown); a construction is Fiction. :: direct :: api
-item+ function src/schema.rs :: transition_legal :: pub fn transition_legal(from: Status, to: Status) -> bool { :: Legal status transitions (SPEC §2.4, the MVO legal edges). Every transition is recorded as a history event with its evidence pointer. There is no transition into True without a receipt, and Fiction never goes directly to True. :: direct :: api
-item+ struct src/scroll.rs :: Assay :: pub struct Assay { :: A status/basis/evidence triple — the assay record of a claim-bearing unit (SPEC §5.1) — with the hop stamp of when the graph recorded it. :: direct :: api
-item+ struct src/scroll.rs :: Edge :: pub struct Edge { :: One stored outbound edge (SPEC §2.2). Edges are stored exactly once, in the source node's scroll; inbound edges are derived by the builder. :: direct :: api
-item+ struct src/scroll.rs :: Node :: pub struct Node { :: A parsed node scroll. Identity is placement: `coord` is the scroll's coordinate inside its home phext, supplied by the caller (SPEC §2.1). :: direct :: api
-item+ struct src/scroll.rs :: Transition :: pub struct Transition { :: A recorded status transition (SPEC §2.4). History is kept, not overwritten; the present is the builder's fold over it. :: direct :: api
-item+ function src/scroll.rs :: parse_node :: pub fn parse_node(coord: &str, text: &str) -> Result<Node, Vec<String>> { :: Parse one node scroll. `coord` is the scroll's coordinate in its home phext. On failure, returns every violation found in the scroll. :: direct :: api
-stat Markdown files 2 total 925 blank 128 comment 0 code 797
-stat Rust files 6 total 1034 blank 63 comment 142 code 829
-stat TOML files 1 total 11 blank 1 comment 0 code 10
+dep+ Cargo.toml :: libphext [dependencies] :: 0.6.4
+depmeta Cargo.toml :: Rust (cargo) :: MIT :: 3
+item+ function src/builder.rs :: build :: pub fn build(homes: &[(String, String)]) -> Graph { :: Fold a federation of phexts into a graph. `homes` is (home name, phext text) pairs. A scroll is a node scroll iff its first content line opens with `node · `; every other scroll is material the graph sits beside (SPEC §2.5), counted but not parsed. :: doc comment :: 68 :: 1
+item+ function src/builder.rs :: render_index :: pub fn render_index(g: &Graph, stamp: &str) -> String { :: Render the generated index as a phext (SPEC §2.3): a Home scroll with the rollup and the builder's stamp, and one scroll per derived surface. `stamp` is the build's hop stamp (an ISO datetime string). :: doc comment :: 158 :: 1
+item+ struct src/builder.rs :: Graph :: pub struct Graph { :: The folded graph: parsed nodes, schema violations, and the derived surfaces, all calculated from the scrolls. :: doc comment :: 43 :: 1
+item+ struct src/builder.rs :: HomeInfo :: pub struct HomeInfo { :: Per-home input facts, carried into the generated Home scroll. :: doc comment :: 22 :: 1
+item+ struct src/builder.rs :: RegistryEntry :: pub struct RegistryEntry { :: One assay-registry entry (SPEC §5.1): one per claim-bearing unit. :: doc comment :: 32 :: 1
+item+ type src/builder.rs :: NodeId :: pub type NodeId = (String, String); :: A node's identity: (home phext, coordinate) — nothing else (SPEC §2.1). :: doc comment :: 18 :: 1
+item+ command src/main.rs :: --out :: command "--out" :: A command named --out. The program runs it when the user types this word on the command line. :: signature :: 41 :: 0
+item+ command src/main.rs :: --stamp :: command "--stamp" :: A command named --stamp. The program runs it when the user types this word on the command line. :: signature :: 45 :: 0
+item+ entry-point src/main.rs :: main :: fn main() -> ExitCode { :: The entry point: the program starts here. It reads the command line and runs the command the user named. :: signature :: 33 :: 0
+item+ const src/schema.rs :: CLAIM_BEARING_ALLOWED :: pub const CLAIM_BEARING_ALLOWED: [&str; 1] = ["derived_from"]; :: A fixed value named CLAIM_BEARING_ALLOWED, set to ["derived_from"]. :: signature :: 45 :: 0
+item+ const src/schema.rs :: CLAIM_BEARING_REQUIRED :: pub const CLAIM_BEARING_REQUIRED: [&str; 2] = ["asserts", "contradicts"]; :: Edge types whose existence asserts something about the world (SPEC §5.1). A claim-bearing edge MUST carry exactly one status/basis pair and a real evidence pointer. `derived_from` MAY carry the pair (a claim's provenance is assayable); all other types MUST NOT carry it — a structural edge omits the pair rather than decorating itself with an assay it does not need (SPEC §2.2). :: doc comment :: 44 :: 1
+item+ const src/schema.rs :: EDGE_TYPES :: pub const EDGE_TYPES: [&str; 9] = [ :: Edge types (SPEC §1.3). Every type below already exists in a seed corpus. `made` is NOT an edge type: it is attribution recorded on a work's scroll (SPEC §1.2), because there is no person node for the edge to leave from. :: doc comment :: 21 :: 1
+item+ const src/schema.rs :: NODE_KINDS :: pub const NODE_KINDS: [&str; 8] = [ :: Node kinds (SPEC §1.2). Eight kinds, each supplied by a seed corpus. There is deliberately no `person` kind: KGOAT is for ideas, not people (D6, SPEC §5.2). A scroll claiming kind `person` is non-conformant. :: doc comment :: 9 :: 1
+item+ enum src/schema.rs :: Basis :: pub enum Basis { :: Claim bases (SPEC §5.1). The basis constrains which statuses a claim-bearing unit may take — see [`status_legal_for_basis`]. :: doc comment :: 100 :: 1
+item+ enum src/schema.rs :: Status :: pub enum Status { :: Claim statuses (SPEC §5.1), inherited from the Minimum Viable Oracle discipline whole. :: doc comment :: 70 :: 1
+item+ function src/schema.rs :: Basis::parse :: pub fn parse(s: &str) -> Option<Basis> { :: Function Basis::parse takes s: &str and gives back Option<Basis>. :: signature :: 112 :: 0
+item+ function src/schema.rs :: Status::parse :: pub fn parse(s: &str) -> Option<Status> { :: Function Status::parse takes s: &str and gives back Option<Status>. :: signature :: 78 :: 0
+item+ function src/schema.rs :: assay_permitted :: pub fn assay_permitted(ty: &str) -> bool { :: May an edge of type `ty` carry a status/basis pair at all? :: doc comment :: 53 :: 1
+item+ function src/schema.rs :: assay_required :: pub fn assay_required(ty: &str) -> bool { :: Does an edge of type `ty` require a status/basis pair? :: doc comment :: 48 :: 1
+item+ function src/schema.rs :: coordinate_well_formed :: pub fn coordinate_well_formed(s: &str) -> bool { :: Is `s` a well-formed phext coordinate string (`a.b.c/d.e.f/g.h.i`, each component ≥ 1)? Coordinates are content, not keys (SPEC §2.1); this checks form only. :: doc comment :: 177 :: 1
+item+ function src/schema.rs :: hop_stamp_well_formed :: pub fn hop_stamp_well_formed(s: &str) -> bool { :: Is `s` a well-formed hop stamp (SPEC §2.2): an ISO date `YYYY-MM-DD`, optionally followed by `T` and a time. The graph records when *it* learned a thing; hop stamps are the graph's own history (SPEC §5.2). :: doc comment :: 195 :: 1
+item+ function src/schema.rs :: is_edge_type :: pub fn is_edge_type(ty: &str) -> bool { :: Is `ty` a v1 edge type? :: doc comment :: 34 :: 1
+item+ function src/schema.rs :: is_node_kind :: pub fn is_node_kind(kind: &str) -> bool { :: Is `kind` a v1 node kind? :: doc comment :: 14 :: 1
+item+ function src/schema.rs :: max_weight :: pub fn max_weight(ty: &str) -> u8 { :: Maximum weight for an edge type. Weights are ordinal 0–3 (SPEC §1.3); `mentions` — the weakest form — is capped at 1. :: doc comment :: 59 :: 1
+item+ function src/schema.rs :: name :: pub fn name(&self) -> &'static str { :: Function name takes no inputs beyond the value it is called on, and gives back &'static str. :: signature :: 125 :: 0
+item+ function src/schema.rs :: name :: pub fn name(&self) -> &'static str { :: Function name takes no inputs beyond the value it is called on, and gives back &'static str. :: signature :: 87 :: 0
+item+ function src/schema.rs :: status_legal_for_basis :: pub fn status_legal_for_basis(status: Status, basis: Basis) -> bool { :: The basis→status legality table (SPEC §5.1, MVO discipline): no VERIFIED receipt, no True; a refuted claim is False/REFUTED; attributed and open material is believed by no one yet (Unknown); a construction is Fiction. :: doc comment :: 142 :: 1
+item+ function src/schema.rs :: transition_legal :: pub fn transition_legal(from: Status, to: Status) -> bool { :: Legal status transitions (SPEC §2.4, the MVO legal edges). Every transition is recorded as a history event with its evidence pointer. There is no transition into True without a receipt, and Fiction never goes directly to True. :: doc comment :: 161 :: 1
+item+ function src/scroll.rs :: parse_node :: pub fn parse_node(coord: &str, text: &str) -> Result<Node, Vec<String>> { :: Parse one node scroll. `coord` is the scroll's coordinate in its home phext. On failure, returns every violation found in the scroll. :: doc comment :: 172 :: 1
+item+ struct src/scroll.rs :: Assay :: pub struct Assay { :: A status/basis/evidence triple — the assay record of a claim-bearing unit (SPEC §5.1) — with the hop stamp of when the graph recorded it. :: doc comment :: 27 :: 1
+item+ struct src/scroll.rs :: Edge :: pub struct Edge { :: One stored outbound edge (SPEC §2.2). Edges are stored exactly once, in the source node's scroll; inbound edges are derived by the builder. :: doc comment :: 37 :: 1
+item+ struct src/scroll.rs :: Node :: pub struct Node { :: A parsed node scroll. Identity is placement: `coord` is the scroll's coordinate inside its home phext, supplied by the caller (SPEC §2.1). :: doc comment :: 62 :: 1
+item+ struct src/scroll.rs :: Transition :: pub struct Transition { :: A recorded status transition (SPEC §2.4). History is kept, not overwritten; the present is the builder's fold over it. :: doc comment :: 52 :: 1
+quality 7 1 0 0
+fncount 30
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/kgoat.git
+branch exo
+stat Markdown files 2 total 925 blank 0 comment 0 code 925
+stat Rust files 6 total 1034 blank 0 comment 0 code 1034
+stat TOML files 1 total 11 blank 0 comment 0 code 11
 author+ Emise <emise@phext.io>
 Commit 54e441c6ecdf by Will Bickford <wbic16@gmail.com> on 2026-11-22 (EE 12).
 
 Subject: Merge pull request #1 from wbic16/emise/libphext-0.6.6
 
-Public items: 0 added, 0 removed, 0 changed. Dependencies: libphext 0.6.4 -> 0.6.6. Code lines after this commit: 1636.
+Public items: 0 added, 0 removed, 0 changed. Dependencies: libphext [dependencies] 0.6.4 -> 0.6.6. Code lines after this commit: 1635.
 
 This commit is a checkpoint: the line counts were read from the whole tree, not from the diff.
 
@@ -71,8 +83,23 @@ commit 54e441c6ecdfbf79ee102f28cddcaab57a3ca28e
 parent caa81e669ba114570f845fea796dc19ebf0644b1
 author Will Bickford <wbic16@gmail.com>
 date 1795332097 2026-11-22
-dep~ Cargo.toml :: libphext :: 0.6.4 -> 0.6.6
-stat Markdown files 2 total 925 blank 128 comment 0 code 797
+dep~ Cargo.toml :: libphext [dependencies] :: 0.6.4 -> 0.6.6
+quality 7 1 0 0
+fncount 30
+rfcsnote No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.
+origin /home/wbic16/github-archive/mirrors/kgoat.git
+branch exo
+largest-file SPEC.md :: 879
+largest-file src/scroll.rs :: 318
+largest-file src/builder.rs :: 234
+largest-file src/schema.rs :: 212
+largest-file tests/builder_tests.rs :: 151
+largest-fn parse_node :: src/scroll.rs :: 147
+largest-fn parse_edge :: src/scroll.rs :: 81
+largest-fn build :: src/builder.rs :: 79
+largest-fn render_index :: src/builder.rs :: 77
+largest-fn main :: src/main.rs :: 75
+stat Markdown files 2 total 925 blank 128 comment 1 code 796
 stat Rust files 6 total 1034 blank 63 comment 142 code 829
 stat TOML files 1 total 11 blank 1 comment 0 code 10
 author~ Will Bickford <wbic16@gmail.com> commits 2

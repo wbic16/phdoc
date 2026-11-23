@@ -1,8 +1,8 @@
 # mootable — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-23 (Exocortical Epoch 195). Project root: /source/mootable. Scanned at commit df424f3ab63a90dcb5c522ab5dd8d0313636f442. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-23 (Exocortical Epoch 194). Project root: /home/wbic16/phdoc-sweep/proj/mootable. Scanned at commit df424f3ab63a90dcb5c522ab5dd8d0313636f442. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
-This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.
+This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, where its upstream repo lives, and a plain English note for every public method and command.
 
 ---
 
@@ -95,11 +95,17 @@ Direct dependencies: 71.
 
 ## Authors
 
-The git log holds 337 commits. The authors, by commit count:
+The git log holds 337 commits. phdoc audits the 336 commits on the first-parent mainline — each merge folds its branch's commits into the merge commit — and the author counts below cover that audited mainline, the same set the historical references fold.
 
-- Iian <iian.d.neill@gmail.com> — 330 commits (97.9%)
-- Emise <emise@localhost> — 6 commits (1.8%)
-- Iian Neill <iian.d.neill@gmail.com> — 1 commit (0.3%)
+The author of record is **Will Bickford** — 6 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Emise — 6 commits
+
+Other authors, kept as themselves (not Exocortical cluster personas; never folded):
+
+- Iian <iian.d.neill@gmail.com> — 330 commits
 
 ---
 
@@ -107,21 +113,21 @@ The git log holds 337 commits. The authors, by commit count:
 
 The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.
 
-- JavaScript: 541 files, 132050 lines total, 2444 blank, 6850 comment, 122756 code
-- Markdown: 306 files, 63242 lines total, 15853 blank, 124 comment, 47265 code
+- JavaScript: 144 files, 71548 lines total, 1346 blank, 2760 comment, 67442 code
+- Markdown: 305 files, 63218 lines total, 15838 blank, 124 comment, 47256 code
 - Python: 2 files, 126 lines total, 9 blank, 0 comment, 117 code
 - Shell: 2 files, 661 lines total, 55 blank, 80 comment, 526 code
-- TypeScript: 1106 files, 99387 lines total, 2654 blank, 4716 comment, 92017 code
+- TypeScript: 855 files, 91019 lines total, 2654 blank, 4049 comment, 84316 code
 
-All languages: 1957 files, 295466 lines total, 262681 lines of code. Functions read: 26.
+All languages: 1308 files, 226572 lines total, 199657 lines of code. Functions read: 26.
 
 Largest files:
 
 - src/library/original/components/outliner-text-block.js — 10205 lines
 - docs/development/INPUT_HANDLER_SOURCE_LEDGER.md — 9442 lines
-- dist/server/application-services/host.js — 6362 lines
 - src/library/original/modules/speedy/editor-new-2.js — 4655 lines
 - src/library/original/speedy.js — 4655 lines
+- src/library/original/modules/speedy/editor-new.js — 3347 lines
 
 Largest functions, by span in lines:
 
@@ -137,10 +143,10 @@ Largest functions, by span in lines:
 
 Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.
 
-- Tests: 0 test functions counted in the source, across 21 files whose names mark them as test files.
+- Tests: 0 test functions counted in the source, across 21 files in test directories or whose names mark them as test files.
 - CI: no CI configuration was found in the project.
 - Lint and format: no lint or format configuration file was found.
-- TODO marks in the source: 33. FIXME marks: 0.
+- TODO marks in the source: 28. FIXME marks: 0.
 - Public items with a doc comment: 0 of 26 (0%).
 
 ---
@@ -154,10 +160,10 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 ## Upstream git repo
 
-- Origin: https://github.com/argimenes/mutable-os.git
+- Origin: wbic16@100.78.221.38:/source/mootable
 - Branch: mootable-main
 - Head commit: df424f3ab63a90dcb5c522ab5dd8d0313636f442
-- Working tree: 1 changed paths
+- Working tree: clean
 
 ---
 
@@ -165,140 +171,32 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 
 Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.
 
-- function `die` (deploy/deploy.sh:49) — Function die takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is gi
-- function `usage` (deploy/deploy.sh:54) — Function usage takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is 
-- function `as_owner` (deploy/deploy.sh:75) — Function as_owner takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it 
-- function `dns_points_here` (deploy/deploy.sh:79) — Function dns_points_here takes no inputs beyond the value it is called on, and gives back nothing; it does its work on w
-- function `file_sha256` (deploy/deploy.sh:83) — Function file_sha256 takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
-- function `read_root_file` (deploy/deploy.sh:89) — Function read_root_file takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wh
-- function `nginx_template` (deploy/deploy.sh:94) — Function nginx_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wh
-- function `unit_template` (deploy/deploy.sh:109) — Function unit_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wha
-- function `render_site_body` (deploy/deploy.sh:126) — Function render_site_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on 
 - function `adopt_live_ssl` (deploy/deploy.sh:138) — Function adopt_live_ssl takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wh
-- function `path_exists` (deploy/deploy.sh:174) — Function path_exists takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
-- function `drop_missing_dhparam` (deploy/deploy.sh:182) — Function drop_missing_dhparam takes no inputs beyond the value it is called on, and gives back nothing; it does its work
-- function `stamp_managed` (deploy/deploy.sh:195) — Function stamp_managed takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wha
-- function `write_bootstrap_body` (deploy/deploy.sh:204) — Function write_bootstrap_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work
-- function `nginx_disposition` (deploy/deploy.sh:235) — Function nginx_disposition takes no inputs beyond the value it is called on, and gives back nothing; it does its work on
-- function `with_force` (deploy/deploy.sh:269) — Function with_force takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
-- function `require_hardened_body` (deploy/deploy.sh:278) — Function require_hardened_body takes no inputs beyond the value it is called on, and gives back nothing; it does its wor
-- function `install_rendered_site` (deploy/deploy.sh:294) — Function install_rendered_site takes no inputs beyond the value it is called on, and gives back nothing; it does its wor
 - function `apply_rendered_site` (deploy/deploy.sh:328) — Function apply_rendered_site takes no inputs beyond the value it is called on, and gives back nothing; it does its work 
-- function `run_check` (deploy/deploy.sh:377) — Function run_check takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it
+- function `as_owner` (deploy/deploy.sh:75) — Function as_owner takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it 
+- function `die` (deploy/deploy.sh:49) — Function die takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is gi
+- function `dns_points_here` (deploy/deploy.sh:79) — Function dns_points_here takes no inputs beyond the value it is called on, and gives back nothing; it does its work on w
+- function `drop_missing_dhparam` (deploy/deploy.sh:182) — Function drop_missing_dhparam takes no inputs beyond the value it is called on, and gives back nothing; it does its work
+- function `file_sha256` (deploy/deploy.sh:83) — Function file_sha256 takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
+- function `install_rendered_site` (deploy/deploy.sh:294) — Function install_rendered_site takes no inputs beyond the value it is called on, and gives back nothing; it does its wor
 - function `main` (deploy/deploy.sh:457) — Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is g
+- function `nginx_disposition` (deploy/deploy.sh:235) — Function nginx_disposition takes no inputs beyond the value it is called on, and gives back nothing; it does its work on
+- function `nginx_template` (deploy/deploy.sh:94) — Function nginx_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wh
+- function `path_exists` (deploy/deploy.sh:174) — Function path_exists takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what 
+- function `read_root_file` (deploy/deploy.sh:89) — Function read_root_file takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wh
+- function `render_site_body` (deploy/deploy.sh:126) — Function render_site_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on 
+- function `require_hardened_body` (deploy/deploy.sh:278) — Function require_hardened_body takes no inputs beyond the value it is called on, and gives back nothing; it does its wor
+- function `run_check` (deploy/deploy.sh:377) — Function run_check takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it
+- function `stamp_managed` (deploy/deploy.sh:195) — Function stamp_managed takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wha
+- function `unit_template` (deploy/deploy.sh:109) — Function unit_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on wha
+- function `usage` (deploy/deploy.sh:54) — Function usage takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is 
+- function `with_force` (deploy/deploy.sh:269) — Function with_force takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what i
+- function `write_bootstrap_body` (deploy/deploy.sh:204) — Function write_bootstrap_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work
 - function `check` (docs/architecture/sqlite/check-proposed-schema.py:14) — Function check takes name, condition and gives back nothing; it does its work on what it is given.
 - function `rejects` (docs/architecture/sqlite/check-proposed-schema.py:19) — Function rejects takes name, sql, values= and gives back nothing; it does its work on what it is given.
 - function `resource` (docs/architecture/sqlite/check-proposed-schema.py:28) — Function resource takes guid, block and gives back nothing; it does its work on what it is given.
 - function `read` (experiments/initialis/summarize.py:6) — Function read takes p and gives back nothing; it does its work on what it is given.
 - function `stats` (experiments/initialis/summarize.py:7) — Function stats takes xs and gives back nothing; it does its work on what it is given.
-
----
-
-## function — die
-
-Found in deploy/deploy.sh at line 49.
-
-Signature: `die()`
-
-What it does: Function die takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — usage
-
-Found in deploy/deploy.sh at line 54.
-
-Signature: `usage()`
-
-What it does: Function usage takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — as_owner
-
-Found in deploy/deploy.sh at line 75.
-
-Signature: `as_owner()`
-
-What it does: Function as_owner takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — dns_points_here
-
-Found in deploy/deploy.sh at line 79.
-
-Signature: `dns_points_here()`
-
-What it does: Function dns_points_here takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — file_sha256
-
-Found in deploy/deploy.sh at line 83.
-
-Signature: `file_sha256()`
-
-What it does: Function file_sha256 takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — read_root_file
-
-Found in deploy/deploy.sh at line 89.
-
-Signature: `read_root_file()`
-
-What it does: Function read_root_file takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — nginx_template
-
-Found in deploy/deploy.sh at line 94.
-
-Signature: `nginx_template()`
-
-What it does: Function nginx_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — unit_template
-
-Found in deploy/deploy.sh at line 109.
-
-Signature: `unit_template()`
-
-What it does: Function unit_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — render_site_body
-
-Found in deploy/deploy.sh at line 126.
-
-Signature: `render_site_body()`
-
-What it does: Function render_site_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
 
 ---
 
@@ -309,102 +207,6 @@ Found in deploy/deploy.sh at line 138.
 Signature: `adopt_live_ssl()`
 
 What it does: Function adopt_live_ssl takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — path_exists
-
-Found in deploy/deploy.sh at line 174.
-
-Signature: `path_exists()`
-
-What it does: Function path_exists takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — drop_missing_dhparam
-
-Found in deploy/deploy.sh at line 182.
-
-Signature: `drop_missing_dhparam()`
-
-What it does: Function drop_missing_dhparam takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — stamp_managed
-
-Found in deploy/deploy.sh at line 195.
-
-Signature: `stamp_managed()`
-
-What it does: Function stamp_managed takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — write_bootstrap_body
-
-Found in deploy/deploy.sh at line 204.
-
-Signature: `write_bootstrap_body()`
-
-What it does: Function write_bootstrap_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — nginx_disposition
-
-Found in deploy/deploy.sh at line 235.
-
-Signature: `nginx_disposition()`
-
-What it does: Function nginx_disposition takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — with_force
-
-Found in deploy/deploy.sh at line 269.
-
-Signature: `with_force()`
-
-What it does: Function with_force takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — require_hardened_body
-
-Found in deploy/deploy.sh at line 278.
-
-Signature: `require_hardened_body()`
-
-What it does: Function require_hardened_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
-
-(Where these words came from: signature.)
-
----
-
-## function — install_rendered_site
-
-Found in deploy/deploy.sh at line 294.
-
-Signature: `install_rendered_site()`
-
-What it does: Function install_rendered_site takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -422,13 +224,73 @@ What it does: Function apply_rendered_site takes no inputs beyond the value it i
 
 ---
 
-## function — run_check
+## function — as_owner
 
-Found in deploy/deploy.sh at line 377.
+Found in deploy/deploy.sh at line 75.
 
-Signature: `run_check()`
+Signature: `as_owner()`
 
-What it does: Function run_check takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+What it does: Function as_owner takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — die
+
+Found in deploy/deploy.sh at line 49.
+
+Signature: `die()`
+
+What it does: Function die takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — dns_points_here
+
+Found in deploy/deploy.sh at line 79.
+
+Signature: `dns_points_here()`
+
+What it does: Function dns_points_here takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — drop_missing_dhparam
+
+Found in deploy/deploy.sh at line 182.
+
+Signature: `drop_missing_dhparam()`
+
+What it does: Function drop_missing_dhparam takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — file_sha256
+
+Found in deploy/deploy.sh at line 83.
+
+Signature: `file_sha256()`
+
+What it does: Function file_sha256 takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — install_rendered_site
+
+Found in deploy/deploy.sh at line 294.
+
+Signature: `install_rendered_site()`
+
+What it does: Function install_rendered_site takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -441,6 +303,150 @@ Found in deploy/deploy.sh at line 457.
 Signature: `main()`
 
 What it does: Function main takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — nginx_disposition
+
+Found in deploy/deploy.sh at line 235.
+
+Signature: `nginx_disposition()`
+
+What it does: Function nginx_disposition takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — nginx_template
+
+Found in deploy/deploy.sh at line 94.
+
+Signature: `nginx_template()`
+
+What it does: Function nginx_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — path_exists
+
+Found in deploy/deploy.sh at line 174.
+
+Signature: `path_exists()`
+
+What it does: Function path_exists takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — read_root_file
+
+Found in deploy/deploy.sh at line 89.
+
+Signature: `read_root_file()`
+
+What it does: Function read_root_file takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — render_site_body
+
+Found in deploy/deploy.sh at line 126.
+
+Signature: `render_site_body()`
+
+What it does: Function render_site_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — require_hardened_body
+
+Found in deploy/deploy.sh at line 278.
+
+Signature: `require_hardened_body()`
+
+What it does: Function require_hardened_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — run_check
+
+Found in deploy/deploy.sh at line 377.
+
+Signature: `run_check()`
+
+What it does: Function run_check takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — stamp_managed
+
+Found in deploy/deploy.sh at line 195.
+
+Signature: `stamp_managed()`
+
+What it does: Function stamp_managed takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — unit_template
+
+Found in deploy/deploy.sh at line 109.
+
+Signature: `unit_template()`
+
+What it does: Function unit_template takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — usage
+
+Found in deploy/deploy.sh at line 54.
+
+Signature: `usage()`
+
+What it does: Function usage takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — with_force
+
+Found in deploy/deploy.sh at line 269.
+
+Signature: `with_force()`
+
+What it does: Function with_force takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
+
+(Where these words came from: signature.)
+
+---
+
+## function — write_bootstrap_body
+
+Found in deploy/deploy.sh at line 204.
+
+Signature: `write_bootstrap_body()`
+
+What it does: Function write_bootstrap_body takes no inputs beyond the value it is called on, and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
 
@@ -503,3 +509,9 @@ Signature: `def stats(xs):`
 What it does: Function stats takes xs and gives back nothing; it does its work on what it is given.
 
 (Where these words came from: signature.)
+
+---
+
+## Provenance
+
+This documentation is produced for the export repo wbic16/phdoc (its chain of record lives at docs/mootable/chain.phext) and for the doc site https://docs.phext.io. Both targets are the project's own configuration, held in its .phdoc.json as "export-repo" and "doc-site"; when a project does not name them, the defaults are wbic16/phdoc and https://docs.phext.io.
