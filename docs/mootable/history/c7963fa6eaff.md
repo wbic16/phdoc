@@ -2,10 +2,6 @@
 
 Commit c7963fa6eaff9109b21bc9c3a6de246a9574e29c. 195 commits folded. Every fact here was folded from the chain's per-commit deltas.
 
-## Provenance
-
-This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/mootable/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
-
 ## Dependencies
 
 ### package.json
@@ -63,11 +59,11 @@ This reference is folded from the project's documentation chain, kept in the exp
 
 ## Complexity
 
-- C: 1 file, 44 lines total, 0 blank, 17 comment, 27 code
+- C: 1 files, 44 lines total, 0 blank, 17 comment, 27 code
 - JavaScript: 120 files, 67633 lines total, 1162 blank, 2427 comment, 64044 code
 - Markdown: 174 files, 42521 lines total, 10160 blank, 61 comment, 32300 code
-- Python: 1 file, 99 lines total, 9 blank, 0 comment, 90 code
-- Shell: 1 file, 22 lines total, 5 blank, 14 comment, 3 code
+- Python: 1 files, 99 lines total, 9 blank, 0 comment, 90 code
+- Shell: 1 files, 22 lines total, 5 blank, 14 comment, 3 code
 - TypeScript: 486 files, 57388 lines total, 1822 blank, 1819 comment, 53747 code
 
 Declared RFCs at this point: none declared.
