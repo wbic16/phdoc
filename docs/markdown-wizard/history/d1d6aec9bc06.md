@@ -2,10 +2,6 @@
 
 Commit d1d6aec9bc06769756f67350836659ad19cb67d9. 4 commits folded. Every fact here was folded from the chain's per-commit deltas.
 
-## Provenance
-
-This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/markdown-wizard/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
-
 ## Dependencies
 
 ### Cargo.toml
@@ -17,19 +13,15 @@ This reference is folded from the project's documentation chain, kept in the exp
 
 ## Authors
 
-The author of record is **Will Bickford** — 4 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
-
-Annotation, by persona (all folded into Will Bickford):
-
-- Theia — 3 commits
-- Will Bickford (his own identities) — 1 commit
+- Theia <theia@mirrorborn.us> — 3 commits
+- Will Bickford <wbic16@gmail.com> — 1 commits
 
 ## Complexity
 
 - Markdown: 2 files, 258 lines total, 43 blank, 0 comment, 215 code
 - Rust: 7 files, 2726 lines total, 166 blank, 358 comment, 2202 code
 - Shell: 2 files, 261 lines total, 26 blank, 42 comment, 193 code
-- TOML: 1 file, 31 lines total, 4 blank, 6 comment, 21 code
+- TOML: 1 files, 31 lines total, 4 blank, 6 comment, 21 code
 
 Declared RFCs at this point: none declared.
 
@@ -52,7 +44,7 @@ Declared RFCs at this point: none declared.
 - function `is_vault_path` (src/bundle.rs) — The vault is the bundle's memory: `vault/` holds what was put away.
 - function `markdown_stem` (src/bundle.rs) — Strip the markdown extension from a path (`docs/guide.md` → `docs/guide`), or return None when the path is not markdown.
 - function `new_edit_key` (src/bundle.rs) — A fresh edit key: 32 bytes from the kernel's random source, hex.
-- function `ordered_files` (src/bundle.rs) — Bundle order — the order the sidebar, the tracklist, and prev/next all walk: the root index first (index.md ahead of…
+- function `ordered_files` (src/bundle.rs) — Bundle order — the order the sidebar, the tracklist, and prev/next all walk: the root index first (index.md ahead of README.md when a bundle somehow holds both), then every other file by path.
 - function `parse_bundle` (src/bundle.rs) — Parse and validate a bundle zip.
 - function `sha256_hex` (src/bundle.rs) — SHA-256 hex of a byte string — edit keys are stored only as this.
 - function `valid_bundle_path` (src/bundle.rs) — Path hygiene for one zip entry name.
@@ -65,14 +57,14 @@ Declared RFCs at this point: none declared.
 - const `TEXT` (src/http.rs) — A fixed value named TEXT, set to "text/plain; charset=utf-8".
 - function `forwarded_https` (src/http.rs) — True when the proxy says the browser connection is HTTPS — the lattice's `forwarded_https`, verbatim in shape.
 - function `html_escape` (src/http.rs) — HTML-escape text for interpolation into the page templates.
-- function `json_escape` (src/http.rs) — Minimal JSON string escaping for the hand-formatted API responses (the lattice formats JSON with serde; this…
-- function `parse_request` (src/http.rs) — Parse a request line and headers — the lattice's `parse_request` shape: method, raw target, and a lower-cased header…
+- function `json_escape` (src/http.rs) — Minimal JSON string escaping for the hand-formatted API responses (the lattice formats JSON with serde; this service's r
+- function `parse_request` (src/http.rs) — Parse a request line and headers — the lattice's `parse_request` shape: method, raw target, and a lower-cased header map
 - function `percent_decode` (src/http.rs) — Percent-decode a URL path segment string.
 - function `read_body` (src/http.rs) — Read a request body as bytes, up to `cap`.
-- function `response_bytes` (src/http.rs) — Build a full response — the lattice's `response_bytes`: ETag and 304 handling for the cacheable classes, security…
+- function `response_bytes` (src/http.rs) — Build a full response — the lattice's `response_bytes`: ETag and 304 handling for the cacheable classes, security header
 - function `send_redirect` (src/http.rs) — Function send_redirect takes stream: &mut TcpStream, location: &str, req_headers: &HashMap<String, String>.
-- function `send_response` (src/http.rs) — Function send_response takes stream: &mut TcpStream, status: u16, content_type: &str, body: &[u8], class: CacheClass…
-- function `send_response_extra` (src/http.rs) — Function send_response_extra takes stream: &mut TcpStream, status: u16, content_type: &str, body: &[u8], class…
+- function `send_response` (src/http.rs) — Function send_response takes stream: &mut TcpStream, status: u16, content_type: &str, body: &[u8], class: CacheClass, req_headers: &HashMap<String, String>, head_only: bool,.
+- function `send_response_extra` (src/http.rs) — Function send_response_extra takes stream: &mut TcpStream, status: u16, content_type: &str, body: &[u8], class: CacheClass, req_headers: &HashMap<String, String>, head_only: bool, extra_headers: &str,.
 - function `status_text` (src/http.rs) — The lattice's status-text table, extended with the codes this service uses (409, 415, 422).
 - function `strong_etag` (src/http.rs) — A strong ETag: the quoted SHA-256 hex of the body (the lattice's `strong_etag`, which hashes with SHA-256 the same way).
 - function `xml_escape` (src/http.rs) — XML-escape text for the RSS feed (same five characters as HTML, without the apostrophe form XML parsers also accept).
