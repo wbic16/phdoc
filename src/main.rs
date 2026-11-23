@@ -10,7 +10,7 @@
 //! awaiting-summary and named in an instruction file, so the user's
 //! agent can supply the missing words.
 
-use std::collections::BTreeMap;
+use std::collections::{BTreeMap, BTreeSet};
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::process::Command;
@@ -70,7 +70,7 @@ struct DepInfo {
     license: Option<String>,
 }
 
-#[derive(Default)]
+#[derive(Default, Clone)]
 struct RfcEntry {
     number: String,
     sha: String,
@@ -98,6 +98,8 @@ struct Scan {
     deps: Vec<DepInfo>,
     authors: Vec<(String, usize)>, // name <email>, commits
     total_commits: usize,
+    audited_commits: usize, // first-parent mainline count (T6)
+    pkg_version: Option<String>, // [package] version of the root Cargo.toml (T8d)
     lang_lines: BTreeMap<String, (usize, usize, usize, usize, usize)>, // lang -> (files,total,blank,comment,code)
     largest_files: Vec<(String, usize)>,
     fn_count: usize,
@@ -187,13 +189,19 @@ fn rel(root: &Path, p: &Path) -> String {
 // dependencies
 // ---------------------------------------------------------------------------
 
-fn parse_cargo_toml(text: &str) -> (Vec<(String, String)>, Option<String>, Option<String>) {
+fn parse_cargo_toml(text: &str) -> (Vec<(String, String)>, Option<String>, Option<String>, Option<String>) {
     let mut deps = Vec::new();
     let mut license = None;
     let mut pkg = None;
+    let mut version = None;
     let mut section = String::new();
     for line in text.lines() {
         let t = line.trim();
+        // T7: full-line comments are never manifest data (a bogus dep was
+        // once read out of a TOML comment).
+        if t.starts_with('#') {
+            continue;
+        }
         if t.starts_with('[') {
             section = t.trim_matches(|c| c == '[' || c == ']').to_string();
             continue;
@@ -204,6 +212,9 @@ fn parse_cargo_toml(text: &str) -> (Vec<(String, String)>, Option<String>, Optio
             }
             if let Some(v) = t.strip_prefix("name =") {
                 pkg = Some(v.trim().trim_matches('"').to_string());
+            }
+            if let Some(v) = t.strip_prefix("version =") {
+                version = Some(v.trim().trim_matches('"').to_string());
             }
         }
         if section == "dependencies" || section == "dev-dependencies" || section == "build-dependencies" {
@@ -219,12 +230,19 @@ fn parse_cargo_toml(text: &str) -> (Vec<(String, String)>, Option<String>, Optio
                     "(path or git)".to_string()
                 };
                 if !name.is_empty() {
-                    deps.push((format!("{} [{}]", name, section), ver));
+                    // T8a: an optional (feature-gated) dep carries the marker in its tag.
+                    let optional = rest.contains("optional = true") || rest.contains("optional=true");
+                    let tag = if optional {
+                        format!("{} [{} \u{b7} optional]", name, section)
+                    } else {
+                        format!("{} [{}]", name, section)
+                    };
+                    deps.push((tag, ver));
                 }
             }
         }
     }
-    (deps, license, pkg)
+    (deps, license, pkg, version)
 }
 
 fn count_lock_packages(text: &str) -> usize {
@@ -289,6 +307,10 @@ fn parse_go_mod(text: &str) -> Vec<(String, String)> {
     let mut in_req = false;
     for line in text.lines() {
         let t = line.trim();
+        // T7: comment lines are never requirements.
+        if t.starts_with("//") {
+            continue;
+        }
         if t.starts_with("require (") {
             in_req = true;
             continue;
@@ -306,35 +328,212 @@ fn parse_go_mod(text: &str) -> Vec<(String, String)> {
     out
 }
 
-fn scan_deps(root: &Path, files: &[PathBuf]) -> Vec<DepInfo> {
+fn scan_deps(entries: &[(String, String)]) -> Vec<DepInfo> {
     let mut out = Vec::new();
-    for f in files {
-        let name = f.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();
-        match name.as_str() {
+    for (relp, text) in entries {
+        let fname = Path::new(relp).file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();
+        match fname.as_str() {
             "Cargo.toml" => {
-                let text = read(f);
-                let (deps, license, _pkg) = parse_cargo_toml(&text);
-                let total = files
+                let (deps, license, _pkg, _ver) = parse_cargo_toml(text);
+                let total = entries
                     .iter()
-                    .find(|p| p.file_name().map(|n| n == "Cargo.lock").unwrap_or(false))
-                    .map(|p| count_lock_packages(&read(p)));
-                out.push(DepInfo { ecosystem: "Rust (cargo)".into(), manifest: rel(root, f), direct: deps, total_resolved: total, license });
+                    .find(|(p, _)| Path::new(p).file_name().map(|n| n == "Cargo.lock").unwrap_or(false))
+                    .map(|(_, t)| count_lock_packages(t));
+                out.push(DepInfo { ecosystem: "Rust (cargo)".into(), manifest: relp.clone(), direct: deps, total_resolved: total, license });
             }
             "package.json" => {
-                let text = read(f);
                 let lic = text.find("\"license\"").and_then(|i| text[i..].split('"').nth(3)).map(|s| s.to_string());
-                out.push(DepInfo { ecosystem: "JavaScript (npm)".into(), manifest: rel(root, f), direct: parse_package_json(&text), total_resolved: None, license: lic });
+                out.push(DepInfo { ecosystem: "JavaScript (npm)".into(), manifest: relp.clone(), direct: parse_package_json(text), total_resolved: None, license: lic });
             }
             "requirements.txt" => {
-                out.push(DepInfo { ecosystem: "Python (pip)".into(), manifest: rel(root, f), direct: parse_requirements(&read(f)), total_resolved: None, license: None });
+                out.push(DepInfo { ecosystem: "Python (pip)".into(), manifest: relp.clone(), direct: parse_requirements(text), total_resolved: None, license: None });
             }
             "go.mod" => {
-                out.push(DepInfo { ecosystem: "Go".into(), manifest: rel(root, f), direct: parse_go_mod(&read(f)), total_resolved: None, license: None });
+                out.push(DepInfo { ecosystem: "Go".into(), manifest: relp.clone(), direct: parse_go_mod(text), total_resolved: None, license: None });
             }
             _ => {}
         }
     }
     out
+}
+
+// ---------------------------------------------------------------------------
+// shared helpers for the scan and the fold (one rule, both render paths)
+// ---------------------------------------------------------------------------
+
+/// T8b: a file is a test file when its name marks it, or when any directory
+/// component of its relative path marks it (a suite under exo-test/ counts).
+fn is_test_file(relp: &str) -> bool {
+    let p = Path::new(relp);
+    let fname = p.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();
+    if fname.starts_with("test") || fname.contains("_test.") || fname.ends_with("_test.go") {
+        return true;
+    }
+    for comp in relp.split('/') {
+        if comp == "test" || comp == "tests" || comp == "testdata" || comp.ends_with("-test") || comp.ends_with("_test") || comp.ends_with("-tests") || comp.ends_with("_tests") {
+            return true;
+        }
+    }
+    false
+}
+
+fn is_optional_dep(name: &str) -> bool {
+    name.contains("optional]")
+}
+
+/// T8a/T10: the Direct-dependencies line, shared by sections() and
+/// render_folded() so both render paths print the same words.
+fn dep_count_line(direct: &[(String, String)]) -> String {
+    let n = direct.len();
+    let all_tagged = n > 0 && direct.iter().all(|(name, _)| name.contains("[dependencies") || name.contains("[dev-dependencies") || name.contains("[build-dependencies"));
+    if all_tagged {
+        let o = direct.iter().filter(|(name, _)| is_optional_dep(name)).count();
+        return format!("Direct dependencies: {} ({} default, {} optional).", n, n - o, o);
+    }
+    let mut line = format!("Direct dependencies: {}.", n);
+    let opts: Vec<String> = direct
+        .iter()
+        .filter(|(name, _)| is_optional_dep(name))
+        .map(|(name, _)| name.split(" [").next().unwrap_or(name).to_string())
+        .collect();
+    if !opts.is_empty() {
+        line.push_str(&format!("\nOptional (feature-gated): {}.", opts.join(", ")));
+    }
+    line
+}
+
+/// The RFC state for one rfcs.json text (None = the file is absent), computed
+/// the same way by the scan and by the audit walk.
+fn rfcs_state(text: Option<&str>) -> (Option<Vec<RfcEntry>>, String) {
+    match text {
+        Some(text) => {
+            let entries = parse_rfcs_json(text);
+            if entries.is_empty() {
+                (
+                    Some(entries),
+                    format!("An rfcs.json file is present ({} bytes) but no RFC entries could be read from it by the scanner's reader.", text.len()),
+                )
+            } else {
+                let note = format!("Declared in rfcs.json ({} entries).", entries.len());
+                (Some(entries), note)
+            }
+        }
+        None => (
+            None,
+            "No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.".to_string(),
+        ),
+    }
+}
+
+/// Per-file quality counts under the same rules the scan uses:
+/// (test fns, TODO lines, FIXME lines, fn starts).
+fn count_file_stats(text: &str, lang: &str) -> (usize, usize, usize, usize) {
+    let mut tests = 0usize;
+    let mut todo = 0usize;
+    let mut fixme = 0usize;
+    let mut fns = 0usize;
+    for line in text.lines() {
+        let t = line.trim();
+        if t.contains("TODO") {
+            todo += 1;
+        }
+        if t.contains("FIXME") {
+            fixme += 1;
+        }
+        if t.contains("#[test]") || t.contains("#[tokio::test]") {
+            tests += 1;
+        }
+        if lang == "Rust" {
+            let body = t.trim_start_matches("pub ").trim_start_matches("async ").trim_start_matches("unsafe ");
+            if body.starts_with("fn ") || body.starts_with("fn\t") {
+                if !body[3..].split('(').next().unwrap_or("").trim().is_empty() {
+                    fns += 1;
+                }
+            }
+        }
+        if lang == "Python" {
+            if let Some(rest) = t.strip_prefix("def ") {
+                let nm = rest.split('(').next().unwrap_or("").trim().to_string();
+                if nm.starts_with("test_") {
+                    tests += 1;
+                }
+                if !nm.is_empty() {
+                    fns += 1;
+                }
+            }
+        }
+        if lang == "Shell" && (t.ends_with("() {") || t.ends_with("(){")) {
+            if !t.trim_end_matches("() {").trim_end_matches("(){").trim().is_empty() {
+                fns += 1;
+            }
+        }
+    }
+    (tests, todo, fixme, fns)
+}
+
+/// Function starts in one file, (name, 0-based line), under the scan's rules.
+fn fn_starts_of(text: &str, lang: &str) -> Vec<(String, usize)> {
+    let mut out = Vec::new();
+    for (ln, line) in text.lines().enumerate() {
+        let t = line.trim();
+        if lang == "Rust" {
+            let body = t.trim_start_matches("pub ").trim_start_matches("async ").trim_start_matches("unsafe ");
+            if body.starts_with("fn ") || body.starts_with("fn\t") {
+                let nm = body[3..].split('(').next().unwrap_or("").trim().to_string();
+                if !nm.is_empty() {
+                    out.push((nm, ln));
+                }
+            }
+        }
+        if lang == "Python" {
+            if let Some(rest) = t.strip_prefix("def ") {
+                let nm = rest.split('(').next().unwrap_or("").trim().to_string();
+                if !nm.is_empty() {
+                    out.push((nm, ln));
+                }
+            }
+        }
+        if lang == "Shell" && (t.ends_with("() {") || t.ends_with("(){")) {
+            let nm = t.trim_end_matches("() {").trim_end_matches("(){").trim().to_string();
+            if !nm.is_empty() {
+                out.push((nm, ln));
+            }
+        }
+    }
+    out
+}
+
+const LINT_CONFIGS: [&str; 10] = ["rustfmt.toml", ".rustfmt.toml", "clippy.toml", ".clippy.toml", ".eslintrc", ".eslintrc.json", ".eslintrc.js", ".prettierrc", "Makefile", ".editorconfig"];
+
+fn is_lint_config(fname: &str) -> bool {
+    LINT_CONFIGS.contains(&fname) || fname.starts_with(".eslintrc")
+}
+
+/// The CI signal text for a path, exactly as the scan phrases it (None = no signal).
+fn ci_signal(relp: &str) -> Option<String> {
+    let fname = Path::new(relp).file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();
+    if fname == "Jenkinsfile" {
+        return Some("Jenkins file present (Jenkinsfile) — CI is declared in the project.".to_string());
+    }
+    if relp.contains(".github/workflows/") {
+        return Some(format!("GitHub Actions workflow found at {} — house rule: CI runs on ranch Jenkins, never GitHub Actions. This is flagged, not judged.", relp));
+    }
+    None
+}
+
+fn manifest_ecosystem(fname: &str) -> &'static str {
+    match fname {
+        "Cargo.toml" => "Rust (cargo)",
+        "package.json" => "JavaScript (npm)",
+        "requirements.txt" => "Python (pip)",
+        _ => "Go",
+    }
+}
+
+/// T11: phdoc's own export tree (docs/) is phdoc's output, not its source.
+/// The rule applies wherever phdoc enumerates its own project's files.
+fn self_scan_excluded(project_name: &str, relp: &str) -> bool {
+    project_name == "phdoc" && (relp == "docs" || relp.starts_with("docs/"))
 }
 
 // ---------------------------------------------------------------------------
@@ -732,7 +931,6 @@ fn explain(item: &PubItem, agent: &BTreeMap<String, String>) -> (String, &'stati
 // ---------------------------------------------------------------------------
 
 fn scan_project(root: &Path, name_override: &str) -> Scan {
-    let files = walk(root);
     let mut s = Scan::default();
     let now = now_unix();
     s.date = date_string(now);
@@ -746,14 +944,18 @@ fn scan_project(root: &Path, name_override: &str) -> Scan {
         s.branch = git(root, &["branch", "--show-current"]);
         s.head = git(root, &["rev-parse", "HEAD"]);
         let dirty = git(root, &["status", "--porcelain"]);
+        // The dirty count stays a working-tree fact, and is labeled as such.
         s.dirty = if dirty.is_empty() { 0 } else { dirty.lines().count() };
-        // authors
-        let log = git(root, &["log", "--format=%an <%ae>"]);
+        // T6: total_commits is the all-reachable count; the authors and the
+        // audited count cover the first-parent mainline only — the same set
+        // the historical references fold.
+        s.total_commits = git(root, &["rev-list", "--count", "HEAD"]).parse().unwrap_or(0);
+        let log = git(root, &["log", "--first-parent", "--format=%an <%ae>"]);
         let mut counts: BTreeMap<String, usize> = BTreeMap::new();
         for line in log.lines() {
             if !line.trim().is_empty() {
                 *counts.entry(line.trim().to_string()).or_insert(0) += 1;
-                s.total_commits += 1;
+                s.audited_commits += 1;
             }
         }
         let mut authors: Vec<(String, usize)> = counts.into_iter().collect();
@@ -768,81 +970,75 @@ fn scan_project(root: &Path, name_override: &str) -> Scan {
         root.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_else(|| "project".into())
     };
 
-    // dependencies
-    s.deps = scan_deps(root, &files);
-
-    // declared RFCs
-    let rfcs_path = root.join("rfcs.json");
-    if rfcs_path.exists() {
-        let text = read(&rfcs_path);
-        let entries = parse_rfcs_json(&text);
-        if entries.is_empty() {
-            s.rfcs_note = format!("An rfcs.json file is present ({} bytes) but no RFC entries could be read from it by the scanner's reader.", text.len());
-        } else {
-            s.rfcs_note = format!("Declared in rfcs.json ({} entries).", entries.len());
+    // T2: ONE file set. A git project is enumerated from HEAD and read from
+    // HEAD — never the working tree; a non-git project is walked. Every
+    // consumer below (deps, RFCs, items, largest, quality) reads this set.
+    // T11: for phdoc itself, the top-level docs/ export tree is excluded.
+    let mut entries: Vec<(String, String)> = Vec::new();
+    if s.is_git {
+        let tree = git(root, &["ls-tree", "-r", "--name-only", "HEAD"]);
+        for path in tree.lines() {
+            let path = path.trim();
+            if path.is_empty() || self_scan_excluded(&s.name, path) {
+                continue;
+            }
+            if let Some(text) = file_at(root, "HEAD", path) {
+                entries.push((path.to_string(), text));
+            }
         }
-        s.rfcs = Some(entries);
     } else {
-        s.rfcs = None;
-        s.rfcs_note = "No rfcs.json was found in this project, so it declares no RFCs. This is a finding, not an error: the project has not made an RFC declaration.".to_string();
+        for f in walk(root) {
+            let relp = rel(root, &f);
+            if self_scan_excluded(&s.name, &relp) {
+                continue;
+            }
+            entries.push((relp, read(&f)));
+        }
     }
+    entries.sort();
+
+    // dependencies (from the one file set)
+    s.deps = scan_deps(&entries);
+
+    // T8d: the package version, from the root manifest only.
+    if let Some((_, text)) = entries.iter().find(|(p, _)| p == "Cargo.toml") {
+        s.pkg_version = parse_cargo_toml(text).3;
+    }
+
+    // declared RFCs (from the one file set)
+    let rfcs_text = entries.iter().find(|(p, _)| p == "rfcs.json").map(|(_, t)| t.as_str());
+    let (rfcs, note) = rfcs_state(rfcs_text);
+    s.rfcs = rfcs;
+    s.rfcs_note = note;
 
     // complexity + quality + items
     let mut largest: Vec<(String, usize)> = Vec::new();
-    let mut fns: Vec<(String, String, usize, usize)> = Vec::new(); // name,file,start,end-span computed later
-    for f in &files {
+    let mut fns: Vec<(String, String, usize, usize)> = Vec::new(); // name,file,start,span
+    for (relp, text) in &entries {
+        let f = Path::new(relp);
         let fname = f.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();
         // CI + lint signals by filename
-        let relp = rel(root, f);
-        if fname == "Jenkinsfile" {
-            s.ci.push("Jenkins file present (Jenkinsfile) — CI is declared in the project.".to_string());
-        }
-        if relp.contains(".github/workflows/") {
-            s.ci.push(format!("GitHub Actions workflow found at {} — house rule: CI runs on ranch Jenkins, never GitHub Actions. This is flagged, not judged.", relp));
-        }
-        for cfg in ["rustfmt.toml", ".rustfmt.toml", "clippy.toml", ".clippy.toml", ".eslintrc", ".eslintrc.json", ".eslintrc.js", ".prettierrc", "Makefile", ".editorconfig"] {
-            if fname == cfg || fname.starts_with(".eslintrc") && cfg == ".eslintrc" {
-                if !s.lint_configs.contains(&relp) {
-                    s.lint_configs.push(relp.clone());
-                }
+        if let Some(sig) = ci_signal(relp) {
+            if !s.ci.contains(&sig) {
+                s.ci.push(sig);
             }
         }
-        if fname.starts_with("test") || relp.contains("/tests/") || fname.contains("_test.") || fname.ends_with("_test.go") {
+        if is_lint_config(&fname) && !s.lint_configs.contains(relp) {
+            s.lint_configs.push(relp.clone());
+        }
+        // T8b: test-file membership by name or by directory component.
+        if is_test_file(relp) {
             s.test_files += 1;
         }
         let lang = match lang_of(f) {
             Some(l) => l,
             None => continue,
         };
-        let text = read(f);
-        let mut total = 0usize;
-        let mut blank = 0usize;
-        let mut comment = 0usize;
-        let mut in_block = false;
+        // T1: ONE counter — line_classes() counts every render path.
+        let (total, blank, comment, code) = line_classes(text, lang);
         let mut fn_starts: Vec<(String, usize)> = Vec::new();
         for (ln, line) in text.lines().enumerate() {
-            total += 1;
             let t = line.trim();
-            if t.is_empty() {
-                blank += 1;
-                continue;
-            }
-            let is_comment = if in_block {
-                if t.contains("*/") {
-                    in_block = false;
-                }
-                true
-            } else if t.starts_with("/*") {
-                if !t.contains("*/") {
-                    in_block = true;
-                }
-                true
-            } else {
-                t.starts_with("//") || (lang != "Rust" && t.starts_with('#') && lang != "Markdown") || t.starts_with("--")
-            };
-            if is_comment {
-                comment += 1;
-            }
             if t.contains("TODO") {
                 s.todo_count += 1;
             }
@@ -879,7 +1075,6 @@ fn scan_project(root: &Path, name_override: &str) -> Scan {
                 }
             }
         }
-        let code = total - blank - comment;
         let e = s.lang_lines.entry(lang.to_string()).or_insert((0, 0, 0, 0, 0));
         e.0 += 1;
         e.1 += total;
@@ -894,18 +1089,22 @@ fn scan_project(root: &Path, name_override: &str) -> Scan {
         // public items
         match lang {
             "Rust" => {
-                extract_rust_items(&text, &relp, &mut s.items);
-                let base = f.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();
-                if base == "main.rs" || relp.contains("/bin/") {
-                    extract_cli(&text, &relp, &mut s.items);
+                extract_rust_items(text, relp, &mut s.items);
+                if fname == "main.rs" || relp.contains("/bin/") {
+                    extract_cli(text, relp, &mut s.items);
                 }
             }
-            "Python" => extract_python_items(&text, &relp, &mut s.items),
-            "Shell" => extract_shell_items(&text, &relp, &mut s.items),
+            "Python" => extract_python_items(text, relp, &mut s.items),
+            "Shell" => extract_shell_items(text, relp, &mut s.items),
             _ => {}
         }
     }
     s.fn_count = fns.len();
+    // One item order on both render paths (Round 2, Grok L3): the fold
+    // iterates its BTreeMap keyed "file :: name", so the scan sorts its
+    // items by (file, name) too — latest and historical references then
+    // carry their per-item sections in the same order by construction.
+    s.items.sort_by(|a, b| a.file.cmp(&b.file).then_with(|| a.name.cmp(&b.name)));
     fns.sort_by(|a, b| b.3.cmp(&a.3));
     s.largest_fns = fns.iter().take(5).map(|(n, f, _st, span)| (n.clone(), f.clone(), *span)).collect();
     largest.sort_by(|a, b| b.1.cmp(&a.1));
@@ -933,8 +1132,17 @@ fn sections(scan: &Scan, agent: &BTreeMap<String, String>) -> (Vec<(String, Stri
     if scan.is_git {
         home.push_str(&format!("Scanned at commit {}. ", scan.head));
     }
+    if let Some(v) = &scan.pkg_version {
+        home.push_str(&format!("Package version, from its manifest: {}. ", v));
+    }
     home.push_str("Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.\n\n");
-    home.push_str("This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, the RFCs it declares, where its upstream repo lives, and a plain English note for every public method and command.\n");
+    // T8c: the contents list names the RFCs only when the project declares any.
+    let mut holds = "This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, ".to_string();
+    if scan.rfcs.is_some() {
+        holds.push_str("the RFCs it declares, ");
+    }
+    holds.push_str("where its upstream repo lives, and a plain English note for every public method and command.\n");
+    home.push_str(&holds);
     out.push(("Home".into(), home));
 
     // dependencies
@@ -948,7 +1156,7 @@ fn sections(scan: &Scan, agent: &BTreeMap<String, String>) -> (Vec<(String, Stri
         if let Some(lic) = &dep.license {
             d.push_str(&format!("License stated in the manifest: {}.\n\n", lic));
         }
-        d.push_str(&format!("Direct dependencies: {}.\n\n", dep.direct.len()));
+        d.push_str(&format!("{}\n\n", dep_count_line(&dep.direct)));
         for (n, v) in &dep.direct {
             d.push_str(&format!("- {} — {}\n", n, v));
         }
@@ -965,7 +1173,10 @@ fn sections(scan: &Scan, agent: &BTreeMap<String, String>) -> (Vec<(String, Stri
     if scan.authors.is_empty() {
         a.push_str("No git history was read, so no authors are recorded.\n");
     } else {
-        a.push_str(&format!("The git log holds {} commits.\n\n", scan.total_commits));
+        a.push_str(&format!(
+            "The git log holds {} commits. phdoc audits the {} commits on the first-parent mainline — each merge folds its branch's commits into the merge commit — and the author counts below cover that audited mainline, the same set the historical references fold.\n\n",
+            scan.total_commits, scan.audited_commits
+        ));
         a.push_str(&authors_folded_lines(&scan.authors));
     }
     out.push(("Authors".into(), a));
@@ -998,7 +1209,7 @@ fn sections(scan: &Scan, agent: &BTreeMap<String, String>) -> (Vec<(String, Stri
     let mut q = String::new();
     q.push_str("## Code quality signals\n\n");
     q.push_str("Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.\n\n");
-    q.push_str(&format!("- Tests: {} test functions counted in the source, across {} files whose names mark them as test files.\n", scan.test_count, scan.test_files));
+    q.push_str(&format!("- Tests: {} test functions counted in the source, across {} files in test directories or whose names mark them as test files.\n", scan.test_count, scan.test_files));
     if scan.ci.is_empty() {
         q.push_str("- CI: no CI configuration was found in the project.\n");
     }
@@ -1155,7 +1366,7 @@ fn load_summaries(path: &Path) -> BTreeMap<String, String> {
 // ---------------------------------------------------------------------------
 
 fn usage() -> String {
-    "phdoc — a project scanner for shipped artifacts.\n\nCommands:\n  phdoc scan <project-dir> --out <output-dir> [--name <name>] [--summaries <file>]\n      Scan a project once and write docs.md and docs.phext into the output dir.\n      With --summaries, a file of `name :: summary` lines from the user's\n      agent is carried into the documentation.\n  phdoc audit <project-dir> [--repo <phdoc-repo-dir>] [--out <dir>] [--name <name>] [--hold-push]\n      Audit every unaudited commit, root to head: append one universe per\n      commit to the project's multiversal phext chain, render the latest\n      and historical references, update the project's .phdoc.json ledger,\n      report the unreviewed backlog, and export the changes to the export\n      repo (commit and push) unless --hold-push is given. The export repo\n      and the doc site are the project's own configuration, held in its\n      .phdoc.json as \"export-repo\" and \"doc-site\" (defaults: wbic16/phdoc\n      and https://docs.phext.io); when an export repo is configured and no\n      --repo is given, phdoc keeps a managed clone of that repo to export to.\n  phdoc review <project-dir> <commit> --by <name>\n      Mark a commit reviewed in the project's .phdoc.json.\n  phdoc render <project-dir> --at <commit|latest> [--repo <phdoc-repo-dir>] [--out <dir>]\n      Render the reference as of a commit by folding the chain.\n  phdoc help\n      Show this text.\n  phdoc version\n      Show the version.\n".to_string()
+    "phdoc — a project scanner for shipped artifacts.\n\nCommands:\n  phdoc scan <project-dir> --out <output-dir> [--name <name>] [--summaries <file>]\n      Scan a project once and write docs.md and docs.phext into the output dir.\n      With --summaries, a file of `name :: summary` lines from the user's\n      agent is carried into the documentation.\n  phdoc audit <project-dir> [--repo <phdoc-repo-dir>] [--out <dir>] [--name <name>] [--hold-push] [--rebuild]\n      Audit every unaudited commit, root to head: append one universe per\n      commit to the project's multiversal phext chain, render the latest\n      and historical references, update the project's .phdoc.json ledger,\n      report the unreviewed backlog, and export the changes to the export\n      repo (commit and push) unless --hold-push is given. The export repo\n      and the doc site are the project's own configuration, held in its\n      .phdoc.json as \"export-repo\" and \"doc-site\" (defaults: wbic16/phdoc\n      and https://docs.phext.io); when an export repo is configured and no\n      --repo is given, phdoc keeps a managed clone of that repo to export to.\n  phdoc review <project-dir> <commit> --by <name>\n      Mark a commit reviewed in the project's .phdoc.json.\n  phdoc render <project-dir> --at <commit|latest> [--repo <phdoc-repo-dir>] [--out <dir>]\n      Render the reference as of a commit by folding the chain.\n  phdoc help\n      Show this text.\n  phdoc version\n      Show the version.\n".to_string()
 }
 
 fn main() {
@@ -1240,7 +1451,7 @@ fn main() {
             }
         }
         "audit" => {
-            let mut a = AuditArgs { project: String::new(), repo: None, out: None, name: String::new(), hold_push: false };
+            let mut a = AuditArgs { project: String::new(), repo: None, out: None, name: String::new(), hold_push: false, rebuild: false };
             let mut i = 2;
             while i < args.len() {
                 match args[i].as_str() {
@@ -1257,6 +1468,7 @@ fn main() {
                         a.name = args.get(i).cloned().unwrap_or_default();
                     }
                     "--hold-push" => a.hold_push = true,
+                    "--rebuild" => a.rebuild = true,
                     other => {
                         if !other.starts_with("--") && a.project.is_empty() {
                             a.project = other.to_string();
@@ -1347,13 +1559,26 @@ fn main() {
 
 #[derive(Default, Clone)]
 struct FoldState {
-    items: BTreeMap<String, PubItem>, // key: file :: name
+    items: BTreeMap<String, PubItem>, // key: file :: kind :: name :: line (T12 item identity)
     item_source: BTreeMap<String, String>,
+    item_doc: BTreeMap<String, bool>, // key -> the item's own doc comment is non-empty (T9a)
     deps: BTreeMap<String, Vec<(String, String)>>, // manifest -> (name, version)
+    dep_meta: BTreeMap<String, (String, Option<String>, Option<usize>)>, // manifest -> (ecosystem, license, lock total) (T9c)
     authors: BTreeMap<String, usize>,
     total_commits: usize,
     lang: BTreeMap<String, (usize, usize, usize, usize, usize)>,
     rfcs_count: Option<usize>,
+    rfcs_entries: Option<Vec<RfcEntry>>, // (T9d)
+    rfcs_note: String,                   // (T9d)
+    quality: (usize, usize, usize, usize), // (tests, test_files, todo, fixme) (T9b)
+    test_files_set: BTreeSet<String>,
+    ci: BTreeSet<String>,
+    lint: BTreeSet<String>,
+    origin: String, // (T9e)
+    branch: String, // (T9e)
+    fn_count: usize,
+    largest_files: Vec<(String, usize)>,       // checkpoint values (T10)
+    largest_fns: Vec<(String, String, usize)>, // checkpoint values (T10)
     head_sha: String,
     head_date: String,
 }
@@ -1529,7 +1754,7 @@ fn line_classes(text: &str, lang: &str) -> (usize, usize, usize, usize) {
             }
             true
         } else {
-            t.starts_with("//") || (lang != "Rust" && t.starts_with('#') && lang != "Markdown")
+            t.starts_with("//") || (lang != "Rust" && t.starts_with('#') && lang != "Markdown") || t.starts_with("--")
         };
         if is_comment {
             comment += 1;
@@ -1540,8 +1765,11 @@ fn line_classes(text: &str, lang: &str) -> (usize, usize, usize, usize) {
 
 const EMPTY_TREE: &str = "4b825dc642cb6eb9a060e54bf8d69288fbee4904";
 
-/// Audit one commit against its parent. Returns (delta scroll text, ok).
+/// Audit one commit against its parent. Returns the delta scroll text.
 fn audit_commit(root: &Path, sha: &str, parent: Option<&str>, checkpoint: bool, state: &mut FoldState) -> String {
+    // T11: phdoc's own docs/ tree is its export output, not its source; the
+    // changed-file processing and checkpoint enumeration below skip it.
+    let project_name = root.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();
     let info = git_str(root, &["show", "-s", "--format=%an <%ae>%n%at%n%s", sha]);
     let mut info_lines = info.lines();
     let author = info_lines.next().unwrap_or("").to_string();
@@ -1549,17 +1777,29 @@ fn audit_commit(root: &Path, sha: &str, parent: Option<&str>, checkpoint: bool, 
     let subject = info_lines.next().unwrap_or("").to_string();
     let parent_str = parent.unwrap_or("none");
 
-    // changed files
-    let ns = if parent.is_some() {
-        git_str(root, &["diff-tree", "--no-commit-id", "--name-status", "-r", sha])
+    // changed files. T13: diff the two trees (parent, sha) explicitly —
+    // the same shape the numstat path below already uses. diff-tree on
+    // a MERGE commit prints nothing at all (it does not diff merges by
+    // default), so every file a merge brought in was invisible to the
+    // item/dependency/quality deltas: the fold kept stale items and
+    // never learned merged files existed, while checkpoint recounts
+    // kept the language stats exact and hid the drift. The audit walks
+    // the first-parent mainline, so `parent` is the merge's first
+    // parent and the two-tree diff is exactly the delta the fold needs.
+    // --no-renames keeps the D+A semantics diff-tree had.
+    let ns = if let Some(par) = parent {
+        git_str(root, &["diff", "--name-status", "--no-renames", par, sha])
     } else {
         git_str(root, &["diff-tree", "--root", "--no-commit-id", "--name-status", "-r", sha])
     };
     let mut changed: Vec<(String, String)> = Vec::new();
     for line in ns.lines() {
         let mut parts = line.split('\t');
-        if let (Some(st), Some(p)) = (parts.next(), parts.next()) {
-            changed.push((st.to_string(), p.to_string()));
+        if let (Some(st), Some(pth)) = (parts.next(), parts.next()) {
+            if self_scan_excluded(&project_name, pth) {
+                continue; // T11
+            }
+            changed.push((st.to_string(), pth.to_string()));
         }
     }
 
@@ -1568,18 +1808,49 @@ fn audit_commit(root: &Path, sha: &str, parent: Option<&str>, checkpoint: bool, 
     let mut n_del = 0usize;
     let mut n_chg = 0usize;
     let mut dep_notes: Vec<String> = Vec::new();
+    let ci_before = state.ci.clone();
+    let lint_before = state.lint.clone();
 
     // item + dependency deltas from changed files
     for (status, path) in &changed {
         let p = Path::new(path);
         let fname = p.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();
+        // T9b: CI / lint membership follows changed files, scan's signals.
+        if status == "D" {
+            if let Some(sig) = ci_signal(path) {
+                state.ci.remove(&sig);
+            }
+            state.lint.remove(path);
+            state.test_files_set.remove(path);
+            if is_test_file(path) {
+                state.quality.1 = state.quality.1.saturating_sub(1);
+            }
+        } else if status == "A" && is_test_file(path) {
+            state.quality.1 += 1;
+        }
+        if status != "D" {
+            if let Some(sig) = ci_signal(path) {
+                state.ci.insert(sig);
+            }
+            if is_lint_config(&fname) {
+                state.lint.insert(path.clone());
+            }
+            if is_test_file(path) {
+                state.test_files_set.insert(path.clone());
+            } else {
+                state.test_files_set.remove(path);
+            }
+        }
         if ["Cargo.toml", "package.json", "requirements.txt", "go.mod"].contains(&fname.as_str()) {
             let new_deps = if status == "D" {
                 Vec::new()
             } else {
                 let t = file_at(root, sha, path).unwrap_or_default();
                 match fname.as_str() {
-                    "Cargo.toml" => parse_cargo_toml(&t).0.into_iter().map(|(n, v)| (n.split(" [").next().unwrap_or(&n).to_string(), v)).collect(),
+                    // delta-format 2: dep names keep their full tag (section,
+                    // and the optional marker) so the fold renders the same
+                    // Direct-dependencies line the scan renders.
+                    "Cargo.toml" => parse_cargo_toml(&t).0,
                     "package.json" => parse_package_json(&t),
                     "requirements.txt" => parse_requirements(&t),
                     _ => parse_go_mod(&t),
@@ -1589,7 +1860,7 @@ fn audit_commit(root: &Path, sha: &str, parent: Option<&str>, checkpoint: bool, 
                 Some(par) if status != "A" => {
                     let t = file_at(root, par, path).unwrap_or_default();
                     match fname.as_str() {
-                        "Cargo.toml" => parse_cargo_toml(&t).0.into_iter().map(|(n, v)| (n.split(" [").next().unwrap_or(&n).to_string(), v)).collect(),
+                        "Cargo.toml" => parse_cargo_toml(&t).0,
                         "package.json" => parse_package_json(&t),
                         "requirements.txt" => parse_requirements(&t),
                         _ => parse_go_mod(&t),
@@ -1620,46 +1891,121 @@ fn audit_commit(root: &Path, sha: &str, parent: Option<&str>, checkpoint: bool, 
             }
             if status == "D" {
                 state.deps.remove(path);
+                if state.dep_meta.remove(path).is_some() {
+                    delta.push(format!("depmeta- {}", path));
+                }
             } else {
                 state.deps.insert(path.clone(), new_deps);
+                // T9c: manifest meta (ecosystem, license, lock total).
+                let t = file_at(root, sha, path).unwrap_or_default();
+                let license = match fname.as_str() {
+                    "Cargo.toml" => parse_cargo_toml(&t).1,
+                    "package.json" => t.find("\"license\"").and_then(|i| t[i..].split('"').nth(3)).map(|s| s.to_string()),
+                    _ => None,
+                };
+                let lock_total = if fname == "Cargo.toml" {
+                    let dir = path.rsplit_once('/').map(|(d, _)| d.to_string());
+                    let lock_path = match &dir {
+                        Some(d) => format!("{}/Cargo.lock", d),
+                        None => "Cargo.lock".to_string(),
+                    };
+                    file_at(root, sha, &lock_path).map(|lt| count_lock_packages(&lt))
+                } else {
+                    None
+                };
+                let meta = (manifest_ecosystem(&fname).to_string(), license, lock_total);
+                if state.dep_meta.get(path) != Some(&meta) {
+                    delta.push(format!(
+                        "depmeta {} :: {} :: {} :: {}",
+                        path,
+                        meta.0,
+                        meta.1.clone().unwrap_or_else(|| "-".into()),
+                        meta.2.map(|n| n.to_string()).unwrap_or_else(|| "-".into())
+                    ));
+                    state.dep_meta.insert(path.clone(), meta);
+                }
             }
             continue;
         }
         // rfcs.json movement (checked before the language gate: json has no language entry)
         if fname == "rfcs.json" {
-            let count = if status == "D" {
-                None
+            // T9d: fold the entries and the note, not just the count.
+            let (entries, note) = if status == "D" {
+                rfcs_state(None)
             } else {
-                Some(parse_rfcs_json(&file_at(root, sha, path).unwrap_or_default()).len())
+                rfcs_state(file_at(root, sha, path).as_deref())
             };
-            state.rfcs_count = count;
-            delta.push(format!("rfcs {}", count.map(|c| c.to_string()).unwrap_or_else(|| "none".into())));
+            let changed_rfcs = state.rfcs_entries.as_ref().map(|v| v.len()) != entries.as_ref().map(|v| v.len()) || state.rfcs_note != note;
+            state.rfcs_count = entries.as_ref().map(|v| v.len());
+            if changed_rfcs {
+                delta.push(format!("rfcs {}", state.rfcs_count.map(|c| c.to_string()).unwrap_or_else(|| "none".into())));
+                delta.push(format!("rfcsnote {}", note.replace('\n', " ")));
+                match &entries {
+                    Some(list) => {
+                        delta.push("rfcsbegin".to_string());
+                        for e in list {
+                            delta.push(format!(
+                                "rfcsentry {} :: {} :: {} :: {}",
+                                e.number,
+                                e.status,
+                                if e.sha.is_empty() { "-" } else { &e.sha },
+                                if e.source.is_empty() { "-" } else { &e.source }
+                            ));
+                        }
+                    }
+                    None => delta.push("rfcs none".to_string()),
+                }
+            }
+            state.rfcs_entries = entries;
+            state.rfcs_note = note;
             continue;
         }
         if lang_of(p).is_none() {
             continue;
         }
+        let lang = lang_of(p).unwrap_or("");
+        // T9b: quality state moves with the changed file's old/new text.
+        let old_text = match parent {
+            Some(par) if status != "A" => file_at(root, par, path).unwrap_or_default(),
+            _ => String::new(),
+        };
+        let new_text = if status == "D" { String::new() } else { file_at(root, sha, path).unwrap_or_default() };
+        let (ot, otd, ofx, ofn) = count_file_stats(&old_text, lang);
+        let (nt, ntd, nfx, nfn) = count_file_stats(&new_text, lang);
+        let adj = |cur: usize, old: usize, new: usize| (cur as i64 - old as i64 + new as i64).max(0) as usize;
+        state.quality.0 = adj(state.quality.0, ot, nt);
+        state.quality.2 = adj(state.quality.2, otd, ntd);
+        state.quality.3 = adj(state.quality.3, ofx, nfx);
+        state.fn_count = adj(state.fn_count, ofn, nfn);
         let new_items = if status == "D" { Vec::new() } else { items_at(root, sha, path) };
         let old_items = match parent {
             Some(par) if status != "A" => items_at(root, par, path),
             _ => Vec::new(),
         };
-        let old_map: BTreeMap<String, PubItem> = old_items.iter().map(|i| (format!("{} :: {}", i.file, i.name), i.clone())).collect();
-        let new_map: BTreeMap<String, PubItem> = new_items.iter().map(|i| (format!("{} :: {}", i.file, i.name), i.clone())).collect();
+        // T12: item identity is file :: kind :: name :: line. The scan
+        // lists one section per item OCCURRENCE — two same-named items
+        // in one file (kgoat: `fn name` at src/schema.rs:87 and :125)
+        // are two items — so the fold's keys must carry the full
+        // identity or duplicate occurrences collapse into one entry.
+        let old_map: BTreeMap<String, PubItem> = old_items.iter().map(|i| (format!("{} :: {} :: {} :: {}", i.file, i.kind, i.name, i.line), i.clone())).collect();
+        let new_map: BTreeMap<String, PubItem> = new_items.iter().map(|i| (format!("{} :: {} :: {} :: {}", i.file, i.kind, i.name, i.line), i.clone())).collect();
         for (k, item) in &new_map {
             match old_map.get(k) {
                 None => {
                     let (text, source) = explain(item, &BTreeMap::new());
-                    delta.push(format!("item+ {} {} :: {} :: {} :: {} :: {}", item.kind.replace(' ', "-"), item.file, item.name, item.signature, text.replace('\n', " "), source));
+                    // T9a: the delta carries the item's line and doc flag.
+                    delta.push(format!("item+ {} {} :: {} :: {} :: {} :: {} :: {} :: {}", item.kind.replace(' ', "-"), item.file, item.name, item.signature, text.replace('\n', " "), source, item.line, if item.doc.trim().is_empty() { 0 } else { 1 }));
                     state.items.insert(k.clone(), item.clone());
                     state.item_source.insert(k.clone(), source.to_string());
+                    state.item_doc.insert(k.clone(), !item.doc.trim().is_empty());
                     n_add += 1;
                 }
                 Some(old) if old.signature != item.signature || old.doc != item.doc => {
                     let (text, source) = explain(item, &BTreeMap::new());
-                    delta.push(format!("item~ {} {} :: {} :: {} :: {} :: {}", item.kind.replace(' ', "-"), item.file, item.name, item.signature, text.replace('\n', " "), source));
+                    delta.push(format!("item~ {} {} :: {} :: {} :: {} :: {} :: {} :: {}", item.kind.replace(' ', "-"), item.file, item.name, item.signature, text.replace('\n', " "), source, item.line, if item.doc.trim().is_empty() { 0 } else { 1 }));
                     state.items.insert(k.clone(), item.clone());
                     state.item_source.insert(k.clone(), source.to_string());
+                    state.item_doc.insert(k.clone(), !item.doc.trim().is_empty());
                     n_chg += 1;
                 }
                 _ => {}
@@ -1668,19 +2014,55 @@ fn audit_commit(root: &Path, sha: &str, parent: Option<&str>, checkpoint: bool, 
         for k in old_map.keys() {
             if !new_map.contains_key(k) {
                 let old = &old_map[k];
-                delta.push(format!("item- {} {} :: {}", old.kind.replace(' ', "-"), old.file, old.name));
+                // T12: the removal names the occurrence by its line.
+                delta.push(format!("item- {} {} :: {} :: {}", old.kind.replace(' ', "-"), old.file, old.name, old.line));
                 state.items.remove(k);
                 state.item_source.remove(k);
+                state.item_doc.remove(k);
                 n_del += 1;
             }
         }
     }
 
+    // T9b: quality + CI/lint membership, absolute or on-change lines.
+    delta.push(format!("quality {} {} {} {}", state.quality.0, state.quality.1, state.quality.2, state.quality.3));
+    delta.push(format!("fncount {}", state.fn_count));
+    for sig in state.ci.difference(&ci_before) {
+        delta.push(format!("ci+ {}", sig));
+    }
+    for sig in ci_before.difference(&state.ci) {
+        delta.push(format!("ci- {}", sig));
+    }
+    for lp in state.lint.difference(&lint_before) {
+        delta.push(format!("lint+ {}", lp));
+    }
+    for lp in lint_before.difference(&state.lint) {
+        delta.push(format!("lint- {}", lp));
+    }
+
+    if state.rfcs_note.is_empty() {
+        state.rfcs_note = rfcs_state(None).1;
+    }
+    delta.push(format!("rfcsnote {}", state.rfcs_note.replace('\n', " ")));
+
+    // T9e: upstream facts, absolute in every delta.
+    let origin_now = git_str(root, &["remote", "get-url", "origin"]);
+    let branch_now = git_str(root, &["branch", "--show-current"]);
+    state.origin = origin_now.clone();
+    state.branch = branch_now.clone();
+    delta.push(format!("origin {}", if origin_now.is_empty() { "-" } else { &origin_now }));
+    delta.push(format!("branch {}", if branch_now.is_empty() { "-" } else { &branch_now }));
+
     // complexity: exact at checkpoints, numstat-adjusted between them
     if checkpoint {
         let tree = git_str(root, &["ls-tree", "-r", "--name-only", sha]);
         let mut lang: BTreeMap<String, (usize, usize, usize, usize, usize)> = BTreeMap::new();
+        let mut ck_largest: Vec<(String, usize)> = Vec::new();
+        let mut ck_fns: Vec<(String, String, usize, usize)> = Vec::new();
         for path in tree.lines() {
+            if self_scan_excluded(&project_name, path) {
+                continue; // T11
+            }
             let p = Path::new(path);
             if let Some(l) = lang_of(p) {
                 if let Some(text) = file_at(root, sha, path) {
@@ -1691,10 +2073,27 @@ fn audit_commit(root: &Path, sha: &str, parent: Option<&str>, checkpoint: bool, 
                     e.2 += b;
                     e.3 += c;
                     e.4 += code;
+                    // T10: largest files/functions, exact at checkpoints.
+                    ck_largest.push((path.to_string(), t));
+                    let starts = fn_starts_of(&text, l);
+                    for (idx, (nm, start)) in starts.iter().enumerate() {
+                        let end = if idx + 1 < starts.len() { starts[idx + 1].1 } else { t };
+                        ck_fns.push((nm.clone(), path.to_string(), *start, end - start));
+                    }
                 }
             }
         }
         state.lang = lang;
+        ck_fns.sort_by(|a, b| b.3.cmp(&a.3));
+        state.largest_fns = ck_fns.iter().take(5).map(|(n, f, _st, span)| (n.clone(), f.clone(), *span)).collect();
+        ck_largest.sort_by(|a, b| b.1.cmp(&a.1));
+        state.largest_files = ck_largest.into_iter().take(5).collect();
+        for (f, n) in &state.largest_files {
+            delta.push(format!("largest-file {} :: {}", f, n));
+        }
+        for (n, f, span) in &state.largest_fns {
+            delta.push(format!("largest-fn {} :: {} :: {}", n, f, span));
+        }
     } else {
         let base = parent.unwrap_or(EMPTY_TREE);
         let numstat = git_str(root, &["diff", "--numstat", base, sha]);
@@ -1704,6 +2103,9 @@ fn audit_commit(root: &Path, sha: &str, parent: Option<&str>, checkpoint: bool, 
             let add: i64 = parts.next().and_then(|v| v.parse().ok()).unwrap_or(0);
             let del: i64 = parts.next().and_then(|v| v.parse().ok()).unwrap_or(0);
             if let Some(path) = parts.next() {
+                if self_scan_excluded(&project_name, path) {
+                    continue; // T11
+                }
                 if let Some(l) = lang_of(Path::new(path)) {
                     let e = state.lang.entry(l.to_string()).or_insert((0, 0, 0, 0, 0));
                     let net = add - del;
@@ -1791,6 +2193,8 @@ fn fold_step(chain: &str, u: usize, state: &mut FoldState) {
 }
 
 fn apply_delta(scroll: &str, state: &mut FoldState) {
+    let mut largest_files_cleared = false;
+    let mut largest_fns_cleared = false;
     for line in scroll.lines() {
         let line = line.trim();
         if let Some(rest) = line.strip_prefix("commit ") {
@@ -1802,12 +2206,18 @@ fn apply_delta(scroll: &str, state: &mut FoldState) {
             }
             state.total_commits += 1;
         } else if let Some(rest) = line.strip_prefix("item+ ") {
-            // kind file :: name :: signature :: explanation :: source
+            // kind file :: name :: signature :: explanation :: source [:: line :: docflag]
             let parts: Vec<&str> = rest.splitn(2, ' ').collect();
             if parts.len() == 2 {
                 let kind = if parts[0] == "entry-point" { "entry point" } else { parts[0] };
                 let fields: Vec<&str> = parts[1].split(" :: ").collect();
                 if fields.len() >= 5 {
+                    // T9a: delta-format 2+ carries two trailing fields.
+                    let (iline, docflag) = if fields.len() >= 7 {
+                        (fields[5].parse().unwrap_or(0), fields[6] == "1")
+                    } else {
+                        (0, false)
+                    };
                     let item = PubItem {
                         kind: kind.to_string(),
                         file: fields[0].to_string(),
@@ -1815,26 +2225,33 @@ fn apply_delta(scroll: &str, state: &mut FoldState) {
                         signature: fields[2].to_string(),
                         doc: String::new(),
                         extra: String::new(),
-                        line: 0,
+                        line: iline,
                     };
-                    let key = format!("{} :: {}", item.file, item.name);
+                    let key = format!("{} :: {} :: {} :: {}", item.file, item.kind, item.name, item.line);
                     state.items.insert(key.clone(), item);
-                    state.item_source.insert(key, fields[4].to_string());
+                    state.item_source.insert(key.clone(), fields[4].to_string());
+                    state.item_doc.insert(key.clone(), docflag);
                     // explanation is fields[3]; kept via a pseudo doc for rendering
-                    if let Some(it) = state.items.get_mut(&format!("{} :: {}", fields[0], fields[1])) {
+                    if let Some(it) = state.items.get_mut(&key) {
                         it.doc = fields[3].to_string();
                     }
                 }
             }
-        } else if let Some(rest) = line.strip_prefix("item~ ") {
+        } else if line.starts_with("item~ ") {
             apply_delta(&line.replacen("item~ ", "item+ ", 1), state);
-            let _ = rest;
         } else if let Some(rest) = line.strip_prefix("item- ") {
+            // kind file :: name [:: line] — delta-format 3 carries the
+            // line (T12); a line-less removal names line 0.
             let fields: Vec<&str> = rest.splitn(2, ' ').collect();
             if parts_ok(&fields) {
+                let kind = if fields[0] == "entry-point" { "entry point" } else { fields[0] };
                 let f: Vec<&str> = fields[1].split(" :: ").collect();
                 if f.len() >= 2 {
-                    state.items.remove(&format!("{} :: {}", f[0], f[1]));
+                    let iline: usize = if f.len() >= 3 { f[2].parse().unwrap_or(0) } else { 0 };
+                    let key = format!("{} :: {} :: {} :: {}", f[0], kind, f[1], iline);
+                    state.items.remove(&key);
+                    state.item_source.remove(&key);
+                    state.item_doc.remove(&key);
                 }
             }
         } else if let Some(rest) = line.strip_prefix("dep+ ") {
@@ -1861,6 +2278,16 @@ fn apply_delta(scroll: &str, state: &mut FoldState) {
                     list.retain(|e| e.0 != fields[1]);
                 }
             }
+        } else if let Some(rest) = line.strip_prefix("depmeta- ") {
+            state.dep_meta.remove(rest.trim());
+        } else if let Some(rest) = line.strip_prefix("depmeta ") {
+            // T9c: depmeta {manifest} :: {ecosystem} :: {license or -} :: {lock or -}
+            let fields: Vec<&str> = rest.split(" :: ").collect();
+            if fields.len() >= 4 {
+                let lic = if fields[2] == "-" { None } else { Some(fields[2].to_string()) };
+                let lock: Option<usize> = if fields[3] == "-" { None } else { fields[3].parse().ok() };
+                state.dep_meta.insert(fields[0].to_string(), (fields[1].to_string(), lic, lock));
+            }
         } else if let Some(rest) = line.strip_prefix("stat ") {
             // stat <lang...> files N total N blank N comment N code N
             let toks: Vec<&str> = rest.split_whitespace().collect();
@@ -1871,7 +2298,12 @@ fn apply_delta(scroll: &str, state: &mut FoldState) {
                     .filter_map(|t| t.parse().ok())
                     .collect();
                 if nums.len() == 5 {
-                    state.lang.insert(lang, (nums[0], nums[1], nums[2], nums[3], nums[4]));
+                    // T4: an all-zero stat line removes the language — no ghost rows.
+                    if nums.iter().all(|n| *n == 0) {
+                        state.lang.remove(&lang);
+                    } else {
+                        state.lang.insert(lang, (nums[0], nums[1], nums[2], nums[3], nums[4]));
+                    }
                 }
             }
         } else if let Some(rest) = line.strip_prefix("author+ ") {
@@ -1882,10 +2314,70 @@ fn apply_delta(scroll: &str, state: &mut FoldState) {
                 let n: usize = rest[pos + 9..].parse().unwrap_or(0);
                 state.authors.insert(who, n);
             }
+        } else if let Some(rest) = line.strip_prefix("quality ") {
+            // T9b: quality {tests} {testfiles} {todo} {fixme} — absolute.
+            let nums: Vec<usize> = rest.split_whitespace().filter_map(|t| t.parse().ok()).collect();
+            if nums.len() >= 4 {
+                state.quality = (nums[0], nums[1], nums[2], nums[3]);
+            }
+        } else if let Some(rest) = line.strip_prefix("fncount ") {
+            state.fn_count = rest.trim().parse().unwrap_or(0);
+        } else if let Some(rest) = line.strip_prefix("ci+ ") {
+            state.ci.insert(rest.trim().to_string());
+        } else if let Some(rest) = line.strip_prefix("ci- ") {
+            state.ci.remove(rest.trim());
+        } else if let Some(rest) = line.strip_prefix("lint+ ") {
+            state.lint.insert(rest.trim().to_string());
+        } else if let Some(rest) = line.strip_prefix("lint- ") {
+            state.lint.remove(rest.trim());
+        } else if let Some(rest) = line.strip_prefix("origin ") {
+            state.origin = if rest.trim() == "-" { String::new() } else { rest.trim().to_string() };
+        } else if let Some(rest) = line.strip_prefix("branch ") {
+            state.branch = if rest.trim() == "-" { String::new() } else { rest.trim().to_string() };
+        } else if let Some(rest) = line.strip_prefix("largest-file ") {
+            // T10: checkpoint lines replace the largest lists wholesale.
+            if !largest_files_cleared {
+                state.largest_files.clear();
+                largest_files_cleared = true;
+            }
+            let fields: Vec<&str> = rest.split(" :: ").collect();
+            if fields.len() >= 2 {
+                state.largest_files.push((fields[0].to_string(), fields[1].parse().unwrap_or(0)));
+            }
+        } else if let Some(rest) = line.strip_prefix("largest-fn ") {
+            if !largest_fns_cleared {
+                state.largest_fns.clear();
+                largest_fns_cleared = true;
+            }
+            let fields: Vec<&str> = rest.split(" :: ").collect();
+            if fields.len() >= 3 {
+                state.largest_fns.push((fields[0].to_string(), fields[1].to_string(), fields[2].parse().unwrap_or(0)));
+            }
+        } else if let Some(rest) = line.strip_prefix("rfcsnote ") {
+            state.rfcs_note = rest.to_string();
+        } else if line == "rfcsbegin" {
+            state.rfcs_entries = Some(Vec::new());
+        } else if let Some(rest) = line.strip_prefix("rfcsentry ") {
+            // T9d: rfcsentry {number} :: {status} :: {sha} :: {source}
+            let fields: Vec<&str> = rest.split(" :: ").collect();
+            if fields.len() >= 4 {
+                let entry = RfcEntry {
+                    number: fields[0].to_string(),
+                    status: fields[1].to_string(),
+                    sha: if fields[2] == "-" { String::new() } else { fields[2].to_string() },
+                    source: if fields[3] == "-" { String::new() } else { fields[3].to_string() },
+                };
+                state.rfcs_entries.get_or_insert_with(Vec::new).push(entry);
+            }
         } else if let Some(rest) = line.strip_prefix("rfcs ") {
             state.rfcs_count = if rest.trim() == "none" { None } else { rest.trim().parse().ok() };
+            if rest.trim() == "none" {
+                state.rfcs_entries = None;
+            }
         }
     }
+    // T4 (other half): a language left with no files and no lines is a ghost.
+    state.lang.retain(|_, v| !(v.0 == 0 && v.1 == 0));
 }
 
 fn parts_ok(fields: &[&str]) -> bool {
@@ -1906,51 +2398,163 @@ fn provenance_section(name: &str, export_repo: &str, doc_site: &str) -> (String,
 }
 
 /// Render the folded reference (what the doc site shows per universe).
-/// The provenance block names the targets the documentation was produced
-/// for: the export repo that keeps the chain, and the doc site it is
-/// rendered for — both from the project's own configuration.
+/// T10: the same schema and order as sections() — the two render paths
+/// print the same sections with the same words, differing only where a
+/// fact cannot be folded (noted at each such place). The provenance block
+/// names the targets the documentation was produced for: the export repo
+/// that keeps the chain, and the doc site it is rendered for — both from
+/// the project's own configuration.
 fn render_folded(name: &str, state: &FoldState, at_label: &str, export_repo: &str, doc_site: &str) -> String {
     let mut out = String::new();
     out.push_str(&format!("# {} — reference as of {}\n\n", name, at_label));
     out.push_str(&format!("Commit {}. {} commit{} folded. Every fact here was folded from the chain's per-commit deltas.\n\n", state.head_sha, state.total_commits, if state.total_commits == 1 { "" } else { "s" }));
-    out.push_str("## Provenance\n\n");
-    out.push_str(&format!(
-        "This reference is folded from the project's documentation chain, kept in the export repo {} at docs/{}/chain.phext, and rendered for the doc site {}. Both targets are named in the project's own .phdoc.json; the defaults are {} and {}.\n\n",
-        export_repo, name, doc_site, DEFAULT_EXPORT_REPO, DEFAULT_DOC_SITE
-    ));
+
+    // Dependencies
     out.push_str("## Dependencies\n\n");
     if state.deps.is_empty() {
         out.push_str("No dependencies recorded at this point.\n\n");
     }
     for (manifest, list) in &state.deps {
-        out.push_str(&format!("### {}\n\n", manifest));
+        let (eco, lic, lock) = match state.dep_meta.get(manifest) {
+            Some((e, l, t)) => (e.clone(), l.clone(), *t),
+            None => (manifest.clone(), None, None),
+        };
+        if state.dep_meta.contains_key(manifest) {
+            out.push_str(&format!("### {} — {}\n\n", eco, manifest));
+        } else {
+            out.push_str(&format!("### {}\n\n", manifest));
+        }
+        if let Some(lic) = &lic {
+            out.push_str(&format!("License stated in the manifest: {}.\n\n", lic));
+        }
+        out.push_str(&format!("{}\n\n", dep_count_line(list)));
         for (n, v) in list {
             out.push_str(&format!("- {} — {}\n", n, v));
         }
+        if let Some(t) = lock {
+            out.push_str(&format!("\nTotal packages in the lock file, this one included: {}.\n", t));
+        }
         out.push('\n');
     }
+
+    // Authors: the total git-log count cannot be folded; the audited
+    // mainline count folded to this point can, and is what is printed.
     out.push_str("## Authors\n\n");
-    let authors_vec: Vec<(String, usize)> = state.authors.iter().map(|(k, v)| (k.clone(), *v)).collect();
-    out.push_str(&authors_folded_lines(&authors_vec));
-    out.push_str("\n## Complexity\n\n");
-    for (lang, (f, t, b, c, code)) in &state.lang {
-        out.push_str(&format!("- {}: {} files, {} lines total, {} blank, {} comment, {} code\n", lang, f, t, b, c, code));
+    if state.authors.is_empty() {
+        out.push_str("No git history was read, so no authors are recorded.\n");
+    } else {
+        out.push_str(&format!("Author counts over the {} audited mainline commits folded to this point.\n\n", state.total_commits));
+        let authors_vec: Vec<(String, usize)> = state.authors.iter().map(|(k, v)| (k.clone(), *v)).collect();
+        out.push_str(&authors_folded_lines(&authors_vec));
     }
-    out.push_str(&format!(
-        "\nDeclared RFCs at this point: {}.\n\n",
-        state.rfcs_count.map(|c| c.to_string()).unwrap_or_else(|| "none declared".into())
-    ));
-    out.push_str("## Public methods and commands\n\n");
-    for (key, item) in &state.items {
-        let _ = key;
+
+    // Complexity
+    out.push_str("\n## Complexity\n\n");
+    out.push_str("The measure is stated plainly, and no single score is made: lines are counted per file as total lines, blank lines, comment lines, and code lines (total minus blank minus comment). Functions are counted where the scanner reads them, and the largest functions are given by their span in lines.\n\n");
+    let mut tf = 0usize;
+    let mut tt = 0usize;
+    let mut tc = 0usize;
+    for (lang, (files, total, blank, comment, code)) in &state.lang {
+        out.push_str(&format!("- {}: {} files, {} lines total, {} blank, {} comment, {} code\n", lang, files, total, blank, comment, code));
+        tf += files;
+        tt += total;
+        tc += code;
+    }
+    out.push_str(&format!("\nAll languages: {} files, {} lines total, {} lines of code. Functions read: {}.\n\n", tf, tt, tc, state.fn_count));
+    out.push_str("Largest files:\n\n");
+    for (f, n) in &state.largest_files {
+        out.push_str(&format!("- {} — {} lines\n", f, n));
+    }
+    out.push_str("\nLargest functions, by span in lines:\n\n");
+    for (n, f, span) in &state.largest_fns {
+        out.push_str(&format!("- {} in {} — about {} lines\n", n, f, span));
+    }
+
+    // Code quality signals
+    out.push_str("\n## Code quality signals\n\n");
+    out.push_str("Each signal is named and shown with its evidence. A signal is a fact the scanner read, not a grade.\n\n");
+    out.push_str(&format!("- Tests: {} test functions counted in the source, across {} files in test directories or whose names mark them as test files.\n", state.quality.0, state.quality.1));
+    if state.ci.is_empty() {
+        out.push_str("- CI: no CI configuration was found in the project.\n");
+    }
+    for line in &state.ci {
+        out.push_str(&format!("- CI: {}\n", line));
+    }
+    if state.lint.is_empty() {
+        out.push_str("- Lint and format: no lint or format configuration file was found.\n");
+    } else {
+        let lint_list: Vec<&String> = state.lint.iter().collect();
+        out.push_str(&format!("- Lint and format configuration files: {}.\n", lint_list.iter().map(|s| s.as_str()).collect::<Vec<_>>().join(", ")));
+    }
+    out.push_str(&format!("- TODO marks in the source: {}. FIXME marks: {}.\n", state.quality.2, state.quality.3));
+    let total_items = state.items.len();
+    let documented = state.item_doc.values().filter(|d| **d).count();
+    if total_items > 0 {
         out.push_str(&format!(
-            "- {} `{}` ({}) — {}\n",
-            item.kind,
-            item.name,
-            item.file,
-            first_sentence(&item.doc)
+            "- Public items with a doc comment: {} of {} ({:.0}%).\n",
+            documented,
+            total_items,
+            (documented as f64) * 100.0 / (total_items as f64)
         ));
     }
+
+    // Declared RFCs
+    out.push_str("\n## Declared RFCs\n\n");
+    out.push_str(&format!("{}\n\n", state.rfcs_note));
+    if let Some(entries) = &state.rfcs_entries {
+        for e in entries {
+            out.push_str(&format!(
+                "- RFC {} — status: {}; hash: {}; source: {}\n",
+                e.number,
+                e.status,
+                if e.sha.is_empty() { "(none recorded)" } else { &e.sha },
+                if e.source.is_empty() { "(none recorded)" } else { &e.source }
+            ));
+        }
+    }
+
+    // Upstream git repo
+    out.push_str("\n## Upstream git repo\n\n");
+    out.push_str(&format!("- Origin: {}\n", if state.origin.is_empty() { "(no origin remote set)" } else { &state.origin }));
+    out.push_str(&format!("- Branch: {}\n", if state.branch.is_empty() { "(detached or unnamed)" } else { &state.branch }));
+    out.push_str(&format!("- Head commit: {}\n", state.head_sha));
+    out.push_str("- Working tree: the committed tree at this commit — a historical reference has no working tree\n");
+
+    // Public methods and commands: index, then one section per item.
+    out.push_str("\n## Public methods and commands\n\n");
+    out.push_str("Every public method and command the scanner found, each with a plain English note. A note says where its words came from: the code's own doc comment, the item's signature, the user's agent, or it is marked awaiting a summary.\n\n");
+    // T12: render in the scan's order — (file, name), the line as
+    // tiebreak — so the folded page's item sections stand in the same
+    // order, with the same multiplicity, as the latest reference.
+    let mut items_sorted: Vec<&PubItem> = state.items.values().collect();
+    items_sorted.sort_by(|a, b| a.file.cmp(&b.file).then_with(|| a.name.cmp(&b.name)).then_with(|| a.line.cmp(&b.line)));
+    for item in &items_sorted {
+        let source = state.item_source.get(&format!("{} :: {} :: {} :: {}", item.file, item.kind, item.name, item.line)).map(|s| s.as_str()).unwrap_or("");
+        if source == "awaiting" {
+            out.push_str(&format!("- {} `{}` ({}:{}) — awaiting a summary\n", item.kind, item.name, item.file, item.line));
+        } else {
+            out.push_str(&format!("- {} `{}` ({}:{}) — {}\n", item.kind, item.name, item.file, item.line, first_sentence(&item.doc)));
+        }
+    }
+    for item in &items_sorted {
+        let source = state.item_source.get(&format!("{} :: {} :: {} :: {}", item.file, item.kind, item.name, item.line)).map(|s| s.as_str()).unwrap_or("");
+        out.push_str(&format!("\n## {} — {}\n\n", item.kind, item.name));
+        out.push_str(&format!("Found in {} at line {}.\n\n", item.file, item.line));
+        out.push_str(&format!("Signature: `{}`\n\n", item.signature));
+        if source == "awaiting" {
+            out.push_str("Summary: awaiting a summary. This item is named in the instruction file that came with this scan. No words were invented for it.\n");
+        } else {
+            out.push_str(&format!("What it does: {}\n\n", item.doc));
+            out.push_str(&format!("(Where these words came from: {}.)\n", source));
+        }
+    }
+
+    // Provenance LAST, as cmd_audit appends it to the latest reference.
+    out.push_str("\n## Provenance\n\n");
+    out.push_str(&format!(
+        "This reference is folded from the project's documentation chain, kept in the export repo {} at docs/{}/chain.phext, and rendered for the doc site {}. Both targets are named in the project's own .phdoc.json; the defaults are {} and {}.\n",
+        export_repo, name, doc_site, DEFAULT_EXPORT_REPO, DEFAULT_DOC_SITE
+    ));
     out
 }
 
@@ -2197,6 +2801,7 @@ struct AuditArgs {
     out: Option<PathBuf>,
     name: String,
     hold_push: bool,
+    rebuild: bool, // T3: rebuild a pre-delta-format-3 chain from empty
 }
 
 fn cmd_audit(a: AuditArgs) -> i32 {
@@ -2237,6 +2842,26 @@ fn cmd_audit(a: AuditArgs) -> i32 {
     let chain_path = proj_dir.join("chain.phext");
     let mut chain = if chain_path.exists() { read(&chain_path) } else { String::new() };
 
+    // T3 BASIS-CHANGE GUARD: delta-format 3 (T12 item identity; format 2
+    // changed the counting before it). A non-empty chain whose first
+    // scroll lacks the marker predates it and cannot be folded by this
+    // build: refuse, unless --rebuild was passed — then start from an
+    // empty chain and a cleared ledger order (ledger entries are kept:
+    // review marks are keyed by sha and survive the rebuild).
+    if !chain.is_empty() {
+        let first = phext::fetch(&chain, chain_coord(1));
+        if !first.contains("delta-format 3") {
+            if a.rebuild {
+                chain = String::new();
+                ledger.order.clear();
+            } else {
+                eprintln!("phdoc audit: the chain at {} predates delta-format 3 and must be rebuilt; re-run with --rebuild to rebuild it from an empty chain (review marks in .phdoc.json are kept). Nothing was written.", chain_path.display());
+                return 1;
+            }
+        }
+    }
+    let chain_was_empty = chain.is_empty();
+
     // repo hygiene before writing: fetch + rebase onto the fresh remote head
     // of the checkout's own branch (exo for wbic16/phdoc; a configured repo
     // may name another). A remote with no commits yet has nothing to rebase.
@@ -2265,7 +2890,11 @@ fn cmd_audit(a: AuditArgs) -> i32 {
     }
 
     // the commits to audit: ledger + chain agree; anything in history not in the chain is new
-    let history = git_str(&root, &["rev-list", "--reverse", "HEAD"]);
+    // T3 WALK BASIS: the first-parent mainline. On a first-parent chain the
+    // previous commit in this list IS the first parent, so parent =
+    // commits[idx - 1] below is exact (the old all-reachable walk made it
+    // wrong on merges).
+    let history = git_str(&root, &["rev-list", "--first-parent", "--reverse", "HEAD"]);
     let commits: Vec<String> = history.lines().map(|s| s.to_string()).collect();
     let already = chain_commits(&chain);
     ledger.project = name.clone();
@@ -2300,17 +2929,27 @@ fn cmd_audit(a: AuditArgs) -> i32 {
             entry.failed = Some("git cat-file could not read the commit object".to_string());
             let u = already.len() + new_universes + 1;
             let scroll = format!(
-                "Commit {} could not be audited.\n\ncommit {}\nparent {}\naudit-failed git cat-file could not read the commit object\n",
+                "Commit {} could not be audited.\n\ncommit {}\nparent {}\ndate 0 1970-01-01\naudit-failed git cat-file could not read the commit object\n",
                 &sha[..sha.len().min(12)],
                 sha,
                 parent.unwrap_or("none")
             );
+            let scroll = if chain_was_empty && u == 1 {
+                format!("delta-format 3\n{}", scroll)
+            } else {
+                scroll
+            };
             chain = phext::insert(chain, chain_coord(u), &scroll);
             new_universes += 1;
             continue;
         }
         let scroll = audit_commit(&root, sha, parent, checkpoint, &mut state);
         let u = already.len() + new_universes + 1;
+        let scroll = if chain_was_empty && u == 1 {
+            format!("delta-format 3\n{}", scroll)
+        } else {
+            scroll
+        };
         chain = phext::insert(chain, chain_coord(u), &scroll);
         new_universes += 1;
         let entry = ledger.entries.get_mut(sha).expect("entry");
@@ -2318,21 +2957,129 @@ fn cmd_audit(a: AuditArgs) -> i32 {
         entry.failed = None;
     }
 
-    // render: latest (full working-tree scan) + one history page per universe
+    // render: latest (full scan of HEAD) + one history page per universe,
+    // all into memory first — the T5 gate below runs before any file is
+    // written (no latest.md, no history files, no chain, no ledger save,
+    // no export on a gate failure).
     let (mut sections, awaiting) = sections(&scan, &BTreeMap::new());
     sections.push(provenance_section(&name, &export_repo_cfg, &doc_site_cfg));
     let latest_md = render_markdown(&sections);
+    let all = chain_commits(&chain);
+    let mut pages: Vec<(String, String)> = Vec::new();
+    let mut st = FoldState::default();
+    for (i, sha) in all.iter().enumerate() {
+        fold_step(&chain, i + 1, &mut st);
+        let page = render_folded(&name, &st, &format!("commit {}", &sha[..sha.len().min(12)]), &export_repo_cfg, &doc_site_cfg);
+        pages.push((format!("{}.md", &sha[..sha.len().min(12)]), page));
+    }
+
+    // T5 AUDIT GATE: fold the complete chain fresh and compare it against
+    // the scan — language maps (all five fields), raw author counts, and
+    // the total audited commit count. Any mismatch: one line per differing
+    // field, return 1, nothing written.
+    let fold_head = fold_chain(&chain, all.len());
+    let mut gate_fail = false;
+    let mut gate_line = |field: &str, scan_v: String, fold_v: String| {
+        eprintln!("phdoc audit: GATE FAIL {}: {} scan={} fold={}", name, field, scan_v, fold_v);
+        gate_fail = true;
+    };
+    let mut langs: Vec<&String> = scan.lang_lines.keys().collect();
+    for l in fold_head.lang.keys() {
+        if !scan.lang_lines.contains_key(l) {
+            langs.push(l);
+        }
+    }
+    for l in langs {
+        let sv = scan.lang_lines.get(l);
+        let fv = fold_head.lang.get(l);
+        if sv != fv {
+            let fmt = |v: Option<&(usize, usize, usize, usize, usize)>| match v {
+                Some((f, t, b, c, code)) => format!("files={} total={} blank={} comment={} code={}", f, t, b, c, code),
+                None => "absent".to_string(),
+            };
+            gate_line(&format!("lang {}", l), fmt(sv), fmt(fv));
+        }
+    }
+    let scan_authors: BTreeMap<String, usize> = scan.authors.iter().cloned().collect();
+    if scan_authors != fold_head.authors {
+        let mut who: Vec<&String> = scan_authors.keys().collect();
+        for k in fold_head.authors.keys() {
+            if !scan_authors.contains_key(k) {
+                who.push(k);
+            }
+        }
+        for w in who {
+            let sv = scan_authors.get(w).copied();
+            let fv = fold_head.authors.get(w).copied();
+            if sv != fv {
+                gate_line(
+                    &format!("author {}", w),
+                    sv.map(|n| n.to_string()).unwrap_or_else(|| "absent".into()),
+                    fv.map(|n| n.to_string()).unwrap_or_else(|| "absent".into()),
+                );
+            }
+        }
+    }
+    if scan.audited_commits != fold_head.total_commits {
+        gate_line("total_commits", scan.audited_commits.to_string(), fold_head.total_commits.to_string());
+    }
+    // T12 SECTION PARITY: the ordered level-2 section titles of the
+    // latest reference and of the folded head page must agree exactly —
+    // multiplicity included. The scan lists one section per item
+    // occurrence; the fold must reproduce every occurrence (T12 item
+    // identity). This is the same comparison the site generator's
+    // deploy gate makes on the written files, run here on the renders
+    // before anything is written, so the two gates cannot diverge.
+    {
+        let titles = |text: &str| -> Vec<String> {
+            text.lines()
+                .filter(|l| l.starts_with("## "))
+                .map(|l| l[3..].trim().to_string())
+                .collect()
+        };
+        let latest_titles = titles(&latest_md);
+        let head_titles = pages.last().map(|(_, p)| titles(p)).unwrap_or_default();
+        if latest_titles != head_titles {
+            let counts = |v: &Vec<String>| -> BTreeMap<String, usize> {
+                let mut m: BTreeMap<String, usize> = BTreeMap::new();
+                for t in v {
+                    *m.entry(t.clone()).or_insert(0) += 1;
+                }
+                m
+            };
+            let lc = counts(&latest_titles);
+            let hc = counts(&head_titles);
+            let mut keys: Vec<&String> = lc.keys().collect();
+            for k in hc.keys() {
+                if !lc.contains_key(k) {
+                    keys.push(k);
+                }
+            }
+            let mut any_count_diff = false;
+            for k in keys {
+                let l = lc.get(k).copied().unwrap_or(0);
+                let h = hc.get(k).copied().unwrap_or(0);
+                if l != h {
+                    any_count_diff = true;
+                    gate_line(&format!("section {}", k), format!("x{}", l), format!("x{}", h));
+                }
+            }
+            if !any_count_diff {
+                gate_line("section order", "latest order".to_string(), "folded head order differs".to_string());
+            }
+        }
+    }
+    if gate_fail {
+        return 1;
+    }
+
     let hist_dir = proj_dir.join("history");
     if let Err(e) = fs::create_dir_all(&hist_dir) {
         eprintln!("phdoc audit: cannot create {}: {}", hist_dir.display(), e);
         return 1;
     }
-    let all = chain_commits(&chain);
-    let mut st = FoldState::default();
-    for (i, sha) in all.iter().enumerate() {
-        fold_step(&chain, i + 1, &mut st);
-        let page = render_folded(&name, &st, &format!("commit {}", &sha[..sha.len().min(12)]), &export_repo_cfg, &doc_site_cfg);
-        let _ = fs::write(hist_dir.join(format!("{}.md", &sha[..sha.len().min(12)])), page);
+    for (fname, page) in &pages {
+        let _ = fs::write(hist_dir.join(fname), page);
     }
     let _ = fs::write(proj_dir.join("latest.md"), &latest_md);
     let _ = fs::write(&chain_path, &chain);
@@ -2537,7 +3284,7 @@ mod tests {
     #[test]
     fn cargo_deps_parse() {
         let text = "[package]\nname = \"x\"\nlicense = \"MIT\"\n\n[dependencies]\nlibphext = \"0.6.6\"\nserde = { version = \"1.0\", features = [\"derive\"] }\nlocal = { path = \"../local\" }\n";
-        let (deps, lic, pkg) = parse_cargo_toml(text);
+        let (deps, lic, pkg, _ver) = parse_cargo_toml(text);
         assert_eq!(lic.as_deref(), Some("MIT"));
         assert_eq!(pkg.as_deref(), Some("x"));
         assert_eq!(deps.len(), 3);
@@ -2615,6 +3362,28 @@ mod tests {
         assert_eq!(st2.authors["A <a@x>"], 2);
         assert_eq!(st2.total_commits, 2);
         assert_eq!(chain_commits(&chain), vec!["aaaa".to_string(), "bbbb".to_string()]);
+    }
+
+    #[test]
+    fn fold_keeps_duplicate_item_occurrences() {
+        // T12 regression: the scan lists one section per item
+        // OCCURRENCE. kgoat's src/schema.rs defines `fn name` twice
+        // (lines 87 and 125) — same file, kind, and name. Keyed by
+        // file+name (or file+kind+name) the fold collapsed them into
+        // one entry and the site generator's fold gate failed the
+        // deploy. Identity is file :: kind :: name :: line, and an
+        // item- removal names the occurrence it removes.
+        let mut chain = String::new();
+        let d1 = "Commit abc by A <a@x> on 2026-11-22 (EE 1).\n\ncommit aaaa\ndate 1795327200 2026-11-22\nitem+ function src/schema.rs :: name :: pub fn name() :: First. :: doc comment :: 87 :: 1\nitem+ function src/schema.rs :: name :: pub fn name() :: Second. :: doc comment :: 125 :: 1\nauthor+ A <a@x>\nstat Rust files 1 total 10 blank 1 comment 1 code 8\n";
+        chain = phext::insert(chain, chain_coord(1), d1);
+        let st1 = fold_chain(&chain, 1);
+        assert_eq!(st1.items.len(), 2);
+        let d2 = "Commit def by A <a@x> on 2026-11-22 (EE 2).\n\ncommit bbbb\ndate 1795327620 2026-11-22\nitem- function src/schema.rs :: name :: 87\nauthor~ A <a@x> commits 2\nstat Rust files 1 total 4 blank 0 comment 0 code 4\n";
+        chain = phext::insert(chain, chain_coord(2), d2);
+        let st2 = fold_chain(&chain, 2);
+        assert_eq!(st2.items.len(), 1);
+        let remaining: Vec<&PubItem> = st2.items.values().collect();
+        assert_eq!(remaining[0].line, 125);
     }
 
     #[test]
@@ -2770,7 +3539,7 @@ mod tests {
         )
         .expect("write .phdoc.json");
 
-        let rc = cmd_audit(AuditArgs { project: proj.to_string_lossy().to_string(), repo: None, out: Some(out.clone()), name: "fixture".into(), hold_push: false });
+        let rc = cmd_audit(AuditArgs { project: proj.to_string_lossy().to_string(), repo: None, out: Some(out.clone()), name: "fixture".into(), hold_push: false, rebuild: false });
         assert_eq!(rc, 0);
 
         // the export landed in the configured bare repo
@@ -2788,6 +3557,71 @@ mod tests {
         assert!(led.contains(&bare_str), "ledger keeps the export-repo setting");
         assert!(led.contains("https://docs.example.test"), "ledger keeps the doc-site setting");
         assert!(led.contains(&format!("\"chain\": \"{}:docs/fixture/chain.phext\"", bare_str)), "chain location names the configured repo: {}", led);
+        let _ = fs::remove_dir_all(&base);
+    }
+
+    #[test]
+    fn audit_folds_items_brought_in_by_a_merge() {
+        // T13 regression: the changed-file enumeration used diff-tree,
+        // which prints nothing for a merge commit — so a file (and its
+        // items) that arrived via a merge never entered the fold, and
+        // the folded head reference silently lacked it while the scan
+        // listed it. The audit now diffs parent..sha explicitly. This
+        // fixture merges a branch that adds src/extra.rs; the audit's
+        // own section-parity gate (T12) must pass (rc 0) and the folded
+        // head page must carry the merged-in function.
+        let base = std::env::temp_dir().join(format!("phdoc-merge-test-{}", std::process::id()));
+        let _ = fs::remove_dir_all(&base);
+        let proj = base.join("proj");
+        let bare = base.join("bare.git");
+        let out = base.join("out");
+        fs::create_dir_all(proj.join("src")).expect("fixture dirs");
+        let git = |dir: &Path, args: &[&str]| {
+            let o = Command::new("git")
+                .arg("-C")
+                .arg(dir)
+                .args(args)
+                .env("GIT_AUTHOR_NAME", "Test")
+                .env("GIT_AUTHOR_EMAIL", "test@localhost")
+                .env("GIT_COMMITTER_NAME", "Test")
+                .env("GIT_COMMITTER_EMAIL", "test@localhost")
+                .output()
+                .expect("git runs");
+            assert!(o.status.success(), "git {:?} failed: {}", args, String::from_utf8_lossy(&o.stderr));
+        };
+        git(&base, &["init", "proj"]);
+        git(&base, &["init", "--bare", "bare.git"]);
+        fs::write(proj.join("Cargo.toml"), "[package]\nname = \"fixture\"\nversion = \"0.1.0\"\nlicense = \"MIT\"\n\n[dependencies]\n").expect("write manifest");
+        fs::write(proj.join("src/lib.rs"), "/// Says hello.\npub fn hello() -> &'static str { \"hello\" }\n").expect("write source");
+        git(&proj, &["add", "."]);
+        git(&proj, &["commit", "-m", "first"]);
+        let main_branch = git_str(&proj, &["symbolic-ref", "--short", "HEAD"]);
+        git(&proj, &["checkout", "-b", "feature"]);
+        fs::write(proj.join("src/extra.rs"), "/// Arrived by merge.\npub fn merged_in() -> &'static str { \"merged\" }\n").expect("write extra");
+        git(&proj, &["add", "."]);
+        git(&proj, &["commit", "-m", "feature work"]);
+        git(&proj, &["checkout", &main_branch]);
+        git(&proj, &["merge", "--no-ff", "-m", "merge feature", "feature"]);
+        let merge_sha = git_str(&proj, &["rev-parse", "HEAD"]);
+        let bare_str = bare.to_string_lossy().to_string();
+        fs::write(
+            ledger_path(&proj),
+            format!(
+                "{{\n  \"project\": \"fixture\",\n  \"export-repo\": \"{}\",\n  \"doc-site\": \"https://docs.example.test\",\n  \"commits\": {{\n  }}\n}}\n",
+                bare_str
+            ),
+        )
+        .expect("write .phdoc.json");
+
+        let rc = cmd_audit(AuditArgs { project: proj.to_string_lossy().to_string(), repo: None, out: Some(out.clone()), name: "fixture".into(), hold_push: false, rebuild: false });
+        assert_eq!(rc, 0, "audit gate must pass with a merge in the first-parent history");
+
+        let branch = git_str(&bare, &["symbolic-ref", "--short", "HEAD"]);
+        let head_page_path = format!("docs/fixture/history/{}.md", &merge_sha[..merge_sha.len().min(12)]);
+        let page = String::from_utf8(git_bytes(&bare, &["show", &format!("{}:{}", branch, head_page_path)]).expect("show head page")).expect("page is utf8");
+        assert!(page.contains("function — merged_in"), "folded head page carries the merged-in item: {}", head_page_path);
+        let latest = String::from_utf8(git_bytes(&bare, &["show", &format!("{}:docs/fixture/latest.md", branch)]).expect("show latest")).expect("latest is utf8");
+        assert!(latest.contains("function — merged_in"), "latest reference carries the merged-in item");
         let _ = fs::remove_dir_all(&base);
     }
 
