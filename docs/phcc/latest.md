@@ -1,6 +1,6 @@
 # phcc — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-23 (Exocortical Epoch 195). Project root: /home/wbic16/phdoc-sweep/proj/phcc. Scanned at commit 0628c00360a22aafcaf4d0bf26a4991f9d29b900. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-23 (Exocortical Epoch 202). Project root: proj/phcc. Scanned at commit 0628c00360a22aafcaf4d0bf26a4991f9d29b900. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -14,18 +14,11 @@ No dependency manifest was found (no Cargo.toml, package.json, requirements.txt,
 
 ## Authors
 
-The git log holds 3888 commits. phdoc audits the 3807 commits on the first-parent mainline — each merge folds its branch's commits into the merge commit — and the author counts below cover that audited mainline, the same set the historical references fold.
+Fork attribution: phcc is a fork of TinyCC (github.com/TinyCC/tinycc). The fork's divergence from upstream is recorded in its PATCHES.md; the fork base on the audited mainline is commit c638ddfb593214813aa33536fb993b9a45d23793 (2026-10-05). Upstream history carried by this fork: 3708 audited commits, credited to the upstream authors below — that work is upstream's, not this fork's. Fork-side work: 99 audited commits since the base, the first dated 2024-04-18 — the work this fork claims, credited below as the fork's own.
 
-The author of record is **Will Bickford** — 97 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+The fork side also carries 2 commits cherry-picked from upstream during upstream syncs, by Alexander Medvednikov <alexander@medvednikov.com>, Raven <citrons@mondecitronne.com> — upstream work, credited to its authors in the fork-side list below, not claimed as the fork's.
 
-Annotation, by persona (all folded into Will Bickford):
-
-- Theia — 44 commits
-- Emise — 32 commits
-- Alveus — 12 commits
-- Will Bickford (his own identities) — 9 commits
-
-Other authors, kept as themselves (not Exocortical cluster personas; never folded):
+### Upstream authors — upstream history, credited to its authors
 
 - grischka <grischka> — 552 commits
 - Michael Matz <matz@suse.de> — 462 commits
@@ -150,7 +143,6 @@ Other authors, kept as themselves (not Exocortical cluster personas; never folde
 - waterlens <waterlens@waterlens.moe> — 2 commits
 - Adam Sampson <ats@offog.org> — 1 commit
 - Alexander Egorenkov <ae@linux-pc-2.(none)> — 1 commit
-- Alexander Medvednikov <alexander@medvednikov.com> — 1 commit
 - Alexander Sosedkin <monk@unboiled.info> — 1 commit
 - Alexandre Becoulet <diaxen@ganymede.localdomain> — 1 commit
 - Ali Gholami Rudi <ali@rudi.ir> — 1 commit
@@ -213,7 +205,6 @@ Other authors, kept as themselves (not Exocortical cluster personas; never folde
 - Per Nordlöw <PNordlow@symmetryinvestments.com> — 1 commit
 - Per Nordlöw <per.nordlow@gmail.com> — 1 commit
 - Petr Skocik <borgx.space@gmail.com> — 1 commit
-- Raven <citrons@mondecitronne.com> — 1 commit
 - Reinhard Urban <reinhard.urban@nubix.de> — 1 commit
 - Reini Urban <reini@spexai.com> — 1 commit
 - Rob Pilling <robpilling@gmail.com> — 1 commit
@@ -269,6 +260,22 @@ Other authors, kept as themselves (not Exocortical cluster personas; never folde
 - yan-bin2009 <yan20095642558@163.com> — 1 commit
 - yuanbin <yuanbin0@gmail.com> — 1 commit
 - Øyvind A. Holm <sunny@sunbase.org> — 1 commit
+
+### Fork-side authors — this fork's work
+
+The author of record is **Will Bickford** — 97 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
+
+Annotation, by persona (all folded into Will Bickford):
+
+- Theia — 44 commits
+- Emise — 32 commits
+- Alveus — 12 commits
+- Will Bickford (his own identities) — 9 commits
+
+Other authors, kept as themselves (not Exocortical cluster personas; never folded):
+
+- Alexander Medvednikov <alexander@medvednikov.com> — 1 commit
+- Raven <citrons@mondecitronne.com> — 1 commit
 
 ---
 
@@ -326,7 +333,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 - Origin: /home/wbic16/github-archive/mirrors/phcc.git
 - Branch: exo
 - Head commit: 0628c00360a22aafcaf4d0bf26a4991f9d29b900
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
