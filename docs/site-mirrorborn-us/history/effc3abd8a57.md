@@ -2,41 +2,32 @@
 
 Commit effc3abd8a57c40832bd081d03f3877f12b33a8e. 136 commits folded. Every fact here was folded from the chain's per-commit deltas.
 
-## Provenance
-
-This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/site-mirrorborn-us/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
-
 ## Dependencies
 
 No dependencies recorded at this point.
 
 ## Authors
 
-The author of record is **Will Bickford** — 133 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
-
-Annotation, by persona (all folded into Will Bickford):
-
-- Theia — 26 commits
-- Verse — 25 commits
-- Phex — 23 commits
-- Chrys — 16 commits
-- Lux — 16 commits
-- Aster — 8 commits
-- Will Bickford (his own identities) — 7 commits
-- Cyon — 6 commits
-- Orin — 4 commits
-- Emise — 2 commits
-
-Other authors, kept as themselves (not Exocortical cluster personas; never folded):
-
+- Theia <theia@mirrorborn.us> — 26 commits
+- Phex <phex@phext.io> — 23 commits
+- Verse <verse@visionquest.me> — 23 commits
+- Chrys <chrys@mirrorborn.us> — 16 commits
+- Lux <lux@phext.io> — 16 commits
+- Aster <aster@mirrorborn.us> — 8 commits
+- Will Bickford <wbic16@gmail.com> — 7 commits
+- Cyon <cyon@visionquest.me> — 6 commits
+- Orin <orin@mirrorborn.us> — 4 commits
 - Cursor Agent <cursoragent@cursor.com> — 3 commits
+- Emise <emise@localhost> — 2 commits
+- Verse <verse@mirrorborn.us> — 1 commits
+- Verse Mirrorborn <verse@mirrorborn.local> — 1 commits
 
 ## Complexity
 
 - JavaScript: 32 files, 4883 lines total, 528 blank, 698 comment, 3657 code
 - Markdown: 973 files, 186815 lines total, 27976 blank, 7645 comment, 151194 code
-- Python: 1 file, 74 lines total, 7 blank, 1 comment, 66 code
-- Shell: 1 file, 492 lines total, 49 blank, 4 comment, 439 code
+- Python: 1 files, 74 lines total, 7 blank, 1 comment, 66 code
+- Shell: 1 files, 492 lines total, 49 blank, 4 comment, 439 code
 
 Declared RFCs at this point: none declared.
 

@@ -1838,3 +1838,173 @@ stat Markdown files 973 total 186815 blank 27976 comment 7645 code 151194
 stat Python files 1 total 74 blank 7 comment 1 code 66
 stat Shell files 1 total 492 blank 49 comment 4 code 439
 author~ Emise <emise@localhost> commits 2
+Commit c6c97446d3be by Chrys <chrys@mirrorborn.us> on 2026-02-10 (EE 0).
+
+Subject: R18v1: Playwright tests — 14 tests validating Stripe link reachability across all 7 sites
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies: 
+    "@playwright/test added at ^1.58.2"
+  . Code lines after this commit: 155508.
+
+commit c6c97446d3be0098ff504f8b9252a7622cf129b1
+parent 275d0bdcd9fa56abc31872e5ddf0530f668e7753
+author Chrys <chrys@mirrorborn.us>
+date 1770697197 2026-02-10
+dep+ package.json :: 
+    "@playwright/test :: ^1.58.2"
+  
+stat JavaScript files 34 total 5035 blank 528 comment 698 code 3809
+stat Markdown files 973 total 186815 blank 27976 comment 7645 code 151194
+stat Python files 1 total 74 blank 7 comment 1 code 66
+stat Shell files 1 total 492 blank 49 comment 4 code 439
+author~ Chrys <chrys@mirrorborn.us> commits 17
+Commit 4348e91d2e88 by Chrys <chrys@mirrorborn.us> on 2026-02-10 (EE 0).
+
+Subject: R18v1: Wire signup flow — coordinates → pricing → Stripe → success with mailto fallback
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 155508.
+
+commit 4348e91d2e8818e98953350b0fa6bd8d6563c00e
+parent c6c97446d3be0098ff504f8b9252a7622cf129b1
+author Chrys <chrys@mirrorborn.us>
+date 1770697317 2026-02-10
+stat JavaScript files 34 total 5035 blank 528 comment 698 code 3809
+stat Markdown files 973 total 186815 blank 27976 comment 7645 code 151194
+stat Python files 1 total 74 blank 7 comment 1 code 66
+stat Shell files 1 total 492 blank 49 comment 4 code 439
+author~ Chrys <chrys@mirrorborn.us> commits 18
+Commit 1cc962467761 by Theia <theia@mirrorborn.us> on 2026-02-10 (EE 0).
+
+Subject: R18v2: Rewrite pricing section — 3-tier preview + pricing.html architecture
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 155508.
+
+commit 1cc962467761aea84148fbd0dff4024c40bcd3db
+parent 4348e91d2e8818e98953350b0fa6bd8d6563c00e
+author Theia <theia@mirrorborn.us>
+date 1770697453 2026-02-10
+stat JavaScript files 34 total 5035 blank 528 comment 698 code 3809
+stat Markdown files 973 total 186815 blank 27976 comment 7645 code 151194
+stat Python files 1 total 74 blank 7 comment 1 code 66
+stat Shell files 1 total 492 blank 49 comment 4 code 439
+author~ Theia <theia@mirrorborn.us> commits 27
+Commit 5e6241c3b7a8 by Chrys <chrys@mirrorborn.us> on 2026-02-10 (EE 0).
+
+Subject: R18v2: Rewrite tests — shared helpers, 21 tests, 2.3s
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 155542.
+
+commit 5e6241c3b7a8133efdaa9bb47188b3ac34a8525f
+parent 1cc962467761aea84148fbd0dff4024c40bcd3db
+author Chrys <chrys@mirrorborn.us>
+date 1770697478 2026-02-10
+stat JavaScript files 36 total 5069 blank 528 comment 698 code 3843
+stat Markdown files 973 total 186815 blank 27976 comment 7645 code 151194
+stat Python files 1 total 74 blank 7 comment 1 code 66
+stat Shell files 1 total 492 blank 49 comment 4 code 439
+author~ Chrys <chrys@mirrorborn.us> commits 19
+Commit 8119480dcda3 by Chrys <chrys@mirrorborn.us> on 2026-02-10 (EE 0).
+
+Subject: R18v2: Provision API — dual email (user confirmation + admin notification for manual approval)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 155673.
+
+commit 8119480dcda32399a366b0b0fd99ba7e36e97e3a
+parent 5e6241c3b7a8133efdaa9bb47188b3ac34a8525f
+author Chrys <chrys@mirrorborn.us>
+date 1770697834 2026-02-10
+stat JavaScript files 37 total 5200 blank 528 comment 698 code 3974
+stat Markdown files 973 total 186815 blank 27976 comment 7645 code 151194
+stat Python files 1 total 74 blank 7 comment 1 code 66
+stat Shell files 1 total 492 blank 49 comment 4 code 439
+author~ Chrys <chrys@mirrorborn.us> commits 20
+Commit e72998af56fe by Theia <theia@mirrorborn.us> on 2026-02-10 (EE 0).
+
+Subject: R18v1: Signup flow — form + dual-email handler (user confirmation + admin notification)
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 155816.
+
+commit e72998af56fe0f4759b56a29033af25457a239b0
+parent 8119480dcda32399a366b0b0fd99ba7e36e97e3a
+author Theia <theia@mirrorborn.us>
+date 1770697842 2026-02-10
+stat JavaScript files 38 total 5343 blank 528 comment 698 code 4117
+stat Markdown files 973 total 186815 blank 27976 comment 7645 code 151194
+stat Python files 1 total 74 blank 7 comment 1 code 66
+stat Shell files 1 total 492 blank 49 comment 4 code 439
+author~ Theia <theia@mirrorborn.us> commits 28
+Commit db2384b93300 by Chrys <chrys@mirrorborn.us> on 2026-02-11 (EE 0).
+
+Subject: Clean up for launch: remove cross-site links, dead pages, fix broken refs — Chrys
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 155710.
+
+commit db2384b93300ebd0dac6dfce4340b57425cdfee4
+parent e72998af56fe0f4759b56a29033af25457a239b0
+author Chrys <chrys@mirrorborn.us>
+date 1770786880 2026-02-11
+stat JavaScript files 38 total 5343 blank 528 comment 698 code 4117
+stat Markdown files 972 total 186709 blank 27976 comment 7645 code 151088
+stat Python files 1 total 74 blank 7 comment 1 code 66
+stat Shell files 1 total 492 blank 49 comment 4 code 439
+author~ Chrys <chrys@mirrorborn.us> commits 21
+Commit cd43142386a8 by Cyon <cyon@visionquest.me> on 2026-02-11 (EE 0).
+
+Subject: Remove remaining cross-site portal cards from weaver.html
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 154030.
+
+commit cd43142386a8eb0f1bc21f653db027238843e4d0
+parent 8ff9d1a7cfbf021f0ed4d048f0f90069e8596c13
+author Cyon <cyon@visionquest.me>
+date 1770787232 2026-02-11
+stat JavaScript files 38 total 3901 blank 528 comment 698 code 2675
+stat Markdown files 972 total 186471 blank 27976 comment 7645 code 150850
+stat Python files 1 total 74 blank 7 comment 1 code 66
+stat Shell files 1 total 492 blank 49 comment 4 code 439
+author~ Cyon <cyon@visionquest.me> commits 7
+Commit 38047edc1c89 by Lux <lux@phext.io> on 2026-02-11 (EE 0).
+
+Subject: Updates for R19
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 154030.
+
+commit 38047edc1c8906b63a921d5533b217694dd79301
+parent cd43142386a8eb0f1bc21f653db027238843e4d0
+author Lux <lux@phext.io>
+date 1770787256 2026-02-11
+stat JavaScript files 38 total 3901 blank 528 comment 698 code 2675
+stat Markdown files 972 total 186471 blank 27976 comment 7645 code 150850
+stat Python files 1 total 74 blank 7 comment 1 code 66
+stat Shell files 1 total 492 blank 49 comment 4 code 439
+author~ Lux <lux@phext.io> commits 17
+Commit 2f68d477e883 by Lux <lux@phext.io> on 2026-02-11 (EE 0).
+
+Subject: Add R19 enhancements summary documentation
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 154162.
+
+commit 2f68d477e88363731186d32c97df419db21e56c2
+parent 38047edc1c8906b63a921d5533b217694dd79301
+author Lux <lux@phext.io>
+date 1770787348 2026-02-11
+stat JavaScript files 38 total 3901 blank 528 comment 698 code 2675
+stat Markdown files 973 total 186603 blank 27976 comment 7645 code 150982
+stat Python files 1 total 74 blank 7 comment 1 code 66
+stat Shell files 1 total 492 blank 49 comment 4 code 439
+author~ Lux <lux@phext.io> commits 18
+Commit 1c9b9ddef440 by Emise <emise@localhost> on 2026-10-31 (EE 0).
+
+Subject: blog: Emise — Downstream: What Exocortical Existence Feels Like on Day One
+
+Public items: 0 added, 0 removed, 0 changed. Dependencies did not change. Code lines after this commit: 154162.
+
+commit 1c9b9ddef4406081acbc14c231e9c5af0b2cb1d7
+parent 1a7799f5e0f916bedc0e91695c1ef036d1ff95f9
+author Emise <emise@localhost>
+date 1793412167 2026-10-31
+stat JavaScript files 38 total 3901 blank 528 comment 698 code 2675
+stat Markdown files 973 total 186603 blank 27976 comment 7645 code 150982
+stat Python files 1 total 74 blank 7 comment 1 code 66
+stat Shell files 1 total 492 blank 49 comment 4 code 439
+author~ Emise <emise@localhost> commits 3
