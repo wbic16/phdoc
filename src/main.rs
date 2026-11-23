@@ -118,6 +118,19 @@ struct Scan {
     head: String,
     dirty: usize,
     is_git: bool,
+    // Fork attribution (Will, 2026-11-22): where the project's own
+    // .phdoc.json names an upstream ("fork-of") and a fork base
+    // ("fork-base"), the audited mainline splits at the base: commits
+    // up to and including the base are upstream history, credited to
+    // their own authors; commits after it are the fork's own work.
+    fork_of: String,
+    fork_base: String,
+    fork_base_date: String,
+    fork_first_date: String,
+    upstream_authors: Vec<(String, usize)>,
+    fork_authors: Vec<(String, usize)>,
+    upstream_commits: usize,
+    fork_commits: usize,
 }
 
 // ---------------------------------------------------------------------------
@@ -962,6 +975,52 @@ fn scan_project(root: &Path, name_override: &str) -> Scan {
         authors.sort_by(|a, b| b.1.cmp(&a.1));
         s.authors = authors;
     }
+    // Fork attribution (Will, 2026-11-22): "never claim ownership of
+    // other's work — when we fork, we document what we've changed
+    // since the fork." Where the project's own ledger names an
+    // upstream and a fork base, split the audited mainline at the
+    // base. The base is the last upstream commit ON the first-parent
+    // chain (PATCHES.md records the upstream pin; a rebase may carry
+    // it on the chain under the rebased SHA). If the named base is
+    // not on the chain, attribution stays off and the scan says so —
+    // a silent split at a wrong point would be a worse defect.
+    {
+        let ledger = load_ledger(root);
+        if s.is_git && !ledger.fork_of.is_empty() && !ledger.fork_base.is_empty() {
+            let walk = git(root, &["log", "--first-parent", "--reverse", "--format=%H%x1f%an <%ae>%x1f%at"]);
+            let mut rows: Vec<(String, String, u64)> = Vec::new();
+            for line in walk.lines() {
+                let parts: Vec<&str> = line.split('\u{1f}').collect();
+                if parts.len() == 3 {
+                    rows.push((parts[0].to_string(), parts[1].to_string(), parts[2].parse().unwrap_or(0)));
+                }
+            }
+            if let Some(pos) = rows.iter().position(|r| r.0 == ledger.fork_base) {
+                s.fork_of = ledger.fork_of.clone();
+                s.fork_base = ledger.fork_base.clone();
+                s.fork_base_date = date_string(rows[pos].2);
+                let mut up: BTreeMap<String, usize> = BTreeMap::new();
+                let mut fk: BTreeMap<String, usize> = BTreeMap::new();
+                for (i, (_, who, _)) in rows.iter().enumerate() {
+                    if i <= pos {
+                        *up.entry(who.clone()).or_insert(0) += 1;
+                    } else {
+                        *fk.entry(who.clone()).or_insert(0) += 1;
+                    }
+                }
+                s.upstream_commits = pos + 1;
+                s.fork_commits = rows.len() - (pos + 1);
+                s.fork_first_date = rows.get(pos + 1).map(|r| date_string(r.2)).unwrap_or_default();
+                s.upstream_authors = authors_sorted(&up);
+                s.fork_authors = authors_sorted(&fk);
+            } else {
+                eprintln!(
+                    "phdoc scan: {} names fork base {} (upstream {}) but that commit is not on the first-parent mainline; fork attribution is off for this scan.",
+                    ledger.fork_base, ledger.fork_base, ledger.fork_of
+                );
+            }
+        }
+    }
     s.name = if !name_override.is_empty() {
         name_override.to_string()
     } else if !s.origin.is_empty() {
@@ -1172,6 +1231,20 @@ fn sections(scan: &Scan, agent: &BTreeMap<String, String>) -> (Vec<(String, Stri
     a.push_str("## Authors\n\n");
     if scan.authors.is_empty() {
         a.push_str("No git history was read, so no authors are recorded.\n");
+    } else if !scan.fork_of.is_empty() {
+        // Fork attribution (Will, 2026-11-22): upstream history is
+        // credited to its authors; only the fork side is claimed.
+        a.push_str(&format!(
+            "Fork attribution: {} is a fork of {}. The fork's divergence from upstream is recorded in its PATCHES.md; the fork base on the audited mainline is commit {} ({}). Upstream history carried by this fork: {} audited commits, credited to the upstream authors below — that work is upstream's, not this fork's. Fork-side work: {} audited commits since the base, the first dated {} — the work this fork claims, credited below as the fork's own.\n\n",
+            scan.name, scan.fork_of, scan.fork_base, scan.fork_base_date, scan.upstream_commits, scan.fork_commits, scan.fork_first_date
+        ));
+        if let Some(note) = fork_external_note(&scan.fork_authors) {
+            a.push_str(&format!("{}\n\n", note));
+        }
+        a.push_str("### Upstream authors — upstream history, credited to its authors\n\n");
+        a.push_str(&authors_plain_lines(&scan.upstream_authors));
+        a.push_str("\n### Fork-side authors — this fork's work\n\n");
+        a.push_str(&authors_folded_lines(&scan.fork_authors));
     } else {
         a.push_str(&format!(
             "The git log holds {} commits. phdoc audits the {} commits on the first-parent mainline — each merge folds its branch's commits into the merge commit — and the author counts below cover that audited mainline, the same set the historical references fold.\n\n",
@@ -1642,6 +1715,44 @@ fn author_fold(identity: &str) -> Option<&'static str> {
         };
     }
     None
+}
+
+/// An author map as a list, busiest first, name as tiebreak.
+fn authors_sorted(map: &BTreeMap<String, usize>) -> Vec<(String, usize)> {
+    let mut v: Vec<(String, usize)> = map.iter().map(|(k, n)| (k.clone(), *n)).collect();
+    v.sort_by(|a, b| b.1.cmp(&a.1).then_with(|| a.0.cmp(&b.0)));
+    v
+}
+
+/// Author lines with no fold applied: every identity as itself.
+/// Upstream authors are always rendered this way — they are never
+/// folded into the steward's account.
+fn authors_plain_lines(authors: &[(String, usize)]) -> String {
+    let mut out = String::new();
+    for (who, n) in authors {
+        out.push_str(&format!("- {} — {} commit{}\n", who, n, if *n == 1 { "" } else { "s" }));
+    }
+    out
+}
+
+/// On a fork's own side of the base there can be commits cherry-picked
+/// from upstream during upstream syncs (phcc: two arm64 fixes). Their
+/// authors are not cluster identities, so the fold leaves them as
+/// themselves; this note names them as upstream work so the fork-side
+/// list never reads as claiming them.
+fn fork_external_note(fork_authors: &[(String, usize)]) -> Option<String> {
+    let ext: Vec<&(String, usize)> = fork_authors.iter().filter(|(who, _)| author_fold(who).is_none()).collect();
+    if ext.is_empty() {
+        return None;
+    }
+    let n: usize = ext.iter().map(|(_, c)| *c).sum();
+    let names: Vec<String> = ext.iter().map(|(w, _)| w.clone()).collect();
+    Some(format!(
+        "The fork side also carries {} commit{} cherry-picked from upstream during upstream syncs, by {} — upstream work, credited to its authors in the fork-side list below, not claimed as the fork's.",
+        n,
+        if n == 1 { "" } else { "s" },
+        names.join(", ")
+    ))
 }
 
 /// Render the authors inventory under the fold: Will Bickford as author
@@ -2397,6 +2508,31 @@ fn provenance_section(name: &str, export_repo: &str, doc_site: &str) -> (String,
     )
 }
 
+/// What render_folded needs to split a fork's authors at its base:
+/// the upstream author counts folded up to and including the base
+/// commit, captured by the caller (which folds in order and can see
+/// the boundary). `upstream` is None while the fold has not reached
+/// the base yet.
+struct ForkView<'a> {
+    of: &'a str,
+    base: &'a str,
+    base_date: &'a str,
+    upstream: Option<&'a BTreeMap<String, usize>>,
+    first_fork_date: &'a str,
+}
+
+/// Author counts in `current` beyond those in `base`, as a sorted list.
+fn authors_diff(current: &BTreeMap<String, usize>, base: &BTreeMap<String, usize>) -> Vec<(String, usize)> {
+    let mut m: BTreeMap<String, usize> = BTreeMap::new();
+    for (k, v) in current {
+        let d = v - base.get(k).copied().unwrap_or(0);
+        if d > 0 {
+            m.insert(k.clone(), d);
+        }
+    }
+    authors_sorted(&m)
+}
+
 /// Render the folded reference (what the doc site shows per universe).
 /// T10: the same schema and order as sections() — the two render paths
 /// print the same sections with the same words, differing only where a
@@ -2404,7 +2540,7 @@ fn provenance_section(name: &str, export_repo: &str, doc_site: &str) -> (String,
 /// names the targets the documentation was produced for: the export repo
 /// that keeps the chain, and the doc site it is rendered for — both from
 /// the project's own configuration.
-fn render_folded(name: &str, state: &FoldState, at_label: &str, export_repo: &str, doc_site: &str) -> String {
+fn render_folded(name: &str, state: &FoldState, at_label: &str, export_repo: &str, doc_site: &str, fork: Option<&ForkView>) -> String {
     let mut out = String::new();
     out.push_str(&format!("# {} — reference as of {}\n\n", name, at_label));
     out.push_str(&format!("Commit {}. {} commit{} folded. Every fact here was folded from the chain's per-commit deltas.\n\n", state.head_sha, state.total_commits, if state.total_commits == 1 { "" } else { "s" }));
@@ -2442,6 +2578,42 @@ fn render_folded(name: &str, state: &FoldState, at_label: &str, export_repo: &st
     out.push_str("## Authors\n\n");
     if state.authors.is_empty() {
         out.push_str("No git history was read, so no authors are recorded.\n");
+    } else if let Some(f) = fork {
+        // Fork attribution, same split as the latest reference: the
+        // caller captured the author map at the fork base; anything
+        // beyond it is the fork's own side.
+        match f.upstream {
+            None => {
+                out.push_str(&format!(
+                    "Fork attribution: {} is a fork of {} (fork base commit {}). Every commit folded to this point is upstream history, credited to its own authors below; the fork's own work begins after the base.\n\n",
+                    name, f.of, f.base
+                ));
+                out.push_str(&authors_plain_lines(&authors_sorted(&state.authors)));
+            }
+            Some(snap) if state.head_sha == f.base => {
+                out.push_str(&format!(
+                    "Fork attribution: {} is a fork of {}. This reference is folded to the fork base itself (commit {}, {}): all {} audited commits folded to this point are upstream history, credited to their authors below. The fork's own work begins with the next commit.\n\n",
+                    name, f.of, f.base, f.base_date, state.total_commits
+                ));
+                out.push_str(&authors_plain_lines(&authors_sorted(snap)));
+            }
+            Some(snap) => {
+                let up_total: usize = snap.values().sum();
+                let fork_authors = authors_diff(&state.authors, snap);
+                let fork_total: usize = fork_authors.iter().map(|(_, n)| *n).sum();
+                out.push_str(&format!(
+                    "Fork attribution: {} is a fork of {}. The fork's divergence from upstream is recorded in its PATCHES.md; the fork base on the audited mainline is commit {} ({}). Upstream history carried by this fork: {} audited commits, credited to the upstream authors below — that work is upstream's, not this fork's. Fork-side work folded to this point: {} audited commits since the base, the first dated {} — the work this fork claims, credited below as the fork's own.\n\n",
+                    name, f.of, f.base, f.base_date, up_total, fork_total, f.first_fork_date
+                ));
+                if let Some(note) = fork_external_note(&fork_authors) {
+                    out.push_str(&format!("{}\n\n", note));
+                }
+                out.push_str("### Upstream authors — upstream history, credited to its authors\n\n");
+                out.push_str(&authors_plain_lines(&authors_sorted(snap)));
+                out.push_str("\n### Fork-side authors — this fork's work\n\n");
+                out.push_str(&authors_folded_lines(&fork_authors));
+            }
+        }
     } else {
         out.push_str(&format!("Author counts over the {} audited mainline commits folded to this point.\n\n", state.total_commits));
         let authors_vec: Vec<(String, usize)> = state.authors.iter().map(|(k, v)| (k.clone(), *v)).collect();
@@ -2583,6 +2755,8 @@ struct Ledger {
     doc_site: String,    // "" = not configured; the default applies
     export_repo_set: bool, // the field was present (non-empty) in .phdoc.json
     doc_site_set: bool,
+    fork_of: String,   // upstream this project forks, from .phdoc.json "fork-of" ("" = not a fork)
+    fork_base: String, // last upstream commit on the audited mainline, from .phdoc.json "fork-base"
     entries: BTreeMap<String, LedgerEntry>,
     order: Vec<String>,
 }
@@ -2618,6 +2792,8 @@ fn load_ledger(root: &Path) -> Ledger {
         doc_site: String::new(),
         export_repo_set: false,
         doc_site_set: false,
+        fork_of: String::new(),
+        fork_base: String::new(),
         entries: BTreeMap::new(),
         order: Vec::new(),
     };
@@ -2646,6 +2822,18 @@ fn load_ledger(root: &Path) -> Ledger {
             if !v.is_empty() {
                 ledger.doc_site = v;
                 ledger.doc_site_set = true;
+            }
+        }
+        if let Some(rest) = t.strip_prefix("\"fork-of\":") {
+            let v = rest.trim().trim_matches(|c| c == '"' || c == ',').to_string();
+            if !v.is_empty() {
+                ledger.fork_of = v;
+            }
+        }
+        if let Some(rest) = t.strip_prefix("\"fork-base\":") {
+            let v = rest.trim().trim_matches(|c| c == '"' || c == ',').to_string();
+            if !v.is_empty() {
+                ledger.fork_base = v;
             }
         }
         // entry start: "<40 hex>": {
@@ -2699,6 +2887,12 @@ fn save_ledger(root: &Path, ledger: &Ledger) {
     }
     if !ledger.doc_site.is_empty() {
         out.push_str(&format!("  \"doc-site\": \"{}\",\n", json_escape(&ledger.doc_site)));
+    }
+    if !ledger.fork_of.is_empty() {
+        out.push_str(&format!("  \"fork-of\": \"{}\",\n", json_escape(&ledger.fork_of)));
+    }
+    if !ledger.fork_base.is_empty() {
+        out.push_str(&format!("  \"fork-base\": \"{}\",\n", json_escape(&ledger.fork_base)));
     }
     out.push_str("  \"commits\": {\n");
     let n = ledger.order.len();
@@ -2967,9 +3161,34 @@ fn cmd_audit(a: AuditArgs) -> i32 {
     let all = chain_commits(&chain);
     let mut pages: Vec<(String, String)> = Vec::new();
     let mut st = FoldState::default();
+    // Fork attribution: capture the author map at the fork base as the
+    // fold passes it, so each history page can split its authors.
+    let fork_cfg = if !ledger.fork_of.is_empty() && !ledger.fork_base.is_empty() {
+        Some((ledger.fork_of.clone(), ledger.fork_base.clone()))
+    } else {
+        None
+    };
+    let mut fork_snapshot: Option<BTreeMap<String, usize>> = None;
+    let mut fork_base_date = String::new();
+    let mut fork_first_date = String::new();
     for (i, sha) in all.iter().enumerate() {
         fold_step(&chain, i + 1, &mut st);
-        let page = render_folded(&name, &st, &format!("commit {}", &sha[..sha.len().min(12)]), &export_repo_cfg, &doc_site_cfg);
+        if let Some((_, base)) = &fork_cfg {
+            if fork_snapshot.is_none() && st.head_sha == *base {
+                fork_snapshot = Some(st.authors.clone());
+                fork_base_date = st.head_date.clone();
+            } else if fork_snapshot.is_some() && fork_first_date.is_empty() && st.head_sha != *base {
+                fork_first_date = st.head_date.clone();
+            }
+        }
+        let fork_view = fork_cfg.as_ref().map(|(of, base)| ForkView {
+            of: of.as_str(),
+            base: base.as_str(),
+            base_date: fork_base_date.as_str(),
+            upstream: fork_snapshot.as_ref(),
+            first_fork_date: fork_first_date.as_str(),
+        });
+        let page = render_folded(&name, &st, &format!("commit {}", &sha[..sha.len().min(12)]), &export_repo_cfg, &doc_site_cfg, fork_view.as_ref());
         pages.push((format!("{}.md", &sha[..sha.len().min(12)]), page));
     }
 
@@ -3250,7 +3469,35 @@ fn cmd_render(project: &str, at: &str, repo: &Option<PathBuf>, out: &Option<Path
         }
     };
     let state = fold_chain(&chain, upto);
-    let page = render_folded(&name, &state, &format!("commit {}", &commits[upto - 1][..commits[upto - 1].len().min(12)]), eff_export_repo(&ledger), eff_doc_site(&ledger));
+    // Fork attribution for a single rendered page: fold to the fork
+    // base separately to capture the upstream author snapshot.
+    let mut fork_snap: Option<BTreeMap<String, usize>> = None;
+    let mut fork_base_date = String::new();
+    let mut fork_first_date = String::new();
+    if !ledger.fork_of.is_empty() && !ledger.fork_base.is_empty() {
+        if let Some(bi) = commits.iter().position(|s| s == &ledger.fork_base) {
+            if upto > bi {
+                let bs = fold_chain(&chain, bi + 1);
+                fork_base_date = bs.head_date.clone();
+                fork_snap = Some(bs.authors.clone());
+                if upto > bi + 1 {
+                    fork_first_date = fold_chain(&chain, bi + 2).head_date.clone();
+                }
+            }
+        }
+    }
+    let fork_view = if !ledger.fork_of.is_empty() && !ledger.fork_base.is_empty() {
+        Some(ForkView {
+            of: ledger.fork_of.as_str(),
+            base: ledger.fork_base.as_str(),
+            base_date: fork_base_date.as_str(),
+            upstream: fork_snap.as_ref(),
+            first_fork_date: fork_first_date.as_str(),
+        })
+    } else {
+        None
+    };
+    let page = render_folded(&name, &state, &format!("commit {}", &commits[upto - 1][..commits[upto - 1].len().min(12)]), eff_export_repo(&ledger), eff_doc_site(&ledger), fork_view.as_ref());
     match out {
         Some(p) => {
             let _ = fs::write(p, &page);
@@ -3458,6 +3705,8 @@ mod tests {
             doc_site: "https://docs.example.test".into(),
             export_repo_set: true,
             doc_site_set: true,
+            fork_of: String::new(),
+            fork_base: String::new(),
             entries: BTreeMap::new(),
             order: vec![sha.clone()],
         };
@@ -3622,6 +3871,80 @@ mod tests {
         assert!(page.contains("function — merged_in"), "folded head page carries the merged-in item: {}", head_page_path);
         let latest = String::from_utf8(git_bytes(&bare, &["show", &format!("{}:docs/fixture/latest.md", branch)]).expect("show latest")).expect("latest is utf8");
         assert!(latest.contains("function — merged_in"), "latest reference carries the merged-in item");
+        let _ = fs::remove_dir_all(&base);
+    }
+
+    #[test]
+    fn audit_splits_fork_attribution_at_the_base() {
+        // Fork attribution (Will, 2026-11-22): a project whose own
+        // .phdoc.json names an upstream and a fork base must credit
+        // the upstream commits to their authors and claim only the
+        // fork side. Fixture: two upstream commits by an upstream
+        // author (the second is the base), then two fork commits.
+        let base = std::env::temp_dir().join(format!("phdoc-fork-test-{}", std::process::id()));
+        let _ = fs::remove_dir_all(&base);
+        let proj = base.join("proj");
+        let bare = base.join("bare.git");
+        let out = base.join("out");
+        fs::create_dir_all(proj.join("src")).expect("fixture dirs");
+        let git = |dir: &Path, args: &[&str]| {
+            let o = Command::new("git")
+                .arg("-C")
+                .arg(dir)
+                .args(args)
+                .env("GIT_AUTHOR_NAME", "Test")
+                .env("GIT_AUTHOR_EMAIL", "test@localhost")
+                .env("GIT_COMMITTER_NAME", "Test")
+                .env("GIT_COMMITTER_EMAIL", "test@localhost")
+                .output()
+                .expect("git runs");
+            assert!(o.status.success(), "git {:?} failed: {}", args, String::from_utf8_lossy(&o.stderr));
+        };
+        git(&base, &["init", "proj"]);
+        git(&base, &["init", "--bare", "bare.git"]);
+        fs::write(proj.join("Cargo.toml"), "[package]\nname = \"fixture\"\nversion = \"0.1.0\"\nlicense = \"MIT\"\n\n[dependencies]\n").expect("write manifest");
+        fs::write(proj.join("src/lib.rs"), "/// Says hello.\npub fn hello() -> &'static str { \"hello\" }\n").expect("write source");
+        git(&proj, &["add", "."]);
+        git(&proj, &["commit", "--author=Upstream Author <up@x>", "-m", "upstream first"]);
+        fs::write(proj.join("src/lib.rs"), "/// Says hello.\npub fn hello() -> &'static str { \"hello\" }\n\n/// Says bye.\npub fn bye() -> &'static str { \"bye\" }\n").expect("write source 2");
+        git(&proj, &["add", "."]);
+        git(&proj, &["commit", "--author=Upstream Author <up@x>", "-m", "upstream second"]);
+        let fork_base = git_str(&proj, &["rev-parse", "HEAD"]);
+        fs::write(proj.join("src/lib.rs"), "/// Says hello.\npub fn hello() -> &'static str { \"hello\" }\n\n/// Says bye.\npub fn bye() -> &'static str { \"bye\" }\n\n/// Fork work.\npub fn forked() -> &'static str { \"fork\" }\n").expect("write source 3");
+        git(&proj, &["add", "."]);
+        git(&proj, &["commit", "-m", "fork first"]);
+        git(&proj, &["commit", "--allow-empty", "-m", "fork second"]);
+        let head_sha = git_str(&proj, &["rev-parse", "HEAD"]);
+        let bare_str = bare.to_string_lossy().to_string();
+        fs::write(
+            ledger_path(&proj),
+            format!(
+                "{{\n  \"project\": \"fixture\",\n  \"export-repo\": \"{}\",\n  \"doc-site\": \"https://docs.example.test\",\n  \"fork-of\": \"Example Upstream\",\n  \"fork-base\": \"{}\",\n  \"commits\": {{\n  }}\n}}\n",
+                bare_str, fork_base
+            ),
+        )
+        .expect("write .phdoc.json");
+
+        let rc = cmd_audit(AuditArgs { project: proj.to_string_lossy().to_string(), repo: None, out: Some(out.clone()), name: "fixture".into(), hold_push: false, rebuild: false });
+        assert_eq!(rc, 0, "audit gate must pass with fork attribution on");
+
+        let branch = git_str(&bare, &["symbolic-ref", "--short", "HEAD"]);
+        let latest = String::from_utf8(git_bytes(&bare, &["show", &format!("{}:docs/fixture/latest.md", branch)]).expect("show latest")).expect("latest is utf8");
+        assert!(latest.contains("Fork attribution: fixture is a fork of Example Upstream"), "latest carries the fork paragraph");
+        assert!(latest.contains("Upstream history carried by this fork: 2 audited commits"), "latest counts the upstream side");
+        assert!(latest.contains("Fork-side work: 2 audited commits since the base"), "latest counts the fork side");
+        assert!(latest.contains("### Upstream authors"), "latest has the upstream list");
+        assert!(latest.contains("- Upstream Author <up@x> — 2 commits"), "upstream author credited as upstream");
+        assert!(latest.contains("### Fork-side authors"), "latest has the fork-side list");
+        let head_page_path = format!("docs/fixture/history/{}.md", &head_sha[..head_sha.len().min(12)]);
+        let page = String::from_utf8(git_bytes(&bare, &["show", &format!("{}:{}", branch, head_page_path)]).expect("show head page")).expect("page is utf8");
+        assert!(page.contains("### Upstream authors"), "folded head page splits upstream authors");
+        assert!(page.contains("- Upstream Author <up@x> — 2 commits"), "folded head page credits the upstream author");
+        assert!(page.contains("### Fork-side authors"), "folded head page splits fork-side authors");
+        // the ledger kept the fork configuration through the audit's save
+        let led = read(&ledger_path(&proj));
+        assert!(led.contains("\"fork-of\": \"Example Upstream\""), "ledger keeps fork-of");
+        assert!(led.contains(&fork_base), "ledger keeps fork-base");
         let _ = fs::remove_dir_all(&base);
     }
 
