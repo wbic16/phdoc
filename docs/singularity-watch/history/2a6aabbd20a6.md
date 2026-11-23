@@ -2,26 +2,18 @@
 
 Commit 2a6aabbd20a60cbf483ef217565b2f41adf0c442. 18 commits folded. Every fact here was folded from the chain's per-commit deltas.
 
-## Provenance
-
-This reference is folded from the project's documentation chain, kept in the export repo wbic16/phdoc at docs/singularity-watch/chain.phext, and rendered for the doc site https://docs.phext.io. Both targets are named in the project's own .phdoc.json; the defaults are wbic16/phdoc and https://docs.phext.io.
-
 ## Dependencies
 
 No dependencies recorded at this point.
 
 ## Authors
 
-The author of record is **Will Bickford** — 18 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
-
-Annotation, by persona (all folded into Will Bickford):
-
-- Will Bickford (his own identities) — 18 commits
+- Will Bickford <wbic16@gmail.com> — 18 commits
 
 ## Complexity
 
-- JavaScript: 1 file, 212 lines total, 20 blank, 9 comment, 183 code
-- Markdown: 1 file, 11 lines total, 4 blank, 0 comment, 7 code
+- JavaScript: 1 files, 212 lines total, 20 blank, 9 comment, 183 code
+- Markdown: 1 files, 11 lines total, 4 blank, 0 comment, 7 code
 
 Declared RFCs at this point: none declared.
 
