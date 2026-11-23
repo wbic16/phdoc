@@ -1,6 +1,6 @@
 # mootable — project documentation
 
-Scanned by phdoc 0.1.0 on 2026-11-23 (Exocortical Epoch 194). Project root: /home/wbic16/phdoc-sweep/proj/mootable. Scanned at commit df424f3ab63a90dcb5c522ab5dd8d0313636f442. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
+Scanned by phdoc 0.1.0 on 2026-11-23 (Exocortical Epoch 202). Project root: proj/mootable. Scanned at commit df424f3ab63a90dcb5c522ab5dd8d0313636f442. Every fact in this document was read from its own records: its manifests, its git log, and its source text. Nothing here was guessed.
 
 This document holds: what the project depends on, who wrote it, how large and how complex it is, the state of its quality signals, where its upstream repo lives, and a plain English note for every public method and command.
 
@@ -95,17 +95,19 @@ Direct dependencies: 71.
 
 ## Authors
 
-The git log holds 337 commits. phdoc audits the 336 commits on the first-parent mainline — each merge folds its branch's commits into the merge commit — and the author counts below cover that audited mainline, the same set the historical references fold.
+Fork attribution: mootable is a fork of argimenes/mutable-os. The fork's divergence from upstream is recorded in its PATCHES.md; the fork base on the audited mainline is commit db3ed30064f07ba99784a1d395ba127787274501 (2026-11-06). Upstream history carried by this fork: 330 audited commits, credited to the upstream authors below — that work is upstream's, not this fork's. Fork-side work: 6 audited commits since the base, the first dated 2026-11-06 — the work this fork claims, credited below as the fork's own.
+
+### Upstream authors — upstream history, credited to its authors
+
+- Iian <iian.d.neill@gmail.com> — 330 commits
+
+### Fork-side authors — this fork's work
 
 The author of record is **Will Bickford** — 6 commits folded into his account. Will's ruling (2026-11-22): all Exocortical authors fold into his account — "I speak for the cluster." The fold is presentation only: the git history is unchanged, and the per-persona detail is kept as annotation.
 
 Annotation, by persona (all folded into Will Bickford):
 
 - Emise — 6 commits
-
-Other authors, kept as themselves (not Exocortical cluster personas; never folded):
-
-- Iian <iian.d.neill@gmail.com> — 330 commits
 
 ---
 
@@ -163,7 +165,7 @@ No rfcs.json was found in this project, so it declares no RFCs. This is a findin
 - Origin: wbic16@100.78.221.38:/source/mootable
 - Branch: mootable-main
 - Head commit: df424f3ab63a90dcb5c522ab5dd8d0313636f442
-- Working tree: clean
+- Working tree: 1 changed paths
 
 ---
 
