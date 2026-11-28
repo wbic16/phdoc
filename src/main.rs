@@ -9,6 +9,21 @@
 //! yields a summary, phdoc does not invent one: the item is marked
 //! awaiting-summary and named in an instruction file, so the user's
 //! agent can supply the missing words.
+//!
+//! The pipeline is a fixed sequence of named stages — there is no
+//! plugin API and no configuration surface for adding stages:
+//!   Extract  — scan_project and the extract_* item readers walk the
+//!              project's own records (manifests, git log, source text).
+//!   Explain  — sections() and explain() turn the scan into named
+//!              sections of prose, each item carrying the origin of its
+//!              words (doc comment, signature, agent, or awaiting).
+//!   Fold     — the audit path folds per-commit deltas into a
+//!              multiversal phext chain, one universe per commit, so
+//!              history renders from the same sections.
+//!   Render   — render_markdown, render_phext, and search_index emit
+//!              the same sections through three doors: a markdown file
+//!              for humans, a phext for agents and the record, and a
+//!              static search index generated at build time.
 
 use std::collections::{BTreeMap, BTreeSet};
 use std::fs;
@@ -1380,17 +1395,146 @@ fn first_sentence(text: &str) -> String {
     }
 }
 
-fn render_markdown(sections: &[(String, String)]) -> String {
-    let mut out = String::new();
-    for (i, (_title, body)) in sections.iter().enumerate() {
-        if i > 0 {
-            out.push_str("\n---\n\n");
+/// The document's named sections, in the order sections() emits them.
+/// Per-item sections (titled `"<kind> <name>"`) are not listed here:
+/// the "Public methods and commands" section is their index already.
+const DOC_SECTIONS: [&str; 9] = [
+    "Home",
+    "Dependencies",
+    "Authors",
+    "Complexity",
+    "Code quality",
+    "Declared RFCs",
+    "Upstream git repo",
+    "Public methods and commands",
+    "Provenance",
+];
+
+/// The text of a section body's first heading line, without the `#`s.
+fn first_heading(body: &str) -> &str {
+    for line in body.lines() {
+        let t = line.trim_start();
+        if t.starts_with('#') {
+            return t.trim_start_matches('#').trim();
         }
-        out.push_str(body);
-        if !body.ends_with('\n') {
-            out.push('\n');
+        if !t.is_empty() {
+            break;
         }
     }
+    ""
+}
+
+/// A GitHub-style anchor slug for a heading: lowercase, spaces become
+/// hyphens, anything that is not a word character or a hyphen is dropped.
+fn anchor_slug(heading: &str) -> String {
+    let mut out = String::new();
+    for ch in heading.chars() {
+        if ch.is_alphanumeric() || ch == '-' || ch == '_' {
+            out.extend(ch.to_lowercase());
+        } else if ch == ' ' {
+            out.push('-');
+        }
+    }
+    out
+}
+
+/// The contents block: the document's named sections, in order, each
+/// linked to its own heading. Generated from the section list itself,
+/// so it cannot drift from the document it opens.
+fn contents_block(sections: &[(String, String)]) -> String {
+    // A bold lead line, not a heading: the audit gate compares the
+    // heading titles of the latest reference against the folded head
+    // page, and the contents block is navigation, not a section.
+    let mut s = String::from("**Contents**\n\n");
+    let mut n = 0;
+    for (title, body) in sections {
+        if DOC_SECTIONS.contains(&title.as_str()) {
+            n += 1;
+            s.push_str(&format!("{}. [{}](#{})\n", n, title, anchor_slug(first_heading(body))));
+        }
+    }
+    s
+}
+
+fn render_markdown(sections: &[(String, String)]) -> String {
+    let mut blocks: Vec<String> = Vec::new();
+    for (i, (_title, body)) in sections.iter().enumerate() {
+        let mut b = body.to_string();
+        if !b.ends_with('\n') {
+            b.push('\n');
+        }
+        blocks.push(b);
+        if i == 0 && sections.len() > 1 {
+            blocks.push(contents_block(sections));
+        }
+    }
+    blocks.join("\n---\n\n")
+}
+
+/// Render the markdown through a project-supplied shell: the stripped
+/// form of a theme override. One file, two placeholders — `{{name}}`
+/// and `{{body}}` — and no component tree. A template without
+/// `{{body}}` gets the document appended after it.
+fn render_markdown_templated(sections: &[(String, String)], template: &str, name: &str) -> String {
+    let body = render_markdown(sections);
+    if template.contains("{{body}}") {
+        template.replace("{{name}}", name).replace("{{body}}", &body)
+    } else {
+        format!("{}{}", template.replace("{{name}}", name), body)
+    }
+}
+
+fn json_escape_full(s: &str) -> String {
+    let mut out = String::new();
+    for ch in s.chars() {
+        match ch {
+            '\\' => out.push_str("\\\\"),
+            '"' => out.push_str("\\\""),
+            '\n' => out.push_str("\\n"),
+            '\r' => out.push_str("\\r"),
+            '\t' => out.push_str("\\t"),
+            c if (c as u32) < 0x20 => out.push_str(&format!("\\u{:04x}", c as u32)),
+            c => out.push(c),
+        }
+    }
+    out
+}
+
+/// A static search index over the rendered sections, generated at
+/// build time: one entry per named section and one per documented
+/// item, each with the anchor of its heading and the first sentence
+/// of its prose. A reader (or a site's search box) consumes this
+/// file; no external search service is involved.
+fn search_index(sections: &[(String, String)]) -> String {
+    let mut out = String::from("[\n");
+    let mut first = true;
+    for (title, body) in sections {
+        let kind = if DOC_SECTIONS.contains(&title.as_str()) { "section" } else { "item" };
+        let summary = if let Some(pos) = body.find("What it does: ") {
+            first_sentence(&body[pos + "What it does: ".len()..])
+        } else if body.contains("Summary: awaiting a summary") {
+            "Awaiting a summary.".to_string()
+        } else {
+            let prose = body
+                .lines()
+                .map(|l| l.trim())
+                .find(|l| !l.is_empty() && !l.starts_with('#'))
+                .unwrap_or("");
+            first_sentence(prose)
+        };
+        if !first {
+            out.push_str(",\n");
+        }
+        first = false;
+        out.push_str(&format!(
+            "  {{\"title\": \"{}\", \"kind\": \"{}\", \"anchor\": \"{}\", \"summary\": \"{}\"}}",
+            json_escape_full(title),
+            kind,
+            anchor_slug(first_heading(body)),
+            json_escape_full(&collapse(&summary))
+        ));
+    }
+    out.push_str("\n]\n");
     out
 }
 
@@ -1439,7 +1583,7 @@ fn load_summaries(path: &Path) -> BTreeMap<String, String> {
 // ---------------------------------------------------------------------------
 
 fn usage() -> String {
-    "phdoc — a project scanner for shipped artifacts.\n\nCommands:\n  phdoc scan <project-dir> --out <output-dir> [--name <name>] [--summaries <file>]\n      Scan a project once and write docs.md and docs.phext into the output dir.\n      With --summaries, a file of `name :: summary` lines from the user's\n      agent is carried into the documentation.\n  phdoc audit <project-dir> [--repo <phdoc-repo-dir>] [--out <dir>] [--name <name>] [--hold-push] [--rebuild]\n      Audit every unaudited commit, root to head: append one universe per\n      commit to the project's multiversal phext chain, render the latest\n      and historical references, update the project's .phdoc.json ledger,\n      report the unreviewed backlog, and export the changes to the export\n      repo (commit and push) unless --hold-push is given. The export repo\n      and the doc site are the project's own configuration, held in its\n      .phdoc.json as \"export-repo\" and \"doc-site\" (defaults: wbic16/phdoc\n      and https://docs.phext.io); when an export repo is configured and no\n      --repo is given, phdoc keeps a managed clone of that repo to export to.\n  phdoc review <project-dir> <commit> --by <name>\n      Mark a commit reviewed in the project's .phdoc.json.\n  phdoc render <project-dir> --at <commit|latest> [--repo <phdoc-repo-dir>] [--out <dir>]\n      Render the reference as of a commit by folding the chain.\n  phdoc help\n      Show this text.\n  phdoc version\n      Show the version.\n".to_string()
+    "phdoc — a project scanner for shipped artifacts.\n\nCommands:\n  phdoc scan <project-dir> --out <output-dir> [--name <name>] [--summaries <file>]\n      Scan a project once and write docs.md, docs.phext and search-index.json\n      into the output dir. With --summaries, a file of `name :: summary` lines\n      from the user's agent is carried into the documentation. If the project\n      holds a phdoc-template.md, it shells the markdown: `{{name}}` and\n      `{{body}}` are replaced with the project name and the document.\n  phdoc audit <project-dir> [--repo <phdoc-repo-dir>] [--out <dir>] [--name <name>] [--hold-push] [--rebuild]\n      Audit every unaudited commit, root to head: append one universe per\n      commit to the project's multiversal phext chain, render the latest\n      and historical references, update the project's .phdoc.json ledger,\n      report the unreviewed backlog, and export the changes to the export\n      repo (commit and push) unless --hold-push is given. The export repo\n      and the doc site are the project's own configuration, held in its\n      .phdoc.json as \"export-repo\" and \"doc-site\" (defaults: wbic16/phdoc\n      and https://docs.phext.io); when an export repo is configured and no\n      --repo is given, phdoc keeps a managed clone of that repo to export to.\n  phdoc review <project-dir> <commit> --by <name>\n      Mark a commit reviewed in the project's .phdoc.json.\n  phdoc render <project-dir> --at <commit|latest> [--repo <phdoc-repo-dir>] [--out <dir>]\n      Render the reference as of a commit by folding the chain.\n  phdoc help\n      Show this text.\n  phdoc version\n      Show the version.\n".to_string()
 }
 
 fn main() {
@@ -1498,10 +1642,17 @@ fn main() {
                 eprintln!("phdoc scan: cannot create {}: {}", out_dir, e);
                 std::process::exit(1);
             }
-            let md = render_markdown(&sections);
+            let template = read(&root.join("phdoc-template.md"));
+            let md = if template.trim().is_empty() {
+                render_markdown(&sections)
+            } else {
+                render_markdown_templated(&sections, &template, &scan.name)
+            };
             let px = render_phext(&sections);
+            let index = search_index(&sections);
             fs::write(out.join("docs.md"), &md).expect("write docs.md");
             fs::write(out.join("docs.phext"), &px).expect("write docs.phext");
+            fs::write(out.join("search-index.json"), &index).expect("write search-index.json");
             println!(
                 "phdoc: scanned {} — {} files of code, {} public items, {} dependencies across {} manifests.",
                 scan.name,
@@ -1511,6 +1662,7 @@ fn main() {
                 scan.deps.len()
             );
             println!("phdoc: wrote {} ({} bytes) and {} ({} bytes, checksum {}).", out.join("docs.md").display(), md.len(), out.join("docs.phext").display(), px.len(), phext::checksum(&px));
+            println!("phdoc: wrote {} ({} bytes) — a static search index over the document's sections and items.", out.join("search-index.json").display(), index.len());
             if awaiting.is_empty() {
                 println!("phdoc: every public item was explained from a doc comment or its signature. No instruction file was needed.");
             } else {
@@ -3580,6 +3732,52 @@ mod tests {
         let (text, source) = explain(&item, &BTreeMap::new());
         assert_eq!(source, "doc comment");
         assert_eq!(text, "Builds the graph from the homes.");
+    }
+
+    #[test]
+    fn contents_lists_named_sections_only() {
+        let sections = vec![
+            ("Home".to_string(), "# demo — project documentation\n\nScanned.\n".to_string()),
+            ("Dependencies".to_string(), "## Dependencies\n\nNone.\n".to_string()),
+            ("fn main".to_string(), "## fn — main\n\nFound in src/main.rs at line 1.\n".to_string()),
+        ];
+        let md = render_markdown(&sections);
+        assert!(md.starts_with("# demo — project documentation"), "the document still opens with its Home section");
+        let contents = contents_block(&sections);
+        assert!(contents.contains("1. [Home](#demo--project-documentation)"), "contents links Home by its heading anchor: {}", contents);
+        assert!(contents.contains("2. [Dependencies](#dependencies)"), "contents links Dependencies: {}", contents);
+        assert!(!contents.contains("fn main"), "per-item sections stay out of the contents — the index section is their list");
+        assert!(md.contains("**Contents**"), "the rendered document carries the contents block");
+    }
+
+    #[test]
+    fn search_index_covers_sections_and_items() {
+        let sections = vec![
+            ("Home".to_string(), "# demo — project documentation\n\nScanned by phdoc. Every fact was read.\n".to_string()),
+            ("fn main".to_string(), "## fn — main\n\nFound in src/main.rs at line 1.\n\nSignature: `fn main()`\n\nWhat it does: Runs the demo. It exits cleanly.\n".to_string()),
+            ("fn later".to_string(), "## fn — later\n\nFound in src/lib.rs at line 9.\n\nSignature: `fn later()`\n\nSummary: awaiting a summary. No words were invented for it.\n".to_string()),
+        ];
+        let index = search_index(&sections);
+        assert!(index.contains("\"summary\": \"Scanned by phdoc.\""), "a section's summary is its first prose sentence, not its heading: {}", index);
+        assert!(index.contains("\"kind\": \"section\""), "sections are indexed as sections: {}", index);
+        assert!(index.contains("\"title\": \"fn main\""), "items are indexed by title: {}", index);
+        assert!(index.contains("\"summary\": \"Runs the demo.\""), "an item's summary is the first sentence of what it does: {}", index);
+        assert!(index.contains("\"summary\": \"Awaiting a summary.\""), "an awaiting item is indexed as awaiting, never filled: {}", index);
+        assert!(index.contains("\"anchor\": \"fn--main\""), "anchors follow the heading slug rule: {}", index);
+    }
+
+    #[test]
+    fn template_shells_the_markdown() {
+        let sections = vec![
+            ("Home".to_string(), "# demo — project documentation\n\nScanned.\n".to_string()),
+            ("Dependencies".to_string(), "## Dependencies\n\nNone.\n".to_string()),
+        ];
+        let plain = render_markdown(&sections);
+        let shelled = render_markdown_templated(&sections, "# {{name}} (custom shell)\n\n{{body}}", "demo");
+        assert!(shelled.starts_with("# demo (custom shell)"), "the template's name placeholder is replaced: {}", &shelled[..60]);
+        assert!(shelled.contains("# demo — project documentation"), "the document body rides inside the shell");
+        let appended = render_markdown_templated(&sections, "Shell without a body slot.\n", "demo");
+        assert!(appended.ends_with(&plain[plain.len().saturating_sub(40)..]) || appended.contains("## Dependencies"), "a template without {{{{body}}}} gets the document appended");
     }
 
     #[test]
